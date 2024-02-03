@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationItem should render a link 1`] = `
+<div>
+  <li
+    class="navItem"
+  >
+    <a
+      class="link text-large"
+      href="/url"
+    >
+      homepage
+    </a>
+  </li>
+</div>
+`;

@@ -1,0 +1,45 @@
+.structuredText p,
+.structuredText ul,
+.structuredText .spacing {
+  margin: 1rem 0;
+}
+
+.structuredText > p:first-child,
+.structuredText > ul:first-child,
+.structuredText > .spacing:first-child {
+  margin-top: 0;
+}
+
+.structuredText > p:last-child,
+.structuredText > ul:last-child,
+.structuredText > .spacing:last-child {
+  margin-bottom: 0;
+}
+
+.structuredText ul {
+  padding-left: 2rem;
+
+  li {
+    margin-bottom: 0.5rem;
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.structuredText * + h2,
+.structuredText * + h3,
+.structuredText * + h4,
+.structuredText * + h5,
+.structuredText * + h6 {
+  margin-top: 3rem;
+}
+
+.structuredText hr + h2,
+.structuredText hr + h3,
+.structuredText hr + h4,
+.structuredText hr + h5,
+.structuredText hr + h6 {
+  margin-top: 0;
+}

@@ -1,0 +1,14 @@
+{
+  "extends": ["//"],
+  "pipeline": {
+    "lint": {},
+    "test": {},
+    "lint:js": {},
+    "lint:styles": {},
+    "lint:typescript": {}
+  },
+  "remoteCache": {
+    "signature": false
+  },
+  "globalDependencies": ["tsconfig.json"]
+}

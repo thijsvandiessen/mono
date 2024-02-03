@@ -1,0 +1,51 @@
+.root {
+  background-color: var(--colour-background);
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.content {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  @media screen and (min-width: 50rem) {
+    flex-direction: row-reverse;
+  }
+}
+
+.list {
+  display: none;
+  flex-direction: column;
+  background-color: var(--colour-background);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @media screen and (min-width: 50rem) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+    flex-shrink: 0;
+    margin-right: auto;
+  }
+}
+
+.logoLink {
+  margin: 1rem 0;
+  margin-right: auto;
+
+  @media screen and (min-width: 50rem) {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+.logo {
+  position: relative;
+  object-fit: contain;
+  width: 175px;
+  height: 40px;
+}

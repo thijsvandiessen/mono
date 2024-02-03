@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFound component shows all the data 1`] = `
+<div>
+  <section
+    class="content-layout"
+  >
+    <h2>
+      Niet gevonden
+    </h2>
+    <p>
+      Deze pagina is niet gevonden.
+    </p>
+    <p>
+      <a
+        href="/"
+      >
+        Ga terug naar de homepage
+      </a>
+    </p>
+  </section>
+</div>
+`;

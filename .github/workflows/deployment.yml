@@ -1,0 +1,28 @@
+name: Deployment
+
+on:
+  push:
+    tags:
+      - v*
+  workflow_dispatch:
+
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.REPO_SCOPED_TOKEN }}
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --token=${{ env.VERCEL_TOKEN }} --cwd apps/crea
+      - name: Build Project Artifacts
+        run: vercel build --token=${{ env.VERCEL_TOKEN }} --cwd apps/crea
+      - name: Deploy Project Artifacts to Vercel
+        run: vercel deploy --token=${{ env.VERCEL_TOKEN }} --cwd apps/crea
+      - name: Deploy to production
+        run: vercel --prod --token=${{ env.VERCEL_TOKEN }} --cwd apps/crea

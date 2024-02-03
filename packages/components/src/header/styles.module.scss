@@ -1,0 +1,116 @@
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--colour-primary);
+  padding: 4rem 0;
+
+  @media screen and (min-width: 50rem) {
+    padding: 6rem 0;
+  }
+}
+
+.header.withImage {
+  padding: 6rem 0;
+
+  @media screen and (min-width: 50rem) {
+    padding: 8rem 0;
+  }
+}
+
+.header.withImage:not(.withBody) {
+  min-height: 30vh;
+
+  @media screen and (min-width: 50rem) {
+    min-height: 50vh;
+  }
+}
+
+header.header.withImage {
+  min-height: 50vh;
+  padding: 4rem 0;
+
+  @media screen and (min-width: 50rem) {
+    padding: 6rem 0;
+    min-height: 75vh;
+  }
+}
+
+.headerContent {
+  position: relative;
+  height: 100%;
+  color: var(--colour-background);
+  text-align: left;
+  z-index: 1;
+  overflow: hidden;
+
+  h2,
+  h1 {
+    font-size: 2.375rem;
+    color: var(--colour-secondary-light);
+    text-overflow: ellipsis;
+
+    @media screen and (min-width: 50rem) {
+      font-size: 2.875rem;
+    }
+  }
+
+  @media screen and (min-width: 50rem) {
+    text-align: center;
+  }
+
+  > * {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.header.withImage {
+  h1,
+  h2 {
+    color: var(--colour-background);
+  }
+}
+
+.headerImageWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.withBody .headerImageWrapper {
+  overflow: hidden;
+}
+
+.headerImage {
+  position: relative;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.withBody .headerImage {
+  filter: blur(3px);
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: linear-gradient(
+    0.25turn,
+    var(--colour-secondary),
+    var(--colour-primary)
+  );
+  opacity: 0;
+}
+
+.withBody .background {
+  opacity: 0.5;
+}

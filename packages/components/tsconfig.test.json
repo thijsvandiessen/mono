@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "lib": ["ESNext", "DOM", "WebWorker", "DOM.Iterable"],
+    "module": "ESNext",
+    "target": "ESNext",
+    "types": ["node", "jest", "@testing-library/jest-dom"],
+    "jsx": "react",
+    "plugins": []
+  },
+  "include": ["jest.config.ts", "jest.setup.cjs"],
+  "exclude": []
+}

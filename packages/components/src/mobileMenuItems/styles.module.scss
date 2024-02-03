@@ -1,0 +1,17 @@
+.root {
+  list-style: none;
+  padding: 0 2rem;
+  overflow: scroll;
+  height: calc(100% - 6rem);
+}
+
+.subList {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.subItem {
+  display: block;
+  margin-top: 1.5rem;
+  color: var(--colour-primary);
+}

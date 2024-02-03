@@ -1,0 +1,19 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": {
+      "outputs": [".next/**", "!.next/cache/**"],
+      "dotEnv": [".env"]
+    },
+    "analyze": {
+      "outputs": [".next/**", "!.next/cache/**"],
+      "dotEnv": [".env"]
+    },
+    "lint": {},
+    "test": {}
+  },
+  "remoteCache": {
+    "signature": false
+  },
+  "globalDependencies": ["tsconfig.json"]
+}

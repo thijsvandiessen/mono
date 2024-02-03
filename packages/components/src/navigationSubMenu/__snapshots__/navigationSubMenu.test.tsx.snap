@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`navigationSubMenu should render a button 1`] = `
+<div>
+  <li
+    class="listItem"
+  >
+    <button
+      class="button text-large"
+      type="button"
+    >
+      root label
+    </button>
+  </li>
+</div>
+`;
+
+exports[`navigationSubMenu should render a button 2`] = `
+<div>
+  <li
+    class="listItem"
+  >
+    <button
+      class="button text-large"
+      type="button"
+    >
+      root label
+    </button>
+    <ul
+      class="list with-background"
+    >
+      <li
+        class="navItem"
+      >
+        <a
+          class="link text-large"
+          href="/specific/page"
+        >
+          specific page
+        </a>
+      </li>
+      <li
+        class="navItem"
+      >
+        <a
+          class="link text-large"
+          href="/"
+        >
+          homepage
+        </a>
+      </li>
+      <li
+        class="navItem"
+      >
+        <a
+          class="link text-large"
+          href="https://example.com"
+        >
+          external
+        </a>
+      </li>
+    </ul>
+    <div
+      class="arrow"
+    />
+  </li>
+</div>
+`;

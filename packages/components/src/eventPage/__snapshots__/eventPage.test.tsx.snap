@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Concert component shows all the data 1`] = `
+<div>
+  <article
+    class="root"
+  >
+    <header
+      class="header with-background"
+    >
+      <div
+        class="titleContainer content-layout"
+      >
+        <h2>
+          title
+        </h2>
+      </div>
+    </header>
+    <div
+      class="container content-layout noGrid"
+    >
+      <aside
+        class="sidebar"
+      >
+        <div
+          class="sidebarContent"
+        />
+      </aside>
+      <div
+        class="content"
+      />
+    </div>
+    <div
+      class="locations"
+    />
+  </article>
+</div>
+`;

@@ -1,0 +1,210 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  text-size-adjust: 100%;
+}
+
+body {
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section,
+figcaption,
+figure,
+main {
+  display: block;
+}
+
+audio,
+video {
+  display: inline-block;
+}
+
+img {
+  vertical-align: middle;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  --colour-background: #ffffff;
+  --colour-light: #e2edef;
+  --colour-grey: #899ca0;
+  --colour-primary: #003541;
+  --colour-primary-dark: #07161a;
+  --colour-primary-light: #73d6ed;
+  --colour-secondary: #ab4e1e;
+  --colour-secondary-dark: #88411d;
+  --colour-secondary-light: #ffc19a;
+
+  --typography-sans: 'dm-sans', serif;
+  --typography-serif: 'dm-serif', serif;
+
+  --breakpoint-xs: 31.25rem;
+  --breakpoint-sm: 50rem;
+  --breakpoint-md: 62.5rem;
+  --breakpoint-lg: 75rem;
+  --breakpoint-xl: 87.5rem;
+  --breakpoint-xxl: 120rem;
+
+  --layout-md-width: 50rem;
+
+  --layout-max-content-width: 50rem;
+
+  --layout-content-padding: 24px;
+
+  --layout-default-mobile-spacing: 4rem;
+  --layout-default-desktop-spacing: 8rem;
+
+  --full-width: 100%;
+  --default-width: 80rem;
+
+  --max-content-width: 50rem;
+
+  --content-padding: 24px;
+
+  --default-mobile-spacing: 4rem;
+  --default-desktop-spacing: 8rem;
+}
+
+@font-face {
+  font-family: 'dm-sans';
+  src: url('/fonts/dm-sans-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'dm-sans';
+  src: url('/fonts/dm-sans-regular-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'dm-sans';
+  src: url('/fonts/dm-sans-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'dm-sans';
+  src: url('/fonts/dm-sans-bold-italic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'dm-serif';
+  src: url('/fonts/dm-serif.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'dm-serif';
+  src: url('/fonts/dm-serif-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+body {
+  font-family: var(--typography-sans);
+  background-color: var(--colour-background);
+  color: var(--colour-primary-dark);
+  font-size: 1em;
+  word-break: break-word;
+
+  @media screen and (min-width: 50rem) {
+    font-size: 1.125em;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.noscroll {
+  overflow: hidden;
+}
+
+%content-layout {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  @media screen and (min-width: 50rem) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  p {
+    max-width: var(--layout-max-content-width);
+  }
+}
+
+.content-layout {
+  @extend %content-layout;
+  max-width: 80rem;
+}
+
+.content-layout--small {
+  margin: 0 auto;
+  max-width: var(--layout-md-width);
+}
+
+.with-background {
+  background-image: url('/img/background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+hr {
+  border-color: var(--colour-secondary-light);
+  margin: 1rem 0;
+}

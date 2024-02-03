@@ -1,0 +1,16 @@
+.root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.details {
+  font-style: normal;
+  padding: 0 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.detailsText {
+  margin: 0;
+}

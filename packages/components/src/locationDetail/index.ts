@@ -1,0 +1,1 @@
+export { LocationDetail } from './locationDetail'

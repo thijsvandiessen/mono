@@ -1,0 +1,22 @@
+{
+  "extends": ["//"],
+  "pipeline": {
+    "build": {
+      "outputs": [".next/**", "!.next/cache/**"],
+      "dotEnv": [".env"]
+    },
+    "analyze": {
+      "outputs": [".next/**", "!.next/cache/**"],
+      "dotEnv": [".env"]
+    },
+    "lint": {},
+    "test": {},
+    "lint:js": {},
+    "lint:styles": {},
+    "lint:typescript": {}
+  },
+  "remoteCache": {
+    "signature": false
+  },
+  "globalDependencies": ["tsconfig.json"]
+}

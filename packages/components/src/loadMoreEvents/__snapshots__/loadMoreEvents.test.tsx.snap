@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Events component shows all the data 1`] = `
+<div>
+  <div>
+    <p
+      class="text-small"
+    >
+      1
+       van 
+      10
+       concerten
+    </p>
+  </div>
+</div>
+`;
