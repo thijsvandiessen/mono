@@ -49,18 +49,16 @@ export const CallToAction = ({ record }: Props) => {
   if (isOfType<ConcertLinkFragment>(pageLink, 'ConcertRecord')) {
     if (!slug) return null
     return (
-      <>
-        <Button
-          href={slugFormatter({
-            slug,
-            prefix: '/concerten',
-          })}
-          rightIcon={<ArrowRight />}
-          variant={buttonVariant}
-        >
-          {label}
-        </Button>
-      </>
+      <Button
+        href={slugFormatter({
+          slug,
+          prefix: '/concerten',
+        })}
+        rightIcon={<ArrowRight />}
+        variant={buttonVariant}
+      >
+        {label}
+      </Button>
     )
   }
 

@@ -104,25 +104,19 @@ export const EventListItem = ({
                       >
                         {concertPast ? (
                           'Concert voorbij'
+                        ) : ticketLink ? (
+                          <Link
+                            href={ticketLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <span className={styles.locationLink}>
+                              Koop nu kaarten
+                              <ArrowRight className={styles.locationLinkIcon} />
+                            </span>
+                          </Link>
                         ) : (
-                          <>
-                            {ticketLink ? (
-                              <Link
-                                href={ticketLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                <span className={styles.locationLink}>
-                                  Koop nu kaarten
-                                  <ArrowRight
-                                    className={styles.locationLinkIcon}
-                                  />
-                                </span>
-                              </Link>
-                            ) : (
-                              'Link voor de kaartverkoop volgt spoedig'
-                            )}
-                          </>
+                          'Link voor de kaartverkoop volgt spoedig'
                         )}
                       </p>
                     </li>

@@ -9,6 +9,7 @@
       "outputs": [".next/**", "!.next/cache/**"],
       "dotEnv": [".env"]
     },
+    "oxlint": {},
     "lint": {},
     "test": {}
   },
