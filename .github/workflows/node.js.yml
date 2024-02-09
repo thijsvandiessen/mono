@@ -16,8 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.REPO_SCOPED_TOKEN }}
-      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+      # TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      # TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
     strategy:
       matrix:
         node-version: [18.x, 20.x, 21.x]
