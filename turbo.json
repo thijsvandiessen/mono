@@ -2,13 +2,19 @@
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
     "build": {
-      "outputs": [".next/**", "!.next/cache/**"],
-      "dotEnv": [".env"]
+      "outputs": ["app/**/.next/**", "app/**/!.next/cache/**"],
+      "dotEnv": ["app/**/.env"],
+      "dependsOn": ["^build"]
     },
     "analyze": {
-      "outputs": [".next/**", "!.next/cache/**"],
-      "dotEnv": [".env"]
+      "outputs": [
+        "app/**/.next/**",
+        "app/**/!.next/cache/**",
+        "packages/**/coverage/**"
+      ],
+      "dotEnv": ["app/**/.env"]
     },
+    "oxlint": {},
     "lint": {},
     "test": {}
   },

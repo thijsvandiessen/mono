@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import { Fragment } from 'react'
 import { type Event } from '@crea/graphql/src/types/event'
 import { type PageDetailFragment } from '@crea/graphql/src/generated/graphql'
 import { ContentField } from '../contentField'
@@ -63,10 +64,10 @@ export const PageContent = ({ sectionClassName, items, pageTitle }: Props) => {
       )
     }
     return (
-      <>
+      <Fragment key={pageTitle}>
         {header}
         {pageContent}
-      </>
+      </Fragment>
     )
   })
 }
