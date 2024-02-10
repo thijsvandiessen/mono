@@ -13,7 +13,7 @@
     "prepare": "husky install",
     "download-schema": "npm run download-schema --workspace=packages/graphql",
     "codegen": "npm run codegen --workspace=packages/graphql",
-    "turbo": "npm run build && npm run lint && npm run test",
+    "turbo": "turbo lint && turbo test && turbo build",
     "test": "npm run test --workspaces"
   },
   "lint-staged": {

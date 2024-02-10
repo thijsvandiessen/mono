@@ -6,15 +6,11 @@
   "main": "./src/**/*",
   "scripts": {
     "test": "jest",
-    "lint": "npm run lint:js:turbo && npm run lint:styles:turbo && npm run lint:typescript:turbo",
-    "lint:turbo": "turbo run lint",
+    "lint": "npm run lint:js && npm run lint:styles && npm run lint:typescript",
     "lint:js": "eslint . --fix",
-    "lint:js:turbo": "turbo run lint:js",
     "lint:styles": "prettier . --write --cache --log-level silent --list-different",
-    "lint:styles:turbo": "turbo run lint:styles",
     "lint:typescript": "tsc",
-    "lint:typescript:turbo": "turbo run lint:typescript",
-    "download-schema": "rover graph fetch crea-orkest-p7nmyh@main > ./src/schema.graphql && npm run lint:styles:turbo",
+    "download-schema": "rover graph fetch crea-orkest-p7nmyh@main > ./src/schema.graphql && npm run lint:styles",
     "codegen": "graphql-codegen --config ./codegen.ts",
     "codegen:watch": "graphql-codegen --require dotenv/config --config ./codegen.ts --watch"
   },

@@ -7,14 +7,10 @@
   "main": "./src/**/*",
   "scripts": {
     "test": "jest",
-    "lint": "npm run lint:js:turbo && npm run lint:styles:turbo && npm run lint:typescript:turbo",
-    "lint:turbo": "turbo run lint",
+    "lint": "npm run lint:js && npm run lint:styles && npm run lint:typescript",
     "lint:js": "eslint . --fix",
-    "lint:js:turbo": "turbo run lint:js",
     "lint:styles": "prettier . --write --cache --log-level silent --list-different",
-    "lint:styles:turbo": "turbo run lint:styles",
-    "lint:typescript": "tsc",
-    "lint:typescript:turbo": "turbo run lint:typescript"
+    "lint:typescript": "tsc"
   },
   "dependencies": {
     "next": "14.0.4",
