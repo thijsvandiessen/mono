@@ -1,6 +1,6 @@
 import React from 'react'
 import { EventListItem } from '../eventListItem'
-import { getEvent } from '@crea/graphql/src/getters/getEvent'
+import { getEvent } from '@mono/graphql/src/getters/getEvent'
 
 export interface Props {
   className?: string

@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import classNames from 'classnames'
-import { getGeneralInfo } from '@crea/graphql/src/getters/getGeneralInfo'
-import { getSiteMetadata } from '@crea/graphql/src/getters/getSiteMetadata'
-import { slugFormatter } from '@crea/utils/src/slugFormatter'
+import { getGeneralInfo } from '@mono/graphql/src/getters/getGeneralInfo'
+import { getSiteMetadata } from '@mono/graphql/src/getters/getSiteMetadata'
+import { slugFormatter } from '@mono/utils/src/slugFormatter'
 import styles from './styles.module.scss'
 
 export const Footer = async () => {

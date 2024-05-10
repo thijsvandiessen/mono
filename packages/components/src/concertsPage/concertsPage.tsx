@@ -4,8 +4,8 @@ import { Event } from '../event'
 import { Header } from '../header'
 import { LoadMoreEvents } from '../loadMoreEvents'
 import { PageContent } from '../pageContent'
-import { getEvents } from '@crea/graphql/src/getters/getEvents'
-import { getPage } from '@crea/graphql/src/getters/getPage'
+import { getEvents } from '@mono/graphql/src/getters/getEvents'
+import { getPage } from '@mono/graphql/src/getters/getPage'
 
 import styles from './styles.module.scss'
 

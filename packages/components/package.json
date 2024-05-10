@@ -1,5 +1,5 @@
 {
-  "name": "@crea/components",
+  "name": "@mono/components",
   "version": "1.0.0",
   "private": true,
   "description": "components",
@@ -14,8 +14,8 @@
   },
   "dependencies": {
     "next": "14.0.4",
-    "@crea/graphql": "1.0.0",
-    "@crea/utils": "1.0.0",
+    "@mono/graphql": "1.0.0",
+    "@mono/utils": "1.0.0",
     "classnames": "2.3.2"
   },
   "devDependencies": {

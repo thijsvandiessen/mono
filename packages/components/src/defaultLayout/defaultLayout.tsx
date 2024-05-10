@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { type FunctionComponent } from 'react'
 import { Footer } from '../footer'
 import { Navigation } from '../navigation'
 import classNames from 'classnames'
 import styles from './styles.module.scss'
 
-export function DefaultLayout({ children }: { children: React.ReactNode }) {
+type Props = {
+  children: React.ReactElement
+}
+
+export const DefaultLayout: FunctionComponent<Props> = ({ children }) => {
   return (
     <div className={classNames(styles.main)}>
       <Navigation />

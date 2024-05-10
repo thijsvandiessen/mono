@@ -2,14 +2,14 @@ import type { Props as EventListItemProps } from '../eventListItem'
 import { FutureEvents } from './futureEvents'
 import type { Props } from './futureEvents'
 import React from 'react'
-import { getFutureEvents } from '@crea/graphql/src/getters/getFutureEvents'
+import { getFutureEvents } from '@mono/graphql/src/getters/getFutureEvents'
 import { mockEvent } from './mocks/mockEvents'
-import { resolvedComponent } from '@crea/utils/src/testHelpers/resolvedComponent'
+import { resolvedComponent } from '@mono/utils/src/testHelpers/resolvedComponent'
 import { render, screen } from '@testing-library/react'
 
-jest.mock('@crea/graphql/src/getters/getFutureEvents', () => {
+jest.mock('@mono/graphql/src/getters/getFutureEvents', () => {
   const originalModule = jest.requireActual(
-    '@crea/graphql/src/getters/getFutureEvents'
+    '@mono/graphql/src/getters/getFutureEvents'
   )
   return {
     __esModule: true,

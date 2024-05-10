@@ -1,13 +1,13 @@
 import React from 'react'
 import { Location } from './location'
 import type { Props } from './location'
-import { getLocation } from '@crea/graphql/src/getters/getLocation'
-import { resolvedComponent } from '@crea/utils/src/testHelpers/resolvedComponent'
+import { getLocation } from '@mono/graphql/src/getters/getLocation'
+import { resolvedComponent } from '@mono/utils/src/testHelpers/resolvedComponent'
 import { render, screen } from '@testing-library/react'
 
-jest.mock('@crea/graphql/src/getters/getLocation', () => {
+jest.mock('@mono/graphql/src/getters/getLocation', () => {
   const originalModule = jest.requireActual(
-    '@crea/graphql/src/getters/getLocation'
+    '@mono/graphql/src/getters/getLocation'
   )
   return {
     __esModule: true,

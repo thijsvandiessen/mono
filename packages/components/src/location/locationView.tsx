@@ -1,4 +1,4 @@
-import type { Location } from '@crea/graphql/src/types/location'
+import type { Location } from '@mono/graphql/src/types/location'
 import React from 'react'
 
 export interface Props {

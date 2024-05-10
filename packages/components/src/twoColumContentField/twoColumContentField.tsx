@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import type { TwoColumFragment } from '@crea/graphql/src/generated/graphql'
+import type { TwoColumFragment } from '@mono/graphql/src/generated/graphql'
 import { ContentField } from '../contentField'
 import { isStructuredText } from 'datocms-structured-text-utils'
 

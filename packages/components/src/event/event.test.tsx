@@ -1,9 +1,9 @@
 import React from 'react'
 import { Event } from './event'
 import type { Props } from './event'
-import { getEvent } from '@crea/graphql/src/getters/getEvent'
+import { getEvent } from '@mono/graphql/src/getters/getEvent'
 import { mockEvent } from './mocks/mockEvent'
-import { resolvedComponent } from '@crea/utils/src/testHelpers/resolvedComponent'
+import { resolvedComponent } from '@mono/utils/src/testHelpers/resolvedComponent'
 import { render, screen } from '@testing-library/react'
 
 jest.mock('../location/location', () => {
@@ -15,9 +15,9 @@ jest.mock('../location/location', () => {
   }
 })
 
-jest.mock('@crea/graphql/src/getters/getEvent', () => {
+jest.mock('@mono/graphql/src/getters/getEvent', () => {
   const originalModule = jest.requireActual(
-    '@crea/graphql/src/getters/getEvent'
+    '@mono/graphql/src/getters/getEvent'
   )
   return {
     __esModule: true,

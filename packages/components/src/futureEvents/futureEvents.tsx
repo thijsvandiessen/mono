@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { EventListItem } from '../eventListItem'
-import { getFutureEvents } from '@crea/graphql/src/getters/getFutureEvents'
+import { getFutureEvents } from '@mono/graphql/src/getters/getFutureEvents'
 
 export interface Props {
   skip: number

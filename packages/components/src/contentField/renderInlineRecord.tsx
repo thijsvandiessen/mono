@@ -2,11 +2,11 @@ import Link from 'next/link'
 import type { Record } from 'datocms-structured-text-utils'
 import type { RenderInlineRecordContext } from 'react-datocms/structured-text'
 import { isOfType } from './isOfType'
-import { slugFormatter } from '@crea/utils/src/slugFormatter'
+import { slugFormatter } from '@mono/utils/src/slugFormatter'
 import type {
   ConcertLinkFragment,
   PageLinkFragment,
-} from '@crea/graphql/src/generated/graphql'
+} from '@mono/graphql/src/generated/graphql'
 
 export const renderInlineRecord = ({
   record,

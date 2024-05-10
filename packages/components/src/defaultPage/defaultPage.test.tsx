@@ -1,8 +1,8 @@
 import React from 'react'
 import { DefaultPage } from './defaultPage'
 import type { Props } from './defaultPage'
-import { getPage } from '@crea/graphql/src/getters/getPage'
-import { resolvedComponent } from '@crea/utils/src/testHelpers/resolvedComponent'
+import { getPage } from '@mono/graphql/src/getters/getPage'
+import { resolvedComponent } from '@mono/utils/src/testHelpers/resolvedComponent'
 import { render } from '@testing-library/react'
 
 jest.mock('../navigation', () => {
@@ -14,8 +14,8 @@ jest.mock('../navigation', () => {
   }
 })
 
-jest.mock('@crea/graphql/src/getters/getPage', () => {
-  const originalModule = jest.requireActual('@crea/graphql/src/getters/getPage')
+jest.mock('@mono/graphql/src/getters/getPage', () => {
+  const originalModule = jest.requireActual('@mono/graphql/src/getters/getPage')
   return {
     __esModule: true,
     ...originalModule,

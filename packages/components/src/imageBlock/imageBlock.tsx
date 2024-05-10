@@ -1,8 +1,8 @@
 import React from 'react'
-import type { ImageFragment } from '@crea/graphql/src/generated/graphql'
-import { isOfTypeCloudinaryAsset } from '@crea/graphql/src/types/image'
+import type { ImageFragment } from '@mono/graphql/src/generated/graphql'
+import { isOfTypeCloudinaryAsset } from '@mono/graphql/src/types/image'
 import Image from 'next/image'
-import { formatCloudinaryImage } from '@crea/graphql/src/formatters/formatCloudinaryImage'
+import { formatCloudinaryImage } from '@mono/graphql/src/formatters/formatCloudinaryImage'
 
 import styles from './styles.module.scss'
 

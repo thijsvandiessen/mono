@@ -1,13 +1,13 @@
 import { Navigation } from './navigation'
 import React from 'react'
-import { getGeneralInfo } from '@crea/graphql/src/getters/getGeneralInfo'
+import { getGeneralInfo } from '@mono/graphql/src/getters/getGeneralInfo'
 import { mockMenuData } from './mocks/mockMenuData'
-import { resolvedComponent } from '@crea/utils/src/testHelpers/resolvedComponent'
+import { resolvedComponent } from '@mono/utils/src/testHelpers/resolvedComponent'
 import { render, screen } from '@testing-library/react'
 
-jest.mock('@crea/graphql/src/getters/getGeneralInfo', () => {
+jest.mock('@mono/graphql/src/getters/getGeneralInfo', () => {
   const originalModule = jest.requireActual(
-    '@crea/graphql/src/getters/getLocation'
+    '@mono/graphql/src/getters/getLocation'
   )
   return {
     __esModule: true,
@@ -24,9 +24,9 @@ global.ResizeObserver = jest.fn().mockImplementation(() => ({
 
 const getGeneralInfoMock = jest.mocked(getGeneralInfo)
 
-jest.mock('@crea/graphql/src/getters/getSiteMetadata', () => {
+jest.mock('@mono/graphql/src/getters/getSiteMetadata', () => {
   const originalModule = jest.requireActual(
-    '@crea/graphql/src/getters/getSiteMetadata'
+    '@mono/graphql/src/getters/getSiteMetadata'
   )
   return {
     __esModule: true,

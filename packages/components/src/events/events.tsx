@@ -1,6 +1,6 @@
 import React from 'react'
 import { Event } from '../event/event'
-import { getEvents } from '@crea/graphql/src/getters/getEvents'
+import { getEvents } from '@mono/graphql/src/getters/getEvents'
 
 export interface Props {
   skip: number

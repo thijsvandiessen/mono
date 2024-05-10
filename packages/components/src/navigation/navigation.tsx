@@ -3,14 +3,14 @@ import Link from 'next/link'
 import classNames from 'classnames'
 import { NavigationItem } from '../navigationItem'
 import { NavigationSubMenu } from '../navigationSubMenu'
-import { getGeneralInfo } from '@crea/graphql/src/getters/getGeneralInfo'
+import { getGeneralInfo } from '@mono/graphql/src/getters/getGeneralInfo'
 import { MobileMenu } from '../mobileMenu'
-import { getSiteMetadata } from '@crea/graphql/src/getters/getSiteMetadata'
+import { getSiteMetadata } from '@mono/graphql/src/getters/getSiteMetadata'
 
 import styles from './styles.module.scss'
 import { CreaOrkestLogo } from '../icons/crea-orkest-logo'
 
-export const Navigation: React.FC = async () => {
+export const Navigation = async () => {
   const { data } = await getGeneralInfo()
   const { metadata } = await getSiteMetadata()
   if (!data?.general) return null

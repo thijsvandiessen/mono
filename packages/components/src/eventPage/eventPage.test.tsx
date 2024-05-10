@@ -1,8 +1,8 @@
 import React from 'react'
 import { EventPage } from './eventPage'
 import type { Props } from './eventPage'
-import { getEventPage } from '@crea/graphql/src/getters/getEventPage'
-import { resolvedComponent } from '@crea/utils/src/testHelpers/resolvedComponent'
+import { getEventPage } from '@mono/graphql/src/getters/getEventPage'
+import { resolvedComponent } from '@mono/utils/src/testHelpers/resolvedComponent'
 import { render } from '@testing-library/react'
 
 jest.mock('../navigation', () => {
@@ -14,9 +14,9 @@ jest.mock('../navigation', () => {
   }
 })
 
-jest.mock('@crea/graphql/src/getters/getEventPage', () => {
+jest.mock('@mono/graphql/src/getters/getEventPage', () => {
   const originalModule = jest.requireActual(
-    '@crea/graphql/src/getters/getEventPage'
+    '@mono/graphql/src/getters/getEventPage'
   )
   return {
     __esModule: true,

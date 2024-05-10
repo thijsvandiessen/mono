@@ -7,7 +7,7 @@ import type {
   EventBlockFragment,
   ImageFragment,
   VideoFragment,
-} from '@crea/graphql/src/generated/graphql'
+} from '@mono/graphql/src/generated/graphql'
 import { CallToAction } from '../callToAction'
 import { DocumentBlock } from '../documentBlock'
 import { Event } from '../event'

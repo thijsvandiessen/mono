@@ -1,5 +1,5 @@
 {
-  "name": "@crea/hooks",
+  "name": "@mono/hooks",
   "version": "1.0.0",
   "type": "module",
   "main": "./src/**/*",
@@ -11,7 +11,7 @@
     "lint:typescript": "tsc"
   },
   "dependencies": {
-    "@crea/graphql": "1.0.0"
+    "@mono/graphql": "1.0.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "6.1.5",

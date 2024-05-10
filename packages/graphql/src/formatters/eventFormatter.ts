@@ -3,7 +3,7 @@ import type { Event } from '../types/event'
 import { authorFormatter } from './authorFormatter'
 import { locationItemFormatter } from './locationItemFormatter'
 import { musicFormatter } from './musicFormatter'
-import { slugFormatter } from '@crea/utils/src/slugFormatter'
+import { slugFormatter } from '@mono/utils/src/slugFormatter'
 import { isOfTypeCloudinaryAsset } from '../types/image'
 import { formatCloudinaryImage } from './formatCloudinaryImage'
 

@@ -1,11 +1,11 @@
 {
   "name": "crea-public",
-  "version": "1.2.0",
+  "version": "1.0.0",
   "private": true,
   "description": "The public CREA Orkest website",
   "type": "module",
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev --turbo -p 3000",
     "build": "next build",
     "start": "next start",
     "lint": "npm run lint:js && npm run lint:styles && npm run lint:typescript",
@@ -17,9 +17,9 @@
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "dependencies": {
-    "@crea/components": "1.0.0",
-    "@crea/graphql": "1.0.0",
-    "@react-google-maps/api": "2.19.2",
+    "@mono/components": "1.0.0",
+    "@mono/graphql": "1.0.0",
+    "@react-google-maps/api": "2.19.3",
     "@urql/core": "4.2.2",
     "@urql/exchange-graphcache": "6.4.0",
     "classnames": "2.3.2",
@@ -53,9 +53,5 @@
     "turbo": "1.11.2",
     "typescript": "5.3.3",
     "webpack-bundle-analyzer": "4.10.1"
-  },
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+  }
 }

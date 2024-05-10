@@ -1,11 +1,11 @@
 import React from 'react'
 import classNames from 'classnames'
-import type { DocumentFragment } from '@crea/graphql/src/generated/graphql'
-import { formatCloudinaryDocument } from '@crea/graphql/src/formatters/formatCloudinaryDocument'
-import { isOfTypeCloudinaryAsset } from '@crea/graphql/src/types/image'
+import type { DocumentFragment } from '@mono/graphql/src/generated/graphql'
+import { formatCloudinaryDocument } from '@mono/graphql/src/formatters/formatCloudinaryDocument'
+import { isOfTypeCloudinaryAsset } from '@mono/graphql/src/types/image'
 import { Button } from '../button'
 import { ArrowDown } from '../icons/arrow-down'
-import { formatBytes } from '@crea/utils/src/formatBytes'
+import { formatBytes } from '@mono/utils/src/formatBytes'
 
 import styles from './styles.module.scss'
 

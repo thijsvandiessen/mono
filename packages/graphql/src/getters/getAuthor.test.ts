@@ -32,7 +32,7 @@ describe('getAuthor', () => {
         variables: {},
         kind: 'query',
         context: {
-          url: 'https://main--crea-orkest-p7nmyh.apollographos.net/graphql',
+          url: 'https://current--vandiessen-mono.apollographos.net/graphql',
           requestPolicy: 'cache-first',
         },
       },

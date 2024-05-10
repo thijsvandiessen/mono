@@ -1,12 +1,12 @@
 import { LoadMoreEvents } from './loadMoreEvents'
 import React from 'react'
-import { getEvents } from '@crea/graphql/src/getters/getEvents'
+import { getEvents } from '@mono/graphql/src/getters/getEvents'
 import { mockEvent } from './mocks/mockEvents'
 import { render, screen } from '@testing-library/react'
 
-jest.mock('@crea/graphql/src/getters/getEvents', () => {
+jest.mock('@mono/graphql/src/getters/getEvents', () => {
   const originalModule = jest.requireActual(
-    '@crea/graphql/src/getters/getEvents'
+    '@mono/graphql/src/getters/getEvents'
   )
   return {
     __esModule: true,
@@ -15,8 +15,8 @@ jest.mock('@crea/graphql/src/getters/getEvents', () => {
   }
 })
 
-jest.mock('@crea/hooks/src/useEventsMeta', () => {
-  const originalModule = jest.requireActual('@crea/hooks/src/useEventsMeta')
+jest.mock('@mono/hooks/src/useEventsMeta', () => {
+  const originalModule = jest.requireActual('@mono/hooks/src/useEventsMeta')
   return {
     __esModule: true,
     ...originalModule,
