@@ -188,6 +188,7 @@ type ConcertRecord implements RecordInterface {
   cloudinaryPoster: JsonField
   content: [ConcertModelContentField!]!
   id: ItemId!
+  locations: [LocationItemRecord!]!
   seo: SeoField
   slug: String
   title: String
@@ -531,46 +532,7 @@ type focalPoint {
   y: FloatType!
 }
 
-input GeneralModelFilter {
-  _createdAt: CreatedAtFilter
-  id: ItemIdFilter
-  _firstPublishedAt: PublishedAtFilter
-  _publicationScheduledAt: PublishedAtFilter
-  _unpublishingScheduledAt: PublishedAtFilter
-  _publishedAt: PublishedAtFilter
-  _status: StatusFilter
-  _updatedAt: UpdatedAtFilter
-  _isValid: BooleanFilter
-  siteMetadata: JsonFilter
-  title: StringFilter
-  OR: [GeneralModelFilter]
-  AND: [GeneralModelFilter]
-}
-
 union GeneralModelMenuField = MenuItemRecord | SubmenuItemRecord
-
-enum GeneralModelOrderBy {
-  _createdAt_ASC
-  _createdAt_DESC
-  id_ASC
-  id_DESC
-  _firstPublishedAt_ASC
-  _firstPublishedAt_DESC
-  _publicationScheduledAt_ASC
-  _publicationScheduledAt_DESC
-  _unpublishingScheduledAt_ASC
-  _unpublishingScheduledAt_DESC
-  _publishedAt_ASC
-  _publishedAt_DESC
-  _status_ASC
-  _status_DESC
-  _updatedAt_ASC
-  _updatedAt_DESC
-  _isValid_ASC
-  _isValid_DESC
-  title_ASC
-  title_DESC
-}
 
 """
 Record of type general (general)
@@ -2634,17 +2596,6 @@ type Query {
   """
   Returns meta information regarding a record collection
   """
-  _allGeneralsMeta(
-    """
-    The locale to use to fetch the field's content
-    """
-    locale: SiteLocale
-    filter: GeneralModelFilter
-  ): CollectionMetadata!
-
-  """
-  Returns meta information regarding a record collection
-  """
   _allLocationsMeta(
     """
     The locale to use to fetch the field's content
@@ -2716,33 +2667,6 @@ type Query {
     filter: ConcertModelFilter
     orderBy: [ConcertModelOrderBy] = [_updatedAt_DESC]
   ): [ConcertRecord!]!
-
-  """
-  Returns a collection of records
-  """
-  allGenerals(
-    """
-    The locale to use to fetch the field's content
-    """
-    locale: SiteLocale
-
-    """
-    If you want to fallback to a default translation when a translation has not been found
-    """
-    fallbackLocales: [SiteLocale!]
-
-    """
-    Skip the first results
-    """
-    skip: IntType
-
-    """
-    Limit the number of results
-    """
-    first: IntType = 20
-    filter: GeneralModelFilter
-    orderBy: [GeneralModelOrderBy] = [_updatedAt_DESC]
-  ): [GeneralRecord!]!
 
   """
   Returns a collection of records
@@ -2843,7 +2767,7 @@ type Query {
   ): ConcertRecord
 
   """
-  Returns a specific record
+  Returns the single instance record
   """
   general(
     """
@@ -2855,8 +2779,6 @@ type Query {
     If you want to fallback to a default translation when a translation has not been found
     """
     fallbackLocales: [SiteLocale!]
-    filter: GeneralModelFilter
-    orderBy: [GeneralModelOrderBy] = [_updatedAt_DESC]
   ): GeneralRecord
 
   """
