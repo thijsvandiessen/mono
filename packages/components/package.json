@@ -13,7 +13,7 @@
     "lint:typescript": "tsc"
   },
   "dependencies": {
-    "next": "14.0.4",
+    "next": "14.2.3",
     "@mono/graphql": "1.0.0",
     "@mono/utils": "1.0.0",
     "classnames": "2.3.2"
@@ -29,7 +29,7 @@
     "@typescript-eslint/parser": "6.15.0",
     "dotenv": "16.3.1",
     "eslint": "8.56.0",
-    "eslint-config-next": "14.0.4",
+    "eslint-config-next": "14.2.3",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-testing-library": "6.2.0",
     "husky": "8.0.3",
