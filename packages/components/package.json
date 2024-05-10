@@ -13,7 +13,7 @@
     "lint:typescript": "tsc"
   },
   "dependencies": {
-    "next": "14.0.4",
+    "next": "14.1.1",
     "@crea/graphql": "1.0.0",
     "@crea/utils": "1.0.0",
     "classnames": "2.3.2"
