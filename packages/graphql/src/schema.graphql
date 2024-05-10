@@ -1,7 +1,54 @@
 """
+Specifies how to filter Boolean fields
+"""
+input BooleanFilter {
+  """
+  Search for records with an exact match
+  """
+  eq: BooleanType
+}
+
+"""
 Represents `true` or `false` values.
 """
 scalar BooleanType
+
+union CallToActionModelPageLinkField = ConcertRecord | PageRecord
+
+"""
+Block of type Call to action (call_to_action)
+"""
+type CallToActionRecord implements RecordInterface {
+  _createdAt: DateTime!
+
+  """
+  Editing URL
+  """
+  _editingUrl: String
+  _firstPublishedAt: DateTime
+  _isValid: BooleanType!
+  _modelApiKey: String!
+  _publicationScheduledAt: DateTime
+  _publishedAt: DateTime
+
+  """
+  Generates SEO and Social card meta tags to be used in your frontend
+  """
+  _seoMetaTags(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+  ): [Tag!]!
+  _status: ItemStatus!
+  _unpublishingScheduledAt: DateTime
+  _updatedAt: DateTime!
+  externalUrl: String
+  id: ItemId!
+  label: String
+  pageLink: CallToActionModelPageLinkField
+  variant: String
+}
 
 type CollectionMetadata {
   count: IntType!
@@ -31,12 +78,200 @@ type ColorField {
   red: IntType!
 }
 
+"""
+Block of type Concert list (concert_list)
+"""
+type ConcertListRecord implements RecordInterface {
+  _createdAt: DateTime!
+
+  """
+  Editing URL
+  """
+  _editingUrl: String
+  _firstPublishedAt: DateTime
+  _isValid: BooleanType!
+  _modelApiKey: String!
+  _publicationScheduledAt: DateTime
+  _publishedAt: DateTime
+
+  """
+  Generates SEO and Social card meta tags to be used in your frontend
+  """
+  _seoMetaTags(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+  ): [Tag!]!
+  _status: ItemStatus!
+  _unpublishingScheduledAt: DateTime
+  _updatedAt: DateTime!
+  futureConcerts: BooleanType!
+  id: ItemId!
+  pinnedConcerts: [ConcertRecord!]!
+}
+
+union ConcertModelContentField =
+    HeaderRecord
+  | TextBlockRecord
+  | TwoColumnRecord
+
+input ConcertModelFilter {
+  _createdAt: CreatedAtFilter
+  id: ItemIdFilter
+  _firstPublishedAt: PublishedAtFilter
+  _publicationScheduledAt: PublishedAtFilter
+  _unpublishingScheduledAt: PublishedAtFilter
+  _publishedAt: PublishedAtFilter
+  _status: StatusFilter
+  _updatedAt: UpdatedAtFilter
+  _isValid: BooleanFilter
+  cloudinaryPoster: JsonFilter
+  seo: SeoFilter
+  slug: SlugFilter
+  title: StringFilter
+  OR: [ConcertModelFilter]
+  AND: [ConcertModelFilter]
+}
+
+enum ConcertModelOrderBy {
+  _createdAt_ASC
+  _createdAt_DESC
+  id_ASC
+  id_DESC
+  _firstPublishedAt_ASC
+  _firstPublishedAt_DESC
+  _publicationScheduledAt_ASC
+  _publicationScheduledAt_DESC
+  _unpublishingScheduledAt_ASC
+  _unpublishingScheduledAt_DESC
+  _publishedAt_ASC
+  _publishedAt_DESC
+  _status_ASC
+  _status_DESC
+  _updatedAt_ASC
+  _updatedAt_DESC
+  _isValid_ASC
+  _isValid_DESC
+  title_ASC
+  title_DESC
+}
+
+"""
+Record of type Concert (concert)
+"""
+type ConcertRecord implements RecordInterface {
+  _createdAt: DateTime!
+
+  """
+  Editing URL
+  """
+  _editingUrl: String
+  _firstPublishedAt: DateTime
+  _isValid: BooleanType!
+  _modelApiKey: String!
+  _publicationScheduledAt: DateTime
+  _publishedAt: DateTime
+
+  """
+  Generates SEO and Social card meta tags to be used in your frontend
+  """
+  _seoMetaTags(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+  ): [Tag!]!
+  _status: ItemStatus!
+  _unpublishingScheduledAt: DateTime
+  _updatedAt: DateTime!
+  cloudinaryPoster: JsonField
+  content: [ConcertModelContentField!]!
+  id: ItemId!
+  seo: SeoField
+  slug: String
+  title: String
+}
+
+"""
+Specifies how to filter by creation datetime
+"""
+input CreatedAtFilter {
+  """
+  Filter records with a value that's strictly greater than the one specified. Seconds and milliseconds are truncated from the argument.
+  """
+  gt: DateTime
+
+  """
+  Filter records with a value that's less than the one specified. Seconds and milliseconds are truncated from the argument.
+  """
+  lt: DateTime
+
+  """
+  Filter records with a value that's greater than or equal to than the one specified. Seconds and milliseconds are truncated from the argument.
+  """
+  gte: DateTime
+
+  """
+  Filter records with a value that's less or equal than the one specified. Seconds and milliseconds are truncated from the argument.
+  """
+  lte: DateTime
+
+  """
+  Filter records with a value that's within the specified minute range. Seconds and milliseconds are truncated from the argument.
+  """
+  eq: DateTime
+
+  """
+  Filter records with a value that's outside the specified minute range. Seconds and milliseconds are truncated from the argument.
+  """
+  neq: DateTime
+
+  """
+  Filter records with the specified field defined (i.e. with any value) or not
+  """
+  exists: BooleanType
+}
+
 scalar CustomData
 
 """
 A ISO 8601 compliant datetime value
 """
 scalar DateTime
+
+"""
+Block of type Document (document)
+"""
+type DocumentRecord implements RecordInterface {
+  _createdAt: DateTime!
+
+  """
+  Editing URL
+  """
+  _editingUrl: String
+  _firstPublishedAt: DateTime
+  _isValid: BooleanType!
+  _modelApiKey: String!
+  _publicationScheduledAt: DateTime
+  _publishedAt: DateTime
+
+  """
+  Generates SEO and Social card meta tags to be used in your frontend
+  """
+  _seoMetaTags(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+  ): [Tag!]!
+  _status: ItemStatus!
+  _unpublishingScheduledAt: DateTime
+  _updatedAt: DateTime!
+  cloudinaryDocument: JsonField
+  id: ItemId!
+  title: String
+}
 
 enum FaviconType {
   icon
@@ -296,12 +531,160 @@ type focalPoint {
   y: FloatType!
 }
 
+input GeneralModelFilter {
+  _createdAt: CreatedAtFilter
+  id: ItemIdFilter
+  _firstPublishedAt: PublishedAtFilter
+  _publicationScheduledAt: PublishedAtFilter
+  _unpublishingScheduledAt: PublishedAtFilter
+  _publishedAt: PublishedAtFilter
+  _status: StatusFilter
+  _updatedAt: UpdatedAtFilter
+  _isValid: BooleanFilter
+  siteMetadata: JsonFilter
+  title: StringFilter
+  OR: [GeneralModelFilter]
+  AND: [GeneralModelFilter]
+}
+
+union GeneralModelMenuField = MenuItemRecord | SubmenuItemRecord
+
+enum GeneralModelOrderBy {
+  _createdAt_ASC
+  _createdAt_DESC
+  id_ASC
+  id_DESC
+  _firstPublishedAt_ASC
+  _firstPublishedAt_DESC
+  _publicationScheduledAt_ASC
+  _publicationScheduledAt_DESC
+  _unpublishingScheduledAt_ASC
+  _unpublishingScheduledAt_DESC
+  _publishedAt_ASC
+  _publishedAt_DESC
+  _status_ASC
+  _status_DESC
+  _updatedAt_ASC
+  _updatedAt_DESC
+  _isValid_ASC
+  _isValid_DESC
+  title_ASC
+  title_DESC
+}
+
+"""
+Record of type general (general)
+"""
+type GeneralRecord implements RecordInterface {
+  _createdAt: DateTime!
+
+  """
+  Editing URL
+  """
+  _editingUrl: String
+  _firstPublishedAt: DateTime
+  _isValid: BooleanType!
+  _modelApiKey: String!
+  _publicationScheduledAt: DateTime
+  _publishedAt: DateTime
+
+  """
+  Generates SEO and Social card meta tags to be used in your frontend
+  """
+  _seoMetaTags(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+  ): [Tag!]!
+  _status: ItemStatus!
+  _unpublishingScheduledAt: DateTime
+  _updatedAt: DateTime!
+  id: ItemId!
+  menu: [GeneralModelMenuField!]!
+  siteMetadata: JsonField
+  title: String
+}
+
 type GlobalSeoField {
   facebookPageUrl: String
   fallbackSeo: SeoField
   siteName: String
   titleSuffix: String
   twitterAccount: String
+}
+
+type HeaderModelBodyField {
+  blocks: [CallToActionRecord!]!
+  links: [HeaderModelBodyLinksField!]!
+  value: JsonField!
+}
+
+union HeaderModelBodyLinksField = ConcertRecord | PageRecord
+
+"""
+Block of type Header (header)
+"""
+type HeaderRecord implements RecordInterface {
+  _createdAt: DateTime!
+
+  """
+  Editing URL
+  """
+  _editingUrl: String
+  _firstPublishedAt: DateTime
+  _isValid: BooleanType!
+  _modelApiKey: String!
+  _publicationScheduledAt: DateTime
+  _publishedAt: DateTime
+
+  """
+  Generates SEO and Social card meta tags to be used in your frontend
+  """
+  _seoMetaTags(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+  ): [Tag!]!
+  _status: ItemStatus!
+  _unpublishingScheduledAt: DateTime
+  _updatedAt: DateTime!
+  body: HeaderModelBodyField
+  cloudinaryCover: JsonField
+  id: ItemId!
+}
+
+"""
+Block of type Afbeelding (image)
+"""
+type ImageRecord implements RecordInterface {
+  _createdAt: DateTime!
+
+  """
+  Editing URL
+  """
+  _editingUrl: String
+  _firstPublishedAt: DateTime
+  _isValid: BooleanType!
+  _modelApiKey: String!
+  _publicationScheduledAt: DateTime
+  _publishedAt: DateTime
+
+  """
+  Generates SEO and Social card meta tags to be used in your frontend
+  """
+  _seoMetaTags(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+  ): [Tag!]!
+  _status: ItemStatus!
+  _unpublishingScheduledAt: DateTime
+  _updatedAt: DateTime!
+  cloudinaryImage: JsonField
+  id: ItemId!
 }
 
 input ImgixParams {
@@ -1877,6 +2260,222 @@ input InUseFilter {
   eq: BooleanType
 }
 
+scalar ItemId
+
+"""
+Specifies how to filter by ID
+"""
+input ItemIdFilter {
+  """
+  Search the record with the specified ID
+  """
+  eq: ItemId
+
+  """
+  Exclude the record with the specified ID
+  """
+  neq: ItemId
+
+  """
+  Search records with the specified IDs
+  """
+  in: [ItemId]
+
+  """
+  Search records that do not have the specified IDs
+  """
+  notIn: [ItemId]
+}
+
+enum ItemStatus {
+  draft
+  updated
+  published
+}
+
+scalar JsonField
+
+"""
+Specifies how to filter JSON fields
+"""
+input JsonFilter {
+  """
+  Filter records with the specified field defined (i.e. with any value) or not
+  """
+  exists: BooleanType
+}
+
+type LatLonField {
+  latitude: FloatType!
+  longitude: FloatType!
+}
+
+"""
+Specifies how to filter Geolocation fields
+"""
+input LatLonFilter {
+  """
+  Filter records within the specified radius in meters
+  """
+  near: LatLonNearFilter
+
+  """
+  Filter records with the specified field defined (i.e. with any value) or not
+  """
+  exists: BooleanType
+}
+
+input LatLonNearFilter {
+  latitude: FloatType!
+  longitude: FloatType!
+  radius: FloatType!
+}
+
+"""
+Block of type location item (location_item)
+"""
+type LocationItemRecord implements RecordInterface {
+  _createdAt: DateTime!
+
+  """
+  Editing URL
+  """
+  _editingUrl: String
+  _firstPublishedAt: DateTime
+  _isValid: BooleanType!
+  _modelApiKey: String!
+  _publicationScheduledAt: DateTime
+  _publishedAt: DateTime
+
+  """
+  Generates SEO and Social card meta tags to be used in your frontend
+  """
+  _seoMetaTags(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+  ): [Tag!]!
+  _status: ItemStatus!
+  _unpublishingScheduledAt: DateTime
+  _updatedAt: DateTime!
+  dateTime: DateTime
+  id: ItemId!
+  location: LocationRecord
+  ticketLink: String
+}
+
+input LocationModelFilter {
+  _createdAt: CreatedAtFilter
+  id: ItemIdFilter
+  _firstPublishedAt: PublishedAtFilter
+  _publicationScheduledAt: PublishedAtFilter
+  _unpublishingScheduledAt: PublishedAtFilter
+  _publishedAt: PublishedAtFilter
+  _status: StatusFilter
+  _updatedAt: UpdatedAtFilter
+  _isValid: BooleanFilter
+  address: LatLonFilter
+  addressTitle: StringFilter
+  title: StringFilter
+  OR: [LocationModelFilter]
+  AND: [LocationModelFilter]
+}
+
+enum LocationModelOrderBy {
+  _createdAt_ASC
+  _createdAt_DESC
+  id_ASC
+  id_DESC
+  _firstPublishedAt_ASC
+  _firstPublishedAt_DESC
+  _publicationScheduledAt_ASC
+  _publicationScheduledAt_DESC
+  _unpublishingScheduledAt_ASC
+  _unpublishingScheduledAt_DESC
+  _publishedAt_ASC
+  _publishedAt_DESC
+  _status_ASC
+  _status_DESC
+  _updatedAt_ASC
+  _updatedAt_DESC
+  _isValid_ASC
+  _isValid_DESC
+  addressTitle_ASC
+  addressTitle_DESC
+  title_ASC
+  title_DESC
+}
+
+"""
+Record of type Location (location)
+"""
+type LocationRecord implements RecordInterface {
+  _createdAt: DateTime!
+
+  """
+  Editing URL
+  """
+  _editingUrl: String
+  _firstPublishedAt: DateTime
+  _isValid: BooleanType!
+  _modelApiKey: String!
+  _publicationScheduledAt: DateTime
+  _publishedAt: DateTime
+
+  """
+  Generates SEO and Social card meta tags to be used in your frontend
+  """
+  _seoMetaTags(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+  ): [Tag!]!
+  _status: ItemStatus!
+  _unpublishingScheduledAt: DateTime
+  _updatedAt: DateTime!
+  address: LatLonField
+  addressTitle: String
+  id: ItemId!
+  title: String
+}
+
+union MenuItemModelLinkField = ConcertRecord | PageRecord
+
+"""
+Block of type Menu item (menu_item)
+"""
+type MenuItemRecord implements RecordInterface {
+  _createdAt: DateTime!
+
+  """
+  Editing URL
+  """
+  _editingUrl: String
+  _firstPublishedAt: DateTime
+  _isValid: BooleanType!
+  _modelApiKey: String!
+  _publicationScheduledAt: DateTime
+  _publishedAt: DateTime
+
+  """
+  Generates SEO and Social card meta tags to be used in your frontend
+  """
+  _seoMetaTags(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+  ): [Tag!]!
+  _status: ItemStatus!
+  _unpublishingScheduledAt: DateTime
+  _updatedAt: DateTime!
+  id: ItemId!
+  label: String
+  link: MenuItemModelLinkField
+}
+
 scalar MetaTagAttributes
 
 enum MuxThumbnailFormatType {
@@ -1900,10 +2499,171 @@ input OrientationFilter {
   neq: UploadOrientation
 }
 
+union PageModelContentField = HeaderRecord | TextBlockRecord | TwoColumnRecord
+
+input PageModelFilter {
+  _createdAt: CreatedAtFilter
+  id: ItemIdFilter
+  _firstPublishedAt: PublishedAtFilter
+  _publicationScheduledAt: PublishedAtFilter
+  _unpublishingScheduledAt: PublishedAtFilter
+  _publishedAt: PublishedAtFilter
+  _status: StatusFilter
+  _updatedAt: UpdatedAtFilter
+  _isValid: BooleanFilter
+  seo: SeoFilter
+  slug: SlugFilter
+  title: StringFilter
+  OR: [PageModelFilter]
+  AND: [PageModelFilter]
+}
+
+enum PageModelOrderBy {
+  _createdAt_ASC
+  _createdAt_DESC
+  id_ASC
+  id_DESC
+  _firstPublishedAt_ASC
+  _firstPublishedAt_DESC
+  _publicationScheduledAt_ASC
+  _publicationScheduledAt_DESC
+  _unpublishingScheduledAt_ASC
+  _unpublishingScheduledAt_DESC
+  _publishedAt_ASC
+  _publishedAt_DESC
+  _status_ASC
+  _status_DESC
+  _updatedAt_ASC
+  _updatedAt_DESC
+  _isValid_ASC
+  _isValid_DESC
+  title_ASC
+  title_DESC
+}
+
+"""
+Record of type Pagina (page)
+"""
+type PageRecord implements RecordInterface {
+  _createdAt: DateTime!
+
+  """
+  Editing URL
+  """
+  _editingUrl: String
+  _firstPublishedAt: DateTime
+  _isValid: BooleanType!
+  _modelApiKey: String!
+  _publicationScheduledAt: DateTime
+  _publishedAt: DateTime
+
+  """
+  Generates SEO and Social card meta tags to be used in your frontend
+  """
+  _seoMetaTags(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+  ): [Tag!]!
+  _status: ItemStatus!
+  _unpublishingScheduledAt: DateTime
+  _updatedAt: DateTime!
+  content: [PageModelContentField!]!
+  id: ItemId!
+  seo: SeoField
+  slug: String
+  title: String
+}
+
+"""
+Specifies how to filter by publication datetime
+"""
+input PublishedAtFilter {
+  """
+  Filter records with a value that's strictly greater than the one specified. Seconds and milliseconds are truncated from the argument.
+  """
+  gt: DateTime
+
+  """
+  Filter records with a value that's less than the one specified. Seconds and milliseconds are truncated from the argument.
+  """
+  lt: DateTime
+
+  """
+  Filter records with a value that's greater than or equal to than the one specified. Seconds and milliseconds are truncated from the argument.
+  """
+  gte: DateTime
+
+  """
+  Filter records with a value that's less or equal than the one specified. Seconds and milliseconds are truncated from the argument.
+  """
+  lte: DateTime
+
+  """
+  Filter records with a value that's within the specified minute range. Seconds and milliseconds are truncated from the argument.
+  """
+  eq: DateTime
+
+  """
+  Filter records with a value that's outside the specified minute range. Seconds and milliseconds are truncated from the argument.
+  """
+  neq: DateTime
+
+  """
+  Filter records with the specified field defined (i.e. with any value) or not
+  """
+  exists: BooleanType
+}
+
 """
 The query root for this schema
 """
 type Query {
+  """
+  Returns meta information regarding a record collection
+  """
+  _allConcertsMeta(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+    filter: ConcertModelFilter
+  ): CollectionMetadata!
+
+  """
+  Returns meta information regarding a record collection
+  """
+  _allGeneralsMeta(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+    filter: GeneralModelFilter
+  ): CollectionMetadata!
+
+  """
+  Returns meta information regarding a record collection
+  """
+  _allLocationsMeta(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+    filter: LocationModelFilter
+  ): CollectionMetadata!
+
+  """
+  Returns meta information regarding a record collection
+  """
+  _allPagesMeta(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+    filter: PageModelFilter
+  ): CollectionMetadata!
+
   """
   Returns meta information regarding an assets collection
   """
@@ -1929,6 +2689,114 @@ type Query {
     """
     fallbackLocales: [SiteLocale!]
   ): Site!
+
+  """
+  Returns a collection of records
+  """
+  allConcerts(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+
+    """
+    If you want to fallback to a default translation when a translation has not been found
+    """
+    fallbackLocales: [SiteLocale!]
+
+    """
+    Skip the first results
+    """
+    skip: IntType
+
+    """
+    Limit the number of results
+    """
+    first: IntType = 20
+    filter: ConcertModelFilter
+    orderBy: [ConcertModelOrderBy] = [_updatedAt_DESC]
+  ): [ConcertRecord!]!
+
+  """
+  Returns a collection of records
+  """
+  allGenerals(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+
+    """
+    If you want to fallback to a default translation when a translation has not been found
+    """
+    fallbackLocales: [SiteLocale!]
+
+    """
+    Skip the first results
+    """
+    skip: IntType
+
+    """
+    Limit the number of results
+    """
+    first: IntType = 20
+    filter: GeneralModelFilter
+    orderBy: [GeneralModelOrderBy] = [_updatedAt_DESC]
+  ): [GeneralRecord!]!
+
+  """
+  Returns a collection of records
+  """
+  allLocations(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+
+    """
+    If you want to fallback to a default translation when a translation has not been found
+    """
+    fallbackLocales: [SiteLocale!]
+
+    """
+    Skip the first results
+    """
+    skip: IntType
+
+    """
+    Limit the number of results
+    """
+    first: IntType = 20
+    filter: LocationModelFilter
+    orderBy: [LocationModelOrderBy] = [_updatedAt_DESC]
+  ): [LocationRecord!]!
+
+  """
+  Returns a collection of records
+  """
+  allPages(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+
+    """
+    If you want to fallback to a default translation when a translation has not been found
+    """
+    fallbackLocales: [SiteLocale!]
+
+    """
+    Skip the first results
+    """
+    skip: IntType
+
+    """
+    Limit the number of results
+    """
+    first: IntType = 20
+    filter: PageModelFilter
+    orderBy: [PageModelOrderBy] = [_updatedAt_DESC]
+  ): [PageRecord!]!
 
   """
   Returns a collection of assets
@@ -1958,6 +2826,74 @@ type Query {
   ): [FileField!]!
 
   """
+  Returns a specific record
+  """
+  concert(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+
+    """
+    If you want to fallback to a default translation when a translation has not been found
+    """
+    fallbackLocales: [SiteLocale!]
+    filter: ConcertModelFilter
+    orderBy: [ConcertModelOrderBy] = [_updatedAt_DESC]
+  ): ConcertRecord
+
+  """
+  Returns a specific record
+  """
+  general(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+
+    """
+    If you want to fallback to a default translation when a translation has not been found
+    """
+    fallbackLocales: [SiteLocale!]
+    filter: GeneralModelFilter
+    orderBy: [GeneralModelOrderBy] = [_updatedAt_DESC]
+  ): GeneralRecord
+
+  """
+  Returns a specific record
+  """
+  location(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+
+    """
+    If you want to fallback to a default translation when a translation has not been found
+    """
+    fallbackLocales: [SiteLocale!]
+    filter: LocationModelFilter
+    orderBy: [LocationModelOrderBy] = [_updatedAt_DESC]
+  ): LocationRecord
+
+  """
+  Returns a specific record
+  """
+  page(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+
+    """
+    If you want to fallback to a default translation when a translation has not been found
+    """
+    fallbackLocales: [SiteLocale!]
+    filter: PageModelFilter
+    orderBy: [PageModelOrderBy] = [_updatedAt_DESC]
+  ): PageRecord
+
+  """
   Returns a specific asset
   """
   upload(
@@ -1973,6 +2909,34 @@ type Query {
     filter: UploadFilter
     orderBy: [UploadOrderBy] = [_createdAt_DESC]
   ): FileField
+}
+
+interface RecordInterface {
+  _createdAt: DateTime!
+
+  """
+  Editing URL
+  """
+  _editingUrl: String
+  _firstPublishedAt: DateTime
+  _isValid: BooleanType!
+  _modelApiKey: String!
+  _publicationScheduledAt: DateTime
+  _publishedAt: DateTime
+
+  """
+  Generates SEO and Social card meta tags to be used in your frontend
+  """
+  _seoMetaTags(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+  ): [Tag!]!
+  _status: ItemStatus!
+  _unpublishingScheduledAt: DateTime
+  _updatedAt: DateTime!
+  id: ItemId!
 }
 
 """
@@ -2029,6 +2993,16 @@ type SeoField {
   twitterCard: String
 }
 
+"""
+Specifies how to filter SEO meta tags fields
+"""
+input SeoFilter {
+  """
+  Filter records with the specified field defined (i.e. with any value) or not
+  """
+  exists: BooleanType
+}
+
 type Site {
   favicon: FileField
   faviconMetaTags(
@@ -2056,16 +3030,240 @@ enum SiteLocale {
   nl
 }
 
+"""
+Specifies how to filter Slug fields
+"""
+input SlugFilter {
+  """
+  Search for records with an exact match
+  """
+  eq: String
+
+  """
+  Exclude records with an exact match
+  """
+  neq: String
+
+  """
+  Filter records that have one of the specified slugs
+  """
+  in: [String]
+
+  """
+  Filter records that do have one of the specified slugs
+  """
+  notIn: [String]
+}
+
+"""
+Specifies how to filter by status
+"""
+input StatusFilter {
+  """
+  Search the record with the specified status
+  """
+  eq: ItemStatus
+
+  """
+  Exclude the record with the specified status
+  """
+  neq: ItemStatus
+
+  """
+  Search records with the specified statuses
+  """
+  in: [ItemStatus]
+
+  """
+  Search records without the specified statuses
+  """
+  notIn: [ItemStatus]
+}
+
+"""
+Specifies how to filter Single-line string fields
+"""
+input StringFilter {
+  """
+  Filter records based on a regular expression
+  """
+  matches: StringMatchesFilter
+
+  """
+  Exclude records based on a regular expression
+  """
+  notMatches: StringMatchesFilter
+
+  """
+  Filter records with the specified field set as blank (null or empty string)
+  """
+  isBlank: BooleanType
+
+  """
+  Filter records with the specified field present (neither null, nor empty string)
+  """
+  isPresent: BooleanType
+
+  """
+  Search for records with an exact match
+  """
+  eq: String
+
+  """
+  Exclude records with an exact match
+  """
+  neq: String
+
+  """
+  Filter records that equal one of the specified values
+  """
+  in: [String]
+
+  """
+  Filter records that do not equal one of the specified values
+  """
+  notIn: [String]
+
+  """
+  Filter records with the specified field defined (i.e. with any value) or not [DEPRECATED]
+  """
+  exists: BooleanType
+}
+
 input StringMatchesFilter {
   pattern: String!
   caseSensitive: BooleanType = false
   regexp: BooleanType = true
 }
 
+"""
+Block of type Submenu item (submenu_item)
+"""
+type SubmenuItemRecord implements RecordInterface {
+  _createdAt: DateTime!
+
+  """
+  Editing URL
+  """
+  _editingUrl: String
+  _firstPublishedAt: DateTime
+  _isValid: BooleanType!
+  _modelApiKey: String!
+  _publicationScheduledAt: DateTime
+  _publishedAt: DateTime
+
+  """
+  Generates SEO and Social card meta tags to be used in your frontend
+  """
+  _seoMetaTags(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+  ): [Tag!]!
+  _status: ItemStatus!
+  _unpublishingScheduledAt: DateTime
+  _updatedAt: DateTime!
+  id: ItemId!
+  label: String
+  menu: [MenuItemRecord!]!
+}
+
 type Tag {
   attributes: MetaTagAttributes
   content: String
   tag: String!
+}
+
+type TextBlockModelContentField {
+  blocks: [String!]!
+  links: [String!]!
+  value: JsonField!
+}
+
+"""
+Block of type Tekst blok (text_block)
+"""
+type TextBlockRecord implements RecordInterface {
+  _createdAt: DateTime!
+
+  """
+  Editing URL
+  """
+  _editingUrl: String
+  _firstPublishedAt: DateTime
+  _isValid: BooleanType!
+  _modelApiKey: String!
+  _publicationScheduledAt: DateTime
+  _publishedAt: DateTime
+
+  """
+  Generates SEO and Social card meta tags to be used in your frontend
+  """
+  _seoMetaTags(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+  ): [Tag!]!
+  _status: ItemStatus!
+  _unpublishingScheduledAt: DateTime
+  _updatedAt: DateTime!
+  content: TextBlockModelContentField
+  id: ItemId!
+}
+
+type TwoColumnModelLeftContentField {
+  blocks: [String!]!
+  links: [String!]!
+  value: JsonField!
+}
+
+union TwoColumnModelRightContentBlocksField =
+    CallToActionRecord
+  | DocumentRecord
+  | ImageRecord
+  | VideoRecord
+
+type TwoColumnModelRightContentField {
+  blocks: [TwoColumnModelRightContentBlocksField!]!
+  links: [TwoColumnModelRightContentLinksField!]!
+  value: JsonField!
+}
+
+union TwoColumnModelRightContentLinksField = ConcertRecord | PageRecord
+
+"""
+Block of type Twee kolommen tekst blok (two_column)
+"""
+type TwoColumnRecord implements RecordInterface {
+  _createdAt: DateTime!
+
+  """
+  Editing URL
+  """
+  _editingUrl: String
+  _firstPublishedAt: DateTime
+  _isValid: BooleanType!
+  _modelApiKey: String!
+  _publicationScheduledAt: DateTime
+  _publishedAt: DateTime
+
+  """
+  Generates SEO and Social card meta tags to be used in your frontend
+  """
+  _seoMetaTags(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+  ): [Tag!]!
+  _status: ItemStatus!
+  _unpublishingScheduledAt: DateTime
+  _updatedAt: DateTime!
+  id: ItemId!
+  leftContent: TwoColumnModelLeftContentField
+  rightContent: TwoColumnModelRightContentField
 }
 
 """
@@ -2091,6 +3289,46 @@ input TypeFilter {
   Search uploads without the specified types
   """
   notIn: [UploadType]
+}
+
+"""
+Specifies how to filter by update datetime
+"""
+input UpdatedAtFilter {
+  """
+  Filter records with a value that's strictly greater than the one specified. Seconds and milliseconds are truncated from the argument.
+  """
+  gt: DateTime
+
+  """
+  Filter records with a value that's less than the one specified. Seconds and milliseconds are truncated from the argument.
+  """
+  lt: DateTime
+
+  """
+  Filter records with a value that's greater than or equal to than the one specified. Seconds and milliseconds are truncated from the argument.
+  """
+  gte: DateTime
+
+  """
+  Filter records with a value that's less or equal than the one specified. Seconds and milliseconds are truncated from the argument.
+  """
+  lte: DateTime
+
+  """
+  Filter records with a value that's within the specified minute range. Seconds and milliseconds are truncated from the argument.
+  """
+  eq: DateTime
+
+  """
+  Filter records with a value that's outside the specified minute range. Seconds and milliseconds are truncated from the argument.
+  """
+  neq: DateTime
+
+  """
+  Filter records with the specified field defined (i.e. with any value) or not
+  """
+  exists: BooleanType
 }
 
 """
@@ -2748,8 +3986,52 @@ input UploadWidthFilter {
   neq: IntType
 }
 
+type VideoField {
+  height: IntType!
+  provider: String!
+  providerUid: String!
+  thumbnailUrl: String!
+  title: String!
+  url: String!
+  width: IntType!
+}
+
 enum VideoMp4Res {
   low
   medium
   high
+}
+
+"""
+Block of type Video (video)
+"""
+type VideoRecord implements RecordInterface {
+  _createdAt: DateTime!
+
+  """
+  Editing URL
+  """
+  _editingUrl: String
+  _firstPublishedAt: DateTime
+  _isValid: BooleanType!
+  _modelApiKey: String!
+  _publicationScheduledAt: DateTime
+  _publishedAt: DateTime
+
+  """
+  Generates SEO and Social card meta tags to be used in your frontend
+  """
+  _seoMetaTags(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+  ): [Tag!]!
+  _status: ItemStatus!
+  _unpublishingScheduledAt: DateTime
+  _updatedAt: DateTime!
+  cloudinaryThumbnail: JsonField
+  id: ItemId!
+  media: VideoField
+  title: String
 }
