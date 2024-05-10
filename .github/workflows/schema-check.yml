@@ -42,4 +42,4 @@ jobs:
       - name: Publishing Lundi-Bleu-Dato-CMS schema
         if: ${{ env.APOLLO_KEY != '' }}
         run: |
-          rover subgraph publish vandiessen-mono@current --name datocms --schema ./packages/graphql/src/generated/datocms.graphql
+          rover subgraph publish vandiessen-mono@current --name Lundi-Bleu-Dato-CMS --schema ./packages/graphql/src/generated/datocms.graphql
