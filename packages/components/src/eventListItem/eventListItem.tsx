@@ -26,7 +26,6 @@ export const EventListItem = ({
   isLast,
   showLink = true,
   showImage = true,
-  showProgram = true,
   title,
 }: Props) => {
   return (
@@ -52,26 +51,9 @@ export const EventListItem = ({
           </span>
         )}
       </h2>
-      {(data.locations.length > 0 ||
-        data.image?.url ||
-        data.program.length > 0) && (
+      {data.locations.length && (
         <div className={styles.content}>
           <div>
-            {showProgram && data.program.length > 0 && (
-              <ul className={styles.program}>
-                {data.program.map((item) => {
-                  if (!item?.id) return null
-                  return (
-                    <li key={item.id}>
-                      <span className={styles.programTitle}>
-                        {item.composer}
-                      </span>{' '}
-                      — {item.title}
-                    </li>
-                  )
-                })}
-              </ul>
-            )}
             {data.locations?.length > 0 ? (
               <ul className={styles.locations}>
                 {data.locations.map((item) => {

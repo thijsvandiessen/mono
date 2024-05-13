@@ -11,8 +11,7 @@
     "start:lundi": "npm run start --workspace=apps/lundi-bleu",
     "lint": "oxlint -D correctness -D perf -A debugger -A eqeqeq -c ./.eslintrc.json && npm run lint --workspaces",
     "prepare": "husky install",
-    "download-schema": "npm run download-schema --workspace=packages/graphql",
-    "codegen": "npm run codegen --workspace=packages/graphql",
+    "codegen": "npm run download-schema --workspace=packages/graphql && npm run codegen --workspace=packages/graphql",
     "turbo": "turbo lint && turbo test && turbo build",
     "test": "npm run test --workspaces"
   },

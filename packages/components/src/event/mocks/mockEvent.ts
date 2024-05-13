@@ -10,8 +10,6 @@ export const mockEvent: Event = {
     url: 'https://creaorkest.nl/some-image.png',
   },
   locations: [{ startTime: '2023-09-01T13:32:36+01:00', id: 'test id' }],
-  persons: [],
   url: 'some-slug',
   content: [],
-  program: [],
 }

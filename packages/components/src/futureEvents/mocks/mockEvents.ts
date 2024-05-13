@@ -5,8 +5,6 @@ export const mockEvent: Event = {
   title: 'title',
   image: undefined,
   locations: [],
-  persons: [],
-  program: [],
   url: '/some-slug',
   content: [],
 }

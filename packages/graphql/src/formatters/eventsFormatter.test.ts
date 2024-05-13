@@ -23,9 +23,7 @@ describe('eventsFormatter', () => {
               },
             },
           ],
-          persons: [{ id: 'some-id' }],
           content: [],
-          program: [],
         },
       ])
     ).toEqual([
@@ -45,8 +43,6 @@ describe('eventsFormatter', () => {
         title: 'required title',
         url: '/concerten/required-slug',
         content: [],
-        persons: [{ id: 'some-id', name: '', description: '' }],
-        program: [],
       },
     ])
   })

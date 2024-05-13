@@ -22,23 +22,6 @@ export const EventPage = async ({ slug }: Props) => {
       <header className={classNames(styles.header, 'with-background')}>
         <div className={classNames(styles.titleContainer, 'content-layout')}>
           <h2>{data.title}</h2>
-
-          {data.program.length > 0 && (
-            <ul className={styles.program}>
-              {data.program.map((item) => {
-                if (!item?.id) return null
-                return (
-                  <li
-                    key={item.id}
-                    className={classNames(styles.programItem, 'text-large')}
-                  >
-                    <span className={styles.programTitle}>{item.composer}</span>{' '}
-                    — {item.title}
-                  </li>
-                )
-              })}
-            </ul>
-          )}
         </div>
       </header>
       <div
@@ -59,24 +42,6 @@ export const EventPage = async ({ slug }: Props) => {
                   height={data.image.height ?? 100}
                 />
               </div>
-            )}
-
-            {data.persons.length > 0 && (
-              <ul className={styles.persons}>
-                {data.persons.map((person) => {
-                  if (!person?.id) return null
-                  return (
-                    <li key={person.id} className={styles.person}>
-                      <p
-                        className={classNames(styles.personTitle, 'text-small')}
-                      >
-                        {person.description}
-                      </p>
-                      <p className="h5">{person.name}</p>
-                    </li>
-                  )
-                })}
-              </ul>
             )}
           </div>
         </aside>

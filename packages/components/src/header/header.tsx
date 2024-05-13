@@ -14,7 +14,7 @@ interface Props {
   tag?: ElementType
   title?: string
   body?: HeaderFragment['body']
-  cover?: HeaderFragment['cover']
+  // cover?: HeaderFragment['cover']
 }
 
 export const Header = ({
@@ -22,12 +22,12 @@ export const Header = ({
   className,
   tag = 'header',
   body,
-  cover,
+  // cover,
 }: Props) => {
   const HeaderTag = tag
 
   const asset = formatCloudinaryImage(
-    isOfTypeCloudinaryAsset(cover?.asset) ? cover?.asset : undefined
+    isOfTypeCloudinaryAsset(undefined) ? undefined : undefined // TODO
   )
 
   return (
@@ -53,7 +53,7 @@ export const Header = ({
         <div className={classNames(styles.headerImageWrapper)}>
           <Image
             className={classNames(styles.headerImage)}
-            alt={cover?.title || asset.title || ''}
+            alt={asset.title || ''}
             src={asset.url}
             width={asset.width || 100}
             height={asset.height || 100}

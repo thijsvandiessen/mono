@@ -6,6 +6,4 @@ export const mockEvent: Event = {
   url: '/concerten/concert-1',
   image: undefined,
   locations: [],
-  persons: [],
-  program: [],
 }

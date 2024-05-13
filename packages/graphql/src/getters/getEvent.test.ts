@@ -30,7 +30,6 @@ describe('getEvent', () => {
           title: 'another concert',
           slug: 'another-concert',
           locations: [],
-          program: [],
           poster: {
             id: '72577339',
             alt: null,
@@ -62,8 +61,6 @@ describe('getEvent', () => {
       id: '186234305',
       image: undefined,
       locations: [],
-      persons: [],
-      program: [],
       title: 'another concert',
       url: '/concerten/another-concert',
     })

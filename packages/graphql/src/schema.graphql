@@ -120,13 +120,14 @@ input ConcertModelFilter {
   _createdAt: CreatedAtFilter
   id: ItemIdFilter
   _firstPublishedAt: PublishedAtFilter
+  position: PositionFilter
   _publicationScheduledAt: PublishedAtFilter
   _unpublishingScheduledAt: PublishedAtFilter
   _publishedAt: PublishedAtFilter
   _status: StatusFilter
   _updatedAt: UpdatedAtFilter
   _isValid: BooleanFilter
-  cloudinaryPoster: JsonFilter
+  poster: JsonFilter
   seo: SeoFilter
   slug: SlugFilter
   title: StringFilter
@@ -141,6 +142,8 @@ enum ConcertModelOrderBy {
   id_DESC
   _firstPublishedAt_ASC
   _firstPublishedAt_DESC
+  position_ASC
+  position_DESC
   _publicationScheduledAt_ASC
   _publicationScheduledAt_DESC
   _unpublishingScheduledAt_ASC
@@ -185,10 +188,11 @@ type ConcertRecord implements RecordInterface {
   _status: ItemStatus!
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
-  cloudinaryPoster: JsonField
   content: [ConcertModelContentField!]!
   id: ItemId!
   locations: [LocationItemRecord!]!
+  position: IntType
+  poster: JsonField
   seo: SeoField
   slug: String
   title: String
@@ -269,7 +273,7 @@ type DocumentRecord implements RecordInterface {
   _status: ItemStatus!
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
-  cloudinaryDocument: JsonField
+  document: JsonField
   id: ItemId!
   title: String
 }
@@ -613,7 +617,7 @@ type HeaderRecord implements RecordInterface {
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
   body: HeaderModelBodyField
-  cloudinaryCover: JsonField
+  cover: JsonField
   id: ItemId!
 }
 
@@ -645,8 +649,8 @@ type ImageRecord implements RecordInterface {
   _status: ItemStatus!
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
-  cloudinaryImage: JsonField
   id: ItemId!
+  image: JsonField
 }
 
 input ImgixParams {
@@ -2539,6 +2543,41 @@ type PageRecord implements RecordInterface {
 }
 
 """
+Specifies how to filter by position (sorted and tree-like collections)
+"""
+input PositionFilter {
+  """
+  Filter records with a value that's strictly greater than the one specified
+  """
+  gt: IntType
+
+  """
+  Filter records with a value that's less than the one specified
+  """
+  lt: IntType
+
+  """
+  Filter records with a value that's greater than or equal to the one specified
+  """
+  gte: IntType
+
+  """
+  Filter records with a value that's less or equal than the one specified
+  """
+  lte: IntType
+
+  """
+  Search for records with an exact match
+  """
+  eq: IntType
+
+  """
+  Exclude records with an exact match
+  """
+  neq: IntType
+}
+
+"""
 Specifies how to filter by publication datetime
 """
 input PublishedAtFilter {
@@ -2665,7 +2704,7 @@ type Query {
     """
     first: IntType = 20
     filter: ConcertModelFilter
-    orderBy: [ConcertModelOrderBy] = [_updatedAt_DESC]
+    orderBy: [ConcertModelOrderBy] = [position_ASC]
   ): [ConcertRecord!]!
 
   """
@@ -2763,7 +2802,7 @@ type Query {
     """
     fallbackLocales: [SiteLocale!]
     filter: ConcertModelFilter
-    orderBy: [ConcertModelOrderBy] = [_updatedAt_DESC]
+    orderBy: [ConcertModelOrderBy] = [position_ASC]
   ): ConcertRecord
 
   """
@@ -3097,11 +3136,19 @@ type Tag {
   tag: String!
 }
 
+union TextBlockModelContentBlocksField =
+    CallToActionRecord
+  | DocumentRecord
+  | ImageRecord
+  | VideoRecord
+
 type TextBlockModelContentField {
-  blocks: [String!]!
-  links: [String!]!
+  blocks: [TextBlockModelContentBlocksField!]!
+  links: [TextBlockModelContentLinksField!]!
   value: JsonField!
 }
+
+union TextBlockModelContentLinksField = ConcertRecord | PageRecord
 
 """
 Block of type Tekst blok (text_block)
@@ -3135,11 +3182,19 @@ type TextBlockRecord implements RecordInterface {
   id: ItemId!
 }
 
+union TwoColumnModelLeftContentBlocksField =
+    CallToActionRecord
+  | DocumentRecord
+  | ImageRecord
+  | VideoRecord
+
 type TwoColumnModelLeftContentField {
-  blocks: [String!]!
-  links: [String!]!
+  blocks: [TwoColumnModelLeftContentBlocksField!]!
+  links: [TwoColumnModelLeftContentLinksField!]!
   value: JsonField!
 }
+
+union TwoColumnModelLeftContentLinksField = ConcertRecord | PageRecord
 
 union TwoColumnModelRightContentBlocksField =
     CallToActionRecord
@@ -3952,8 +4007,8 @@ type VideoRecord implements RecordInterface {
   _status: ItemStatus!
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
-  cloudinaryThumbnail: JsonField
   id: ItemId!
   media: VideoField
+  thumbnail: JsonField
   title: String
 }

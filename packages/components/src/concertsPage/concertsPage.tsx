@@ -50,7 +50,6 @@ export const ConcertsPage = async () => {
       {header && (
         <Header
           body={header.body}
-          cover={header.cover}
           title={pageData.title || ''}
         />
       )}

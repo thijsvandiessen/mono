@@ -35,8 +35,6 @@ describe('Concert component', () => {
         title: 'title',
         image: undefined,
         locations: [],
-        persons: [],
-        program: [],
         url: '/some-slug',
         content: [],
       },

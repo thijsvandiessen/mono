@@ -8,7 +8,7 @@ import type {
   PageLinkFragment,
 } from '@mono/graphql/src/generated/graphql'
 
-const URL = 'https://creaorkest.nl'
+const URL = 'https://lundi-bleu.nl'
 
 export default async function sitemap() {
   const pagesMeta = await getPagesMeta()
