@@ -2,7 +2,7 @@ import { Navigation } from './navigation'
 import React from 'react'
 import { getGeneralInfo } from '@mono/graphql/src/getters/getGeneralInfo'
 import { mockMenuData } from './mocks/mockMenuData'
-import { resolvedComponent } from '@mono/utils/src/testHelpers/resolvedComponent'
+import { resolvedComponent } from '@mono/utils'
 import { render, screen } from '@testing-library/react'
 
 jest.mock('@mono/graphql/src/getters/getGeneralInfo', () => {

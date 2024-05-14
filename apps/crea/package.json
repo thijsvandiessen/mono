@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@mono/components": "1.0.0",
+    "@mono/utils": "1.0.0",
     "@mono/graphql": "1.0.0",
     "@react-google-maps/api": "2.19.3",
     "@urql/core": "4.2.2",

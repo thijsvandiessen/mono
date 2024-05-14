@@ -2,7 +2,7 @@ import React from 'react'
 import { EventPage } from './eventPage'
 import type { Props } from './eventPage'
 import { getEventPage } from '@mono/graphql/src/getters/getEventPage'
-import { resolvedComponent } from '@mono/utils/src/testHelpers/resolvedComponent'
+import { resolvedComponent } from '@mono/utils'
 import { render } from '@testing-library/react'
 
 jest.mock('../navigation', () => {

@@ -4,6 +4,7 @@ import { concertLink } from './concertLink'
 import { identifiable } from './identifiable'
 import { pageLink } from './pageLink'
 import { video } from './video'
+import { document, image } from './image'
 
 export const textBlockContent = gql`
   fragment textBlockContent on TextBlockModelContentField {
@@ -20,6 +21,12 @@ export const textBlockContent = gql`
       ... on VideoRecord {
         ...video
       }
+      ... on DocumentRecord {
+        ...document
+      }
+      ... on ImageRecord {
+        ...image
+      }
       ... on CallToActionRecord {
         ...callToAction
       }
@@ -27,6 +34,8 @@ export const textBlockContent = gql`
   }
   ${concertLink}
   ${pageLink}
+  ${document}
+  ${image}
   ${video}
   ${callToAction}
 `
@@ -46,6 +55,12 @@ export const leftContent = gql`
       ... on VideoRecord {
         ...video
       }
+      ... on DocumentRecord {
+        ...document
+      }
+      ... on ImageRecord {
+        ...image
+      }
       ... on CallToActionRecord {
         ...callToAction
       }
@@ -53,6 +68,8 @@ export const leftContent = gql`
   }
   ${concertLink}
   ${pageLink}
+  ${document}
+  ${image}
   ${video}
   ${callToAction}
 `
@@ -72,6 +89,12 @@ export const rightContent = gql`
       ... on VideoRecord {
         ...video
       }
+      ... on DocumentRecord {
+        ...document
+      }
+      ... on ImageRecord {
+        ...image
+      }
       ... on CallToActionRecord {
         ...callToAction
       }
@@ -79,6 +102,8 @@ export const rightContent = gql`
   }
   ${concertLink}
   ${pageLink}
+  ${document}
+  ${image}
   ${video}
   ${callToAction}
 `

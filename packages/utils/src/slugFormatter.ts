@@ -1,6 +1,6 @@
 import { isValidUrl } from './isValidUrl'
 
-interface WithPrefixProps {
+export interface WithPrefixProps {
   slug: string
   prefix?: string
 }

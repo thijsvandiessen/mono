@@ -1,0 +1,19 @@
+// vite.config.js
+import { defineConfig } from "file:///Users/thijs/myProjects/mono/node_modules/vite/dist/node/index.js";
+import dts from "file:///Users/thijs/myProjects/mono/node_modules/vite-plugin-dts/dist/index.mjs";
+var vite_config_default = defineConfig({
+  build: {
+    lib: {
+      // Could also be a dictionary or array of multiple entry points
+      entry: "src",
+      name: "utils",
+      // the proper extensions will be added
+      fileName: "utils"
+    }
+  },
+  plugins: [dts({ outDir: "dist", rollupTypes: true })]
+});
+export {
+  vite_config_default as default
+};
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsidml0ZS5jb25maWcuanMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbImNvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9kaXJuYW1lID0gXCIvVXNlcnMvdGhpanMvbXlQcm9qZWN0cy9tb25vL3BhY2thZ2VzL3V0aWxzXCI7Y29uc3QgX192aXRlX2luamVjdGVkX29yaWdpbmFsX2ZpbGVuYW1lID0gXCIvVXNlcnMvdGhpanMvbXlQcm9qZWN0cy9tb25vL3BhY2thZ2VzL3V0aWxzL3ZpdGUuY29uZmlnLmpzXCI7Y29uc3QgX192aXRlX2luamVjdGVkX29yaWdpbmFsX2ltcG9ydF9tZXRhX3VybCA9IFwiZmlsZTovLy9Vc2Vycy90aGlqcy9teVByb2plY3RzL21vbm8vcGFja2FnZXMvdXRpbHMvdml0ZS5jb25maWcuanNcIjtpbXBvcnQgeyBkZWZpbmVDb25maWcgfSBmcm9tICd2aXRlJ1xuaW1wb3J0IGR0cyBmcm9tICd2aXRlLXBsdWdpbi1kdHMnXG5cbmV4cG9ydCBkZWZhdWx0IGRlZmluZUNvbmZpZyh7XG4gIGJ1aWxkOiB7XG4gICAgbGliOiB7XG4gICAgICAvLyBDb3VsZCBhbHNvIGJlIGEgZGljdGlvbmFyeSBvciBhcnJheSBvZiBtdWx0aXBsZSBlbnRyeSBwb2ludHNcbiAgICAgIGVudHJ5OiAnc3JjJyxcbiAgICAgIG5hbWU6ICd1dGlscycsXG4gICAgICAvLyB0aGUgcHJvcGVyIGV4dGVuc2lvbnMgd2lsbCBiZSBhZGRlZFxuICAgICAgZmlsZU5hbWU6ICd1dGlscycsXG4gICAgfSxcbiAgfSxcbiAgcGx1Z2luczogW2R0cyh7IG91dERpcjogJ2Rpc3QnLCByb2xsdXBUeXBlczogdHJ1ZSB9KV0sXG59KVxuIl0sCiAgIm1hcHBpbmdzIjogIjtBQUFtVCxTQUFTLG9CQUFvQjtBQUNoVixPQUFPLFNBQVM7QUFFaEIsSUFBTyxzQkFBUSxhQUFhO0FBQUEsRUFDMUIsT0FBTztBQUFBLElBQ0wsS0FBSztBQUFBO0FBQUEsTUFFSCxPQUFPO0FBQUEsTUFDUCxNQUFNO0FBQUE7QUFBQSxNQUVOLFVBQVU7QUFBQSxJQUNaO0FBQUEsRUFDRjtBQUFBLEVBQ0EsU0FBUyxDQUFDLElBQUksRUFBRSxRQUFRLFFBQVEsYUFBYSxLQUFLLENBQUMsQ0FBQztBQUN0RCxDQUFDOyIsCiAgIm5hbWVzIjogW10KfQo=

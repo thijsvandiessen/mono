@@ -10,6 +10,7 @@ export const concertDetail: TypedDocumentNode = gql`
     ...identifiable
     title
     slug
+    poster
     locations {
       ...locationItem
     }

@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import classNames from 'classnames'
-import { slugFormatter } from '@mono/utils/src/slugFormatter'
+import { slugFormatter } from '@mono/utils'
 import styles from './styles.module.scss'
 
 export interface NavigationItemProps {

@@ -1,7 +1,7 @@
 import type { ConcertDetailFragment } from '../generated/graphql'
 import type { Event } from '../types/event'
 import { locationItemFormatter } from './locationItemFormatter'
-import { slugFormatter } from '@mono/utils/src/slugFormatter'
+import { slugFormatter } from '@mono/utils'
 import { isOfTypeCloudinaryAsset } from '../types/image'
 import { formatCloudinaryImage } from './formatCloudinaryImage'
 
@@ -14,7 +14,7 @@ export const eventFormatter = (
     id: event.id,
     title: event.title,
     image: formatCloudinaryImage(
-      isOfTypeCloudinaryAsset(event) ? event : undefined
+      isOfTypeCloudinaryAsset(event.poster) ? event.poster : undefined
     ),
     locations: event.locations
       .map((location) => locationItemFormatter(location))

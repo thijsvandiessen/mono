@@ -8,6 +8,7 @@ export const header = gql`
     body {
       ...headerBody
     }
+    cover
   }
   ${headerBody}
   ${identifiable}

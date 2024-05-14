@@ -2,7 +2,7 @@ import React from 'react'
 import { Location } from './location'
 import type { Props } from './location'
 import { getLocation } from '@mono/graphql/src/getters/getLocation'
-import { resolvedComponent } from '@mono/utils/src/testHelpers/resolvedComponent'
+import { resolvedComponent } from '@mono/utils'
 import { render, screen } from '@testing-library/react'
 
 jest.mock('@mono/graphql/src/getters/getLocation', () => {

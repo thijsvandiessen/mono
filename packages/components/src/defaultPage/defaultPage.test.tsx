@@ -2,7 +2,7 @@ import React from 'react'
 import { DefaultPage } from './defaultPage'
 import type { Props } from './defaultPage'
 import { getPage } from '@mono/graphql/src/getters/getPage'
-import { resolvedComponent } from '@mono/utils/src/testHelpers/resolvedComponent'
+import { resolvedComponent } from '@mono/utils'
 import { render } from '@testing-library/react'
 
 jest.mock('../navigation', () => {

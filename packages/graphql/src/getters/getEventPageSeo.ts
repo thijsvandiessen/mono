@@ -1,6 +1,6 @@
 import { client } from '../gqlClient'
 import { metadataFormatter } from '../formatters/metadataFormatter'
-import { slugFormatter } from '@mono/utils/src/slugFormatter'
+import { slugFormatter } from '@mono/utils'
 import {
   GetEventSeoDocument,
   type GetEventSeoQuery,

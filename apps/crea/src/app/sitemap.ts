@@ -2,7 +2,7 @@ import { getEventUrls } from '@mono/graphql/src/getters/getEventUrls'
 import { getEventsMeta } from '@mono/graphql/src/getters/getEventsMeta'
 import { getPages } from '@mono/graphql/src/getters/getPages'
 import { getPagesMeta } from '@mono/graphql/src/getters/getPagesMeta'
-import { slugFormatter } from '@mono/utils/src/slugFormatter'
+import { slugFormatter } from '@mono/utils'
 import type {
   EventLinkFragment,
   PageLinkFragment,

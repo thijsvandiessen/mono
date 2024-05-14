@@ -5,6 +5,7 @@ import React from 'react'
 import { getEvents } from '@mono/graphql/src/getters/getEvents'
 import { useEventsMeta } from '@mono/hooks/src/useEventsMeta'
 import { useIntersectionObserver } from '@mono/hooks/src/useIntersectionObserver'
+import { ConcertModelOrderBy } from '@mono/graphql/src/generated/graphql'
 
 export interface Props {
   initialSkip: number
@@ -30,7 +31,7 @@ export const LoadMoreEvents = ({ initialSkip }: Props) => {
     if (skip > numberOfEvents) return
     setLoading(true)
     // TODO: abort signal to stop fetching
-    getEvents({ skip, first: interval })
+    getEvents({ skip, first: interval, order: [ConcertModelOrderBy.PositionAsc] })
       .then(({ data }) => {
         if (!data) return
         setEvents((prev) => [...prev, ...data])

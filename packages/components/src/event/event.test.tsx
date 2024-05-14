@@ -3,7 +3,7 @@ import { Event } from './event'
 import type { Props } from './event'
 import { getEvent } from '@mono/graphql/src/getters/getEvent'
 import { mockEvent } from './mocks/mockEvent'
-import { resolvedComponent } from '@mono/utils/src/testHelpers/resolvedComponent'
+import { resolvedComponent } from '@mono/utils'
 import { render, screen } from '@testing-library/react'
 
 jest.mock('../location/location', () => {

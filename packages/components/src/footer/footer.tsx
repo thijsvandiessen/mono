@@ -3,7 +3,7 @@ import Link from 'next/link'
 import classNames from 'classnames'
 import { getGeneralInfo } from '@mono/graphql/src/getters/getGeneralInfo'
 import { getSiteMetadata } from '@mono/graphql/src/getters/getSiteMetadata'
-import { slugFormatter } from '@mono/utils/src/slugFormatter'
+import { slugFormatter } from '@mono/utils'
 import styles from './styles.module.scss'
 
 export const Footer = async () => {

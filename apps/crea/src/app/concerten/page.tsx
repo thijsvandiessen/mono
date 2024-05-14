@@ -2,7 +2,7 @@ import React from 'react'
 import type { Metadata, Viewport } from 'next'
 import { getPageSeo } from '@mono/graphql/src/getters/getPageSeo'
 import { ConcertsPage } from '@mono/components/src/concertsPage'
-import { viewport } from '@mono/utils/src/viewport'
+import { viewport } from '@mono/utils'
 
 const pageSlug = 'concerten'
 export async function generateMetadata(): Promise<Metadata> {

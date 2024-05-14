@@ -8,10 +8,11 @@ import { getEvents } from '@mono/graphql/src/getters/getEvents'
 import { getPage } from '@mono/graphql/src/getters/getPage'
 
 import styles from './styles.module.scss'
+import { ConcertModelOrderBy } from '@mono/graphql/src/generated/graphql'
 
 export const ConcertsPage = async () => {
   const first = 2
-  const { data: eventData } = await getEvents({ skip: 0, first })
+  const { data: eventData } = await getEvents({ skip: 0, first, order: ConcertModelOrderBy.PositionAsc })
   const { data: pageData } = await getPage({ slug: 'concerten' })
 
   const events = (
@@ -50,6 +51,7 @@ export const ConcertsPage = async () => {
       {header && (
         <Header
           body={header.body}
+          cover={header.cover}
           title={pageData.title || ''}
         />
       )}

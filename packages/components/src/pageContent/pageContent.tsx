@@ -58,7 +58,7 @@ export const PageContent = ({ sectionClassName, items, pageTitle }: Props) => {
           key={item.id}
           title={index === 0 ? pageTitle : undefined}
           body={item.body}
-          // cover={item.cover}
+          cover={item.cover}
           tag={index > 0 ? 'section' : 'header'}
         />
       )

@@ -4,7 +4,7 @@ import type { Props } from './futureEvents'
 import React from 'react'
 import { getFutureEvents } from '@mono/graphql/src/getters/getFutureEvents'
 import { mockEvent } from './mocks/mockEvents'
-import { resolvedComponent } from '@mono/utils/src/testHelpers/resolvedComponent'
+import { resolvedComponent } from '@mono/utils'
 import { render, screen } from '@testing-library/react'
 
 jest.mock('@mono/graphql/src/getters/getFutureEvents', () => {

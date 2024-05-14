@@ -111,7 +111,7 @@ export type ColorField = {
   red: Scalars['IntType']['output']
 }
 
-/** Block of type Concert lijst (concert_list) */
+/** Block of type Concert list (concert_list) */
 export type ConcertListRecord = RecordInterface & {
   __typename?: 'ConcertListRecord'
   _createdAt: Scalars['DateTime']['output']
@@ -127,12 +127,12 @@ export type ConcertListRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
-  futureConcerts?: Maybe<Scalars['BooleanType']['output']>
+  futureConcerts: Scalars['BooleanType']['output']
   id: Scalars['ItemId']['output']
   pinnedConcerts: Array<ConcertRecord>
 }
 
-/** Block of type Concert lijst (concert_list) */
+/** Block of type Concert list (concert_list) */
 export type ConcertListRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
@@ -154,34 +154,11 @@ export type ConcertModelFilter = {
   _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   id?: InputMaybe<ItemIdFilter>
-  locations?: InputMaybe<ConcertModelLocationsFieldFilter>
-  persons?: InputMaybe<LinksFilter>
   position?: InputMaybe<PositionFilter>
-  poster?: InputMaybe<LinkFilter>
-  program?: InputMaybe<LinksFilter>
+  poster?: InputMaybe<JsonFilter>
   seo?: InputMaybe<SeoFilter>
   slug?: InputMaybe<SlugFilter>
   title?: InputMaybe<StringFilter>
-}
-
-/** Specify nested blocks fields conditions */
-export type ConcertModelLocationsFieldBlocksConditions = {
-  locationItem?: InputMaybe<LocationItemModelFilter>
-}
-
-/** Specify nested blocks types presence */
-export type ConcertModelLocationsFieldBlocksPresence = {
-  locationItem?: InputMaybe<Scalars['BooleanType']['input']>
-}
-
-/** Specify how to filter this specific Modular Content field instance */
-export type ConcertModelLocationsFieldFilter = {
-  /** Filter records containing at least one block matching the specified conditions */
-  any?: InputMaybe<ConcertModelLocationsFieldBlocksConditions>
-  /** Filter records containing at least one block of specified type or not */
-  containsAny?: InputMaybe<ConcertModelLocationsFieldBlocksPresence>
-  /** Filter records containing at least one block of any kind or not */
-  exists?: InputMaybe<Scalars['BooleanType']['input']>
 }
 
 export enum ConcertModelOrderBy {
@@ -209,7 +186,7 @@ export enum ConcertModelOrderBy {
   TitleDesc = 'title_DESC',
 }
 
-/** Record of type Concerten (concert) */
+/** Record of type Concert (concert) */
 export type ConcertRecord = RecordInterface & {
   __typename?: 'ConcertRecord'
   _createdAt: Scalars['DateTime']['output']
@@ -228,40 +205,20 @@ export type ConcertRecord = RecordInterface & {
   content: Array<ConcertModelContentField>
   id: Scalars['ItemId']['output']
   locations: Array<LocationItemRecord>
-  persons: Array<PersonRecord>
   position?: Maybe<Scalars['IntType']['output']>
-  poster?: Maybe<MediaItemRecord>
-  program: Array<MusicRecord>
+  poster?: Maybe<Scalars['JsonField']['output']>
   seo?: Maybe<SeoField>
   slug?: Maybe<Scalars['String']['output']>
   title?: Maybe<Scalars['String']['output']>
 }
 
-/** Record of type Concerten (concert) */
+/** Record of type Concert (concert) */
 export type ConcertRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
 /** Specifies how to filter by creation datetime */
 export type CreatedAtFilter = {
-  /** Filter records with a value that's within the specified minute range. Seconds and milliseconds are truncated from the argument. */
-  eq?: InputMaybe<Scalars['DateTime']['input']>
-  /** Filter records with the specified field defined (i.e. with any value) or not */
-  exists?: InputMaybe<Scalars['BooleanType']['input']>
-  /** Filter records with a value that's strictly greater than the one specified. Seconds and milliseconds are truncated from the argument. */
-  gt?: InputMaybe<Scalars['DateTime']['input']>
-  /** Filter records with a value that's greater than or equal to than the one specified. Seconds and milliseconds are truncated from the argument. */
-  gte?: InputMaybe<Scalars['DateTime']['input']>
-  /** Filter records with a value that's less than the one specified. Seconds and milliseconds are truncated from the argument. */
-  lt?: InputMaybe<Scalars['DateTime']['input']>
-  /** Filter records with a value that's less or equal than the one specified. Seconds and milliseconds are truncated from the argument. */
-  lte?: InputMaybe<Scalars['DateTime']['input']>
-  /** Filter records with a value that's outside the specified minute range. Seconds and milliseconds are truncated from the argument. */
-  neq?: InputMaybe<Scalars['DateTime']['input']>
-}
-
-/** Specifies how to filter DateTime fields */
-export type DateTimeFilter = {
   /** Filter records with a value that's within the specified minute range. Seconds and milliseconds are truncated from the argument. */
   eq?: InputMaybe<Scalars['DateTime']['input']>
   /** Filter records with the specified field defined (i.e. with any value) or not */
@@ -294,8 +251,9 @@ export type DocumentRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
-  document?: Maybe<MediaItemRecord>
+  document?: Maybe<Scalars['JsonField']['output']>
   id: Scalars['ItemId']['output']
+  title?: Maybe<Scalars['String']['output']>
 }
 
 /** Block of type Document (document) */
@@ -454,7 +412,7 @@ export type FileFieldInterfaceUrlArgs = {
 
 export type GeneralModelMenuField = MenuItemRecord | SubmenuItemRecord
 
-/** Record of type Algemene info (general) */
+/** Record of type general (general) */
 export type GeneralRecord = RecordInterface & {
   __typename?: 'GeneralRecord'
   _createdAt: Scalars['DateTime']['output']
@@ -476,7 +434,7 @@ export type GeneralRecord = RecordInterface & {
   title?: Maybe<Scalars['String']['output']>
 }
 
-/** Record of type Algemene info (general) */
+/** Record of type general (general) */
 export type GeneralRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
@@ -516,7 +474,7 @@ export type HeaderRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
   body?: Maybe<HeaderModelBodyField>
-  cover?: Maybe<MediaItemRecord>
+  cover?: Maybe<Scalars['JsonField']['output']>
   id: Scalars['ItemId']['output']
 }
 
@@ -542,7 +500,7 @@ export type ImageRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
   id: Scalars['ItemId']['output']
-  item?: Maybe<MediaItemRecord>
+  image?: Maybe<Scalars['JsonField']['output']>
 }
 
 /** Block of type Afbeelding (image) */
@@ -1516,6 +1474,12 @@ export type ImgixParams = {
    */
   skip?: InputMaybe<Scalars['IntType']['input']>
   /**
+   * Bypasses any [DatoCMS Automatic Image Optimization](https://www.datocms.com/docs/cdn-settings/advanced-asset-settings) that might be set up for the project.
+   *
+   * Exercise caution when using this parameter, as it could significantly increase your bandwidth costs.
+   */
+  skipDefaultOptimizations?: InputMaybe<Scalars['BooleanType']['input']>
+  /**
    * Transparency
    *
    * Adds checkerboard behind images which support transparency.
@@ -2014,44 +1978,7 @@ export type LatLonNearFilter = {
   radius: Scalars['FloatType']['input']
 }
 
-/** Specifies how to filter Single-link fields */
-export type LinkFilter = {
-  /** Search for records with an exact match. The specified value must be a Record ID */
-  eq?: InputMaybe<Scalars['ItemId']['input']>
-  /** Filter records with the specified field defined (i.e. with any value) or not */
-  exists?: InputMaybe<Scalars['BooleanType']['input']>
-  /** Filter records linked to one of the specified records */
-  in?: InputMaybe<Array<InputMaybe<Scalars['ItemId']['input']>>>
-  /** Exclude records with an exact match. The specified value must be a Record ID */
-  neq?: InputMaybe<Scalars['ItemId']['input']>
-  /** Filter records not linked to one of the specified records */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars['ItemId']['input']>>>
-}
-
-/** Specifies how to filter Multiple-links fields */
-export type LinksFilter = {
-  /** Filter records linked to all of the specified records. The specified values must be Record IDs */
-  allIn?: InputMaybe<Array<InputMaybe<Scalars['ItemId']['input']>>>
-  /** Filter records linked to at least one of the specified records. The specified values must be Record IDs */
-  anyIn?: InputMaybe<Array<InputMaybe<Scalars['ItemId']['input']>>>
-  /** Search for records with an exact match. The specified values must be Record IDs */
-  eq?: InputMaybe<Array<InputMaybe<Scalars['ItemId']['input']>>>
-  /** Filter records with the specified field defined (i.e. with any value) or not */
-  exists?: InputMaybe<Scalars['BooleanType']['input']>
-  /** Filter records not linked to any of the specified records. The specified values must be Record IDs */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars['ItemId']['input']>>>
-}
-
-export type LocationItemModelFilter = {
-  AND?: InputMaybe<Array<InputMaybe<LocationItemModelFilter>>>
-  OR?: InputMaybe<Array<InputMaybe<LocationItemModelFilter>>>
-  dateTime?: InputMaybe<DateTimeFilter>
-  id?: InputMaybe<ItemIdFilter>
-  location?: InputMaybe<LinkFilter>
-  ticketLink?: InputMaybe<StringFilter>
-}
-
-/** Block of type Locatie item (location_item) */
+/** Block of type location item (location_item) */
 export type LocationItemRecord = RecordInterface & {
   __typename?: 'LocationItemRecord'
   _createdAt: Scalars['DateTime']['output']
@@ -2073,7 +2000,7 @@ export type LocationItemRecord = RecordInterface & {
   ticketLink?: Maybe<Scalars['String']['output']>
 }
 
-/** Block of type Locatie item (location_item) */
+/** Block of type location item (location_item) */
 export type LocationItemRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
@@ -2120,7 +2047,7 @@ export enum LocationModelOrderBy {
   TitleDesc = 'title_DESC',
 }
 
-/** Record of type Locaties (location) */
+/** Record of type Location (location) */
 export type LocationRecord = RecordInterface & {
   __typename?: 'LocationRecord'
   _createdAt: Scalars['DateTime']['output']
@@ -2142,75 +2069,12 @@ export type LocationRecord = RecordInterface & {
   title?: Maybe<Scalars['String']['output']>
 }
 
-/** Record of type Locaties (location) */
+/** Record of type Location (location) */
 export type LocationRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
-export type MediaItemModelFilter = {
-  AND?: InputMaybe<Array<InputMaybe<MediaItemModelFilter>>>
-  OR?: InputMaybe<Array<InputMaybe<MediaItemModelFilter>>>
-  _createdAt?: InputMaybe<CreatedAtFilter>
-  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
-  _isValid?: InputMaybe<BooleanFilter>
-  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
-  _publishedAt?: InputMaybe<PublishedAtFilter>
-  _status?: InputMaybe<StatusFilter>
-  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
-  _updatedAt?: InputMaybe<UpdatedAtFilter>
-  asset?: InputMaybe<JsonFilter>
-  id?: InputMaybe<ItemIdFilter>
-  title?: InputMaybe<StringFilter>
-}
-
-export enum MediaItemModelOrderBy {
-  CreatedAtAsc = '_createdAt_ASC',
-  CreatedAtDesc = '_createdAt_DESC',
-  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
-  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
-  IsValidAsc = '_isValid_ASC',
-  IsValidDesc = '_isValid_DESC',
-  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
-  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
-  PublishedAtAsc = '_publishedAt_ASC',
-  PublishedAtDesc = '_publishedAt_DESC',
-  StatusAsc = '_status_ASC',
-  StatusDesc = '_status_DESC',
-  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
-  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
-  UpdatedAtAsc = '_updatedAt_ASC',
-  UpdatedAtDesc = '_updatedAt_DESC',
-  IdAsc = 'id_ASC',
-  IdDesc = 'id_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC',
-}
-
-/** Record of type Media item (media_item) */
-export type MediaItemRecord = RecordInterface & {
-  __typename?: 'MediaItemRecord'
-  _createdAt: Scalars['DateTime']['output']
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars['String']['output']>
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
-  _isValid: Scalars['BooleanType']['output']
-  _modelApiKey: Scalars['String']['output']
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>
-  _status: ItemStatus
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _updatedAt: Scalars['DateTime']['output']
-  asset?: Maybe<Scalars['JsonField']['output']>
-  id: Scalars['ItemId']['output']
-  title?: Maybe<Scalars['String']['output']>
-}
-
-/** Record of type Media item (media_item) */
-export type MediaItemRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>
-}
+export type MenuItemModelLinkField = ConcertRecord | PageRecord
 
 /** Block of type Menu item (menu_item) */
 export type MenuItemRecord = RecordInterface & {
@@ -2230,78 +2094,11 @@ export type MenuItemRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime']['output']
   id: Scalars['ItemId']['output']
   label?: Maybe<Scalars['String']['output']>
-  link?: Maybe<PageRecord>
+  link?: Maybe<MenuItemModelLinkField>
 }
 
 /** Block of type Menu item (menu_item) */
 export type MenuItemRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>
-}
-
-export type MusicModelFilter = {
-  AND?: InputMaybe<Array<InputMaybe<MusicModelFilter>>>
-  OR?: InputMaybe<Array<InputMaybe<MusicModelFilter>>>
-  _createdAt?: InputMaybe<CreatedAtFilter>
-  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
-  _isValid?: InputMaybe<BooleanFilter>
-  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
-  _publishedAt?: InputMaybe<PublishedAtFilter>
-  _status?: InputMaybe<StatusFilter>
-  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
-  _updatedAt?: InputMaybe<UpdatedAtFilter>
-  composer?: InputMaybe<StringFilter>
-  id?: InputMaybe<ItemIdFilter>
-  title?: InputMaybe<StringFilter>
-}
-
-export enum MusicModelOrderBy {
-  CreatedAtAsc = '_createdAt_ASC',
-  CreatedAtDesc = '_createdAt_DESC',
-  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
-  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
-  IsValidAsc = '_isValid_ASC',
-  IsValidDesc = '_isValid_DESC',
-  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
-  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
-  PublishedAtAsc = '_publishedAt_ASC',
-  PublishedAtDesc = '_publishedAt_DESC',
-  StatusAsc = '_status_ASC',
-  StatusDesc = '_status_DESC',
-  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
-  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
-  UpdatedAtAsc = '_updatedAt_ASC',
-  UpdatedAtDesc = '_updatedAt_DESC',
-  ComposerAsc = 'composer_ASC',
-  ComposerDesc = 'composer_DESC',
-  IdAsc = 'id_ASC',
-  IdDesc = 'id_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC',
-}
-
-/** Record of type Muziekstukken (music) */
-export type MusicRecord = RecordInterface & {
-  __typename?: 'MusicRecord'
-  _createdAt: Scalars['DateTime']['output']
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars['String']['output']>
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
-  _isValid: Scalars['BooleanType']['output']
-  _modelApiKey: Scalars['String']['output']
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>
-  _status: ItemStatus
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _updatedAt: Scalars['DateTime']['output']
-  composer?: Maybe<Scalars['String']['output']>
-  id: Scalars['ItemId']['output']
-  title?: Maybe<Scalars['String']['output']>
-}
-
-/** Record of type Muziekstukken (music) */
-export type MusicRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
@@ -2364,7 +2161,7 @@ export enum PageModelOrderBy {
   TitleDesc = 'title_DESC',
 }
 
-/** Record of type Pagina's (page) */
+/** Record of type Pagina (page) */
 export type PageRecord = RecordInterface & {
   __typename?: 'PageRecord'
   _createdAt: Scalars['DateTime']['output']
@@ -2387,75 +2184,8 @@ export type PageRecord = RecordInterface & {
   title?: Maybe<Scalars['String']['output']>
 }
 
-/** Record of type Pagina's (page) */
+/** Record of type Pagina (page) */
 export type PageRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>
-}
-
-export type PersonModelFilter = {
-  AND?: InputMaybe<Array<InputMaybe<PersonModelFilter>>>
-  OR?: InputMaybe<Array<InputMaybe<PersonModelFilter>>>
-  _createdAt?: InputMaybe<CreatedAtFilter>
-  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
-  _isValid?: InputMaybe<BooleanFilter>
-  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
-  _publishedAt?: InputMaybe<PublishedAtFilter>
-  _status?: InputMaybe<StatusFilter>
-  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
-  _updatedAt?: InputMaybe<UpdatedAtFilter>
-  id?: InputMaybe<ItemIdFilter>
-  name?: InputMaybe<StringFilter>
-  role?: InputMaybe<StringFilter>
-}
-
-export enum PersonModelOrderBy {
-  CreatedAtAsc = '_createdAt_ASC',
-  CreatedAtDesc = '_createdAt_DESC',
-  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
-  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
-  IsValidAsc = '_isValid_ASC',
-  IsValidDesc = '_isValid_DESC',
-  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
-  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
-  PublishedAtAsc = '_publishedAt_ASC',
-  PublishedAtDesc = '_publishedAt_DESC',
-  StatusAsc = '_status_ASC',
-  StatusDesc = '_status_DESC',
-  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
-  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
-  UpdatedAtAsc = '_updatedAt_ASC',
-  UpdatedAtDesc = '_updatedAt_DESC',
-  IdAsc = 'id_ASC',
-  IdDesc = 'id_DESC',
-  NameAsc = 'name_ASC',
-  NameDesc = 'name_DESC',
-  RoleAsc = 'role_ASC',
-  RoleDesc = 'role_DESC',
-}
-
-/** Record of type Personen (person) */
-export type PersonRecord = RecordInterface & {
-  __typename?: 'PersonRecord'
-  _createdAt: Scalars['DateTime']['output']
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars['String']['output']>
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
-  _isValid: Scalars['BooleanType']['output']
-  _modelApiKey: Scalars['String']['output']
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>
-  _status: ItemStatus
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _updatedAt: Scalars['DateTime']['output']
-  id: Scalars['ItemId']['output']
-  name?: Maybe<Scalars['String']['output']>
-  role?: Maybe<Scalars['String']['output']>
-}
-
-/** Record of type Personen (person) */
-export type PersonRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
@@ -2501,13 +2231,7 @@ export type Query = {
   /** Returns meta information regarding a record collection */
   _allLocationsMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
-  _allMediaItemsMeta: CollectionMetadata
-  /** Returns meta information regarding a record collection */
-  _allMusicsMeta: CollectionMetadata
-  /** Returns meta information regarding a record collection */
   _allPagesMeta: CollectionMetadata
-  /** Returns meta information regarding a record collection */
-  _allPeopleMeta: CollectionMetadata
   /** Returns meta information regarding an assets collection */
   _allUploadsMeta: CollectionMetadata
   /** Returns the single instance record */
@@ -2517,13 +2241,7 @@ export type Query = {
   /** Returns a collection of records */
   allLocations: Array<LocationRecord>
   /** Returns a collection of records */
-  allMediaItems: Array<MediaItemRecord>
-  /** Returns a collection of records */
-  allMusics: Array<MusicRecord>
-  /** Returns a collection of records */
   allPages: Array<PageRecord>
-  /** Returns a collection of records */
-  allPeople: Array<PersonRecord>
   /** Returns a collection of assets */
   allUploads: Array<FileField>
   /** Returns a specific record */
@@ -2533,13 +2251,7 @@ export type Query = {
   /** Returns a specific record */
   location?: Maybe<LocationRecord>
   /** Returns a specific record */
-  mediaItem?: Maybe<MediaItemRecord>
-  /** Returns a specific record */
-  music?: Maybe<MusicRecord>
-  /** Returns a specific record */
   page?: Maybe<PageRecord>
-  /** Returns a specific record */
-  person?: Maybe<PersonRecord>
   /** Returns a specific asset */
   upload?: Maybe<FileField>
 }
@@ -2557,26 +2269,8 @@ export type Query_AllLocationsMetaArgs = {
 }
 
 /** The query root for this schema */
-export type Query_AllMediaItemsMetaArgs = {
-  filter?: InputMaybe<MediaItemModelFilter>
-  locale?: InputMaybe<SiteLocale>
-}
-
-/** The query root for this schema */
-export type Query_AllMusicsMetaArgs = {
-  filter?: InputMaybe<MusicModelFilter>
-  locale?: InputMaybe<SiteLocale>
-}
-
-/** The query root for this schema */
 export type Query_AllPagesMetaArgs = {
   filter?: InputMaybe<PageModelFilter>
-  locale?: InputMaybe<SiteLocale>
-}
-
-/** The query root for this schema */
-export type Query_AllPeopleMetaArgs = {
-  filter?: InputMaybe<PersonModelFilter>
   locale?: InputMaybe<SiteLocale>
 }
 
@@ -2613,42 +2307,12 @@ export type QueryAllLocationsArgs = {
 }
 
 /** The query root for this schema */
-export type QueryAllMediaItemsArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  filter?: InputMaybe<MediaItemModelFilter>
-  first?: InputMaybe<Scalars['IntType']['input']>
-  locale?: InputMaybe<SiteLocale>
-  orderBy?: InputMaybe<Array<InputMaybe<MediaItemModelOrderBy>>>
-  skip?: InputMaybe<Scalars['IntType']['input']>
-}
-
-/** The query root for this schema */
-export type QueryAllMusicsArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  filter?: InputMaybe<MusicModelFilter>
-  first?: InputMaybe<Scalars['IntType']['input']>
-  locale?: InputMaybe<SiteLocale>
-  orderBy?: InputMaybe<Array<InputMaybe<MusicModelOrderBy>>>
-  skip?: InputMaybe<Scalars['IntType']['input']>
-}
-
-/** The query root for this schema */
 export type QueryAllPagesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<PageModelFilter>
   first?: InputMaybe<Scalars['IntType']['input']>
   locale?: InputMaybe<SiteLocale>
   orderBy?: InputMaybe<Array<InputMaybe<PageModelOrderBy>>>
-  skip?: InputMaybe<Scalars['IntType']['input']>
-}
-
-/** The query root for this schema */
-export type QueryAllPeopleArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  filter?: InputMaybe<PersonModelFilter>
-  first?: InputMaybe<Scalars['IntType']['input']>
-  locale?: InputMaybe<SiteLocale>
-  orderBy?: InputMaybe<Array<InputMaybe<PersonModelOrderBy>>>
   skip?: InputMaybe<Scalars['IntType']['input']>
 }
 
@@ -2685,35 +2349,11 @@ export type QueryLocationArgs = {
 }
 
 /** The query root for this schema */
-export type QueryMediaItemArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  filter?: InputMaybe<MediaItemModelFilter>
-  locale?: InputMaybe<SiteLocale>
-  orderBy?: InputMaybe<Array<InputMaybe<MediaItemModelOrderBy>>>
-}
-
-/** The query root for this schema */
-export type QueryMusicArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  filter?: InputMaybe<MusicModelFilter>
-  locale?: InputMaybe<SiteLocale>
-  orderBy?: InputMaybe<Array<InputMaybe<MusicModelOrderBy>>>
-}
-
-/** The query root for this schema */
 export type QueryPageArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<PageModelFilter>
   locale?: InputMaybe<SiteLocale>
   orderBy?: InputMaybe<Array<InputMaybe<PageModelOrderBy>>>
-}
-
-/** The query root for this schema */
-export type QueryPersonArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  filter?: InputMaybe<PersonModelFilter>
-  locale?: InputMaybe<SiteLocale>
-  orderBy?: InputMaybe<Array<InputMaybe<PersonModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -2783,6 +2423,7 @@ export type SeoField = {
   __typename?: 'SeoField'
   description?: Maybe<Scalars['String']['output']>
   image?: Maybe<FileField>
+  noIndex?: Maybe<Scalars['BooleanType']['output']>
   title?: Maybe<Scalars['String']['output']>
   twitterCard?: Maybe<Scalars['String']['output']>
 }
@@ -2799,6 +2440,7 @@ export type Site = {
   faviconMetaTags: Array<Tag>
   globalSeo?: Maybe<GlobalSeoField>
   locales: Array<SiteLocale>
+  noIndex?: Maybe<Scalars['BooleanType']['output']>
 }
 
 export type SiteFaviconMetaTagsArgs = {
@@ -2811,7 +2453,7 @@ export type SiteGlobalSeoArgs = {
 }
 
 export enum SiteLocale {
-  NlNl = 'nl_NL',
+  Nl = 'nl',
 }
 
 /** Specifies how to filter Slug fields */
@@ -2901,7 +2543,6 @@ export type Tag = {
 
 export type TextBlockModelContentBlocksField =
   | CallToActionRecord
-  | ConcertListRecord
   | DocumentRecord
   | ImageRecord
   | VideoRecord
@@ -2942,7 +2583,7 @@ export type TextBlockRecord_SeoMetaTagsArgs = {
 
 export type TwoColumnModelLeftContentBlocksField =
   | CallToActionRecord
-  | ConcertListRecord
+  | DocumentRecord
   | ImageRecord
   | VideoRecord
 
@@ -2957,7 +2598,7 @@ export type TwoColumnModelLeftContentLinksField = ConcertRecord | PageRecord
 
 export type TwoColumnModelRightContentBlocksField =
   | CallToActionRecord
-  | ConcertListRecord
+  | DocumentRecord
   | ImageRecord
   | VideoRecord
 
@@ -3320,13 +2961,32 @@ export type UploadUpdatedAtFilter = {
 
 export type UploadVideoField = {
   __typename?: 'UploadVideoField'
+  alt?: Maybe<Scalars['String']['output']>
+  blurUpThumb?: Maybe<Scalars['String']['output']>
+  blurhash?: Maybe<Scalars['String']['output']>
   duration?: Maybe<Scalars['Int']['output']>
   framerate?: Maybe<Scalars['Int']['output']>
+  height: Scalars['IntType']['output']
   mp4Url?: Maybe<Scalars['String']['output']>
   muxAssetId: Scalars['String']['output']
   muxPlaybackId: Scalars['String']['output']
   streamingUrl: Scalars['String']['output']
+  thumbhash?: Maybe<Scalars['String']['output']>
   thumbnailUrl: Scalars['String']['output']
+  title?: Maybe<Scalars['String']['output']>
+  width: Scalars['IntType']['output']
+}
+
+export type UploadVideoFieldAltArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+export type UploadVideoFieldBlurUpThumbArgs = {
+  imgixParams?: InputMaybe<ImgixParams>
+  punch?: Scalars['Float']['input']
+  quality?: Scalars['Int']['input']
+  size?: Scalars['Int']['input']
 }
 
 export type UploadVideoFieldMp4UrlArgs = {
@@ -3336,6 +2996,11 @@ export type UploadVideoFieldMp4UrlArgs = {
 
 export type UploadVideoFieldThumbnailUrlArgs = {
   format?: InputMaybe<MuxThumbnailFormatType>
+}
+
+export type UploadVideoFieldTitleArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
 }
 
 /** Specifies how to filter by width */
@@ -3389,7 +3054,7 @@ export type VideoRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime']['output']
   id: Scalars['ItemId']['output']
   media?: Maybe<VideoField>
-  thumbnail?: Maybe<MediaItemRecord>
+  thumbnail?: Maybe<Scalars['JsonField']['output']>
   title?: Maybe<Scalars['String']['output']>
 }
 
@@ -3452,6 +3117,7 @@ export type ConcertDetailFragment = {
   __typename: 'ConcertRecord'
   title?: string | null
   slug?: string | null
+  poster?: unknown | null
   _createdAt: string
   _firstPublishedAt?: string | null
   _publishedAt?: string | null
@@ -3477,6 +3143,7 @@ export type ConcertDetailFragment = {
   content: Array<
     | {
         __typename: 'HeaderRecord'
+        cover?: unknown | null
         _createdAt: string
         _firstPublishedAt?: string | null
         _publishedAt?: string | null
@@ -3608,12 +3275,28 @@ export type ConcertDetailFragment = {
                     }
                   | null
               }
-            | { __typename?: 'ConcertListRecord' }
-            | { __typename?: 'DocumentRecord' }
-            | { __typename?: 'ImageRecord' }
+            | {
+                __typename: 'DocumentRecord'
+                document?: unknown | null
+                _createdAt: string
+                _firstPublishedAt?: string | null
+                _publishedAt?: string | null
+                _updatedAt: string
+                id: string
+              }
+            | {
+                __typename: 'ImageRecord'
+                image?: unknown | null
+                _createdAt: string
+                _firstPublishedAt?: string | null
+                _publishedAt?: string | null
+                _updatedAt: string
+                id: string
+              }
             | {
                 __typename: 'VideoRecord'
                 title?: string | null
+                thumbnail?: unknown | null
                 _createdAt: string
                 _firstPublishedAt?: string | null
                 _publishedAt?: string | null
@@ -3699,11 +3382,28 @@ export type ConcertDetailFragment = {
                     }
                   | null
               }
-            | { __typename?: 'ConcertListRecord' }
-            | { __typename?: 'ImageRecord' }
+            | {
+                __typename: 'DocumentRecord'
+                document?: unknown | null
+                _createdAt: string
+                _firstPublishedAt?: string | null
+                _publishedAt?: string | null
+                _updatedAt: string
+                id: string
+              }
+            | {
+                __typename: 'ImageRecord'
+                image?: unknown | null
+                _createdAt: string
+                _firstPublishedAt?: string | null
+                _publishedAt?: string | null
+                _updatedAt: string
+                id: string
+              }
             | {
                 __typename: 'VideoRecord'
                 title?: string | null
+                thumbnail?: unknown | null
                 _createdAt: string
                 _firstPublishedAt?: string | null
                 _publishedAt?: string | null
@@ -3781,11 +3481,28 @@ export type ConcertDetailFragment = {
                     }
                   | null
               }
-            | { __typename?: 'ConcertListRecord' }
-            | { __typename?: 'ImageRecord' }
+            | {
+                __typename: 'DocumentRecord'
+                document?: unknown | null
+                _createdAt: string
+                _firstPublishedAt?: string | null
+                _publishedAt?: string | null
+                _updatedAt: string
+                id: string
+              }
+            | {
+                __typename: 'ImageRecord'
+                image?: unknown | null
+                _createdAt: string
+                _firstPublishedAt?: string | null
+                _publishedAt?: string | null
+                _updatedAt: string
+                id: string
+              }
             | {
                 __typename: 'VideoRecord'
                 title?: string | null
+                thumbnail?: unknown | null
                 _createdAt: string
                 _firstPublishedAt?: string | null
                 _publishedAt?: string | null
@@ -3891,16 +3608,28 @@ export type GeneralInfoFragment = {
         __typename?: 'MenuItemRecord'
         id: string
         label?: string | null
-        link?: {
-          __typename: 'PageRecord'
-          title?: string | null
-          slug?: string | null
-          _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
-          _updatedAt: string
-          id: string
-        } | null
+        link?:
+          | {
+              __typename: 'ConcertRecord'
+              title?: string | null
+              slug?: string | null
+              _createdAt: string
+              _firstPublishedAt?: string | null
+              _publishedAt?: string | null
+              _updatedAt: string
+              id: string
+            }
+          | {
+              __typename: 'PageRecord'
+              title?: string | null
+              slug?: string | null
+              _createdAt: string
+              _firstPublishedAt?: string | null
+              _publishedAt?: string | null
+              _updatedAt: string
+              id: string
+            }
+          | null
       }
     | {
         __typename?: 'SubmenuItemRecord'
@@ -3910,16 +3639,28 @@ export type GeneralInfoFragment = {
           __typename?: 'MenuItemRecord'
           id: string
           label?: string | null
-          link?: {
-            __typename: 'PageRecord'
-            title?: string | null
-            slug?: string | null
-            _createdAt: string
-            _firstPublishedAt?: string | null
-            _publishedAt?: string | null
-            _updatedAt: string
-            id: string
-          } | null
+          link?:
+            | {
+                __typename: 'ConcertRecord'
+                title?: string | null
+                slug?: string | null
+                _createdAt: string
+                _firstPublishedAt?: string | null
+                _publishedAt?: string | null
+                _updatedAt: string
+                id: string
+              }
+            | {
+                __typename: 'PageRecord'
+                title?: string | null
+                slug?: string | null
+                _createdAt: string
+                _firstPublishedAt?: string | null
+                _publishedAt?: string | null
+                _updatedAt: string
+                id: string
+              }
+            | null
         }>
       }
   >
@@ -3927,6 +3668,7 @@ export type GeneralInfoFragment = {
 
 export type HeaderFragment = {
   __typename: 'HeaderRecord'
+  cover?: unknown | null
   _createdAt: string
   _firstPublishedAt?: string | null
   _publishedAt?: string | null
@@ -4134,15 +3876,6 @@ type Identifiable_LocationRecord_Fragment = {
   id: string
 }
 
-type Identifiable_MediaItemRecord_Fragment = {
-  __typename: 'MediaItemRecord'
-  _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
-  _updatedAt: string
-  id: string
-}
-
 type Identifiable_MenuItemRecord_Fragment = {
   __typename: 'MenuItemRecord'
   _createdAt: string
@@ -4152,26 +3885,8 @@ type Identifiable_MenuItemRecord_Fragment = {
   id: string
 }
 
-type Identifiable_MusicRecord_Fragment = {
-  __typename: 'MusicRecord'
-  _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
-  _updatedAt: string
-  id: string
-}
-
 type Identifiable_PageRecord_Fragment = {
   __typename: 'PageRecord'
-  _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
-  _updatedAt: string
-  id: string
-}
-
-type Identifiable_PersonRecord_Fragment = {
-  __typename: 'PersonRecord'
   _createdAt: string
   _firstPublishedAt?: string | null
   _publishedAt?: string | null
@@ -4225,11 +3940,8 @@ export type IdentifiableFragment =
   | Identifiable_ImageRecord_Fragment
   | Identifiable_LocationItemRecord_Fragment
   | Identifiable_LocationRecord_Fragment
-  | Identifiable_MediaItemRecord_Fragment
   | Identifiable_MenuItemRecord_Fragment
-  | Identifiable_MusicRecord_Fragment
   | Identifiable_PageRecord_Fragment
-  | Identifiable_PersonRecord_Fragment
   | Identifiable_SubmenuItemRecord_Fragment
   | Identifiable_TextBlockRecord_Fragment
   | Identifiable_TwoColumnRecord_Fragment
@@ -4247,53 +3959,24 @@ export type ResponsiveImageFragment = {
   width: number
 }
 
-export type MediaItemFragment = {
-  __typename: 'MediaItemRecord'
-  title?: string | null
-  asset?: unknown | null
-  _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
-  _updatedAt: string
-  id: string
-}
-
 export type ImageFragment = {
   __typename: 'ImageRecord'
+  image?: unknown | null
   _createdAt: string
   _firstPublishedAt?: string | null
   _publishedAt?: string | null
   _updatedAt: string
   id: string
-  item?: {
-    __typename: 'MediaItemRecord'
-    title?: string | null
-    asset?: unknown | null
-    _createdAt: string
-    _firstPublishedAt?: string | null
-    _publishedAt?: string | null
-    _updatedAt: string
-    id: string
-  } | null
 }
 
 export type DocumentFragment = {
   __typename: 'DocumentRecord'
+  document?: unknown | null
   _createdAt: string
   _firstPublishedAt?: string | null
   _publishedAt?: string | null
   _updatedAt: string
   id: string
-  document?: {
-    __typename: 'MediaItemRecord'
-    title?: string | null
-    asset?: unknown | null
-    _createdAt: string
-    _firstPublishedAt?: string | null
-    _publishedAt?: string | null
-    _updatedAt: string
-    id: string
-  } | null
 }
 
 export type LocationFragment = {
@@ -4330,23 +4013,28 @@ export type MenuItemFragment = {
   __typename?: 'MenuItemRecord'
   id: string
   label?: string | null
-  link?: {
-    __typename: 'PageRecord'
-    title?: string | null
-    slug?: string | null
-    _createdAt: string
-    _firstPublishedAt?: string | null
-    _publishedAt?: string | null
-    _updatedAt: string
-    id: string
-  } | null
-}
-
-export type MusicFragment = {
-  __typename?: 'MusicRecord'
-  id: string
-  title?: string | null
-  composer?: string | null
+  link?:
+    | {
+        __typename: 'ConcertRecord'
+        title?: string | null
+        slug?: string | null
+        _createdAt: string
+        _firstPublishedAt?: string | null
+        _publishedAt?: string | null
+        _updatedAt: string
+        id: string
+      }
+    | {
+        __typename: 'PageRecord'
+        title?: string | null
+        slug?: string | null
+        _createdAt: string
+        _firstPublishedAt?: string | null
+        _publishedAt?: string | null
+        _updatedAt: string
+        id: string
+      }
+    | null
 }
 
 export type PageFragment = {
@@ -4361,6 +4049,7 @@ export type PageFragment = {
   content: Array<
     | {
         __typename: 'HeaderRecord'
+        cover?: unknown | null
         _createdAt: string
         _firstPublishedAt?: string | null
         _publishedAt?: string | null
@@ -4492,12 +4181,28 @@ export type PageFragment = {
                     }
                   | null
               }
-            | { __typename?: 'ConcertListRecord' }
-            | { __typename?: 'DocumentRecord' }
-            | { __typename?: 'ImageRecord' }
+            | {
+                __typename: 'DocumentRecord'
+                document?: unknown | null
+                _createdAt: string
+                _firstPublishedAt?: string | null
+                _publishedAt?: string | null
+                _updatedAt: string
+                id: string
+              }
+            | {
+                __typename: 'ImageRecord'
+                image?: unknown | null
+                _createdAt: string
+                _firstPublishedAt?: string | null
+                _publishedAt?: string | null
+                _updatedAt: string
+                id: string
+              }
             | {
                 __typename: 'VideoRecord'
                 title?: string | null
+                thumbnail?: unknown | null
                 _createdAt: string
                 _firstPublishedAt?: string | null
                 _publishedAt?: string | null
@@ -4583,11 +4288,28 @@ export type PageFragment = {
                     }
                   | null
               }
-            | { __typename?: 'ConcertListRecord' }
-            | { __typename?: 'ImageRecord' }
+            | {
+                __typename: 'DocumentRecord'
+                document?: unknown | null
+                _createdAt: string
+                _firstPublishedAt?: string | null
+                _publishedAt?: string | null
+                _updatedAt: string
+                id: string
+              }
+            | {
+                __typename: 'ImageRecord'
+                image?: unknown | null
+                _createdAt: string
+                _firstPublishedAt?: string | null
+                _publishedAt?: string | null
+                _updatedAt: string
+                id: string
+              }
             | {
                 __typename: 'VideoRecord'
                 title?: string | null
+                thumbnail?: unknown | null
                 _createdAt: string
                 _firstPublishedAt?: string | null
                 _publishedAt?: string | null
@@ -4665,11 +4387,28 @@ export type PageFragment = {
                     }
                   | null
               }
-            | { __typename?: 'ConcertListRecord' }
-            | { __typename?: 'ImageRecord' }
+            | {
+                __typename: 'DocumentRecord'
+                document?: unknown | null
+                _createdAt: string
+                _firstPublishedAt?: string | null
+                _publishedAt?: string | null
+                _updatedAt: string
+                id: string
+              }
+            | {
+                __typename: 'ImageRecord'
+                image?: unknown | null
+                _createdAt: string
+                _firstPublishedAt?: string | null
+                _publishedAt?: string | null
+                _updatedAt: string
+                id: string
+              }
             | {
                 __typename: 'VideoRecord'
                 title?: string | null
+                thumbnail?: unknown | null
                 _createdAt: string
                 _firstPublishedAt?: string | null
                 _publishedAt?: string | null
@@ -4704,6 +4443,7 @@ export type PageDetailFragment = {
   content: Array<
     | {
         __typename: 'HeaderRecord'
+        cover?: unknown | null
         _createdAt: string
         _firstPublishedAt?: string | null
         _publishedAt?: string | null
@@ -4835,12 +4575,28 @@ export type PageDetailFragment = {
                     }
                   | null
               }
-            | { __typename?: 'ConcertListRecord' }
-            | { __typename?: 'DocumentRecord' }
-            | { __typename?: 'ImageRecord' }
+            | {
+                __typename: 'DocumentRecord'
+                document?: unknown | null
+                _createdAt: string
+                _firstPublishedAt?: string | null
+                _publishedAt?: string | null
+                _updatedAt: string
+                id: string
+              }
+            | {
+                __typename: 'ImageRecord'
+                image?: unknown | null
+                _createdAt: string
+                _firstPublishedAt?: string | null
+                _publishedAt?: string | null
+                _updatedAt: string
+                id: string
+              }
             | {
                 __typename: 'VideoRecord'
                 title?: string | null
+                thumbnail?: unknown | null
                 _createdAt: string
                 _firstPublishedAt?: string | null
                 _publishedAt?: string | null
@@ -4926,11 +4682,28 @@ export type PageDetailFragment = {
                     }
                   | null
               }
-            | { __typename?: 'ConcertListRecord' }
-            | { __typename?: 'ImageRecord' }
+            | {
+                __typename: 'DocumentRecord'
+                document?: unknown | null
+                _createdAt: string
+                _firstPublishedAt?: string | null
+                _publishedAt?: string | null
+                _updatedAt: string
+                id: string
+              }
+            | {
+                __typename: 'ImageRecord'
+                image?: unknown | null
+                _createdAt: string
+                _firstPublishedAt?: string | null
+                _publishedAt?: string | null
+                _updatedAt: string
+                id: string
+              }
             | {
                 __typename: 'VideoRecord'
                 title?: string | null
+                thumbnail?: unknown | null
                 _createdAt: string
                 _firstPublishedAt?: string | null
                 _publishedAt?: string | null
@@ -5008,11 +4781,28 @@ export type PageDetailFragment = {
                     }
                   | null
               }
-            | { __typename?: 'ConcertListRecord' }
-            | { __typename?: 'ImageRecord' }
+            | {
+                __typename: 'DocumentRecord'
+                document?: unknown | null
+                _createdAt: string
+                _firstPublishedAt?: string | null
+                _publishedAt?: string | null
+                _updatedAt: string
+                id: string
+              }
+            | {
+                __typename: 'ImageRecord'
+                image?: unknown | null
+                _createdAt: string
+                _firstPublishedAt?: string | null
+                _publishedAt?: string | null
+                _updatedAt: string
+                id: string
+              }
             | {
                 __typename: 'VideoRecord'
                 title?: string | null
+                thumbnail?: unknown | null
                 _createdAt: string
                 _firstPublishedAt?: string | null
                 _publishedAt?: string | null
@@ -5107,16 +4897,28 @@ export type SubmenuItemFragment = {
     __typename?: 'MenuItemRecord'
     id: string
     label?: string | null
-    link?: {
-      __typename: 'PageRecord'
-      title?: string | null
-      slug?: string | null
-      _createdAt: string
-      _firstPublishedAt?: string | null
-      _publishedAt?: string | null
-      _updatedAt: string
-      id: string
-    } | null
+    link?:
+      | {
+          __typename: 'ConcertRecord'
+          title?: string | null
+          slug?: string | null
+          _createdAt: string
+          _firstPublishedAt?: string | null
+          _publishedAt?: string | null
+          _updatedAt: string
+          id: string
+        }
+      | {
+          __typename: 'PageRecord'
+          title?: string | null
+          slug?: string | null
+          _createdAt: string
+          _firstPublishedAt?: string | null
+          _publishedAt?: string | null
+          _updatedAt: string
+          id: string
+        }
+      | null
   }>
 }
 
@@ -5186,12 +4988,28 @@ export type TextBlockContentFragment = {
             }
           | null
       }
-    | { __typename?: 'ConcertListRecord' }
-    | { __typename?: 'DocumentRecord' }
-    | { __typename?: 'ImageRecord' }
+    | {
+        __typename: 'DocumentRecord'
+        document?: unknown | null
+        _createdAt: string
+        _firstPublishedAt?: string | null
+        _publishedAt?: string | null
+        _updatedAt: string
+        id: string
+      }
+    | {
+        __typename: 'ImageRecord'
+        image?: unknown | null
+        _createdAt: string
+        _firstPublishedAt?: string | null
+        _publishedAt?: string | null
+        _updatedAt: string
+        id: string
+      }
     | {
         __typename: 'VideoRecord'
         title?: string | null
+        thumbnail?: unknown | null
         _createdAt: string
         _firstPublishedAt?: string | null
         _publishedAt?: string | null
@@ -5270,11 +5088,28 @@ export type LeftContentFragment = {
             }
           | null
       }
-    | { __typename?: 'ConcertListRecord' }
-    | { __typename?: 'ImageRecord' }
+    | {
+        __typename: 'DocumentRecord'
+        document?: unknown | null
+        _createdAt: string
+        _firstPublishedAt?: string | null
+        _publishedAt?: string | null
+        _updatedAt: string
+        id: string
+      }
+    | {
+        __typename: 'ImageRecord'
+        image?: unknown | null
+        _createdAt: string
+        _firstPublishedAt?: string | null
+        _publishedAt?: string | null
+        _updatedAt: string
+        id: string
+      }
     | {
         __typename: 'VideoRecord'
         title?: string | null
+        thumbnail?: unknown | null
         _createdAt: string
         _firstPublishedAt?: string | null
         _publishedAt?: string | null
@@ -5353,11 +5188,28 @@ export type RightContentFragment = {
             }
           | null
       }
-    | { __typename?: 'ConcertListRecord' }
-    | { __typename?: 'ImageRecord' }
+    | {
+        __typename: 'DocumentRecord'
+        document?: unknown | null
+        _createdAt: string
+        _firstPublishedAt?: string | null
+        _publishedAt?: string | null
+        _updatedAt: string
+        id: string
+      }
+    | {
+        __typename: 'ImageRecord'
+        image?: unknown | null
+        _createdAt: string
+        _firstPublishedAt?: string | null
+        _publishedAt?: string | null
+        _updatedAt: string
+        id: string
+      }
     | {
         __typename: 'VideoRecord'
         title?: string | null
+        thumbnail?: unknown | null
         _createdAt: string
         _firstPublishedAt?: string | null
         _publishedAt?: string | null
@@ -5443,12 +5295,28 @@ export type TextBlockFragment = {
               }
             | null
         }
-      | { __typename?: 'ConcertListRecord' }
-      | { __typename?: 'DocumentRecord' }
-      | { __typename?: 'ImageRecord' }
+      | {
+          __typename: 'DocumentRecord'
+          document?: unknown | null
+          _createdAt: string
+          _firstPublishedAt?: string | null
+          _publishedAt?: string | null
+          _updatedAt: string
+          id: string
+        }
+      | {
+          __typename: 'ImageRecord'
+          image?: unknown | null
+          _createdAt: string
+          _firstPublishedAt?: string | null
+          _publishedAt?: string | null
+          _updatedAt: string
+          id: string
+        }
       | {
           __typename: 'VideoRecord'
           title?: string | null
+          thumbnail?: unknown | null
           _createdAt: string
           _firstPublishedAt?: string | null
           _publishedAt?: string | null
@@ -5535,11 +5403,28 @@ export type TwoColumFragment = {
               }
             | null
         }
-      | { __typename?: 'ConcertListRecord' }
-      | { __typename?: 'ImageRecord' }
+      | {
+          __typename: 'DocumentRecord'
+          document?: unknown | null
+          _createdAt: string
+          _firstPublishedAt?: string | null
+          _publishedAt?: string | null
+          _updatedAt: string
+          id: string
+        }
+      | {
+          __typename: 'ImageRecord'
+          image?: unknown | null
+          _createdAt: string
+          _firstPublishedAt?: string | null
+          _publishedAt?: string | null
+          _updatedAt: string
+          id: string
+        }
       | {
           __typename: 'VideoRecord'
           title?: string | null
+          thumbnail?: unknown | null
           _createdAt: string
           _firstPublishedAt?: string | null
           _publishedAt?: string | null
@@ -5617,11 +5502,28 @@ export type TwoColumFragment = {
               }
             | null
         }
-      | { __typename?: 'ConcertListRecord' }
-      | { __typename?: 'ImageRecord' }
+      | {
+          __typename: 'DocumentRecord'
+          document?: unknown | null
+          _createdAt: string
+          _firstPublishedAt?: string | null
+          _publishedAt?: string | null
+          _updatedAt: string
+          id: string
+        }
+      | {
+          __typename: 'ImageRecord'
+          image?: unknown | null
+          _createdAt: string
+          _firstPublishedAt?: string | null
+          _publishedAt?: string | null
+          _updatedAt: string
+          id: string
+        }
       | {
           __typename: 'VideoRecord'
           title?: string | null
+          thumbnail?: unknown | null
           _createdAt: string
           _firstPublishedAt?: string | null
           _publishedAt?: string | null
@@ -5654,6 +5556,7 @@ export type VideoUploadFragment = {
 export type VideoFragment = {
   __typename: 'VideoRecord'
   title?: string | null
+  thumbnail?: unknown | null
   _createdAt: string
   _firstPublishedAt?: string | null
   _publishedAt?: string | null
@@ -5692,6 +5595,7 @@ export type GetEventQuery = {
     __typename: 'ConcertRecord'
     title?: string | null
     slug?: string | null
+    poster?: unknown | null
     _createdAt: string
     _firstPublishedAt?: string | null
     _publishedAt?: string | null
@@ -5717,6 +5621,7 @@ export type GetEventQuery = {
     content: Array<
       | {
           __typename: 'HeaderRecord'
+          cover?: unknown | null
           _createdAt: string
           _firstPublishedAt?: string | null
           _publishedAt?: string | null
@@ -5848,12 +5753,28 @@ export type GetEventQuery = {
                       }
                     | null
                 }
-              | { __typename?: 'ConcertListRecord' }
-              | { __typename?: 'DocumentRecord' }
-              | { __typename?: 'ImageRecord' }
+              | {
+                  __typename: 'DocumentRecord'
+                  document?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
+              | {
+                  __typename: 'ImageRecord'
+                  image?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
               | {
                   __typename: 'VideoRecord'
                   title?: string | null
+                  thumbnail?: unknown | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -5939,11 +5860,28 @@ export type GetEventQuery = {
                       }
                     | null
                 }
-              | { __typename?: 'ConcertListRecord' }
-              | { __typename?: 'ImageRecord' }
+              | {
+                  __typename: 'DocumentRecord'
+                  document?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
+              | {
+                  __typename: 'ImageRecord'
+                  image?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
               | {
                   __typename: 'VideoRecord'
                   title?: string | null
+                  thumbnail?: unknown | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -6021,11 +5959,28 @@ export type GetEventQuery = {
                       }
                     | null
                 }
-              | { __typename?: 'ConcertListRecord' }
-              | { __typename?: 'ImageRecord' }
+              | {
+                  __typename: 'DocumentRecord'
+                  document?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
+              | {
+                  __typename: 'ImageRecord'
+                  image?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
               | {
                   __typename: 'VideoRecord'
                   title?: string | null
+                  thumbnail?: unknown | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -6059,6 +6014,7 @@ export type GetEventPageQuery = {
     __typename: 'ConcertRecord'
     title?: string | null
     slug?: string | null
+    poster?: unknown | null
     _createdAt: string
     _firstPublishedAt?: string | null
     _publishedAt?: string | null
@@ -6084,6 +6040,7 @@ export type GetEventPageQuery = {
     content: Array<
       | {
           __typename: 'HeaderRecord'
+          cover?: unknown | null
           _createdAt: string
           _firstPublishedAt?: string | null
           _publishedAt?: string | null
@@ -6215,12 +6172,28 @@ export type GetEventPageQuery = {
                       }
                     | null
                 }
-              | { __typename?: 'ConcertListRecord' }
-              | { __typename?: 'DocumentRecord' }
-              | { __typename?: 'ImageRecord' }
+              | {
+                  __typename: 'DocumentRecord'
+                  document?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
+              | {
+                  __typename: 'ImageRecord'
+                  image?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
               | {
                   __typename: 'VideoRecord'
                   title?: string | null
+                  thumbnail?: unknown | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -6306,11 +6279,28 @@ export type GetEventPageQuery = {
                       }
                     | null
                 }
-              | { __typename?: 'ConcertListRecord' }
-              | { __typename?: 'ImageRecord' }
+              | {
+                  __typename: 'DocumentRecord'
+                  document?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
+              | {
+                  __typename: 'ImageRecord'
+                  image?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
               | {
                   __typename: 'VideoRecord'
                   title?: string | null
+                  thumbnail?: unknown | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -6388,11 +6378,28 @@ export type GetEventPageQuery = {
                       }
                     | null
                 }
-              | { __typename?: 'ConcertListRecord' }
-              | { __typename?: 'ImageRecord' }
+              | {
+                  __typename: 'DocumentRecord'
+                  document?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
+              | {
+                  __typename: 'ImageRecord'
+                  image?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
               | {
                   __typename: 'VideoRecord'
                   title?: string | null
+                  thumbnail?: unknown | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -6481,6 +6488,7 @@ export type GetEventsQuery = {
     __typename: 'ConcertRecord'
     title?: string | null
     slug?: string | null
+    poster?: unknown | null
     _createdAt: string
     _firstPublishedAt?: string | null
     _publishedAt?: string | null
@@ -6506,6 +6514,7 @@ export type GetEventsQuery = {
     content: Array<
       | {
           __typename: 'HeaderRecord'
+          cover?: unknown | null
           _createdAt: string
           _firstPublishedAt?: string | null
           _publishedAt?: string | null
@@ -6637,12 +6646,28 @@ export type GetEventsQuery = {
                       }
                     | null
                 }
-              | { __typename?: 'ConcertListRecord' }
-              | { __typename?: 'DocumentRecord' }
-              | { __typename?: 'ImageRecord' }
+              | {
+                  __typename: 'DocumentRecord'
+                  document?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
+              | {
+                  __typename: 'ImageRecord'
+                  image?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
               | {
                   __typename: 'VideoRecord'
                   title?: string | null
+                  thumbnail?: unknown | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -6728,11 +6753,28 @@ export type GetEventsQuery = {
                       }
                     | null
                 }
-              | { __typename?: 'ConcertListRecord' }
-              | { __typename?: 'ImageRecord' }
+              | {
+                  __typename: 'DocumentRecord'
+                  document?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
+              | {
+                  __typename: 'ImageRecord'
+                  image?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
               | {
                   __typename: 'VideoRecord'
                   title?: string | null
+                  thumbnail?: unknown | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -6810,11 +6852,28 @@ export type GetEventsQuery = {
                       }
                     | null
                 }
-              | { __typename?: 'ConcertListRecord' }
-              | { __typename?: 'ImageRecord' }
+              | {
+                  __typename: 'DocumentRecord'
+                  document?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
+              | {
+                  __typename: 'ImageRecord'
+                  image?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
               | {
                   __typename: 'VideoRecord'
                   title?: string | null
+                  thumbnail?: unknown | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -6860,6 +6919,7 @@ export type GetFutureEventsQuery = {
     __typename: 'ConcertRecord'
     title?: string | null
     slug?: string | null
+    poster?: unknown | null
     _createdAt: string
     _firstPublishedAt?: string | null
     _publishedAt?: string | null
@@ -6885,6 +6945,7 @@ export type GetFutureEventsQuery = {
     content: Array<
       | {
           __typename: 'HeaderRecord'
+          cover?: unknown | null
           _createdAt: string
           _firstPublishedAt?: string | null
           _publishedAt?: string | null
@@ -7016,12 +7077,28 @@ export type GetFutureEventsQuery = {
                       }
                     | null
                 }
-              | { __typename?: 'ConcertListRecord' }
-              | { __typename?: 'DocumentRecord' }
-              | { __typename?: 'ImageRecord' }
+              | {
+                  __typename: 'DocumentRecord'
+                  document?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
+              | {
+                  __typename: 'ImageRecord'
+                  image?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
               | {
                   __typename: 'VideoRecord'
                   title?: string | null
+                  thumbnail?: unknown | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -7107,11 +7184,28 @@ export type GetFutureEventsQuery = {
                       }
                     | null
                 }
-              | { __typename?: 'ConcertListRecord' }
-              | { __typename?: 'ImageRecord' }
+              | {
+                  __typename: 'DocumentRecord'
+                  document?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
+              | {
+                  __typename: 'ImageRecord'
+                  image?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
               | {
                   __typename: 'VideoRecord'
                   title?: string | null
+                  thumbnail?: unknown | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -7189,11 +7283,28 @@ export type GetFutureEventsQuery = {
                       }
                     | null
                 }
-              | { __typename?: 'ConcertListRecord' }
-              | { __typename?: 'ImageRecord' }
+              | {
+                  __typename: 'DocumentRecord'
+                  document?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
+              | {
+                  __typename: 'ImageRecord'
+                  image?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
               | {
                   __typename: 'VideoRecord'
                   title?: string | null
+                  thumbnail?: unknown | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -7230,16 +7341,28 @@ export type GetGeneralInfoQuery = {
           __typename?: 'MenuItemRecord'
           id: string
           label?: string | null
-          link?: {
-            __typename: 'PageRecord'
-            title?: string | null
-            slug?: string | null
-            _createdAt: string
-            _firstPublishedAt?: string | null
-            _publishedAt?: string | null
-            _updatedAt: string
-            id: string
-          } | null
+          link?:
+            | {
+                __typename: 'ConcertRecord'
+                title?: string | null
+                slug?: string | null
+                _createdAt: string
+                _firstPublishedAt?: string | null
+                _publishedAt?: string | null
+                _updatedAt: string
+                id: string
+              }
+            | {
+                __typename: 'PageRecord'
+                title?: string | null
+                slug?: string | null
+                _createdAt: string
+                _firstPublishedAt?: string | null
+                _publishedAt?: string | null
+                _updatedAt: string
+                id: string
+              }
+            | null
         }
       | {
           __typename?: 'SubmenuItemRecord'
@@ -7249,16 +7372,28 @@ export type GetGeneralInfoQuery = {
             __typename?: 'MenuItemRecord'
             id: string
             label?: string | null
-            link?: {
-              __typename: 'PageRecord'
-              title?: string | null
-              slug?: string | null
-              _createdAt: string
-              _firstPublishedAt?: string | null
-              _publishedAt?: string | null
-              _updatedAt: string
-              id: string
-            } | null
+            link?:
+              | {
+                  __typename: 'ConcertRecord'
+                  title?: string | null
+                  slug?: string | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
+              | {
+                  __typename: 'PageRecord'
+                  title?: string | null
+                  slug?: string | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
+              | null
           }>
         }
     >
@@ -7325,6 +7460,7 @@ export type GetPageQuery = {
     content: Array<
       | {
           __typename: 'HeaderRecord'
+          cover?: unknown | null
           _createdAt: string
           _firstPublishedAt?: string | null
           _publishedAt?: string | null
@@ -7456,12 +7592,28 @@ export type GetPageQuery = {
                       }
                     | null
                 }
-              | { __typename?: 'ConcertListRecord' }
-              | { __typename?: 'DocumentRecord' }
-              | { __typename?: 'ImageRecord' }
+              | {
+                  __typename: 'DocumentRecord'
+                  document?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
+              | {
+                  __typename: 'ImageRecord'
+                  image?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
               | {
                   __typename: 'VideoRecord'
                   title?: string | null
+                  thumbnail?: unknown | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -7547,11 +7699,28 @@ export type GetPageQuery = {
                       }
                     | null
                 }
-              | { __typename?: 'ConcertListRecord' }
-              | { __typename?: 'ImageRecord' }
+              | {
+                  __typename: 'DocumentRecord'
+                  document?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
+              | {
+                  __typename: 'ImageRecord'
+                  image?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
               | {
                   __typename: 'VideoRecord'
                   title?: string | null
+                  thumbnail?: unknown | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -7629,11 +7798,28 @@ export type GetPageQuery = {
                       }
                     | null
                 }
-              | { __typename?: 'ConcertListRecord' }
-              | { __typename?: 'ImageRecord' }
+              | {
+                  __typename: 'DocumentRecord'
+                  document?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
+              | {
+                  __typename: 'ImageRecord'
+                  image?: unknown | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
               | {
                   __typename: 'VideoRecord'
                   title?: string | null
+                  thumbnail?: unknown | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -7769,16 +7955,28 @@ export type GetSubmenuQuery = {
             __typename?: 'MenuItemRecord'
             id: string
             label?: string | null
-            link?: {
-              __typename: 'PageRecord'
-              title?: string | null
-              slug?: string | null
-              _createdAt: string
-              _firstPublishedAt?: string | null
-              _publishedAt?: string | null
-              _updatedAt: string
-              id: string
-            } | null
+            link?:
+              | {
+                  __typename: 'ConcertRecord'
+                  title?: string | null
+                  slug?: string | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
+              | {
+                  __typename: 'PageRecord'
+                  title?: string | null
+                  slug?: string | null
+                  _createdAt: string
+                  _firstPublishedAt?: string | null
+                  _publishedAt?: string | null
+                  _updatedAt: string
+                  id: string
+                }
+              | null
           }>
         }
     >
@@ -8422,6 +8620,7 @@ export const HeaderFragmentDoc = {
               ],
             },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'cover' } },
         ],
       },
     },
@@ -8681,6 +8880,7 @@ export const VideoFragmentDoc = {
               ],
             },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'thumbnail' } },
         ],
       },
     },
@@ -8725,6 +8925,90 @@ export const VideoFragmentDoc = {
     },
   ],
 } as unknown as DocumentNode<VideoFragment, unknown>
+export const DocumentFragmentDoc = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'document' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'DocumentRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'document' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'identifiable' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'RecordInterface' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
+          { kind: 'Field', name: { kind: 'Name', value: '_createdAt' } },
+          { kind: 'Field', name: { kind: 'Name', value: '_firstPublishedAt' } },
+          { kind: 'Field', name: { kind: 'Name', value: '_publishedAt' } },
+          { kind: 'Field', name: { kind: 'Name', value: '_updatedAt' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<DocumentFragment, unknown>
+export const ImageFragmentDoc = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'image' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'ImageRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'image' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'identifiable' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'RecordInterface' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
+          { kind: 'Field', name: { kind: 'Name', value: '_createdAt' } },
+          { kind: 'Field', name: { kind: 'Name', value: '_firstPublishedAt' } },
+          { kind: 'Field', name: { kind: 'Name', value: '_publishedAt' } },
+          { kind: 'Field', name: { kind: 'Name', value: '_updatedAt' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<ImageFragment, unknown>
 export const TextBlockContentFragmentDoc = {
   kind: 'Document',
   definitions: [
@@ -8798,6 +9082,38 @@ export const TextBlockContentFragmentDoc = {
                       {
                         kind: 'FragmentSpread',
                         name: { kind: 'Name', value: 'video' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
                       },
                     ],
                   },
@@ -8929,6 +9245,43 @@ export const TextBlockContentFragmentDoc = {
               ],
             },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'thumbnail' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'document' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'DocumentRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'document' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'image' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'ImageRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'image' } },
         ],
       },
     },
@@ -9133,6 +9486,43 @@ export const TextBlockFragmentDoc = {
               ],
             },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'thumbnail' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'document' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'DocumentRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'document' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'image' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'ImageRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'image' } },
         ],
       },
     },
@@ -9275,6 +9665,38 @@ export const TextBlockFragmentDoc = {
                   kind: 'InlineFragment',
                   typeCondition: {
                     kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
                     name: { kind: 'Name', value: 'CallToActionRecord' },
                   },
                   selectionSet: {
@@ -9368,6 +9790,38 @@ export const LeftContentFragmentDoc = {
                       {
                         kind: 'FragmentSpread',
                         name: { kind: 'Name', value: 'video' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
                       },
                     ],
                   },
@@ -9499,6 +9953,43 @@ export const LeftContentFragmentDoc = {
               ],
             },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'thumbnail' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'document' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'DocumentRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'document' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'image' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'ImageRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'image' } },
         ],
       },
     },
@@ -9646,6 +10137,38 @@ export const RightContentFragmentDoc = {
                   kind: 'InlineFragment',
                   typeCondition: {
                     kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
                     name: { kind: 'Name', value: 'CallToActionRecord' },
                   },
                   selectionSet: {
@@ -9769,6 +10292,43 @@ export const RightContentFragmentDoc = {
               ],
             },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'thumbnail' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'document' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'DocumentRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'document' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'image' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'ImageRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'image' } },
         ],
       },
     },
@@ -9986,6 +10546,43 @@ export const TwoColumFragmentDoc = {
               ],
             },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'thumbnail' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'document' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'DocumentRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'document' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'image' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'ImageRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'image' } },
         ],
       },
     },
@@ -10128,6 +10725,38 @@ export const TwoColumFragmentDoc = {
                   kind: 'InlineFragment',
                   typeCondition: {
                     kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
                     name: { kind: 'Name', value: 'CallToActionRecord' },
                   },
                   selectionSet: {
@@ -10224,6 +10853,38 @@ export const TwoColumFragmentDoc = {
                   kind: 'InlineFragment',
                   typeCondition: {
                     kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
                     name: { kind: 'Name', value: 'CallToActionRecord' },
                   },
                   selectionSet: {
@@ -10263,6 +10924,7 @@ export const ConcertDetailFragmentDoc = {
           },
           { kind: 'Field', name: { kind: 'Name', value: 'title' } },
           { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'poster' } },
           {
             kind: 'Field',
             name: { kind: 'Name', value: 'locations' },
@@ -10626,6 +11288,43 @@ export const ConcertDetailFragmentDoc = {
               ],
             },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'thumbnail' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'document' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'DocumentRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'document' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'image' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'ImageRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'image' } },
         ],
       },
     },
@@ -10699,6 +11398,38 @@ export const ConcertDetailFragmentDoc = {
                       {
                         kind: 'FragmentSpread',
                         name: { kind: 'Name', value: 'video' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
                       },
                     ],
                   },
@@ -10803,6 +11534,38 @@ export const ConcertDetailFragmentDoc = {
                   kind: 'InlineFragment',
                   typeCondition: {
                     kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
                     name: { kind: 'Name', value: 'CallToActionRecord' },
                   },
                   selectionSet: {
@@ -10899,6 +11662,38 @@ export const ConcertDetailFragmentDoc = {
                   kind: 'InlineFragment',
                   typeCondition: {
                     kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
                     name: { kind: 'Name', value: 'CallToActionRecord' },
                   },
                   selectionSet: {
@@ -10973,6 +11768,7 @@ export const ConcertDetailFragmentDoc = {
               ],
             },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'cover' } },
         ],
       },
     },
@@ -11356,8 +12152,36 @@ export const MenuItemFragmentDoc = {
               kind: 'SelectionSet',
               selections: [
                 {
-                  kind: 'FragmentSpread',
-                  name: { kind: 'Name', value: 'pageLink' },
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ConcertRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'concertLink' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'PageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'pageLink' },
+                      },
+                    ],
+                  },
                 },
               ],
             },
@@ -11381,6 +12205,25 @@ export const MenuItemFragmentDoc = {
           { kind: 'Field', name: { kind: 'Name', value: '_publishedAt' } },
           { kind: 'Field', name: { kind: 'Name', value: '_updatedAt' } },
           { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'concertLink' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'ConcertRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
         ],
       },
     },
@@ -11457,6 +12300,25 @@ export const SubmenuItemFragmentDoc = {
     },
     {
       kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'concertLink' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'ConcertRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
       name: { kind: 'Name', value: 'pageLink' },
       typeCondition: {
         kind: 'NamedType',
@@ -11493,8 +12355,36 @@ export const SubmenuItemFragmentDoc = {
               kind: 'SelectionSet',
               selections: [
                 {
-                  kind: 'FragmentSpread',
-                  name: { kind: 'Name', value: 'pageLink' },
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ConcertRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'concertLink' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'PageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'pageLink' },
+                      },
+                    ],
+                  },
                 },
               ],
             },
@@ -11584,6 +12474,25 @@ export const GeneralInfoFragmentDoc = {
     },
     {
       kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'concertLink' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'ConcertRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
       name: { kind: 'Name', value: 'pageLink' },
       typeCondition: {
         kind: 'NamedType',
@@ -11620,8 +12529,36 @@ export const GeneralInfoFragmentDoc = {
               kind: 'SelectionSet',
               selections: [
                 {
-                  kind: 'FragmentSpread',
-                  name: { kind: 'Name', value: 'pageLink' },
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ConcertRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'concertLink' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'PageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'pageLink' },
+                      },
+                    ],
+                  },
                 },
               ],
             },
@@ -11685,216 +12622,6 @@ export const ResponsiveImageFragmentDoc = {
     },
   ],
 } as unknown as DocumentNode<ResponsiveImageFragment, unknown>
-export const MediaItemFragmentDoc = {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'mediaItem' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'MediaItemRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          {
-            kind: 'FragmentSpread',
-            name: { kind: 'Name', value: 'identifiable' },
-          },
-          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'asset' } },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'identifiable' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'RecordInterface' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: '_createdAt' } },
-          { kind: 'Field', name: { kind: 'Name', value: '_firstPublishedAt' } },
-          { kind: 'Field', name: { kind: 'Name', value: '_publishedAt' } },
-          { kind: 'Field', name: { kind: 'Name', value: '_updatedAt' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<MediaItemFragment, unknown>
-export const ImageFragmentDoc = {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'image' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'ImageRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          {
-            kind: 'FragmentSpread',
-            name: { kind: 'Name', value: 'identifiable' },
-          },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'item' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'FragmentSpread',
-                  name: { kind: 'Name', value: 'mediaItem' },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'identifiable' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'RecordInterface' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: '_createdAt' } },
-          { kind: 'Field', name: { kind: 'Name', value: '_firstPublishedAt' } },
-          { kind: 'Field', name: { kind: 'Name', value: '_publishedAt' } },
-          { kind: 'Field', name: { kind: 'Name', value: '_updatedAt' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'mediaItem' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'MediaItemRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          {
-            kind: 'FragmentSpread',
-            name: { kind: 'Name', value: 'identifiable' },
-          },
-          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'asset' } },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<ImageFragment, unknown>
-export const DocumentFragmentDoc = {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'document' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'DocumentRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          {
-            kind: 'FragmentSpread',
-            name: { kind: 'Name', value: 'identifiable' },
-          },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'document' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'FragmentSpread',
-                  name: { kind: 'Name', value: 'mediaItem' },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'identifiable' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'RecordInterface' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: '_createdAt' } },
-          { kind: 'Field', name: { kind: 'Name', value: '_firstPublishedAt' } },
-          { kind: 'Field', name: { kind: 'Name', value: '_publishedAt' } },
-          { kind: 'Field', name: { kind: 'Name', value: '_updatedAt' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'mediaItem' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'MediaItemRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          {
-            kind: 'FragmentSpread',
-            name: { kind: 'Name', value: 'identifiable' },
-          },
-          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'asset' } },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<DocumentFragment, unknown>
-export const MusicFragmentDoc = {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'music' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'MusicRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'composer' } },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<MusicFragment, unknown>
 export const PageFragmentDoc = {
   kind: 'Document',
   definitions: [
@@ -12220,6 +12947,43 @@ export const PageFragmentDoc = {
               ],
             },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'thumbnail' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'document' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'DocumentRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'document' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'image' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'ImageRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'image' } },
         ],
       },
     },
@@ -12293,6 +13057,38 @@ export const PageFragmentDoc = {
                       {
                         kind: 'FragmentSpread',
                         name: { kind: 'Name', value: 'video' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
                       },
                     ],
                   },
@@ -12397,6 +13193,38 @@ export const PageFragmentDoc = {
                   kind: 'InlineFragment',
                   typeCondition: {
                     kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
                     name: { kind: 'Name', value: 'CallToActionRecord' },
                   },
                   selectionSet: {
@@ -12493,6 +13321,38 @@ export const PageFragmentDoc = {
                   kind: 'InlineFragment',
                   typeCondition: {
                     kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
                     name: { kind: 'Name', value: 'CallToActionRecord' },
                   },
                   selectionSet: {
@@ -12538,6 +13398,7 @@ export const PageFragmentDoc = {
               ],
             },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'cover' } },
         ],
       },
     },
@@ -12941,6 +13802,43 @@ export const PageDetailFragmentDoc = {
               ],
             },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'thumbnail' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'document' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'DocumentRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'document' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'image' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'ImageRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'image' } },
         ],
       },
     },
@@ -13014,6 +13912,38 @@ export const PageDetailFragmentDoc = {
                       {
                         kind: 'FragmentSpread',
                         name: { kind: 'Name', value: 'video' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
                       },
                     ],
                   },
@@ -13118,6 +14048,38 @@ export const PageDetailFragmentDoc = {
                   kind: 'InlineFragment',
                   typeCondition: {
                     kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
                     name: { kind: 'Name', value: 'CallToActionRecord' },
                   },
                   selectionSet: {
@@ -13214,6 +14176,38 @@ export const PageDetailFragmentDoc = {
                   kind: 'InlineFragment',
                   typeCondition: {
                     kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
                     name: { kind: 'Name', value: 'CallToActionRecord' },
                   },
                   selectionSet: {
@@ -13259,6 +14253,7 @@ export const PageDetailFragmentDoc = {
               ],
             },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'cover' } },
         ],
       },
     },
@@ -13531,7 +14526,7 @@ export const SiteMetadataFragmentDoc = {
   ],
 } as unknown as DocumentNode<SiteMetadataFragment, unknown>
 export const GetEventDocument = {
-  __meta__: { hash: 'bc12d20633f437779578a2030cc4e87f2c636a70' },
+  __meta__: { hash: '85d1809e4a603451368661d24907bc3f7fe3af73' },
   kind: 'Document',
   definitions: [
     {
@@ -13896,6 +14891,7 @@ export const GetEventDocument = {
               ],
             },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'cover' } },
         ],
       },
     },
@@ -13947,6 +14943,43 @@ export const GetEventDocument = {
               ],
             },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'thumbnail' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'document' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'DocumentRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'document' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'image' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'ImageRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'image' } },
         ],
       },
     },
@@ -14020,6 +15053,38 @@ export const GetEventDocument = {
                       {
                         kind: 'FragmentSpread',
                         name: { kind: 'Name', value: 'video' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
                       },
                     ],
                   },
@@ -14154,6 +15219,38 @@ export const GetEventDocument = {
                   kind: 'InlineFragment',
                   typeCondition: {
                     kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
                     name: { kind: 'Name', value: 'CallToActionRecord' },
                   },
                   selectionSet: {
@@ -14250,6 +15347,38 @@ export const GetEventDocument = {
                   kind: 'InlineFragment',
                   typeCondition: {
                     kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
                     name: { kind: 'Name', value: 'CallToActionRecord' },
                   },
                   selectionSet: {
@@ -14327,6 +15456,7 @@ export const GetEventDocument = {
           },
           { kind: 'Field', name: { kind: 'Name', value: 'title' } },
           { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'poster' } },
           {
             kind: 'Field',
             name: { kind: 'Name', value: 'locations' },
@@ -14403,7 +15533,7 @@ export const GetEventDocument = {
   ],
 } as unknown as DocumentNode<GetEventQuery, GetEventQueryVariables>
 export const GetEventPageDocument = {
-  __meta__: { hash: '761cf4e08cd3ba5f1fc4194904058f1ab8ab275f' },
+  __meta__: { hash: 'd99708bc2f59a9452008846360fc323a306b9cf5' },
   kind: 'Document',
   definitions: [
     {
@@ -14768,6 +15898,7 @@ export const GetEventPageDocument = {
               ],
             },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'cover' } },
         ],
       },
     },
@@ -14819,6 +15950,43 @@ export const GetEventPageDocument = {
               ],
             },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'thumbnail' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'document' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'DocumentRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'document' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'image' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'ImageRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'image' } },
         ],
       },
     },
@@ -14892,6 +16060,38 @@ export const GetEventPageDocument = {
                       {
                         kind: 'FragmentSpread',
                         name: { kind: 'Name', value: 'video' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
                       },
                     ],
                   },
@@ -15026,6 +16226,38 @@ export const GetEventPageDocument = {
                   kind: 'InlineFragment',
                   typeCondition: {
                     kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
                     name: { kind: 'Name', value: 'CallToActionRecord' },
                   },
                   selectionSet: {
@@ -15122,6 +16354,38 @@ export const GetEventPageDocument = {
                   kind: 'InlineFragment',
                   typeCondition: {
                     kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
                     name: { kind: 'Name', value: 'CallToActionRecord' },
                   },
                   selectionSet: {
@@ -15199,6 +16463,7 @@ export const GetEventPageDocument = {
           },
           { kind: 'Field', name: { kind: 'Name', value: 'title' } },
           { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'poster' } },
           {
             kind: 'Field',
             name: { kind: 'Name', value: 'locations' },
@@ -15574,7 +16839,7 @@ export const GetEventsUrlsDocument = {
   ],
 } as unknown as DocumentNode<GetEventsUrlsQuery, GetEventsUrlsQueryVariables>
 export const GetEventsDocument = {
-  __meta__: { hash: 'dfe8ccd533bbd0206b8b874469a0fac19dc96d4e' },
+  __meta__: { hash: '37579c2eb93d83a403a6737884df7d0eeec7d5d3' },
   kind: 'Document',
   definitions: [
     {
@@ -15965,6 +17230,7 @@ export const GetEventsDocument = {
               ],
             },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'cover' } },
         ],
       },
     },
@@ -16016,6 +17282,43 @@ export const GetEventsDocument = {
               ],
             },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'thumbnail' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'document' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'DocumentRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'document' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'image' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'ImageRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'image' } },
         ],
       },
     },
@@ -16089,6 +17392,38 @@ export const GetEventsDocument = {
                       {
                         kind: 'FragmentSpread',
                         name: { kind: 'Name', value: 'video' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
                       },
                     ],
                   },
@@ -16223,6 +17558,38 @@ export const GetEventsDocument = {
                   kind: 'InlineFragment',
                   typeCondition: {
                     kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
                     name: { kind: 'Name', value: 'CallToActionRecord' },
                   },
                   selectionSet: {
@@ -16319,6 +17686,38 @@ export const GetEventsDocument = {
                   kind: 'InlineFragment',
                   typeCondition: {
                     kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
                     name: { kind: 'Name', value: 'CallToActionRecord' },
                   },
                   selectionSet: {
@@ -16396,6 +17795,7 @@ export const GetEventsDocument = {
           },
           { kind: 'Field', name: { kind: 'Name', value: 'title' } },
           { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'poster' } },
           {
             kind: 'Field',
             name: { kind: 'Name', value: 'locations' },
@@ -16498,7 +17898,7 @@ export const GetEventsMetaDocument = {
   ],
 } as unknown as DocumentNode<GetEventsMetaQuery, GetEventsMetaQueryVariables>
 export const GetFutureEventsDocument = {
-  __meta__: { hash: '15757b83dee9b9911846d7b0aea871109f9c1706' },
+  __meta__: { hash: 'b69036513ae83ae3f23b63e72eee8c843712230a' },
   kind: 'Document',
   definitions: [
     {
@@ -16908,6 +18308,7 @@ export const GetFutureEventsDocument = {
               ],
             },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'cover' } },
         ],
       },
     },
@@ -16959,6 +18360,43 @@ export const GetFutureEventsDocument = {
               ],
             },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'thumbnail' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'document' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'DocumentRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'document' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'image' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'ImageRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'image' } },
         ],
       },
     },
@@ -17032,6 +18470,38 @@ export const GetFutureEventsDocument = {
                       {
                         kind: 'FragmentSpread',
                         name: { kind: 'Name', value: 'video' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
                       },
                     ],
                   },
@@ -17166,6 +18636,38 @@ export const GetFutureEventsDocument = {
                   kind: 'InlineFragment',
                   typeCondition: {
                     kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
                     name: { kind: 'Name', value: 'CallToActionRecord' },
                   },
                   selectionSet: {
@@ -17262,6 +18764,38 @@ export const GetFutureEventsDocument = {
                   kind: 'InlineFragment',
                   typeCondition: {
                     kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
                     name: { kind: 'Name', value: 'CallToActionRecord' },
                   },
                   selectionSet: {
@@ -17339,6 +18873,7 @@ export const GetFutureEventsDocument = {
           },
           { kind: 'Field', name: { kind: 'Name', value: 'title' } },
           { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'poster' } },
           {
             kind: 'Field',
             name: { kind: 'Name', value: 'locations' },
@@ -17418,7 +18953,7 @@ export const GetFutureEventsDocument = {
   GetFutureEventsQueryVariables
 >
 export const GetGeneralInfoDocument = {
-  __meta__: { hash: 'e93453701a84d51ae64fe289014b6d2263577510' },
+  __meta__: { hash: 'e9ca276953ca87df468b2c6b2899cfc8e52b5cae' },
   kind: 'Document',
   definitions: [
     {
@@ -17465,6 +19000,25 @@ export const GetGeneralInfoDocument = {
     },
     {
       kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'concertLink' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'ConcertRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
       name: { kind: 'Name', value: 'pageLink' },
       typeCondition: {
         kind: 'NamedType',
@@ -17501,8 +19055,36 @@ export const GetGeneralInfoDocument = {
               kind: 'SelectionSet',
               selections: [
                 {
-                  kind: 'FragmentSpread',
-                  name: { kind: 'Name', value: 'pageLink' },
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ConcertRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'concertLink' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'PageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'pageLink' },
+                      },
+                    ],
+                  },
                 },
               ],
             },
@@ -17833,7 +19415,7 @@ export const GetLocationsDocument = {
   ],
 } as unknown as DocumentNode<GetLocationsQuery, GetLocationsQueryVariables>
 export const GetPageDocument = {
-  __meta__: { hash: '150f7a0c569921a2bced38547bd1d27a2d8efac3' },
+  __meta__: { hash: '42d7884b8d7b0bafb4d74d1ee95ea96b6b0e5feb' },
   kind: 'Document',
   definitions: [
     {
@@ -18125,6 +19707,7 @@ export const GetPageDocument = {
               ],
             },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'cover' } },
         ],
       },
     },
@@ -18176,6 +19759,43 @@ export const GetPageDocument = {
               ],
             },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'thumbnail' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'document' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'DocumentRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'document' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'image' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'ImageRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'image' } },
         ],
       },
     },
@@ -18249,6 +19869,38 @@ export const GetPageDocument = {
                       {
                         kind: 'FragmentSpread',
                         name: { kind: 'Name', value: 'video' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
                       },
                     ],
                   },
@@ -18383,6 +20035,38 @@ export const GetPageDocument = {
                   kind: 'InlineFragment',
                   typeCondition: {
                     kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
                     name: { kind: 'Name', value: 'CallToActionRecord' },
                   },
                   selectionSet: {
@@ -18471,6 +20155,38 @@ export const GetPageDocument = {
                       {
                         kind: 'FragmentSpread',
                         name: { kind: 'Name', value: 'video' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'DocumentRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'document' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ImageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'image' },
                       },
                     ],
                   },
@@ -19086,7 +20802,7 @@ export const GetSiteMetadataDocument = {
   GetSiteMetadataQueryVariables
 >
 export const GetSubmenuDocument = {
-  __meta__: { hash: '241389efe065149421412a7f5dd5c8baf2a058c4' },
+  __meta__: { hash: 'f9e49b3ba91024123f7e0a850939ab3616c58fde' },
   kind: 'Document',
   definitions: [
     {
@@ -19154,6 +20870,25 @@ export const GetSubmenuDocument = {
     },
     {
       kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'concertLink' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'ConcertRecord' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'FragmentSpread',
+            name: { kind: 'Name', value: 'identifiable' },
+          },
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
       name: { kind: 'Name', value: 'pageLink' },
       typeCondition: {
         kind: 'NamedType',
@@ -19190,8 +20925,36 @@ export const GetSubmenuDocument = {
               kind: 'SelectionSet',
               selections: [
                 {
-                  kind: 'FragmentSpread',
-                  name: { kind: 'Name', value: 'pageLink' },
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'ConcertRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'concertLink' },
+                      },
+                    ],
+                  },
+                },
+                {
+                  kind: 'InlineFragment',
+                  typeCondition: {
+                    kind: 'NamedType',
+                    name: { kind: 'Name', value: 'PageRecord' },
+                  },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'FragmentSpread',
+                        name: { kind: 'Name', value: 'pageLink' },
+                      },
+                    ],
+                  },
                 },
               ],
             },

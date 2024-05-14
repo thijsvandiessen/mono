@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "npm run dev --workspaces --if-present",
-    "build": "npm run build --workspace=apps/crea --workspace=apps/lundi-bleu",
+    "build": "npm run build --workspaces --if-present",
     "start:crea": "npm run start --workspace=apps/crea",
     "start:lundi": "npm run start --workspace=apps/lundi-bleu",
     "lint": "oxlint -D correctness -D perf -A debugger -A eqeqeq -c ./.eslintrc.json && npm run lint --workspaces",

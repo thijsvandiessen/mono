@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import type { Event } from '@mono/graphql/src/types/event'
 import { ArrowRight } from '../icons/arrow-right'
-import { dateIsInThePast, formatDate } from '@mono/utils/src/formatDate'
+import { dateIsInThePast, formatDate } from '@mono/utils'
 
 import styles from './styles.module.scss'
 

@@ -1,16 +1,15 @@
 import React from 'react'
 import classNames from 'classnames'
-import type { DocumentFragment } from '@mono/graphql/src/generated/graphql'
 import { formatCloudinaryDocument } from '@mono/graphql/src/formatters/formatCloudinaryDocument'
 import { isOfTypeCloudinaryAsset } from '@mono/graphql/src/types/image'
 import { Button } from '../button'
 import { ArrowDown } from '../icons/arrow-down'
-import { formatBytes } from '@mono/utils/src/formatBytes'
+import { formatBytes } from '@mono/utils'
 
 import styles from './styles.module.scss'
 
 interface Props {
-  record: DocumentFragment
+  document: DocumentFragment
 }
 
 export const DocumentBlock = ({ record }: Props) => {

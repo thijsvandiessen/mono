@@ -7,16 +7,11 @@ import {
   type GetEventsQueryVariables,
 } from '../generated/graphql'
 
-interface Props extends GetEventsQueryVariables {
-  skip: number
-  first: number
-}
-
 export const getEvents = async ({
   skip,
   first,
   order = ConcertModelOrderBy.PositionAsc,
-}: Props) => {
+}: GetEventsQueryVariables) => {
   try {
     const { data, error } = await client.query<
       GetEventsQuery,
