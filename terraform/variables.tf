@@ -5,8 +5,8 @@ variable "hcp_project_id" {
   default   = ""
 }
 
-variable "vercel_team_id" {
-  sensitive = false
+variable "vercel_api_token" {
+  sensitive = true
   type      = string
   default   = ""
 }
