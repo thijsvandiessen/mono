@@ -10,3 +10,7 @@ variable "vercel_api_token" {
   type      = string
   default   = ""
 }
+
+variable "TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA" {
+  type = string
+}
