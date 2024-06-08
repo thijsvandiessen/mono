@@ -1,5 +1,5 @@
-import { GetAuthorsMetaDocument } from '../generated/graphql'
 import { client } from '../gqlClient'
+import { GetEventsMetaDocument } from '../generated/graphql'
 import { getEventsMeta } from './getEventsMeta'
 
 jest.mock('../gqlClient', () => {
@@ -26,11 +26,11 @@ describe('getEventsMeta', () => {
       },
       operation: {
         key: 1,
-        query: GetAuthorsMetaDocument,
+        query: GetEventsMetaDocument,
         variables: {},
         kind: 'query',
         context: {
-          url: 'https://main--crea-orkest-p7nmyh.apollographos.net/graphql',
+          url: 'https://current--vandiessen-mono.apollographos.net/graphql',
           requestPolicy: 'cache-first',
         },
       },

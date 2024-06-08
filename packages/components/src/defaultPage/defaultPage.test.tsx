@@ -1,8 +1,8 @@
 import React from 'react'
 import { DefaultPage } from './defaultPage'
 import type { Props } from './defaultPage'
-import { getPage } from '@crea/graphql/src/getters/getPage'
-import { resolvedComponent } from '@crea/utils/src/testHelpers/resolvedComponent'
+import { getPage } from '@mono/graphql'
+import { resolvedComponent } from '@mono/utils'
 import { render } from '@testing-library/react'
 
 jest.mock('../navigation', () => {
@@ -14,8 +14,8 @@ jest.mock('../navigation', () => {
   }
 })
 
-jest.mock('@crea/graphql/src/getters/getPage', () => {
-  const originalModule = jest.requireActual('@crea/graphql/src/getters/getPage')
+jest.mock('@mono/graphql', () => {
+  const originalModule = jest.requireActual('@mono/graphql')
   return {
     __esModule: true,
     ...originalModule,
@@ -27,7 +27,7 @@ const getPageMock = jest.mocked(getPage)
 
 describe('Concert component', () => {
   it('shows all the data', async () => {
-    getPageMock.mockResolvedValueOnce({
+    getPageMock.mockResolvedValue({
       data: {
         __typename: 'PageRecord',
         title: 'title',

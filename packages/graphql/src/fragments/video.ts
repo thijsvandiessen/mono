@@ -1,8 +1,13 @@
 import { gql } from '@urql/core'
 import { identifiable } from './identifiable'
-import { mediaItem } from './image'
+import type { TypedDocumentNode } from '@urql/core'
+import type {
+  VideoFieldFragment,
+  VideoFragment,
+  VideoUploadFragment,
+} from '../generated/graphql'
 
-export const videoUpload = gql`
+export const videoUpload: TypedDocumentNode<VideoUploadFragment> = gql`
   fragment videoUpload on UploadVideoField {
     mp4Url
     muxAssetId
@@ -12,22 +17,19 @@ export const videoUpload = gql`
   }
 `
 
-export const video = gql`
+export const video: TypedDocumentNode<VideoFragment> = gql`
   fragment video on VideoRecord {
     ...identifiable
     title
     media {
       ...videoField
     }
-    thumbnail {
-      ...mediaItem
-    }
+    thumbnail
   }
   ${identifiable}
-  ${mediaItem}
 `
 
-export const videoField = gql`
+export const videoField: TypedDocumentNode<VideoFieldFragment> = gql`
   fragment videoField on VideoField {
     height
     provider

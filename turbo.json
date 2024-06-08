@@ -14,7 +14,6 @@
       ],
       "dotEnv": ["app/**/.env"]
     },
-    "oxlint": {},
     "lint": {},
     "test": {}
   },

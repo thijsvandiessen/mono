@@ -79,7 +79,7 @@ type ColorField {
 }
 
 """
-Block of type Concert lijst (concert_list)
+Block of type Concert list (concert_list)
 """
 type ConcertListRecord implements RecordInterface {
   _createdAt: DateTime!
@@ -106,7 +106,7 @@ type ConcertListRecord implements RecordInterface {
   _status: ItemStatus!
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
-  futureConcerts: BooleanType
+  futureConcerts: BooleanType!
   id: ItemId!
   pinnedConcerts: [ConcertRecord!]!
 }
@@ -115,6 +115,21 @@ union ConcertModelContentField =
     HeaderRecord
   | TextBlockRecord
   | TwoColumnRecord
+
+"""
+Linking fields
+"""
+enum ConcertModelFieldsReferencingConcertModel {
+  concert_content
+  concert_content__header_body
+  concert_content__header_body__callToAction_pageLink
+  concert_content__textBlock_content
+  concert_content__textBlock_content__callToAction_pageLink
+  concert_content__twoColumn_leftContent
+  concert_content__twoColumn_leftContent__callToAction_pageLink
+  concert_content__twoColumn_rightContent
+  concert_content__twoColumn_rightContent__callToAction_pageLink
+}
 
 input ConcertModelFilter {
   _createdAt: CreatedAtFilter
@@ -127,49 +142,12 @@ input ConcertModelFilter {
   _status: StatusFilter
   _updatedAt: UpdatedAtFilter
   _isValid: BooleanFilter
-  poster: LinkFilter
-  program: LinksFilter
-  persons: LinksFilter
-  slug: SlugFilter
+  poster: JsonFilter
   seo: SeoFilter
+  slug: SlugFilter
   title: StringFilter
-  locations: ConcertModelLocationsFieldFilter
   OR: [ConcertModelFilter]
   AND: [ConcertModelFilter]
-}
-
-"""
-Specify nested blocks fields conditions
-"""
-input ConcertModelLocationsFieldBlocksConditions {
-  locationItem: LocationItemModelFilter
-}
-
-"""
-Specify nested blocks types presence
-"""
-input ConcertModelLocationsFieldBlocksPresence {
-  locationItem: BooleanType
-}
-
-"""
-Specify how to filter this specific Modular Content field instance
-"""
-input ConcertModelLocationsFieldFilter {
-  """
-  Filter records containing at least one block matching the specified conditions
-  """
-  any: ConcertModelLocationsFieldBlocksConditions
-
-  """
-  Filter records containing at least one block of any kind or not
-  """
-  exists: BooleanType
-
-  """
-  Filter records containing at least one block of specified type or not
-  """
-  containsAny: ConcertModelLocationsFieldBlocksPresence
 }
 
 enum ConcertModelOrderBy {
@@ -198,9 +176,141 @@ enum ConcertModelOrderBy {
 }
 
 """
-Record of type Concerten (concert)
+Record of type Concert (concert)
 """
 type ConcertRecord implements RecordInterface {
+  _allReferencingConcerts(
+    """
+    Specifies how to filter linking records
+    """
+    through: InverseRelationshipFilterBetweenConcertAndConcert
+
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+
+    """
+    If you want to fallback to a default translation when a translation has not been found
+    """
+    fallbackLocales: [SiteLocale!]
+
+    """
+    Skip the first results
+    """
+    skip: IntType
+
+    """
+    Limit the number of results
+    """
+    first: IntType = 20
+    filter: ConcertModelFilter
+    orderBy: [ConcertModelOrderBy] = [position_ASC]
+  ): [ConcertRecord!]!
+
+  """
+  Returns meta information regarding a record collection
+  """
+  _allReferencingConcertsMeta(
+    """
+    Specifies how to filter linking records
+    """
+    through: InverseRelationshipFilterBetweenConcertAndConcert
+
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+    filter: ConcertModelFilter
+  ): CollectionMetadata!
+  _allReferencingGenerals(
+    """
+    Specifies how to filter linking records
+    """
+    through: InverseRelationshipFilterBetweenGeneralAndConcert
+
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+
+    """
+    If you want to fallback to a default translation when a translation has not been found
+    """
+    fallbackLocales: [SiteLocale!]
+
+    """
+    Skip the first results
+    """
+    skip: IntType
+
+    """
+    Limit the number of results
+    """
+    first: IntType = 20
+    filter: GeneralModelFilter
+    orderBy: [GeneralModelOrderBy] = [_updatedAt_DESC]
+  ): [GeneralRecord!]!
+
+  """
+  Returns meta information regarding a record collection
+  """
+  _allReferencingGeneralsMeta(
+    """
+    Specifies how to filter linking records
+    """
+    through: InverseRelationshipFilterBetweenGeneralAndConcert
+
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+    filter: GeneralModelFilter
+  ): CollectionMetadata!
+  _allReferencingPages(
+    """
+    Specifies how to filter linking records
+    """
+    through: InverseRelationshipFilterBetweenPageAndConcert
+
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+
+    """
+    If you want to fallback to a default translation when a translation has not been found
+    """
+    fallbackLocales: [SiteLocale!]
+
+    """
+    Skip the first results
+    """
+    skip: IntType
+
+    """
+    Limit the number of results
+    """
+    first: IntType = 20
+    filter: PageModelFilter
+    orderBy: [PageModelOrderBy] = [_updatedAt_DESC]
+  ): [PageRecord!]!
+
+  """
+  Returns meta information regarding a record collection
+  """
+  _allReferencingPagesMeta(
+    """
+    Specifies how to filter linking records
+    """
+    through: InverseRelationshipFilterBetweenPageAndConcert
+
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+    filter: PageModelFilter
+  ): CollectionMetadata!
   _createdAt: DateTime!
 
   """
@@ -228,10 +338,8 @@ type ConcertRecord implements RecordInterface {
   content: [ConcertModelContentField!]!
   id: ItemId!
   locations: [LocationItemRecord!]!
-  persons: [PersonRecord!]!
   position: IntType
-  poster: MediaItemRecord
-  program: [MusicRecord!]!
+  poster: JsonField
   seo: SeoField
   slug: String
   title: String
@@ -285,46 +393,6 @@ A ISO 8601 compliant datetime value
 scalar DateTime
 
 """
-Specifies how to filter DateTime fields
-"""
-input DateTimeFilter {
-  """
-  Filter records with a value that's strictly greater than the one specified. Seconds and milliseconds are truncated from the argument.
-  """
-  gt: DateTime
-
-  """
-  Filter records with a value that's less than the one specified. Seconds and milliseconds are truncated from the argument.
-  """
-  lt: DateTime
-
-  """
-  Filter records with a value that's greater than or equal to than the one specified. Seconds and milliseconds are truncated from the argument.
-  """
-  gte: DateTime
-
-  """
-  Filter records with a value that's less or equal than the one specified. Seconds and milliseconds are truncated from the argument.
-  """
-  lte: DateTime
-
-  """
-  Filter records with a value that's within the specified minute range. Seconds and milliseconds are truncated from the argument.
-  """
-  eq: DateTime
-
-  """
-  Filter records with a value that's outside the specified minute range. Seconds and milliseconds are truncated from the argument.
-  """
-  neq: DateTime
-
-  """
-  Filter records with the specified field defined (i.e. with any value) or not
-  """
-  exists: BooleanType
-}
-
-"""
 Block of type Document (document)
 """
 type DocumentRecord implements RecordInterface {
@@ -352,8 +420,9 @@ type DocumentRecord implements RecordInterface {
   _status: ItemStatus!
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
-  document: MediaItemRecord
+  document: JsonField
   id: ItemId!
+  title: String
 }
 
 enum FaviconType {
@@ -614,10 +683,58 @@ type focalPoint {
   y: FloatType!
 }
 
+"""
+Linking fields
+"""
+enum GeneralModelFieldsReferencingConcertModel {
+  general_menu
+  general_menu__menuItem_link
+  general_menu__submenuItem_menu__menuItem_link
+}
+
+input GeneralModelFilter {
+  _createdAt: CreatedAtFilter
+  id: ItemIdFilter
+  _firstPublishedAt: PublishedAtFilter
+  _publicationScheduledAt: PublishedAtFilter
+  _unpublishingScheduledAt: PublishedAtFilter
+  _publishedAt: PublishedAtFilter
+  _status: StatusFilter
+  _updatedAt: UpdatedAtFilter
+  _isValid: BooleanFilter
+  siteMetadata: JsonFilter
+  title: StringFilter
+  OR: [GeneralModelFilter]
+  AND: [GeneralModelFilter]
+}
+
 union GeneralModelMenuField = MenuItemRecord | SubmenuItemRecord
 
+enum GeneralModelOrderBy {
+  _createdAt_ASC
+  _createdAt_DESC
+  id_ASC
+  id_DESC
+  _firstPublishedAt_ASC
+  _firstPublishedAt_DESC
+  _publicationScheduledAt_ASC
+  _publicationScheduledAt_DESC
+  _unpublishingScheduledAt_ASC
+  _unpublishingScheduledAt_DESC
+  _publishedAt_ASC
+  _publishedAt_DESC
+  _status_ASC
+  _status_DESC
+  _updatedAt_ASC
+  _updatedAt_DESC
+  _isValid_ASC
+  _isValid_DESC
+  title_ASC
+  title_DESC
+}
+
 """
-Record of type Algemene info (general)
+Record of type general (general)
 """
 type GeneralRecord implements RecordInterface {
   _createdAt: DateTime!
@@ -695,7 +812,7 @@ type HeaderRecord implements RecordInterface {
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
   body: HeaderModelBodyField
-  cover: MediaItemRecord
+  cover: JsonField
   id: ItemId!
 }
 
@@ -728,7 +845,7 @@ type ImageRecord implements RecordInterface {
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
   id: ItemId!
-  item: MediaItemRecord
+  image: JsonField
 }
 
 input ImgixParams {
@@ -2101,6 +2218,13 @@ input ImgixParams {
   [Open Imgix reference »](https://docs.imgix.com/apis/url/size/w)
   """
   w: FloatType
+
+  """
+  Bypasses any [DatoCMS Automatic Image Optimization](https://www.datocms.com/docs/cdn-settings/advanced-asset-settings) that might be set up for the project.
+
+  Exercise caution when using this parameter, as it could significantly increase your bandwidth costs.
+  """
+  skipDefaultOptimizations: BooleanType
 }
 
 enum ImgixParamsAuto {
@@ -2297,6 +2421,96 @@ input InUseFilter {
   eq: BooleanType
 }
 
+"""
+Specifies how to filter by linking fields
+"""
+input InverseRelationshipFieldFilterBetweenConcertAndConcert {
+  """
+  Filter linking records that reference current record in at least one of the specified fields
+  """
+  anyIn: [ConcertModelFieldsReferencingConcertModel!]
+
+  """
+  Filter linking records that do not reference current record in any of the specified fields
+  """
+  notIn: [ConcertModelFieldsReferencingConcertModel!]
+}
+
+"""
+Specifies how to filter by linking fields
+"""
+input InverseRelationshipFieldFilterBetweenGeneralAndConcert {
+  """
+  Filter linking records that reference current record in at least one of the specified fields
+  """
+  anyIn: [GeneralModelFieldsReferencingConcertModel!]
+
+  """
+  Filter linking records that do not reference current record in any of the specified fields
+  """
+  notIn: [GeneralModelFieldsReferencingConcertModel!]
+}
+
+"""
+Specifies how to filter by linking fields
+"""
+input InverseRelationshipFieldFilterBetweenPageAndConcert {
+  """
+  Filter linking records that reference current record in at least one of the specified fields
+  """
+  anyIn: [PageModelFieldsReferencingConcertModel!]
+
+  """
+  Filter linking records that do not reference current record in any of the specified fields
+  """
+  notIn: [PageModelFieldsReferencingConcertModel!]
+}
+
+"""
+Specifies how to filter linking records
+"""
+input InverseRelationshipFilterBetweenConcertAndConcert {
+  """
+  Specifies how to filter by linking fields
+  """
+  fields: InverseRelationshipFieldFilterBetweenConcertAndConcert
+
+  """
+  Specifies how to filter by linking locales
+  """
+  locales: LinkingLocalesFilter
+}
+
+"""
+Specifies how to filter linking records
+"""
+input InverseRelationshipFilterBetweenGeneralAndConcert {
+  """
+  Specifies how to filter by linking fields
+  """
+  fields: InverseRelationshipFieldFilterBetweenGeneralAndConcert
+
+  """
+  Specifies how to filter by linking locales
+  """
+  locales: LinkingLocalesFilter
+}
+
+"""
+Specifies how to filter linking records
+"""
+input InverseRelationshipFilterBetweenPageAndConcert {
+  """
+  Specifies how to filter by linking fields
+  """
+  fields: InverseRelationshipFieldFilterBetweenPageAndConcert
+
+  """
+  Specifies how to filter by linking locales
+  """
+  locales: LinkingLocalesFilter
+}
+
 scalar ItemId
 
 """
@@ -2369,76 +2583,30 @@ input LatLonNearFilter {
 }
 
 """
-Specifies how to filter Single-link fields
+Linking locales
 """
-input LinkFilter {
-  """
-  Search for records with an exact match. The specified value must be a Record ID
-  """
-  eq: ItemId
-
-  """
-  Exclude records with an exact match. The specified value must be a Record ID
-  """
-  neq: ItemId
-
-  """
-  Filter records linked to one of the specified records
-  """
-  in: [ItemId]
-
-  """
-  Filter records not linked to one of the specified records
-  """
-  notIn: [ItemId]
-
-  """
-  Filter records with the specified field defined (i.e. with any value) or not
-  """
-  exists: BooleanType
+enum LinkingLocale {
+  nl
+  _nonLocalized
 }
 
 """
-Specifies how to filter Multiple-links fields
+Specifies how to filter by linking locales
 """
-input LinksFilter {
+input LinkingLocalesFilter {
   """
-  Search for records with an exact match. The specified values must be Record IDs
+  Filter linking records that link to current record in at least one of the specified locales
   """
-  eq: [ItemId]
+  anyIn: [LinkingLocale!]
 
   """
-  Filter records linked to all of the specified records. The specified values must be Record IDs
+  Filter linking records that do not link to current record in any of the specified locales
   """
-  allIn: [ItemId]
-
-  """
-  Filter records linked to at least one of the specified records. The specified values must be Record IDs
-  """
-  anyIn: [ItemId]
-
-  """
-  Filter records not linked to any of the specified records. The specified values must be Record IDs
-  """
-  notIn: [ItemId]
-
-  """
-  Filter records with the specified field defined (i.e. with any value) or not
-  """
-  exists: BooleanType
-}
-
-input LocationItemModelFilter {
-  id: ItemIdFilter
-  ticketLink: StringFilter
-  dateTime: DateTimeFilter
-  location: LinkFilter
-  OR: [LocationItemModelFilter]
-  AND: [LocationItemModelFilter]
+  notIn: [LinkingLocale!]
 }
 
 """
-Block of type Locatie item (location_item)
+Block of type location item (location_item)
 """
 type LocationItemRecord implements RecordInterface {
   _createdAt: DateTime!
@@ -2481,9 +2649,9 @@ input LocationModelFilter {
   _status: StatusFilter
   _updatedAt: UpdatedAtFilter
   _isValid: BooleanFilter
-  title: StringFilter
-  addressTitle: StringFilter
   address: LatLonFilter
+  addressTitle: StringFilter
+  title: StringFilter
   OR: [LocationModelFilter]
   AND: [LocationModelFilter]
 }
@@ -2507,14 +2675,14 @@ enum LocationModelOrderBy {
   _updatedAt_DESC
   _isValid_ASC
   _isValid_DESC
-  title_ASC
-  title_DESC
   addressTitle_ASC
   addressTitle_DESC
+  title_ASC
+  title_DESC
 }
 
 """
-Record of type Locaties (location)
+Record of type Location (location)
 """
 type LocationRecord implements RecordInterface {
   _createdAt: DateTime!
@@ -2547,77 +2715,7 @@ type LocationRecord implements RecordInterface {
   title: String
 }
 
-input MediaItemModelFilter {
-  _createdAt: CreatedAtFilter
-  id: ItemIdFilter
-  _firstPublishedAt: PublishedAtFilter
-  _publicationScheduledAt: PublishedAtFilter
-  _unpublishingScheduledAt: PublishedAtFilter
-  _publishedAt: PublishedAtFilter
-  _status: StatusFilter
-  _updatedAt: UpdatedAtFilter
-  _isValid: BooleanFilter
-  asset: JsonFilter
-  title: StringFilter
-  OR: [MediaItemModelFilter]
-  AND: [MediaItemModelFilter]
-}
-
-enum MediaItemModelOrderBy {
-  _createdAt_ASC
-  _createdAt_DESC
-  id_ASC
-  id_DESC
-  _firstPublishedAt_ASC
-  _firstPublishedAt_DESC
-  _publicationScheduledAt_ASC
-  _publicationScheduledAt_DESC
-  _unpublishingScheduledAt_ASC
-  _unpublishingScheduledAt_DESC
-  _publishedAt_ASC
-  _publishedAt_DESC
-  _status_ASC
-  _status_DESC
-  _updatedAt_ASC
-  _updatedAt_DESC
-  _isValid_ASC
-  _isValid_DESC
-  title_ASC
-  title_DESC
-}
-
-"""
-Record of type Media item (media_item)
-"""
-type MediaItemRecord implements RecordInterface {
-  _createdAt: DateTime!
-
-  """
-  Editing URL
-  """
-  _editingUrl: String
-  _firstPublishedAt: DateTime
-  _isValid: BooleanType!
-  _modelApiKey: String!
-  _publicationScheduledAt: DateTime
-  _publishedAt: DateTime
-
-  """
-  Generates SEO and Social card meta tags to be used in your frontend
-  """
-  _seoMetaTags(
-    """
-    The locale to use to fetch the field's content
-    """
-    locale: SiteLocale
-  ): [Tag!]!
-  _status: ItemStatus!
-  _unpublishingScheduledAt: DateTime
-  _updatedAt: DateTime!
-  asset: JsonField
-  id: ItemId!
-  title: String
-}
+union MenuItemModelLinkField = ConcertRecord | PageRecord
 
 """
 Block of type Menu item (menu_item)
@@ -2649,84 +2747,10 @@ type MenuItemRecord implements RecordInterface {
   _updatedAt: DateTime!
   id: ItemId!
   label: String
-  link: PageRecord
+  link: MenuItemModelLinkField
 }
 
 scalar MetaTagAttributes
-
-input MusicModelFilter {
-  _createdAt: CreatedAtFilter
-  id: ItemIdFilter
-  _firstPublishedAt: PublishedAtFilter
-  _publicationScheduledAt: PublishedAtFilter
-  _unpublishingScheduledAt: PublishedAtFilter
-  _publishedAt: PublishedAtFilter
-  _status: StatusFilter
-  _updatedAt: UpdatedAtFilter
-  _isValid: BooleanFilter
-  composer: StringFilter
-  title: StringFilter
-  OR: [MusicModelFilter]
-  AND: [MusicModelFilter]
-}
-
-enum MusicModelOrderBy {
-  _createdAt_ASC
-  _createdAt_DESC
-  id_ASC
-  id_DESC
-  _firstPublishedAt_ASC
-  _firstPublishedAt_DESC
-  _publicationScheduledAt_ASC
-  _publicationScheduledAt_DESC
-  _unpublishingScheduledAt_ASC
-  _unpublishingScheduledAt_DESC
-  _publishedAt_ASC
-  _publishedAt_DESC
-  _status_ASC
-  _status_DESC
-  _updatedAt_ASC
-  _updatedAt_DESC
-  _isValid_ASC
-  _isValid_DESC
-  composer_ASC
-  composer_DESC
-  title_ASC
-  title_DESC
-}
-
-"""
-Record of type Muziekstukken (music)
-"""
-type MusicRecord implements RecordInterface {
-  _createdAt: DateTime!
-
-  """
-  Editing URL
-  """
-  _editingUrl: String
-  _firstPublishedAt: DateTime
-  _isValid: BooleanType!
-  _modelApiKey: String!
-  _publicationScheduledAt: DateTime
-  _publishedAt: DateTime
-
-  """
-  Generates SEO and Social card meta tags to be used in your frontend
-  """
-  _seoMetaTags(
-    """
-    The locale to use to fetch the field's content
-    """
-    locale: SiteLocale
-  ): [Tag!]!
-  _status: ItemStatus!
-  _unpublishingScheduledAt: DateTime
-  _updatedAt: DateTime!
-  composer: String
-  id: ItemId!
-  title: String
-}
 
 enum MuxThumbnailFormatType {
   jpg
@@ -2751,6 +2775,21 @@ input OrientationFilter {
 
 union PageModelContentField = HeaderRecord | TextBlockRecord | TwoColumnRecord
 
+"""
+Linking fields
+"""
+enum PageModelFieldsReferencingConcertModel {
+  page_content
+  page_content__header_body
+  page_content__header_body__callToAction_pageLink
+  page_content__textBlock_content
+  page_content__textBlock_content__callToAction_pageLink
+  page_content__twoColumn_leftContent
+  page_content__twoColumn_leftContent__callToAction_pageLink
+  page_content__twoColumn_rightContent
+  page_content__twoColumn_rightContent__callToAction_pageLink
+}
+
 input PageModelFilter {
   _createdAt: CreatedAtFilter
   id: ItemIdFilter
@@ -2761,8 +2800,8 @@ input PageModelFilter {
   _status: StatusFilter
   _updatedAt: UpdatedAtFilter
   _isValid: BooleanFilter
-  slug: SlugFilter
   seo: SeoFilter
+  slug: SlugFilter
   title: StringFilter
   OR: [PageModelFilter]
   AND: [PageModelFilter]
@@ -2792,7 +2831,7 @@ enum PageModelOrderBy {
 }
 
 """
-Record of type Pagina's (page)
+Record of type Pagina (page)
 """
 type PageRecord implements RecordInterface {
   _createdAt: DateTime!
@@ -2824,80 +2863,6 @@ type PageRecord implements RecordInterface {
   seo: SeoField
   slug: String
   title: String
-}
-
-input PersonModelFilter {
-  _createdAt: CreatedAtFilter
-  id: ItemIdFilter
-  _firstPublishedAt: PublishedAtFilter
-  _publicationScheduledAt: PublishedAtFilter
-  _unpublishingScheduledAt: PublishedAtFilter
-  _publishedAt: PublishedAtFilter
-  _status: StatusFilter
-  _updatedAt: UpdatedAtFilter
-  _isValid: BooleanFilter
-  name: StringFilter
-  role: StringFilter
-  OR: [PersonModelFilter]
-  AND: [PersonModelFilter]
-}
-
-enum PersonModelOrderBy {
-  _createdAt_ASC
-  _createdAt_DESC
-  id_ASC
-  id_DESC
-  _firstPublishedAt_ASC
-  _firstPublishedAt_DESC
-  _publicationScheduledAt_ASC
-  _publicationScheduledAt_DESC
-  _unpublishingScheduledAt_ASC
-  _unpublishingScheduledAt_DESC
-  _publishedAt_ASC
-  _publishedAt_DESC
-  _status_ASC
-  _status_DESC
-  _updatedAt_ASC
-  _updatedAt_DESC
-  _isValid_ASC
-  _isValid_DESC
-  name_ASC
-  name_DESC
-  role_ASC
-  role_DESC
-}
-
-"""
-Record of type Personen (person)
-"""
-type PersonRecord implements RecordInterface {
-  _createdAt: DateTime!
-
-  """
-  Editing URL
-  """
-  _editingUrl: String
-  _firstPublishedAt: DateTime
-  _isValid: BooleanType!
-  _modelApiKey: String!
-  _publicationScheduledAt: DateTime
-  _publishedAt: DateTime
-
-  """
-  Generates SEO and Social card meta tags to be used in your frontend
-  """
-  _seoMetaTags(
-    """
-    The locale to use to fetch the field's content
-    """
-    locale: SiteLocale
-  ): [Tag!]!
-  _status: ItemStatus!
-  _unpublishingScheduledAt: DateTime
-  _updatedAt: DateTime!
-  id: ItemId!
-  name: String
-  role: String
 }
 
 """
@@ -3004,45 +2969,12 @@ type Query {
   """
   Returns meta information regarding a record collection
   """
-  _allMediaItemsMeta(
-    """
-    The locale to use to fetch the field's content
-    """
-    locale: SiteLocale
-    filter: MediaItemModelFilter
-  ): CollectionMetadata!
-
-  """
-  Returns meta information regarding a record collection
-  """
-  _allMusicsMeta(
-    """
-    The locale to use to fetch the field's content
-    """
-    locale: SiteLocale
-    filter: MusicModelFilter
-  ): CollectionMetadata!
-
-  """
-  Returns meta information regarding a record collection
-  """
   _allPagesMeta(
     """
     The locale to use to fetch the field's content
     """
     locale: SiteLocale
     filter: PageModelFilter
-  ): CollectionMetadata!
-
-  """
-  Returns meta information regarding a record collection
-  """
-  _allPeopleMeta(
-    """
-    The locale to use to fetch the field's content
-    """
-    locale: SiteLocale
-    filter: PersonModelFilter
   ): CollectionMetadata!
 
   """
@@ -3128,60 +3060,6 @@ type Query {
   """
   Returns a collection of records
   """
-  allMediaItems(
-    """
-    The locale to use to fetch the field's content
-    """
-    locale: SiteLocale
-
-    """
-    If you want to fallback to a default translation when a translation has not been found
-    """
-    fallbackLocales: [SiteLocale!]
-
-    """
-    Skip the first results
-    """
-    skip: IntType
-
-    """
-    Limit the number of results
-    """
-    first: IntType = 20
-    filter: MediaItemModelFilter
-    orderBy: [MediaItemModelOrderBy] = [_updatedAt_DESC]
-  ): [MediaItemRecord!]!
-
-  """
-  Returns a collection of records
-  """
-  allMusics(
-    """
-    The locale to use to fetch the field's content
-    """
-    locale: SiteLocale
-
-    """
-    If you want to fallback to a default translation when a translation has not been found
-    """
-    fallbackLocales: [SiteLocale!]
-
-    """
-    Skip the first results
-    """
-    skip: IntType
-
-    """
-    Limit the number of results
-    """
-    first: IntType = 20
-    filter: MusicModelFilter
-    orderBy: [MusicModelOrderBy] = [_updatedAt_DESC]
-  ): [MusicRecord!]!
-
-  """
-  Returns a collection of records
-  """
   allPages(
     """
     The locale to use to fetch the field's content
@@ -3205,33 +3083,6 @@ type Query {
     filter: PageModelFilter
     orderBy: [PageModelOrderBy] = [_updatedAt_DESC]
   ): [PageRecord!]!
-
-  """
-  Returns a collection of records
-  """
-  allPeople(
-    """
-    The locale to use to fetch the field's content
-    """
-    locale: SiteLocale
-
-    """
-    If you want to fallback to a default translation when a translation has not been found
-    """
-    fallbackLocales: [SiteLocale!]
-
-    """
-    Skip the first results
-    """
-    skip: IntType
-
-    """
-    Limit the number of results
-    """
-    first: IntType = 20
-    filter: PersonModelFilter
-    orderBy: [PersonModelOrderBy] = [_updatedAt_DESC]
-  ): [PersonRecord!]!
 
   """
   Returns a collection of assets
@@ -3312,40 +3163,6 @@ type Query {
   """
   Returns a specific record
   """
-  mediaItem(
-    """
-    The locale to use to fetch the field's content
-    """
-    locale: SiteLocale
-
-    """
-    If you want to fallback to a default translation when a translation has not been found
-    """
-    fallbackLocales: [SiteLocale!]
-    filter: MediaItemModelFilter
-    orderBy: [MediaItemModelOrderBy] = [_updatedAt_DESC]
-  ): MediaItemRecord
-
-  """
-  Returns a specific record
-  """
-  music(
-    """
-    The locale to use to fetch the field's content
-    """
-    locale: SiteLocale
-
-    """
-    If you want to fallback to a default translation when a translation has not been found
-    """
-    fallbackLocales: [SiteLocale!]
-    filter: MusicModelFilter
-    orderBy: [MusicModelOrderBy] = [_updatedAt_DESC]
-  ): MusicRecord
-
-  """
-  Returns a specific record
-  """
   page(
     """
     The locale to use to fetch the field's content
@@ -3359,23 +3176,6 @@ type Query {
     filter: PageModelFilter
     orderBy: [PageModelOrderBy] = [_updatedAt_DESC]
   ): PageRecord
-
-  """
-  Returns a specific record
-  """
-  person(
-    """
-    The locale to use to fetch the field's content
-    """
-    locale: SiteLocale
-
-    """
-    If you want to fallback to a default translation when a translation has not been found
-    """
-    fallbackLocales: [SiteLocale!]
-    filter: PersonModelFilter
-    orderBy: [PersonModelOrderBy] = [_updatedAt_DESC]
-  ): PersonRecord
 
   """
   Returns a specific asset
@@ -3472,6 +3272,7 @@ type ResponsiveImage {
 type SeoField {
   description: String
   image: FileField
+  noIndex: BooleanType
   title: String
   twitterCard: String
 }
@@ -3506,10 +3307,11 @@ type Site {
     fallbackLocales: [SiteLocale!]
   ): GlobalSeoField
   locales: [SiteLocale!]!
+  noIndex: BooleanType
 }
 
 enum SiteLocale {
-  nl_NL
+  nl
 }
 
 """
@@ -3659,7 +3461,6 @@ type Tag {
 
 union TextBlockModelContentBlocksField =
     CallToActionRecord
-  | ConcertListRecord
   | DocumentRecord
   | ImageRecord
   | VideoRecord
@@ -3706,7 +3507,7 @@ type TextBlockRecord implements RecordInterface {
 
 union TwoColumnModelLeftContentBlocksField =
     CallToActionRecord
-  | ConcertListRecord
+  | DocumentRecord
   | ImageRecord
   | VideoRecord
 
@@ -3720,7 +3521,7 @@ union TwoColumnModelLeftContentLinksField = ConcertRecord | PageRecord
 
 union TwoColumnModelRightContentBlocksField =
     CallToActionRecord
-  | ConcertListRecord
+  | DocumentRecord
   | ImageRecord
   | VideoRecord
 
@@ -4379,8 +4180,42 @@ input UploadUpdatedAtFilter {
 }
 
 type UploadVideoField {
+  alt(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+
+    """
+    If you want to fallback to a default translation when a translation has not been found
+    """
+    fallbackLocales: [SiteLocale!]
+  ): String
+  blurUpThumb(
+    """
+    Controls the "punch" value (~contrast) of the blurhash decoding algorithm (defaults to 1.0)
+    """
+    punch: Float! = 1
+
+    """
+    Maximum image dimension (defaults to 24px)
+    """
+    size: Int! = 24
+
+    """
+    Image quality (defaults to 70%)
+    """
+    quality: Int! = 70
+
+    """
+    Imgix transformations to apply to the image
+    """
+    imgixParams: ImgixParams
+  ): String
+  blurhash: String
   duration: Int
   framerate: Int
+  height: IntType!
   mp4Url(
     """
     Pick highest resolution available up to the specified argument
@@ -4395,12 +4230,25 @@ type UploadVideoField {
   muxAssetId: String!
   muxPlaybackId: String!
   streamingUrl: String!
+  thumbhash: String
   thumbnailUrl(
     """
     The file extension of the requested image format. Either png, jpg or gif
     """
     format: MuxThumbnailFormatType = jpg
   ): String!
+  title(
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+
+    """
+    If you want to fallback to a default translation when a translation has not been found
+    """
+    fallbackLocales: [SiteLocale!]
+  ): String
+  width: IntType!
 }
 
 """
@@ -4484,6 +4332,6 @@ type VideoRecord implements RecordInterface {
   _updatedAt: DateTime!
   id: ItemId!
   media: VideoField
-  thumbnail: MediaItemRecord
+  thumbnail: JsonField
   title: String
 }

@@ -1,18 +1,14 @@
-import '@crea/components/src/styles/global.scss'
-
-import { DefaultLayout } from '@crea/components/src/defaultLayout'
+import { Body } from '@mono/components/src/body'
 import React from 'react'
 
 interface Props {
-  children: React.ReactNode
+  children: React.ReactElement
 }
 
 const RootLayout = ({ children }: Props) => {
   return (
     <html lang="nl-NL">
-      <body>
-        <DefaultLayout>{children}</DefaultLayout>
-      </body>
+      <Body>{children}</Body>
     </html>
   )
 }

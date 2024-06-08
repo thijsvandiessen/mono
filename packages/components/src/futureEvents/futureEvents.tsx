@@ -1,7 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 import { EventListItem } from '../eventListItem'
-import { getFutureEvents } from '@crea/graphql/src/getters/getFutureEvents'
+import { getFutureEvents } from '@mono/graphql'
+import type { Event } from '@mono/graphql'
 
 export interface Props {
   skip: number
@@ -10,7 +11,27 @@ export interface Props {
 
 export const FutureEvents = async ({ skip, first }: Props) => {
   const { data } = await getFutureEvents({ skip, first })
-  if (!data || data?.length === 0)
+
+  const events = data?.reduce((previousValues: Event[], currentvalue) => {
+    const future = currentvalue?.locations.find((location) => {
+      if (!location?.startTime) {
+        return false
+      }
+
+      try {
+        return new Date(location?.startTime ?? '') > new Date()
+      } catch {
+        return false
+      }
+    })
+
+    if (future?.id) {
+      return [...previousValues, currentvalue]
+    }
+    return previousValues
+  }, [])
+
+  if (!data || events?.length === 0)
     return (
       <>
         <h2>Komende concerten</h2>

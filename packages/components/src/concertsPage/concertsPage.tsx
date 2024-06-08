@@ -4,14 +4,19 @@ import { Event } from '../event'
 import { Header } from '../header'
 import { LoadMoreEvents } from '../loadMoreEvents'
 import { PageContent } from '../pageContent'
-import { getEvents } from '@crea/graphql/src/getters/getEvents'
-import { getPage } from '@crea/graphql/src/getters/getPage'
+import { getEvents } from '@mono/graphql'
+import { getPage } from '@mono/graphql'
 
 import styles from './styles.module.scss'
+import { ConcertModelOrderBy } from '@mono/graphql'
 
 export const ConcertsPage = async () => {
   const first = 2
-  const { data: eventData } = await getEvents({ skip: 0, first })
+  const { data: eventData } = await getEvents({
+    skip: 0,
+    first,
+    order: ConcertModelOrderBy.PositionAsc,
+  })
   const { data: pageData } = await getPage({ slug: 'concerten' })
 
   const events = (

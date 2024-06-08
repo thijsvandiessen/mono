@@ -1,17 +1,29 @@
 {
-  "name": "@crea/hooks",
+  "name": "@mono/hooks",
   "version": "1.0.0",
   "type": "module",
-  "main": "./src/**/*",
+  "files": [
+    "dist/**/*"
+  ],
+  "main": "dist/hooks.js",
+  "types": "dist/hooks.d.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "module": "./dist/hooks.js",
+      "types": "./dist/hooks.d.ts"
+    }
+  },
   "scripts": {
     "test": "jest",
+    "build": "vite build",
     "lint": "npm run lint:js && npm run lint:styles && npm run lint:typescript",
     "lint:js": "eslint . --fix",
     "lint:styles": "prettier . --write --cache --log-level silent --list-different",
     "lint:typescript": "tsc"
   },
   "dependencies": {
-    "@crea/graphql": "1.0.0"
+    "@mono/graphql": "1.0.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "6.1.5",
@@ -24,7 +36,7 @@
     "@typescript-eslint/parser": "6.15.0",
     "dotenv": "16.3.1",
     "eslint": "8.56.0",
-    "eslint-config-next": "14.0.4",
+    "eslint-config-next": "14.2.3",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-testing-library": "6.2.0",
     "husky": "8.0.3",
@@ -35,6 +47,8 @@
     "sass": "1.69.5",
     "turbo": "1.11.2",
     "typescript": "5.3.3",
+    "vite": "5.2.11",
+    "vite-plugin-dts": "3.9.1",
     "webpack-bundle-analyzer": "4.10.1"
   }
 }

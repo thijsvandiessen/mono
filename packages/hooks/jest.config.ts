@@ -11,6 +11,10 @@ const config: Config = {
   },
   collectCoverage: true,
   coverageDirectory: 'coverage',
+  moduleNameMapper: {
+    '@mono/graphql': '<rootDir>../graphql',
+    '@mono/utils': '<rootDir>../utils',
+  },
 }
 
 export default config

@@ -19,10 +19,10 @@ jobs:
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
       - name: Pull Vercel Environment Information
-        run: vercel pull --yes --token=${{ env.VERCEL_TOKEN }} --cwd apps/crea
+        run: vercel pull --yes --token=${{ env.VERCEL_TOKEN }} --cwd apps/lundi-bleu
       - name: Build Project Artifacts
-        run: vercel build --token=${{ env.VERCEL_TOKEN }} --cwd apps/crea
+        run: vercel build --token=${{ env.VERCEL_TOKEN }} --cwd apps/lundi-bleu
       - name: Deploy Project Artifacts to Vercel
-        run: vercel deploy --token=${{ env.VERCEL_TOKEN }} --cwd apps/crea
+        run: vercel deploy --token=${{ env.VERCEL_TOKEN }} --cwd apps/lundi-bleu
       - name: Deploy to production
-        run: vercel --prod --token=${{ env.VERCEL_TOKEN }} --cwd apps/crea
+        run: vercel --prod --token=${{ env.VERCEL_TOKEN }} --cwd apps/lundi-bleu

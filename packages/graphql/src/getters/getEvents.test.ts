@@ -31,7 +31,6 @@ describe('getEvents', () => {
             title: 'another concert',
             slug: 'another-concert',
             locations: [],
-            program: [],
             poster: {
               id: '72577339',
               alt: null,
@@ -52,7 +51,7 @@ describe('getEvents', () => {
         variables: {},
         kind: 'query',
         context: {
-          url: 'https://main--crea-orkest-p7nmyh.apollographos.net/graphql',
+          url: 'https://current--vandiessen-mono.apollographos.net/graphql',
           requestPolicy: 'cache-first',
         },
       },
@@ -65,8 +64,6 @@ describe('getEvents', () => {
         id: '186234305',
         image: undefined,
         locations: [],
-        persons: [],
-        program: [],
         title: 'another concert',
         url: '/concerten/another-concert',
       },

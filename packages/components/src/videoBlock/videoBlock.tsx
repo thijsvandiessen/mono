@@ -2,10 +2,10 @@
 
 import { useCallback, useState } from 'react'
 import Image from 'next/image'
-import type { VideoFragment } from '@crea/graphql/src/generated/graphql'
+import type { VideoFragment } from '@mono/graphql'
 import { VideoPlaceholder } from '../videoPlaceholder'
-import { formatCloudinaryImage } from '@crea/graphql/src/formatters/formatCloudinaryImage'
-import { isOfTypeCloudinaryAsset } from '@crea/graphql/src/types/image'
+import { formatCloudinaryImage } from '@mono/graphql'
+import { isOfTypeCloudinaryAsset } from '@mono/graphql'
 
 import styles from './styles.module.scss'
 
@@ -35,7 +35,7 @@ export const VideoBlock = ({ record, autoplay, aspectRatio }: Props) => {
   }
 
   const asset = formatCloudinaryImage(
-    isOfTypeCloudinaryAsset(thumbnail?.asset) ? thumbnail?.asset : undefined
+    isOfTypeCloudinaryAsset(thumbnail) ? thumbnail : undefined
   )
 
   const videoUrl = () => {
@@ -75,7 +75,6 @@ export const VideoBlock = ({ record, autoplay, aspectRatio }: Props) => {
         {!hasPlayed && !thumbnail && video.thumbnailUrl && (
           // Domain of the video thumbnailUrl is unknown so we use an
           // img tag if the thumbnail is not defined
-          // eslint-disable-next-line @next/next/no-img-element
           <img
             src={video.thumbnailUrl}
             className={styles.thumbnail}

@@ -1,6 +1,6 @@
-# crea-public
+# mono-public
 
-The CREA Orkest front end.
+A mono front end.
 
 # Graphql
 

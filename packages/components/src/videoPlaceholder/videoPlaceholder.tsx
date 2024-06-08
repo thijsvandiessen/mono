@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from 'react'
 import type { ReactNode } from 'react'
-import { useIntersectionObserver } from '@crea/hooks/src/useIntersectionObserver'
+import { useIntersectionObserver } from '@mono/hooks'
 import { Play } from '../icons/play'
 
 import styles from './styles.module.scss'

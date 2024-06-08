@@ -1,27 +1,27 @@
 import React from 'react'
-import Link from 'next/link'
+// import Link from 'next/link'
 import classNames from 'classnames'
 import { NavigationItem } from '../navigationItem'
 import { NavigationSubMenu } from '../navigationSubMenu'
-import { getGeneralInfo } from '@crea/graphql/src/getters/getGeneralInfo'
+import { getGeneralInfo } from '@mono/graphql'
 import { MobileMenu } from '../mobileMenu'
-import { getSiteMetadata } from '@crea/graphql/src/getters/getSiteMetadata'
+// import { getSiteMetadata } from '@mono/graphql'
 
 import styles from './styles.module.scss'
-import { CreaOrkestLogo } from '../icons/crea-orkest-logo'
+// import { CreaOrkestLogo } from '../icons/crea-orkest-logo'
 
-export const Navigation: React.FC = async () => {
+export const Navigation = async () => {
   const { data } = await getGeneralInfo()
-  const { metadata } = await getSiteMetadata()
+  // const { metadata } = await getSiteMetadata()
   if (!data?.general) return null
 
   return (
     <nav className={classNames(styles.root, 'content-layout')}>
       <div className={classNames(styles.content)}>
-        <Link href="/" className={classNames(styles.logoLink)}>
+        {/* <Link href="/" className={classNames(styles.logoLink)}>
           <CreaOrkestLogo className={classNames(styles.logo)} />
           <span className="sr-only">{metadata?.title}: Ga naar home</span>
-        </Link>
+        </Link> */}
         <MobileMenu />
         <ul className={classNames(styles.list)}>
           {data.general.menu.map((item) => {

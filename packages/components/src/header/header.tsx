@@ -2,9 +2,9 @@ import React from 'react'
 import type { ElementType } from 'react'
 import Image from 'next/image'
 import classNames from 'classnames'
-import { type HeaderFragment } from '@crea/graphql/src/generated/graphql'
-import { formatCloudinaryImage } from '@crea/graphql/src/formatters/formatCloudinaryImage'
-import { isOfTypeCloudinaryAsset } from '@crea/graphql/src/types/image'
+import { type HeaderFragment } from '@mono/graphql'
+import { formatCloudinaryImage } from '@mono/graphql'
+import { isOfTypeCloudinaryAsset } from '@mono/graphql'
 import { ContentField } from '../contentField'
 import { isEmptyDocument } from 'datocms-structured-text-utils'
 import styles from './styles.module.scss'
@@ -27,7 +27,7 @@ export const Header = ({
   const HeaderTag = tag
 
   const asset = formatCloudinaryImage(
-    isOfTypeCloudinaryAsset(cover?.asset) ? cover?.asset : undefined
+    isOfTypeCloudinaryAsset(cover) ? cover : undefined
   )
 
   return (
@@ -41,7 +41,7 @@ export const Header = ({
         {title && (
           <h1
             className={classNames({
-              'sr-only': body || (!body && asset?.url),
+              'sr-only': body ?? (!body && asset?.url),
             })}
           >
             {title}
@@ -53,10 +53,10 @@ export const Header = ({
         <div className={classNames(styles.headerImageWrapper)}>
           <Image
             className={classNames(styles.headerImage)}
-            alt={cover?.title || asset.title || ''}
+            alt={asset.title ?? title ?? ''}
             src={asset.url}
-            width={asset.width || 100}
-            height={asset.height || 100}
+            width={asset.width ?? 100}
+            height={asset.height ?? 100}
           />
           <div className={classNames(styles.background)} />
         </div>

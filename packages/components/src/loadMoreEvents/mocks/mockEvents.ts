@@ -1,4 +1,4 @@
-import { type Event } from '@crea/graphql/src/types/event'
+import { type Event } from '@mono/graphql'
 
 export const mockEvent: Event = {
   id: 'mock-id',
@@ -6,6 +6,4 @@ export const mockEvent: Event = {
   url: '/url',
   image: undefined,
   locations: [],
-  persons: [],
-  program: [],
 }

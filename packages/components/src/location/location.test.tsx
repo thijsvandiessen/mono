@@ -1,14 +1,12 @@
 import React from 'react'
 import { Location } from './location'
 import type { Props } from './location'
-import { getLocation } from '@crea/graphql/src/getters/getLocation'
-import { resolvedComponent } from '@crea/utils/src/testHelpers/resolvedComponent'
+import { getLocation } from '@mono/graphql'
+import { resolvedComponent } from '@mono/utils'
 import { render, screen } from '@testing-library/react'
 
-jest.mock('@crea/graphql/src/getters/getLocation', () => {
-  const originalModule = jest.requireActual(
-    '@crea/graphql/src/getters/getLocation'
-  )
+jest.mock('@mono/graphql', () => {
+  const originalModule = jest.requireActual('@mono/graphql')
   return {
     __esModule: true,
     ...originalModule,
@@ -20,7 +18,7 @@ const getLocationMock = jest.mocked(getLocation)
 
 describe('Concert component', () => {
   it('shows all the data', async () => {
-    getLocationMock.mockResolvedValueOnce({
+    getLocationMock.mockResolvedValue({
       data: {
         id: 'mock-ids',
         title: 'title',

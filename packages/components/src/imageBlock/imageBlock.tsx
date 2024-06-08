@@ -1,8 +1,8 @@
 import React from 'react'
-import type { ImageFragment } from '@crea/graphql/src/generated/graphql'
-import { isOfTypeCloudinaryAsset } from '@crea/graphql/src/types/image'
+import type { ImageFragment } from '@mono/graphql'
+import { isOfTypeCloudinaryAsset } from '@mono/graphql'
 import Image from 'next/image'
-import { formatCloudinaryImage } from '@crea/graphql/src/formatters/formatCloudinaryImage'
+import { formatCloudinaryImage } from '@mono/graphql'
 
 import styles from './styles.module.scss'
 
@@ -11,16 +11,16 @@ interface Props {
 }
 
 export const ImageBlock = ({ record }: Props) => {
-  if (!record.item?.title) return null
+  if (!record.image) return null
   const asset = formatCloudinaryImage(
-    isOfTypeCloudinaryAsset(record.item?.asset) ? record.item?.asset : undefined
+    isOfTypeCloudinaryAsset(record.image) ? record.image : undefined
   )
   if (!asset?.url) return null
   return (
     <Image
       className={styles.image}
       src={asset.url}
-      alt={record.item.title}
+      alt={asset.title}
       height={asset.height}
       width={asset.width}
       style={{

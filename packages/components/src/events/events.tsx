@@ -1,6 +1,7 @@
 import React from 'react'
 import { Event } from '../event/event'
-import { getEvents } from '@crea/graphql/src/getters/getEvents'
+import { getEvents } from '@mono/graphql'
+import { ConcertModelOrderBy } from '@mono/graphql'
 
 export interface Props {
   skip: number
@@ -8,7 +9,11 @@ export interface Props {
 }
 
 export const Events = async ({ skip, first }: Props) => {
-  const { data } = await getEvents({ skip, first })
+  const { data } = await getEvents({
+    skip,
+    first,
+    order: ConcertModelOrderBy.PositionAsc,
+  })
   if (!data) return null
 
   return (

@@ -1,19 +1,17 @@
 {
-  "name": "crea",
-  "version": "1.2.0",
+  "name": "mono-vandiessen",
+  "version": "1.0.0",
   "private": true,
-  "description": "The public CREA Orkest website",
+  "description": "Monorepo for small websites",
   "type": "module",
   "scripts": {
-    "dev": "npm run dev --workspace=apps/crea",
-    "build": "npm run build --workspace=apps/crea",
-    "start": "npm run start --workspace=apps/crea",
-    "oxlint": "oxlint -D correctness -D perf -A debugger -A eqeqeq -c ./.eslintrc.json",
-    "lint": "npm run oxlint && npm run lint --workspaces",
+    "dev": "npm run dev --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "start:crea": "npm run start --workspace=apps/crea",
+    "start:lundi": "npm run start --workspace=apps/lundi-bleu",
+    "lint": "npm run lint --workspaces",
     "prepare": "husky install",
-    "download-schema": "npm run download-schema --workspace=packages/graphql",
-    "codegen": "npm run codegen --workspace=packages/graphql",
-    "turbo": "turbo lint && turbo test && turbo build",
+    "codegen": "npm run download-schema --workspace=packages/graphql && npm run codegen --workspace=packages/graphql",
     "test": "npm run test --workspaces"
   },
   "lint-staged": {
@@ -22,16 +20,13 @@
   },
   "dependencies": {
     "@react-google-maps/api": "2.19.2",
-    "@urql/core": "4.2.2",
-    "@urql/exchange-graphcache": "6.4.0",
     "classnames": "2.3.2",
     "datocms-structured-text-utils": "2.0.4",
     "graphql": "16.8.1",
-    "next": "14.0.4",
+    "next": "14.2.3",
     "react": "18.2.0",
     "react-datocms": "4.1.3",
-    "react-dom": "18.2.0",
-    "urql": "4.0.6"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@apollo/rover": "0.21.0",
@@ -54,8 +49,7 @@
     "@typescript-eslint/parser": "6.15.0",
     "dotenv": "16.3.1",
     "eslint": "8.56.0",
-    "oxlint": "0.2.8",
-    "eslint-config-next": "14.0.4",
+    "eslint-config-next": "14.2.3",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-testing-library": "6.2.0",
     "husky": "8.0.3",

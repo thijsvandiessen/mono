@@ -1,8 +1,8 @@
 'use client'
 import React from 'react'
 import { Map } from '../map'
-import type { Location } from '@crea/graphql/src/types/location'
-import { useEnv } from '@crea/hooks/src/useEnv'
+import type { Location } from '@mono/graphql'
+import { useEnv } from '@mono/hooks'
 import styles from './styles.module.scss'
 
 export interface Props {

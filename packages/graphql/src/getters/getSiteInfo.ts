@@ -4,8 +4,18 @@ import {
   type GetSiteInfoQuery,
   type GetSiteInfoQueryVariables,
 } from '../generated/graphql'
+import type { CombinedError } from '@urql/core'
 
-export const getSiteInfo = async () => {
+export const getSiteInfo = async (): Promise<
+  | {
+      data: GetSiteInfoQuery['_site'] | null | undefined
+      error: CombinedError | undefined
+    }
+  | {
+      data: null
+      error: unknown
+    }
+> => {
   try {
     const { data, error } = await client.query<
       GetSiteInfoQuery,

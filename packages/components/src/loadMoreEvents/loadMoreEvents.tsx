@@ -1,10 +1,11 @@
 'use client'
 import { EventListItem } from '../eventListItem'
-import type { Event as EventType } from '@crea/graphql/src/types/event'
+import type { Event as EventType } from '@mono/graphql'
 import React from 'react'
-import { getEvents } from '@crea/graphql/src/getters/getEvents'
-import { useEventsMeta } from '@crea/hooks/src/useEventsMeta'
-import { useIntersectionObserver } from '@crea/hooks/src/useIntersectionObserver'
+import { getEvents } from '@mono/graphql'
+import { useEventsMeta } from '@mono/hooks'
+import { useIntersectionObserver } from '@mono/hooks'
+import { ConcertModelOrderBy } from '@mono/graphql'
 
 export interface Props {
   initialSkip: number
@@ -30,7 +31,11 @@ export const LoadMoreEvents = ({ initialSkip }: Props) => {
     if (skip > numberOfEvents) return
     setLoading(true)
     // TODO: abort signal to stop fetching
-    getEvents({ skip, first: interval })
+    getEvents({
+      skip,
+      first: interval,
+      order: [ConcertModelOrderBy.PositionAsc],
+    })
       .then(({ data }) => {
         if (!data) return
         setEvents((prev) => [...prev, ...data])

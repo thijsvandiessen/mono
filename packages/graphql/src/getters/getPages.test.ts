@@ -26,7 +26,7 @@ describe('getPages', () => {
         variables: {},
         kind: 'query',
         context: {
-          url: 'https://main--crea-orkest-p7nmyh.apollographos.net/graphql',
+          url: 'https://current--vandiessen-mono.apollographos.net/graphql',
           requestPolicy: 'cache-first',
         },
       },
@@ -34,7 +34,7 @@ describe('getPages', () => {
       hasNext: false,
     })
     const { data } = await getPages({ skip: 0, first: 1 })
-    expect(data).toEqual([{}])
+    expect(data).toEqual([])
   })
 
   it('should return an error', async () => {

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /style-guide
+
+Sitemap: https://www.lundi-bleu.nl/sitemap.xml

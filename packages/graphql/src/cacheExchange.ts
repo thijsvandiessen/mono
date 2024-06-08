@@ -1,5 +1,6 @@
-import { cacheExchange as exchange } from '@urql/exchange-graphcache'
+import { cacheExchange } from '@urql/exchange-graphcache'
 import introspectedSchema from './generated/introspection.json'
+import type { Exchange } from '@urql/core'
 
 /*
  * These objects do not have an id.
@@ -8,13 +9,14 @@ import introspectedSchema from './generated/introspection.json'
  * https://formidable.com/open-source/urql/docs/graphcache/normalized-caching
  */
 
-export const cacheExchange = exchange({
+export const defaultExchange: Exchange = cacheExchange({
   schema: introspectedSchema,
   keys: {
     LocationRecord: () => null,
     VideoField: () => null,
     CollectionMetadata: () => null,
     ConcertRecord: () => null,
+    SeoField: () => null,
     Tag: () => null,
     LatLonField: () => null,
     TwoColumnModelRightContentField: () => null,

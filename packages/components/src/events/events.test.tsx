@@ -2,15 +2,13 @@ import React from 'react'
 import type { Props as EventProps } from '../event'
 import { Events } from './events'
 import type { Props } from './events'
-import { getEvents } from '@crea/graphql/src/getters/getEvents'
+import { getEvents } from '@mono/graphql'
 import { mockEvent } from './mocks/mockEvents'
-import { resolvedComponent } from '@crea/utils/src/testHelpers/resolvedComponent'
+import { resolvedComponent } from '@mono/utils'
 import { render, screen } from '@testing-library/react'
 
-jest.mock('@crea/graphql/src/getters/getEvents', () => {
-  const originalModule = jest.requireActual(
-    '@crea/graphql/src/getters/getEvents'
-  )
+jest.mock('@mono/graphql', () => {
+  const originalModule = jest.requireActual('@mono/graphql')
   return {
     __esModule: true,
     ...originalModule,

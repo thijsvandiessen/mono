@@ -6,8 +6,8 @@ import type {
   CallToActionFragment,
   ConcertLinkFragment,
   PageLinkFragment,
-} from '@crea/graphql/src/generated/graphql'
-import { slugFormatter } from '@crea/utils/src/slugFormatter'
+} from '@mono/graphql'
+import { slugFormatter } from '@mono/utils'
 
 interface Props {
   record: CallToActionFragment

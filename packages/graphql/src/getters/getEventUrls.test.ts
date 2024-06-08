@@ -28,7 +28,7 @@ describe('getEventUrls', () => {
         variables: {},
         kind: 'query',
         context: {
-          url: 'https://main--crea-orkest-p7nmyh.apollographos.net/graphql',
+          url: 'https://current--vandiessen-mono.apollographos.net/graphql',
           requestPolicy: 'cache-first',
         },
       },
@@ -36,7 +36,7 @@ describe('getEventUrls', () => {
       hasNext: false,
     })
     const { data } = await getEventUrls({ skip: 0, first: 1 })
-    expect(data).toEqual([{}])
+    expect(data).toEqual([])
   })
   it('should return an error', async () => {
     console.log = jest.fn()

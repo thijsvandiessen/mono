@@ -1,7 +1,15 @@
 import { gql } from '@urql/core'
 import { eventLink } from '../fragments/eventLink'
+import type { TypedDocumentNode } from '@urql/core'
+import type {
+  GetEventsUrlsQuery,
+  GetEventsUrlsQueryVariables,
+} from '../generated/graphql'
 
-export const GET_EVENT_URLS = gql`
+export const GET_EVENT_URLS: TypedDocumentNode<
+  GetEventsUrlsQuery,
+  GetEventsUrlsQueryVariables
+> = gql`
   query getEventsUrls(
     $skip: IntType!
     $first: IntType!

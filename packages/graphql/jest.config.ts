@@ -9,6 +9,9 @@ const config: Config = {
   },
   collectCoverage: true,
   coverageDirectory: 'coverage',
+  moduleNameMapper: {
+    '@mono/utils': '<rootDir>../utils',
+  },
 }
 
 export default config

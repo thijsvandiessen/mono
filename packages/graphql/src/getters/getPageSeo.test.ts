@@ -14,24 +14,6 @@ jest.mock('../gqlClient', () => {
   }
 })
 
-jest.mock('@crea/graphql/src/getters/getSiteMetadata', () => {
-  const originalModule = jest.requireActual(
-    '@crea/graphql/src/getters/getSiteMetadata'
-  )
-  return {
-    __esModule: true,
-    ...originalModule,
-    getSiteMetadata: jest.fn(() => ({
-      metadata: {
-        title: 'Default title',
-        description: 'Default description',
-        base_url: 'https://example.com',
-      },
-      error: undefined,
-    })),
-  }
-})
-
 const mockedQuery = jest.mocked(client.query)
 
 describe('getPageSeo', () => {
@@ -44,7 +26,7 @@ describe('getPageSeo', () => {
         variables: {},
         kind: 'query',
         context: {
-          url: 'https://main--crea-orkest-p7nmyh.apollographos.net/graphql',
+          url: 'https://current--vandiessen-mono.apollographos.net/graphql',
           requestPolicy: 'cache-first',
         },
       },

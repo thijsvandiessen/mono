@@ -1,6 +1,6 @@
 'use client' // Error components must be Client Components
 
-import { ErrorMessage } from '@crea/components/src/errorMessage'
+import { ErrorMessage } from '@mono/components/src/errorMessage'
 
 export default function Error({
   reset,
