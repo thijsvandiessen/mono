@@ -5,8 +5,14 @@ import { identifiable } from './identifiable'
 import { pageLink } from './pageLink'
 import { video } from './video'
 import { document, image } from './image'
-import { TypedDocumentNode } from '@urql/core'
-import { LeftContentFragment, RightContentFragment, TextBlockContentFragment, TextBlockFragment, TwoColumFragment } from '../generated/graphql'
+import type { TypedDocumentNode } from '@urql/core'
+import type {
+  LeftContentFragment,
+  RightContentFragment,
+  TextBlockContentFragment,
+  TextBlockFragment,
+  TwoColumFragment,
+} from '../generated/graphql'
 
 export const textBlockContent: TypedDocumentNode<TextBlockContentFragment> = gql`
   fragment textBlockContent on TextBlockModelContentField {

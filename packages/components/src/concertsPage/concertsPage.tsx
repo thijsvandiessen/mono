@@ -4,11 +4,11 @@ import { Event } from '../event'
 import { Header } from '../header'
 import { LoadMoreEvents } from '../loadMoreEvents'
 import { PageContent } from '../pageContent'
-import { getEvents } from '@mono/graphql/src/getters/getEvents'
-import { getPage } from '@mono/graphql/src/getters/getPage'
+import { getEvents } from '@mono/graphql'
+import { getPage } from '@mono/graphql'
 
 import styles from './styles.module.scss'
-import { ConcertModelOrderBy } from '@mono/graphql/src/generated/graphql'
+import { ConcertModelOrderBy } from '@mono/graphql'
 
 export const ConcertsPage = async () => {
   const first = 2

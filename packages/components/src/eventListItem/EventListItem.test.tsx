@@ -1,6 +1,6 @@
 import React from 'react'
 import { EventListItem } from './eventListItem'
-import { getEvent } from '@mono/graphql/src/getters/getEvent'
+import { getEvent } from '@mono/graphql'
 import { mockEvent } from './mocks/mockEvent'
 import { render, screen } from '@testing-library/react'
 
@@ -13,9 +13,9 @@ jest.mock('../location/location', () => {
   }
 })
 
-jest.mock('@mono/graphql/src/getters/getEvent', () => {
+jest.mock('@mono/graphql', () => {
   const originalModule = jest.requireActual(
-    '@mono/graphql/src/getters/getEvent'
+    '@mono/graphql'
   )
   return {
     __esModule: true,
@@ -28,7 +28,7 @@ const getEventMock = jest.mocked(getEvent)
 
 describe('Concert component', () => {
   it('shows all the data', () => {
-    getEventMock.mockResolvedValueOnce({
+    getEventMock.mockResolvedValue({
       data: mockEvent,
       error: undefined,
     })

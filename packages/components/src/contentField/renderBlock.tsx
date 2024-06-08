@@ -6,7 +6,7 @@ import type {
   DocumentFragment,
   ImageFragment,
   VideoFragment,
-} from '@mono/graphql/src/generated/graphql'
+} from '@mono/graphql'
 import { DocumentBlock } from '../documentBlock'
 import { ImageBlock } from '../imageBlock'
 import { VideoBlock } from '../videoBlock'

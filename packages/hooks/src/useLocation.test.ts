@@ -1,11 +1,9 @@
-import { getLocation } from '@mono/graphql/src/getters/getLocation'
+import { getLocation } from '@mono/graphql'
 import { useLocation } from './useLocation'
 import { renderHook, waitFor } from '@testing-library/react'
 
-jest.mock('@mono/graphql/src/getters/getLocation', () => {
-  const originalModule = jest.requireActual(
-    '@mono/graphql/src/getters/getLocation'
-  )
+jest.mock('@mono/graphql', () => {
+  const originalModule = jest.requireActual('@mono/graphql')
   return {
     __esModule: true,
     ...originalModule,

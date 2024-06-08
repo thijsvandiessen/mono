@@ -1,5 +1,5 @@
-import { GetAuthorsMetaDocument } from '../generated/graphql'
 import { client } from '../gqlClient'
+import { GetEventsMetaDocument } from '../generated/graphql'
 import { getEventsMeta } from './getEventsMeta'
 
 jest.mock('../gqlClient', () => {
@@ -26,7 +26,7 @@ describe('getEventsMeta', () => {
       },
       operation: {
         key: 1,
-        query: GetAuthorsMetaDocument,
+        query: GetEventsMetaDocument,
         variables: {},
         kind: 'query',
         context: {

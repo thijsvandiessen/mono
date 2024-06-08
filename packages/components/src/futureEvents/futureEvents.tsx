@@ -1,8 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 import { EventListItem } from '../eventListItem'
-import { getFutureEvents } from '@mono/graphql/src/getters/getFutureEvents'
-import type { Event } from '@mono/graphql/src/types/event'
+import { getFutureEvents } from '@mono/graphql'
+import type { Event } from '@mono/graphql'
 
 export interface Props {
   skip: number
@@ -14,13 +14,12 @@ export const FutureEvents = async ({ skip, first }: Props) => {
 
   const events = data?.reduce((previousValues: Event[], currentvalue) => {
     const future = currentvalue?.locations.find((location) => {
-      if (location?.startTime) {
+      if (!location?.startTime) {
         return false
       }
 
       try {
-        const startTime = new Date(location?.startTime ?? '')
-        return startTime.toISOString() < new Date().toISOString()
+        return new Date(location?.startTime ?? '') > new Date()
       } catch {
         return false
       }

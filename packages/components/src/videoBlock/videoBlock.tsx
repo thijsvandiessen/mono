@@ -2,10 +2,10 @@
 
 import { useCallback, useState } from 'react'
 import Image from 'next/image'
-import type { VideoFragment } from '@mono/graphql/src/generated/graphql'
+import type { VideoFragment } from '@mono/graphql'
 import { VideoPlaceholder } from '../videoPlaceholder'
-import { formatCloudinaryImage } from '@mono/graphql/src/formatters/formatCloudinaryImage'
-import { isOfTypeCloudinaryAsset } from '@mono/graphql/src/types/image'
+import { formatCloudinaryImage } from '@mono/graphql'
+import { isOfTypeCloudinaryAsset } from '@mono/graphql'
 
 import styles from './styles.module.scss'
 
@@ -43,11 +43,9 @@ export const VideoBlock = ({ record, autoplay, aspectRatio }: Props) => {
       case 'vimeo':
         return `https://player.vimeo.com/video/${video.providerUid}?autoplay=1&muted=${binaryAutoplay}&loop=${binaryAutoplay}`
       case 'youtube':
-        return `https://www.youtube.com/embed/${
-          video.providerUid
-        }?autoplay=1&mute=${binaryAutoplay}&loop=${binaryAutoplay}&controls=${
-          autoplay ? 0 : 1
-        }&playlist=${video.providerUid}`
+        return `https://www.youtube.com/embed/${video.providerUid
+          }?autoplay=1&mute=${binaryAutoplay}&loop=${binaryAutoplay}&controls=${autoplay ? 0 : 1
+          }&playlist=${video.providerUid}`
       default:
         console.error(`unsupported video provider: ${video.provider}`)
         return ''

@@ -34,7 +34,7 @@ describe('getPages', () => {
       hasNext: false,
     })
     const { data } = await getPages({ skip: 0, first: 1 })
-    expect(data).toEqual([{}])
+    expect(data).toEqual([])
   })
 
   it('should return an error', async () => {

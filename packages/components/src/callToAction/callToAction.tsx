@@ -6,7 +6,7 @@ import type {
   CallToActionFragment,
   ConcertLinkFragment,
   PageLinkFragment,
-} from '@mono/graphql/src/generated/graphql'
+} from '@mono/graphql'
 import { slugFormatter } from '@mono/utils'
 
 interface Props {

@@ -3,7 +3,7 @@
 import React from 'react'
 import { useQuery } from 'urql'
 import classNames from 'classnames'
-import { GetGeneralInfoDocument } from '@mono/graphql/src/generated/graphql'
+import { GetGeneralInfoDocument } from '@mono/graphql'
 import { NavigationItem } from '../navigationItem'
 
 import styles from './styles.module.scss'

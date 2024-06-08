@@ -1,7 +1,7 @@
 import React from 'react'
 import { EventPage } from './eventPage'
 import type { Props } from './eventPage'
-import { getEventPage } from '@mono/graphql/src/getters/getEventPage'
+import { getEventPage } from '@mono/graphql'
 import { resolvedComponent } from '@mono/utils'
 import { render } from '@testing-library/react'
 
@@ -14,9 +14,9 @@ jest.mock('../navigation', () => {
   }
 })
 
-jest.mock('@mono/graphql/src/getters/getEventPage', () => {
+jest.mock('@mono/graphql', () => {
   const originalModule = jest.requireActual(
-    '@mono/graphql/src/getters/getEventPage'
+    '@mono/graphql'
   )
   return {
     __esModule: true,
@@ -29,7 +29,7 @@ const getEventPageMock = jest.mocked(getEventPage)
 
 describe('Concert component', () => {
   it('shows all the data', async () => {
-    getEventPageMock.mockResolvedValueOnce({
+    getEventPageMock.mockResolvedValue({
       data: {
         id: 'unique-id',
         title: 'title',

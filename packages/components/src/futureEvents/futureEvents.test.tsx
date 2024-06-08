@@ -2,14 +2,14 @@ import type { Props as EventListItemProps } from '../eventListItem'
 import { FutureEvents } from './futureEvents'
 import type { Props } from './futureEvents'
 import React from 'react'
-import { getFutureEvents } from '@mono/graphql/src/getters/getFutureEvents'
+import { getFutureEvents } from '@mono/graphql'
 import { mockEvent } from './mocks/mockEvents'
 import { resolvedComponent } from '@mono/utils'
 import { render, screen } from '@testing-library/react'
 
-jest.mock('@mono/graphql/src/getters/getFutureEvents', () => {
+jest.mock('@mono/graphql', () => {
   const originalModule = jest.requireActual(
-    '@mono/graphql/src/getters/getFutureEvents'
+    '@mono/graphql'
   )
   return {
     __esModule: true,
@@ -25,7 +25,7 @@ jest.mock('../eventListItem/eventListItem', () => {
     ...originalModule,
     EventListItem: ({ data }: EventListItemProps) => (
       <div>
-        [Event]: <span>{data.id}</span>
+        <span>{data.id}</span>
       </div>
     ),
   }
@@ -33,8 +33,17 @@ jest.mock('../eventListItem/eventListItem', () => {
 
 const getFutureEventsMock = jest.mocked(getFutureEvents)
 
+afterAll(() => {
+  jest.setSystemTime()
+  jest.useRealTimers();
+})
+
 describe('FutureEvents component', () => {
   it('shows all the data', async () => {
+    jest
+      .useFakeTimers()
+      .setSystemTime(new Date('2020-01-01'));
+
     getFutureEventsMock.mockResolvedValue({
       data: [mockEvent],
       error: undefined,
@@ -49,5 +58,27 @@ describe('FutureEvents component', () => {
 
     expect(container).toMatchSnapshot()
     expect(screen.getByText('mock-id')).toBeInTheDocument()
+  })
+
+  it('shows no data', async () => {
+    jest
+      .useFakeTimers()
+      .setSystemTime(new Date('2022-01-01'));
+
+    getFutureEventsMock.mockResolvedValue({
+
+      data: [mockEvent],
+      error: undefined,
+    })
+
+    const ResolvedFutureEvents = await resolvedComponent<Props>(FutureEvents, {
+      skip: 0,
+      first: 3,
+    })
+
+    const { container } = render(<ResolvedFutureEvents />)
+
+    expect(container).toMatchSnapshot()
+    expect(screen.getByText('Houd de website in de gaten om up to date te blijven over volgende concerten.')).toBeInTheDocument()
   })
 })

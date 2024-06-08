@@ -32,3 +32,5 @@ export type {
 } from './types'
 
 export { isOfTypeCloudinaryAsset } from './types'
+export { formatCloudinaryDocument, formatCloudinaryImage } from './formatters'
+export * from './generated/graphql'

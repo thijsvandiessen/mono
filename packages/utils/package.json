@@ -4,7 +4,7 @@
   "description": "Utils",
   "type": "module",
   "files": [
-    "dist/**/*"
+    "dist/*"
   ],
   "main": "dist/utils.umd.cjs",
   "types": "dist/utils.d.ts",

@@ -1,5 +1,5 @@
 import React from 'react'
-import { getPagesMeta } from '@mono/graphql/src/getters/getPagesMeta'
+import { getPagesMeta } from '@mono/graphql'
 
 export const usePagesMeta = () => {
   const [numberOfPages, setNumberOfPages] = React.useState<number | undefined>()

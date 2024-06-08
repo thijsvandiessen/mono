@@ -1,7 +1,7 @@
-import { getEventUrls } from '@mono/graphql/src/getters/getEventUrls'
-import { getEventsMeta } from '@mono/graphql/src/getters/getEventsMeta'
-import { getPages } from '@mono/graphql/src/getters/getPages'
-import { getPagesMeta } from '@mono/graphql/src/getters/getPagesMeta'
+import { getEventUrls } from '@mono/graphql'
+import { getEventsMeta } from '@mono/graphql'
+import { getPages } from '@mono/graphql'
+import { getPagesMeta } from '@mono/graphql'
 import type { PageLink } from '@mono/graphql'
 
 const URL = 'https://creaorkest.nl'

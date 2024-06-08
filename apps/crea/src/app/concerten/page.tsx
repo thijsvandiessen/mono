@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Metadata, Viewport } from 'next'
-import { getPageSeo } from '@mono/graphql/src/getters/getPageSeo'
+import { getPageSeo } from '@mono/graphql'
 import { ConcertsPage } from '@mono/components/src/concertsPage'
 import { viewport } from '@mono/utils'
 

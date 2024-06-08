@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
-import type { Event } from '@mono/graphql/src/types/event'
+import type { Event } from '@mono/graphql'
 import { ArrowRight } from '../icons/arrow-right'
 import { dateIsInThePast, formatDate } from '@mono/utils'
 

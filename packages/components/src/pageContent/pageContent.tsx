@@ -1,6 +1,6 @@
 import classNames from 'classnames'
-import { type Event } from '@mono/graphql/src/types/event'
-import { type PageDetailFragment } from '@mono/graphql/src/generated/graphql'
+import { type Event } from '@mono/graphql'
+import { type PageDetailFragment } from '@mono/graphql'
 import { ContentField } from '../contentField'
 import { TwoColumContentField } from '../twoColumContentField'
 import { Header } from '../header'

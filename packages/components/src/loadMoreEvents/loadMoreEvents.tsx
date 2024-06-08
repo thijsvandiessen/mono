@@ -1,11 +1,11 @@
 'use client'
 import { EventListItem } from '../eventListItem'
-import type { Event as EventType } from '@mono/graphql/src/types/event'
+import type { Event as EventType } from '@mono/graphql'
 import React from 'react'
-import { getEvents } from '@mono/graphql/src/getters/getEvents'
+import { getEvents } from '@mono/graphql'
 import { useEventsMeta } from '@mono/hooks'
 import { useIntersectionObserver } from '@mono/hooks'
-import { ConcertModelOrderBy } from '@mono/graphql/src/generated/graphql'
+import { ConcertModelOrderBy } from '@mono/graphql'
 
 export interface Props {
   initialSkip: number

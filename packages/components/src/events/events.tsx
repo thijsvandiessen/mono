@@ -1,7 +1,7 @@
 import React from 'react'
 import { Event } from '../event/event'
-import { getEvents } from '@mono/graphql/src/getters/getEvents'
-import { ConcertModelOrderBy } from '@mono/graphql/src/generated/graphql'
+import { getEvents } from '@mono/graphql'
+import { ConcertModelOrderBy } from '@mono/graphql'
 
 export interface Props {
   skip: number

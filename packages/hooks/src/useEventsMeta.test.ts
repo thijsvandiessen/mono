@@ -1,10 +1,10 @@
-import { getEventsMeta } from '@mono/graphql/src/getters/getEventsMeta'
+import { getEventsMeta } from '@mono/graphql'
 import { useEventsMeta } from './useEventsMeta'
 import { renderHook, waitFor } from '@testing-library/react'
 
-jest.mock('@mono/graphql/src/getters/getEventsMeta', () => {
+jest.mock('@mono/graphql', () => {
   const originalModule = jest.requireActual(
-    '@mono/graphql/src/getters/getEventsMeta'
+    '@mono/graphql'
   )
   return {
     __esModule: true,

@@ -38,7 +38,6 @@
       "@mono/*": ["./packages/*/src/index.ts"]
     }
   },
-  "references": [{ "path": "./packages/**/*" }, { "path": "./apps/**/*" }],
   "include": ["./packages/**/*", "./apps/**/*"],
   "exclude": ["node_modules"]
 }

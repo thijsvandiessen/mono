@@ -1,6 +1,6 @@
 import { LocationView } from './locationView'
 import React from 'react'
-import { getLocation } from '@mono/graphql/src/getters/getLocation'
+import { getLocation } from '@mono/graphql'
 
 export interface Props {
   id: string

@@ -1,20 +1,9 @@
 import { Navigation } from './navigation'
 import React from 'react'
-import { getGeneralInfo } from '@mono/graphql/src/getters/getGeneralInfo'
+import { getGeneralInfo } from '@mono/graphql'
 import { mockMenuData } from './mocks/mockMenuData'
 import { resolvedComponent } from '@mono/utils'
 import { render, screen } from '@testing-library/react'
-
-jest.mock('@mono/graphql/src/getters/getGeneralInfo', () => {
-  const originalModule = jest.requireActual(
-    '@mono/graphql/src/getters/getLocation'
-  )
-  return {
-    __esModule: true,
-    ...originalModule,
-    getGeneralInfo: jest.fn(),
-  }
-})
 
 global.ResizeObserver = jest.fn().mockImplementation(() => ({
   observe: jest.fn(),
@@ -22,15 +11,13 @@ global.ResizeObserver = jest.fn().mockImplementation(() => ({
   disconnect: jest.fn(),
 }))
 
-const getGeneralInfoMock = jest.mocked(getGeneralInfo)
 
-jest.mock('@mono/graphql/src/getters/getSiteMetadata', () => {
-  const originalModule = jest.requireActual(
-    '@mono/graphql/src/getters/getSiteMetadata'
-  )
+jest.mock('@mono/graphql', () => {
+  const originalModule = jest.requireActual('@mono/graphql')
   return {
     __esModule: true,
     ...originalModule,
+    getGeneralInfo: jest.fn(),
     getSiteMetadata: jest.fn(() => ({
       metadata: {
         title: 'Default title',
@@ -41,6 +28,8 @@ jest.mock('@mono/graphql/src/getters/getSiteMetadata', () => {
     })),
   }
 })
+
+const getGeneralInfoMock = jest.mocked(getGeneralInfo)
 
 describe('Concert component', () => {
   it('shows all the data', async () => {

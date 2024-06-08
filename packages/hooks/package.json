@@ -9,6 +9,7 @@
   "types": "dist/hooks.d.ts",
   "exports": {
     ".": {
+      "import": "./src/index.ts",
       "module": "./dist/hooks.js",
       "types": "./dist/hooks.d.ts"
     }

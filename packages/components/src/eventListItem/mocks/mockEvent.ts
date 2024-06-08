@@ -1,4 +1,4 @@
-import type { Event } from '@mono/graphql/src/types/event'
+import type { Event } from '@mono/graphql'
 
 export const mockEvent: Event = {
   id: 'id',
