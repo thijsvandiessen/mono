@@ -3,7 +3,7 @@ resource "vercel_project" "lundi" {
 }
 
 data "vercel_project_directory" "lundi" {
-  path = "../apps/lundi"
+  path = "../apps/lundi-bleu"
 }
 
 resource "vercel_deployment" "lundi" {
