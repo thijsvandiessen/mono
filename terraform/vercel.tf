@@ -9,3 +9,4 @@ resource "vercel_deployment" "lundi-bleu" {
 data "vercel_project_directory" "lundi-bleu" {
   path = "../apps/lundi-bleu"
 }
+
