@@ -1,5 +1,5 @@
 resource "vercel_project" "lundi" {
-  name = "lundi"
+  name = "lundi-bleu"
 }
 
 data "vercel_project_directory" "lundi" {
