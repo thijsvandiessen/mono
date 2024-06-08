@@ -1,5 +1,5 @@
 {
-  "ignorePatterns": ["**/generated/*.ts"],
+  "ignorePatterns": ["**/generated/*.ts", "dist/*"],
   "plugins": ["@typescript-eslint", "testing-library"],
   "extends": [
     "eslint:recommended",

@@ -4,8 +4,21 @@ import {
   type GetEventsMetaQuery,
   type GetEventsMetaQueryVariables,
 } from '../generated/graphql'
+import type { CombinedError } from '@urql/core'
 
-export const getEventsMeta = async () => {
+export const getEventsMeta = async (): Promise<
+  | {
+      data: {
+        __typename?: 'CollectionMetadata' | undefined
+        count: number
+      } | null
+      error: CombinedError | undefined
+    }
+  | {
+      data: null
+      error: unknown
+    }
+> => {
   try {
     const { data, error } = await client.query<
       GetEventsMetaQuery,

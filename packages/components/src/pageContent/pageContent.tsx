@@ -1,5 +1,4 @@
 import classNames from 'classnames'
-import { Fragment } from 'react'
 import { type Event } from '@mono/graphql/src/types/event'
 import { type PageDetailFragment } from '@mono/graphql/src/generated/graphql'
 import { ContentField } from '../contentField'
@@ -15,21 +14,8 @@ export interface Props {
 
 export const PageContent = ({ sectionClassName, items, pageTitle }: Props) => {
   return items?.map((item, index) => {
-    let header = null
-    let pageContent = null
-
-    if (index === 0 && item.__typename !== 'HeaderRecord' && pageTitle) {
-      header = (
-        <Header
-          key={`${item.id}-header`}
-          title={pageTitle}
-          tag="header"
-          className={styles.header}
-        />
-      )
-    }
     if (item.__typename === 'TwoColumnRecord') {
-      pageContent = (
+      return (
         <section
           key={item.id}
           className={classNames(styles.defaultSpacing, sectionClassName)}
@@ -39,7 +25,7 @@ export const PageContent = ({ sectionClassName, items, pageTitle }: Props) => {
       )
     }
     if (item.__typename === 'TextBlockRecord') {
-      pageContent = (
+      return (
         <section
           key={item.id}
           className={classNames(styles.defaultSpacing, sectionClassName)}
@@ -49,7 +35,7 @@ export const PageContent = ({ sectionClassName, items, pageTitle }: Props) => {
       )
     }
     if (item.__typename === 'HeaderRecord') {
-      pageContent = (
+      return (
         <Header
           className={classNames({
             [`${styles.headerSpacing}`]: index > 0,
@@ -63,11 +49,7 @@ export const PageContent = ({ sectionClassName, items, pageTitle }: Props) => {
         />
       )
     }
-    return (
-      <Fragment key={pageTitle}>
-        {header}
-        {pageContent}
-      </Fragment>
-    )
+
+    return <p key="never">component does not exist</p>
   })
 }

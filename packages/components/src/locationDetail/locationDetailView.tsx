@@ -2,7 +2,7 @@
 import React from 'react'
 import { Map } from '../map'
 import type { Location } from '@mono/graphql/src/types/location'
-import { useEnv } from '@mono/hooks/src/useEnv'
+import { useEnv } from '@mono/hooks'
 import styles from './styles.module.scss'
 
 export interface Props {

@@ -5,8 +5,10 @@ import { identifiable } from './identifiable'
 import { pageLink } from './pageLink'
 import { video } from './video'
 import { document, image } from './image'
+import { TypedDocumentNode } from '@urql/core'
+import { LeftContentFragment, RightContentFragment, TextBlockContentFragment, TextBlockFragment, TwoColumFragment } from '../generated/graphql'
 
-export const textBlockContent = gql`
+export const textBlockContent: TypedDocumentNode<TextBlockContentFragment> = gql`
   fragment textBlockContent on TextBlockModelContentField {
     value
     links {
@@ -40,7 +42,7 @@ export const textBlockContent = gql`
   ${callToAction}
 `
 
-export const leftContent = gql`
+export const leftContent: TypedDocumentNode<LeftContentFragment> = gql`
   fragment leftContent on TwoColumnModelLeftContentField {
     value
     links {
@@ -74,7 +76,7 @@ export const leftContent = gql`
   ${callToAction}
 `
 
-export const rightContent = gql`
+export const rightContent: TypedDocumentNode<RightContentFragment> = gql`
   fragment rightContent on TwoColumnModelRightContentField {
     value
     links {
@@ -108,7 +110,7 @@ export const rightContent = gql`
   ${callToAction}
 `
 
-export const textBlock = gql`
+export const textBlock: TypedDocumentNode<TextBlockFragment> = gql`
   fragment textBlock on TextBlockRecord {
     ...identifiable
     content {
@@ -119,7 +121,7 @@ export const textBlock = gql`
   ${textBlockContent}
 `
 
-export const twoColum = gql`
+export const twoColum: TypedDocumentNode<TwoColumFragment> = gql`
   fragment twoColum on TwoColumnRecord {
     ...identifiable
     leftContent {

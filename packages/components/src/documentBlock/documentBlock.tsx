@@ -7,23 +7,23 @@ import { ArrowDown } from '../icons/arrow-down'
 import { formatBytes } from '@mono/utils'
 
 import styles from './styles.module.scss'
+import { type DocumentFragment } from 'packages/graphql/src/generated/graphql'
 
 interface Props {
-  document: DocumentFragment
+  record: DocumentFragment
 }
 
 export const DocumentBlock = ({ record }: Props) => {
-  if (!record.document?.title) return null
+  if (!record) return null
   const asset = formatCloudinaryDocument(
-    isOfTypeCloudinaryAsset(record.document?.asset)
-      ? record.document?.asset
-      : undefined
+    isOfTypeCloudinaryAsset(record.document) ? record.document : undefined
   )
   if (!asset?.url) return null
   return (
     <p className={styles.root}>
       <span className={classNames(styles.title, 'h4')}>
-        {record.document.title}
+        document
+        {/* TODO: the name of the document */}
       </span>
       <span className={styles.download}>
         <Button

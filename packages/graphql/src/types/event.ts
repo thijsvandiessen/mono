@@ -6,7 +6,7 @@ export interface Event {
   id: string
   title: string
   image?: Image
-  locations: (Location | undefined)[]
+  locations: Location[]
   url: string
   content?: ConcertDetailFragment['content']
 }

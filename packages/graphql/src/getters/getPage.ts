@@ -4,8 +4,20 @@ import {
   type GetPageQuery,
   type GetPageQueryVariables,
 } from '../generated/graphql'
+import type { CombinedError } from '@urql/core'
 
-export const getPage = async ({ slug }: GetPageQueryVariables) => {
+export const getPage = async ({
+  slug,
+}: GetPageQueryVariables): Promise<
+  | {
+      data: GetPageQuery['page']
+      error: CombinedError | undefined
+    }
+  | {
+      data: null
+      error: unknown
+    }
+> => {
   try {
     const { data, error } = await client.query<
       GetPageQuery,

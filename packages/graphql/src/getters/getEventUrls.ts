@@ -5,6 +5,9 @@ import {
   type GetEventsUrlsQuery,
   type GetEventsUrlsQueryVariables,
 } from '../generated/graphql'
+import { eventUrlFormatter } from '../formatters/eventUrlFormatter'
+import type { PageLink } from '../types/pageLink'
+import type { CombinedError } from '@urql/core'
 
 interface Props extends GetEventsUrlsQueryVariables {
   skip: number
@@ -15,7 +18,16 @@ export const getEventUrls = async ({
   skip,
   first,
   order = ConcertModelOrderBy.PositionAsc,
-}: Props) => {
+}: Props): Promise<
+  | {
+      data: PageLink[]
+      error: CombinedError | undefined
+    }
+  | {
+      data: null
+      error: unknown
+    }
+> => {
   try {
     const { data, error } = await client.query<
       GetEventsUrlsQuery,
@@ -27,7 +39,7 @@ export const getEventUrls = async ({
     })
 
     return {
-      data: data?.allConcerts.length ? data.allConcerts : [],
+      data: data?.allConcerts.length ? eventUrlFormatter(data.allConcerts) : [],
       error,
     }
   } catch (error) {

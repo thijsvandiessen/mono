@@ -40,8 +40,8 @@ export interface Image {
 }
 
 export const isOfTypeCloudinaryAsset = (
-  poster?: unknown
-): poster is CloudinaryAsset => {
+  asset?: unknown
+): asset is CloudinaryAsset => {
   const keys = [
     'resource_type',
     'type',
@@ -54,9 +54,9 @@ export const isOfTypeCloudinaryAsset = (
   ] as const satisfies Array<keyof CloudinaryAsset>
 
   switch (true) {
-    case poster && typeof poster === 'object':
+    case asset && typeof asset === 'object':
       for (const key of keys) {
-        if (!(key in poster)) return false
+        if (!(key in asset)) return false
       }
 
       return true

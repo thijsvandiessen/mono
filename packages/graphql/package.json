@@ -6,6 +6,7 @@
   "main": "./src/**/*",
   "scripts": {
     "test": "jest",
+    "build": "vite build",
     "lint": "npm run lint:js && npm run lint:styles && npm run lint:typescript",
     "lint:js": "eslint . --fix",
     "lint:styles": "prettier . --write --cache --log-level silent --list-different",
@@ -15,6 +16,8 @@
     "codegen:watch": "graphql-codegen --require dotenv/config --config ./codegen.ts --watch"
   },
   "dependencies": {
+    "@urql/core": "5.0.3",
+    "@urql/exchange-graphcache": "7.1.0",
     "react": "18.2.0"
   },
   "devDependencies": {

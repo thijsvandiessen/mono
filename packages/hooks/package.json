@@ -2,9 +2,20 @@
   "name": "@mono/hooks",
   "version": "1.0.0",
   "type": "module",
-  "main": "./src/**/*",
+  "files": [
+    "dist/**/*"
+  ],
+  "main": "dist/hooks.js",
+  "types": "dist/hooks.d.ts",
+  "exports": {
+    ".": {
+      "module": "./dist/hooks.js",
+      "types": "./dist/hooks.d.ts"
+    }
+  },
   "scripts": {
     "test": "jest",
+    "build": "vite build",
     "lint": "npm run lint:js && npm run lint:styles && npm run lint:typescript",
     "lint:js": "eslint . --fix",
     "lint:styles": "prettier . --write --cache --log-level silent --list-different",
@@ -35,6 +46,8 @@
     "sass": "1.69.5",
     "turbo": "1.11.2",
     "typescript": "5.3.3",
+    "vite": "5.2.11",
+    "vite-plugin-dts": "3.9.1",
     "webpack-bundle-analyzer": "4.10.1"
   }
 }

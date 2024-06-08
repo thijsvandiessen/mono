@@ -5,8 +5,21 @@ import {
   type GetLocationQuery,
   type GetLocationQueryVariables,
 } from '../generated/graphql'
+import type { CombinedError } from '@urql/core'
+import type { Location } from '../types'
 
-export const getLocation = async ({ id }: GetLocationQueryVariables) => {
+export const getLocation = async ({
+  id,
+}: GetLocationQueryVariables): Promise<
+  | {
+      data: Location | null
+      error: CombinedError | undefined
+    }
+  | {
+      data: null
+      error: unknown
+    }
+> => {
   try {
     const { data, error } = await client.query<
       GetLocationQuery,

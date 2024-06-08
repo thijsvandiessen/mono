@@ -9,7 +9,11 @@ export interface Props {
 }
 
 export const Events = async ({ skip, first }: Props) => {
-  const { data } = await getEvents({ skip, first, order: ConcertModelOrderBy.PositionAsc })
+  const { data } = await getEvents({
+    skip,
+    first,
+    order: ConcertModelOrderBy.PositionAsc,
+  })
   if (!data) return null
 
   return (

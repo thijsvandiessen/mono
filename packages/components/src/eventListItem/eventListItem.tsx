@@ -51,79 +51,74 @@ export const EventListItem = ({
           </span>
         )}
       </h2>
-      {data.locations.length && (
-        <div className={styles.content}>
-          <div>
-            {data.locations?.length > 0 ? (
-              <ul className={styles.locations}>
-                {data.locations.map((item) => {
-                  if (!item?.id) return null
-                  const ticketLink = item.ticketLink
-                  const concertPast =
-                    item.startTime && dateIsInThePast(item.startTime)
-                  const startTime = item.startTime && formatDate(item.startTime)
-                  const itemTitle = item.title || startTime
+      <div className={styles.content}>
+        {data.locations.length > 0 && (
+          <ul className={styles.locations}>
+            {data.locations.map((item) => {
+              if (!item?.id) return null
+              const ticketLink = item.ticketLink
+              const concertPast =
+                item.startTime && dateIsInThePast(item.startTime)
+              const startTime = item.startTime && formatDate(item.startTime)
+              const itemTitle = item.title || startTime
 
-                  return (
-                    <li key={item.id} className={styles.location}>
-                      <h3
-                        className={classNames(styles.locationTitle, {
-                          h5: size === 'small',
-                          h3: size === 'large',
-                        })}
+              return (
+                <li key={item.id} className={styles.location}>
+                  <h3
+                    className={classNames(styles.locationTitle, {
+                      h5: size === 'small',
+                      h3: size === 'large',
+                    })}
+                  >
+                    {itemTitle}
+                  </h3>
+                  {item.title && startTime && (
+                    <p className={classNames(styles.locationSubtitle)}>
+                      {startTime}
+                    </p>
+                  )}
+                  <p
+                    className={classNames(styles.locationLinkContainer, {
+                      'text-small': size === 'small' || !ticketLink,
+                    })}
+                  >
+                    {concertPast ? (
+                      'Concert voorbij'
+                    ) : ticketLink ? (
+                      <Link
+                        href={ticketLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        {itemTitle}
-                      </h3>
-                      {item.title && startTime && (
-                        <p className={classNames(styles.locationSubtitle)}>
-                          {startTime}
-                        </p>
-                      )}
-                      <p
-                        className={classNames(styles.locationLinkContainer, {
-                          'text-small': size === 'small' || !ticketLink,
-                        })}
-                      >
-                        {concertPast ? (
-                          'Concert voorbij'
-                        ) : ticketLink ? (
-                          <Link
-                            href={ticketLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <span className={styles.locationLink}>
-                              Koop nu kaarten
-                              <ArrowRight className={styles.locationLinkIcon} />
-                            </span>
-                          </Link>
-                        ) : (
-                          'Link voor de kaartverkoop volgt spoedig'
-                        )}
-                      </p>
-                    </li>
-                  )
-                })}
-              </ul>
-            ) : (
-              <p>Zie de poster voor meer informatie.</p>
-            )}
+                        <span className={styles.locationLink}>
+                          Koop nu kaarten
+                          <ArrowRight className={styles.locationLinkIcon} />
+                        </span>
+                      </Link>
+                    ) : (
+                      'Link voor de kaartverkoop volgt spoedig'
+                    )}
+                  </p>
+                </li>
+              )
+            })}
+          </ul>
+        )}
+
+        {showImage && data.image?.url && (
+          <div className={classNames(styles.imageContainer)}>
+            <Image
+              priority={true} // TODO: only for the first item
+              className={classNames(styles.image)}
+              src={data.image.url}
+              alt={data.image.description}
+              width={data.image.width ?? 100}
+              height={data.image.height ?? 100}
+            />
           </div>
+        )}
+      </div>
 
-          {showImage && data.image?.url && (
-            <div className={classNames(styles.imageContainer)}>
-              <Image
-                priority={true} // TODO: only for the first item
-                className={classNames(styles.image)}
-                src={data.image.url}
-                alt={data.image.description}
-                width={data.image.width ?? 100}
-                height={data.image.height ?? 100}
-              />
-            </div>
-          )}
-        </div>
-      )}
       {showLink && (
         <Link
           className={classNames(styles.eventLink, {

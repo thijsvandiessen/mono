@@ -4,12 +4,15 @@
   "description": "Utils",
   "type": "module",
   "files": [
-    "dist"
+    "dist/**/*"
   ],
-  "main": "./dist/utils.js",
+  "main": "dist/utils.umd.cjs",
+  "types": "dist/utils.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/utils.js"
+      "import": "./src/index.ts",
+      "module": "./dist/utils.umd.cjs",
+      "types": "./dist/utils.d.ts"
     }
   },
   "scripts": {
@@ -19,6 +22,9 @@
     "lint:js": "eslint . --fix",
     "lint:styles": "prettier . --write --cache --log-level silent --list-different",
     "lint:typescript": "tsc"
+  },
+  "dependencies": {
+    "react": "18.3.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "6.1.5",

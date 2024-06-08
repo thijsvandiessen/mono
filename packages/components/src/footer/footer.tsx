@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import classNames from 'classnames'
 import { getGeneralInfo } from '@mono/graphql/src/getters/getGeneralInfo'
@@ -20,13 +19,13 @@ export const Footer = async () => {
             {metadata?.title}
           </h2>
 
-          <address className={classNames(styles.address)}>
+          {/* <address className={classNames(styles.address)}>
             <p>Nieuwe Achtergracht 170</p>
             <p>1018 WV Amsterdam</p>
-          </address>
+          </address> */}
 
           <ul className={classNames(styles.list, styles.logoList)}>
-            <li>
+            {/* <li>
               <Link
                 className={classNames(styles.logoLink)}
                 href="https://www.crea.nl/"
@@ -42,41 +41,7 @@ export const Footer = async () => {
                 />
                 <span className="sr-only">Ga naar crea.nl</span>
               </Link>
-            </li>
-            <li>
-              <Link
-                className={classNames(styles.logoLink)}
-                href="https://www.uva.nl/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  className={classNames(styles.logo)}
-                  src="/img/logo-uva.png"
-                  alt="logo UVA"
-                  fill
-                  sizes="(min-width: 500px) 50vw, 100vw"
-                />
-                <span className="sr-only">Ga naar uva.nl</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={classNames(styles.logoLink)}
-                href="https://www.hva.nl/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  className={classNames(styles.logo)}
-                  src="/img/logo-hva.png"
-                  alt="logo HVA"
-                  fill
-                  sizes="(min-width: 500px) 50vw, 100vw"
-                />
-                <span className="sr-only">Ga naar hva.nl</span>
-              </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
 
@@ -104,7 +69,7 @@ export const Footer = async () => {
         <div>
           <h3 className={classNames(styles.title)}>Volg ons</h3>
           <ul className={classNames(styles.list)}>
-            <li>
+            {/* <li>
               <Link
                 className={classNames(styles.link)}
                 href="https://facebook.com/creaorkest"
@@ -113,27 +78,7 @@ export const Footer = async () => {
               >
                 Facebook
               </Link>
-            </li>
-            <li>
-              <Link
-                className={classNames(styles.link)}
-                href="https://www.instagram.com/creaorkest/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Instagram
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={classNames(styles.link)}
-                href="https://www.youtube.com/user/creaorkest/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Youtube
-              </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

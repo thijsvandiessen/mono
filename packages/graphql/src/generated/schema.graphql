@@ -116,6 +116,21 @@ union ConcertModelContentField =
   | TextBlockRecord
   | TwoColumnRecord
 
+"""
+Linking fields
+"""
+enum ConcertModelFieldsReferencingConcertModel {
+  concert_content
+  concert_content__header_body
+  concert_content__header_body__callToAction_pageLink
+  concert_content__textBlock_content
+  concert_content__textBlock_content__callToAction_pageLink
+  concert_content__twoColumn_leftContent
+  concert_content__twoColumn_leftContent__callToAction_pageLink
+  concert_content__twoColumn_rightContent
+  concert_content__twoColumn_rightContent__callToAction_pageLink
+}
+
 input ConcertModelFilter {
   _createdAt: CreatedAtFilter
   id: ItemIdFilter
@@ -164,6 +179,138 @@ enum ConcertModelOrderBy {
 Record of type Concert (concert)
 """
 type ConcertRecord implements RecordInterface {
+  _allReferencingConcerts(
+    """
+    Specifies how to filter linking records
+    """
+    through: InverseRelationshipFilterBetweenConcertAndConcert
+
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+
+    """
+    If you want to fallback to a default translation when a translation has not been found
+    """
+    fallbackLocales: [SiteLocale!]
+
+    """
+    Skip the first results
+    """
+    skip: IntType
+
+    """
+    Limit the number of results
+    """
+    first: IntType = 20
+    filter: ConcertModelFilter
+    orderBy: [ConcertModelOrderBy] = [position_ASC]
+  ): [ConcertRecord!]!
+
+  """
+  Returns meta information regarding a record collection
+  """
+  _allReferencingConcertsMeta(
+    """
+    Specifies how to filter linking records
+    """
+    through: InverseRelationshipFilterBetweenConcertAndConcert
+
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+    filter: ConcertModelFilter
+  ): CollectionMetadata!
+  _allReferencingGenerals(
+    """
+    Specifies how to filter linking records
+    """
+    through: InverseRelationshipFilterBetweenGeneralAndConcert
+
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+
+    """
+    If you want to fallback to a default translation when a translation has not been found
+    """
+    fallbackLocales: [SiteLocale!]
+
+    """
+    Skip the first results
+    """
+    skip: IntType
+
+    """
+    Limit the number of results
+    """
+    first: IntType = 20
+    filter: GeneralModelFilter
+    orderBy: [GeneralModelOrderBy] = [_updatedAt_DESC]
+  ): [GeneralRecord!]!
+
+  """
+  Returns meta information regarding a record collection
+  """
+  _allReferencingGeneralsMeta(
+    """
+    Specifies how to filter linking records
+    """
+    through: InverseRelationshipFilterBetweenGeneralAndConcert
+
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+    filter: GeneralModelFilter
+  ): CollectionMetadata!
+  _allReferencingPages(
+    """
+    Specifies how to filter linking records
+    """
+    through: InverseRelationshipFilterBetweenPageAndConcert
+
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+
+    """
+    If you want to fallback to a default translation when a translation has not been found
+    """
+    fallbackLocales: [SiteLocale!]
+
+    """
+    Skip the first results
+    """
+    skip: IntType
+
+    """
+    Limit the number of results
+    """
+    first: IntType = 20
+    filter: PageModelFilter
+    orderBy: [PageModelOrderBy] = [_updatedAt_DESC]
+  ): [PageRecord!]!
+
+  """
+  Returns meta information regarding a record collection
+  """
+  _allReferencingPagesMeta(
+    """
+    Specifies how to filter linking records
+    """
+    through: InverseRelationshipFilterBetweenPageAndConcert
+
+    """
+    The locale to use to fetch the field's content
+    """
+    locale: SiteLocale
+    filter: PageModelFilter
+  ): CollectionMetadata!
   _createdAt: DateTime!
 
   """
@@ -536,7 +683,55 @@ type focalPoint {
   y: FloatType!
 }
 
+"""
+Linking fields
+"""
+enum GeneralModelFieldsReferencingConcertModel {
+  general_menu
+  general_menu__menuItem_link
+  general_menu__submenuItem_menu__menuItem_link
+}
+
+input GeneralModelFilter {
+  _createdAt: CreatedAtFilter
+  id: ItemIdFilter
+  _firstPublishedAt: PublishedAtFilter
+  _publicationScheduledAt: PublishedAtFilter
+  _unpublishingScheduledAt: PublishedAtFilter
+  _publishedAt: PublishedAtFilter
+  _status: StatusFilter
+  _updatedAt: UpdatedAtFilter
+  _isValid: BooleanFilter
+  siteMetadata: JsonFilter
+  title: StringFilter
+  OR: [GeneralModelFilter]
+  AND: [GeneralModelFilter]
+}
+
 union GeneralModelMenuField = MenuItemRecord | SubmenuItemRecord
+
+enum GeneralModelOrderBy {
+  _createdAt_ASC
+  _createdAt_DESC
+  id_ASC
+  id_DESC
+  _firstPublishedAt_ASC
+  _firstPublishedAt_DESC
+  _publicationScheduledAt_ASC
+  _publicationScheduledAt_DESC
+  _unpublishingScheduledAt_ASC
+  _unpublishingScheduledAt_DESC
+  _publishedAt_ASC
+  _publishedAt_DESC
+  _status_ASC
+  _status_DESC
+  _updatedAt_ASC
+  _updatedAt_DESC
+  _isValid_ASC
+  _isValid_DESC
+  title_ASC
+  title_DESC
+}
 
 """
 Record of type general (general)
@@ -2226,6 +2421,96 @@ input InUseFilter {
   eq: BooleanType
 }
 
+"""
+Specifies how to filter by linking fields
+"""
+input InverseRelationshipFieldFilterBetweenConcertAndConcert {
+  """
+  Filter linking records that reference current record in at least one of the specified fields
+  """
+  anyIn: [ConcertModelFieldsReferencingConcertModel!]
+
+  """
+  Filter linking records that do not reference current record in any of the specified fields
+  """
+  notIn: [ConcertModelFieldsReferencingConcertModel!]
+}
+
+"""
+Specifies how to filter by linking fields
+"""
+input InverseRelationshipFieldFilterBetweenGeneralAndConcert {
+  """
+  Filter linking records that reference current record in at least one of the specified fields
+  """
+  anyIn: [GeneralModelFieldsReferencingConcertModel!]
+
+  """
+  Filter linking records that do not reference current record in any of the specified fields
+  """
+  notIn: [GeneralModelFieldsReferencingConcertModel!]
+}
+
+"""
+Specifies how to filter by linking fields
+"""
+input InverseRelationshipFieldFilterBetweenPageAndConcert {
+  """
+  Filter linking records that reference current record in at least one of the specified fields
+  """
+  anyIn: [PageModelFieldsReferencingConcertModel!]
+
+  """
+  Filter linking records that do not reference current record in any of the specified fields
+  """
+  notIn: [PageModelFieldsReferencingConcertModel!]
+}
+
+"""
+Specifies how to filter linking records
+"""
+input InverseRelationshipFilterBetweenConcertAndConcert {
+  """
+  Specifies how to filter by linking fields
+  """
+  fields: InverseRelationshipFieldFilterBetweenConcertAndConcert
+
+  """
+  Specifies how to filter by linking locales
+  """
+  locales: LinkingLocalesFilter
+}
+
+"""
+Specifies how to filter linking records
+"""
+input InverseRelationshipFilterBetweenGeneralAndConcert {
+  """
+  Specifies how to filter by linking fields
+  """
+  fields: InverseRelationshipFieldFilterBetweenGeneralAndConcert
+
+  """
+  Specifies how to filter by linking locales
+  """
+  locales: LinkingLocalesFilter
+}
+
+"""
+Specifies how to filter linking records
+"""
+input InverseRelationshipFilterBetweenPageAndConcert {
+  """
+  Specifies how to filter by linking fields
+  """
+  fields: InverseRelationshipFieldFilterBetweenPageAndConcert
+
+  """
+  Specifies how to filter by linking locales
+  """
+  locales: LinkingLocalesFilter
+}
+
 scalar ItemId
 
 """
@@ -2295,6 +2580,29 @@ input LatLonNearFilter {
   latitude: FloatType!
   longitude: FloatType!
   radius: FloatType!
+}
+
+"""
+Linking locales
+"""
+enum LinkingLocale {
+  nl
+  _nonLocalized
+}
+
+"""
+Specifies how to filter by linking locales
+"""
+input LinkingLocalesFilter {
+  """
+  Filter linking records that link to current record in at least one of the specified locales
+  """
+  anyIn: [LinkingLocale!]
+
+  """
+  Filter linking records that do not link to current record in any of the specified locales
+  """
+  notIn: [LinkingLocale!]
 }
 
 """
@@ -2466,6 +2774,21 @@ input OrientationFilter {
 }
 
 union PageModelContentField = HeaderRecord | TextBlockRecord | TwoColumnRecord
+
+"""
+Linking fields
+"""
+enum PageModelFieldsReferencingConcertModel {
+  page_content
+  page_content__header_body
+  page_content__header_body__callToAction_pageLink
+  page_content__textBlock_content
+  page_content__textBlock_content__callToAction_pageLink
+  page_content__twoColumn_leftContent
+  page_content__twoColumn_leftContent__callToAction_pageLink
+  page_content__twoColumn_rightContent
+  page_content__twoColumn_rightContent__callToAction_pageLink
+}
 
 input PageModelFilter {
   _createdAt: CreatedAtFilter

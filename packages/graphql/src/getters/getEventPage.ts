@@ -5,8 +5,21 @@ import {
   type GetEventPageQuery,
   type GetEventPageQueryVariables,
 } from '../generated/graphql'
+import type { CombinedError } from '@urql/core'
+import type { Event } from '../types/event'
 
-export const getEventPage = async ({ slug }: GetEventPageQueryVariables) => {
+export const getEventPage = async ({
+  slug,
+}: GetEventPageQueryVariables): Promise<
+  | {
+      data: Event | null | undefined
+      error: CombinedError | undefined
+    }
+  | {
+      data: null
+      error: unknown
+    }
+> => {
   try {
     const { data, error } = await client.query<
       GetEventPageQuery,

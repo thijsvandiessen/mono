@@ -43,9 +43,11 @@ export const VideoBlock = ({ record, autoplay, aspectRatio }: Props) => {
       case 'vimeo':
         return `https://player.vimeo.com/video/${video.providerUid}?autoplay=1&muted=${binaryAutoplay}&loop=${binaryAutoplay}`
       case 'youtube':
-        return `https://www.youtube.com/embed/${video.providerUid
-          }?autoplay=1&mute=${binaryAutoplay}&loop=${binaryAutoplay}&controls=${autoplay ? 0 : 1
-          }&playlist=${video.providerUid}`
+        return `https://www.youtube.com/embed/${
+          video.providerUid
+        }?autoplay=1&mute=${binaryAutoplay}&loop=${binaryAutoplay}&controls=${
+          autoplay ? 0 : 1
+        }&playlist=${video.providerUid}`
       default:
         console.error(`unsupported video provider: ${video.provider}`)
         return ''

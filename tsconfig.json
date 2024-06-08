@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "rootDir": "./",
     "lib": ["ESNext", "DOM", "WebWorker", "DOM.Iterable"],
     "allowJs": true,
@@ -7,7 +8,7 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
-    "incremental": true,
+    "incremental": false,
     "esModuleInterop": true,
     "module": "ESNext",
     "target": "ESNext",
@@ -32,8 +33,12 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "paths": {
+      "@mono/*": ["./packages/*/src/index.ts"]
+    }
   },
-  "include": ["packages/**/*", "apps/**/*"],
+  "references": [{ "path": "./packages/**/*" }, { "path": "./apps/**/*" }],
+  "include": ["./packages/**/*", "./apps/**/*"],
   "exclude": ["node_modules"]
 }

@@ -21,8 +21,6 @@
     "@mono/graphql": "1.0.0",
     "@mono/utils": "1.0.0",
     "@react-google-maps/api": "2.19.3",
-    "@urql/core": "4.2.2",
-    "@urql/exchange-graphcache": "6.4.0",
     "classnames": "2.3.2",
     "datocms-structured-text-utils": "2.0.4",
     "graphql": "16.8.1",

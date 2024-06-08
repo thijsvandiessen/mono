@@ -41,7 +41,7 @@ export const Header = ({
         {title && (
           <h1
             className={classNames({
-              'sr-only': body || (!body && asset?.url),
+              'sr-only': body ?? (!body && asset?.url),
             })}
           >
             {title}
@@ -53,10 +53,10 @@ export const Header = ({
         <div className={classNames(styles.headerImageWrapper)}>
           <Image
             className={classNames(styles.headerImage)}
-            alt={asset.title || ''}
+            alt={asset.title ?? title ?? ''}
             src={asset.url}
-            width={asset.width || 100}
-            height={asset.height || 100}
+            width={asset.width ?? 100}
+            height={asset.height ?? 100}
           />
           <div className={classNames(styles.background)} />
         </div>

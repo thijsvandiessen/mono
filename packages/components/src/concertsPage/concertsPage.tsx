@@ -12,7 +12,11 @@ import { ConcertModelOrderBy } from '@mono/graphql/src/generated/graphql'
 
 export const ConcertsPage = async () => {
   const first = 2
-  const { data: eventData } = await getEvents({ skip: 0, first, order: ConcertModelOrderBy.PositionAsc })
+  const { data: eventData } = await getEvents({
+    skip: 0,
+    first,
+    order: ConcertModelOrderBy.PositionAsc,
+  })
   const { data: pageData } = await getPage({ slug: 'concerten' })
 
   const events = (

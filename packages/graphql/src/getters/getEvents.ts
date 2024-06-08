@@ -6,12 +6,23 @@ import {
   type GetEventsQuery,
   type GetEventsQueryVariables,
 } from '../generated/graphql'
+import type { CombinedError } from '@urql/core'
+import type { Event } from '../types/event'
 
 export const getEvents = async ({
   skip,
   first,
   order = ConcertModelOrderBy.PositionAsc,
-}: GetEventsQueryVariables) => {
+}: GetEventsQueryVariables): Promise<
+  | {
+      data: Event[]
+      error: CombinedError | undefined
+    }
+  | {
+      data: null
+      error: unknown
+    }
+> => {
   try {
     const { data, error } = await client.query<
       GetEventsQuery,

@@ -1,6 +1,4 @@
-import '@mono/components/src/styles/global.scss'
-
-import { DefaultLayout } from '@mono/components/src/defaultLayout'
+import { Body } from '@mono/components/src/body'
 import React from 'react'
 
 interface Props {
@@ -10,9 +8,7 @@ interface Props {
 const RootLayout = ({ children }: Props) => {
   return (
     <html lang="nl-NL">
-      <body>
-        <DefaultLayout>{children}</DefaultLayout>
-      </body>
+      <Body>{children}</Body>
     </html>
   )
 }

@@ -142,6 +142,19 @@ export type ConcertModelContentField =
   | TextBlockRecord
   | TwoColumnRecord
 
+/** Linking fields */
+export enum ConcertModelFieldsReferencingConcertModel {
+  ConcertContent = 'concert_content',
+  ConcertContentHeaderBody = 'concert_content__header_body',
+  ConcertContentHeaderBodyCallToActionPageLink = 'concert_content__header_body__callToAction_pageLink',
+  ConcertContentTextBlockContent = 'concert_content__textBlock_content',
+  ConcertContentTextBlockContentCallToActionPageLink = 'concert_content__textBlock_content__callToAction_pageLink',
+  ConcertContentTwoColumnLeftContent = 'concert_content__twoColumn_leftContent',
+  ConcertContentTwoColumnLeftContentCallToActionPageLink = 'concert_content__twoColumn_leftContent__callToAction_pageLink',
+  ConcertContentTwoColumnRightContent = 'concert_content__twoColumn_rightContent',
+  ConcertContentTwoColumnRightContentCallToActionPageLink = 'concert_content__twoColumn_rightContent__callToAction_pageLink',
+}
+
 export type ConcertModelFilter = {
   AND?: InputMaybe<Array<InputMaybe<ConcertModelFilter>>>
   OR?: InputMaybe<Array<InputMaybe<ConcertModelFilter>>>
@@ -189,6 +202,15 @@ export enum ConcertModelOrderBy {
 /** Record of type Concert (concert) */
 export type ConcertRecord = RecordInterface & {
   __typename?: 'ConcertRecord'
+  _allReferencingConcerts: Array<ConcertRecord>
+  /** Returns meta information regarding a record collection */
+  _allReferencingConcertsMeta: CollectionMetadata
+  _allReferencingGenerals: Array<GeneralRecord>
+  /** Returns meta information regarding a record collection */
+  _allReferencingGeneralsMeta: CollectionMetadata
+  _allReferencingPages: Array<PageRecord>
+  /** Returns meta information regarding a record collection */
+  _allReferencingPagesMeta: CollectionMetadata
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
@@ -210,6 +232,60 @@ export type ConcertRecord = RecordInterface & {
   seo?: Maybe<SeoField>
   slug?: Maybe<Scalars['String']['output']>
   title?: Maybe<Scalars['String']['output']>
+}
+
+/** Record of type Concert (concert) */
+export type ConcertRecord_AllReferencingConcertsArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<ConcertModelFilter>
+  first?: InputMaybe<Scalars['IntType']['input']>
+  locale?: InputMaybe<SiteLocale>
+  orderBy?: InputMaybe<Array<InputMaybe<ConcertModelOrderBy>>>
+  skip?: InputMaybe<Scalars['IntType']['input']>
+  through?: InputMaybe<InverseRelationshipFilterBetweenConcertAndConcert>
+}
+
+/** Record of type Concert (concert) */
+export type ConcertRecord_AllReferencingConcertsMetaArgs = {
+  filter?: InputMaybe<ConcertModelFilter>
+  locale?: InputMaybe<SiteLocale>
+  through?: InputMaybe<InverseRelationshipFilterBetweenConcertAndConcert>
+}
+
+/** Record of type Concert (concert) */
+export type ConcertRecord_AllReferencingGeneralsArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<GeneralModelFilter>
+  first?: InputMaybe<Scalars['IntType']['input']>
+  locale?: InputMaybe<SiteLocale>
+  orderBy?: InputMaybe<Array<InputMaybe<GeneralModelOrderBy>>>
+  skip?: InputMaybe<Scalars['IntType']['input']>
+  through?: InputMaybe<InverseRelationshipFilterBetweenGeneralAndConcert>
+}
+
+/** Record of type Concert (concert) */
+export type ConcertRecord_AllReferencingGeneralsMetaArgs = {
+  filter?: InputMaybe<GeneralModelFilter>
+  locale?: InputMaybe<SiteLocale>
+  through?: InputMaybe<InverseRelationshipFilterBetweenGeneralAndConcert>
+}
+
+/** Record of type Concert (concert) */
+export type ConcertRecord_AllReferencingPagesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<PageModelFilter>
+  first?: InputMaybe<Scalars['IntType']['input']>
+  locale?: InputMaybe<SiteLocale>
+  orderBy?: InputMaybe<Array<InputMaybe<PageModelOrderBy>>>
+  skip?: InputMaybe<Scalars['IntType']['input']>
+  through?: InputMaybe<InverseRelationshipFilterBetweenPageAndConcert>
+}
+
+/** Record of type Concert (concert) */
+export type ConcertRecord_AllReferencingPagesMetaArgs = {
+  filter?: InputMaybe<PageModelFilter>
+  locale?: InputMaybe<SiteLocale>
+  through?: InputMaybe<InverseRelationshipFilterBetweenPageAndConcert>
 }
 
 /** Record of type Concert (concert) */
@@ -410,7 +486,53 @@ export type FileFieldInterfaceUrlArgs = {
   imgixParams?: InputMaybe<ImgixParams>
 }
 
+/** Linking fields */
+export enum GeneralModelFieldsReferencingConcertModel {
+  GeneralMenu = 'general_menu',
+  GeneralMenuMenuItemLink = 'general_menu__menuItem_link',
+  GeneralMenuSubmenuItemMenuMenuItemLink = 'general_menu__submenuItem_menu__menuItem_link',
+}
+
+export type GeneralModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<GeneralModelFilter>>>
+  OR?: InputMaybe<Array<InputMaybe<GeneralModelFilter>>>
+  _createdAt?: InputMaybe<CreatedAtFilter>
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
+  _isValid?: InputMaybe<BooleanFilter>
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
+  _publishedAt?: InputMaybe<PublishedAtFilter>
+  _status?: InputMaybe<StatusFilter>
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
+  _updatedAt?: InputMaybe<UpdatedAtFilter>
+  id?: InputMaybe<ItemIdFilter>
+  siteMetadata?: InputMaybe<JsonFilter>
+  title?: InputMaybe<StringFilter>
+}
+
 export type GeneralModelMenuField = MenuItemRecord | SubmenuItemRecord
+
+export enum GeneralModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
+}
 
 /** Record of type general (general) */
 export type GeneralRecord = RecordInterface & {
@@ -1934,6 +2056,54 @@ export type InUseFilter = {
   eq?: InputMaybe<Scalars['BooleanType']['input']>
 }
 
+/** Specifies how to filter by linking fields */
+export type InverseRelationshipFieldFilterBetweenConcertAndConcert = {
+  /** Filter linking records that reference current record in at least one of the specified fields */
+  anyIn?: InputMaybe<Array<ConcertModelFieldsReferencingConcertModel>>
+  /** Filter linking records that do not reference current record in any of the specified fields */
+  notIn?: InputMaybe<Array<ConcertModelFieldsReferencingConcertModel>>
+}
+
+/** Specifies how to filter by linking fields */
+export type InverseRelationshipFieldFilterBetweenGeneralAndConcert = {
+  /** Filter linking records that reference current record in at least one of the specified fields */
+  anyIn?: InputMaybe<Array<GeneralModelFieldsReferencingConcertModel>>
+  /** Filter linking records that do not reference current record in any of the specified fields */
+  notIn?: InputMaybe<Array<GeneralModelFieldsReferencingConcertModel>>
+}
+
+/** Specifies how to filter by linking fields */
+export type InverseRelationshipFieldFilterBetweenPageAndConcert = {
+  /** Filter linking records that reference current record in at least one of the specified fields */
+  anyIn?: InputMaybe<Array<PageModelFieldsReferencingConcertModel>>
+  /** Filter linking records that do not reference current record in any of the specified fields */
+  notIn?: InputMaybe<Array<PageModelFieldsReferencingConcertModel>>
+}
+
+/** Specifies how to filter linking records */
+export type InverseRelationshipFilterBetweenConcertAndConcert = {
+  /** Specifies how to filter by linking fields */
+  fields?: InputMaybe<InverseRelationshipFieldFilterBetweenConcertAndConcert>
+  /** Specifies how to filter by linking locales */
+  locales?: InputMaybe<LinkingLocalesFilter>
+}
+
+/** Specifies how to filter linking records */
+export type InverseRelationshipFilterBetweenGeneralAndConcert = {
+  /** Specifies how to filter by linking fields */
+  fields?: InputMaybe<InverseRelationshipFieldFilterBetweenGeneralAndConcert>
+  /** Specifies how to filter by linking locales */
+  locales?: InputMaybe<LinkingLocalesFilter>
+}
+
+/** Specifies how to filter linking records */
+export type InverseRelationshipFilterBetweenPageAndConcert = {
+  /** Specifies how to filter by linking fields */
+  fields?: InputMaybe<InverseRelationshipFieldFilterBetweenPageAndConcert>
+  /** Specifies how to filter by linking locales */
+  locales?: InputMaybe<LinkingLocalesFilter>
+}
+
 /** Specifies how to filter by ID */
 export type ItemIdFilter = {
   /** Search the record with the specified ID */
@@ -1976,6 +2146,20 @@ export type LatLonNearFilter = {
   latitude: Scalars['FloatType']['input']
   longitude: Scalars['FloatType']['input']
   radius: Scalars['FloatType']['input']
+}
+
+/** Linking locales */
+export enum LinkingLocale {
+  NonLocalized = '_nonLocalized',
+  Nl = 'nl',
+}
+
+/** Specifies how to filter by linking locales */
+export type LinkingLocalesFilter = {
+  /** Filter linking records that link to current record in at least one of the specified locales */
+  anyIn?: InputMaybe<Array<LinkingLocale>>
+  /** Filter linking records that do not link to current record in any of the specified locales */
+  notIn?: InputMaybe<Array<LinkingLocale>>
 }
 
 /** Block of type location item (location_item) */
@@ -2120,6 +2304,19 @@ export type PageModelContentField =
   | HeaderRecord
   | TextBlockRecord
   | TwoColumnRecord
+
+/** Linking fields */
+export enum PageModelFieldsReferencingConcertModel {
+  PageContent = 'page_content',
+  PageContentHeaderBody = 'page_content__header_body',
+  PageContentHeaderBodyCallToActionPageLink = 'page_content__header_body__callToAction_pageLink',
+  PageContentTextBlockContent = 'page_content__textBlock_content',
+  PageContentTextBlockContentCallToActionPageLink = 'page_content__textBlock_content__callToAction_pageLink',
+  PageContentTwoColumnLeftContent = 'page_content__twoColumn_leftContent',
+  PageContentTwoColumnLeftContentCallToActionPageLink = 'page_content__twoColumn_leftContent__callToAction_pageLink',
+  PageContentTwoColumnRightContent = 'page_content__twoColumn_rightContent',
+  PageContentTwoColumnRightContentCallToActionPageLink = 'page_content__twoColumn_rightContent__callToAction_pageLink',
+}
 
 export type PageModelFilter = {
   AND?: InputMaybe<Array<InputMaybe<PageModelFilter>>>

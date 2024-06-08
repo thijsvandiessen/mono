@@ -15,8 +15,8 @@ jest.mock('@mono/graphql/src/getters/getEvents', () => {
   }
 })
 
-jest.mock('@mono/hooks/src/useEventsMeta', () => {
-  const originalModule = jest.requireActual('@mono/hooks/src/useEventsMeta')
+jest.mock('@mono/hooks', () => {
+  const originalModule = jest.requireActual('@mono/hooks')
   return {
     __esModule: true,
     ...originalModule,

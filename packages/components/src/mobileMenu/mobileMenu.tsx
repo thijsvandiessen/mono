@@ -2,11 +2,11 @@
 import { useState, useEffect } from 'react'
 import classNames from 'classnames'
 import { Provider } from 'urql'
-import { useDimensions } from '@mono/hooks/src/useDimensions'
+import { useDimensions } from '@mono/hooks'
 import { client } from '@mono/graphql/src/gqlClient'
 import { Hamburger } from '../icons/hamburger'
 import { Cross } from '../icons/cross'
-import { useHrefClick } from '@mono/hooks/src/useHrefClick'
+import { useHrefClick } from '@mono/hooks'
 import { MobileMenuItems } from '../mobileMenuItems'
 
 import styles from './styles.module.scss'

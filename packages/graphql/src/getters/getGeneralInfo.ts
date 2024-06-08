@@ -4,8 +4,18 @@ import {
   type GetGeneralInfoQuery,
   type GetGeneralInfoQueryVariables,
 } from '../generated/graphql'
+import type { CombinedError } from '@urql/core'
 
-export const getGeneralInfo = async () => {
+export const getGeneralInfo = async (): Promise<
+  | {
+      data: GetGeneralInfoQuery | undefined
+      error: CombinedError | undefined
+    }
+  | {
+      data: null
+      error: unknown
+    }
+> => {
   try {
     const { data, error } = await client.query<
       GetGeneralInfoQuery,
