@@ -1,4 +1,4 @@
-resource "vercel_project" "lundi" {
+data "vercel_project" "lundi" {
   name = "lundi-bleu"
 }
 
