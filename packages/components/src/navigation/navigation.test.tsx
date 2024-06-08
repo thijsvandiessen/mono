@@ -11,7 +11,6 @@ global.ResizeObserver = jest.fn().mockImplementation(() => ({
   disconnect: jest.fn(),
 }))
 
-
 jest.mock('@mono/graphql', () => {
   const originalModule = jest.requireActual('@mono/graphql')
   return {

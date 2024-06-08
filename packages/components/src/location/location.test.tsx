@@ -18,7 +18,6 @@ const getLocationMock = jest.mocked(getLocation)
 
 describe('Concert component', () => {
   it('shows all the data', async () => {
-
     getLocationMock.mockResolvedValue({
       data: {
         id: 'mock-ids',

@@ -3,9 +3,7 @@ import { useEventsMeta } from './useEventsMeta'
 import { renderHook, waitFor } from '@testing-library/react'
 
 jest.mock('@mono/graphql', () => {
-  const originalModule = jest.requireActual(
-    '@mono/graphql'
-  )
+  const originalModule = jest.requireActual('@mono/graphql')
   return {
     __esModule: true,
     ...originalModule,

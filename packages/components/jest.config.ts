@@ -8,7 +8,7 @@ const createJestConfig = nextJest({
 
 const config: Config = {
   // Add more setup options before each test is run
-  setupFilesAfterEnv: ['./jest.setup.ts'],
+  setupFilesAfterEnv: ['./jest.setup.cjs'],
   testEnvironment: 'jest-environment-jsdom',
   transform: {
     '^.+\\.(t|j)sx?$': '@swc/jest',

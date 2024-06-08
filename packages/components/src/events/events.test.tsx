@@ -8,9 +8,7 @@ import { resolvedComponent } from '@mono/utils'
 import { render, screen } from '@testing-library/react'
 
 jest.mock('@mono/graphql', () => {
-  const originalModule = jest.requireActual(
-    '@mono/graphql'
-  )
+  const originalModule = jest.requireActual('@mono/graphql')
   return {
     __esModule: true,
     ...originalModule,

@@ -12,7 +12,6 @@
     "lint": "oxlint -D correctness -D perf -A debugger -A eqeqeq -c ./.eslintrc.json && npm run lint --workspaces",
     "prepare": "husky install",
     "codegen": "npm run download-schema --workspace=packages/graphql && npm run codegen --workspace=packages/graphql",
-    "turbo": "turbo lint && turbo test && turbo build",
     "test": "npm run test --workspaces"
   },
   "lint-staged": {

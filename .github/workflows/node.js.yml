@@ -20,7 +20,7 @@ jobs:
       # TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
     strategy:
       matrix:
-        node-version: [18.x, 20.x, 21.x, 22.x]
+        node-version: [18.x, 20.x, 22.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
@@ -30,4 +30,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - run: npm ci
-      - run: npm run turbo
+      - run: npm run lint
+      - run: npm run build

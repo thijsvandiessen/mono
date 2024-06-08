@@ -15,9 +15,7 @@ jest.mock('../navigation', () => {
 })
 
 jest.mock('@mono/graphql', () => {
-  const originalModule = jest.requireActual(
-    '@mono/graphql'
-  )
+  const originalModule = jest.requireActual('@mono/graphql')
   return {
     __esModule: true,
     ...originalModule,

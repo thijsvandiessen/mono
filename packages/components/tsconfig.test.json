@@ -8,6 +8,6 @@
     "jsx": "react",
     "plugins": []
   },
-  "include": ["jest.config.ts", "jest.setup.ts"],
+  "include": ["jest.config.ts", "jest.setup.cjs"],
   "exclude": []
 }

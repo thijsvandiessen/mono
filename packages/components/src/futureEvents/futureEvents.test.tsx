@@ -8,9 +8,7 @@ import { resolvedComponent } from '@mono/utils'
 import { render, screen } from '@testing-library/react'
 
 jest.mock('@mono/graphql', () => {
-  const originalModule = jest.requireActual(
-    '@mono/graphql'
-  )
+  const originalModule = jest.requireActual('@mono/graphql')
   return {
     __esModule: true,
     ...originalModule,
@@ -35,14 +33,12 @@ const getFutureEventsMock = jest.mocked(getFutureEvents)
 
 afterAll(() => {
   jest.setSystemTime()
-  jest.useRealTimers();
+  jest.useRealTimers()
 })
 
 describe('FutureEvents component', () => {
   it('shows all the data', async () => {
-    jest
-      .useFakeTimers()
-      .setSystemTime(new Date('2020-01-01'));
+    jest.useFakeTimers().setSystemTime(new Date('2020-01-01'))
 
     getFutureEventsMock.mockResolvedValue({
       data: [mockEvent],
@@ -61,12 +57,9 @@ describe('FutureEvents component', () => {
   })
 
   it('shows no data', async () => {
-    jest
-      .useFakeTimers()
-      .setSystemTime(new Date('2022-01-01'));
+    jest.useFakeTimers().setSystemTime(new Date('2022-01-01'))
 
     getFutureEventsMock.mockResolvedValue({
-
       data: [mockEvent],
       error: undefined,
     })
@@ -79,6 +72,10 @@ describe('FutureEvents component', () => {
     const { container } = render(<ResolvedFutureEvents />)
 
     expect(container).toMatchSnapshot()
-    expect(screen.getByText('Houd de website in de gaten om up to date te blijven over volgende concerten.')).toBeInTheDocument()
+    expect(
+      screen.getByText(
+        'Houd de website in de gaten om up to date te blijven over volgende concerten.'
+      )
+    ).toBeInTheDocument()
   })
 })
