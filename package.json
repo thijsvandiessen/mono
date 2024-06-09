@@ -4,6 +4,7 @@
   "private": true,
   "description": "Monorepo for small websites",
   "type": "module",
+  "packageManager": "npm@10.7.0",
   "scripts": {
     "dev": "npm run dev --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",
