@@ -13,9 +13,9 @@ resource "vercel_deployment" "lundi" {
   production  = true
   project_settings = {
     framework        = "nextjs"
-    install_command  = "npm run ci"
+    install_command  = "npm ci"
     build_command    = "npm run build"
-    output_directory = "apps/lundi-bleu/.next"
+    output_directory = "../apps/lundi-bleu/.next"
     root_directory   = "../"
   }
 }
