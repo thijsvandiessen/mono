@@ -23,6 +23,6 @@ jobs:
       - name: Build Project Artifacts
         run: vercel build --token=${{ env.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
-        run: vercel deploy --token=${{ env.VERCEL_TOKEN }} --cwd apps/lundi-bleu
+        run: vercel deploy --prebuilt --token=${{ env.VERCEL_TOKEN }}
       - name: Deploy to production
         run: vercel --prod --token=${{ env.VERCEL_TOKEN }}
