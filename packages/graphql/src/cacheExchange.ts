@@ -9,7 +9,7 @@ import type { Exchange } from '@urql/core'
  * https://formidable.com/open-source/urql/docs/graphcache/normalized-caching
  */
 
-export const defaultExchange: Exchange = cacheExchange({
+export default cacheExchange({
   schema: introspectedSchema,
   keys: {
     LocationRecord: () => null,
@@ -24,4 +24,4 @@ export const defaultExchange: Exchange = cacheExchange({
     TextBlockModelContentField: () => null,
     HeaderModelBodyField: () => null,
   },
-})
+}) as Exchange

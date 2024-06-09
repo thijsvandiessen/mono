@@ -8,8 +8,6 @@
   "scripts": {
     "dev": "npm run dev --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",
-    "start:crea": "npm run start --workspace=apps/crea",
-    "start:lundi": "npm run start --workspace=apps/lundi-bleu",
     "lint": "npm run lint --workspaces",
     "prepare": "husky install",
     "codegen": "npm run download-schema --workspace=packages/graphql && npm run codegen --workspace=packages/graphql",
@@ -20,7 +18,7 @@
     "*.{js,css,md}": "prettier --write"
   },
   "dependencies": {
-    "@react-google-maps/api": "2.19.2",
+    "@react-google-maps/api": "2.19.3",
     "classnames": "2.3.2",
     "datocms-structured-text-utils": "2.0.4",
     "graphql": "16.8.1",

@@ -1,6 +1,4 @@
-export { defaultExchange } from './cacheExchange'
 export { client } from './gqlClient'
-export { linkConfig } from './linkConfig'
 export {
   getEvent,
   getEventPage,
