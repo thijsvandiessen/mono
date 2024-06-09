@@ -24,8 +24,8 @@ jobs:
       - name: Install Vercel CLI
         run: npm install --global vercel@34.2.6
       - name: Pull Vercel Environment Information
-        run: vercel pull --yes --environment=preview --token=${{ env.VERCEL_TOKEN }} --cwd apps/lundi-bleu
+        run: vercel pull --yes --environment=preview --token=${{ env.VERCEL_TOKEN }}
       - name: Build Project Artifacts
-        run: vercel build --token=${{ env.VERCEL_TOKEN }} --cwd apps/lundi-bleu
+        run: vercel build --token=${{ env.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prebuilt --token=${{ env.VERCEL_TOKEN }} --cwd apps/lundi-bleu

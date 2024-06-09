@@ -20,7 +20,7 @@
     "*.{js,css,md}": "prettier --write"
   },
   "dependencies": {
-    "@react-google-maps/api": "2.19.2",
+    "@react-google-maps/api": "2.19.3",
     "classnames": "2.3.2",
     "datocms-structured-text-utils": "2.0.4",
     "graphql": "16.8.1",
