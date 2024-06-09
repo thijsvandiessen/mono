@@ -23,7 +23,7 @@
     "urql": "4.1.0"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/jest-dom": "6.1.5",
     "@testing-library/react": "14.1.2",
     "@types/jest": "29.5.11",
     "@types/node": "18.19.3",
