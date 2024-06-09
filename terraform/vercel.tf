@@ -3,7 +3,7 @@ resource "vercel_project" "lundi" {
 }
 
 data "vercel_project_directory" "lundi" {
-  path = "../apps/lundi-bleu"
+  path = "../"
 }
 
 resource "vercel_deployment" "lundi" {
@@ -11,4 +11,11 @@ resource "vercel_deployment" "lundi" {
   files       = data.vercel_project_directory.lundi.files
   path_prefix = data.vercel_project_directory.lundi.path
   production  = true
+  project_settings = {
+    framework        = "nextjs"
+    install_command  = "npm run ci"
+    build_command    = "npm run build"
+    output_directory = "apps/lundi-bleu/.next"
+    root_directory   = "../"
+  }
 }
