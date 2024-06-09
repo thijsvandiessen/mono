@@ -1,3 +1,4 @@
+export { client } from './gqlClient'
 export {
   getEvent,
   getEventPage,
