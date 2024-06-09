@@ -1,11 +1,11 @@
-import { defaultExchange } from './cacheExchange'
+import cacheExchange from './cacheExchange'
 import { linkConfig } from './linkConfig'
 import { Client, fetchExchange, mapExchange } from '@urql/core'
 
 export const client = new Client({
   url: linkConfig.url,
   exchanges: [
-    defaultExchange,
+    cacheExchange,
     mapExchange({
       onError(error) {
         console.log(error, error.graphQLErrors[0]?.extensions)
