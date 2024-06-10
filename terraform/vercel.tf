@@ -5,7 +5,6 @@ resource "vercel_project" "lundi" {
 data "vercel_project_directory" "lundi" {
   path = "../"
 }
-
 resource "vercel_deployment" "lundi" {
   project_id  = resource.vercel_project.lundi.id
   files       = data.vercel_project_directory.lundi.files
