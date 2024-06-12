@@ -8,7 +8,7 @@ resource "vercel_project" "example" {
   framework                  = "nextjs"
   install_command            = "npm ci"
   build_command              = "npm run build"
-  root_directory             = "apps/crea"
+  root_directory             = "apps/example"
   serverless_function_region = "fra1"
 }
 
@@ -24,7 +24,7 @@ resource "vercel_deployment" "example" {
   project_settings = {
     # install_command = "npm ci"
     # build_command   = "npm run build"
-    root_directory = "apps/crea"
+    root_directory = "apps/example"
   }
 }
 

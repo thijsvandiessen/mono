@@ -8,7 +8,7 @@ import { MobileMenu } from '../mobileMenu'
 // import { getSiteMetadata } from '@mono/graphql'
 
 import styles from './styles.module.scss'
-// import { CreaOrkestLogo } from '../icons/crea-orkest-logo'
+// import { Logo } from '../icons/logo'
 
 export const Navigation = async () => {
   const { data } = await getGeneralInfo()
@@ -19,7 +19,7 @@ export const Navigation = async () => {
     <nav className={classNames(styles.root, 'content-layout')}>
       <div className={classNames(styles.content)}>
         {/* <Link href="/" className={classNames(styles.logoLink)}>
-          <CreaOrkestLogo className={classNames(styles.logo)} />
+          <Logo className={classNames(styles.logo)} />
           <span className="sr-only">{metadata?.title}: Ga naar home</span>
         </Link> */}
         <MobileMenu />

@@ -28,18 +28,18 @@ export const Footer = async () => {
             {/* <li>
               <Link
                 className={classNames(styles.logoLink)}
-                href="https://www.crea.nl/"
+                href="https://www.example.nl/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Image
                   className={classNames(styles.logo)}
-                  src="/img/logo-crea-cultureel-studentencentrum.png"
-                  alt="logo CREA"
+                  src="/img/example.png"
+                  alt="logo"
                   fill
                   sizes="(min-width: 500px) 50vw, 100vw"
                 />
-                <span className="sr-only">Ga naar crea.nl</span>
+                <span className="sr-only">Ga naar example.nl</span>
               </Link>
             </li> */}
           </ul>
@@ -72,7 +72,7 @@ export const Footer = async () => {
             {/* <li>
               <Link
                 className={classNames(styles.link)}
-                href="https://facebook.com/creaorkest"
+                href="https://facebook.com/example"
                 target="_blank"
                 rel="noopener noreferrer"
               >
