@@ -1,6 +1,10 @@
 resource "vercel_project" "lundi" {
-  name      = "lundi"
-  framework = "nextjs"
+  name                       = "lundi"
+  framework                  = "nextjs"
+  install_command            = "npm ci"
+  build_command              = "npm run build"
+  root_directory             = "apps/lundi-bleu"
+  serverless_function_region = "fra1"
 }
 
 resource "vercel_project" "example" {
@@ -21,22 +25,11 @@ resource "vercel_deployment" "example" {
   files       = data.vercel_project_directory.mono.files
   path_prefix = data.vercel_project_directory.mono.path
   production  = true
-  project_settings = {
-    # install_command = "npm ci"
-    # build_command   = "npm run build"
-    root_directory = "apps/example"
-  }
 }
 
-resource "vercel_deployment" "example" {
+resource "vercel_deployment" "lundi" {
   project_id  = resource.vercel_project.lundi.id
   files       = data.vercel_project_directory.mono.files
   path_prefix = data.vercel_project_directory.mono.path
   production  = true
-  project_settings = {
-    framework = "nextjs"
-    # install_command = "npm ci"
-    # build_command   = "npm run build"
-    root_directory = "apps/lundi-bleu"
-  }
 }
