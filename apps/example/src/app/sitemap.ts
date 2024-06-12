@@ -4,7 +4,7 @@ import { getPages } from '@mono/graphql'
 import { getPagesMeta } from '@mono/graphql'
 import type { PageLink } from '@mono/graphql'
 
-const URL = 'https://creaorkest.nl'
+const URL = 'https://example.nl'
 
 export default async function sitemap() {
   const pagesMeta = await getPagesMeta()

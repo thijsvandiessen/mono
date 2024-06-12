@@ -9,7 +9,7 @@ export const linkConfig = {
   url: getUrl(),
   headers: {
     'Content-Language': 'nl-NL',
-    // 'apollographql-client-name': 'crea-public',
+    // 'apollographql-client-name': 'example',
     'apollographql-client-version': 'specific-version', // TODO: comit hash?
   },
   next: { revalidate: 60, tags: ['content'] },

@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import styles from './styles.module.scss'
 
-export const CreaOrkestLogo = ({ className }: { className?: string }) => (
+export const Logo = ({ className }: { className?: string }) => (
   <svg
     className={classNames(className, styles.icon)}
     xmlns="http://www.w3.org/2000/svg"

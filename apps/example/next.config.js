@@ -84,7 +84,7 @@ const nextConfig = {
         },
         {
           key: 'Content-Security-Policy',
-          value: `default-src 'unsafe-inline' 'self' ; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://maps.googleapis.com; manifest-src https://creaorkest.nl/manifest.json; img-src 'self' 'unsafe-inline' data: https://maps.gstatic.com https://maps.googleapis.com https://i.ytimg.com https://i.vimeocdn.com; connect-src 'self' https://maps.googleapis.com; script-src-elem https://static.cloudflareinsights.com https://maps.googleapis.com 'self' 'unsafe-inline'; style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; frame-src 'self' https://www.youtube.com https://player.vimeo.com`,
+          value: `default-src 'unsafe-inline' 'self' ; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://maps.googleapis.com; manifest-src https://example.nl/manifest.json; img-src 'self' 'unsafe-inline' data: https://maps.gstatic.com https://maps.googleapis.com https://i.ytimg.com https://i.vimeocdn.com; connect-src 'self' https://maps.googleapis.com; script-src-elem https://static.cloudflareinsights.com https://maps.googleapis.com 'self' 'unsafe-inline'; style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; frame-src 'self' https://www.youtube.com https://player.vimeo.com`,
         },
       ],
     },

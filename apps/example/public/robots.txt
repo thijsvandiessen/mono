@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /style-guide
 
-Sitemap: https://www.creaorkest.nl/sitemap.xml
+Sitemap: https://www.example.nl/sitemap.xml

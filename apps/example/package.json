@@ -1,8 +1,8 @@
 {
-  "name": "crea-public",
+  "name": "example",
   "version": "1.0.0",
   "private": true,
-  "description": "The public CREA Orkest website",
+  "description": "An example website",
   "type": "module",
   "scripts": {
     "dev": "next dev --turbo -p 3000",
