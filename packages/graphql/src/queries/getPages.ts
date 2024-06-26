@@ -13,7 +13,7 @@ export const GET_PAGES: TypedDocumentNode<
   query getPages($skip: IntType, $first: IntType, $order: [PageModelOrderBy]) {
     allPages(first: $first, skip: $skip, orderBy: $order) {
       ...pageLink
-    }Ï
+    }
   }
   ${pageLink}
 `

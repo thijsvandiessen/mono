@@ -12,6 +12,7 @@ export const callToAction: TypedDocumentNode<
   fragment callToAction on CallToActionRecord {
     ...identifiable
     label
+    variant
     externalUrl
     pageLink {
       ... on ConcertRecord {
@@ -21,7 +22,6 @@ export const callToAction: TypedDocumentNode<
         ...pageLink
       }
     }
-    variant
   }
   ${identifiable}
   ${concertLink}

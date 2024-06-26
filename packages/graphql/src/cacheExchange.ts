@@ -23,5 +23,6 @@ export default cacheExchange({
     TwoColumnModelLeftContentField: () => null,
     TextBlockModelContentField: () => null,
     HeaderModelBodyField: () => null,
+    HeaderRecord: () => null,
   },
 }) as Exchange

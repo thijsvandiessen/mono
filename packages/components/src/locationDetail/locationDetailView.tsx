@@ -10,7 +10,7 @@ export interface Props {
 }
 
 export const LocationDetailView = ({ data }: Props) => {
-  const googleMapsApiKey = useEnv('GOOGLE_MAPS_API_KEY')
+  const googleMapsApiKey = useEnv('NEXT_PUBLIC_GOOGLE_MAPS_API_KEY')
   const { title, address, lat, lng } = data
 
   return (
@@ -34,13 +34,7 @@ export const LocationDetailView = ({ data }: Props) => {
           }}
         />
       ) : (
-        <div
-          style={{
-            width: '100%',
-            height: '400px',
-            background: 'lightgray',
-          }}
-        />
+        null
       )}
     </address>
   )

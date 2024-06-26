@@ -26,7 +26,7 @@ describe('getPages', () => {
         variables: {},
         kind: 'query',
         context: {
-          url: 'https://current--vandiessen-mono.apollographos.net/graphql',
+          url: 'https://current--vandiessen-mono-graph.apollographos.net/graphql',
           requestPolicy: 'cache-first',
         },
       },

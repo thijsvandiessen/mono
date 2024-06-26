@@ -142,19 +142,6 @@ export type ConcertModelContentField =
   | TextBlockRecord
   | TwoColumnRecord
 
-/** Linking fields */
-export enum ConcertModelFieldsReferencingConcertModel {
-  ConcertContent = 'concert_content',
-  ConcertContentHeaderBody = 'concert_content__header_body',
-  ConcertContentHeaderBodyCallToActionPageLink = 'concert_content__header_body__callToAction_pageLink',
-  ConcertContentTextBlockContent = 'concert_content__textBlock_content',
-  ConcertContentTextBlockContentCallToActionPageLink = 'concert_content__textBlock_content__callToAction_pageLink',
-  ConcertContentTwoColumnLeftContent = 'concert_content__twoColumn_leftContent',
-  ConcertContentTwoColumnLeftContentCallToActionPageLink = 'concert_content__twoColumn_leftContent__callToAction_pageLink',
-  ConcertContentTwoColumnRightContent = 'concert_content__twoColumn_rightContent',
-  ConcertContentTwoColumnRightContentCallToActionPageLink = 'concert_content__twoColumn_rightContent__callToAction_pageLink',
-}
-
 export type ConcertModelFilter = {
   AND?: InputMaybe<Array<InputMaybe<ConcertModelFilter>>>
   OR?: InputMaybe<Array<InputMaybe<ConcertModelFilter>>>
@@ -167,11 +154,32 @@ export type ConcertModelFilter = {
   _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   id?: InputMaybe<ItemIdFilter>
+  locations?: InputMaybe<ConcertModelLocationsFieldFilter>
   position?: InputMaybe<PositionFilter>
   poster?: InputMaybe<JsonFilter>
   seo?: InputMaybe<SeoFilter>
   slug?: InputMaybe<SlugFilter>
   title?: InputMaybe<StringFilter>
+}
+
+/** Specify nested blocks fields conditions */
+export type ConcertModelLocationsFieldBlocksConditions = {
+  locationItem?: InputMaybe<LocationItemModelFilter>
+}
+
+/** Specify nested blocks types presence */
+export type ConcertModelLocationsFieldBlocksPresence = {
+  locationItem?: InputMaybe<Scalars['BooleanType']['input']>
+}
+
+/** Specify how to filter this specific Modular Content field instance */
+export type ConcertModelLocationsFieldFilter = {
+  /** Filter records containing at least one block matching the specified conditions */
+  any?: InputMaybe<ConcertModelLocationsFieldBlocksConditions>
+  /** Filter records containing at least one block of specified type or not */
+  containsAny?: InputMaybe<ConcertModelLocationsFieldBlocksPresence>
+  /** Filter records containing at least one block of any kind or not */
+  exists?: InputMaybe<Scalars['BooleanType']['input']>
 }
 
 export enum ConcertModelOrderBy {
@@ -202,15 +210,6 @@ export enum ConcertModelOrderBy {
 /** Record of type Concert (concert) */
 export type ConcertRecord = RecordInterface & {
   __typename?: 'ConcertRecord'
-  _allReferencingConcerts: Array<ConcertRecord>
-  /** Returns meta information regarding a record collection */
-  _allReferencingConcertsMeta: CollectionMetadata
-  _allReferencingGenerals: Array<GeneralRecord>
-  /** Returns meta information regarding a record collection */
-  _allReferencingGeneralsMeta: CollectionMetadata
-  _allReferencingPages: Array<PageRecord>
-  /** Returns meta information regarding a record collection */
-  _allReferencingPagesMeta: CollectionMetadata
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
@@ -235,66 +234,30 @@ export type ConcertRecord = RecordInterface & {
 }
 
 /** Record of type Concert (concert) */
-export type ConcertRecord_AllReferencingConcertsArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  filter?: InputMaybe<ConcertModelFilter>
-  first?: InputMaybe<Scalars['IntType']['input']>
-  locale?: InputMaybe<SiteLocale>
-  orderBy?: InputMaybe<Array<InputMaybe<ConcertModelOrderBy>>>
-  skip?: InputMaybe<Scalars['IntType']['input']>
-  through?: InputMaybe<InverseRelationshipFilterBetweenConcertAndConcert>
-}
-
-/** Record of type Concert (concert) */
-export type ConcertRecord_AllReferencingConcertsMetaArgs = {
-  filter?: InputMaybe<ConcertModelFilter>
-  locale?: InputMaybe<SiteLocale>
-  through?: InputMaybe<InverseRelationshipFilterBetweenConcertAndConcert>
-}
-
-/** Record of type Concert (concert) */
-export type ConcertRecord_AllReferencingGeneralsArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  filter?: InputMaybe<GeneralModelFilter>
-  first?: InputMaybe<Scalars['IntType']['input']>
-  locale?: InputMaybe<SiteLocale>
-  orderBy?: InputMaybe<Array<InputMaybe<GeneralModelOrderBy>>>
-  skip?: InputMaybe<Scalars['IntType']['input']>
-  through?: InputMaybe<InverseRelationshipFilterBetweenGeneralAndConcert>
-}
-
-/** Record of type Concert (concert) */
-export type ConcertRecord_AllReferencingGeneralsMetaArgs = {
-  filter?: InputMaybe<GeneralModelFilter>
-  locale?: InputMaybe<SiteLocale>
-  through?: InputMaybe<InverseRelationshipFilterBetweenGeneralAndConcert>
-}
-
-/** Record of type Concert (concert) */
-export type ConcertRecord_AllReferencingPagesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  filter?: InputMaybe<PageModelFilter>
-  first?: InputMaybe<Scalars['IntType']['input']>
-  locale?: InputMaybe<SiteLocale>
-  orderBy?: InputMaybe<Array<InputMaybe<PageModelOrderBy>>>
-  skip?: InputMaybe<Scalars['IntType']['input']>
-  through?: InputMaybe<InverseRelationshipFilterBetweenPageAndConcert>
-}
-
-/** Record of type Concert (concert) */
-export type ConcertRecord_AllReferencingPagesMetaArgs = {
-  filter?: InputMaybe<PageModelFilter>
-  locale?: InputMaybe<SiteLocale>
-  through?: InputMaybe<InverseRelationshipFilterBetweenPageAndConcert>
-}
-
-/** Record of type Concert (concert) */
 export type ConcertRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
 /** Specifies how to filter by creation datetime */
 export type CreatedAtFilter = {
+  /** Filter records with a value that's within the specified minute range. Seconds and milliseconds are truncated from the argument. */
+  eq?: InputMaybe<Scalars['DateTime']['input']>
+  /** Filter records with the specified field defined (i.e. with any value) or not */
+  exists?: InputMaybe<Scalars['BooleanType']['input']>
+  /** Filter records with a value that's strictly greater than the one specified. Seconds and milliseconds are truncated from the argument. */
+  gt?: InputMaybe<Scalars['DateTime']['input']>
+  /** Filter records with a value that's greater than or equal to than the one specified. Seconds and milliseconds are truncated from the argument. */
+  gte?: InputMaybe<Scalars['DateTime']['input']>
+  /** Filter records with a value that's less than the one specified. Seconds and milliseconds are truncated from the argument. */
+  lt?: InputMaybe<Scalars['DateTime']['input']>
+  /** Filter records with a value that's less or equal than the one specified. Seconds and milliseconds are truncated from the argument. */
+  lte?: InputMaybe<Scalars['DateTime']['input']>
+  /** Filter records with a value that's outside the specified minute range. Seconds and milliseconds are truncated from the argument. */
+  neq?: InputMaybe<Scalars['DateTime']['input']>
+}
+
+/** Specifies how to filter DateTime fields */
+export type DateTimeFilter = {
   /** Filter records with a value that's within the specified minute range. Seconds and milliseconds are truncated from the argument. */
   eq?: InputMaybe<Scalars['DateTime']['input']>
   /** Filter records with the specified field defined (i.e. with any value) or not */
@@ -486,53 +449,7 @@ export type FileFieldInterfaceUrlArgs = {
   imgixParams?: InputMaybe<ImgixParams>
 }
 
-/** Linking fields */
-export enum GeneralModelFieldsReferencingConcertModel {
-  GeneralMenu = 'general_menu',
-  GeneralMenuMenuItemLink = 'general_menu__menuItem_link',
-  GeneralMenuSubmenuItemMenuMenuItemLink = 'general_menu__submenuItem_menu__menuItem_link',
-}
-
-export type GeneralModelFilter = {
-  AND?: InputMaybe<Array<InputMaybe<GeneralModelFilter>>>
-  OR?: InputMaybe<Array<InputMaybe<GeneralModelFilter>>>
-  _createdAt?: InputMaybe<CreatedAtFilter>
-  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
-  _isValid?: InputMaybe<BooleanFilter>
-  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
-  _publishedAt?: InputMaybe<PublishedAtFilter>
-  _status?: InputMaybe<StatusFilter>
-  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
-  _updatedAt?: InputMaybe<UpdatedAtFilter>
-  id?: InputMaybe<ItemIdFilter>
-  siteMetadata?: InputMaybe<JsonFilter>
-  title?: InputMaybe<StringFilter>
-}
-
 export type GeneralModelMenuField = MenuItemRecord | SubmenuItemRecord
-
-export enum GeneralModelOrderBy {
-  CreatedAtAsc = '_createdAt_ASC',
-  CreatedAtDesc = '_createdAt_DESC',
-  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
-  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
-  IsValidAsc = '_isValid_ASC',
-  IsValidDesc = '_isValid_DESC',
-  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
-  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
-  PublishedAtAsc = '_publishedAt_ASC',
-  PublishedAtDesc = '_publishedAt_DESC',
-  StatusAsc = '_status_ASC',
-  StatusDesc = '_status_DESC',
-  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
-  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
-  UpdatedAtAsc = '_updatedAt_ASC',
-  UpdatedAtDesc = '_updatedAt_DESC',
-  IdAsc = 'id_ASC',
-  IdDesc = 'id_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC',
-}
 
 /** Record of type general (general) */
 export type GeneralRecord = RecordInterface & {
@@ -662,9 +579,41 @@ export type ImgixParams = {
    *
    * Removes background from image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background-removal/bg-remove)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-remove)
    */
   bgRemove?: InputMaybe<Scalars['BooleanType']['input']>
+  /**
+   * Background Removal Fallback
+   *
+   * Overrides default fallback behavior for bg-remove failures.
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-remove)
+   */
+  bgRemoveFallback?: InputMaybe<Scalars['BooleanType']['input']>
+  /**
+   * Background Replacement
+   *
+   * Replaces background from image using a string based prompt.
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-replace)
+   */
+  bgReplace?: InputMaybe<Scalars['String']['input']>
+  /**
+   * Background Removal Fallback
+   *
+   * Overrides default fallback behavior for bg-replace failures.
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-replace)
+   */
+  bgReplaceFallback?: InputMaybe<Scalars['BooleanType']['input']>
+  /**
+   * Background Replacement Negative Prompt
+   *
+   * Provides a negative text suggestion for background replacement.
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-replace-neg-prompt)
+   */
+  bgReplaceNegPrompt?: InputMaybe<Scalars['String']['input']>
   /**
    * Blend
    *
@@ -1054,6 +1003,138 @@ export type ImgixParams = {
    */
   fillColor?: InputMaybe<Scalars['String']['input']>
   /**
+   * Fill Generative Fallback
+   *
+   * Sets the fallback behavior for generative fill.
+   *
+   * Depends on: `fit=fill`, `fill=gen`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-fallback)
+   */
+  fillGenFallback?: InputMaybe<Scalars['BooleanType']['input']>
+  /**
+   * Fill Generative Negative Prompt
+   *
+   * Provides a negative text suggestion to the generative fill parameter. Used to reduce the probability of a subject, detail, or object appearing in generative output.
+   *
+   * Depends on: `fit=fill`, `fill=gen`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-neg-prompt)
+   */
+  fillGenNegPrompt?: InputMaybe<Scalars['String']['input']>
+  /**
+   * Fill Generative Position
+   *
+   * Sets the position of the Origin Image in relation to the generative fill.
+   *
+   * Depends on: `fit=fill`, `fill=gen`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-pos)
+   */
+  fillGenPos?: InputMaybe<Array<ImgixParamsFillGenPos>>
+  /**
+   * Fill Generative Prompt
+   *
+   * Provides a text suggestion to the generative fill parameter.
+   *
+   * Depends on: `fit=fill`, `fill=gen`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-prompt)
+   */
+  fillGenPrompt?: InputMaybe<Scalars['String']['input']>
+  /**
+   * Fill Generative Seed
+   *
+   * Sets the generative seed value. Used to generate similar outputs from different prompts.
+   *
+   * Depends on: `fit=fill`, `fill=gen`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-seed)
+   */
+  fillGenSeed?: InputMaybe<Scalars['IntType']['input']>
+  /**
+   * Fill Gradient Color Space
+   *
+   * Defines the color space as linear, sRGB, Oklab, HSL, or LCH for gradient color interpolation
+   *
+   * Depends on: `fit=fill`, `fill=gradient`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-cs)
+   */
+  fillGradientCs?: InputMaybe<ImgixParamsFillGradientCs>
+  /**
+   * Fill Gradient Linear
+   *
+   * Blends a gradient between two colors, {color1} and {color2}, along a straight path
+   *
+   * Depends on: `fit=fill`, `fill=gradient`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-linear)
+   */
+  fillGradientLinear?: InputMaybe<Scalars['String']['input']>
+  /**
+   * Fill Gradient Linear Direction
+   *
+   * The fill-gradient-linear-direction specifies the gradient's direction, flowing towards the bottom, top, right, or left
+   *
+   * Depends on: `fit=fill`, `fill=gen`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-linear-direction)
+   */
+  fillGradientLinearDirection?: InputMaybe<
+    Array<ImgixParamsFillGradientLinearDirection>
+  >
+  /**
+   * Fill Gradient Radial
+   *
+   * The fill-gradient-radial parameter creates a circular gradient transitioning from a central color (Color1) to an outer color (Color2)
+   *
+   * Depends on: `fit=fill`, `fill=gradient`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-radial)
+   */
+  fillGradientRadial?: InputMaybe<Scalars['String']['input']>
+  /**
+   * Fill Gradient Radial Radius
+   *
+   * Parameter defines the radial gradient's radius as pixels or a percentage (0.0-1.0) of the image's smallest dimension
+   *
+   * Depends on: `fit=fill`, `fill=gradient`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-radial-radius)
+   */
+  fillGradientRadialRadius?: InputMaybe<Scalars['String']['input']>
+  /**
+   * Fill Gradient Radial X
+   *
+   * Specifies the location of the radial gradient's center along the x-axis, using either a pixel value or a floating point percentage (ranging from 0.0 to 1.0) of the image's width
+   *
+   * Depends on: `fit=fill`, `fill=gradient`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-radial-x)
+   */
+  fillGradientRadialX?: InputMaybe<Scalars['FloatType']['input']>
+  /**
+   * Fill Gradient Radial Y
+   *
+   * Parameter sets the radial gradient's center on the y-axis, using pixels or a 0.0 to 1.0 percentage of the image's height
+   *
+   * Depends on: `fit=fill`, `fill=gradient`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-radial-y)
+   */
+  fillGradientRadialY?: InputMaybe<Scalars['FloatType']['input']>
+  /**
+   * Fill Gradient Type
+   *
+   * Specifies if a gradient is radial (circular) or linear (straight)
+   *
+   * Depends on: `fit=fill`, `fill=gradient`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-type)
+   */
+  fillGradientType?: InputMaybe<ImgixParamsFillGradientType>
+  /**
    * Resize Fit Mode
    *
    * Specifies how to map the source image to the output image dimensions.
@@ -1140,6 +1221,8 @@ export type ImgixParams = {
   /**
    * Animated Gif Quality
    *
+   * Specifies the quality of the animated gif. The higher the value, the better more compression is applied.
+   *
    * Depends on: `fm=gif`
    */
   gifQ?: InputMaybe<Scalars['IntType']['input']>
@@ -1211,6 +1294,12 @@ export type ImgixParams = {
    * Determine if IPTC data should be passed for JPEG images.
    */
   iptc?: InputMaybe<ImgixParamsIptc>
+  /**
+   * Jpg Progressive
+   *
+   * Specifies whether or not a jpg/jpeg uses progressive (true) or baseline (false)
+   */
+  jpgProgressive?: InputMaybe<Scalars['BooleanType']['input']>
   /**
    * Animation Loop Count
    *
@@ -1602,6 +1691,12 @@ export type ImgixParams = {
    */
   skipDefaultOptimizations?: InputMaybe<Scalars['BooleanType']['input']>
   /**
+   * Sanitize Svg
+   *
+   * Specifies whether to sanitize an SVG.
+   */
+  svgSanitize?: InputMaybe<Scalars['BooleanType']['input']>
+  /**
    * Transparency
    *
    * Adds checkerboard behind images which support transparency.
@@ -1736,16 +1831,6 @@ export type ImgixParams = {
    */
   txtLead?: InputMaybe<Scalars['IntType']['input']>
   /**
-   * Text Ligatures
-   *
-   * Controls the level of ligature substitution
-   *
-   * Depends on: `txt`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-lig)
-   */
-  txtLig?: InputMaybe<Scalars['IntType']['input']>
-  /**
    * Text Outline
    *
    * Outlines the rendered text with a specified color.
@@ -1835,6 +1920,22 @@ export type ImgixParams = {
    * [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-y)
    */
   txtY?: InputMaybe<Scalars['IntType']['input']>
+  /**
+   * Super Resolution
+   *
+   * Uses generative AI fill to upscale low resolution images.
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/super-resolution/upscale)
+   */
+  upscale?: InputMaybe<Scalars['BooleanType']['input']>
+  /**
+   * Super Resolution Fallback
+   *
+   * Overrides default fallback behavior for super resolution failures
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/super-resolution/upscale-fallback)
+   */
+  upscaleFallback?: InputMaybe<Scalars['BooleanType']['input']>
   /**
    * Unsharp Mask
    *
@@ -1952,7 +2053,39 @@ export enum ImgixParamsCs {
 
 export enum ImgixParamsFill {
   Blur = 'blur',
+  Gen = 'gen',
+  Generative = 'generative',
+  Gradient = 'gradient',
   Solid = 'solid',
+}
+
+export enum ImgixParamsFillGenPos {
+  Bottom = 'bottom',
+  Center = 'center',
+  Left = 'left',
+  Middle = 'middle',
+  Right = 'right',
+  Top = 'top',
+}
+
+export enum ImgixParamsFillGradientCs {
+  Hsl = 'hsl',
+  Lch = 'lch',
+  Linear = 'linear',
+  Oklab = 'oklab',
+  Srgb = 'srgb',
+}
+
+export enum ImgixParamsFillGradientLinearDirection {
+  Bottom = 'bottom',
+  Left = 'left',
+  Right = 'right',
+  Top = 'top',
+}
+
+export enum ImgixParamsFillGradientType {
+  Linear = 'linear',
+  Radial = 'radial',
 }
 
 export enum ImgixParamsFit {
@@ -2056,54 +2189,6 @@ export type InUseFilter = {
   eq?: InputMaybe<Scalars['BooleanType']['input']>
 }
 
-/** Specifies how to filter by linking fields */
-export type InverseRelationshipFieldFilterBetweenConcertAndConcert = {
-  /** Filter linking records that reference current record in at least one of the specified fields */
-  anyIn?: InputMaybe<Array<ConcertModelFieldsReferencingConcertModel>>
-  /** Filter linking records that do not reference current record in any of the specified fields */
-  notIn?: InputMaybe<Array<ConcertModelFieldsReferencingConcertModel>>
-}
-
-/** Specifies how to filter by linking fields */
-export type InverseRelationshipFieldFilterBetweenGeneralAndConcert = {
-  /** Filter linking records that reference current record in at least one of the specified fields */
-  anyIn?: InputMaybe<Array<GeneralModelFieldsReferencingConcertModel>>
-  /** Filter linking records that do not reference current record in any of the specified fields */
-  notIn?: InputMaybe<Array<GeneralModelFieldsReferencingConcertModel>>
-}
-
-/** Specifies how to filter by linking fields */
-export type InverseRelationshipFieldFilterBetweenPageAndConcert = {
-  /** Filter linking records that reference current record in at least one of the specified fields */
-  anyIn?: InputMaybe<Array<PageModelFieldsReferencingConcertModel>>
-  /** Filter linking records that do not reference current record in any of the specified fields */
-  notIn?: InputMaybe<Array<PageModelFieldsReferencingConcertModel>>
-}
-
-/** Specifies how to filter linking records */
-export type InverseRelationshipFilterBetweenConcertAndConcert = {
-  /** Specifies how to filter by linking fields */
-  fields?: InputMaybe<InverseRelationshipFieldFilterBetweenConcertAndConcert>
-  /** Specifies how to filter by linking locales */
-  locales?: InputMaybe<LinkingLocalesFilter>
-}
-
-/** Specifies how to filter linking records */
-export type InverseRelationshipFilterBetweenGeneralAndConcert = {
-  /** Specifies how to filter by linking fields */
-  fields?: InputMaybe<InverseRelationshipFieldFilterBetweenGeneralAndConcert>
-  /** Specifies how to filter by linking locales */
-  locales?: InputMaybe<LinkingLocalesFilter>
-}
-
-/** Specifies how to filter linking records */
-export type InverseRelationshipFilterBetweenPageAndConcert = {
-  /** Specifies how to filter by linking fields */
-  fields?: InputMaybe<InverseRelationshipFieldFilterBetweenPageAndConcert>
-  /** Specifies how to filter by linking locales */
-  locales?: InputMaybe<LinkingLocalesFilter>
-}
-
 /** Specifies how to filter by ID */
 export type ItemIdFilter = {
   /** Search the record with the specified ID */
@@ -2148,18 +2233,27 @@ export type LatLonNearFilter = {
   radius: Scalars['FloatType']['input']
 }
 
-/** Linking locales */
-export enum LinkingLocale {
-  NonLocalized = '_nonLocalized',
-  Nl = 'nl',
+/** Specifies how to filter Single-link fields */
+export type LinkFilter = {
+  /** Search for records with an exact match. The specified value must be a Record ID */
+  eq?: InputMaybe<Scalars['ItemId']['input']>
+  /** Filter records with the specified field defined (i.e. with any value) or not */
+  exists?: InputMaybe<Scalars['BooleanType']['input']>
+  /** Filter records linked to one of the specified records */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ItemId']['input']>>>
+  /** Exclude records with an exact match. The specified value must be a Record ID */
+  neq?: InputMaybe<Scalars['ItemId']['input']>
+  /** Filter records not linked to one of the specified records */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ItemId']['input']>>>
 }
 
-/** Specifies how to filter by linking locales */
-export type LinkingLocalesFilter = {
-  /** Filter linking records that link to current record in at least one of the specified locales */
-  anyIn?: InputMaybe<Array<LinkingLocale>>
-  /** Filter linking records that do not link to current record in any of the specified locales */
-  notIn?: InputMaybe<Array<LinkingLocale>>
+export type LocationItemModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<LocationItemModelFilter>>>
+  OR?: InputMaybe<Array<InputMaybe<LocationItemModelFilter>>>
+  dateTime?: InputMaybe<DateTimeFilter>
+  id?: InputMaybe<ItemIdFilter>
+  location?: InputMaybe<LinkFilter>
+  ticketLink?: InputMaybe<StringFilter>
 }
 
 /** Block of type location item (location_item) */
@@ -2304,19 +2398,6 @@ export type PageModelContentField =
   | HeaderRecord
   | TextBlockRecord
   | TwoColumnRecord
-
-/** Linking fields */
-export enum PageModelFieldsReferencingConcertModel {
-  PageContent = 'page_content',
-  PageContentHeaderBody = 'page_content__header_body',
-  PageContentHeaderBodyCallToActionPageLink = 'page_content__header_body__callToAction_pageLink',
-  PageContentTextBlockContent = 'page_content__textBlock_content',
-  PageContentTextBlockContentCallToActionPageLink = 'page_content__textBlock_content__callToAction_pageLink',
-  PageContentTwoColumnLeftContent = 'page_content__twoColumn_leftContent',
-  PageContentTwoColumnLeftContentCallToActionPageLink = 'page_content__twoColumn_leftContent__callToAction_pageLink',
-  PageContentTwoColumnRightContent = 'page_content__twoColumn_rightContent',
-  PageContentTwoColumnRightContentCallToActionPageLink = 'page_content__twoColumn_rightContent__callToAction_pageLink',
-}
 
 export type PageModelFilter = {
   AND?: InputMaybe<Array<InputMaybe<PageModelFilter>>>

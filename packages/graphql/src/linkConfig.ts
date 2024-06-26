@@ -1,6 +1,6 @@
 const getUrl = () => {
   if (typeof window === 'undefined')
-    return 'https://current--vandiessen-mono.apollographos.net/graphql' as const
+    return 'https://current--vandiessen-mono-graph.apollographos.net/graphql' as const
 
   return '/graphql' as const
 }
