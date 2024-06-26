@@ -33,3 +33,11 @@ resource "vercel_deployment" "lundi" {
   path_prefix = data.vercel_project_directory.mono.path
   production  = true
 }
+
+resource "vercel_project_environment_variable" "lundi" {
+  project_id = vercel_project.lundi.id
+  key        = "NEXT_PUBLIC_GOOGLE_MAPS_API_KEY"
+  value      = var.GOOGLE_MAPS_API_KEY
+  target     = ["preview", "production"]
+  sensitive  = false
+}

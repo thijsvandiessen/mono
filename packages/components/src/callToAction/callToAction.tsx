@@ -1,5 +1,4 @@
 import { Button } from '../button'
-import type { ButtonProps } from '../button'
 import { isOfType } from '../contentField/isOfType'
 import { ArrowRight } from '../icons/arrow-right'
 import type {
@@ -15,7 +14,10 @@ interface Props {
 
 export const CallToAction = ({ record }: Props) => {
   const { pageLink, externalUrl, label, variant } = record
-  const buttonVariant = variant as ButtonProps['variant']
+  const primary = (variant === "primary") ? variant : undefined
+  const secondary = (variant === "secondary") ? variant : undefined
+  const tertiary = (variant === "tertiary") ? variant : undefined
+
 
   if (!pageLink) {
     return (
@@ -24,7 +26,7 @@ export const CallToAction = ({ record }: Props) => {
         target="_blank"
         rel="noopener noreferrer"
         rightIcon={<ArrowRight />}
-        variant={buttonVariant}
+        variant={primary || secondary || tertiary}
       >
         {label}
       </Button>
@@ -39,7 +41,7 @@ export const CallToAction = ({ record }: Props) => {
       <Button
         href={slugFormatter({ slug })}
         rightIcon={<ArrowRight />}
-        variant={buttonVariant}
+        variant={primary || secondary || tertiary}
       >
         {label}
       </Button>
@@ -55,7 +57,7 @@ export const CallToAction = ({ record }: Props) => {
           prefix: '/concerten',
         })}
         rightIcon={<ArrowRight />}
-        variant={buttonVariant}
+        variant={primary || secondary || tertiary}
       >
         {label}
       </Button>

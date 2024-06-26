@@ -823,71 +823,6 @@
         ]
       },
       {
-        "kind": "ENUM",
-        "name": "ConcertModelFieldsReferencingConcertModel",
-        "description": "Linking fields",
-        "fields": null,
-        "inputFields": null,
-        "interfaces": null,
-        "enumValues": [
-          {
-            "name": "concert_content",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "concert_content__header_body",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "concert_content__header_body__callToAction_pageLink",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "concert_content__textBlock_content",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "concert_content__textBlock_content__callToAction_pageLink",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "concert_content__twoColumn_leftContent",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "concert_content__twoColumn_leftContent__callToAction_pageLink",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "concert_content__twoColumn_rightContent",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "concert_content__twoColumn_rightContent__callToAction_pageLink",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "possibleTypes": null
-      },
-      {
         "kind": "INPUT_OBJECT",
         "name": "ConcertModelFilter",
         "description": null,
@@ -1034,6 +969,18 @@
             "deprecationReason": null
           },
           {
+            "name": "locations",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "ConcertModelLocationsFieldFilter",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "position",
             "description": null,
             "type": {
@@ -1087,6 +1034,99 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "StringFilter",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "ConcertModelLocationsFieldBlocksConditions",
+        "description": "Specify nested blocks fields conditions",
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "locationItem",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "LocationItemModelFilter",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "ConcertModelLocationsFieldBlocksPresence",
+        "description": "Specify nested blocks types presence",
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "locationItem",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "BooleanType",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "ConcertModelLocationsFieldFilter",
+        "description": "Specify how to filter this specific Modular Content field instance",
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "any",
+            "description": "Filter records containing at least one block matching the specified conditions",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "ConcertModelLocationsFieldBlocksConditions",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "containsAny",
+            "description": "Filter records containing at least one block of specified type or not",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "ConcertModelLocationsFieldBlocksPresence",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "exists",
+            "description": "Filter records containing at least one block of any kind or not",
+            "type": {
+              "kind": "SCALAR",
+              "name": "BooleanType",
               "ofType": null
             },
             "defaultValue": null,
@@ -1246,528 +1286,6 @@
         "name": "ConcertRecord",
         "description": "Record of type Concert (concert)",
         "fields": [
-          {
-            "name": "_allReferencingConcerts",
-            "description": null,
-            "args": [
-              {
-                "name": "fallbackLocales",
-                "description": "If you want to fallback to a default translation when a translation has not been found",
-                "type": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "ENUM",
-                      "name": "SiteLocale",
-                      "ofType": null
-                    }
-                  }
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "filter",
-                "description": null,
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "ConcertModelFilter",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "first",
-                "description": "Limit the number of results",
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "IntType",
-                  "ofType": null
-                },
-                "defaultValue": "20",
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "locale",
-                "description": "The locale to use to fetch the field's content",
-                "type": {
-                  "kind": "ENUM",
-                  "name": "SiteLocale",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "orderBy",
-                "description": null,
-                "type": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "ENUM",
-                    "name": "ConcertModelOrderBy",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": "[position_ASC]",
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "skip",
-                "description": "Skip the first results",
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "IntType",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "through",
-                "description": "Specifies how to filter linking records",
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "InverseRelationshipFilterBetweenConcertAndConcert",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              }
-            ],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "OBJECT",
-                    "name": "ConcertRecord",
-                    "ofType": null
-                  }
-                }
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_allReferencingConcertsMeta",
-            "description": "Returns meta information regarding a record collection",
-            "args": [
-              {
-                "name": "filter",
-                "description": null,
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "ConcertModelFilter",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "locale",
-                "description": "The locale to use to fetch the field's content",
-                "type": {
-                  "kind": "ENUM",
-                  "name": "SiteLocale",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "through",
-                "description": "Specifies how to filter linking records",
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "InverseRelationshipFilterBetweenConcertAndConcert",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              }
-            ],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
-                "name": "CollectionMetadata",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_allReferencingGenerals",
-            "description": null,
-            "args": [
-              {
-                "name": "fallbackLocales",
-                "description": "If you want to fallback to a default translation when a translation has not been found",
-                "type": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "ENUM",
-                      "name": "SiteLocale",
-                      "ofType": null
-                    }
-                  }
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "filter",
-                "description": null,
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "GeneralModelFilter",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "first",
-                "description": "Limit the number of results",
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "IntType",
-                  "ofType": null
-                },
-                "defaultValue": "20",
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "locale",
-                "description": "The locale to use to fetch the field's content",
-                "type": {
-                  "kind": "ENUM",
-                  "name": "SiteLocale",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "orderBy",
-                "description": null,
-                "type": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "ENUM",
-                    "name": "GeneralModelOrderBy",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": "[_updatedAt_DESC]",
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "skip",
-                "description": "Skip the first results",
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "IntType",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "through",
-                "description": "Specifies how to filter linking records",
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "InverseRelationshipFilterBetweenGeneralAndConcert",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              }
-            ],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "OBJECT",
-                    "name": "GeneralRecord",
-                    "ofType": null
-                  }
-                }
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_allReferencingGeneralsMeta",
-            "description": "Returns meta information regarding a record collection",
-            "args": [
-              {
-                "name": "filter",
-                "description": null,
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "GeneralModelFilter",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "locale",
-                "description": "The locale to use to fetch the field's content",
-                "type": {
-                  "kind": "ENUM",
-                  "name": "SiteLocale",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "through",
-                "description": "Specifies how to filter linking records",
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "InverseRelationshipFilterBetweenGeneralAndConcert",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              }
-            ],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
-                "name": "CollectionMetadata",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_allReferencingPages",
-            "description": null,
-            "args": [
-              {
-                "name": "fallbackLocales",
-                "description": "If you want to fallback to a default translation when a translation has not been found",
-                "type": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "ENUM",
-                      "name": "SiteLocale",
-                      "ofType": null
-                    }
-                  }
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "filter",
-                "description": null,
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "PageModelFilter",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "first",
-                "description": "Limit the number of results",
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "IntType",
-                  "ofType": null
-                },
-                "defaultValue": "20",
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "locale",
-                "description": "The locale to use to fetch the field's content",
-                "type": {
-                  "kind": "ENUM",
-                  "name": "SiteLocale",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "orderBy",
-                "description": null,
-                "type": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "ENUM",
-                    "name": "PageModelOrderBy",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": "[_updatedAt_DESC]",
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "skip",
-                "description": "Skip the first results",
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "IntType",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "through",
-                "description": "Specifies how to filter linking records",
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "InverseRelationshipFilterBetweenPageAndConcert",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              }
-            ],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "OBJECT",
-                    "name": "PageRecord",
-                    "ofType": null
-                  }
-                }
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_allReferencingPagesMeta",
-            "description": "Returns meta information regarding a record collection",
-            "args": [
-              {
-                "name": "filter",
-                "description": null,
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "PageModelFilter",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "locale",
-                "description": "The locale to use to fetch the field's content",
-                "type": {
-                  "kind": "ENUM",
-                  "name": "SiteLocale",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "through",
-                "description": "Specifies how to filter linking records",
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "InverseRelationshipFilterBetweenPageAndConcert",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              }
-            ],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
-                "name": "CollectionMetadata",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
           {
             "name": "_createdAt",
             "description": null,
@@ -2192,6 +1710,101 @@
         "description": "A ISO 8601 compliant datetime value",
         "fields": null,
         "inputFields": null,
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "DateTimeFilter",
+        "description": "Specifies how to filter DateTime fields",
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "eq",
+            "description": "Filter records with a value that's within the specified minute range. Seconds and milliseconds are truncated from the argument.",
+            "type": {
+              "kind": "SCALAR",
+              "name": "DateTime",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "exists",
+            "description": "Filter records with the specified field defined (i.e. with any value) or not",
+            "type": {
+              "kind": "SCALAR",
+              "name": "BooleanType",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "gt",
+            "description": "Filter records with a value that's strictly greater than the one specified. Seconds and milliseconds are truncated from the argument.",
+            "type": {
+              "kind": "SCALAR",
+              "name": "DateTime",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "gte",
+            "description": "Filter records with a value that's greater than or equal to than the one specified. Seconds and milliseconds are truncated from the argument.",
+            "type": {
+              "kind": "SCALAR",
+              "name": "DateTime",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "lt",
+            "description": "Filter records with a value that's less than the one specified. Seconds and milliseconds are truncated from the argument.",
+            "type": {
+              "kind": "SCALAR",
+              "name": "DateTime",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "lte",
+            "description": "Filter records with a value that's less or equal than the one specified. Seconds and milliseconds are truncated from the argument.",
+            "type": {
+              "kind": "SCALAR",
+              "name": "DateTime",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "neq",
+            "description": "Filter records with a value that's outside the specified minute range. Seconds and milliseconds are truncated from the argument.",
+            "type": {
+              "kind": "SCALAR",
+              "name": "DateTime",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
         "interfaces": null,
         "enumValues": null,
         "possibleTypes": null
@@ -3914,210 +3527,6 @@
         "possibleTypes": null
       },
       {
-        "kind": "ENUM",
-        "name": "GeneralModelFieldsReferencingConcertModel",
-        "description": "Linking fields",
-        "fields": null,
-        "inputFields": null,
-        "interfaces": null,
-        "enumValues": [
-          {
-            "name": "general_menu",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "general_menu__menuItem_link",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "general_menu__submenuItem_menu__menuItem_link",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "GeneralModelFilter",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "AND",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "INPUT_OBJECT",
-                "name": "GeneralModelFilter",
-                "ofType": null
-              }
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "OR",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "INPUT_OBJECT",
-                "name": "GeneralModelFilter",
-                "ofType": null
-              }
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_createdAt",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "CreatedAtFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_firstPublishedAt",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "PublishedAtFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_isValid",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "BooleanFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_publicationScheduledAt",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "PublishedAtFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_publishedAt",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "PublishedAtFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_status",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StatusFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_unpublishingScheduledAt",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "PublishedAtFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_updatedAt",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "UpdatedAtFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "id",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "ItemIdFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "siteMetadata",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "JsonFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "title",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
         "kind": "UNION",
         "name": "GeneralModelMenuField",
         "description": null,
@@ -4137,137 +3546,6 @@
             "ofType": null
           }
         ]
-      },
-      {
-        "kind": "ENUM",
-        "name": "GeneralModelOrderBy",
-        "description": null,
-        "fields": null,
-        "inputFields": null,
-        "interfaces": null,
-        "enumValues": [
-          {
-            "name": "_createdAt_ASC",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_createdAt_DESC",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_firstPublishedAt_ASC",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_firstPublishedAt_DESC",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_isValid_ASC",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_isValid_DESC",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_publicationScheduledAt_ASC",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_publicationScheduledAt_DESC",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_publishedAt_ASC",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_publishedAt_DESC",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_status_ASC",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_status_DESC",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_unpublishingScheduledAt_ASC",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_unpublishingScheduledAt_DESC",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_updatedAt_ASC",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_updatedAt_DESC",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "id_ASC",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "id_DESC",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "title_ASC",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "title_DESC",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "possibleTypes": null
       },
       {
         "kind": "OBJECT",
@@ -5202,10 +4480,58 @@
           },
           {
             "name": "bgRemove",
-            "description": "Background Removal\n\nRemoves background from image.\n\n[Open Imgix reference »](https://docs.imgix.com/apis/rendering/background-removal/bg-remove)",
+            "description": "Background Removal\n\nRemoves background from image.\n\n[Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-remove)",
             "type": {
               "kind": "SCALAR",
               "name": "BooleanType",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "bgRemoveFallback",
+            "description": "Background Removal Fallback\n\nOverrides default fallback behavior for bg-remove failures.\n\n[Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-remove)",
+            "type": {
+              "kind": "SCALAR",
+              "name": "BooleanType",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "bgReplace",
+            "description": "Background Replacement\n\nReplaces background from image using a string based prompt.\n\n[Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-replace)",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "bgReplaceFallback",
+            "description": "Background Removal Fallback\n\nOverrides default fallback behavior for bg-replace failures.\n\n[Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-replace)",
+            "type": {
+              "kind": "SCALAR",
+              "name": "BooleanType",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "bgReplaceNegPrompt",
+            "description": "Background Replacement Negative Prompt\n\nProvides a negative text suggestion for background replacement.\n\n[Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-replace-neg-prompt)",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null,
@@ -5749,6 +5075,178 @@
             "deprecationReason": null
           },
           {
+            "name": "fillGenFallback",
+            "description": "Fill Generative Fallback\n\nSets the fallback behavior for generative fill.\n\nDepends on: `fit=fill`, `fill=gen`\n\n[Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-fallback)",
+            "type": {
+              "kind": "SCALAR",
+              "name": "BooleanType",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "fillGenNegPrompt",
+            "description": "Fill Generative Negative Prompt\n\nProvides a negative text suggestion to the generative fill parameter. Used to reduce the probability of a subject, detail, or object appearing in generative output.\n\nDepends on: `fit=fill`, `fill=gen`\n\n[Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-neg-prompt)",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "fillGenPos",
+            "description": "Fill Generative Position\n\nSets the position of the Origin Image in relation to the generative fill.\n\nDepends on: `fit=fill`, `fill=gen`\n\n[Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-pos)",
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "ENUM",
+                  "name": "ImgixParamsFillGenPos",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "fillGenPrompt",
+            "description": "Fill Generative Prompt\n\nProvides a text suggestion to the generative fill parameter.\n\nDepends on: `fit=fill`, `fill=gen`\n\n[Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-prompt)",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "fillGenSeed",
+            "description": "Fill Generative Seed\n\nSets the generative seed value. Used to generate similar outputs from different prompts.\n\nDepends on: `fit=fill`, `fill=gen`\n\n[Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-seed)",
+            "type": {
+              "kind": "SCALAR",
+              "name": "IntType",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "fillGradientCs",
+            "description": "Fill Gradient Color Space\n\nDefines the color space as linear, sRGB, Oklab, HSL, or LCH for gradient color interpolation\n\nDepends on: `fit=fill`, `fill=gradient`\n\n[Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-cs)",
+            "type": {
+              "kind": "ENUM",
+              "name": "ImgixParamsFillGradientCs",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "fillGradientLinear",
+            "description": "Fill Gradient Linear\n\nBlends a gradient between two colors, {color1} and {color2}, along a straight path\n\nDepends on: `fit=fill`, `fill=gradient`\n\n[Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-linear)",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "fillGradientLinearDirection",
+            "description": "Fill Gradient Linear Direction\n\nThe fill-gradient-linear-direction specifies the gradient's direction, flowing towards the bottom, top, right, or left\n\nDepends on: `fit=fill`, `fill=gen`\n\n[Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-linear-direction)",
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "ENUM",
+                  "name": "ImgixParamsFillGradientLinearDirection",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "fillGradientRadial",
+            "description": "Fill Gradient Radial\n\nThe fill-gradient-radial parameter creates a circular gradient transitioning from a central color (Color1) to an outer color (Color2)\n\nDepends on: `fit=fill`, `fill=gradient`\n\n[Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-radial)",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "fillGradientRadialRadius",
+            "description": "Fill Gradient Radial Radius\n\nParameter defines the radial gradient's radius as pixels or a percentage (0.0-1.0) of the image's smallest dimension\n\nDepends on: `fit=fill`, `fill=gradient`\n\n[Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-radial-radius)",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "fillGradientRadialX",
+            "description": "Fill Gradient Radial X\n\nSpecifies the location of the radial gradient's center along the x-axis, using either a pixel value or a floating point percentage (ranging from 0.0 to 1.0) of the image's width\n\nDepends on: `fit=fill`, `fill=gradient`\n\n[Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-radial-x)",
+            "type": {
+              "kind": "SCALAR",
+              "name": "FloatType",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "fillGradientRadialY",
+            "description": "Fill Gradient Radial Y\n\nParameter sets the radial gradient's center on the y-axis, using pixels or a 0.0 to 1.0 percentage of the image's height\n\nDepends on: `fit=fill`, `fill=gradient`\n\n[Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-radial-y)",
+            "type": {
+              "kind": "SCALAR",
+              "name": "FloatType",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "fillGradientType",
+            "description": "Fill Gradient Type\n\nSpecifies if a gradient is radial (circular) or linear (straight)\n\nDepends on: `fit=fill`, `fill=gradient`\n\n[Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-type)",
+            "type": {
+              "kind": "ENUM",
+              "name": "ImgixParamsFillGradientType",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "fit",
             "description": "Resize Fit Mode\n\nSpecifies how to map the source image to the output image dimensions.\n\n[Open Imgix reference »](https://docs.imgix.com/apis/url/size/fit)",
             "type": {
@@ -5870,7 +5368,7 @@
           },
           {
             "name": "gifQ",
-            "description": "Animated Gif Quality\n\nDepends on: `fm=gif`",
+            "description": "Animated Gif Quality\n\nSpecifies the quality of the animated gif. The higher the value, the better more compression is applied.\n\nDepends on: `fm=gif`",
             "type": {
               "kind": "SCALAR",
               "name": "IntType",
@@ -5982,6 +5480,18 @@
             "type": {
               "kind": "ENUM",
               "name": "ImgixParamsIptc",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "jpgProgressive",
+            "description": "Jpg Progressive\n\nSpecifies whether or not a jpg/jpeg uses progressive (true) or baseline (false)",
+            "type": {
+              "kind": "SCALAR",
+              "name": "BooleanType",
               "ofType": null
             },
             "defaultValue": null,
@@ -6537,6 +6047,18 @@
             "deprecationReason": null
           },
           {
+            "name": "svgSanitize",
+            "description": "Sanitize Svg\n\nSpecifies whether to sanitize an SVG.",
+            "type": {
+              "kind": "SCALAR",
+              "name": "BooleanType",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "transparency",
             "description": "Transparency\n\nAdds checkerboard behind images which support transparency.\n\n[Open Imgix reference »](https://docs.imgix.com/apis/url/fill/transparency)",
             "type": {
@@ -6721,18 +6243,6 @@
             "deprecationReason": null
           },
           {
-            "name": "txtLig",
-            "description": "Text Ligatures\n\nControls the level of ligature substitution\n\nDepends on: `txt`\n\n[Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-lig)",
-            "type": {
-              "kind": "SCALAR",
-              "name": "IntType",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "txtLine",
             "description": "Text Outline\n\nOutlines the rendered text with a specified color.\n\nDepends on: `txt`\n\n[Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-line)",
             "type": {
@@ -6834,6 +6344,30 @@
             "type": {
               "kind": "SCALAR",
               "name": "IntType",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "upscale",
+            "description": "Super Resolution\n\nUses generative AI fill to upscale low resolution images.\n\n[Open Imgix reference »](https://docs.imgix.com/apis/rendering/super-resolution/upscale)",
+            "type": {
+              "kind": "SCALAR",
+              "name": "BooleanType",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "upscaleFallback",
+            "description": "Super Resolution Fallback\n\nOverrides default fallback behavior for super resolution failures\n\n[Open Imgix reference »](https://docs.imgix.com/apis/rendering/super-resolution/upscale-fallback)",
+            "type": {
+              "kind": "SCALAR",
+              "name": "BooleanType",
               "ofType": null
             },
             "defaultValue": null,
@@ -7319,7 +6853,171 @@
             "deprecationReason": null
           },
           {
+            "name": "gen",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "generative",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "gradient",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "solid",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "possibleTypes": null
+      },
+      {
+        "kind": "ENUM",
+        "name": "ImgixParamsFillGenPos",
+        "description": null,
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": [
+          {
+            "name": "bottom",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "center",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "left",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "middle",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "right",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "top",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "possibleTypes": null
+      },
+      {
+        "kind": "ENUM",
+        "name": "ImgixParamsFillGradientCs",
+        "description": null,
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": [
+          {
+            "name": "hsl",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "lch",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "linear",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "oklab",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "srgb",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "possibleTypes": null
+      },
+      {
+        "kind": "ENUM",
+        "name": "ImgixParamsFillGradientLinearDirection",
+        "description": null,
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": [
+          {
+            "name": "bottom",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "left",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "right",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "top",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "possibleTypes": null
+      },
+      {
+        "kind": "ENUM",
+        "name": "ImgixParamsFillGradientType",
+        "description": null,
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": [
+          {
+            "name": "linear",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "radial",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -7840,264 +7538,6 @@
         "possibleTypes": null
       },
       {
-        "kind": "INPUT_OBJECT",
-        "name": "InverseRelationshipFieldFilterBetweenConcertAndConcert",
-        "description": "Specifies how to filter by linking fields",
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "anyIn",
-            "description": "Filter linking records that reference current record in at least one of the specified fields",
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "ENUM",
-                  "name": "ConcertModelFieldsReferencingConcertModel",
-                  "ofType": null
-                }
-              }
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "notIn",
-            "description": "Filter linking records that do not reference current record in any of the specified fields",
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "ENUM",
-                  "name": "ConcertModelFieldsReferencingConcertModel",
-                  "ofType": null
-                }
-              }
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "InverseRelationshipFieldFilterBetweenGeneralAndConcert",
-        "description": "Specifies how to filter by linking fields",
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "anyIn",
-            "description": "Filter linking records that reference current record in at least one of the specified fields",
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "ENUM",
-                  "name": "GeneralModelFieldsReferencingConcertModel",
-                  "ofType": null
-                }
-              }
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "notIn",
-            "description": "Filter linking records that do not reference current record in any of the specified fields",
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "ENUM",
-                  "name": "GeneralModelFieldsReferencingConcertModel",
-                  "ofType": null
-                }
-              }
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "InverseRelationshipFieldFilterBetweenPageAndConcert",
-        "description": "Specifies how to filter by linking fields",
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "anyIn",
-            "description": "Filter linking records that reference current record in at least one of the specified fields",
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "ENUM",
-                  "name": "PageModelFieldsReferencingConcertModel",
-                  "ofType": null
-                }
-              }
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "notIn",
-            "description": "Filter linking records that do not reference current record in any of the specified fields",
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "ENUM",
-                  "name": "PageModelFieldsReferencingConcertModel",
-                  "ofType": null
-                }
-              }
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "InverseRelationshipFilterBetweenConcertAndConcert",
-        "description": "Specifies how to filter linking records",
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "fields",
-            "description": "Specifies how to filter by linking fields",
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "InverseRelationshipFieldFilterBetweenConcertAndConcert",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "locales",
-            "description": "Specifies how to filter by linking locales",
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "LinkingLocalesFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "InverseRelationshipFilterBetweenGeneralAndConcert",
-        "description": "Specifies how to filter linking records",
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "fields",
-            "description": "Specifies how to filter by linking fields",
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "InverseRelationshipFieldFilterBetweenGeneralAndConcert",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "locales",
-            "description": "Specifies how to filter by linking locales",
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "LinkingLocalesFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "InverseRelationshipFilterBetweenPageAndConcert",
-        "description": "Specifies how to filter linking records",
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "fields",
-            "description": "Specifies how to filter by linking fields",
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "InverseRelationshipFieldFilterBetweenPageAndConcert",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "locales",
-            "description": "Specifies how to filter by linking locales",
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "LinkingLocalesFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
         "kind": "SCALAR",
         "name": "ItemId",
         "description": null,
@@ -8374,48 +7814,45 @@
         "possibleTypes": null
       },
       {
-        "kind": "ENUM",
-        "name": "LinkingLocale",
-        "description": "Linking locales",
+        "kind": "INPUT_OBJECT",
+        "name": "LinkFilter",
+        "description": "Specifies how to filter Single-link fields",
         "fields": null,
-        "inputFields": null,
-        "interfaces": null,
-        "enumValues": [
+        "inputFields": [
           {
-            "name": "_nonLocalized",
-            "description": null,
+            "name": "eq",
+            "description": "Search for records with an exact match. The specified value must be a Record ID",
+            "type": {
+              "kind": "SCALAR",
+              "name": "ItemId",
+              "ofType": null
+            },
+            "defaultValue": null,
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "nl",
-            "description": null,
+            "name": "exists",
+            "description": "Filter records with the specified field defined (i.e. with any value) or not",
+            "type": {
+              "kind": "SCALAR",
+              "name": "BooleanType",
+              "ofType": null
+            },
+            "defaultValue": null,
             "isDeprecated": false,
             "deprecationReason": null
-          }
-        ],
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "LinkingLocalesFilter",
-        "description": "Specifies how to filter by linking locales",
-        "fields": null,
-        "inputFields": [
+          },
           {
-            "name": "anyIn",
-            "description": "Filter linking records that link to current record in at least one of the specified locales",
+            "name": "in",
+            "description": "Filter records linked to one of the specified records",
             "type": {
               "kind": "LIST",
               "name": null,
               "ofType": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "ENUM",
-                  "name": "LinkingLocale",
-                  "ofType": null
-                }
+                "kind": "SCALAR",
+                "name": "ItemId",
+                "ofType": null
               }
             },
             "defaultValue": null,
@@ -8423,20 +7860,119 @@
             "deprecationReason": null
           },
           {
+            "name": "neq",
+            "description": "Exclude records with an exact match. The specified value must be a Record ID",
+            "type": {
+              "kind": "SCALAR",
+              "name": "ItemId",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "notIn",
-            "description": "Filter linking records that do not link to current record in any of the specified locales",
+            "description": "Filter records not linked to one of the specified records",
             "type": {
               "kind": "LIST",
               "name": null,
               "ofType": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "ENUM",
-                  "name": "LinkingLocale",
-                  "ofType": null
-                }
+                "kind": "SCALAR",
+                "name": "ItemId",
+                "ofType": null
               }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "LocationItemModelFilter",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "AND",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "LocationItemModelFilter",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "OR",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "LocationItemModelFilter",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "dateTime",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "DateTimeFilter",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "id",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "ItemIdFilter",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "location",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "LinkFilter",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ticketLink",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringFilter",
+              "ofType": null
             },
             "defaultValue": null,
             "isDeprecated": false,
@@ -9623,71 +9159,6 @@
             "ofType": null
           }
         ]
-      },
-      {
-        "kind": "ENUM",
-        "name": "PageModelFieldsReferencingConcertModel",
-        "description": "Linking fields",
-        "fields": null,
-        "inputFields": null,
-        "interfaces": null,
-        "enumValues": [
-          {
-            "name": "page_content",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "page_content__header_body",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "page_content__header_body__callToAction_pageLink",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "page_content__textBlock_content",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "page_content__textBlock_content__callToAction_pageLink",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "page_content__twoColumn_leftContent",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "page_content__twoColumn_leftContent__callToAction_pageLink",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "page_content__twoColumn_rightContent",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "page_content__twoColumn_rightContent__callToAction_pageLink",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "possibleTypes": null
       },
       {
         "kind": "INPUT_OBJECT",

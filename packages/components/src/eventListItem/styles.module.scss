@@ -3,13 +3,11 @@ $image-large-width: 20rem;
 $image-height: calc($image-width * 1.414);
 $image-large-height: calc($image-large-width * 1.414);
 
-$dot-size: 1rem;
-$dot-large-size: 1.25rem;
-$dot-offset: 0.5rem;
-$dot-large-mobile-offset: 0.75rem;
-$dot-large-desktop-offset: 1.25rem;
-$border-size: 0.1rem;
-$border-large-size: 0.2rem;
+$dash-size: .5rem;
+$dash-offset: 0.5rem;
+$dash-large-mobile-offset: 1rem;
+$dash-large-desktop-offset: 2rem;
+$border-size: 0.2rem;
 $padding-left: 1.5rem;
 $padding-large-left: 2.5rem;
 
@@ -26,6 +24,7 @@ $padding-large-left: 2.5rem;
   @media screen and (min-width: 50rem) {
     top: calc(var(--layout-default-desktop-spacing) * -1);
     height: calc(100% + var(--layout-default-desktop-spacing));
+    transform: translateX(-3rem);
   }
 }
 
@@ -55,7 +54,6 @@ $padding-large-left: 2.5rem;
   gap: 1rem;
   flex-direction: column;
   justify-content: space-between;
-  padding-left: 1.5rem;
 
   @media screen and (min-width: 50rem) {
     flex-direction: row;
@@ -171,8 +169,6 @@ $padding-large-left: 2.5rem;
 }
 
 .large {
-  padding-left: 1rem;
-
   .title {
     margin-bottom: 0.5rem;
 
@@ -248,24 +244,15 @@ $padding-large-left: 2.5rem;
 .locationTitle::before {
   content: '';
   position: absolute;
-  // top: $dot-offset;
-  // left: 1rem;
-  transform: translateX(-2.95rem);
-  width: $dot-size;
-  height: $dot-size;
-  border-radius: 50%;
+  transform: translateX(-3.65rem);
+  width: $dash-size + 1rem;
+  height: $dash-size;
   background-color: var(--colour-secondary);
 }
 
 .large .locationTitle::before {
-  top: $dot-large-mobile-offset;
-  left: calc(($padding-large-left + ($dot-large-size / 2)) * -1);
-  width: $dot-large-size;
-  height: $dot-large-size;
-
-  @media screen and (min-width: 50rem) {
-    top: $dot-large-desktop-offset;
-  }
+  width: $dash-size + 1rem;
+  height: $dash-size;
 }
 
 // Root line
@@ -274,8 +261,8 @@ $padding-large-left: 2.5rem;
 }
 
 .large::before {
-  border-left: $border-large-size solid var(--colour-secondary);
-  transform: translateX(calc($border-large-size / 2 * -1));
+  border-left: $border-size solid var(--colour-secondary);
+  // transform: translateX(1rem);
 }
 
 .isLast::before {
@@ -294,7 +281,7 @@ $padding-large-left: 2.5rem;
   border-color: var(--colour-background);
   border-width: $border-size * 2;
   height: calc(100% + var(--layout-default-mobile-spacing) + $image-height);
-  top: calc($dot-offset + $dot-size);
+  top: calc($dash-offset + 1rem);
   left: calc(($padding-left * -1) - ($border-size / 2));
 
   @media screen and (min-width: 50rem) {
@@ -303,15 +290,13 @@ $padding-large-left: 2.5rem;
 }
 
 .large.isLast .location:last-child .locationTitle::after {
-  border-width: $border-large-size * 2;
-  height: calc(
-    100% + var(--layout-default-mobile-spacing) + $image-large-height
-  );
-  top: calc($dot-large-mobile-offset + $dot-large-size);
-  left: calc(($padding-large-left * -1) - ($border-large-size / 2));
+  border-width: $border-size * 2;
+  height: calc(100% + var(--layout-default-mobile-spacing) + $image-large-height );
+  top: calc($dash-large-mobile-offset + 1rem);
+  left: calc(($padding-large-left * -1) - ($border-size / 2));
 
   @media screen and (min-width: 50rem) {
-    top: calc($dot-large-desktop-offset + $dot-large-size);
+    top: calc($dash-large-desktop-offset + 1rem);
     height: calc(100% + var(--layout-default-desktop-spacing));
   }
 }

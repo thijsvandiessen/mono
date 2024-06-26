@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const useEnv = (
-  key: 'GOOGLE_MAPS_API_KEY' | 'TEST'
+  key: 'NEXT_PUBLIC_GOOGLE_MAPS_API_KEY' | 'TEST'
 ): string | undefined => {
   const [state, setState] = React.useState<string | undefined>()
 

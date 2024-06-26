@@ -45,7 +45,7 @@ const nextConfig = {
         {
           source: '/graphql',
           destination:
-            'https://current--vandiessen-mono.apollographos.net/graphql',
+            'https://current--vandiessen-mono-graph.apollographos.net/graphql',
         },
       ],
     }

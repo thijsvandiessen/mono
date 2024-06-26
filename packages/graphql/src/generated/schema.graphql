@@ -116,21 +116,6 @@ union ConcertModelContentField =
   | TextBlockRecord
   | TwoColumnRecord
 
-"""
-Linking fields
-"""
-enum ConcertModelFieldsReferencingConcertModel {
-  concert_content
-  concert_content__header_body
-  concert_content__header_body__callToAction_pageLink
-  concert_content__textBlock_content
-  concert_content__textBlock_content__callToAction_pageLink
-  concert_content__twoColumn_leftContent
-  concert_content__twoColumn_leftContent__callToAction_pageLink
-  concert_content__twoColumn_rightContent
-  concert_content__twoColumn_rightContent__callToAction_pageLink
-}
-
 input ConcertModelFilter {
   _createdAt: CreatedAtFilter
   id: ItemIdFilter
@@ -142,12 +127,47 @@ input ConcertModelFilter {
   _status: StatusFilter
   _updatedAt: UpdatedAtFilter
   _isValid: BooleanFilter
+  locations: ConcertModelLocationsFieldFilter
   poster: JsonFilter
   seo: SeoFilter
   slug: SlugFilter
   title: StringFilter
   OR: [ConcertModelFilter]
   AND: [ConcertModelFilter]
+}
+
+"""
+Specify nested blocks fields conditions
+"""
+input ConcertModelLocationsFieldBlocksConditions {
+  locationItem: LocationItemModelFilter
+}
+
+"""
+Specify nested blocks types presence
+"""
+input ConcertModelLocationsFieldBlocksPresence {
+  locationItem: BooleanType
+}
+
+"""
+Specify how to filter this specific Modular Content field instance
+"""
+input ConcertModelLocationsFieldFilter {
+  """
+  Filter records containing at least one block matching the specified conditions
+  """
+  any: ConcertModelLocationsFieldBlocksConditions
+
+  """
+  Filter records containing at least one block of any kind or not
+  """
+  exists: BooleanType
+
+  """
+  Filter records containing at least one block of specified type or not
+  """
+  containsAny: ConcertModelLocationsFieldBlocksPresence
 }
 
 enum ConcertModelOrderBy {
@@ -179,138 +199,6 @@ enum ConcertModelOrderBy {
 Record of type Concert (concert)
 """
 type ConcertRecord implements RecordInterface {
-  _allReferencingConcerts(
-    """
-    Specifies how to filter linking records
-    """
-    through: InverseRelationshipFilterBetweenConcertAndConcert
-
-    """
-    The locale to use to fetch the field's content
-    """
-    locale: SiteLocale
-
-    """
-    If you want to fallback to a default translation when a translation has not been found
-    """
-    fallbackLocales: [SiteLocale!]
-
-    """
-    Skip the first results
-    """
-    skip: IntType
-
-    """
-    Limit the number of results
-    """
-    first: IntType = 20
-    filter: ConcertModelFilter
-    orderBy: [ConcertModelOrderBy] = [position_ASC]
-  ): [ConcertRecord!]!
-
-  """
-  Returns meta information regarding a record collection
-  """
-  _allReferencingConcertsMeta(
-    """
-    Specifies how to filter linking records
-    """
-    through: InverseRelationshipFilterBetweenConcertAndConcert
-
-    """
-    The locale to use to fetch the field's content
-    """
-    locale: SiteLocale
-    filter: ConcertModelFilter
-  ): CollectionMetadata!
-  _allReferencingGenerals(
-    """
-    Specifies how to filter linking records
-    """
-    through: InverseRelationshipFilterBetweenGeneralAndConcert
-
-    """
-    The locale to use to fetch the field's content
-    """
-    locale: SiteLocale
-
-    """
-    If you want to fallback to a default translation when a translation has not been found
-    """
-    fallbackLocales: [SiteLocale!]
-
-    """
-    Skip the first results
-    """
-    skip: IntType
-
-    """
-    Limit the number of results
-    """
-    first: IntType = 20
-    filter: GeneralModelFilter
-    orderBy: [GeneralModelOrderBy] = [_updatedAt_DESC]
-  ): [GeneralRecord!]!
-
-  """
-  Returns meta information regarding a record collection
-  """
-  _allReferencingGeneralsMeta(
-    """
-    Specifies how to filter linking records
-    """
-    through: InverseRelationshipFilterBetweenGeneralAndConcert
-
-    """
-    The locale to use to fetch the field's content
-    """
-    locale: SiteLocale
-    filter: GeneralModelFilter
-  ): CollectionMetadata!
-  _allReferencingPages(
-    """
-    Specifies how to filter linking records
-    """
-    through: InverseRelationshipFilterBetweenPageAndConcert
-
-    """
-    The locale to use to fetch the field's content
-    """
-    locale: SiteLocale
-
-    """
-    If you want to fallback to a default translation when a translation has not been found
-    """
-    fallbackLocales: [SiteLocale!]
-
-    """
-    Skip the first results
-    """
-    skip: IntType
-
-    """
-    Limit the number of results
-    """
-    first: IntType = 20
-    filter: PageModelFilter
-    orderBy: [PageModelOrderBy] = [_updatedAt_DESC]
-  ): [PageRecord!]!
-
-  """
-  Returns meta information regarding a record collection
-  """
-  _allReferencingPagesMeta(
-    """
-    Specifies how to filter linking records
-    """
-    through: InverseRelationshipFilterBetweenPageAndConcert
-
-    """
-    The locale to use to fetch the field's content
-    """
-    locale: SiteLocale
-    filter: PageModelFilter
-  ): CollectionMetadata!
   _createdAt: DateTime!
 
   """
@@ -391,6 +279,46 @@ scalar CustomData
 A ISO 8601 compliant datetime value
 """
 scalar DateTime
+
+"""
+Specifies how to filter DateTime fields
+"""
+input DateTimeFilter {
+  """
+  Filter records with a value that's strictly greater than the one specified. Seconds and milliseconds are truncated from the argument.
+  """
+  gt: DateTime
+
+  """
+  Filter records with a value that's less than the one specified. Seconds and milliseconds are truncated from the argument.
+  """
+  lt: DateTime
+
+  """
+  Filter records with a value that's greater than or equal to than the one specified. Seconds and milliseconds are truncated from the argument.
+  """
+  gte: DateTime
+
+  """
+  Filter records with a value that's less or equal than the one specified. Seconds and milliseconds are truncated from the argument.
+  """
+  lte: DateTime
+
+  """
+  Filter records with a value that's within the specified minute range. Seconds and milliseconds are truncated from the argument.
+  """
+  eq: DateTime
+
+  """
+  Filter records with a value that's outside the specified minute range. Seconds and milliseconds are truncated from the argument.
+  """
+  neq: DateTime
+
+  """
+  Filter records with the specified field defined (i.e. with any value) or not
+  """
+  exists: BooleanType
+}
 
 """
 Block of type Document (document)
@@ -683,55 +611,7 @@ type focalPoint {
   y: FloatType!
 }
 
-"""
-Linking fields
-"""
-enum GeneralModelFieldsReferencingConcertModel {
-  general_menu
-  general_menu__menuItem_link
-  general_menu__submenuItem_menu__menuItem_link
-}
-
-input GeneralModelFilter {
-  _createdAt: CreatedAtFilter
-  id: ItemIdFilter
-  _firstPublishedAt: PublishedAtFilter
-  _publicationScheduledAt: PublishedAtFilter
-  _unpublishingScheduledAt: PublishedAtFilter
-  _publishedAt: PublishedAtFilter
-  _status: StatusFilter
-  _updatedAt: UpdatedAtFilter
-  _isValid: BooleanFilter
-  siteMetadata: JsonFilter
-  title: StringFilter
-  OR: [GeneralModelFilter]
-  AND: [GeneralModelFilter]
-}
-
 union GeneralModelMenuField = MenuItemRecord | SubmenuItemRecord
-
-enum GeneralModelOrderBy {
-  _createdAt_ASC
-  _createdAt_DESC
-  id_ASC
-  id_DESC
-  _firstPublishedAt_ASC
-  _firstPublishedAt_DESC
-  _publicationScheduledAt_ASC
-  _publicationScheduledAt_DESC
-  _unpublishingScheduledAt_ASC
-  _unpublishingScheduledAt_DESC
-  _publishedAt_ASC
-  _publishedAt_DESC
-  _status_ASC
-  _status_DESC
-  _updatedAt_ASC
-  _updatedAt_DESC
-  _isValid_ASC
-  _isValid_DESC
-  title_ASC
-  title_DESC
-}
 
 """
 Record of type general (general)
@@ -870,13 +750,49 @@ input ImgixParams {
   auto: [ImgixParamsAuto!]
 
   """
+  Background Removal Fallback
+
+  Overrides default fallback behavior for bg-remove failures.
+
+  [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-remove)
+  """
+  bgRemoveFallback: BooleanType
+
+  """
   Background Removal
 
   Removes background from image.
 
-  [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background-removal/bg-remove)
+  [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-remove)
   """
   bgRemove: BooleanType
+
+  """
+  Background Removal Fallback
+
+  Overrides default fallback behavior for bg-replace failures.
+
+  [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-replace)
+  """
+  bgReplaceFallback: BooleanType
+
+  """
+  Background Replacement Negative Prompt
+
+  Provides a negative text suggestion for background replacement.
+
+  [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-replace-neg-prompt)
+  """
+  bgReplaceNegPrompt: String
+
+  """
+  Background Replacement
+
+  Replaces background from image using a string based prompt.
+
+  [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-replace)
+  """
+  bgReplace: String
 
   """
   Background Color
@@ -1307,6 +1223,149 @@ input ImgixParams {
   fillColor: String
 
   """
+  Fill Generative Fallback
+
+  Sets the fallback behavior for generative fill.
+
+  Depends on: `fit=fill`, `fill=gen`
+
+  [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-fallback)
+  """
+  fillGenFallback: BooleanType
+
+  """
+  Fill Generative Negative Prompt
+
+  Provides a negative text suggestion to the generative fill parameter. Used to reduce the probability of a subject, detail, or object appearing in generative output.
+
+  Depends on: `fit=fill`, `fill=gen`
+
+  [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-neg-prompt)
+  """
+  fillGenNegPrompt: String
+
+  """
+  Fill Generative Position
+
+  Sets the position of the Origin Image in relation to the generative fill.
+
+  Depends on: `fit=fill`, `fill=gen`
+
+  [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-pos)
+  """
+  fillGenPos: [ImgixParamsFillGenPos!]
+
+  """
+  Fill Generative Prompt
+
+  Provides a text suggestion to the generative fill parameter.
+
+  Depends on: `fit=fill`, `fill=gen`
+
+  [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-prompt)
+  """
+  fillGenPrompt: String
+
+  """
+  Fill Generative Seed
+
+  Sets the generative seed value. Used to generate similar outputs from different prompts.
+
+  Depends on: `fit=fill`, `fill=gen`
+
+  [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-seed)
+  """
+  fillGenSeed: IntType
+
+  """
+  Fill Gradient Color Space
+
+  Defines the color space as linear, sRGB, Oklab, HSL, or LCH for gradient color interpolation
+
+  Depends on: `fit=fill`, `fill=gradient`
+
+  [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-cs)
+  """
+  fillGradientCs: ImgixParamsFillGradientCs
+
+  """
+  Fill Gradient Linear Direction
+
+  The fill-gradient-linear-direction specifies the gradient's direction, flowing towards the bottom, top, right, or left
+
+  Depends on: `fit=fill`, `fill=gen`
+
+  [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-linear-direction)
+  """
+  fillGradientLinearDirection: [ImgixParamsFillGradientLinearDirection!]
+
+  """
+  Fill Gradient Linear
+
+  Blends a gradient between two colors, {color1} and {color2}, along a straight path
+
+  Depends on: `fit=fill`, `fill=gradient`
+
+  [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-linear)
+  """
+  fillGradientLinear: String
+
+  """
+  Fill Gradient Radial Radius
+
+  Parameter defines the radial gradient's radius as pixels or a percentage (0.0-1.0) of the image's smallest dimension
+
+  Depends on: `fit=fill`, `fill=gradient`
+
+  [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-radial-radius)
+  """
+  fillGradientRadialRadius: String
+
+  """
+  Fill Gradient Radial X
+
+  Specifies the location of the radial gradient's center along the x-axis, using either a pixel value or a floating point percentage (ranging from 0.0 to 1.0) of the image's width
+
+  Depends on: `fit=fill`, `fill=gradient`
+
+  [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-radial-x)
+  """
+  fillGradientRadialX: FloatType
+
+  """
+  Fill Gradient Radial Y
+
+  Parameter sets the radial gradient's center on the y-axis, using pixels or a 0.0 to 1.0 percentage of the image's height
+
+  Depends on: `fit=fill`, `fill=gradient`
+
+  [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-radial-y)
+  """
+  fillGradientRadialY: FloatType
+
+  """
+  Fill Gradient Radial
+
+  The fill-gradient-radial parameter creates a circular gradient transitioning from a central color (Color1) to an outer color (Color2)
+
+  Depends on: `fit=fill`, `fill=gradient`
+
+  [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-radial)
+  """
+  fillGradientRadial: String
+
+  """
+  Fill Gradient Type
+
+  Specifies if a gradient is radial (circular) or linear (straight)
+
+  Depends on: `fit=fill`, `fill=gradient`
+
+  [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-type)
+  """
+  fillGradientType: ImgixParamsFillGradientType
+
+  """
   Fill Mode
 
   Determines how to fill in additional space created by the fit setting
@@ -1414,6 +1473,8 @@ input ImgixParams {
   """
   Animated Gif Quality
 
+  Specifies the quality of the animated gif. The higher the value, the better more compression is applied.
+
   Depends on: `fm=gif`
   """
   gifQ: IntType
@@ -1494,6 +1555,13 @@ input ImgixParams {
   Determine if IPTC data should be passed for JPEG images.
   """
   iptc: ImgixParamsIptc
+
+  """
+  Jpg Progressive
+
+  Specifies whether or not a jpg/jpeg uses progressive (true) or baseline (false)
+  """
+  jpgProgressive: BooleanType
 
   """
   Animation Loop Count
@@ -1924,6 +1992,13 @@ input ImgixParams {
   skip: IntType
 
   """
+  Sanitize Svg
+
+  Specifies whether to sanitize an SVG.
+  """
+  svgSanitize: BooleanType
+
+  """
   Transparency
 
   Adds checkerboard behind images which support transparency.
@@ -2063,17 +2138,6 @@ input ImgixParams {
   txtLead: IntType
 
   """
-  Text Ligatures
-
-  Controls the level of ligature substitution
-
-  Depends on: `txt`
-
-  [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-lig)
-  """
-  txtLig: IntType
-
-  """
   Text Outline Color
 
   Specifies a text outline color.
@@ -2180,6 +2244,24 @@ input ImgixParams {
   [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt)
   """
   txt: String
+
+  """
+  Super Resolution Fallback
+
+  Overrides default fallback behavior for super resolution failures
+
+  [Open Imgix reference »](https://docs.imgix.com/apis/rendering/super-resolution/upscale-fallback)
+  """
+  upscaleFallback: BooleanType
+
+  """
+  Super Resolution
+
+  Uses generative AI fill to upscale low resolution images.
+
+  [Open Imgix reference »](https://docs.imgix.com/apis/rendering/super-resolution/upscale)
+  """
+  upscale: BooleanType
 
   """
   Unsharp Mask
@@ -2309,6 +2391,38 @@ enum ImgixParamsCs {
 enum ImgixParamsFill {
   solid
   blur
+  gen
+  generative
+  gradient
+}
+
+enum ImgixParamsFillGenPos {
+  top
+  bottom
+  middle
+  left
+  right
+  center
+}
+
+enum ImgixParamsFillGradientCs {
+  linear
+  srgb
+  oklab
+  hsl
+  lch
+}
+
+enum ImgixParamsFillGradientLinearDirection {
+  top
+  bottom
+  left
+  right
+}
+
+enum ImgixParamsFillGradientType {
+  linear
+  radial
 }
 
 enum ImgixParamsFit {
@@ -2421,96 +2535,6 @@ input InUseFilter {
   eq: BooleanType
 }
 
-"""
-Specifies how to filter by linking fields
-"""
-input InverseRelationshipFieldFilterBetweenConcertAndConcert {
-  """
-  Filter linking records that reference current record in at least one of the specified fields
-  """
-  anyIn: [ConcertModelFieldsReferencingConcertModel!]
-
-  """
-  Filter linking records that do not reference current record in any of the specified fields
-  """
-  notIn: [ConcertModelFieldsReferencingConcertModel!]
-}
-
-"""
-Specifies how to filter by linking fields
-"""
-input InverseRelationshipFieldFilterBetweenGeneralAndConcert {
-  """
-  Filter linking records that reference current record in at least one of the specified fields
-  """
-  anyIn: [GeneralModelFieldsReferencingConcertModel!]
-
-  """
-  Filter linking records that do not reference current record in any of the specified fields
-  """
-  notIn: [GeneralModelFieldsReferencingConcertModel!]
-}
-
-"""
-Specifies how to filter by linking fields
-"""
-input InverseRelationshipFieldFilterBetweenPageAndConcert {
-  """
-  Filter linking records that reference current record in at least one of the specified fields
-  """
-  anyIn: [PageModelFieldsReferencingConcertModel!]
-
-  """
-  Filter linking records that do not reference current record in any of the specified fields
-  """
-  notIn: [PageModelFieldsReferencingConcertModel!]
-}
-
-"""
-Specifies how to filter linking records
-"""
-input InverseRelationshipFilterBetweenConcertAndConcert {
-  """
-  Specifies how to filter by linking fields
-  """
-  fields: InverseRelationshipFieldFilterBetweenConcertAndConcert
-
-  """
-  Specifies how to filter by linking locales
-  """
-  locales: LinkingLocalesFilter
-}
-
-"""
-Specifies how to filter linking records
-"""
-input InverseRelationshipFilterBetweenGeneralAndConcert {
-  """
-  Specifies how to filter by linking fields
-  """
-  fields: InverseRelationshipFieldFilterBetweenGeneralAndConcert
-
-  """
-  Specifies how to filter by linking locales
-  """
-  locales: LinkingLocalesFilter
-}
-
-"""
-Specifies how to filter linking records
-"""
-input InverseRelationshipFilterBetweenPageAndConcert {
-  """
-  Specifies how to filter by linking fields
-  """
-  fields: InverseRelationshipFieldFilterBetweenPageAndConcert
-
-  """
-  Specifies how to filter by linking locales
-  """
-  locales: LinkingLocalesFilter
-}
-
 scalar ItemId
 
 """
@@ -2583,26 +2607,42 @@ input LatLonNearFilter {
 }
 
 """
-Linking locales
+Specifies how to filter Single-link fields
 """
-enum LinkingLocale {
-  nl
-  _nonLocalized
+input LinkFilter {
+  """
+  Search for records with an exact match. The specified value must be a Record ID
+  """
+  eq: ItemId
+
+  """
+  Exclude records with an exact match. The specified value must be a Record ID
+  """
+  neq: ItemId
+
+  """
+  Filter records linked to one of the specified records
+  """
+  in: [ItemId]
+
+  """
+  Filter records not linked to one of the specified records
+  """
+  notIn: [ItemId]
+
+  """
+  Filter records with the specified field defined (i.e. with any value) or not
+  """
+  exists: BooleanType
 }
 
-"""
-Specifies how to filter by linking locales
-"""
-input LinkingLocalesFilter {
-  """
-  Filter linking records that link to current record in at least one of the specified locales
-  """
-  anyIn: [LinkingLocale!]
-
-  """
-  Filter linking records that do not link to current record in any of the specified locales
-  """
-  notIn: [LinkingLocale!]
+input LocationItemModelFilter {
+  id: ItemIdFilter
+  dateTime: DateTimeFilter
+  location: LinkFilter
+  ticketLink: StringFilter
+  OR: [LocationItemModelFilter]
+  AND: [LocationItemModelFilter]
 }
 
 """
@@ -2774,21 +2814,6 @@ input OrientationFilter {
 }
 
 union PageModelContentField = HeaderRecord | TextBlockRecord | TwoColumnRecord
-
-"""
-Linking fields
-"""
-enum PageModelFieldsReferencingConcertModel {
-  page_content
-  page_content__header_body
-  page_content__header_body__callToAction_pageLink
-  page_content__textBlock_content
-  page_content__textBlock_content__callToAction_pageLink
-  page_content__twoColumn_leftContent
-  page_content__twoColumn_leftContent__callToAction_pageLink
-  page_content__twoColumn_rightContent
-  page_content__twoColumn_rightContent__callToAction_pageLink
-}
 
 input PageModelFilter {
   _createdAt: CreatedAtFilter

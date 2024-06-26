@@ -19,7 +19,7 @@ const documents = {
     types.ColorsFragmentDoc,
   '\n  fragment concertDetail on ConcertRecord {\n    ...identifiable\n    title\n    slug\n    poster\n    locations {\n      ...locationItem\n    }\n    content {\n      ... on HeaderRecord {\n        ...header\n      }\n      ... on TextBlockRecord {\n        ...textBlock\n      }\n      ... on TwoColumnRecord {\n        ...twoColum\n      }\n    }\n  }\n  \n  \n  \n  \n  \n':
     types.ConcertDetailFragmentDoc,
-  '\n  fragment concertLink on ConcertRecord {\n    ...identifiable\n    title\n    slug\n  }\n  \n':
+  '\n    fragment concertLink on ConcertRecord {\n      ...identifiable\n      title\n      slug\n    }\n    \n  ':
     types.ConcertLinkFragmentDoc,
   '\n  fragment coordinates on LatLonField {\n    latitude\n    longitude\n  }\n':
     types.CoordinatesFragmentDoc,
@@ -105,7 +105,7 @@ const documents = {
     types.GetLocationDocument,
   '\n  query getLocations(\n    $first: IntType\n    $skip: IntType\n    $order: [LocationModelOrderBy]\n  ) {\n    allLocations(first: $first, skip: $skip, orderBy: $order) {\n      ...location\n    }\n  }\n  \n':
     types.GetLocationsDocument,
-  '\n  query getPage($slug: String!) {\n    page(filter: { slug: { eq: $slug } }) {\n      ...pageDetail\n    }\n  }\n  \n':
+  '\n    query getPage($slug: String!) {\n      page(filter: { slug: { eq: $slug } }) {\n        ...pageDetail\n      }\n    }\n    \n  ':
     types.GetPageDocument,
   '\n  query getPageSeo($slug: String!) {\n    page(filter: { slug: { eq: $slug } }) {\n      ...pageDetailSeo\n    }\n  }\n  \n':
     types.GetPageSeoDocument,
@@ -157,8 +157,8 @@ export function gql(
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(
-  source: '\n  fragment concertLink on ConcertRecord {\n    ...identifiable\n    title\n    slug\n  }\n  \n'
-): (typeof documents)['\n  fragment concertLink on ConcertRecord {\n    ...identifiable\n    title\n    slug\n  }\n  \n']
+  source: '\n    fragment concertLink on ConcertRecord {\n      ...identifiable\n      title\n      slug\n    }\n    \n  '
+): (typeof documents)['\n    fragment concertLink on ConcertRecord {\n      ...identifiable\n      title\n      slug\n    }\n    \n  ']
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
@@ -415,8 +415,8 @@ export function gql(
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(
-  source: '\n  query getPage($slug: String!) {\n    page(filter: { slug: { eq: $slug } }) {\n      ...pageDetail\n    }\n  }\n  \n'
-): (typeof documents)['\n  query getPage($slug: String!) {\n    page(filter: { slug: { eq: $slug } }) {\n      ...pageDetail\n    }\n  }\n  \n']
+  source: '\n    query getPage($slug: String!) {\n      page(filter: { slug: { eq: $slug } }) {\n        ...pageDetail\n      }\n    }\n    \n  '
+): (typeof documents)['\n    query getPage($slug: String!) {\n      page(filter: { slug: { eq: $slug } }) {\n        ...pageDetail\n      }\n    }\n    \n  ']
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
