@@ -5,7 +5,9 @@ export function GET(request: NextRequest) {
   const entries = request.nextUrl.searchParams.entries()
 
   for (const [key] of entries) {
-    if (!envAllowList.includes(key as 'NEXT_PUBLIC_GOOGLE_MAPS_API_KEY' | 'TEST'))
+    if (
+      !envAllowList.includes(key as 'NEXT_PUBLIC_GOOGLE_MAPS_API_KEY' | 'TEST')
+    )
       return Response.json({ message: 'invalid request' })
     return Response.json({ [key]: process.env[key] })
   }

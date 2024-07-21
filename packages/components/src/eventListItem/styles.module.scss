@@ -3,7 +3,7 @@ $image-large-width: 20rem;
 $image-height: calc($image-width * 1.414);
 $image-large-height: calc($image-large-width * 1.414);
 
-$dash-size: .5rem;
+$dash-size: 0.5rem;
 $dash-offset: 0.5rem;
 $dash-large-mobile-offset: 1rem;
 $dash-large-desktop-offset: 2rem;
@@ -291,7 +291,9 @@ $padding-large-left: 2.5rem;
 
 .large.isLast .location:last-child .locationTitle::after {
   border-width: $border-size * 2;
-  height: calc(100% + var(--layout-default-mobile-spacing) + $image-large-height );
+  height: calc(
+    100% + var(--layout-default-mobile-spacing) + $image-large-height
+  );
   top: calc($dash-large-mobile-offset + 1rem);
   left: calc(($padding-large-left * -1) - ($border-size / 2));
 
