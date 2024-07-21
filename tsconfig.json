@@ -3,7 +3,7 @@
     "baseUrl": "./",
     "rootDir": "./",
     "lib": ["ESNext", "DOM", "WebWorker", "DOM.Iterable"],
-    "allowJs": true,
+    "allowJs": false,
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,

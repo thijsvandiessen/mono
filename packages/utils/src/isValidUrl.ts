@@ -1,4 +1,4 @@
-export const isValidUrl = (url: string) => {
+export const isValidUrl = (url: string): boolean => {
   try {
     // TODO: edge case when url should be relative
     return Boolean(new URL(url))

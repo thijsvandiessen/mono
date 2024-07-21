@@ -1,0 +1,1 @@
+export { customNextConfig } from './nextConfig'
