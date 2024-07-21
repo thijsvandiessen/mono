@@ -17,7 +17,7 @@
     "lint": "npm run lint:js && npm run lint:styles && npm run lint:typescript",
     "lint:js": "eslint . --fix",
     "lint:styles": "prettier . --write --cache --log-level silent --list-different",
-    "lint:typescript": "tsc --isolatedDeclarations"
+    "lint:typescript": "tsc"
   },
   "dependencies": {
     "next": "14.2.5"
