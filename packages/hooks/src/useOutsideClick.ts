@@ -1,6 +1,8 @@
 import React from 'react'
 
-export const useOutsideClick = <T>(callback: () => void) => {
+export const useOutsideClick = <T>(
+  callback: () => void
+): React.RefObject<T> => {
   const ref = React.useRef<T>(null)
 
   React.useEffect(() => {
