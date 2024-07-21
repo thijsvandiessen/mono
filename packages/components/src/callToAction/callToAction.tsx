@@ -14,10 +14,9 @@ interface Props {
 
 export const CallToAction = ({ record }: Props) => {
   const { pageLink, externalUrl, label, variant } = record
-  const primary = (variant === "primary") ? variant : undefined
-  const secondary = (variant === "secondary") ? variant : undefined
-  const tertiary = (variant === "tertiary") ? variant : undefined
-
+  const primary = variant === 'primary' ? variant : undefined
+  const secondary = variant === 'secondary' ? variant : undefined
+  const tertiary = variant === 'tertiary' ? variant : undefined
 
   if (!pageLink) {
     return (

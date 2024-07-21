@@ -33,9 +33,7 @@ export const LocationDetailView = ({ data }: Props) => {
             height: '400px',
           }}
         />
-      ) : (
-        null
-      )}
+      ) : null}
     </address>
   )
 }
