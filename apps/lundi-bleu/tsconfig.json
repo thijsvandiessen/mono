@@ -2,12 +2,15 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {},
   "include": [
-    "next-env.d.ts",
-    ".next/types/**/*.ts",
-    "src/**/*",
-    "next.config.js",
-    "jest.setup.ts",
-    "jest.config.ts"
+    "./next-env.d.ts",
+    "./.next/types/**/*.ts",
+    "./src/**/*",
+    "./next.config.cjs",
+    "./jest.setup.ts",
+    "./jest.config.ts",
+    ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
