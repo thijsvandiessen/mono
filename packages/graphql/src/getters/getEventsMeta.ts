@@ -9,10 +9,10 @@ import type { CombinedError } from '@urql/core'
 export const getEventsMeta = async (): Promise<
   | {
       data: {
-        __typename?: 'CollectionMetadata' | undefined
+        __typename?: 'CollectionMetadata'
         count: number
       } | null
-      error: CombinedError | undefined
+      error?: CombinedError
     }
   | {
       data: null

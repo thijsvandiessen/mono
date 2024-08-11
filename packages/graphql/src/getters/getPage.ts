@@ -11,7 +11,7 @@ export const getPage = async ({
 }: GetPageQueryVariables): Promise<
   | {
       data: GetPageQuery['page']
-      error: CombinedError | undefined
+      error?: CombinedError
     }
   | {
       data: null

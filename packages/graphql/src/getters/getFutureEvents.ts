@@ -22,7 +22,7 @@ export const getFutureEvents = async ({
 }: Props): Promise<
   | {
       data: Event[]
-      error: CombinedError | undefined
+      error?: CombinedError
     }
   | {
       data: never[]

@@ -8,8 +8,8 @@ import type { CombinedError } from '@urql/core'
 
 export const getGeneralInfo = async (): Promise<
   | {
-      data: GetGeneralInfoQuery | undefined
-      error: CombinedError | undefined
+      data?: GetGeneralInfoQuery
+      error?: CombinedError
     }
   | {
       data: null

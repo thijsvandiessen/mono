@@ -3350,8 +3350,8 @@ export type FocalPoint = {
 export type CallToActionFragment = {
   __typename: 'CallToActionRecord'
   label?: string | null
-  externalUrl?: string | null
   variant?: string | null
+  externalUrl?: string | null
   _createdAt: string
   _firstPublishedAt?: string | null
   _publishedAt?: string | null
@@ -3433,8 +3433,8 @@ export type ConcertDetailFragment = {
           blocks: Array<{
             __typename: 'CallToActionRecord'
             label?: string | null
-            externalUrl?: string | null
             variant?: string | null
+            externalUrl?: string | null
             _createdAt: string
             _firstPublishedAt?: string | null
             _publishedAt?: string | null
@@ -3523,8 +3523,8 @@ export type ConcertDetailFragment = {
             | {
                 __typename: 'CallToActionRecord'
                 label?: string | null
-                externalUrl?: string | null
                 variant?: string | null
+                externalUrl?: string | null
                 _createdAt: string
                 _firstPublishedAt?: string | null
                 _publishedAt?: string | null
@@ -3630,8 +3630,8 @@ export type ConcertDetailFragment = {
             | {
                 __typename: 'CallToActionRecord'
                 label?: string | null
-                externalUrl?: string | null
                 variant?: string | null
+                externalUrl?: string | null
                 _createdAt: string
                 _firstPublishedAt?: string | null
                 _publishedAt?: string | null
@@ -3729,8 +3729,8 @@ export type ConcertDetailFragment = {
             | {
                 __typename: 'CallToActionRecord'
                 label?: string | null
-                externalUrl?: string | null
                 variant?: string | null
+                externalUrl?: string | null
                 _createdAt: string
                 _firstPublishedAt?: string | null
                 _publishedAt?: string | null
@@ -3958,8 +3958,8 @@ export type HeaderFragment = {
     blocks: Array<{
       __typename: 'CallToActionRecord'
       label?: string | null
-      externalUrl?: string | null
       variant?: string | null
+      externalUrl?: string | null
       _createdAt: string
       _firstPublishedAt?: string | null
       _publishedAt?: string | null
@@ -4019,8 +4019,8 @@ export type HeaderBodyFragment = {
   blocks: Array<{
     __typename: 'CallToActionRecord'
     label?: string | null
-    externalUrl?: string | null
     variant?: string | null
+    externalUrl?: string | null
     _createdAt: string
     _firstPublishedAt?: string | null
     _publishedAt?: string | null
@@ -4339,8 +4339,8 @@ export type PageFragment = {
           blocks: Array<{
             __typename: 'CallToActionRecord'
             label?: string | null
-            externalUrl?: string | null
             variant?: string | null
+            externalUrl?: string | null
             _createdAt: string
             _firstPublishedAt?: string | null
             _publishedAt?: string | null
@@ -4429,8 +4429,8 @@ export type PageFragment = {
             | {
                 __typename: 'CallToActionRecord'
                 label?: string | null
-                externalUrl?: string | null
                 variant?: string | null
+                externalUrl?: string | null
                 _createdAt: string
                 _firstPublishedAt?: string | null
                 _publishedAt?: string | null
@@ -4536,8 +4536,8 @@ export type PageFragment = {
             | {
                 __typename: 'CallToActionRecord'
                 label?: string | null
-                externalUrl?: string | null
                 variant?: string | null
+                externalUrl?: string | null
                 _createdAt: string
                 _firstPublishedAt?: string | null
                 _publishedAt?: string | null
@@ -4635,8 +4635,8 @@ export type PageFragment = {
             | {
                 __typename: 'CallToActionRecord'
                 label?: string | null
-                externalUrl?: string | null
                 variant?: string | null
+                externalUrl?: string | null
                 _createdAt: string
                 _firstPublishedAt?: string | null
                 _publishedAt?: string | null
@@ -4733,8 +4733,8 @@ export type PageDetailFragment = {
           blocks: Array<{
             __typename: 'CallToActionRecord'
             label?: string | null
-            externalUrl?: string | null
             variant?: string | null
+            externalUrl?: string | null
             _createdAt: string
             _firstPublishedAt?: string | null
             _publishedAt?: string | null
@@ -4823,8 +4823,8 @@ export type PageDetailFragment = {
             | {
                 __typename: 'CallToActionRecord'
                 label?: string | null
-                externalUrl?: string | null
                 variant?: string | null
+                externalUrl?: string | null
                 _createdAt: string
                 _firstPublishedAt?: string | null
                 _publishedAt?: string | null
@@ -4930,8 +4930,8 @@ export type PageDetailFragment = {
             | {
                 __typename: 'CallToActionRecord'
                 label?: string | null
-                externalUrl?: string | null
                 variant?: string | null
+                externalUrl?: string | null
                 _createdAt: string
                 _firstPublishedAt?: string | null
                 _publishedAt?: string | null
@@ -5029,8 +5029,8 @@ export type PageDetailFragment = {
             | {
                 __typename: 'CallToActionRecord'
                 label?: string | null
-                externalUrl?: string | null
                 variant?: string | null
+                externalUrl?: string | null
                 _createdAt: string
                 _firstPublishedAt?: string | null
                 _publishedAt?: string | null
@@ -5236,8 +5236,8 @@ export type TextBlockContentFragment = {
     | {
         __typename: 'CallToActionRecord'
         label?: string | null
-        externalUrl?: string | null
         variant?: string | null
+        externalUrl?: string | null
         _createdAt: string
         _firstPublishedAt?: string | null
         _publishedAt?: string | null
@@ -5336,8 +5336,8 @@ export type LeftContentFragment = {
     | {
         __typename: 'CallToActionRecord'
         label?: string | null
-        externalUrl?: string | null
         variant?: string | null
+        externalUrl?: string | null
         _createdAt: string
         _firstPublishedAt?: string | null
         _publishedAt?: string | null
@@ -5436,8 +5436,8 @@ export type RightContentFragment = {
     | {
         __typename: 'CallToActionRecord'
         label?: string | null
-        externalUrl?: string | null
         variant?: string | null
+        externalUrl?: string | null
         _createdAt: string
         _firstPublishedAt?: string | null
         _publishedAt?: string | null
@@ -5543,8 +5543,8 @@ export type TextBlockFragment = {
       | {
           __typename: 'CallToActionRecord'
           label?: string | null
-          externalUrl?: string | null
           variant?: string | null
+          externalUrl?: string | null
           _createdAt: string
           _firstPublishedAt?: string | null
           _publishedAt?: string | null
@@ -5651,8 +5651,8 @@ export type TwoColumFragment = {
       | {
           __typename: 'CallToActionRecord'
           label?: string | null
-          externalUrl?: string | null
           variant?: string | null
+          externalUrl?: string | null
           _createdAt: string
           _firstPublishedAt?: string | null
           _publishedAt?: string | null
@@ -5750,8 +5750,8 @@ export type TwoColumFragment = {
       | {
           __typename: 'CallToActionRecord'
           label?: string | null
-          externalUrl?: string | null
           variant?: string | null
+          externalUrl?: string | null
           _createdAt: string
           _firstPublishedAt?: string | null
           _publishedAt?: string | null
@@ -5911,8 +5911,8 @@ export type GetEventQuery = {
             blocks: Array<{
               __typename: 'CallToActionRecord'
               label?: string | null
-              externalUrl?: string | null
               variant?: string | null
+              externalUrl?: string | null
               _createdAt: string
               _firstPublishedAt?: string | null
               _publishedAt?: string | null
@@ -6001,8 +6001,8 @@ export type GetEventQuery = {
               | {
                   __typename: 'CallToActionRecord'
                   label?: string | null
-                  externalUrl?: string | null
                   variant?: string | null
+                  externalUrl?: string | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -6108,8 +6108,8 @@ export type GetEventQuery = {
               | {
                   __typename: 'CallToActionRecord'
                   label?: string | null
-                  externalUrl?: string | null
                   variant?: string | null
+                  externalUrl?: string | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -6207,8 +6207,8 @@ export type GetEventQuery = {
               | {
                   __typename: 'CallToActionRecord'
                   label?: string | null
-                  externalUrl?: string | null
                   variant?: string | null
+                  externalUrl?: string | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -6330,8 +6330,8 @@ export type GetEventPageQuery = {
             blocks: Array<{
               __typename: 'CallToActionRecord'
               label?: string | null
-              externalUrl?: string | null
               variant?: string | null
+              externalUrl?: string | null
               _createdAt: string
               _firstPublishedAt?: string | null
               _publishedAt?: string | null
@@ -6420,8 +6420,8 @@ export type GetEventPageQuery = {
               | {
                   __typename: 'CallToActionRecord'
                   label?: string | null
-                  externalUrl?: string | null
                   variant?: string | null
+                  externalUrl?: string | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -6527,8 +6527,8 @@ export type GetEventPageQuery = {
               | {
                   __typename: 'CallToActionRecord'
                   label?: string | null
-                  externalUrl?: string | null
                   variant?: string | null
+                  externalUrl?: string | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -6626,8 +6626,8 @@ export type GetEventPageQuery = {
               | {
                   __typename: 'CallToActionRecord'
                   label?: string | null
-                  externalUrl?: string | null
                   variant?: string | null
+                  externalUrl?: string | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -6804,8 +6804,8 @@ export type GetEventsQuery = {
             blocks: Array<{
               __typename: 'CallToActionRecord'
               label?: string | null
-              externalUrl?: string | null
               variant?: string | null
+              externalUrl?: string | null
               _createdAt: string
               _firstPublishedAt?: string | null
               _publishedAt?: string | null
@@ -6894,8 +6894,8 @@ export type GetEventsQuery = {
               | {
                   __typename: 'CallToActionRecord'
                   label?: string | null
-                  externalUrl?: string | null
                   variant?: string | null
+                  externalUrl?: string | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -7001,8 +7001,8 @@ export type GetEventsQuery = {
               | {
                   __typename: 'CallToActionRecord'
                   label?: string | null
-                  externalUrl?: string | null
                   variant?: string | null
+                  externalUrl?: string | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -7100,8 +7100,8 @@ export type GetEventsQuery = {
               | {
                   __typename: 'CallToActionRecord'
                   label?: string | null
-                  externalUrl?: string | null
                   variant?: string | null
+                  externalUrl?: string | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -7235,8 +7235,8 @@ export type GetFutureEventsQuery = {
             blocks: Array<{
               __typename: 'CallToActionRecord'
               label?: string | null
-              externalUrl?: string | null
               variant?: string | null
+              externalUrl?: string | null
               _createdAt: string
               _firstPublishedAt?: string | null
               _publishedAt?: string | null
@@ -7325,8 +7325,8 @@ export type GetFutureEventsQuery = {
               | {
                   __typename: 'CallToActionRecord'
                   label?: string | null
-                  externalUrl?: string | null
                   variant?: string | null
+                  externalUrl?: string | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -7432,8 +7432,8 @@ export type GetFutureEventsQuery = {
               | {
                   __typename: 'CallToActionRecord'
                   label?: string | null
-                  externalUrl?: string | null
                   variant?: string | null
+                  externalUrl?: string | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -7531,8 +7531,8 @@ export type GetFutureEventsQuery = {
               | {
                   __typename: 'CallToActionRecord'
                   label?: string | null
-                  externalUrl?: string | null
                   variant?: string | null
+                  externalUrl?: string | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -7750,8 +7750,8 @@ export type GetPageQuery = {
             blocks: Array<{
               __typename: 'CallToActionRecord'
               label?: string | null
-              externalUrl?: string | null
               variant?: string | null
+              externalUrl?: string | null
               _createdAt: string
               _firstPublishedAt?: string | null
               _publishedAt?: string | null
@@ -7840,8 +7840,8 @@ export type GetPageQuery = {
               | {
                   __typename: 'CallToActionRecord'
                   label?: string | null
-                  externalUrl?: string | null
                   variant?: string | null
+                  externalUrl?: string | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -7947,8 +7947,8 @@ export type GetPageQuery = {
               | {
                   __typename: 'CallToActionRecord'
                   label?: string | null
-                  externalUrl?: string | null
                   variant?: string | null
+                  externalUrl?: string | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -8046,8 +8046,8 @@ export type GetPageQuery = {
               | {
                   __typename: 'CallToActionRecord'
                   label?: string | null
-                  externalUrl?: string | null
                   variant?: string | null
+                  externalUrl?: string | null
                   _createdAt: string
                   _firstPublishedAt?: string | null
                   _publishedAt?: string | null
@@ -8560,6 +8560,7 @@ export const CallToActionFragmentDoc = {
             name: { kind: 'Name', value: 'identifiable' },
           },
           { kind: 'Field', name: { kind: 'Name', value: 'label' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
           { kind: 'Field', name: { kind: 'Name', value: 'externalUrl' } },
           {
             kind: 'Field',
@@ -8602,7 +8603,6 @@ export const CallToActionFragmentDoc = {
               ],
             },
           },
-          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
         ],
       },
     },
@@ -8820,6 +8820,7 @@ export const HeaderBodyFragmentDoc = {
             name: { kind: 'Name', value: 'identifiable' },
           },
           { kind: 'Field', name: { kind: 'Name', value: 'label' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
           { kind: 'Field', name: { kind: 'Name', value: 'externalUrl' } },
           {
             kind: 'Field',
@@ -8862,7 +8863,6 @@ export const HeaderBodyFragmentDoc = {
               ],
             },
           },
-          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
         ],
       },
     },
@@ -8974,6 +8974,7 @@ export const HeaderFragmentDoc = {
             name: { kind: 'Name', value: 'identifiable' },
           },
           { kind: 'Field', name: { kind: 'Name', value: 'label' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
           { kind: 'Field', name: { kind: 'Name', value: 'externalUrl' } },
           {
             kind: 'Field',
@@ -9016,7 +9017,6 @@ export const HeaderFragmentDoc = {
               ],
             },
           },
-          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
         ],
       },
     },
@@ -9578,6 +9578,7 @@ export const TextBlockContentFragmentDoc = {
             name: { kind: 'Name', value: 'identifiable' },
           },
           { kind: 'Field', name: { kind: 'Name', value: 'label' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
           { kind: 'Field', name: { kind: 'Name', value: 'externalUrl' } },
           {
             kind: 'Field',
@@ -9620,7 +9621,6 @@ export const TextBlockContentFragmentDoc = {
               ],
             },
           },
-          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
         ],
       },
     },
@@ -9819,6 +9819,7 @@ export const TextBlockFragmentDoc = {
             name: { kind: 'Name', value: 'identifiable' },
           },
           { kind: 'Field', name: { kind: 'Name', value: 'label' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
           { kind: 'Field', name: { kind: 'Name', value: 'externalUrl' } },
           {
             kind: 'Field',
@@ -9861,7 +9862,6 @@ export const TextBlockFragmentDoc = {
               ],
             },
           },
-          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
         ],
       },
     },
@@ -10286,6 +10286,7 @@ export const LeftContentFragmentDoc = {
             name: { kind: 'Name', value: 'identifiable' },
           },
           { kind: 'Field', name: { kind: 'Name', value: 'label' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
           { kind: 'Field', name: { kind: 'Name', value: 'externalUrl' } },
           {
             kind: 'Field',
@@ -10328,7 +10329,6 @@ export const LeftContentFragmentDoc = {
               ],
             },
           },
-          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
         ],
       },
     },
@@ -10625,6 +10625,7 @@ export const RightContentFragmentDoc = {
             name: { kind: 'Name', value: 'identifiable' },
           },
           { kind: 'Field', name: { kind: 'Name', value: 'label' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
           { kind: 'Field', name: { kind: 'Name', value: 'externalUrl' } },
           {
             kind: 'Field',
@@ -10667,7 +10668,6 @@ export const RightContentFragmentDoc = {
               ],
             },
           },
-          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
         ],
       },
     },
@@ -10879,6 +10879,7 @@ export const TwoColumFragmentDoc = {
             name: { kind: 'Name', value: 'identifiable' },
           },
           { kind: 'Field', name: { kind: 'Name', value: 'label' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
           { kind: 'Field', name: { kind: 'Name', value: 'externalUrl' } },
           {
             kind: 'Field',
@@ -10921,7 +10922,6 @@ export const TwoColumFragmentDoc = {
               ],
             },
           },
-          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
         ],
       },
     },
@@ -11392,6 +11392,7 @@ export const ConcertDetailFragmentDoc = {
             name: { kind: 'Name', value: 'identifiable' },
           },
           { kind: 'Field', name: { kind: 'Name', value: 'label' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
           { kind: 'Field', name: { kind: 'Name', value: 'externalUrl' } },
           {
             kind: 'Field',
@@ -11434,7 +11435,6 @@ export const ConcertDetailFragmentDoc = {
               ],
             },
           },
-          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
         ],
       },
     },
@@ -13051,6 +13051,7 @@ export const PageFragmentDoc = {
             name: { kind: 'Name', value: 'identifiable' },
           },
           { kind: 'Field', name: { kind: 'Name', value: 'label' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
           { kind: 'Field', name: { kind: 'Name', value: 'externalUrl' } },
           {
             kind: 'Field',
@@ -13093,7 +13094,6 @@ export const PageFragmentDoc = {
               ],
             },
           },
-          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
         ],
       },
     },
@@ -13906,6 +13906,7 @@ export const PageDetailFragmentDoc = {
             name: { kind: 'Name', value: 'identifiable' },
           },
           { kind: 'Field', name: { kind: 'Name', value: 'label' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
           { kind: 'Field', name: { kind: 'Name', value: 'externalUrl' } },
           {
             kind: 'Field',
@@ -13948,7 +13949,6 @@ export const PageDetailFragmentDoc = {
               ],
             },
           },
-          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
         ],
       },
     },
@@ -15016,6 +15016,7 @@ export const GetEventDocument = {
             name: { kind: 'Name', value: 'identifiable' },
           },
           { kind: 'Field', name: { kind: 'Name', value: 'label' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
           { kind: 'Field', name: { kind: 'Name', value: 'externalUrl' } },
           {
             kind: 'Field',
@@ -15058,7 +15059,6 @@ export const GetEventDocument = {
               ],
             },
           },
-          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
         ],
       },
     },
@@ -16023,6 +16023,7 @@ export const GetEventPageDocument = {
             name: { kind: 'Name', value: 'identifiable' },
           },
           { kind: 'Field', name: { kind: 'Name', value: 'label' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
           { kind: 'Field', name: { kind: 'Name', value: 'externalUrl' } },
           {
             kind: 'Field',
@@ -16065,7 +16066,6 @@ export const GetEventPageDocument = {
               ],
             },
           },
-          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
         ],
       },
     },
@@ -17355,6 +17355,7 @@ export const GetEventsDocument = {
             name: { kind: 'Name', value: 'identifiable' },
           },
           { kind: 'Field', name: { kind: 'Name', value: 'label' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
           { kind: 'Field', name: { kind: 'Name', value: 'externalUrl' } },
           {
             kind: 'Field',
@@ -17397,7 +17398,6 @@ export const GetEventsDocument = {
               ],
             },
           },
-          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
         ],
       },
     },
@@ -18433,6 +18433,7 @@ export const GetFutureEventsDocument = {
             name: { kind: 'Name', value: 'identifiable' },
           },
           { kind: 'Field', name: { kind: 'Name', value: 'label' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
           { kind: 'Field', name: { kind: 'Name', value: 'externalUrl' } },
           {
             kind: 'Field',
@@ -18475,7 +18476,6 @@ export const GetFutureEventsDocument = {
               ],
             },
           },
-          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
         ],
       },
     },
@@ -19832,6 +19832,7 @@ export const GetPageDocument = {
             name: { kind: 'Name', value: 'identifiable' },
           },
           { kind: 'Field', name: { kind: 'Name', value: 'label' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
           { kind: 'Field', name: { kind: 'Name', value: 'externalUrl' } },
           {
             kind: 'Field',
@@ -19874,7 +19875,6 @@ export const GetPageDocument = {
               ],
             },
           },
-          { kind: 'Field', name: { kind: 'Name', value: 'variant' } },
         ],
       },
     },
