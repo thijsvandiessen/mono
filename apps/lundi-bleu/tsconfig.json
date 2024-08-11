@@ -2,8 +2,8 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {},
   "include": [
-    "next-env.d.ts",
-    ".next/types/**/*.ts",
+    "./next-env.d.ts",
+    "./.next/types/**/*.ts",
     "./src/**/*",
     "./next.config.cjs",
     "./jest.setup.ts",
