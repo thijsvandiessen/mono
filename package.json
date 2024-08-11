@@ -9,6 +9,7 @@
     "dev": "npm run dev --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",
     "lint": "npm run lint --workspaces",
+    "lint-staged": "lint-staged",
     "prepare": "husky",
     "codegen": "npm run download-schema --workspace=packages/graphql && npm run codegen --workspace=packages/graphql",
     "test": "npm test --workspaces --if-present"
