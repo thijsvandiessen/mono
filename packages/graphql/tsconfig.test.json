@@ -7,5 +7,5 @@
     "plugins": []
   },
   "include": ["jest.config.ts", "jest.setup.cjs"],
-  "exclude": []
+  "exclude": ["node_modules"]
 }

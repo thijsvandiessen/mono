@@ -16,7 +16,7 @@ export const getEvents = async ({
 }: GetEventsQueryVariables): Promise<
   | {
       data: Event[]
-      error: CombinedError | undefined
+      error?: CombinedError
     }
   | {
       data: null

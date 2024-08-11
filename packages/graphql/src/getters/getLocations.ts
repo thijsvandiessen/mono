@@ -14,7 +14,7 @@ export const getLocations = async ({
 }: GetLocationsQueryVariables): Promise<
   | {
       data: Location[] | null
-      error: CombinedError | undefined
+      error?: CombinedError
     }
   | {
       data: null

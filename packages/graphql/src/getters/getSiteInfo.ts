@@ -8,8 +8,8 @@ import type { CombinedError } from '@urql/core'
 
 export const getSiteInfo = async (): Promise<
   | {
-      data: GetSiteInfoQuery['_site'] | null | undefined
-      error: CombinedError | undefined
+      data?: GetSiteInfoQuery['_site'] | null
+      error?: CombinedError
     }
   | {
       data: null
