@@ -7,7 +7,10 @@
     "./src/**/*",
     "./next.config.cjs",
     "./jest.setup.ts",
-    "./jest.config.ts"
+    "./jest.config.ts",
+    ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
