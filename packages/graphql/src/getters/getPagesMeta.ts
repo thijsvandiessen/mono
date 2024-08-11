@@ -9,7 +9,7 @@ import type { CombinedError } from '@urql/core'
 export const getPagesMeta = async (): Promise<
   | {
       data: GetPagesMetaQuery['_allPagesMeta'] | null | undefined
-      error: CombinedError | undefined
+      error?: CombinedError
     }
   | {
       data: null
