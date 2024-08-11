@@ -9,9 +9,9 @@
     "dev": "npm run dev --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",
     "lint": "npm run lint --workspaces",
-    "prepare": "husky install",
+    "prepare": "husky",
     "codegen": "npm run download-schema --workspace=packages/graphql && npm run codegen --workspace=packages/graphql",
-    "test": "npm run test --workspaces"
+    "test": "npm test --workspaces --if-present"
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",
@@ -51,7 +51,7 @@
     "eslint-config-next": "14.2.3",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-testing-library": "6.2.0",
-    "husky": "8.0.3",
+    "husky": "9.1.4",
     "jest": "29.7.0",
     "jest-environment-jsdom": "29.7.0",
     "lint-staged": "15.2.0",
