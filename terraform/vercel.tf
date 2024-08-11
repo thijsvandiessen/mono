@@ -1,7 +1,7 @@
 resource "vercel_project" "lundi" {
   name                       = "lundi"
   framework                  = "nextjs"
-  install_command            = "npm ci"
+  install_command            = "npm i"
   build_command              = "npm run build"
   root_directory             = "apps/lundi-bleu"
   serverless_function_region = "fra1"
@@ -10,7 +10,7 @@ resource "vercel_project" "lundi" {
 resource "vercel_project" "example" {
   name                       = "example"
   framework                  = "nextjs"
-  install_command            = "npm ci"
+  install_command            = "npm i"
   build_command              = "npm run build"
   root_directory             = "apps/example"
   serverless_function_region = "fra1"
