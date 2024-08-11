@@ -4,14 +4,17 @@
   "private": true,
   "description": "Monorepo for small websites",
   "type": "module",
-  "packageManager": "npm@10.7.0",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
   "scripts": {
-    "dev": "npm run dev --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",
+    "codegen": "npm run download-schema --workspace=packages/graphql && npm run codegen --workspace=packages/graphql",
+    "dev": "npm run dev --workspaces --if-present",
     "lint": "npm run lint --workspaces",
     "lint-staged": "lint-staged",
     "prepare": "husky",
-    "codegen": "npm run download-schema --workspace=packages/graphql && npm run codegen --workspace=packages/graphql",
     "test": "npm test --workspaces --if-present"
   },
   "lint-staged": {
@@ -63,8 +66,5 @@
     "typescript": "5.5.3",
     "webpack-bundle-analyzer": "4.10.1"
   },
-  "workspaces": [
-    "packages/*",
-    "apps/*"
-  ]
+  "packageManager": "npm@10.7.0"
 }

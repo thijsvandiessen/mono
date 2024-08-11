@@ -2,15 +2,15 @@
   "name": "@mono/next-config",
   "version": "1.0.0",
   "type": "module",
-  "files": [
-    "dist/*"
-  ],
-  "main": "dist/next-config.umd.cjs",
   "exports": {
     ".": {
       "import": "./src/index.ts"
     }
   },
+  "main": "dist/next-config.umd.cjs",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "build": "vite build",
     "lint": "npm run lint:js && npm run lint:styles && npm run lint:typescript",

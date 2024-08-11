@@ -3,11 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "files": [
-    "./dist/*"
-  ],
-  "main": "./dist/graphql.js",
-  "types": "./dist/graphql.d.ts",
   "exports": {
     ".": {
       "import": "./src/index.ts",
@@ -15,16 +10,21 @@
       "types": "./dist/graphql.d.ts"
     }
   },
+  "main": "./dist/graphql.js",
+  "types": "./dist/graphql.d.ts",
+  "files": [
+    "./dist/*"
+  ],
   "scripts": {
-    "test": "jest",
     "build": "vite build",
+    "codegen": "graphql-codegen --config ./codegen.ts",
+    "codegen:watch": "graphql-codegen --require dotenv/config --config ./codegen.ts --watch",
+    "download-schema": "rover graph fetch vandiessen-mono-graph@current > ./src/generated/schema.graphql && npm run lint:styles",
     "lint": "npm run lint:js && npm run lint:styles && npm run lint:typescript",
     "lint:js": "eslint . --fix",
     "lint:styles": "prettier . --write --cache --log-level silent --list-different",
     "lint:typescript": "tsc",
-    "download-schema": "rover graph fetch vandiessen-mono-graph@current > ./src/generated/schema.graphql && npm run lint:styles",
-    "codegen": "graphql-codegen --config ./codegen.ts",
-    "codegen:watch": "graphql-codegen --require dotenv/config --config ./codegen.ts --watch"
+    "test": "jest"
   },
   "dependencies": {
     "@mono/utils": "1.0.0",
