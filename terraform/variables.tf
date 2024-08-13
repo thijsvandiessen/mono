@@ -31,7 +31,14 @@ variable "GOOGLE_MAPS_API_KEY" {
 
 variable "TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA" {
   type = string
+  default = ""
 }
 variable "TFC_CONFIGURATION_VERSION_GIT_TAG" {
   type = string
+  default = ""
+}
+
+variable "TFC_CONFIGURATION_VERSION_GIT_BRANCH" {
+  type = string
+  default = ""
 }
