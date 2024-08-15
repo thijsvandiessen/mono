@@ -24,14 +24,14 @@ resource "vercel_deployment" "example" {
   project_id  = resource.vercel_project.example.id
   files       = data.vercel_project_directory.mono.files
   path_prefix = data.vercel_project_directory.mono.path
-  production  = var.TFC_CONFIGURATION_VERSION_GIT_TAG ? true : false
+  production  = try(var.TFC_CONFIGURATION_VERSION_GIT_TAG, false) ? true : false
 }
 
 resource "vercel_deployment" "lundi" {
   project_id  = resource.vercel_project.lundi.id
   files       = data.vercel_project_directory.mono.files
   path_prefix = data.vercel_project_directory.mono.path
-  production  = var.TFC_CONFIGURATION_VERSION_GIT_TAG ? true : false
+  production  = try(var.TFC_CONFIGURATION_VERSION_GIT_TAG, false) ? true : false
 }
 
 resource "vercel_project_environment_variable" "lundi" {
