@@ -40,6 +40,6 @@
     "vite": "5.2.11",
     "vite-plugin-dts": "3.9.1",
     "vite-plugin-node-polyfills": "^0.22.0",
-    "webpack-bundle-analyzer": "4.10.1"
+    "webpack-bundle-analyzer": "4.10.2"
   }
 }

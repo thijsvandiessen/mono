@@ -51,6 +51,6 @@
     "sass": "1.77.8",
     "turbo": "2.0.12",
     "typescript": "5.5.3",
-    "webpack-bundle-analyzer": "4.10.1"
+    "webpack-bundle-analyzer": "4.10.2"
   }
 }
