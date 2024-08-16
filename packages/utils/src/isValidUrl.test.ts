@@ -5,6 +5,10 @@ describe('isValidUrl', () => {
     expect(isValidUrl('homepage')).toEqual(false)
   })
 
+  it('should return false when it is an empty string', () => {
+    expect(isValidUrl('')).toEqual(false)
+  })
+
   it('should return false on relative links', () => {
     expect(isValidUrl('/homepage')).toEqual(false)
   })
