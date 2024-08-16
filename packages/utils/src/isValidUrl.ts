@@ -4,7 +4,7 @@ export const isValidUrl = (url: string): boolean => {
     return Boolean(new URL(url))
   } catch (e) {
     if (e instanceof TypeError) {
-      console.log(`Invalid URL': ${e.message}`)
+      console.log(`Invalid URL': ${e.message} ${url}`)
     }
     return false
   }
