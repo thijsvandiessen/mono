@@ -66,5 +66,8 @@
     "typescript": "5.5.3",
     "webpack-bundle-analyzer": "4.10.2"
   },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.20.0"
+  },
   "packageManager": "npm@10.7.0"
 }
