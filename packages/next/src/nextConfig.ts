@@ -1,5 +1,4 @@
 import type { NextConfig } from 'next'
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import { headerConfig } from './headerConfig'
 
 type Props = {
@@ -23,24 +22,7 @@ export const customNextConfig = ({ domain }: Props): NextConfig => ({
         protocol: 'https',
         hostname: 'res.cloudinary.com',
       },
-      {
-        protocol: 'https',
-        hostname: 'assets.example.com',
-        port: '',
-        pathname: '/account123/**',
-      },
     ],
-  },
-  webpack: (config) => {
-    if (process.env.ANALYZE === 'true') {
-      config.plugins.push(
-        new BundleAnalyzerPlugin({
-          analyzerMode: 'disabled',
-          generateStatsFile: true,
-        })
-      )
-    }
-    return config
   },
   rewrites: () =>
     Promise.resolve([

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "rootDir": "./",
-    "lib": ["ESNext", "DOM", "WebWorker", "DOM.Iterable"],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "allowJs": false,
     "skipLibCheck": true,
     "strict": true,
