@@ -4,16 +4,11 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "lint": "npm run lint:js && npm run lint:styles && npm run lint:typescript",
+    "lint": "npm run lint:js && npm run lint:styles",
     "lint:js": "eslint . --fix",
-    "lint:styles": "prettier . --write --cache --log-level silent --list-different",
-    "lint:typescript": "tsc"
+    "lint:styles": "prettier . --write --cache --log-level silent --list-different"
   },
   "devDependencies": {
-    "@testing-library/react": "14.1.2",
-    "@types/node": "22.2.0",
-    "@types/react": "18.2.45",
-    "@types/react-dom": "18.2.18",
     "@typescript-eslint/eslint-plugin": "8.1.0",
     "@typescript-eslint/parser": "8.1.0",
     "eslint": "8.57.0",
@@ -21,8 +16,6 @@
     "eslint-plugin-react-hooks": "4.6.2",
     "eslint-plugin-testing-library": "6.2.0",
     "prettier": "3.3.3",
-    "pretty-quick": "3.1.3",
-    "turbo": "2.0.12",
-    "typescript": "5.5.3"
+    "pretty-quick": "3.1.3"
   }
 }
