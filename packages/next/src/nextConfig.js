@@ -1,11 +1,6 @@
-import type { NextConfig } from 'next'
-import { headerConfig } from './headerConfig'
+import { headerConfig } from './headerConfig.js'
 
-type Props = {
-  domain: string
-}
-
-export const customNextConfig = ({ domain }: Props): NextConfig => ({
+export const customNextConfig = ({ domain }) => ({
   poweredByHeader: false,
   reactStrictMode: true,
   experimental: {
@@ -33,5 +28,5 @@ export const customNextConfig = ({ domain }: Props): NextConfig => ({
       },
     ]),
   headers: () =>
-    Promise.resolve([{ source: '*', headers: headerConfig({ domain }) }]),
+    Promise.resolve([{ source: '/(.*)', headers: headerConfig({ domain }) }]),
 })

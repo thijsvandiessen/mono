@@ -5,7 +5,7 @@
     "./next-env.d.ts",
     "./.next/types/**/*.ts",
     "./src/**/*",
-    "./next.config.cjs",
+    "./next.config.js",
     "./jest.setup.ts",
     "./jest.config.ts",
     ".next/types/**/*.ts"
