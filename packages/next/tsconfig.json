@@ -4,6 +4,6 @@
     "declaration": true,
     "isolatedDeclarations": true
   },
-  "include": ["src/**/*", "src/*"],
+  "include": ["src/**/*", "src/*", "index.js"],
   "exclude": ["src/**/*.test.ts", "src/**/*.test.tsx"]
 }

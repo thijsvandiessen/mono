@@ -2,6 +2,7 @@
   "name": "@mono/next-config",
   "version": "1.0.0",
   "type": "module",
+  "main": "index.js",
   "scripts": {
     "lint": "npm run lint:js && npm run lint:styles && npm run lint:typescript",
     "lint:js": "eslint . --fix",
