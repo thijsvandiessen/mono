@@ -1,5 +1,7 @@
 import { customNextConfig } from '@mono/next-config'
 
-export default customNextConfig({
+const nextConfig = customNextConfig({
   domain: 'www.lundi-bleu.nl',
 })
+
+export default nextConfig

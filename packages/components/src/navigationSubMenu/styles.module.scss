@@ -12,13 +12,13 @@
   font-family: var(--typography-serif);
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  cursor: pointer;
 
   &:hover,
   &:focus {
     text-decoration: none;
     color: var(--colour-secondary);
   }
-  cursor: pointer;
 }
 
 .list {
