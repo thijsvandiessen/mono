@@ -1,6 +1,5 @@
 import React from 'react'
-import { Event } from './event'
-import type { Props } from './event'
+import { Event, type Props } from './event'
 import { getEvent } from '@mono/graphql'
 import { mockEvent } from './mocks/mockEvent'
 import { resolvedComponent } from '@mono/utils'

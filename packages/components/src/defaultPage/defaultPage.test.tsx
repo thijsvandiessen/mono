@@ -1,6 +1,5 @@
 import React from 'react'
-import { DefaultPage } from './defaultPage'
-import type { Props } from './defaultPage'
+import { DefaultPage, type Props } from './defaultPage'
 import { getPage } from '@mono/graphql'
 import { resolvedComponent } from '@mono/utils'
 import { render } from '@testing-library/react'

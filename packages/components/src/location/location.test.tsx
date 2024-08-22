@@ -1,6 +1,5 @@
 import React from 'react'
-import { Location } from './location'
-import type { Props } from './location'
+import { Location, type Props } from './location'
 import { getLocation } from '@mono/graphql'
 import { resolvedComponent } from '@mono/utils'
 import { render, screen } from '@testing-library/react'

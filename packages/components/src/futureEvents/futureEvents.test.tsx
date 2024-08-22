@@ -1,6 +1,5 @@
 import type { Props as EventListItemProps } from '../eventListItem'
-import { FutureEvents } from './futureEvents'
-import type { Props } from './futureEvents'
+import { FutureEvents, type Props } from './futureEvents'
 import React from 'react'
 import { getFutureEvents } from '@mono/graphql'
 import { mockEvent } from './mocks/mockEvents'
