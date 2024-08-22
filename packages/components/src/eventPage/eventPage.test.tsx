@@ -1,6 +1,5 @@
 import React from 'react'
-import { EventPage } from './eventPage'
-import type { Props } from './eventPage'
+import { EventPage, type Props } from './eventPage'
 import { getEventPage } from '@mono/graphql'
 import { resolvedComponent } from '@mono/utils'
 import { render } from '@testing-library/react'
