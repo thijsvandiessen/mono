@@ -1,5 +1,5 @@
 import type { Record } from 'datocms-structured-text-utils'
-import type { RenderBlockContext } from 'react-datocms'
+import type { RenderBlockContext } from 'react-datocms/structured-text'
 import { isOfType } from './isOfType'
 import type {
   CallToActionFragment,
