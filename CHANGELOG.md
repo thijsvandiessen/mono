@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/thijsvandiessen/mono/compare/v1.0.0...v1.0.1) (2024-08-22)
+
+
+### Bug Fixes
+
+* add missing dato cms dep ([#84](https://github.com/thijsvandiessen/mono/issues/84)) ([8de8806](https://github.com/thijsvandiessen/mono/commit/8de88067573abd9f19a31754bddcb9215544bcd8))
+
 ## 1.0.0 (2024-08-18)
 
 
