@@ -24,4 +24,3 @@ export const StyleGuide = () => {
     </div>
   )
 }
-
