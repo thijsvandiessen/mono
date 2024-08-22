@@ -1,4 +1,4 @@
-import { StructuredText } from 'react-datocms/structured-text'
+import { StructuredText } from 'react-datocms'
 import { isStructuredText } from 'datocms-structured-text-utils'
 import { renderBlock } from './renderBlock'
 import { renderInlineRecord } from './renderInlineRecord'
@@ -13,10 +13,10 @@ import styles from './styles.module.scss'
 
 interface Props {
   data:
-    | HeaderFragment['body']
-    | TextBlockFragment['content']
-    | TwoColumFragment['leftContent']
-    | TwoColumFragment['rightContent']
+  | HeaderFragment['body']
+  | TextBlockFragment['content']
+  | TwoColumFragment['leftContent']
+  | TwoColumFragment['rightContent']
 }
 
 export const ContentField = ({ data }: Props) => {
