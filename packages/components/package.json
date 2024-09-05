@@ -21,7 +21,7 @@
     "datocms-structured-text-utils": "4.0.1",
     "react-datocms": "7.0.1",
     "classnames": "2.5.1",
-    "next": "14.2.5",
+    "next": "14.2.8",
     "urql": "4.1.0"
   },
   "devDependencies": {
