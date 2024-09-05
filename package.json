@@ -35,7 +35,7 @@
     "@graphql-codegen/client-preset": "4.3.3",
     "@graphql-codegen/introspection": "4.0.3",
     "@graphql-codegen/typescript": "4.0.9",
-    "@graphql-codegen/typescript-operations": "4.0.1",
+    "@graphql-codegen/typescript-operations": "4.2.3",
     "@swc/core": "1.7.14",
     "@swc/jest": "0.2.36",
     "@testing-library/jest-dom": "6.4.8",
