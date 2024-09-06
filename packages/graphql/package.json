@@ -43,7 +43,7 @@
     "@graphql-codegen/typescript": "4.0.9",
     "@graphql-codegen/typescript-document-nodes": "4.0.9",
     "@graphql-codegen/typescript-operations": "4.2.3",
-    "@testing-library/jest-dom": "6.4.8",
+    "@testing-library/jest-dom": "6.5.0",
     "@testing-library/react": "16.0.0",
     "@types/jest": "29.5.12",
     "@types/node": "22.5.0",
