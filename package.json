@@ -62,7 +62,7 @@
     "typescript": "5.5.4"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.21.2"
+    "@rollup/rollup-linux-x64-gnu": "4.21.3"
   },
   "packageManager": "npm@10.7.0"
 }
