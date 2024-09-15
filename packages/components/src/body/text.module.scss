@@ -72,7 +72,7 @@ p,
   font-size: 1rem;
 
   @media screen and (min-width: 50rem) {
-    font-size: 1.125rem;
+    font-size: 1.125em;
   }
 }
 
@@ -85,10 +85,10 @@ p,
 }
 
 .text-large {
-  font-size: 1.125rem;
+  font-size: 1.125em;
 
   @media screen and (min-width: 50rem) {
-    font-size: 1.25rem;
+    font-size: 1.25em;
   }
 }
 

@@ -12,14 +12,10 @@ exports[`Concert component shows all the data 1`] = `
         class="root"
       >
         <button
+          aria-label="Menu"
           class="menuButton"
           type="button"
         >
-          <span
-            class="sr-only"
-          >
-            Menu
-          </span>
           <svg
             aria-hidden="true"
             class="menuIcon icon"

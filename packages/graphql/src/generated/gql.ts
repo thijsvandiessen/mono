@@ -63,7 +63,7 @@ const documents = {
     types.SeoFieldFragmentDoc,
   '\n  fragment seoSettings on GlobalSeoField {\n    facebookPageUrl\n    siteName\n    titleSuffix\n    twitterAccount\n    fallbackSeo {\n      ...seoField\n    }\n  }\n  \n':
     types.SeoSettingsFragmentDoc,
-  '\n  fragment siteMetadata on GeneralRecord {\n    ...identifiable\n    siteMetadata\n  }\n  \n':
+  '\n  fragment siteMetadata on GeneralRecord {\n    ...identifiable\n    title\n    siteMetadata\n  }\n  \n':
     types.SiteMetadataFragmentDoc,
   '\n  fragment submenuItem on SubmenuItemRecord {\n    id\n    label\n    menu {\n      ...menuItem\n    }\n  }\n  \n':
     types.SubmenuItemFragmentDoc,
@@ -289,8 +289,8 @@ export function gql(
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(
-  source: '\n  fragment siteMetadata on GeneralRecord {\n    ...identifiable\n    siteMetadata\n  }\n  \n'
-): (typeof documents)['\n  fragment siteMetadata on GeneralRecord {\n    ...identifiable\n    siteMetadata\n  }\n  \n']
+  source: '\n  fragment siteMetadata on GeneralRecord {\n    ...identifiable\n    title\n    siteMetadata\n  }\n  \n'
+): (typeof documents)['\n  fragment siteMetadata on GeneralRecord {\n    ...identifiable\n    title\n    siteMetadata\n  }\n  \n']
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

@@ -6,6 +6,7 @@ import type { SiteMetadataFragment } from '../generated/graphql'
 export const siteMetadata: TypedDocumentNode<SiteMetadataFragment> = gql`
   fragment siteMetadata on GeneralRecord {
     ...identifiable
+    title
     siteMetadata
   }
   ${identifiable}

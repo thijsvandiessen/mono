@@ -5159,6 +5159,7 @@ export type SeoSettingsFragment = {
 
 export type SiteMetadataFragment = {
   __typename: 'GeneralRecord'
+  title?: string | null
   siteMetadata?: unknown | null
   _createdAt: string
   _firstPublishedAt?: string | null
@@ -8208,6 +8209,7 @@ export type GetSiteMetadataQuery = {
   __typename?: 'Query'
   general?: {
     __typename: 'GeneralRecord'
+    title?: string | null
     siteMetadata?: unknown | null
     _createdAt: string
     _firstPublishedAt?: string | null
@@ -14778,6 +14780,7 @@ export const SiteMetadataFragmentDoc = {
             kind: 'FragmentSpread',
             name: { kind: 'Name', value: 'identifiable' },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
           { kind: 'Field', name: { kind: 'Name', value: 'siteMetadata' } },
         ],
       },
@@ -21011,7 +21014,7 @@ export const GetSiteInfoDocument = {
   ],
 } as unknown as DocumentNode<GetSiteInfoQuery, GetSiteInfoQueryVariables>
 export const GetSiteMetadataDocument = {
-  __meta__: { hash: 'e7c95902580eda8484dfd598f3b7131fdf13b763' },
+  __meta__: { hash: 'ca6cefbe29b30e5831d72ee8151f9d41f7a1631c' },
   kind: 'Document',
   definitions: [
     {
@@ -21070,6 +21073,7 @@ export const GetSiteMetadataDocument = {
             kind: 'FragmentSpread',
             name: { kind: 'Name', value: 'identifiable' },
           },
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
           { kind: 'Field', name: { kind: 'Name', value: 'siteMetadata' } },
         ],
       },
