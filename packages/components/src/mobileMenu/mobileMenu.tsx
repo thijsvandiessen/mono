@@ -35,8 +35,8 @@ export const MobileMenu = () => {
           className={classNames(styles.menuButton)}
           type="button"
           onClick={handleClick}
+          aria-label="Menu"
         >
-          <span className="sr-only">Menu</span>
           <Hamburger className={classNames(styles.menuIcon)} />
         </button>
         {open && (
@@ -46,8 +46,8 @@ export const MobileMenu = () => {
                 className={classNames(styles.menuButton)}
                 type="button"
                 onClick={handleClick}
+                aria-label="Sluit menu"
               >
-                <span className="sr-only">Sluit menu</span>
                 <Cross className={classNames(styles.menuIcon)} />
               </button>
             </div>

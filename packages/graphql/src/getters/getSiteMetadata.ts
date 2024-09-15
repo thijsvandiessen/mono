@@ -14,7 +14,7 @@ export const getSiteMetadata = async () => {
     >(GetSiteMetadataDocument, {})
 
     return {
-      metadata: formatSiteMetadata(data?.general?.siteMetadata),
+      metadata: formatSiteMetadata(data?.general),
       error,
     }
   } catch (error) {

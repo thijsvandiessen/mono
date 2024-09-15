@@ -148,12 +148,8 @@ body {
   font-family: var(--typography-sans);
   background-color: var(--colour-background);
   color: var(--colour-primary-dark);
-  font-size: 1em;
+  font-size: 1.125em;
   word-break: break-word;
-
-  @media screen and (min-width: 50rem) {
-    font-size: 1.125em;
-  }
 }
 
 .sr-only {

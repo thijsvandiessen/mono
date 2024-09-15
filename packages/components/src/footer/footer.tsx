@@ -14,35 +14,28 @@ export const Footer = async () => {
     <footer className={classNames(styles.root, 'with-background')}>
       <div className={classNames(styles.content, 'content-layout')}>
         <div>
-          <h2 className={classNames(styles.title)}>
-            <span className="sr-only">Footer</span>
-            {metadata?.title}
-          </h2>
+          <h2 className={classNames(styles.title)}>{metadata?.title}</h2>
 
           {/* <address className={classNames(styles.address)}>
             <p>Nieuwe Achtergracht 170</p>
             <p>1018 WV Amsterdam</p>
           </address> */}
 
-          <ul className={classNames(styles.list, styles.logoList)}>
-            {/* <li>
-              <Link
-                className={classNames(styles.logoLink)}
-                href="https://www.example.nl/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  className={classNames(styles.logo)}
-                  src="/img/example.png"
-                  alt="logo"
-                  fill
-                  sizes="(min-width: 500px) 50vw, 100vw"
-                />
-                <span className="sr-only">Ga naar example.nl</span>
-              </Link>
-            </li> */}
-          </ul>
+          {/* <ul className={classNames(styles.list, styles.logoList)}>
+            {
+              metadata?.socials?.map((social) =>
+                <li key={social.name}>
+                  <Link
+                    className={classNames(styles.logoLink)}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {social.name}
+                  </Link>
+                </li>)
+            }
+          </ul> */}
         </div>
 
         <div>
@@ -69,16 +62,18 @@ export const Footer = async () => {
         <div>
           <h3 className={classNames(styles.title)}>Volg ons</h3>
           <ul className={classNames(styles.list)}>
-            {/* <li>
-              <Link
-                className={classNames(styles.link)}
-                href="https://facebook.com/example"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Facebook
-              </Link>
-            </li> */}
+            {metadata?.socials?.map((social) => (
+              <li key={social.name}>
+                <Link
+                  className={classNames(styles.link)}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {social.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
