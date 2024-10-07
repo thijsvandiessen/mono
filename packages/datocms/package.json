@@ -17,7 +17,7 @@
     "prettier": "3.3.3",
     "pretty-quick": "4.0.0",
     "typescript": "5.5.4",
-    "vite": "5.4.6",
+    "vite": "5.4.8",
     "vite-plugin-dts": "4.2.3"
   }
 }
