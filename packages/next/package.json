@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "npm run lint:js && npm run lint:styles",
     "lint:js": "eslint . --fix",
-    "lint:styles": "prettier . --write --cache --log-level silent --list-different"
+    "lint:styles": "prettier . --write  --list-different"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "8.8.0",

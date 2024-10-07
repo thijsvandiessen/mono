@@ -9,7 +9,7 @@
     "dev": "next dev --turbo -p 3000",
     "lint": "npm run lint:js && npm run lint:styles && npm run lint:typescript",
     "lint:js": "eslint . --fix",
-    "lint:styles": "prettier . --write --cache --log-level silent --list-different",
+    "lint:styles": "prettier . --write --list-different",
     "lint:typescript": "tsc",
     "start": "next start"
   },

@@ -1,6 +1,11 @@
 .vercel
 .next
 .svc
+.swc
+.turbo
+
 CHANGELOG.md
 
 node_modules
+dist
+coverage
