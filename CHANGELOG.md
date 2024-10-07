@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/thijsvandiessen/mono/compare/v1.0.3...v1.0.4) (2024-10-07)
+
+
+### Bug Fixes
+
+* styling ([#185](https://github.com/thijsvandiessen/mono/issues/185)) ([c0e9331](https://github.com/thijsvandiessen/mono/commit/c0e9331f48771e6b86ee5be7ecd55bcb8ae3b0c6))
+
 ## [1.0.3](https://github.com/thijsvandiessen/mono/compare/v1.0.2...v1.0.3) (2024-10-07)
 
 
