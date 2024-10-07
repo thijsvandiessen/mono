@@ -101,12 +101,11 @@ $padding-large-left: 2.5rem;
 }
 
 .image {
-  width: $image-width;
   height: $image-height;
   max-width: 100%;
   border-radius: inherit;
   object-fit: cover;
-  transform: translate(-5%, 2.5%);
+  transform: translate(-0.5rem, 0.5rem);
 }
 
 .programTitle {
@@ -187,10 +186,10 @@ $padding-large-left: 2.5rem;
   .image {
     width: $image-large-width;
     height: $image-large-height;
-    transform: translate(-5%, 2.5%);
+    transform: translate(-0.5rem, 0.5rem);
 
     @media screen and (min-width: 50rem) {
-      transform: translate(-7%, 4.5%);
+      transform: translate(-1rem, 1rem);
     }
   }
 
