@@ -3,20 +3,7 @@
   "version": "1.0.0",
   "description": "datocms",
   "type": "module",
-  "exports": {
-    ".": {
-      "import": "./src/index.ts",
-      "module": "./dist/datocms.umd.cjs",
-      "types": "./dist/datocms.d.ts"
-    }
-  },
-  "main": "dist/datocms.umd.cjs",
-  "types": "dist/datocms.d.ts",
-  "files": [
-    "dist/*"
-  ],
   "scripts": {
-    "build": "vite build",
     "lint": "npm run lint:styles && npm run lint:typescript",
     "lint:styles": "prettier . --write  --list-different",
     "lint:typescript": "tsc"
