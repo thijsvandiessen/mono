@@ -11,7 +11,7 @@ import styles from './styles.module.scss'
 import { ConcertModelOrderBy } from '@mono/graphql'
 
 export const ConcertsPage = async () => {
-  const first = 2
+  const first = 10
   const { data: eventData } = await getEvents({
     skip: 0,
     first,

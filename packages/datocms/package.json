@@ -1,0 +1,23 @@
+{
+  "name": "@mono/datocms",
+  "version": "1.0.0",
+  "description": "datocms",
+  "type": "module",
+  "scripts": {
+    "lint": "npm run lint:styles && npm run lint:typescript",
+    "lint:styles": "prettier . --write  --list-different",
+    "lint:typescript": "tsc"
+  },
+  "dependencies": {
+    "@datocms/cma-client-node": "3.3.12",
+    "dotenv": "16.4.5"
+  },
+  "devDependencies": {
+    "eslint": "8.57.0",
+    "prettier": "3.3.3",
+    "pretty-quick": "4.0.0",
+    "typescript": "5.5.4",
+    "vite": "5.4.3",
+    "vite-plugin-dts": "4.2.1"
+  }
+}
