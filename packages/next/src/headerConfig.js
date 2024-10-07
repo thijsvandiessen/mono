@@ -31,6 +31,6 @@ export const headerConfig = ({ domain }) => [
   },
   {
     key: 'Content-Security-Policy',
-    value: csp({ domain }).join(';'),
+    value: csp({ domain }).join('; '),
   },
 ]
