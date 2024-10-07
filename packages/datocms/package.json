@@ -1,0 +1,36 @@
+{
+  "name": "@mono/datocms",
+  "version": "1.0.0",
+  "description": "datocms",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "module": "./dist/datocms.umd.cjs",
+      "types": "./dist/datocms.d.ts"
+    }
+  },
+  "main": "dist/datocms.umd.cjs",
+  "types": "dist/datocms.d.ts",
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "lint": "npm run lint:styles && npm run lint:typescript",
+    "lint:styles": "prettier . --write --cache --log-level silent --list-different",
+    "lint:typescript": "tsc"
+  },
+  "dependencies": {
+    "@datocms/cma-client-node": "3.3.12",
+    "dotenv": "16.4.5"
+  },
+  "devDependencies": {
+    "eslint": "8.57.0",
+    "prettier": "3.3.3",
+    "pretty-quick": "4.0.0",
+    "typescript": "5.5.4",
+    "vite": "5.4.3",
+    "vite-plugin-dts": "4.2.1"
+  }
+}
