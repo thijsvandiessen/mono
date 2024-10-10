@@ -25,7 +25,7 @@
     "urql": "4.1.0"
   },
   "devDependencies": {
-    "@react-google-maps/api": "2.19.3",
+    "@react-google-maps/api": "2.20.2",
     "@testing-library/jest-dom": "6.5.0",
     "@testing-library/react": "16.0.1",
     "@types/jest": "29.5.13",
