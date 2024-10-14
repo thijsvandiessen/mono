@@ -11,14 +11,14 @@ export const metadataFormatter = async (
   slug: string
 ): Promise<Metadata> => {
   const { metadata } = await getSiteMetadata()
-
+  const title = await metaTitleFormatter(data)
   const base = metadata?.base_url || 'https://example.com'
-  const defaultTitle = metadata?.title || 'Default title'
-  const defaultDescription = metadata?.description || 'Default description'
+
+  const defaultDescription = metadata?.description || ''
   const defaultLocale = 'nl-NL'
 
   return {
-    title: await metaTitleFormatter(data),
+    title,
     description: data?.seo?.description ?? defaultDescription,
     metadataBase: new URL(base),
     alternates: {
@@ -33,13 +33,13 @@ export const metadataFormatter = async (
       title:
         data?._seoMetaTags.find(
           (tags) => tags?.attributes?.property === 'og:title'
-        )?.content ?? defaultTitle,
+        )?.content ?? title,
       description:
         data?._seoMetaTags.find(
           (tags) => tags?.attributes?.property === 'og:description'
         )?.content ?? defaultDescription,
       url: slug === 'homepage' ? base : `${base}/${slug}`,
-      siteName: defaultTitle,
+      siteName: title,
       type: 'article', // TODO: we only support this type at the moment
       images: [
         {
@@ -61,7 +61,7 @@ export const metadataFormatter = async (
       title:
         data?._seoMetaTags.find(
           (tags) => tags?.attributes?.name === 'twitter:title'
-        )?.content ?? defaultTitle,
+        )?.content ?? title,
       description:
         data?._seoMetaTags.find(
           (tags) => tags?.attributes?.name === 'twitter:description'

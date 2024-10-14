@@ -15,20 +15,45 @@ export interface siteMetadata {
 function getSocials(data: object): social[] {
   return [
     {
-      name: 'social_one_name' in data ? String(data.social_one_name) : '',
-      url: 'social_one_url' in data ? String(data.social_one_url) : '',
+      name:
+        'social_one_name' in data && typeof data.social_one_name === 'string'
+          ? data.social_one_name
+          : '',
+      url:
+        'social_one_url' in data && typeof data.social_one_url === 'string'
+          ? data.social_one_url
+          : '',
     },
     {
-      name: 'social_two_name' in data ? String(data.social_two_name) : '',
-      url: 'social_two_url' in data ? String(data.social_two_url) : '',
+      name:
+        'social_two_name' in data && typeof data.social_two_name === 'string'
+          ? data.social_two_name
+          : '',
+      url:
+        'social_two_url' in data && typeof data.social_two_url === 'string'
+          ? data.social_two_url
+          : '',
     },
     {
-      name: 'social_three_name' in data ? String(data.social_three_name) : '',
-      url: 'social_three_url' in data ? String(data.social_three_url) : '',
+      name:
+        'social_three_name' in data &&
+        typeof data.social_three_name === 'string'
+          ? data.social_three_name
+          : '',
+      url:
+        'social_three_url' in data && typeof data.social_three_url === 'string'
+          ? data.social_three_url
+          : '',
     },
     {
-      name: 'social_four_name' in data ? String(data.social_four_name) : '',
-      url: 'social_four_url' in data ? String(data.social_four_url) : '',
+      name:
+        'social_four_name' in data && typeof data.social_four_name === 'string'
+          ? data.social_four_name
+          : '',
+      url:
+        'social_four_url' in data && typeof data.social_four_url === 'string'
+          ? data.social_four_url
+          : '',
     },
   ].filter((social) => social.url || social.name)
 }
@@ -43,10 +68,19 @@ export const formatSiteMetadata = (
   const { siteMetadata } = data
 
   return {
-    base_url: 'base_url' in siteMetadata ? String(siteMetadata?.base_url) : '',
-    title: 'title' in siteMetadata ? String(siteMetadata.title) : '',
+    base_url:
+      'base_url' in siteMetadata && typeof siteMetadata?.base_url === 'string'
+        ? siteMetadata.base_url
+        : '',
+    title:
+      'title' in siteMetadata && typeof siteMetadata.title === 'string'
+        ? siteMetadata.title
+        : '',
     description:
-      'description' in siteMetadata ? String(siteMetadata.description) : '',
+      'description' in siteMetadata &&
+      typeof siteMetadata.description === 'string'
+        ? siteMetadata.description
+        : '',
     socials: getSocials(siteMetadata),
   }
 }

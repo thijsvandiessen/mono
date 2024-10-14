@@ -38,8 +38,8 @@ describe('getPageSeo', () => {
       alternates: {
         canonical: 'https://example.com/',
       },
-      title: 'Default title',
-      description: 'Default description',
+      title: '',
+      description: '',
       metadataBase: expect.objectContaining({
         host: 'example.com',
         hostname: 'example.com',
@@ -47,7 +47,7 @@ describe('getPageSeo', () => {
         origin: 'https://example.com',
       }),
       openGraph: {
-        description: 'Default description',
+        description: '',
         images: [
           {
             height: 900,
@@ -56,8 +56,8 @@ describe('getPageSeo', () => {
           },
         ],
         locale: 'nl-NL',
-        siteName: 'Default title',
-        title: 'Default title',
+        siteName: '',
+        title: '',
         type: 'article',
         url: 'https://example.com/',
       },
@@ -65,7 +65,7 @@ describe('getPageSeo', () => {
         card: 'summary_large_image',
         description: '',
         images: [''],
-        title: 'Default title',
+        title: '',
       },
     })
   })
@@ -76,7 +76,7 @@ describe('getPageSeo', () => {
     const { data, error } = await getPageSeo({ slug: '' })
     expect(data).toEqual({
       alternates: { canonical: 'https://example.com/' },
-      description: 'Default description',
+      description: '',
       metadataBase: expect.objectContaining({
         host: 'example.com',
         hostname: 'example.com',
@@ -84,20 +84,20 @@ describe('getPageSeo', () => {
         origin: 'https://example.com',
       }),
       openGraph: {
-        description: 'Default description',
+        description: '',
         images: [{ height: 900, url: '', width: 1200 }],
         locale: 'nl-NL',
-        siteName: 'Default title',
-        title: 'Default title',
+        siteName: '',
+        title: '',
         type: 'article',
         url: 'https://example.com/',
       },
-      title: 'Default title',
+      title: '',
       twitter: {
         card: 'summary_large_image',
         description: '',
         images: [''],
-        title: 'Default title',
+        title: '',
       },
     })
     expect(error).toBeInstanceOf(Error)

@@ -62,8 +62,9 @@ export const EventListItem = ({
               const startTime = item.startTime && formatDate(item.startTime)
               const itemTitle = item.title || startTime
 
+              const hash = JSON.stringify(item)
               return (
-                <li key={item.id} className={styles.location}>
+                <li key={hash} className={styles.location}>
                   <h3
                     className={classNames(styles.locationTitle, {
                       h5: size === 'small',
