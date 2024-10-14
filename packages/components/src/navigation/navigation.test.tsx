@@ -19,7 +19,7 @@ jest.mock('@mono/graphql', () => {
     getGeneralInfo: jest.fn(),
     getSiteMetadata: jest.fn(() => ({
       metadata: {
-        title: 'Default title',
+        title: '',
         description: 'Default description',
         base_url: 'https://example.com',
       },

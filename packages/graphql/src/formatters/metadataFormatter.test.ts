@@ -193,17 +193,17 @@ describe('metadataFormatter', () => {
           },
         ],
         locale: 'nl-NL',
-        siteName: 'Default title',
-        title: 'Default title',
+        siteName: 'Contact | Default title',
+        title: 'Contact | Default title',
         type: 'article',
         url: 'https://example.com/some-page',
       },
-      title: 'Contact',
+      title: 'Contact | Default title',
       twitter: {
         card: 'summary_large_image',
         description: '',
         images: [''],
-        title: 'Default title',
+        title: 'Contact | Default title',
       },
     })
   })
