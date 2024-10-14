@@ -8,11 +8,12 @@ export const metaTitleFormatter = async (
   data: PageDetailSeoFragment | EventPageSeoFragment | undefined
 ) => {
   const { metadata } = await getSiteMetadata()
-  const defaultTitle = metadata?.title || 'Default title'
+  const defaultSiteName = metadata?.title ||''
 
-  if (data?.seo?.title) return data.seo.title
-  if (data?.title === 'homepage') return defaultTitle
-  if (data?.title) return `${defaultTitle} | ${data.title}`
+  if (!defaultSiteName) return data?.seo?.title || data?.title || ''
+  if (data?.seo?.title) return `${data.seo.title} | ${defaultSiteName}`
+  if (data?.title === 'homepage') return defaultSiteName
+  if (data?.title) return `${data.title} | ${defaultSiteName}`
 
-  return defaultTitle
+  return defaultSiteName
 }

@@ -11,7 +11,7 @@
   "scripts": {
     "build": "npm run build --workspaces --if-present",
     "codegen": "npm run download-schema --workspace=packages/graphql && npm run codegen --workspace=packages/graphql",
-    "dev": "npm run dev --workspaces --if-present",
+    "dev": "concurrently \"npm run dev --workspace=packages/graphql\" \"npm run dev --workspace=packages/hooks\" \"npm run dev --workspace=packages/utils\" \"npm run dev --workspace=apps/lundi-bleu\"",
     "lint": "npm run lint --workspaces",
     "lint-staged": "lint-staged",
     "prepare": "husky",
@@ -46,6 +46,7 @@
     "@types/react-dom": "18.3.1",
     "@typescript-eslint/eslint-plugin": "8.8.1",
     "@typescript-eslint/parser": "8.8.1",
+    "concurrently": "9.0.1",
     "dotenv": "16.4.5",
     "eslint": "8.57.0",
     "eslint-config-next": "14.2.15",

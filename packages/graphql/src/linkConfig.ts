@@ -12,5 +12,5 @@ export const linkConfig = {
     // 'apollographql-client-name': 'example',
     'apollographql-client-version': 'specific-version', // TODO: comit hash?
   },
-  next: { revalidate: 60, tags: ['content'] },
+  next: { revalidate: 3600 },
 }

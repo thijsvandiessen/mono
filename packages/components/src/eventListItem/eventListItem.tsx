@@ -63,7 +63,7 @@ export const EventListItem = ({
               const itemTitle = item.title || startTime
 
               return (
-                <li key={item.id} className={styles.location}>
+                <li key={itemTitle + startTime} className={styles.location}>
                   <h3
                     className={classNames(styles.locationTitle, {
                       h5: size === 'small',
