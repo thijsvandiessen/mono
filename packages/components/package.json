@@ -22,7 +22,7 @@
     "react-datocms": "7.0.3",
     "classnames": "2.5.1",
     "next": "14.2.15",
-    "urql": "4.1.0"
+    "urql": "4.2.0"
   },
   "devDependencies": {
     "@react-google-maps/api": "2.20.3",
