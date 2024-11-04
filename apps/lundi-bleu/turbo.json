@@ -1,13 +1,11 @@
 {
   "extends": ["//"],
-  "pipeline": {
+  "tasks": {
     "build": {
-      "outputs": [".next/**", "!.next/cache/**"],
-      "dotEnv": [".env"]
+      "outputs": [".next/**", "!.next/cache/**"]
     },
     "analyze": {
-      "outputs": [".next/**", "!.next/cache/**"],
-      "dotEnv": [".env"]
+      "outputs": [".next/**", "!.next/cache/**"]
     },
     "lint": {},
     "test": {},
