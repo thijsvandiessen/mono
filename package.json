@@ -10,12 +10,16 @@
   ],
   "scripts": {
     "build": "npm run build --workspaces --if-present",
+    "turbo:build": "turbo build",
     "codegen": "npm run download-schema --workspace=packages/graphql && npm run codegen --workspace=packages/graphql",
-    "dev": "concurrently \"npm run dev --workspace=packages/graphql\" \"npm run dev --workspace=packages/hooks\" \"npm run dev --workspace=packages/utils\" \"npm run dev --workspace=apps/lundi-bleu\"",
+    "dev": "concurrently \"npm run dev --workspace=packages/graphql\" \"npm run dev --workspace=packages/hooks\" \"npm run dev --workspace=packages/utils\" \"npm run dev --workspace=apps/lundi-bleu\" \"npm run dev --workspace=apps/example\"",
     "lint": "npm run lint --workspaces",
+    "turbo:lint": "turbo lint",
     "lint-staged": "lint-staged",
     "prepare": "husky",
-    "test": "npm test --workspaces --if-present"
+    "test": "npm test --workspaces --if-present",
+    "turbo:test": "turbo test",
+    "turbo": "npm run turbo:build && npm run turbo:lint && npm run turbo:test"
   },
   "lint-staged": {
     "*.{js,cjs,ts,tsx}": "eslint --cache --fix",

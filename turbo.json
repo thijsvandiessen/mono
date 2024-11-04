@@ -1,9 +1,12 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
+  "tasks": {
     "build": {
-      "outputs": ["app/**/.next/**", "app/**/!.next/cache/**"],
-      "dotEnv": ["app/**/.env"],
+      "outputs": [
+        "app/**/.next/**",
+        "app/**/!.next/cache/**",
+        "packages/**/dist"
+      ],
       "dependsOn": ["^build"]
     },
     "analyze": {
@@ -11,14 +14,19 @@
         "app/**/.next/**",
         "app/**/!.next/cache/**",
         "packages/**/coverage/**"
-      ],
-      "dotEnv": ["app/**/.env"]
+      ]
     },
-    "lint": {},
-    "test": {}
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "test": {
+      "outputs": ["coverage/**"],
+      "dependsOn": ["build"]
+    }
   },
   "remoteCache": {
     "signature": false
   },
-  "globalDependencies": ["tsconfig.json"]
+  "globalDependencies": [".env", "tsconfig.json"],
+  "envMode": "strict"
 }

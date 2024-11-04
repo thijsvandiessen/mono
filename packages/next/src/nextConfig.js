@@ -19,6 +19,9 @@ export const customNextConfig = ({ domain }) => ({
       },
     ],
   },
+  sassOptions: {
+    silenceDeprecations: ['legacy-js-api'],
+  },
   rewrites: () =>
     Promise.resolve([
       {
