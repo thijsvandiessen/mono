@@ -42,7 +42,7 @@
     "@graphql-codegen/typescript-operations": "4.3.1",
     "@swc/core": "1.9.1",
     "@swc/jest": "0.2.37",
-    "@testing-library/jest-dom": "6.6.2",
+    "@testing-library/jest-dom": "6.6.3",
     "@testing-library/react": "16.0.1",
     "@types/jest": "29.5.14",
     "@types/node": "22.9.0",
