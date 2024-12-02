@@ -23,7 +23,3 @@ resource "google_apikeys_key" "maps" {
   }
 }
 
-resource "google_project" "mono" {
-  project_id = "vandiessen"
-  name       = "vandiessen"
-}
