@@ -1,5 +1,5 @@
 resource "google_project_service" "project" {
-  project = google_project.mono.id
+  project = "vandiessen"
   service = "iam.googleapis.com"
 
   timeouts {
@@ -13,7 +13,7 @@ resource "google_project_service" "project" {
 resource "google_apikeys_key" "maps" {
   name         = "maps-api-key"
   display_name = "google-maps-api-key"
-  project      = google_project.mono.name
+  project      = "vandiessen"
 
   restrictions {
     api_targets {
@@ -23,7 +23,3 @@ resource "google_apikeys_key" "maps" {
   }
 }
 
-resource "google_project" "mono" {
-  project_id = "vandiessen"
-  name       = "vandiessen"
-}
