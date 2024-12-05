@@ -37,7 +37,7 @@ export const NavigationSubMenu = ({ label, item }: SubMenuProps) => {
       </button>
       {visible && (
         <>
-          <ul className={classNames(styles.list, 'with-background')}>
+          <ul className={classNames(styles.list)}>
             {submenu?.map((item) => (
               <NavigationSubMenuItem
                 key={item.id}

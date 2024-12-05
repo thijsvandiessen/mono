@@ -32,7 +32,7 @@ export const Header = ({
 
   return (
     <HeaderTag
-      className={classNames(className, styles.header, 'with-background', {
+      className={classNames(className, styles.header, {
         [`${styles.withImage}`]: asset?.url,
         [`${styles.withBody}`]: !isEmptyDocument(body),
       })}

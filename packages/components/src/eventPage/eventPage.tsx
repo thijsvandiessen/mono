@@ -19,7 +19,7 @@ export const EventPage = async ({ slug }: Props) => {
 
   return (
     <article className={styles.root}>
-      <header className={classNames(styles.header, 'with-background')}>
+      <header className={classNames(styles.header)}>
         <div className={classNames(styles.titleContainer, 'content-layout')}>
           <h2>{data.title}</h2>
         </div>
