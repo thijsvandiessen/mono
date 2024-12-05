@@ -27,7 +27,7 @@ exports[`navigationSubMenu should render a button 2`] = `
       root label
     </button>
     <ul
-      class="list with-background"
+      class="list"
     >
       <li
         class="navItem"
