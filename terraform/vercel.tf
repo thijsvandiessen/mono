@@ -24,7 +24,6 @@ resource "vercel_deployment" "example" {
   project_id  = resource.vercel_project.example.id
   files       = data.vercel_project_directory.mono.files
   path_prefix = data.vercel_project_directory.mono.path
-  ref         = var.TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA
   production  = var.TFC_CONFIGURATION_VERSION_GIT_TAG != "" ? true : false
 }
 
@@ -41,7 +40,6 @@ resource "vercel_deployment" "lundi" {
   project_id  = resource.vercel_project.lundi.id
   files       = data.vercel_project_directory.mono.files
   path_prefix = data.vercel_project_directory.mono.path
-  ref         = var.TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA
   production  = var.TFC_CONFIGURATION_VERSION_GIT_TAG != "" ? true : false
 }
 
