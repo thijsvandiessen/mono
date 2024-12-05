@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.5](https://github.com/thijsvandiessen/mono/compare/v1.0.4...v1.0.5) (2024-12-05)
+
+
+### Bug Fixes
+
+* remove project creation ([#265](https://github.com/thijsvandiessen/mono/issues/265)) ([08642c8](https://github.com/thijsvandiessen/mono/commit/08642c8020dae81857dac0fcd4a43f345a3a0ced))
+* remove with background css class ([#266](https://github.com/thijsvandiessen/mono/issues/266)) ([0fee07b](https://github.com/thijsvandiessen/mono/commit/0fee07b099d4aa1a1008397db74cdda19e8ebd72))
+* updates ([#245](https://github.com/thijsvandiessen/mono/issues/245)) ([e88c415](https://github.com/thijsvandiessen/mono/commit/e88c4159e7c00baf7a55b8554eef477dd8b5a3d7))
+
 ## [1.0.4](https://github.com/thijsvandiessen/mono/compare/v1.0.3...v1.0.4) (2024-10-07)
 
 
