@@ -6,7 +6,7 @@ exports[`Concert component shows all the data 1`] = `
     class="root"
   >
     <header
-      class="header with-background"
+      class="header"
     >
       <div
         class="titleContainer content-layout"
