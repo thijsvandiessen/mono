@@ -1,0 +1,39 @@
+{
+  "id": "LvszBpVDSJeh3fRAn5HU8g",
+  "type": "item_type",
+  "attributes": {
+    "name": "Call to action",
+    "singleton": false,
+    "sortable": false,
+    "api_key": "call_to_action",
+    "ordering_direction": null,
+    "ordering_meta": null,
+    "tree": false,
+    "modular_block": true,
+    "draft_mode_active": false,
+    "draft_saving_active": false,
+    "all_locales_required": false,
+    "collection_appearance": "table",
+    "has_singleton_item": false,
+    "hint": null,
+    "inverse_relationships_enabled": false
+  },
+  "relationships": {
+    "fields": {
+      "data": [
+        { "id": "WdbowcVqRfubILlMegyi3Q", "type": "field" },
+        { "id": "cN18KNqOT6-_dyFcwWtgOw", "type": "field" },
+        { "id": "IlqAhUvQT-iFrpUGQRvhyw", "type": "field" },
+        { "id": "JPbMEP59SRGKS-x2dslR2Q", "type": "field" }
+      ]
+    },
+    "fieldsets": { "data": [] },
+    "singleton_item": { "data": null },
+    "ordering_field": { "data": null },
+    "title_field": { "data": null },
+    "image_preview_field": { "data": null },
+    "excerpt_field": { "data": null },
+    "workflow": { "data": null }
+  },
+  "meta": { "has_singleton_item": false }
+}
