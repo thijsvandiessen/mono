@@ -19,7 +19,7 @@
     "@mono/hooks": "1.0.0",
     "@mono/utils": "1.0.0",
     "datocms-structured-text-utils": "4.0.1",
-    "react-datocms": "7.0.3",
+    "react-datocms": "7.1.0",
     "classnames": "2.5.1",
     "next": "15.1.2",
     "urql": "4.2.1"
