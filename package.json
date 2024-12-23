@@ -26,7 +26,7 @@
     "*.{js,css,md}": "prettier --write"
   },
   "dependencies": {
-    "next": "14.2.15",
+    "next": "15.1.2",
     "react": "18.3.1",
     "react-datocms": "7.0.3",
     "react-dom": "18.3.1"
@@ -53,8 +53,8 @@
     "concurrently": "9.0.1",
     "dotenv": "16.4.5",
     "eslint": "8.57.0",
-    "eslint-config-next": "14.2.15",
-    "eslint-plugin-react-hooks": "4.6.2",
+    "eslint-config-next": "15.1.2",
+    "eslint-plugin-react-hooks": "5.1.0",
     "eslint-plugin-testing-library": "6.4.0",
     "husky": "9.1.6",
     "jest": "29.7.0",

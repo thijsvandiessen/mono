@@ -1,0 +1,38 @@
+{
+  "id": "CT-ACBJ8ToGE0zdVtDAMbw",
+  "type": "item_type",
+  "attributes": {
+    "name": "Video",
+    "singleton": false,
+    "sortable": false,
+    "api_key": "video",
+    "ordering_direction": null,
+    "ordering_meta": null,
+    "tree": false,
+    "modular_block": true,
+    "draft_mode_active": false,
+    "draft_saving_active": false,
+    "all_locales_required": false,
+    "collection_appearance": "table",
+    "has_singleton_item": false,
+    "hint": null,
+    "inverse_relationships_enabled": false
+  },
+  "relationships": {
+    "fields": {
+      "data": [
+        { "id": "AFWbzEhDRp6v7HYex54OZA", "type": "field" },
+        { "id": "S2U7SGJzRo-BL5vnRKmCuA", "type": "field" },
+        { "id": "PWeX-wKyRc-tR7P-VL5uxA", "type": "field" }
+      ]
+    },
+    "fieldsets": { "data": [] },
+    "singleton_item": { "data": null },
+    "ordering_field": { "data": null },
+    "title_field": { "data": null },
+    "image_preview_field": { "data": null },
+    "excerpt_field": { "data": null },
+    "workflow": { "data": null }
+  },
+  "meta": { "has_singleton_item": false }
+}
