@@ -9,7 +9,7 @@
     "lint:styles": "prettier . --write  --list-different"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "8.14.0",
+    "@typescript-eslint/eslint-plugin": "8.18.2",
     "@typescript-eslint/parser": "8.14.0",
     "eslint": "8.57.0",
     "eslint-config-next": "15.1.2",

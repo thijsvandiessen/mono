@@ -20,7 +20,7 @@
     "@mono/hooks": "1.0.0",
     "@mono/utils": "1.0.0",
     "datocms-structured-text-utils": "4.0.1",
-    "react-datocms": "7.0.3",
+    "react-datocms": "7.1.0",
     "classnames": "2.5.1",
     "next": "15.1.2",
     "urql": "4.2.1"
@@ -33,7 +33,7 @@
     "@types/node": "22.9.0",
     "@types/react": "18.3.12",
     "@types/react-dom": "18.3.1",
-    "@typescript-eslint/eslint-plugin": "8.14.0",
+    "@typescript-eslint/eslint-plugin": "8.18.2",
     "@typescript-eslint/parser": "8.14.0",
     "dotenv": "16.4.5",
     "eslint": "8.57.0",
