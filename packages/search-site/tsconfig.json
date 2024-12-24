@@ -1,5 +1,5 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {},
-  "include": ["src/**/*", "src/*"]
+  "include": ["src/**/*", "src/*", "./jest.config.ts"]
 }

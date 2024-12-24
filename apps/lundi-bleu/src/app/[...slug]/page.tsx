@@ -13,7 +13,6 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { slug } = await params
 
-  console.log(slug)
   const { data } = await getPageSeo({ slug })
   return data
 }

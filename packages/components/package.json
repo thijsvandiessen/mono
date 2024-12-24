@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@mono/graphql": "1.0.0",
+    "@mono/search-site": "1.0.0",
     "@mono/hooks": "1.0.0",
     "@mono/utils": "1.0.0",
     "datocms-structured-text-utils": "4.0.1",

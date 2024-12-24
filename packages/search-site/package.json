@@ -1,19 +1,18 @@
 {
-  "name": "@mono/utils",
+  "name": "@mono/search-site",
   "version": "1.0.0",
-  "description": "Utils",
   "type": "module",
   "exports": {
     ".": {
       "import": "./src/index.ts",
-      "module": "./dist/utils.umd.cjs",
-      "types": "./dist/utils.d.ts"
+      "module": "./dist/search-site.js",
+      "types": "./dist/search-site.d.ts"
     }
   },
-  "main": "dist/utils.umd.cjs",
-  "types": "dist/utils.d.ts",
+  "main": "dist/search-site.js",
+  "types": "dist/search-site.d.ts",
   "files": [
-    "dist/*"
+    "dist/**/*"
   ],
   "scripts": {
     "dev": "vite build --watch",
@@ -25,8 +24,12 @@
     "test": "jest"
   },
   "dependencies": {
+    "algoliasearch": "5.18.0",
+    "dotenv": "10.0.0",
+    "instantsearch.js": "4.75.6",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "react-instantsearch": "^7.13.9"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "6.6.3",
@@ -35,19 +38,7 @@
     "@types/node": "22.9.0",
     "@types/react": "18.3.12",
     "@types/react-dom": "18.3.1",
-    "@typescript-eslint/eslint-plugin": "8.18.2",
-    "@typescript-eslint/parser": "8.14.0",
-    "dotenv": "16.4.5",
-    "eslint": "8.57.0",
-    "eslint-config-next": "15.1.2",
-    "eslint-plugin-react-hooks": "5.1.0",
-    "eslint-plugin-testing-library": "6.4.0",
-    "jest": "29.7.0",
-    "jest-environment-jsdom": "29.7.0",
     "prettier": "3.3.3",
-    "pretty-quick": "4.0.0",
-    "ts-node": "10.9.2",
-    "turbo": "2.2.3",
     "typescript": "5.6.3",
     "vite": "5.4.11",
     "vite-plugin-dts": "4.3.0"

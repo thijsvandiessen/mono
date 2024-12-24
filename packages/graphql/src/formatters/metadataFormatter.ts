@@ -17,12 +17,16 @@ export const metadataFormatter = async (
   const defaultDescription = metadata?.description || ''
   const defaultLocale = 'nl-NL'
 
+  const url = new URL(slug, base)
+  const currentUrl = slug === 'homepage' ? base : url.href
+  const canonical = data ? currentUrl : undefined
+
   return {
     title,
     description: data?.seo?.description ?? defaultDescription,
     metadataBase: new URL(base),
     alternates: {
-      canonical: slug === 'homepage' ? base : `${base}/${slug}`,
+      canonical,
       // languages: {
       //   'en-US': '/en-US',
       //   'de-DE': '/de-DE',
