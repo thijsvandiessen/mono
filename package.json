@@ -26,7 +26,7 @@
     "*.{js,css,md}": "prettier --write"
   },
   "devDependencies": {
-    "@apollo/rover": "0.26.2",
+    "@apollo/rover": "0.26.3",
     "@commitlint/cli": "19.6.0",
     "@commitlint/config-conventional": "19.6.0",
     "@graphql-codegen/cli": "5.0.3",
