@@ -150,7 +150,6 @@ describe('metadataFormatter', () => {
   })
 
   it('should return correct homepage values', async () => {
-    jest.resetAllMocks()
     const res = await metadataFormatter(mockData, 'homepage')
     expect(res).toEqual(
       expect.objectContaining({
