@@ -9,6 +9,5 @@
       "WebWorker.AsyncIterable",
       "Webworker.Iterable"
     ]
-  },
-  "exclude": ["src/**/*.test.ts", "src/**/*.test.tsx"]
+  }
 }

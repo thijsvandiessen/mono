@@ -15,27 +15,6 @@ export const Footer = async () => {
       <div className={classNames(styles.content, 'content-layout')}>
         <div>
           <h2 className={classNames(styles.title)}>{metadata?.title}</h2>
-
-          {/* <address className={classNames(styles.address)}>
-            <p>Nieuwe Achtergracht 170</p>
-            <p>1018 WV Amsterdam</p>
-          </address> */}
-
-          {/* <ul className={classNames(styles.list, styles.logoList)}>
-            {
-              metadata?.socials?.map((social) =>
-                <li key={social.name}>
-                  <Link
-                    className={classNames(styles.logoLink)}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {social.name}
-                  </Link>
-                </li>)
-            }
-          </ul> */}
         </div>
 
         <div>

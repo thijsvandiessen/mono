@@ -36,7 +36,7 @@ describe('getPageSeo', () => {
     const { data } = await getPageSeo({ slug: '' })
     expect(data).toEqual({
       alternates: {
-        canonical: 'https://example.com/',
+        canonical: undefined,
       },
       title: '',
       description: '',
@@ -75,7 +75,7 @@ describe('getPageSeo', () => {
     mockedQuery.mockRejectedValue(new Error('error'))
     const { data, error } = await getPageSeo({ slug: '' })
     expect(data).toEqual({
-      alternates: { canonical: 'https://example.com/' },
+      alternates: { canonical: undefined },
       description: '',
       metadataBase: expect.objectContaining({
         host: 'example.com',
