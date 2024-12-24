@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.5](https://github.com/thijsvandiessen/mono/compare/v1.0.4...v1.0.5) (2024-12-24)
+
+
+### Bug Fixes
+
+* less errors ([#286](https://github.com/thijsvandiessen/mono/issues/286)) ([956c291](https://github.com/thijsvandiessen/mono/commit/956c291933334122e0217be5fb412e356374e00a))
+* less warnings ([#287](https://github.com/thijsvandiessen/mono/issues/287)) ([6f55560](https://github.com/thijsvandiessen/mono/commit/6f555604aee90a7769f81d436d5de4c928e5edb1))
+* remove project creation ([#265](https://github.com/thijsvandiessen/mono/issues/265)) ([08642c8](https://github.com/thijsvandiessen/mono/commit/08642c8020dae81857dac0fcd4a43f345a3a0ced))
+* remove with background css class ([#266](https://github.com/thijsvandiessen/mono/issues/266)) ([0fee07b](https://github.com/thijsvandiessen/mono/commit/0fee07b099d4aa1a1008397db74cdda19e8ebd72))
+* updates ([#245](https://github.com/thijsvandiessen/mono/issues/245)) ([e88c415](https://github.com/thijsvandiessen/mono/commit/e88c4159e7c00baf7a55b8554eef477dd8b5a3d7))
+* updates and scrips ([#281](https://github.com/thijsvandiessen/mono/issues/281)) ([abfedf2](https://github.com/thijsvandiessen/mono/commit/abfedf20dae977d5023c5f8b7d6f18422db5077b))
+
 ## [1.0.4](https://github.com/thijsvandiessen/mono/compare/v1.0.3...v1.0.4) (2024-10-07)
 
 
