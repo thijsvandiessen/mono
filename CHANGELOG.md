@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.6](https://github.com/thijsvandiessen/mono/compare/v1.0.5...v1.0.6) (2024-12-25)
+
+
+### Bug Fixes
+
+* slug type ([#291](https://github.com/thijsvandiessen/mono/issues/291)) ([400c40c](https://github.com/thijsvandiessen/mono/commit/400c40c76c2e767e813c0d3b9ffc1c787d7aa9b6))
+
 ## [1.0.5](https://github.com/thijsvandiessen/mono/compare/v1.0.4...v1.0.5) (2024-12-24)
 
 
