@@ -22,7 +22,6 @@ export function generateViewport(): Viewport {
 
 const Page = async ({ params }: PageProps) => {
   const { slug } = await params
-
   return <DefaultPage slug={slug.join('/')} />
 }
 
