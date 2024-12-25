@@ -4,7 +4,7 @@ import type { Metadata, Viewport } from 'next'
 import { viewport } from '@mono/utils'
 
 interface PageProps {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string[] }>
   searchParams: Promise<{ [key: string]: string[] | undefined }>
 }
 
@@ -12,7 +12,7 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { slug } = await params
-  const { data } = await getEventPageSeo({ slug })
+  const { data } = await getEventPageSeo({ slug: slug.join('/') })
   return data
 }
 
@@ -22,7 +22,7 @@ export function generateViewport(): Viewport {
 
 const Page = async ({ params }: PageProps) => {
   const { slug } = await params
-  return <EventPage slug={slug} />
+  return <EventPage slug={slug.join('/')} />
 }
 
 export default Page
