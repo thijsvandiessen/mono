@@ -1,18 +1,22 @@
 import React from 'react';
 import { Hit } from './hit';
 import { searchClient } from './searchClient'
-import { Hits, InstantSearch, RefinementList, SearchBox, Breadcrumb } from 'react-instantsearch';
+import { InstantSearch, RefinementList, SearchBox, Breadcrumb } from 'react-instantsearch';
+
+type Props = {
+  indexName: string;
+};
 
 
-export const SearchApp = () => {
+export const SearchApp = ({ indexName }: Props) => {
   return (
-    <InstantSearch searchClient={searchClient} indexName="test"
+    <InstantSearch searchClient={searchClient} indexName={indexName}
       routing={true}
       insights={false}
     >
       <SearchBox />
 
-      <Hits hitComponent={Hit} />
+      <Hit />
 
       <Breadcrumb
         attributes={[
@@ -23,9 +27,9 @@ export const SearchApp = () => {
       />
 
       <RefinementList
-        attribute="brand"
+        attribute="title"
         searchable={true}
-        searchablePlaceholder="Search brands"
+        searchablePlaceholder="Search"
         showMore={true}
       />
     </InstantSearch>

@@ -1,22 +1,13 @@
 import React from 'react';
+import { useInfiniteHits } from 'react-instantsearch';
 
-type Hit = {
-  image: string;
-  title: string;
-  categories: string[];
-  price: number;
-};
 
-type Props = {
-  hit: Hit
-}
+export const Hit = () => {
+  const { currentPageHits } = useInfiniteHits();
 
-export const Hit = ({ hit }: Props) => {
-
-  return (
-    <article>
-      <h1>{hit.title}</h1>
-      <p>${hit.price}</p>
-    </article>
-  );
+  return currentPageHits.map((hit) => (
+    <article key={hit.objectID}>
+      <h1><a href={hit.url}>{hit.title}</a></h1>
+    </article >
+  ));
 }
