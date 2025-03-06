@@ -5,6 +5,6 @@ import { SearchApp } from "@mono/search-site"
 export const SearchSite = () => {
 
   return (
-    <SearchApp />
+    <SearchApp indexName="concerts_pages" />
   )
 }
