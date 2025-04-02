@@ -5,19 +5,11 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./src/index.ts",
-      "module": "./dist/datocms.js",
-      "types": "./dist/datocms.d.ts"
+      "import": "./src/index.ts"
     }
   },
-  "main": "dist/datocms.js",
-  "types": "dist/datocms.d.ts",
-  "files": [
-    "dist/*"
-  ],
+  "main": "index.js",
   "scripts": {
-    "dev": "vite build --watch",
-    "build": "vite build",
     "lint": "npm run lint:styles && npm run lint:typescript",
     "lint:styles": "prettier . --write  --list-different",
     "lint:typescript": "tsc"
