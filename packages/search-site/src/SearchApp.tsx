@@ -1,12 +1,19 @@
-import React from 'react';
-import { Hit } from './hit';
+import React from 'react'
+import { Hit } from './hit'
 import { searchClient } from './searchClient'
-import { Hits, InstantSearch, RefinementList, SearchBox, Breadcrumb } from 'react-instantsearch';
-
+import {
+  Hits,
+  InstantSearch,
+  RefinementList,
+  SearchBox,
+  Breadcrumb,
+} from 'react-instantsearch'
 
 export const SearchApp = () => {
   return (
-    <InstantSearch searchClient={searchClient} indexName="test"
+    <InstantSearch
+      searchClient={searchClient}
+      indexName="test"
       routing={true}
       insights={false}
     >
@@ -15,11 +22,7 @@ export const SearchApp = () => {
       <Hits hitComponent={Hit} />
 
       <Breadcrumb
-        attributes={[
-          'categories.lvl0',
-          'categories.lvl1',
-          'categories.lvl2'
-        ]}
+        attributes={['categories.lvl0', 'categories.lvl1', 'categories.lvl2']}
       />
 
       <RefinementList
@@ -29,5 +32,5 @@ export const SearchApp = () => {
         showMore={true}
       />
     </InstantSearch>
-  );
+  )
 }
