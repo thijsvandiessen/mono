@@ -1,10 +1,7 @@
 'use client'
 
-import { SearchApp } from "@mono/search-site"
+import { SearchApp } from '@mono/search-site'
 
 export const SearchSite = () => {
-
-  return (
-    <SearchApp />
-  )
+  return <SearchApp />
 }
