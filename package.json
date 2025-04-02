@@ -34,7 +34,7 @@
     "@graphql-codegen/introspection": "4.0.3",
     "@graphql-codegen/typescript": "4.1.4",
     "@graphql-codegen/typescript-operations": "4.4.0",
-    "@swc/core": "1.9.2",
+    "@swc/core": "1.11.16",
     "@swc/jest": "0.2.37",
     "@testing-library/jest-dom": "6.6.3",
     "@testing-library/react": "16.1.0",
@@ -44,8 +44,8 @@
     "@types/react-dom": "18.3.1",
     "@typescript-eslint/eslint-plugin": "8.18.2",
     "@typescript-eslint/parser": "8.14.0",
-    "concurrently": "9.0.1",
-    "dotenv": "16.4.5",
+    "concurrently": "9.1.2",
+    "dotenv": "16.4.7",
     "eslint": "8.57.0",
     "eslint-config-next": "15.1.7",
     "eslint-plugin-react-hooks": "5.1.0",
@@ -57,11 +57,11 @@
     "prettier": "3.3.3",
     "pretty-quick": "4.0.0",
     "sass": "1.85.0",
-    "turbo": "2.3.3",
+    "turbo": "2.4.4",
     "typescript": "5.7.3"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.27.2"
+    "@rollup/rollup-linux-x64-gnu": "4.39.0"
   },
-  "packageManager": "npm@10.7.0"
+  "packageManager": "npm@11.2.0"
 }
