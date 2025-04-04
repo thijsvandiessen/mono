@@ -4,8 +4,7 @@ import React, { useState } from 'react'
 import classNames from 'classnames'
 import type { SubmenuItemFragment } from '@mono/graphql'
 import { NavigationSubMenuItem } from '../navigationSubMenuItem'
-import { useOutsideClick } from '@mono/hooks'
-import { useEscapeKey } from '@mono/hooks'
+import { useOutsideClick, useEscapeKey } from '@mono/hooks'
 import styles from './styles.module.scss'
 
 export interface SubMenuProps {
