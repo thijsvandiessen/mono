@@ -27,8 +27,8 @@
     "algoliasearch": "5.20.4",
     "dotenv": "16.4.7",
     "instantsearch.js": "4.78.1",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
     "react-instantsearch": "7.15.5"
   },
   "devDependencies": {
@@ -36,8 +36,8 @@
     "@testing-library/react": "16.1.0",
     "@types/jest": "29.5.14",
     "@types/node": "22.13.17",
-    "@types/react": "18.3.12",
-    "@types/react-dom": "18.3.1",
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.1",
     "prettier": "3.3.3",
     "typescript": "5.7.3",
     "vite": "6.2.4"

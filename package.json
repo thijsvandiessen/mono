@@ -26,8 +26,8 @@
     "*.{js,css,md}": "prettier --write"
   },
   "dependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
     "@apollo/rover": "0.28.1",
@@ -39,8 +39,8 @@
     "@testing-library/react": "16.1.0",
     "@types/jest": "29.5.14",
     "@types/node": "22.13.17",
-    "@types/react": "18.3.12",
-    "@types/react-dom": "18.3.1",
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.1",
     "@typescript-eslint/eslint-plugin": "8.18.2",
     "@typescript-eslint/parser": "8.14.0",
     "concurrently": "9.1.2",
