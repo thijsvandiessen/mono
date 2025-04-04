@@ -1,7 +1,7 @@
 'use client'
 import { EventListItem } from '../eventListItem'
 import type { Event as EventType } from '@mono/graphql'
-import React from 'react'
+import React, { useRef } from 'react'
 import { getEvents } from '@mono/graphql'
 import { useEventsMeta } from '@mono/hooks'
 import { useIntersectionObserver } from '@mono/hooks'
@@ -15,7 +15,7 @@ export const LoadMoreEvents = ({ initialSkip }: Props) => {
   const [skip, setSkip] = React.useState(initialSkip)
   const [loading, setLoading] = React.useState(false)
   const [events, setEvents] = React.useState<(EventType | undefined)[]>([])
-  const ref = React.useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement | null>(null)
   const { numberOfEvents } = useEventsMeta()
   const [entry] = useIntersectionObserver({
     enabled: Boolean(numberOfEvents),
