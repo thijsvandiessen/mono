@@ -5,6 +5,7 @@ import { ConcertsPage } from '@mono/components/src/concertsPage'
 import { viewport } from '@mono/utils'
 
 const pageSlug = 'concerten'
+
 export async function generateMetadata(): Promise<Metadata> {
   const { data } = await getPageSeo({ slug: pageSlug })
   return data
@@ -14,8 +15,6 @@ export function generateViewport(): Viewport {
   return viewport
 }
 
-const Page = () => {
-  return <ConcertsPage />
-}
+const Page = () => <ConcertsPage />
 
 export default Page

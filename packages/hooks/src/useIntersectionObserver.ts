@@ -1,21 +1,19 @@
-import React from 'react'
+import { useEffect, useState, type RefObject } from 'react'
 
 interface Props {
   enabled?: boolean
-  ref: React.RefObject<Element> | null
+  ref: RefObject<HTMLElement | null>
   options?: IntersectionObserverInit
 }
 
 export const useIntersectionObserver = ({ enabled, ref, options }: Props) => {
-  const [entry, setEntry] = React.useState<
-    IntersectionObserverEntry | undefined
-  >()
+  const [entry, setEntry] = useState<IntersectionObserverEntry | undefined>()
 
   const callback = ([entry]: IntersectionObserverEntry[]): void => {
     setEntry(entry)
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!enabled) return
     if (!ref?.current) return
     const hasIOSupport = !!window.IntersectionObserver

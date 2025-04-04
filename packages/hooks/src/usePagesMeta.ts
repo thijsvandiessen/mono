@@ -1,10 +1,10 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { getPagesMeta } from '@mono/graphql'
 
 export const usePagesMeta = () => {
-  const [numberOfPages, setNumberOfPages] = React.useState<number | undefined>()
+  const [numberOfPages, setNumberOfPages] = useState<number | undefined>()
 
-  React.useEffect(() => {
+  useEffect(() => {
     async function getData() {
       const { data } = await getPagesMeta()
       if (!data?.count) return

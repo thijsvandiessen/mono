@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { getLocation } from '@mono/graphql'
 import type { Location } from '@mono/graphql'
 
@@ -7,9 +7,9 @@ export interface LocationProps {
 }
 
 export const useLocation = ({ id }: LocationProps) => {
-  const [location, setLocation] = React.useState<Location | null>(null)
+  const [location, setLocation] = useState<Location | null>(null)
 
-  React.useEffect(() => {
+  useEffect(() => {
     async function getData() {
       const { data } = await getLocation({ id })
       setLocation(data)

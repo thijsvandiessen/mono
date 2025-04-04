@@ -1,12 +1,12 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 
 export const useDimensions = () => {
-  const [dimensions, setDimensions] = React.useState({
+  const [dimensions, setDimensions] = useState({
     width: globalThis.innerWidth,
     height: globalThis.innerHeight,
   })
 
-  React.useEffect(() => {
+  useEffect(() => {
     function handleResize(entries: ResizeObserverEntry[]) {
       for (const entry of entries) {
         requestAnimationFrame(() => {

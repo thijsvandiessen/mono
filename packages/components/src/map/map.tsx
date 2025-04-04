@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useCallback } from 'react'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api'
 
 interface Pin {
@@ -26,7 +26,7 @@ export const Map = ({ id, pin, googleMapsApiKey, dimensions }: Props) => {
     googleMapsApiKey,
   })
 
-  const onLoad = React.useCallback(
+  const onLoad = useCallback(
     (map: google.maps.Map | null | google.maps.StreetViewPanorama) => {
       const marker = new google.maps.Marker({
         position: { lat: pin.lat, lng: pin.lng },

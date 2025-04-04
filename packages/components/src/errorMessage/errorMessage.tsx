@@ -4,7 +4,7 @@ export const ErrorMessage = ({
   error,
   reset,
 }: {
-  error: Error & { digest?: string }
+  error: Error
   reset: () => void
 }) => {
   useEffect(() => {

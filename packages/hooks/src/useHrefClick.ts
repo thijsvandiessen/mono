@@ -1,7 +1,7 @@
-import React from 'react'
+import { useEffect } from 'react'
 
 export const useHrefClick = (callback: () => void) => {
-  React.useEffect(() => {
+  useEffect(() => {
     function handle(event: MouseEvent) {
       if (!event.target) return
       if (!('href' in event.target)) return

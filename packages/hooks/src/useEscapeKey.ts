@@ -1,7 +1,7 @@
-import React from 'react'
+import { useEffect } from 'react'
 
 export const useEscapeKey = (callback: () => void) => {
-  React.useEffect(() => {
+  useEffect(() => {
     function checkKeyPress(event: KeyboardEvent) {
       if (event.key !== 'Escape') return
       callback()
