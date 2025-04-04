@@ -1,8 +1,6 @@
-import { useEffect, useRef, type RefObject } from 'react'
+import { useEffect, useRef } from 'react'
 
-export const useOutsideClick = <T>(
-  callback: () => void
-): RefObject<T | null> => {
+export const useOutsideClick = <T>(callback: () => void) => {
   const ref = useRef<T | null>(null)
 
   useEffect(() => {
