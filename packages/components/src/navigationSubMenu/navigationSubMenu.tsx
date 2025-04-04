@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { type RefObject, useState } from 'react'
 import classNames from 'classnames'
 import type { SubmenuItemFragment } from '@mono/graphql'
 import { NavigationSubMenuItem } from '../navigationSubMenuItem'
@@ -16,7 +16,7 @@ export interface SubMenuProps {
 export const NavigationSubMenu = ({ label, item }: SubMenuProps) => {
   const submenu: SubmenuItemFragment['menu'] = JSON.parse(item)
   const [visible, setVisible] = useState(false)
-  const ref = useOutsideClick<HTMLLIElement>(() => setVisible(false))
+  const ref = useOutsideClick<HTMLLIElement | null>(() => setVisible(false))
   useEscapeKey(() => setVisible(false))
 
   const handleClick = () => {
@@ -26,7 +26,10 @@ export const NavigationSubMenu = ({ label, item }: SubMenuProps) => {
   if (!label) return null
 
   return (
-    <li className={classNames(styles.listItem)} ref={ref}>
+    <li
+      className={classNames(styles.listItem)}
+      ref={ref as RefObject<HTMLLIElement>}
+    >
       <button
         className={classNames(styles.button, 'text-large')}
         disabled={Boolean(submenu?.length === 0)}
