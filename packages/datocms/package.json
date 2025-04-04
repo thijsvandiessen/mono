@@ -15,7 +15,7 @@
     "lint:typescript": "tsc"
   },
   "dependencies": {
-    "@datocms/cma-client-node": "3.4.0",
+    "@datocms/cma-client-node": "4.0.1",
     "dotenv": "16.4.7",
     "memfs": "4.15.1",
     "zod": "3.24.1"
