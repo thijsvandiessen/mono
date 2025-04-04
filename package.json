@@ -25,10 +25,6 @@
     "*.{js,cjs,ts,tsx}": "eslint --cache --fix",
     "*.{js,css,md}": "prettier --write"
   },
-  "dependencies": {
-    "react": "19.1.0",
-    "react-dom": "19.1.0"
-  },
   "devDependencies": {
     "@apollo/rover": "0.28.1",
     "@commitlint/cli": "19.6.0",
@@ -39,6 +35,7 @@
     "@testing-library/react": "16.1.0",
     "@types/jest": "29.5.14",
     "@types/node": "22.13.17",
+    "ts-node": "10.9.2",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
     "@typescript-eslint/eslint-plugin": "8.18.2",
