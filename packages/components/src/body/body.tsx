@@ -1,10 +1,10 @@
 import './global.scss'
 
 import { DefaultLayout } from '../defaultLayout'
-import React from 'react'
+import React, { type ReactElement } from 'react'
 
 interface Props {
-  children: React.ReactElement
+  children: ReactElement
 }
 
 export const Body = ({ children }: Props) => {

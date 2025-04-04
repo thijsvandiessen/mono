@@ -8,7 +8,7 @@ import { NavigationItem } from '../navigationItem'
 
 import styles from './styles.module.scss'
 
-export const MobileMenuItems: React.FC = () => {
+export const MobileMenuItems = () => {
   const [result] = useQuery({ query: GetGeneralInfoDocument })
 
   return (

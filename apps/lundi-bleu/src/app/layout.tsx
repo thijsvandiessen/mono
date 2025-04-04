@@ -1,9 +1,9 @@
 import { Body } from '@mono/components/src/body'
 
-import React from 'react'
+import React, { type ReactElement } from 'react'
 
 interface Props {
-  children: React.ReactElement
+  children: ReactElement
 }
 
 const RootLayout = ({ children }: Props) => {
