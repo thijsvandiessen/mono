@@ -12,7 +12,7 @@
     "lint:js": "eslint . --fix",
     "lint:styles": "prettier . --write --list-different",
     "lint:typescript": "tsc",
-    "test": "vitest"
+    "test": "vitest run"
   },
   "dependencies": {
     "@mono/graphql": "1.0.0",
