@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.8](https://github.com/thijsvandiessen/mono/compare/v1.0.7...v1.0.8) (2025-04-06)
+
+
+### Bug Fixes
+
+* linting ([3915292](https://github.com/thijsvandiessen/mono/commit/39152921b9ae8874e57d6bc1eff642df0b1dcdc4))
+* linting ([#334](https://github.com/thijsvandiessen/mono/issues/334)) ([ab17ae6](https://github.com/thijsvandiessen/mono/commit/ab17ae6540217268dfb7cd70580a87fe991baf67))
+* update vite ([#333](https://github.com/thijsvandiessen/mono/issues/333)) ([0118835](https://github.com/thijsvandiessen/mono/commit/01188355de13a23961c22a9efce0c6199e67c759))
+* updates ([#332](https://github.com/thijsvandiessen/mono/issues/332)) ([a3676a8](https://github.com/thijsvandiessen/mono/commit/a3676a8afae1743c4f9c84b05f2f930282e1fbd3))
+
 ## [1.0.7](https://github.com/thijsvandiessen/mono/compare/v1.0.6...v1.0.7) (2024-12-25)
 
 
