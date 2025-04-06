@@ -3,17 +3,18 @@ import { Location, type Props } from './location'
 import { getLocation } from '@mono/graphql'
 import { resolvedComponent } from '@mono/utils'
 import { render, screen } from '@testing-library/react'
+import { describe, it, expect, vi } from 'vitest'
 
-jest.mock('@mono/graphql', () => {
-  const originalModule = jest.requireActual('@mono/graphql')
+vi.mock('@mono/graphql', () => {
+  const originalModule = vi.importActual('@mono/graphql')
   return {
     __esModule: true,
     ...originalModule,
-    getLocation: jest.fn(),
+    getLocation: vi.fn(),
   }
 })
 
-const getLocationMock = jest.mocked(getLocation)
+const getLocationMock = vi.mocked(getLocation)
 
 describe('Concert component', () => {
   it('shows all the data', async () => {

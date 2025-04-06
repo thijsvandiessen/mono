@@ -3,26 +3,27 @@ import { EventPage, type Props } from './eventPage'
 import { getEventPage } from '@mono/graphql'
 import { resolvedComponent } from '@mono/utils'
 import { render } from '@testing-library/react'
+import { describe, it, expect, vi } from 'vitest'
 
-jest.mock('../navigation', () => {
-  const originalModule = jest.requireActual('../navigation')
+vi.mock('../navigation', () => {
+  const originalModule = vi.importActual('../navigation')
   return {
     __esModule: true,
     ...originalModule,
-    Navigation: jest.fn(() => <div>[Navigation]</div>),
+    Navigation: vi.fn(() => <div>[Navigation]</div>),
   }
 })
 
-jest.mock('@mono/graphql', () => {
-  const originalModule = jest.requireActual('@mono/graphql')
+vi.mock('@mono/graphql', () => {
+  const originalModule = vi.importActual('@mono/graphql')
   return {
     __esModule: true,
     ...originalModule,
-    getEventPage: jest.fn(),
+    getEventPage: vi.fn(),
   }
 })
 
-const getEventPageMock = jest.mocked(getEventPage)
+const getEventPageMock = vi.mocked(getEventPage)
 
 describe('Concert component', () => {
   it('shows all the data', async () => {

@@ -1,15 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Concert component shows all the data 1`] = `
+exports[`Concert component > shows all the data 1`] = `
 <div>
   <article
-    class="root"
+    class="_root_b2d4cd"
   >
     <header
-      class="header"
+      class="_header_b2d4cd"
     >
       <div
-        class="titleContainer content-layout"
+        class="_titleContainer_b2d4cd content-layout"
       >
         <h2>
           title
@@ -17,21 +17,21 @@ exports[`Concert component shows all the data 1`] = `
       </div>
     </header>
     <div
-      class="container content-layout noGrid"
+      class="_container_b2d4cd content-layout _noGrid_b2d4cd"
     >
       <aside
-        class="sidebar"
+        class="_sidebar_b2d4cd"
       >
         <div
-          class="sidebarContent"
+          class="_sidebarContent_b2d4cd"
         />
       </aside>
       <div
-        class="content"
+        class="_content_b2d4cd"
       />
     </div>
     <div
-      class="locations"
+      class="_locations_b2d4cd"
     />
   </article>
 </div>

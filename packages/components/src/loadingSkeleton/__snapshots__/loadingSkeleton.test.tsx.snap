@@ -1,9 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Loading skeleton component should render 1`] = `
+exports[`Loading skeleton component > should render 1`] = `
 <div>
   <div
-    class="loadingWrapper"
+    class="_loadingWrapper_a0a619"
   />
 </div>
 `;

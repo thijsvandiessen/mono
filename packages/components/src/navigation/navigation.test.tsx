@@ -4,31 +4,30 @@ import { getGeneralInfo } from '@mono/graphql'
 import { mockMenuData } from './mocks/mockMenuData'
 import { resolvedComponent } from '@mono/utils'
 import { render, screen } from '@testing-library/react'
+import { describe, it, expect, vi } from 'vitest'
 
-global.ResizeObserver = jest.fn().mockImplementation(() => ({
-  observe: jest.fn(),
-  unobserve: jest.fn(),
-  disconnect: jest.fn(),
+global.ResizeObserver = vi.fn().mockImplementation(() => ({
+  observe: vi.fn(),
+  unobserve: vi.fn(),
+  disconnect: vi.fn(),
 }))
 
-jest.mock('@mono/graphql', () => {
-  const originalModule = jest.requireActual('@mono/graphql')
-  return {
-    __esModule: true,
-    ...originalModule,
-    getGeneralInfo: jest.fn(),
-    getSiteMetadata: jest.fn(() => ({
-      metadata: {
-        title: '',
-        description: 'Default description',
-        base_url: 'https://example.com',
-      },
-      error: undefined,
-    })),
-  }
-})
+vi.mock('@mono/graphql', () => ({
+  ...vi.importActual('@mono/graphql'),
+  __esModule: true,
+  client: vi.fn(),
+  getGeneralInfo: vi.fn(),
+  getSiteMetadata: vi.fn(() => ({
+    metadata: {
+      title: '',
+      description: 'Default description',
+      base_url: 'https://example.com',
+    },
+    error: undefined,
+  })),
+}))
 
-const getGeneralInfoMock = jest.mocked(getGeneralInfo)
+const getGeneralInfoMock = vi.mocked(getGeneralInfo)
 
 describe('Concert component', () => {
   it('shows all the data', async () => {

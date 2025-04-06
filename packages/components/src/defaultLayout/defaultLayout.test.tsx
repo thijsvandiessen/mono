@@ -1,22 +1,20 @@
-import React from 'react'
 import { DefaultLayout } from './defaultLayout'
 import { render } from '@testing-library/react'
+import { vi, describe, it, expect } from 'vitest'
 
-jest.mock('../navigation', () => {
-  const originalModule = jest.requireActual('../navigation')
+vi.mock('../navigation', () => {
+  const originalModule = vi.importActual('../navigation')
   return {
-    __esModule: true,
     ...originalModule,
-    Navigation: jest.fn(() => <nav>[Navigation]</nav>),
+    Navigation: vi.fn(() => <nav>[Navigation]</nav>),
   }
 })
 
-jest.mock('../footer', () => {
-  const originalModule = jest.requireActual('../footer')
+vi.mock('../footer', () => {
+  const originalModule = vi.importActual('../footer')
   return {
-    __esModule: true,
     ...originalModule,
-    Footer: jest.fn(() => <footer>[Footer]</footer>),
+    Footer: vi.fn(() => <footer>[Footer]</footer>),
   }
 })
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import { useRef } from 'react'
 import { renderHook } from '@testing-library/react'
 import { useIntersectionObserver } from './useIntersectionObserver'
 
@@ -17,7 +17,7 @@ describe('useIntersectionObserver', () => {
 
     const mockHTMLDivElement = document.createElement('div')
     const { result, unmount } = renderHook(() => {
-      const elementRef = React.useRef<HTMLDivElement>(mockHTMLDivElement)
+      const elementRef = useRef<HTMLElement>(mockHTMLDivElement)
       return useIntersectionObserver({ enabled: true, ref: elementRef })
     })
     expect(result.current).toEqual([{ isIntersecting: true }])

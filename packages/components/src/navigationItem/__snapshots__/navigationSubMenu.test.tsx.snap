@@ -1,12 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`NavigationItem should render a link 1`] = `
+exports[`NavigationItem > should render a link 1`] = `
 <div>
   <li
-    class="navItem"
+    class="_navItem_df8f2d"
   >
     <a
-      class="link text-large"
+      class="_link_df8f2d text-large"
       href="/url"
     >
       homepage

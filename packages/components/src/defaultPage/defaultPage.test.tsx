@@ -3,26 +3,27 @@ import { DefaultPage, type Props } from './defaultPage'
 import { getPage } from '@mono/graphql'
 import { resolvedComponent } from '@mono/utils'
 import { render } from '@testing-library/react'
+import { vi, describe, it, expect } from 'vitest'
 
-jest.mock('../navigation', () => {
-  const originalModule = jest.requireActual('../navigation')
+vi.mock('../navigation', () => {
+  const originalModule = vi.importActual('../navigation')
   return {
     __esModule: true,
     ...originalModule,
-    Navigation: jest.fn(() => <div>[Navigation]</div>),
+    Navigation: vi.fn(() => <div>[Navigation]</div>),
   }
 })
 
-jest.mock('@mono/graphql', () => {
-  const originalModule = jest.requireActual('@mono/graphql')
+vi.mock('@mono/graphql', () => {
+  const originalModule = vi.importActual('@mono/graphql')
   return {
     __esModule: true,
     ...originalModule,
-    getPage: jest.fn(),
+    getPage: vi.fn(),
   }
 })
 
-const getPageMock = jest.mocked(getPage)
+const getPageMock = vi.mocked(getPage)
 
 describe('Concert component', () => {
   it('shows all the data', async () => {
