@@ -3,4 +3,5 @@
 .svc
 .swc
 .turbo
-CHANGELOG.md
+coverage
+dist
