@@ -5,18 +5,19 @@ import { getFutureEvents } from '@mono/graphql'
 import { mockEvent } from './mocks/mockEvents'
 import { resolvedComponent } from '@mono/utils'
 import { render, screen } from '@testing-library/react'
+import { describe, it, expect, vi } from 'vitest'
 
-jest.mock('@mono/graphql', () => {
-  const originalModule = jest.requireActual('@mono/graphql')
+vi.mock('@mono/graphql', () => {
+  const originalModule = vi.importActual('@mono/graphql')
   return {
     __esModule: true,
     ...originalModule,
-    getFutureEvents: jest.fn(),
+    getFutureEvents: vi.fn(),
   }
 })
 
-jest.mock('../eventListItem/eventListItem', () => {
-  const originalModule = jest.requireActual('../eventListItem/eventListItem')
+vi.mock('../eventListItem/eventListItem', () => {
+  const originalModule = vi.importActual('../eventListItem/eventListItem')
   return {
     __esModule: true,
     ...originalModule,
@@ -28,16 +29,11 @@ jest.mock('../eventListItem/eventListItem', () => {
   }
 })
 
-const getFutureEventsMock = jest.mocked(getFutureEvents)
-
-afterAll(() => {
-  jest.setSystemTime()
-  jest.useRealTimers()
-})
+const getFutureEventsMock = vi.mocked(getFutureEvents)
 
 describe('FutureEvents component', () => {
   it('shows all the data', async () => {
-    jest.useFakeTimers().setSystemTime(new Date('2020-01-01'))
+    vi.useFakeTimers().setSystemTime(new Date('2020-01-01'))
 
     getFutureEventsMock.mockResolvedValue({
       data: [mockEvent],
@@ -56,7 +52,7 @@ describe('FutureEvents component', () => {
   })
 
   it('shows no data', async () => {
-    jest.useFakeTimers().setSystemTime(new Date('2022-01-01'))
+    vi.useFakeTimers().setSystemTime(new Date('2022-01-01'))
 
     getFutureEventsMock.mockResolvedValue({
       data: [mockEvent],

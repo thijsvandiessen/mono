@@ -3,26 +3,22 @@ import React from 'react'
 import { getEvents } from '@mono/graphql'
 import { mockEvent } from './mocks/mockEvents'
 import { render, screen } from '@testing-library/react'
+import { describe, it, expect, vi } from 'vitest'
 
-jest.mock('@mono/graphql', () => {
-  const originalModule = jest.requireActual('@mono/graphql')
-  return {
-    __esModule: true,
-    ...originalModule,
-    getEvents: jest.fn(),
-  }
-})
+vi.mock('@mono/graphql', () => ({
+  __esModule: true,
+  ...vi.importActual('@mono/graphql'),
+  getEvents: vi.fn(),
+}))
 
-jest.mock('@mono/hooks', () => {
-  const originalModule = jest.requireActual('@mono/hooks')
-  return {
-    __esModule: true,
-    ...originalModule,
-    useEventsMeta: () => ({ numberOfEvents: 10 }),
-  }
-})
+vi.mock('@mono/hooks', () => ({
+  __esModule: true,
+  ...vi.importActual('@mono/hooks'),
+  useEventsMeta: vi.fn(() => ({ numberOfEvents: 10 })),
+  useIntersectionObserver: vi.fn(() => []),
+}))
 
-const getEventsMock = jest.mocked(getEvents)
+const getEventsMock = vi.mocked(getEvents)
 
 describe('Events component', () => {
   it('shows all the data', () => {

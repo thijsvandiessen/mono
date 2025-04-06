@@ -3,8 +3,7 @@ import { EventListItem } from '../eventListItem'
 import type { Event as EventType } from '@mono/graphql'
 import React, { useEffect, useRef, useState } from 'react'
 import { getEvents } from '@mono/graphql'
-import { useEventsMeta } from '@mono/hooks'
-import { useIntersectionObserver } from '@mono/hooks'
+import { useEventsMeta, useIntersectionObserver } from '@mono/hooks'
 import { ConcertModelOrderBy } from '@mono/graphql'
 
 export interface Props {

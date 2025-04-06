@@ -1,24 +1,24 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Concert component shows all the data 1`] = `
+exports[`Concert component > shows all the data 1`] = `
 <div>
   <nav
-    class="root content-layout"
+    class="_root_4e3066 content-layout"
   >
     <div
-      class="content"
+      class="_content_4e3066"
     >
       <div
-        class="root"
+        class="_root_7f7da6"
       >
         <button
           aria-label="Menu"
-          class="menuButton"
+          class="_menuButton_7f7da6"
           type="button"
         >
           <svg
             aria-hidden="true"
-            class="menuIcon icon"
+            class="_menuIcon_7f7da6 _icon_68e996"
             height="24px"
             viewBox="0 0 24 24"
             width="24px"
@@ -32,33 +32,33 @@ exports[`Concert component shows all the data 1`] = `
         </button>
       </div>
       <ul
-        class="list"
+        class="_list_4e3066"
       >
         <li
-          class="navItem"
+          class="_navItem_df8f2d"
         >
           <a
-            class="link text-large"
+            class="_link_df8f2d text-large"
             href="/contact"
           >
             contact
           </a>
         </li>
         <li
-          class="navItem"
+          class="_navItem_df8f2d"
         >
           <a
-            class="link text-large"
+            class="_link_df8f2d text-large"
             href="/"
           >
             homepage
           </a>
         </li>
         <li
-          class="listItem"
+          class="_listItem_906789"
         >
           <button
-            class="button text-large"
+            class="_button_906789 text-large"
             type="button"
           >
             level 1

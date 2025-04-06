@@ -1,9 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Default layout shows all the data 1`] = `
+exports[`Default layout > shows all the data 1`] = `
 <div>
   <div
-    class="main"
+    class="_main_36036d"
   >
     <nav>
       [Navigation]

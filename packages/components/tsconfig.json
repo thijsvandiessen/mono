@@ -1,5 +1,13 @@
 {
   "extends": "../../tsconfig.json",
-  "compilerOptions": {},
-  "include": ["./declaration.d.ts", "src/**/*", "src/*"]
+  "compilerOptions": {
+    "types": ["vitest/jsdom", "@testing-library/jest-dom/vitest"]
+  },
+  "include": [
+    "declaration.d.ts",
+    "vitest.config.ts",
+    "vitest.setup.ts",
+    "src/**/*",
+    "src/*"
+  ]
 }
