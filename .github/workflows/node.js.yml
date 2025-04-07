@@ -57,10 +57,10 @@ jobs:
         run: npx oxlint@0.2.8 -D correctness -D perf -A debugger -A eqeqeq -c ./.eslintrc.json
 
       - name: check formatting, eslint and typescript
-        run: npx turbo run lint
+        run: npx turbo@2.4.4 run lint
 
       - name: Build project
-        run: npx turbo run build
+        run: npx turbo@2.4.4 run build
 
       - name: Test project
-        run: npx turbo run test
+        run: npx turbo@2.4.4 run test
