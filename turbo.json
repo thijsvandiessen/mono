@@ -5,7 +5,7 @@
       "outputs": [
         "app/**/.next/**",
         "app/**/!.next/cache/**",
-        "packages/**/dist"
+        "packages/**/dist/**"
       ],
       "dependsOn": ["^build"]
     },
@@ -24,6 +24,10 @@
     },
     "test": {
       "dependsOn": []
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
     }
   },
   "remoteCache": {
