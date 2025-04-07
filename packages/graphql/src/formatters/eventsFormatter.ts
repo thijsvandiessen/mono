@@ -7,7 +7,7 @@ export const eventsFormatter = (events: ConcertDetailFragment[]): Event[] =>
     const event = eventFormatter(currentEvent)
 
     if (event?.id) {
-      return [...prevValue, event]
+      prevValue.push(event)
     }
 
     return prevValue

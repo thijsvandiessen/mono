@@ -12,7 +12,7 @@ export interface Props {
 export const FutureEvents = async ({ skip, first }: Props) => {
   const { data } = await getFutureEvents({ skip, first })
 
-  const events = data?.reduce((previousValues: Event[], currentvalue) => {
+  const events = data.reduce((previousValues: Event[], currentvalue) => {
     const future = currentvalue?.locations.find((location) => {
       if (!location?.startTime) {
         return false

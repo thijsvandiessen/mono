@@ -16,12 +16,14 @@
         "packages/**/coverage/**"
       ]
     },
+    "codegen": {
+      "outputs": ["packages/graphql/src/generated/**"]
+    },
     "lint": {
-      "dependsOn": ["^lint"]
+      "dependsOn": []
     },
     "test": {
-      "outputs": ["coverage/**"],
-      "dependsOn": ["build"]
+      "dependsOn": []
     }
   },
   "remoteCache": {
