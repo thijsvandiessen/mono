@@ -26,7 +26,7 @@
     "react-dom": "19.1.0",
     "react-datocms": "7.2.2",
     "@react-google-maps/api": "2.20.6",
-    "urql": "4.2.1"
+    "urql": "4.2.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "6.6.3",
