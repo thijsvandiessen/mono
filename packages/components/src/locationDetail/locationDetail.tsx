@@ -1,5 +1,5 @@
 import React from 'react'
-import { getLocation } from '@mono/graphql'
+import { getLocation } from '@mono/datocms'
 import { LocationDetailView } from './locationDetailView'
 
 export interface Props {

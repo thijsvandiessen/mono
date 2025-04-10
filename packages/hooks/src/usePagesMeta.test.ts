@@ -1,9 +1,9 @@
 import { renderHook, waitFor } from '@testing-library/react'
 import { usePagesMeta } from './usePagesMeta'
-import { getPagesMeta } from '@mono/graphql'
+import { getPagesMeta } from '@mono/datocms'
 
-jest.mock('@mono/graphql', () => {
-  const originalModule = jest.requireActual('@mono/graphql')
+jest.mock('@mono/datocms', () => {
+  const originalModule = jest.requireActual('@mono/datocms')
   return {
     __esModule: true,
     ...originalModule,

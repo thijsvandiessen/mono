@@ -1,9 +1,9 @@
-import { getEventsMeta } from '@mono/graphql'
+import { getEventsMeta } from '@mono/datocms'
 import { useEventsMeta } from './useEventsMeta'
 import { renderHook, waitFor } from '@testing-library/react'
 
-jest.mock('@mono/graphql', () => {
-  const originalModule = jest.requireActual('@mono/graphql')
+jest.mock('@mono/datocms', () => {
+  const originalModule = jest.requireActual('@mono/datocms')
   return {
     __esModule: true,
     ...originalModule,

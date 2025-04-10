@@ -1,13 +1,7 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["src/**/*", "src/*"],
   "compilerOptions": {
-    "lib": [
-      "ESNext",
-      "WebWorker",
-      "WebWorker.ImportScripts",
-      "WebWorker.AsyncIterable",
-      "Webworker.Iterable"
-    ]
-  }
+    "lib": ["ESNext", "DOM"]
+  },
+  "include": ["src/**/*", "src/*"]
 }

@@ -10,8 +10,8 @@
   ],
   "scripts": {
     "build": "npm run build --workspaces --if-present",
-    "codegen": "npm run download-schema --workspace=packages/graphql && npm run codegen --workspace=packages/graphql",
-    "dev": "concurrently \"npm run dev --workspace=packages/graphql\" \"npm run dev --workspace=packages/hooks\" \"npm run dev --workspace=packages/utils\" \"npm run dev --workspace=apps/lundi-bleu\" \"npm run dev --workspace=apps/example\"",
+    "codegen": "npm run download-schema --workspace=packages/datocms && npm run codegen --workspace=packages/datocms",
+    "dev": "concurrently \"npm run dev --workspace=packages/datocms\" \"npm run dev --workspace=packages/hooks\" \"npm run dev --workspace=packages/utils\" \"npm run dev --workspace=apps/lundi-bleu\" \"npm run dev --workspace=apps/example\"",
     "lint": "npm run lint --workspaces --if-present",
     "lint-staged": "lint-staged",
     "prepare": "husky",

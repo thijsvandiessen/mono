@@ -1,5 +1,5 @@
 import { EventPage } from '@mono/components/src/eventPage'
-import { getEventPageSeo } from '@mono/graphql'
+import { getEventPageSeo } from '@mono/datocms'
 import type { Metadata, Viewport } from 'next'
 import { viewport } from '@mono/utils'
 

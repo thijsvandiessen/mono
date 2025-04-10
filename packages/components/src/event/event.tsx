@@ -1,6 +1,6 @@
 import React from 'react'
 import { EventListItem } from '../eventListItem'
-import { getEvent } from '@mono/graphql'
+import { getEvent } from '@mono/datocms'
 
 export interface Props {
   className?: string

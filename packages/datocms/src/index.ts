@@ -1,17 +1,34 @@
-import { buildClient, LogLevel } from '@datocms/cma-client-node'
-import { downloadModels } from './downloadModels'
+export { client } from './gqlClient'
+export {
+  getEvent,
+  getEventPage,
+  getEventPageSeo,
+  getEvents,
+  getEventsMeta,
+  getEventUrls,
+  getFutureEvents,
+  getGeneralInfo,
+  getLocation,
+  getLocations,
+  getPage,
+  getPages,
+  getPageSeo,
+  getPagesMeta,
+  getSiteInfo,
+  getSiteMetadata,
+} from './getters'
 
-export async function run() {
-  if (process.env.FULL_ACCESS_API_TOKEN === undefined) {
-    throw new Error('FULL_ACCESS_API_TOKEN is required')
-  }
+export type {
+  Author,
+  BlogPost,
+  Event,
+  PageLink,
+  CloudinaryAsset,
+  Image,
+  Location,
+  Music,
+} from './types'
 
-  const client = buildClient({
-    apiToken: process.env.FULL_ACCESS_API_TOKEN,
-    logLevel: LogLevel.BASIC,
-  })
-
-  await downloadModels(client)
-
-  console.log('Done!')
-}
+export { isOfTypeCloudinaryAsset } from './types'
+export { formatCloudinaryDocument, formatCloudinaryImage } from './formatters'
+export * from './generated/graphql'

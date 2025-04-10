@@ -1,10 +1,10 @@
 'use client'
 import { EventListItem } from '../eventListItem'
-import type { Event as EventType } from '@mono/graphql'
+import type { Event as EventType } from '@mono/datocms'
 import React, { useEffect, useRef, useState } from 'react'
-import { getEvents } from '@mono/graphql'
+import { getEvents } from '@mono/datocms'
 import { useEventsMeta, useIntersectionObserver } from '@mono/hooks'
-import { ConcertModelOrderBy } from '@mono/graphql'
+import { ConcertModelOrderBy } from '@mono/datocms'
 
 export interface Props {
   initialSkip: number

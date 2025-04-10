@@ -7,7 +7,7 @@ import type {
   HeaderFragment,
   TextBlockFragment,
   TwoColumFragment,
-} from '@mono/graphql'
+} from '@mono/datocms'
 
 import styles from './styles.module.scss'
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { DefaultPage, type Props } from './defaultPage'
-import { getPage } from '@mono/graphql'
+import { getPage } from '@mono/datocms'
 import { resolvedComponent } from '@mono/utils'
 import { render } from '@testing-library/react'
 import { vi, describe, it, expect } from 'vitest'
@@ -14,8 +14,8 @@ vi.mock('../navigation', () => {
   }
 })
 
-vi.mock('@mono/graphql', () => {
-  const originalModule = vi.importActual('@mono/graphql')
+vi.mock('@mono/datocms', () => {
+  const originalModule = vi.importActual('@mono/datocms')
   return {
     __esModule: true,
     ...originalModule,

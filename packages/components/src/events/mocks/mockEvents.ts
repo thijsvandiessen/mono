@@ -1,4 +1,4 @@
-import type { Event } from '@mono/graphql'
+import type { Event } from '@mono/datocms'
 
 export const mockEvent: Event = {
   id: 'mock-id',

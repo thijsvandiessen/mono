@@ -6,7 +6,7 @@ import type {
   DocumentFragment,
   ImageFragment,
   VideoFragment,
-} from '@mono/graphql'
+} from '@mono/datocms'
 import { DocumentBlock } from '../documentBlock'
 import { ImageBlock } from '../imageBlock'
 import { VideoBlock } from '../videoBlock'

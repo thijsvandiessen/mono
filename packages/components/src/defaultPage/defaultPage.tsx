@@ -1,6 +1,6 @@
 import React from 'react'
 import { PageContent } from '../pageContent'
-import { getPage } from '@mono/graphql'
+import { getPage } from '@mono/datocms'
 import { notFound } from 'next/navigation'
 
 export interface Props {

@@ -1,14 +1,14 @@
 import type { Props as EventListItemProps } from '../eventListItem'
 import { FutureEvents, type Props } from './futureEvents'
 import React from 'react'
-import { getFutureEvents } from '@mono/graphql'
+import { getFutureEvents } from '@mono/datocms'
 import { mockEvent } from './mocks/mockEvents'
 import { resolvedComponent } from '@mono/utils'
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect, vi } from 'vitest'
 
-vi.mock('@mono/graphql', () => {
-  const originalModule = vi.importActual('@mono/graphql')
+vi.mock('@mono/datocms', () => {
+  const originalModule = vi.importActual('@mono/datocms')
   return {
     __esModule: true,
     ...originalModule,

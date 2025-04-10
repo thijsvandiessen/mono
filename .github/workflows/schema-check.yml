@@ -40,8 +40,8 @@ jobs:
         if: ${{ env.DATOCMS_ACCESS_TOKEN != '' }}
         run: |
           rover graph introspect https://graphql.datocms.com --header "Authorization: Bearer ${{ env.DATOCMS_ACCESS_TOKEN }}" \
-          > ./packages/graphql/src/generated/datocms.graphql
+          > ./packages/datocms/src/generated/datocms.graphql
       - name: Publishing lundi-bleu-dato-cms schema
         if: ${{ env.APOLLO_KEY != '' }}
         run: |
-          rover subgraph publish vandiessen-mono-graph@current --name lundi-bleu-dato-cms --schema ./packages/graphql/src/generated/datocms.graphql
+          rover subgraph publish vandiessen-mono-graph@current --name lundi-bleu-dato-cms --schema ./packages/datocms/src/generated/datocms.graphql

@@ -1,8 +1,8 @@
 import React from 'react'
-import type { ImageFragment } from '@mono/graphql'
-import { isOfTypeCloudinaryAsset } from '@mono/graphql'
+import type { ImageFragment } from '@mono/datocms'
+import { isOfTypeCloudinaryAsset } from '@mono/datocms'
 import Image from 'next/image'
-import { formatCloudinaryImage } from '@mono/graphql'
+import { formatCloudinaryImage } from '@mono/datocms'
 
 import styles from './styles.module.scss'
 

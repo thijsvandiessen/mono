@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import classNames from 'classnames'
-import { getGeneralInfo } from '@mono/graphql'
-import { getSiteMetadata } from '@mono/graphql'
+import { getGeneralInfo } from '@mono/datocms'
+import { getSiteMetadata } from '@mono/datocms'
 import { slugFormatter } from '@mono/utils'
 import styles from './styles.module.scss'
 

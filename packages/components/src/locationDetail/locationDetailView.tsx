@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { Map } from '../map'
-import type { Location } from '@mono/graphql'
+import type { Location } from '@mono/datocms'
 import { useEnv } from '@mono/hooks'
 import styles from './styles.module.scss'
 

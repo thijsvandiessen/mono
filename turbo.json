@@ -16,8 +16,8 @@
         "packages/**/coverage/**"
       ]
     },
-    "codegen": {
-      "outputs": ["packages/graphql/src/generated/**"]
+    "@mono/datocms#codegen": {
+      "outputs": ["packages/datocms/src/generated/**"]
     },
     "lint": {
       "dependsOn": []

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getEventsMeta } from '@mono/graphql'
+import { getEventsMeta } from '@mono/datocms'
 
 export const useEventsMeta = () => {
   const [numberOfEvents, setNumberOfEvents] = useState<number>(0)

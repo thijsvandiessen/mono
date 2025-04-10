@@ -1,8 +1,8 @@
-import { getEventUrls } from '@mono/graphql'
-import { getEventsMeta } from '@mono/graphql'
-import { getPages } from '@mono/graphql'
-import { getPagesMeta } from '@mono/graphql'
-import type { PageLink } from '@mono/graphql'
+import { getEventUrls } from '@mono/datocms'
+import { getEventsMeta } from '@mono/datocms'
+import { getPages } from '@mono/datocms'
+import { getPagesMeta } from '@mono/datocms'
+import type { PageLink } from '@mono/datocms'
 
 const URL = 'https://lundi-bleu.nl'
 
