@@ -1,10 +1,10 @@
-import { client } from '../gqlClient'
 import {
   GetEventsMetaDocument,
   type GetEventsMetaQuery,
   type GetEventsMetaQueryVariables,
 } from '../generated/graphql'
 import type { CombinedError } from '@urql/core'
+import { client } from '../gqlClient'
 
 export const getEventsMeta = async (): Promise<
   | {

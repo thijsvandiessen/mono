@@ -1,4 +1,4 @@
-import { buildClient, LogLevel } from '@datocms/cma-client-node'
+import { LogLevel, buildClient } from '@datocms/cma-client-node'
 import { downloadModels } from './downloadModels'
 
 export async function run() {

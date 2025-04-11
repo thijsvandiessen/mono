@@ -1,10 +1,10 @@
-import { client } from '../gqlClient'
 import {
   GetSiteInfoDocument,
   type GetSiteInfoQuery,
   type GetSiteInfoQueryVariables,
 } from '../generated/graphql'
 import type { CombinedError } from '@urql/core'
+import { client } from '../gqlClient'
 
 export const getSiteInfo = async (): Promise<
   | {

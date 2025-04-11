@@ -1,7 +1,6 @@
-import type { TypedDocumentNode } from '@urql/core'
-import { coordinates } from './coordinates'
-import { gql } from '@urql/core'
+import { type TypedDocumentNode, gql } from '@urql/core'
 import type { LocationFragment } from '../generated/graphql'
+import { coordinates } from './coordinates'
 
 export const location: TypedDocumentNode<LocationFragment> = gql`
   fragment location on LocationRecord {

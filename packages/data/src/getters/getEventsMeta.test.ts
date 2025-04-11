@@ -1,5 +1,5 @@
-import { client } from '../gqlClient'
 import { GetEventsMetaDocument } from '../generated/graphql'
+import { client } from '../gqlClient'
 import { getEventsMeta } from './getEventsMeta'
 
 jest.mock('../gqlClient', () => {

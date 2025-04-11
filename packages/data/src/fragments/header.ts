@@ -1,8 +1,7 @@
-import { gql } from '@urql/core'
-import { identifiable } from './identifiable'
-import { headerBody } from './headerBody'
-import type { TypedDocumentNode } from '@urql/core'
+import { type TypedDocumentNode, gql } from '@urql/core'
 import type { HeaderFragment } from '../generated/graphql'
+import { headerBody } from './headerBody'
+import { identifiable } from './identifiable'
 
 export const header: TypedDocumentNode<HeaderFragment> = gql`
   fragment header on HeaderRecord {

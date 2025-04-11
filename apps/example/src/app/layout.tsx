@@ -1,5 +1,5 @@
-import { Body } from '@mono/components/src/body'
 import React, { type ReactElement } from 'react'
+import { Body } from '@mono/components/src/body'
 
 interface Props {
   children: ReactElement

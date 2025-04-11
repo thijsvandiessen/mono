@@ -1,5 +1,3 @@
-import { client } from '../gqlClient'
-import { eventFormatter } from '../formatters/eventFormatter'
 import {
   GetEventDocument,
   type GetEventQuery,
@@ -7,6 +5,8 @@ import {
 } from '../generated/graphql'
 import type { CombinedError } from '@urql/core'
 import type { Event } from '../types/event'
+import { client } from '../gqlClient'
+import { eventFormatter } from '../formatters/eventFormatter'
 
 export const getEvent = async ({
   id,

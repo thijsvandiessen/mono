@@ -1,11 +1,10 @@
-import { gql } from '@urql/core'
-import { identifiable } from './identifiable'
-import type { TypedDocumentNode } from '@urql/core'
+import { type TypedDocumentNode, gql } from '@urql/core'
 import type {
   VideoFieldFragment,
   VideoFragment,
   VideoUploadFragment,
 } from '../generated/graphql'
+import { identifiable } from './identifiable'
 
 export const videoUpload: TypedDocumentNode<VideoUploadFragment> = gql`
   fragment videoUpload on UploadVideoField {

@@ -1,13 +1,13 @@
-import { client } from '../gqlClient'
 import {
   ConcertModelOrderBy,
   GetEventsUrlsDocument,
   type GetEventsUrlsQuery,
   type GetEventsUrlsQueryVariables,
 } from '../generated/graphql'
-import { eventUrlFormatter } from '../formatters/eventUrlFormatter'
-import type { PageLink } from '../types/pageLink'
 import type { CombinedError } from '@urql/core'
+import type { PageLink } from '../types/pageLink'
+import { client } from '../gqlClient'
+import { eventUrlFormatter } from '../formatters/eventUrlFormatter'
 
 interface Props extends GetEventsUrlsQueryVariables {
   skip: number

@@ -1,7 +1,6 @@
-import { gql } from '@urql/core'
-import { identifiable } from './identifiable'
-import type { TypedDocumentNode } from '@urql/core'
+import { type TypedDocumentNode, gql } from '@urql/core'
 import type { SiteMetadataFragment } from '../generated/graphql'
+import { identifiable } from './identifiable'
 
 export const siteMetadata: TypedDocumentNode<SiteMetadataFragment> = gql`
   fragment siteMetadata on GeneralRecord {

@@ -1,11 +1,9 @@
-import { gql } from '@urql/core'
-
-import { location } from '../fragments/location'
 import type {
   GetLocationsQuery,
   GetLocationsQueryVariables,
 } from '../generated/graphql'
-import type { TypedDocumentNode } from '@urql/core'
+import { type TypedDocumentNode, gql } from '@urql/core'
+import { location } from '../fragments/location'
 
 export const GET_LOCATIONS: TypedDocumentNode<
   GetLocationsQuery,

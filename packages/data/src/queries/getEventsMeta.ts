@@ -1,9 +1,8 @@
-import { gql } from '@urql/core'
-import type { TypedDocumentNode } from '@urql/core'
 import type {
   GetEventsMetaQuery,
   GetEventsMetaQueryVariables,
 } from '../generated/graphql'
+import { type TypedDocumentNode, gql } from '@urql/core'
 
 export const GET_EVENTS_META: TypedDocumentNode<
   GetEventsMetaQuery,

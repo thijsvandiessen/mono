@@ -1,10 +1,9 @@
-import { gql } from '@urql/core'
-import { concertDetail } from '../fragments/concertDetail'
-import type { TypedDocumentNode } from '@urql/core'
 import type {
   GetEventPageQuery,
   GetEventPageQueryVariables,
 } from '../generated/graphql'
+import { type TypedDocumentNode, gql } from '@urql/core'
+import { concertDetail } from '../fragments/concertDetail'
 
 export const GET_EVENT_PAGE: TypedDocumentNode<
   GetEventPageQuery,

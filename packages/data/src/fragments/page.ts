@@ -1,10 +1,9 @@
-import { gql } from '@urql/core'
+import { type TypedDocumentNode, gql } from '@urql/core'
+import { textBlock, twoColum } from './textBlock'
+import type { PageFragment } from '../generated/graphql'
+import { header } from './header'
 import { identifiable } from './identifiable'
 import { tag } from './tag'
-import { textBlock, twoColum } from './textBlock'
-import { header } from './header'
-import type { TypedDocumentNode } from '@urql/core'
-import type { PageFragment } from '../generated/graphql'
 
 export const page: TypedDocumentNode<PageFragment> = gql`
   fragment page on PageRecord {

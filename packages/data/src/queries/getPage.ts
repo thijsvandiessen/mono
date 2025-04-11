@@ -1,8 +1,6 @@
-import { gql } from '@urql/core'
-
-import { pageDetail } from '../fragments/pageDetail'
-import type { TypedDocumentNode } from '@urql/core'
 import type { GetPageQuery, GetPageQueryVariables } from '../generated/graphql'
+import { type TypedDocumentNode, gql } from '@urql/core'
+import { pageDetail } from '../fragments/pageDetail'
 
 export const GET_PAGE: TypedDocumentNode<GetPageQuery, GetPageQueryVariables> =
   gql`

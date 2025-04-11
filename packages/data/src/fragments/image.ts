@@ -1,10 +1,9 @@
-import { gql } from '@urql/core'
-import { identifiable } from './identifiable'
-import type { TypedDocumentNode } from '@urql/core'
 import type {
   ImageFragment,
   ResponsiveImageFragment,
 } from '../generated/graphql'
+import { type TypedDocumentNode, gql } from '@urql/core'
+import { identifiable } from './identifiable'
 
 export const responsiveImage: TypedDocumentNode<ResponsiveImageFragment> = gql`
   fragment responsiveImage on ResponsiveImage {

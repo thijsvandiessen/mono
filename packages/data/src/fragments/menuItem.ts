@@ -1,8 +1,7 @@
-import { gql } from '@urql/core'
-import { pageLink } from './pageLink'
-import { concertLink } from './concertLink'
-import type { TypedDocumentNode } from '@urql/core'
+import { type TypedDocumentNode, gql } from '@urql/core'
 import type { MenuItemFragment } from '../generated/graphql'
+import { concertLink } from './concertLink'
+import { pageLink } from './pageLink'
 
 export const menuItem: TypedDocumentNode<MenuItemFragment> = gql`
   fragment menuItem on MenuItemRecord {

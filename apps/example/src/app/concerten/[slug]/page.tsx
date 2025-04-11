@@ -1,6 +1,6 @@
+import type { Metadata, Viewport } from 'next'
 import { EventPage } from '@mono/components/src/eventPage'
 import { getEventPageSeo } from '@mono/data'
-import type { Metadata, Viewport } from 'next'
 import { viewport } from '@mono/utils'
 
 interface PageProps {

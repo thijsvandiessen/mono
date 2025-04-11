@@ -1,5 +1,3 @@
-import { client } from '../gqlClient'
-import { locationFormatter } from '../formatters/locationFormatter'
 import {
   GetLocationDocument,
   type GetLocationQuery,
@@ -7,6 +5,8 @@ import {
 } from '../generated/graphql'
 import type { CombinedError } from '@urql/core'
 import type { Location } from '../types'
+import { client } from '../gqlClient'
+import { locationFormatter } from '../formatters/locationFormatter'
 
 export const getLocation = async ({
   id,

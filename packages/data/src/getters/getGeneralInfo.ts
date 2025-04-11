@@ -1,10 +1,10 @@
-import { client } from '../gqlClient'
 import {
   GetGeneralInfoDocument,
   type GetGeneralInfoQuery,
   type GetGeneralInfoQueryVariables,
 } from '../generated/graphql'
 import type { CombinedError } from '@urql/core'
+import { client } from '../gqlClient'
 
 export const getGeneralInfo = async (): Promise<
   | {

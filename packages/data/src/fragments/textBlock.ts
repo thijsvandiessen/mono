@@ -5,11 +5,10 @@ import type {
   TextBlockFragment,
   TwoColumFragment,
 } from '../generated/graphql'
+import { type TypedDocumentNode, gql } from '@urql/core'
 import { document, image } from './image'
-import type { TypedDocumentNode } from '@urql/core'
 import { callToAction } from './callToAction'
 import { concertLink } from './concertLink'
-import { gql } from '@urql/core'
 import { identifiable } from './identifiable'
 import { pageLink } from './pageLink'
 import { video } from './video'

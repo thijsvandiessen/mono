@@ -1,5 +1,4 @@
-import type { AnyVariables, TypedDocumentNode } from '@urql/core'
-import { gql } from '@urql/core'
+import { type AnyVariables, type TypedDocumentNode, gql } from '@urql/core'
 import type { IdentifiableFragment } from '../generated/graphql'
 
 export const identifiable: TypedDocumentNode<

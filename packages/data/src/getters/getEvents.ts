@@ -1,5 +1,3 @@
-import { client } from '../gqlClient'
-import { eventsFormatter } from '../formatters/eventsFormatter'
 import {
   ConcertModelOrderBy,
   GetEventsDocument,
@@ -8,6 +6,8 @@ import {
 } from '../generated/graphql'
 import type { CombinedError } from '@urql/core'
 import type { Event } from '../types/event'
+import { client } from '../gqlClient'
+import { eventsFormatter } from '../formatters/eventsFormatter'
 
 export const getEvents = async ({
   skip,
