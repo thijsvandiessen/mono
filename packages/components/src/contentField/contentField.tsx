@@ -1,13 +1,13 @@
-import { StructuredText } from 'react-datocms/structured-text'
-import { isStructuredText } from 'datocms-structured-text-utils'
-import { renderBlock } from './renderBlock'
-import { renderInlineRecord } from './renderInlineRecord'
-import { renderLinkToRecord } from './renderLinkToRecord'
 import type {
   HeaderFragment,
   TextBlockFragment,
   TwoColumFragment,
 } from '@mono/data'
+import { StructuredText } from 'react-datocms/structured-text'
+import { isStructuredText } from 'datocms-structured-text-utils'
+import { renderBlock } from './renderBlock'
+import { renderInlineRecord } from './renderInlineRecord'
+import { renderLinkToRecord } from './renderLinkToRecord'
 
 import styles from './styles.module.scss'
 

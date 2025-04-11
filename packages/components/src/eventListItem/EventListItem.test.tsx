@@ -1,9 +1,9 @@
-import React from 'react'
+import { describe, expect, it, vi } from 'vitest'
+import { render, screen } from '@testing-library/react'
 import { EventListItem } from './eventListItem'
+import React from 'react'
 import { getEvent } from '@mono/data'
 import { mockEvent } from './mocks/mockEvent'
-import { render, screen } from '@testing-library/react'
-import { describe, expect, it, vi } from 'vitest'
 
 vi.mock('../location/location', () => {
   const originalModule = vi.importActual('../location/location')

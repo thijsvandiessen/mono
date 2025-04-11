@@ -1,5 +1,5 @@
-import React from 'react'
 import Link from 'next/link'
+import React from 'react'
 import classNames from 'classnames'
 import { slugFormatter } from '@mono/utils'
 import styles from './styles.module.scss'

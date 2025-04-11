@@ -1,6 +1,6 @@
+import { Hit } from './hit'
 import React from 'react'
 import { render } from '@testing-library/react'
-import { Hit } from './hit'
 
 describe('Hit component', () => {
   const hit = {

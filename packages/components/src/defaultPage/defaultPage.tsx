@@ -1,5 +1,5 @@
-import React from 'react'
 import { PageContent } from '../pageContent'
+import React from 'react'
 import { getPage } from '@mono/data'
 import { notFound } from 'next/navigation'
 

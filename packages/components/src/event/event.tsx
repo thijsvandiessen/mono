@@ -1,5 +1,5 @@
-import React from 'react'
 import { EventListItem } from '../eventListItem'
+import React from 'react'
 import { getEvent } from '@mono/data'
 
 export interface Props {

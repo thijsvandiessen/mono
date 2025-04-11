@@ -1,11 +1,11 @@
-import React from 'react'
-import Image from 'next/image'
-import { notFound } from 'next/navigation'
-import classNames from 'classnames'
-import { PageContent } from '../pageContent'
-import { LocationDetail } from '../locationDetail'
 import { EventListItem } from '../eventListItem'
+import Image from 'next/image'
+import { LocationDetail } from '../locationDetail'
+import { PageContent } from '../pageContent'
+import React from 'react'
+import classNames from 'classnames'
 import { getEventPage } from '@mono/data'
+import { notFound } from 'next/navigation'
 
 import styles from './styles.module.scss'
 

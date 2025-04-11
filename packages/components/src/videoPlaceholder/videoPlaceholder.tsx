@@ -1,11 +1,10 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import type { ReactNode } from 'react'
-import { useIntersectionObserver } from '@mono/hooks'
 import { Play } from '../icons/play'
-
+import type { ReactNode } from 'react'
 import styles from './styles.module.scss'
+import { useIntersectionObserver } from '@mono/hooks'
 
 type Props = {
   children: ReactNode

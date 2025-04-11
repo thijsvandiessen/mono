@@ -1,7 +1,7 @@
-import React from 'react'
-import { NavigationSubMenuItem } from '../navigationSubMenuItem'
-import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
+import { render, screen } from '@testing-library/react'
+import { NavigationSubMenuItem } from '../navigationSubMenuItem'
+import React from 'react'
 
 describe('NavigationSubMenuItem', () => {
   it('should render a link', () => {

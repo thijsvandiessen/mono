@@ -1,9 +1,9 @@
+import { describe, expect, it, vi } from 'vitest'
+import { render, screen } from '@testing-library/react'
 import { LoadMoreEvents } from './loadMoreEvents'
 import React from 'react'
 import { getEvents } from '@mono/data'
 import { mockEvent } from './mocks/mockEvents'
-import { render, screen } from '@testing-library/react'
-import { describe, expect, it, vi } from 'vitest'
 
 vi.mock('@mono/data', () => ({
   __esModule: true,

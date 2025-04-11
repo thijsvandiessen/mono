@@ -1,14 +1,13 @@
-import React from 'react'
-import classNames from 'classnames'
 import {
   type DocumentFragment,
   formatCloudinaryDocument,
   isOfTypeCloudinaryAsset,
 } from '@mono/data'
-import { Button } from '../button'
 import { ArrowDown } from '../icons/arrow-down'
+import { Button } from '../button'
+import React from 'react'
+import classNames from 'classnames'
 import { formatBytes } from '@mono/utils'
-
 import styles from './styles.module.scss'
 
 interface Props {

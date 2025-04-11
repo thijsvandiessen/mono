@@ -1,6 +1,6 @@
 'use client'
-import React, { useCallback } from 'react'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api'
+import React, { useCallback } from 'react'
 
 interface Pin {
   lat: number

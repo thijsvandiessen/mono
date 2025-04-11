@@ -1,8 +1,8 @@
-import React from 'react'
-import Link from 'next/link'
-import { EventListItem } from '../eventListItem'
-import { getFutureEvents } from '@mono/data'
 import type { Event } from '@mono/data'
+import { EventListItem } from '../eventListItem'
+import Link from 'next/link'
+import React from 'react'
+import { getFutureEvents } from '@mono/data'
 
 export interface Props {
   skip: number

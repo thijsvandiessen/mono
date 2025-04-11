@@ -1,14 +1,11 @@
-import classNames from 'classnames'
-import { notFound } from 'next/navigation'
+import { ConcertModelOrderBy, getEvents, getPage } from '@mono/data'
 import { Event } from '../event'
 import { Header } from '../header'
 import { LoadMoreEvents } from '../loadMoreEvents'
 import { PageContent } from '../pageContent'
-import { getEvents } from '@mono/data'
-import { getPage } from '@mono/data'
-
+import classNames from 'classnames'
+import { notFound } from 'next/navigation'
 import styles from './styles.module.scss'
-import { ConcertModelOrderBy } from '@mono/data'
 
 export const ConcertsPage = async () => {
   const first = 10

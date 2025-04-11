@@ -1,9 +1,9 @@
-import React from 'react'
 import { DefaultPage, type Props } from './defaultPage'
-import { getPage } from '@mono/data'
-import { resolvedComponent } from '@mono/utils'
-import { render } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
+import React from 'react'
+import { getPage } from '@mono/data'
+import { render } from '@testing-library/react'
+import { resolvedComponent } from '@mono/utils'
 
 vi.mock('../navigation', () => {
   const originalModule = vi.importActual('../navigation')

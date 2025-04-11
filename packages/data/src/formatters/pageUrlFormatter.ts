@@ -1,6 +1,6 @@
-import { slugFormatter } from '@mono/utils'
-import type { PageLink } from '../types/pageLink'
 import type { GetPagesQuery } from '../generated/graphql'
+import type { PageLink } from '../types/pageLink'
+import { slugFormatter } from '@mono/utils'
 
 export const pageUrlFormatter = (pages: GetPagesQuery['allPages']) =>
   pages.reduce((prev: PageLink[], currentValue) => {

@@ -1,6 +1,6 @@
-import { useRef } from 'react'
 import { renderHook } from '@testing-library/react'
 import { useIntersectionObserver } from './useIntersectionObserver'
+import { useRef } from 'react'
 
 describe('useIntersectionObserver', () => {
   test('should pass', () => {

@@ -1,5 +1,5 @@
-import { type RetryExchangeOptions } from '@urql/exchange-retry'
 import { type CombinedError } from '@urql/core'
+import { type RetryExchangeOptions } from '@urql/exchange-retry'
 
 export const retryExchangeOptions: RetryExchangeOptions = {
   initialDelayMs: 3000,

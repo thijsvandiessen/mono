@@ -1,6 +1,6 @@
-import classNames from 'classnames'
-import type { TwoColumFragment } from '@mono/data'
 import { ContentField } from '../contentField'
+import type { TwoColumFragment } from '@mono/data'
+import classNames from 'classnames'
 import { isStructuredText } from 'datocms-structured-text-utils'
 
 import styles from './styles.module.scss'

@@ -1,4 +1,10 @@
-import { type PageLink,getEventUrls, getEventsMeta,getPages, getPagesMeta } from '@mono/data'
+import {
+  type PageLink,
+  getEventUrls,
+  getEventsMeta,
+  getPages,
+  getPagesMeta,
+} from '@mono/data'
 
 const URL = 'https://example.nl'
 

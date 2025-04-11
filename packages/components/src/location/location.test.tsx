@@ -1,9 +1,9 @@
-import React from 'react'
 import { Location, type Props } from './location'
+import { describe, expect, it, vi } from 'vitest'
+import { render, screen } from '@testing-library/react'
+import React from 'react'
 import { getLocation } from '@mono/data'
 import { resolvedComponent } from '@mono/utils'
-import { render, screen } from '@testing-library/react'
-import { describe, expect, it, vi } from 'vitest'
 
 vi.mock('@mono/data', () => {
   const originalModule = vi.importActual('@mono/data')

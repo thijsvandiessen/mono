@@ -1,6 +1,6 @@
+import { renderHook, waitFor } from '@testing-library/react'
 import { getEventsMeta } from '@mono/data'
 import { useEventsMeta } from './useEventsMeta'
-import { renderHook, waitFor } from '@testing-library/react'
 
 jest.mock('@mono/data', () => {
   const originalModule = jest.requireActual('@mono/data')

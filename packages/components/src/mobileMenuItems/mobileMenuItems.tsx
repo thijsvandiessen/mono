@@ -1,12 +1,11 @@
 'use client'
 
-import React from 'react'
-import { useQuery } from 'urql'
-import classNames from 'classnames'
 import { GetGeneralInfoDocument } from '@mono/data'
 import { NavigationItem } from '../navigationItem'
-
+import React from 'react'
+import classNames from 'classnames'
 import styles from './styles.module.scss'
+import { useQuery } from 'urql'
 
 export const MobileMenuItems = () => {
   const [result] = useQuery({ query: GetGeneralInfoDocument })

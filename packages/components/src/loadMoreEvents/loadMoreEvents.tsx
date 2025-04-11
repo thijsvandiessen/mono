@@ -1,10 +1,9 @@
 'use client'
-import { EventListItem } from '../eventListItem'
-import type { Event as EventType } from '@mono/data'
+import { type Event, getEvents } from '@mono/data'
 import React, { useEffect, useRef, useState } from 'react'
-import { getEvents } from '@mono/data'
 import { useEventsMeta, useIntersectionObserver } from '@mono/hooks'
 import { ConcertModelOrderBy } from '@mono/data'
+import { EventListItem } from '../eventListItem'
 
 export interface Props {
   initialSkip: number
@@ -13,7 +12,7 @@ export interface Props {
 export const LoadMoreEvents = ({ initialSkip }: Props) => {
   const [skip, setSkip] = useState(initialSkip)
   const [loading, setLoading] = useState(false)
-  const [events, setEvents] = useState<(EventType | undefined)[]>([])
+  const [events, setEvents] = useState<(Event | undefined)[]>([])
   const ref = useRef<HTMLDivElement | null>(null)
   const { numberOfEvents } = useEventsMeta()
   const [entry] = useIntersectionObserver({

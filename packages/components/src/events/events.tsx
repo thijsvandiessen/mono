@@ -1,7 +1,7 @@
-import React from 'react'
-import { Event } from '../event/event'
-import { getEvents } from '@mono/data'
 import { ConcertModelOrderBy } from '@mono/data'
+import { Event } from '../event/event'
+import React from 'react'
+import { getEvents } from '@mono/data'
 
 export interface Props {
   skip: number

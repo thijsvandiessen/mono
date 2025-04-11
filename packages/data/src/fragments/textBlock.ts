@@ -1,11 +1,3 @@
-import { gql } from '@urql/core'
-import { callToAction } from './callToAction'
-import { concertLink } from './concertLink'
-import { identifiable } from './identifiable'
-import { pageLink } from './pageLink'
-import { video } from './video'
-import { document, image } from './image'
-import type { TypedDocumentNode } from '@urql/core'
 import type {
   LeftContentFragment,
   RightContentFragment,
@@ -13,6 +5,14 @@ import type {
   TextBlockFragment,
   TwoColumFragment,
 } from '../generated/graphql'
+import { document, image } from './image'
+import type { TypedDocumentNode } from '@urql/core'
+import { callToAction } from './callToAction'
+import { concertLink } from './concertLink'
+import { gql } from '@urql/core'
+import { identifiable } from './identifiable'
+import { pageLink } from './pageLink'
+import { video } from './video'
 
 export const textBlockContent: TypedDocumentNode<TextBlockContentFragment> = gql`
   fragment textBlockContent on TextBlockModelContentField {

@@ -1,7 +1,7 @@
 'use client'
-import React from 'react'
-import { Map } from '../map'
 import type { Location } from '@mono/data'
+import { Map } from '../map'
+import React from 'react'
 import styles from './styles.module.scss'
 
 export interface Props {

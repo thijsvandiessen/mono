@@ -1,15 +1,14 @@
 'use client'
 import { useEffect, useState } from 'react'
-import classNames from 'classnames'
-import { Provider } from 'urql'
-import { useDimensions } from '@mono/hooks'
-import { client } from '@mono/data'
-import { Hamburger } from '../icons/hamburger'
 import { Cross } from '../icons/cross'
-import { useHrefClick } from '@mono/hooks'
+import { Hamburger } from '../icons/hamburger'
 import { MobileMenuItems } from '../mobileMenuItems'
-
+import { Provider } from 'urql'
+import classNames from 'classnames'
+import { client } from '@mono/data'
 import styles from './styles.module.scss'
+import { useDimensions } from '@mono/hooks'
+import { useHrefClick } from '@mono/hooks'
 
 export const MobileMenu = () => {
   const [open, setOpen] = useState(false)

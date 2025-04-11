@@ -1,6 +1,6 @@
 import type { GetEventsUrlsQuery } from '../generated/graphql'
-import { slugFormatter } from '@mono/utils'
 import type { PageLink } from '../types/pageLink'
+import { slugFormatter } from '@mono/utils'
 
 export const eventUrlFormatter = (
   concerts: GetEventsUrlsQuery['allConcerts']
