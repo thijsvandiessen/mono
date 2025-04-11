@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.9](https://github.com/thijsvandiessen/mono/compare/v1.0.8...v1.0.9) (2025-04-11)
+
+
+### Bug Fixes
+
+* expiration date ([#371](https://github.com/thijsvandiessen/mono/issues/371)) ([cc6180b](https://github.com/thijsvandiessen/mono/commit/cc6180b0d7122be4c5197d790ee9a7281be35111))
+* rename packages ([#366](https://github.com/thijsvandiessen/mono/issues/366)) ([4101784](https://github.com/thijsvandiessen/mono/commit/410178459dddd6c708b819cb7b2a1e4e36931242))
+* terraform update ([#370](https://github.com/thijsvandiessen/mono/issues/370)) ([38cf060](https://github.com/thijsvandiessen/mono/commit/38cf06011c218b0df35ed991d6792eecabba8bae))
+* test cache ([#352](https://github.com/thijsvandiessen/mono/issues/352)) ([70e533e](https://github.com/thijsvandiessen/mono/commit/70e533ef04be2c3bfa6e2ec5615afe9c29406598))
+* turbo ([#355](https://github.com/thijsvandiessen/mono/issues/355)) ([cb9c668](https://github.com/thijsvandiessen/mono/commit/cb9c668095f078e4871d4a2d740bd3345c287801))
+* vite workspace ([#367](https://github.com/thijsvandiessen/mono/issues/367)) ([941fa92](https://github.com/thijsvandiessen/mono/commit/941fa9258be7d8eea6778ba047f3e9cb4b28e764))
+
 ## [1.0.8](https://github.com/thijsvandiessen/mono/compare/v1.0.7...v1.0.8) (2025-04-06)
 
 
