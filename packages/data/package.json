@@ -36,7 +36,7 @@
     "react": "19.1.0"
   },
   "devDependencies": {
-    "@apollo/rover": "0.26.3",
+    "@apollo/rover": "0.28.1",
     "@commitlint/config-conventional": "19.8.0",
     "@graphql-codegen/cli": "5.0.5",
     "@graphql-codegen/client-preset": "4.7.0",
@@ -51,7 +51,7 @@
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
     "@typescript-eslint/eslint-plugin": "8.18.2",
-    "@typescript-eslint/parser": "8.29.0",
+    "@typescript-eslint/parser": "8.29.1",
     "dotenv": "16.4.7",
     "eslint": "8.57.0",
     "eslint-config-next": "15.2.4",
