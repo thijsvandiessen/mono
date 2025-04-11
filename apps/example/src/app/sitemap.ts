@@ -1,8 +1,4 @@
-import { getEventUrls } from '@mono/data'
-import { getEventsMeta } from '@mono/data'
-import { getPages } from '@mono/data'
-import { getPagesMeta } from '@mono/data'
-import type { PageLink } from '@mono/data'
+import { type PageLink,getEventUrls, getEventsMeta,getPages, getPagesMeta } from '@mono/data'
 
 const URL = 'https://example.nl'
 
