@@ -23,6 +23,18 @@ variable "GCP_CREDENTIALS" {
   default   = ""
 }
 
+variable "google_project_id" {
+  sensitive = false
+  type      = string
+  default   = "vandiessen"
+}
+
+variable "google_project_region" {
+  sensitive = false
+  type      = string
+  default   = "europe-west1-c"
+}
+
 variable "GOOGLE_MAPS_API_KEY" {
   sensitive = false
   type      = string

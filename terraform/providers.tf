@@ -3,8 +3,8 @@ provider "hcp" {
 }
 
 provider "google" {
-  project     = "vandiessen"
-  region      = "europe-west1-c"
+  project     = var.google_project_id
+  region      = var.google_project_region
   credentials = var.GCP_CREDENTIALS
 }
 
