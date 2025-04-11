@@ -1,10 +1,10 @@
 'use client'
 
 import React, { useState } from 'react'
-import classNames from 'classnames'
-import type { SubmenuItemFragment } from '@mono/graphql'
+import { useEscapeKey, useOutsideClick } from '@mono/hooks'
 import { NavigationSubMenuItem } from '../navigationSubMenuItem'
-import { useOutsideClick, useEscapeKey } from '@mono/hooks'
+import type { SubmenuItemFragment } from '@mono/data'
+import classNames from 'classnames'
 import styles from './styles.module.scss'
 
 export interface SubMenuProps {

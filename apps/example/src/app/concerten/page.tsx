@@ -1,7 +1,7 @@
-import React from 'react'
 import type { Metadata, Viewport } from 'next'
-import { getPageSeo } from '@mono/graphql'
 import { ConcertsPage } from '@mono/components/src/concertsPage'
+import React from 'react'
+import { getPageSeo } from '@mono/data'
 import { viewport } from '@mono/utils'
 
 const pageSlug = 'concerten'

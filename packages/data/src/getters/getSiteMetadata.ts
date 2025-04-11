@@ -1,0 +1,24 @@
+import {
+  GetSiteMetadataDocument,
+  type GetSiteMetadataQuery,
+  type GetSiteMetadataQueryVariables,
+} from '../generated/graphql'
+import { client } from '../gqlClient'
+import { formatSiteMetadata } from '../formatters/formatSiteMetadata'
+
+export const getSiteMetadata = async () => {
+  try {
+    const { data, error } = await client.query<
+      GetSiteMetadataQuery,
+      GetSiteMetadataQueryVariables
+    >(GetSiteMetadataDocument, {})
+
+    return {
+      metadata: formatSiteMetadata(data?.general),
+      error,
+    }
+  } catch (error) {
+    if (error instanceof Error) console.log(error.message)
+    return { metadata: formatSiteMetadata(), error }
+  }
+}

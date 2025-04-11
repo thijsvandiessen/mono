@@ -1,16 +1,15 @@
 'use client'
-import React from 'react'
+import type { Location } from '@mono/data'
 import { Map } from '../map'
-import type { Location } from '@mono/graphql'
-import { useEnv } from '@mono/hooks'
+import React from 'react'
 import styles from './styles.module.scss'
 
 export interface Props {
   data: Location
+  googleMapsApiKey: string
 }
 
-export const LocationDetailView = ({ data }: Props) => {
-  const googleMapsApiKey = useEnv('NEXT_PUBLIC_GOOGLE_MAPS_API_KEY')
+export const LocationDetailView = ({ data, googleMapsApiKey }: Props) => {
   const { title, address, lat, lng } = data
 
   return (

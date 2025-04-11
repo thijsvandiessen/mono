@@ -1,13 +1,13 @@
+import { describe, expect, it, vi } from 'vitest'
+import { render, screen } from '@testing-library/react'
 import { LoadMoreEvents } from './loadMoreEvents'
 import React from 'react'
-import { getEvents } from '@mono/graphql'
+import { getEvents } from '@mono/data'
 import { mockEvent } from './mocks/mockEvents'
-import { render, screen } from '@testing-library/react'
-import { describe, it, expect, vi } from 'vitest'
 
-vi.mock('@mono/graphql', () => ({
+vi.mock('@mono/data', () => ({
   __esModule: true,
-  ...vi.importActual('@mono/graphql'),
+  ...vi.importActual('@mono/data'),
   getEvents: vi.fn(),
 }))
 

@@ -1,6 +1,5 @@
+import { type Location, getLocation } from '@mono/data'
 import { useEffect, useState } from 'react'
-import { getLocation } from '@mono/graphql'
-import type { Location } from '@mono/graphql'
 
 export interface LocationProps {
   id: string

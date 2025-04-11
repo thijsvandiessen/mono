@@ -1,9 +1,9 @@
-import classNames from 'classnames'
-import { type Event } from '@mono/graphql'
-import { type PageDetailFragment } from '@mono/graphql'
 import { ContentField } from '../contentField'
-import { TwoColumContentField } from '../twoColumContentField'
+import { type Event } from '@mono/data'
 import { Header } from '../header'
+import { type PageDetailFragment } from '@mono/data'
+import { TwoColumContentField } from '../twoColumContentField'
+import classNames from 'classnames'
 import styles from './styles.module.scss'
 
 export interface Props {

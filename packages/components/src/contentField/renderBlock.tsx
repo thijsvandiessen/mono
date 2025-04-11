@@ -1,16 +1,16 @@
-import type { Record } from 'datocms-structured-text-utils'
-import type { RenderBlockContext } from 'react-datocms/structured-text'
-import { isOfType } from './isOfType'
 import type {
   CallToActionFragment,
   DocumentFragment,
   ImageFragment,
   VideoFragment,
-} from '@mono/graphql'
+} from '@mono/data'
+import { CallToAction } from '../callToAction'
 import { DocumentBlock } from '../documentBlock'
 import { ImageBlock } from '../imageBlock'
+import type { Record } from 'datocms-structured-text-utils'
+import type { RenderBlockContext } from 'react-datocms/structured-text'
 import { VideoBlock } from '../videoBlock'
-import { CallToAction } from '../callToAction'
+import { isOfType } from './isOfType'
 
 import styles from './styles.module.scss'
 

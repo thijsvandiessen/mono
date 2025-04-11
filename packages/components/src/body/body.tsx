@@ -1,7 +1,6 @@
 import './global.scss'
-
-import { DefaultLayout } from '../defaultLayout'
 import React, { type ReactElement } from 'react'
+import { DefaultLayout } from '../defaultLayout'
 
 interface Props {
   children: ReactElement

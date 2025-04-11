@@ -1,10 +1,10 @@
+import { describe, expect, it, vi } from 'vitest'
+import { render, screen } from '@testing-library/react'
 import { Navigation } from './navigation'
 import React from 'react'
-import { getGeneralInfo } from '@mono/graphql'
+import { getGeneralInfo } from '@mono/data'
 import { mockMenuData } from './mocks/mockMenuData'
 import { resolvedComponent } from '@mono/utils'
-import { render, screen } from '@testing-library/react'
-import { describe, it, expect, vi } from 'vitest'
 
 global.ResizeObserver = vi.fn().mockImplementation(() => ({
   observe: vi.fn(),
@@ -12,8 +12,8 @@ global.ResizeObserver = vi.fn().mockImplementation(() => ({
   disconnect: vi.fn(),
 }))
 
-vi.mock('@mono/graphql', () => ({
-  ...vi.importActual('@mono/graphql'),
+vi.mock('@mono/data', () => ({
+  ...vi.importActual('@mono/data'),
   __esModule: true,
   client: vi.fn(),
   getGeneralInfo: vi.fn(),

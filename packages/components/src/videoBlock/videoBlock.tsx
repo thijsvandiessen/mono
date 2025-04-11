@@ -1,11 +1,13 @@
 'use client'
 
+import {
+  type VideoFragment,
+  formatCloudinaryImage,
+  isOfTypeCloudinaryAsset,
+} from '@mono/data'
 import { useCallback, useState } from 'react'
 import Image from 'next/image'
-import type { VideoFragment } from '@mono/graphql'
 import { VideoPlaceholder } from '../videoPlaceholder'
-import { formatCloudinaryImage } from '@mono/graphql'
-import { isOfTypeCloudinaryAsset } from '@mono/graphql'
 
 import styles from './styles.module.scss'
 

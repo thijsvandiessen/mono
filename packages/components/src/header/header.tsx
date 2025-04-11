@@ -1,11 +1,13 @@
-import React from 'react'
+import {
+  type HeaderFragment,
+  formatCloudinaryImage,
+  isOfTypeCloudinaryAsset,
+} from '@mono/data'
+import { ContentField } from '../contentField'
 import type { ElementType } from 'react'
 import Image from 'next/image'
+import React from 'react'
 import classNames from 'classnames'
-import { type HeaderFragment } from '@mono/graphql'
-import { formatCloudinaryImage } from '@mono/graphql'
-import { isOfTypeCloudinaryAsset } from '@mono/graphql'
-import { ContentField } from '../contentField'
 import { isEmptyDocument } from 'datocms-structured-text-utils'
 import styles from './styles.module.scss'
 

@@ -1,10 +1,10 @@
-import React from 'react'
-import classNames from 'classnames'
+import { dateIsInThePast, formatDate } from '@mono/utils'
+import { ArrowRight } from '../icons/arrow-right'
+import type { Event } from '@mono/data'
 import Image from 'next/image'
 import Link from 'next/link'
-import type { Event } from '@mono/graphql'
-import { ArrowRight } from '../icons/arrow-right'
-import { dateIsInThePast, formatDate } from '@mono/utils'
+import React from 'react'
+import classNames from 'classnames'
 
 import styles from './styles.module.scss'
 

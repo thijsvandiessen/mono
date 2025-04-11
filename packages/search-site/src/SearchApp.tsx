@@ -1,13 +1,13 @@
-import React from 'react'
-import { Hit } from './hit'
-import { searchClient } from './searchClient'
 import {
+  Breadcrumb,
   Hits,
   InstantSearch,
   RefinementList,
   SearchBox,
-  Breadcrumb,
 } from 'react-instantsearch'
+import { Hit } from './hit'
+import React from 'react'
+import { searchClient } from './searchClient'
 
 export const SearchApp = () => {
   return (

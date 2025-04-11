@@ -1,9 +1,9 @@
-import React from 'react'
-import { EventListItem } from './eventListItem'
-import { getEvent } from '@mono/graphql'
-import { mockEvent } from './mocks/mockEvent'
+import { describe, expect, it, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { describe, it, expect, vi } from 'vitest'
+import { EventListItem } from './eventListItem'
+import React from 'react'
+import { getEvent } from '@mono/data'
+import { mockEvent } from './mocks/mockEvent'
 
 vi.mock('../location/location', () => {
   const originalModule = vi.importActual('../location/location')
@@ -14,8 +14,8 @@ vi.mock('../location/location', () => {
   }
 })
 
-vi.mock('@mono/graphql', () => {
-  const originalModule = vi.importActual('@mono/graphql')
+vi.mock('@mono/data', () => {
+  const originalModule = vi.importActual('@mono/data')
   return {
     __esModule: true,
     ...originalModule,

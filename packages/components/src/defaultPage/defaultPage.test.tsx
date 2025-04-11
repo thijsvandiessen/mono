@@ -1,9 +1,9 @@
-import React from 'react'
 import { DefaultPage, type Props } from './defaultPage'
-import { getPage } from '@mono/graphql'
-import { resolvedComponent } from '@mono/utils'
+import { describe, expect, it, vi } from 'vitest'
+import React from 'react'
+import { getPage } from '@mono/data'
 import { render } from '@testing-library/react'
-import { vi, describe, it, expect } from 'vitest'
+import { resolvedComponent } from '@mono/utils'
 
 vi.mock('../navigation', () => {
   const originalModule = vi.importActual('../navigation')
@@ -14,8 +14,8 @@ vi.mock('../navigation', () => {
   }
 })
 
-vi.mock('@mono/graphql', () => {
-  const originalModule = vi.importActual('@mono/graphql')
+vi.mock('@mono/data', () => {
+  const originalModule = vi.importActual('@mono/data')
   return {
     __esModule: true,
     ...originalModule,

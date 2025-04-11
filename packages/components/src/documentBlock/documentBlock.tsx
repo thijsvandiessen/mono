@@ -1,13 +1,14 @@
+import {
+  type DocumentFragment,
+  formatCloudinaryDocument,
+  isOfTypeCloudinaryAsset,
+} from '@mono/data'
+import { ArrowDown } from '../icons/arrow-down'
+import { Button } from '../button'
 import React from 'react'
 import classNames from 'classnames'
-import { formatCloudinaryDocument } from '@mono/graphql'
-import { isOfTypeCloudinaryAsset } from '@mono/graphql'
-import { Button } from '../button'
-import { ArrowDown } from '../icons/arrow-down'
 import { formatBytes } from '@mono/utils'
-
 import styles from './styles.module.scss'
-import { type DocumentFragment } from 'packages/graphql/src/generated/graphql'
 
 interface Props {
   record: DocumentFragment

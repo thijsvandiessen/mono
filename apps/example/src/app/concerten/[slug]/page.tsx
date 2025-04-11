@@ -1,6 +1,6 @@
-import { EventPage } from '@mono/components/src/eventPage'
-import { getEventPageSeo } from '@mono/graphql'
 import type { Metadata, Viewport } from 'next'
+import { EventPage } from '@mono/components/src/eventPage'
+import { getEventPageSeo } from '@mono/data'
 import { viewport } from '@mono/utils'
 
 interface PageProps {

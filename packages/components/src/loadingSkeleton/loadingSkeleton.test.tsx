@@ -1,7 +1,7 @@
-import React from 'react'
+import { describe, expect, it } from 'vitest'
 import { LoadingSkeleton } from './loadingSkeleton'
+import React from 'react'
 import { render } from '@testing-library/react'
-import { describe, it, expect } from 'vitest'
 
 describe('Loading skeleton component', () => {
   it('should render', () => {

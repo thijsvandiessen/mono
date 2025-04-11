@@ -1,7 +1,7 @@
-import React from 'react'
-import { NavigationSubMenu } from '../navigationSubMenu'
+import { describe, expect, it } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/react'
-import { describe, it, expect } from 'vitest'
+import { NavigationSubMenu } from '../navigationSubMenu'
+import React from 'react'
 
 const mockData = [
   {

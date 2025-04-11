@@ -1,6 +1,6 @@
+import { describe, expect, it, vi } from 'vitest'
 import { DefaultLayout } from './defaultLayout'
 import { render } from '@testing-library/react'
-import { vi, describe, it, expect } from 'vitest'
 
 vi.mock('../navigation', () => {
   const originalModule = vi.importActual('../navigation')

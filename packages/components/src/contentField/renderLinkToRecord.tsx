@@ -1,9 +1,9 @@
+import type { ConcertLinkFragment, PageLinkFragment } from '@mono/data'
 import Link from 'next/link'
 import type { Record } from 'datocms-structured-text-utils'
 import { type RenderRecordLinkContext } from 'react-datocms/structured-text'
 import { isOfType } from './isOfType'
 import { slugFormatter } from '@mono/utils'
-import type { ConcertLinkFragment, PageLinkFragment } from '@mono/graphql'
 
 export const renderLinkToRecord = ({
   record,

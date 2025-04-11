@@ -1,11 +1,11 @@
-import { Button } from '../button'
-import { isOfType } from '../contentField/isOfType'
-import { ArrowRight } from '../icons/arrow-right'
 import type {
   CallToActionFragment,
   ConcertLinkFragment,
   PageLinkFragment,
-} from '@mono/graphql'
+} from '@mono/data'
+import { ArrowRight } from '../icons/arrow-right'
+import { Button } from '../button'
+import { isOfType } from '../contentField/isOfType'
 import { slugFormatter } from '@mono/utils'
 
 interface Props {

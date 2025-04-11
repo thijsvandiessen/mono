@@ -1,6 +1,6 @@
-import React from 'react'
-import { getLocation } from '@mono/graphql'
 import { LocationDetailView } from './locationDetailView'
+import React from 'react'
+import { getLocation } from '@mono/data'
 
 export interface Props {
   id: string
@@ -9,7 +9,13 @@ export interface Props {
 
 export const LocationDetail = async ({ id, startTime }: Props) => {
   const { data } = await getLocation({ id })
+  const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? ''
   if (!data) return null
 
-  return <LocationDetailView data={{ ...data, startTime }} />
+  return (
+    <LocationDetailView
+      data={{ ...data, startTime }}
+      googleMapsApiKey={googleMapsApiKey}
+    />
+  )
 }

@@ -1,8 +1,10 @@
-import { getEventUrls } from '@mono/graphql'
-import { getEventsMeta } from '@mono/graphql'
-import { getPages } from '@mono/graphql'
-import { getPagesMeta } from '@mono/graphql'
-import type { PageLink } from '@mono/graphql'
+import {
+  type PageLink,
+  getEventUrls,
+  getEventsMeta,
+  getPages,
+  getPagesMeta,
+} from '@mono/data'
 
 const URL = 'https://lundi-bleu.nl'
 

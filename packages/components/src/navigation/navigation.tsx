@@ -1,9 +1,9 @@
-import React from 'react'
-import classNames from 'classnames'
+import { MobileMenu } from '../mobileMenu'
 import { NavigationItem } from '../navigationItem'
 import { NavigationSubMenu } from '../navigationSubMenu'
-import { getGeneralInfo } from '@mono/graphql'
-import { MobileMenu } from '../mobileMenu'
+import React from 'react'
+import classNames from 'classnames'
+import { getGeneralInfo } from '@mono/data'
 import styles from './styles.module.scss'
 
 export const Navigation = async () => {

@@ -16,8 +16,8 @@
         "packages/**/coverage/**"
       ]
     },
-    "codegen": {
-      "outputs": ["packages/graphql/src/generated/**"]
+    "@mono/data#codegen": {
+      "outputs": ["packages/data/src/generated/**"]
     },
     "lint": {
       "dependsOn": []
