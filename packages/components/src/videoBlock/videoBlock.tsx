@@ -2,10 +2,10 @@
 
 import { useCallback, useState } from 'react'
 import Image from 'next/image'
-import type { VideoFragment } from '@mono/datocms'
+import type { VideoFragment } from '@mono/data'
 import { VideoPlaceholder } from '../videoPlaceholder'
-import { formatCloudinaryImage } from '@mono/datocms'
-import { isOfTypeCloudinaryAsset } from '@mono/datocms'
+import { formatCloudinaryImage } from '@mono/data'
+import { isOfTypeCloudinaryAsset } from '@mono/data'
 
 import styles from './styles.module.scss'
 

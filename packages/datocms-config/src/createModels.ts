@@ -4,10 +4,10 @@ import { validateAndTransform } from './validators/itemType'
 
 export const createModels = (client: Client) => {
   try {
-    fs.readdirSync('../../packages/datocms-config/src/models').map(
+    fs.readdirSync('../../packages/data-config/src/models').map(
       async (fileName) => {
         const res = fs.readFileSync(
-          `../../packages/datocms-config/src/models/${fileName}`,
+          `../../packages/data-config/src/models/${fileName}`,
           {
             encoding: 'utf8',
             flag: 'r',

@@ -1,12 +1,12 @@
 import React from 'react'
 import { Location, type Props } from './location'
-import { getLocation } from '@mono/datocms'
+import { getLocation } from '@mono/data'
 import { resolvedComponent } from '@mono/utils'
 import { render, screen } from '@testing-library/react'
-import { describe, it, expect, vi } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
-vi.mock('@mono/datocms', () => {
-  const originalModule = vi.importActual('@mono/datocms')
+vi.mock('@mono/data', () => {
+  const originalModule = vi.importActual('@mono/data')
   return {
     __esModule: true,
     ...originalModule,

@@ -9,7 +9,7 @@ export const downloadModels = async (client: Client) => {
   try {
     data.map((itemType) => {
       fs.writeFileSync(
-        `../../packages/datocms-config/src/models/${itemType.attributes.api_key}.json`,
+        `../../packages/data-config/src/models/${itemType.attributes.api_key}.json`,
         JSON.stringify(itemType)
       )
 

@@ -7,7 +7,7 @@ import type {
   HeaderFragment,
   TextBlockFragment,
   TwoColumFragment,
-} from '@mono/datocms'
+} from '@mono/data'
 
 import styles from './styles.module.scss'
 

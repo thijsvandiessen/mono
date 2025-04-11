@@ -3,7 +3,7 @@ import type { Record } from 'datocms-structured-text-utils'
 import { type RenderRecordLinkContext } from 'react-datocms/structured-text'
 import { isOfType } from './isOfType'
 import { slugFormatter } from '@mono/utils'
-import type { ConcertLinkFragment, PageLinkFragment } from '@mono/datocms'
+import type { ConcertLinkFragment, PageLinkFragment } from '@mono/data'
 
 export const renderLinkToRecord = ({
   record,

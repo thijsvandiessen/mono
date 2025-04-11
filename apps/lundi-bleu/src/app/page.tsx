@@ -1,6 +1,6 @@
 import React from 'react'
 import { DefaultPage } from '@mono/components/src/defaultPage'
-import { getPageSeo } from '@mono/datocms'
+import { getPageSeo } from '@mono/data'
 import type { Metadata, Viewport } from 'next'
 import { viewport } from '@mono/utils'
 

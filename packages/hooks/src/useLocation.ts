@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { getLocation } from '@mono/datocms'
-import type { Location } from '@mono/datocms'
+import { getLocation } from '@mono/data'
+import type { Location } from '@mono/data'
 
 export interface LocationProps {
   id: string

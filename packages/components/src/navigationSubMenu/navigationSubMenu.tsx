@@ -2,9 +2,9 @@
 
 import React, { useState } from 'react'
 import classNames from 'classnames'
-import type { SubmenuItemFragment } from '@mono/datocms'
+import type { SubmenuItemFragment } from '@mono/data'
 import { NavigationSubMenuItem } from '../navigationSubMenuItem'
-import { useOutsideClick, useEscapeKey } from '@mono/hooks'
+import { useEscapeKey, useOutsideClick } from '@mono/hooks'
 import styles from './styles.module.scss'
 
 export interface SubMenuProps {

@@ -1,4 +1,4 @@
-import type { Location } from '@mono/datocms'
+import type { Location } from '@mono/data'
 import React from 'react'
 
 export interface Props {

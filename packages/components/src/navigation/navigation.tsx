@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import { NavigationItem } from '../navigationItem'
 import { NavigationSubMenu } from '../navigationSubMenu'
-import { getGeneralInfo } from '@mono/datocms'
+import { getGeneralInfo } from '@mono/data'
 import { MobileMenu } from '../mobileMenu'
 import styles from './styles.module.scss'
 

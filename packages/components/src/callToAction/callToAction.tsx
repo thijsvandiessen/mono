@@ -5,7 +5,7 @@ import type {
   CallToActionFragment,
   ConcertLinkFragment,
   PageLinkFragment,
-} from '@mono/datocms'
+} from '@mono/data'
 import { slugFormatter } from '@mono/utils'
 
 interface Props {

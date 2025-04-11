@@ -1,10 +1,10 @@
 import React from 'react'
 import classNames from 'classnames'
 import {
+  type DocumentFragment,
   formatCloudinaryDocument,
   isOfTypeCloudinaryAsset,
-  type DocumentFragment,
-} from '@mono/datocms'
+} from '@mono/data'
 import { Button } from '../button'
 import { ArrowDown } from '../icons/arrow-down'
 import { formatBytes } from '@mono/utils'

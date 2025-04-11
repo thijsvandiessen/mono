@@ -5,7 +5,7 @@ import classNames from 'classnames'
 import { PageContent } from '../pageContent'
 import { LocationDetail } from '../locationDetail'
 import { EventListItem } from '../eventListItem'
-import { getEventPage } from '@mono/datocms'
+import { getEventPage } from '@mono/data'
 
 import styles from './styles.module.scss'
 

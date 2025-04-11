@@ -1,4 +1,4 @@
-import React, { type ReactElement, type FunctionComponent } from 'react'
+import React, { type FunctionComponent, type ReactElement } from 'react'
 import { Footer } from '../footer'
 import { Navigation } from '../navigation'
 import classNames from 'classnames'

@@ -3,7 +3,7 @@
 import React from 'react'
 import { useQuery } from 'urql'
 import classNames from 'classnames'
-import { GetGeneralInfoDocument } from '@mono/datocms'
+import { GetGeneralInfoDocument } from '@mono/data'
 import { NavigationItem } from '../navigationItem'
 
 import styles from './styles.module.scss'

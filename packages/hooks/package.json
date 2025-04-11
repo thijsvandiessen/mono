@@ -24,7 +24,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@mono/datocms": "1.0.0"
+    "@mono/data": "1.0.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "6.6.3",

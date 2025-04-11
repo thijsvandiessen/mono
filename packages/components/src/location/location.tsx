@@ -1,6 +1,6 @@
 import { LocationView } from './locationView'
 import React from 'react'
-import { getLocation } from '@mono/datocms'
+import { getLocation } from '@mono/data'
 
 export interface Props {
   id: string

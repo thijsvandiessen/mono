@@ -1,14 +1,14 @@
 import React from 'react'
 import type { Props as EventProps } from '../event'
 import { Events, type Props } from './events'
-import { getEvents } from '@mono/datocms'
+import { getEvents } from '@mono/data'
 import { mockEvent } from './mocks/mockEvents'
 import { resolvedComponent } from '@mono/utils'
 import { render, screen } from '@testing-library/react'
-import { describe, it, expect, vi } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
-vi.mock('@mono/datocms', () => ({
-  ...vi.importActual('@mono/datocms'),
+vi.mock('@mono/data', () => ({
+  ...vi.importActual('@mono/data'),
   __esModule: true,
   getEvents: vi.fn(),
   ConcertModelOrderBy: vi.fn(),

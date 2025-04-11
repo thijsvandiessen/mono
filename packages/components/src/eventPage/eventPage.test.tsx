@@ -1,9 +1,9 @@
 import React from 'react'
 import { EventPage, type Props } from './eventPage'
-import { getEventPage } from '@mono/datocms'
+import { getEventPage } from '@mono/data'
 import { resolvedComponent } from '@mono/utils'
 import { render } from '@testing-library/react'
-import { describe, it, expect, vi } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
 vi.mock('../navigation', () => {
   const originalModule = vi.importActual('../navigation')
@@ -14,8 +14,8 @@ vi.mock('../navigation', () => {
   }
 })
 
-vi.mock('@mono/datocms', () => {
-  const originalModule = vi.importActual('@mono/datocms')
+vi.mock('@mono/data', () => {
+  const originalModule = vi.importActual('@mono/data')
   return {
     __esModule: true,
     ...originalModule,

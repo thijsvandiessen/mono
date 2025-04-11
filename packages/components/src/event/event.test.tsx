@@ -1,10 +1,10 @@
 import React from 'react'
 import { Event, type Props } from './event'
-import { getEvent } from '@mono/datocms'
+import { getEvent } from '@mono/data'
 import { mockEvent } from './mocks/mockEvent'
 import { resolvedComponent } from '@mono/utils'
 import { render, screen } from '@testing-library/react'
-import { describe, it, expect, vi } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
 vi.mock('../location/location', () => {
   const originalModule = vi.importActual('../location/location')
@@ -15,8 +15,8 @@ vi.mock('../location/location', () => {
   }
 })
 
-vi.mock('@mono/datocms', () => {
-  const originalModule = vi.importActual('@mono/datocms')
+vi.mock('@mono/data', () => {
+  const originalModule = vi.importActual('@mono/data')
   return {
     __esModule: true,
     ...originalModule,

@@ -1,4 +1,4 @@
-import type { GetGeneralInfoQuery } from '@mono/datocms'
+import type { GetGeneralInfoQuery } from '@mono/data'
 
 export const mockMenuData: GetGeneralInfoQuery = {
   general: {

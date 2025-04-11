@@ -1,9 +1,9 @@
-import { getLocation } from '@mono/datocms'
+import { getLocation } from '@mono/data'
 import { useLocation } from './useLocation'
 import { renderHook, waitFor } from '@testing-library/react'
 
-jest.mock('@mono/datocms', () => {
-  const originalModule = jest.requireActual('@mono/datocms')
+jest.mock('@mono/data', () => {
+  const originalModule = jest.requireActual('@mono/data')
   return {
     __esModule: true,
     ...originalModule,

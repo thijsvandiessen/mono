@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getPagesMeta } from '@mono/datocms'
+import { getPagesMeta } from '@mono/data'
 
 export const usePagesMeta = () => {
   const [numberOfPages, setNumberOfPages] = useState<number | undefined>()

@@ -16,8 +16,8 @@
         "packages/**/coverage/**"
       ]
     },
-    "@mono/datocms#codegen": {
-      "outputs": ["packages/datocms/src/generated/**"]
+    "@mono/data#codegen": {
+      "outputs": ["packages/data/src/generated/**"]
     },
     "lint": {
       "dependsOn": []

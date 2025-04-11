@@ -1,6 +1,6 @@
 import classNames from 'classnames'
-import { type Event } from '@mono/datocms'
-import { type PageDetailFragment } from '@mono/datocms'
+import { type Event } from '@mono/data'
+import { type PageDetailFragment } from '@mono/data'
 import { ContentField } from '../contentField'
 import { TwoColumContentField } from '../twoColumContentField'
 import { Header } from '../header'

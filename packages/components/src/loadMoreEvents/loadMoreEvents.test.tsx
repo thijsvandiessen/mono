@@ -1,13 +1,13 @@
 import { LoadMoreEvents } from './loadMoreEvents'
 import React from 'react'
-import { getEvents } from '@mono/datocms'
+import { getEvents } from '@mono/data'
 import { mockEvent } from './mocks/mockEvents'
 import { render, screen } from '@testing-library/react'
-import { describe, it, expect, vi } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
-vi.mock('@mono/datocms', () => ({
+vi.mock('@mono/data', () => ({
   __esModule: true,
-  ...vi.importActual('@mono/datocms'),
+  ...vi.importActual('@mono/data'),
   getEvents: vi.fn(),
 }))
 

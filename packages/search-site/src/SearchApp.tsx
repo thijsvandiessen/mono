@@ -2,11 +2,11 @@ import React from 'react'
 import { Hit } from './hit'
 import { searchClient } from './searchClient'
 import {
+  Breadcrumb,
   Hits,
   InstantSearch,
   RefinementList,
   SearchBox,
-  Breadcrumb,
 } from 'react-instantsearch'
 
 export const SearchApp = () => {

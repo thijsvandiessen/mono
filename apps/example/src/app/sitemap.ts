@@ -1,8 +1,8 @@
-import { getEventUrls } from '@mono/datocms'
-import { getEventsMeta } from '@mono/datocms'
-import { getPages } from '@mono/datocms'
-import { getPagesMeta } from '@mono/datocms'
-import type { PageLink } from '@mono/datocms'
+import { getEventUrls } from '@mono/data'
+import { getEventsMeta } from '@mono/data'
+import { getPages } from '@mono/data'
+import { getPagesMeta } from '@mono/data'
+import type { PageLink } from '@mono/data'
 
 const URL = 'https://example.nl'
 

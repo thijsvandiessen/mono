@@ -1,5 +1,4 @@
 export { useDimensions } from './useDimensions'
-export { useEnv } from './useEnv'
 export { useEscapeKey } from './useEscapeKey'
 export { useEventsMeta } from './useEventsMeta'
 export { useHrefClick } from './useHrefClick'
