@@ -16,6 +16,6 @@
     "eslint-plugin-react-hooks": "5.2.0",
     "eslint-plugin-testing-library": "7.1.1",
     "prettier": "3.5.3",
-    "pretty-quick": "4.0.0"
+    "pretty-quick": "4.1.1"
   }
 }

@@ -46,7 +46,7 @@
     "jest-environment-jsdom": "29.7.0",
     "lint-staged": "15.5.0",
     "prettier": "3.5.3",
-    "pretty-quick": "4.0.0",
+    "pretty-quick": "4.1.1",
     "sass": "1.86.3",
     "ts-node": "10.9.2",
     "turbo": "2.5.0",
