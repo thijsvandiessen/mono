@@ -1,0 +1,7 @@
+.vercel
+.next
+.svc
+.swc
+.turbo
+coverage
+dist
