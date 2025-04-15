@@ -34,6 +34,24 @@ resource "vercel_deployment" "lundi" {
   production  = var.TFC_CONFIGURATION_VERSION_GIT_TAG != "" ? true : false
 }
 
+resource "vercel_project_deployment_retention" "example_customized" {
+  project_id            = vercel_project.example.id
+  team_id               = vercel_project.example.team_id
+  expiration_preview    = "1m"
+  expiration_production = "1y"
+  expiration_canceled   = "1m"
+  expiration_errored    = "1m"
+}
+
+resource "vercel_project_deployment_retention" "lundi_customized" {
+  project_id            = vercel_project.lundi.id
+  team_id               = vercel_project.lundi.team_id
+  expiration_preview    = "1m"
+  expiration_production = "1y"
+  expiration_canceled   = "1m"
+  expiration_errored    = "1m"
+}
+
 resource "vercel_project_environment_variables" "lundi" {
   project_id = vercel_project.lundi.id
   variables = [{

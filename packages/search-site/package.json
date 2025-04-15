@@ -24,8 +24,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "algoliasearch": "5.20.4",
-    "dotenv": "16.4.7",
+    "algoliasearch": "5.23.3",
+    "dotenv": "16.5.0",
     "instantsearch.js": "4.78.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
@@ -37,8 +37,8 @@
     "@types/jest": "29.5.14",
     "@types/node": "22.14.0",
     "@mono/eslint-config": "1.0.0",
-    "@types/react": "19.1.0",
-    "@types/react-dom": "19.1.1",
+    "@types/react": "19.1.2",
+    "@types/react-dom": "19.1.2",
     "prettier": "3.5.3",
     "typescript": "5.7.3",
     "vite": "6.2.6"
