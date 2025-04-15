@@ -34,7 +34,7 @@ jobs:
         run: npm ci
 
       - name: Validate fast with oxlint
-        run: npx oxlint@0.2.8 -D correctness -D perf -A debugger -A eqeqeq -c ./.eslintrc.json
+        run: npx oxlint@0.16.6
 
       - name: check formatting, eslint and typescript
         run: npm run lint
