@@ -36,7 +36,7 @@
     "sass": "1.86.3",
     "ts-node": "10.9.2",
     "turbo": "2.5.0",
-    "typescript": "5.7.3"
+    "typescript": "5.8.3"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "4.40.0"
