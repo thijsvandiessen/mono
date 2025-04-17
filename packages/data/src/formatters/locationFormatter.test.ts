@@ -1,4 +1,4 @@
-import { locationFormatter } from './locationFormatter'
+import { locationFormatter } from './locationFormatter.js'
 
 describe('locationFormatter', () => {
   it('should return a location object', () => {

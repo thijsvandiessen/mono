@@ -3,8 +3,8 @@ import type {
   VideoFieldFragment,
   VideoFragment,
   VideoUploadFragment,
-} from '../generated/graphql'
-import { identifiable } from './identifiable'
+} from '../generated/graphql.js'
+import { identifiable } from './identifiable.js'
 
 export const videoUpload: TypedDocumentNode<VideoUploadFragment> = gql`
   fragment videoUpload on UploadVideoField {

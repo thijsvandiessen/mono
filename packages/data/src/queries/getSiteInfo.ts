@@ -1,9 +1,9 @@
 import type {
   GetSiteInfoQuery,
   GetSiteInfoQueryVariables,
-} from '../generated/graphql'
+} from '../generated/graphql.js'
 import { type TypedDocumentNode, gql } from '@urql/core'
-import { seoSettings } from '../fragments/seoSettings'
+import { seoSettings } from '../fragments/seoSettings.js'
 
 export const GET_SITE_INFO: TypedDocumentNode<
   GetSiteInfoQuery,

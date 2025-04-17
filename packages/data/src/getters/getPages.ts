@@ -2,11 +2,11 @@ import {
   GetPagesDocument,
   type GetPagesQuery,
   type GetPagesQueryVariables,
-} from '../generated/graphql'
+} from '../generated/graphql.js'
 import type { CombinedError } from '@urql/core'
-import type { PageLink } from '../types'
-import { client } from '../gqlClient'
-import { pageUrlFormatter } from '../formatters/pageUrlFormatter'
+import type { PageLink } from '../types/pageLink.js'
+import { client } from '../gqlClient.js'
+import { pageUrlFormatter } from '../formatters/pageUrlFormatter.js'
 
 export const getPages = async ({
   skip,

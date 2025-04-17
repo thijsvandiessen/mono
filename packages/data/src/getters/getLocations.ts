@@ -2,11 +2,11 @@ import {
   GetLocationsDocument,
   type GetLocationsQuery,
   type GetLocationsQueryVariables,
-} from '../generated/graphql'
+} from '../generated/graphql.js'
 import type { CombinedError } from '@urql/core'
-import type { Location } from '../types'
-import { client } from '../gqlClient'
-import { locationsFormatter } from '../formatters/locationsFormatter'
+import type { Location } from '../types/location.js'
+import { client } from '../gqlClient.js'
+import { locationsFormatter } from '../formatters/locationsFormatter.js'
 
 export const getLocations = async ({
   first,

@@ -1,0 +1,6 @@
+{
+  "name": "@mono/typescript-config",
+  "version": "1.0.0",
+  "description": "typescript config",
+  "type": "module"
+}

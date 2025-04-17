@@ -34,6 +34,7 @@
     "@types/react": "19.1.2",
     "@types/react-dom": "19.1.2",
     "@mono/eslint-config": "1.0.0",
+    "@mono/typescript-config": "1.0.0",
     "dotenv": "16.5.0",
     "eslint": "9.24.0",
     "eslint-plugin-testing-library": "7.1.1",

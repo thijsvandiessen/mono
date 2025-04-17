@@ -1,7 +1,7 @@
 import type {
   GetPagesMetaQuery,
   GetPagesMetaQueryVariables,
-} from '../generated/graphql'
+} from '../generated/graphql.js'
 import { type TypedDocumentNode, gql } from '@urql/core'
 
 export const GET_PAGES_META: TypedDocumentNode<

@@ -1,6 +1,6 @@
 import { renderHook, waitFor } from '@testing-library/react'
 import { getPagesMeta } from '@mono/data'
-import { usePagesMeta } from './usePagesMeta'
+import { usePagesMeta } from './usePagesMeta.js'
 
 jest.mock('@mono/data', () => {
   const originalModule = jest.requireActual('@mono/data')

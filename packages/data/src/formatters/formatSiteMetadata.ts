@@ -1,4 +1,4 @@
-import type { GetSiteMetadataQuery } from '../generated/graphql'
+import type { GetSiteMetadataQuery } from '../generated/graphql.js'
 
 export interface social {
   name: string

@@ -1,5 +1,4 @@
 {
-  "extends": "../../tsconfig.json",
-  "compilerOptions": {},
+  "extends": "@mono/typescript-config/base.json",
   "include": ["src/**/*", "src/*"]
 }

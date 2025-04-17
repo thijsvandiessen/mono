@@ -1,9 +1,9 @@
 import type {
   GetGeneralInfoQuery,
   GetGeneralInfoQueryVariables,
-} from '../generated/graphql'
+} from '../generated/graphql.js'
 import { type TypedDocumentNode, gql } from '@urql/core'
-import { generalInfo } from '../fragments/generalInfo'
+import { generalInfo } from '../fragments/generalInfo.js'
 
 export const GET_GENERAL_INFO: TypedDocumentNode<
   GetGeneralInfoQuery,

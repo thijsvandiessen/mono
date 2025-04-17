@@ -1,4 +1,4 @@
-import type { CloudinaryAsset } from '../types/image'
+import type { CloudinaryAsset } from '../types/image.js'
 
 interface Document {
   id: string

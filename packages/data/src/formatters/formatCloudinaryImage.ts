@@ -1,4 +1,4 @@
-import type { CloudinaryAsset, Image } from '../types/image'
+import type { CloudinaryAsset, Image } from '../types/image.js'
 
 export const formatCloudinaryImage = (
   asset: CloudinaryAsset | undefined

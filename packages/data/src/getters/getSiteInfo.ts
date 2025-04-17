@@ -2,9 +2,9 @@ import {
   GetSiteInfoDocument,
   type GetSiteInfoQuery,
   type GetSiteInfoQueryVariables,
-} from '../generated/graphql'
+} from '../generated/graphql.js'
 import type { CombinedError } from '@urql/core'
-import { client } from '../gqlClient'
+import { client } from '../gqlClient.js'
 
 export const getSiteInfo = async (): Promise<
   | {

@@ -1,4 +1,4 @@
-import { eventsFormatter } from './eventsFormatter'
+import { eventsFormatter } from './eventsFormatter.js'
 
 describe('eventsFormatter', () => {
   it('should return undefined if there is no concert', () => {

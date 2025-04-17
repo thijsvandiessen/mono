@@ -4,14 +4,14 @@ import type {
   TextBlockContentFragment,
   TextBlockFragment,
   TwoColumFragment,
-} from '../generated/graphql'
+} from '../generated/graphql.js'
 import { type TypedDocumentNode, gql } from '@urql/core'
-import { document, image } from './image'
-import { callToAction } from './callToAction'
-import { concertLink } from './concertLink'
-import { identifiable } from './identifiable'
-import { pageLink } from './pageLink'
-import { video } from './video'
+import { document, image } from './image.js'
+import { callToAction } from './callToAction.js'
+import { concertLink } from './concertLink.js'
+import { identifiable } from './identifiable.js'
+import { pageLink } from './pageLink.js'
+import { video } from './video.js'
 
 export const textBlockContent: TypedDocumentNode<TextBlockContentFragment> = gql`
   fragment textBlockContent on TextBlockModelContentField {

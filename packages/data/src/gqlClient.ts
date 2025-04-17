@@ -1,8 +1,8 @@
 import { Client, fetchExchange, mapExchange } from '@urql/core'
-import cacheExchange from './cacheExchange'
-import { linkConfig } from './linkConfig'
+import cacheExchange from './cacheExchange.js'
+import { linkConfig } from './linkConfig.js'
 import { retryExchange } from '@urql/exchange-retry'
-import { retryExchangeOptions } from './retryExchange'
+import { retryExchangeOptions } from './retryExchange.js'
 
 export const client = new Client({
   url: linkConfig.url,

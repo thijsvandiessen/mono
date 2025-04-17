@@ -2,9 +2,9 @@ import {
   GetPageDocument,
   type GetPageQuery,
   type GetPageQueryVariables,
-} from '../generated/graphql'
+} from '../generated/graphql.js'
 import type { CombinedError } from '@urql/core'
-import { client } from '../gqlClient'
+import { client } from '../gqlClient.js'
 
 export const getPage = async ({
   slug,
