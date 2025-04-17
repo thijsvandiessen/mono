@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "eslint": "9.24.0",
-    "eslint-config-next": "15.2.4",
+    "eslint-config-next": "15.3.1",
     "@mono/eslint-config": "1.0.0",
     "eslint-plugin-testing-library": "7.1.1",
     "prettier": "3.5.3"
