@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.10](https://github.com/thijsvandiessen/mono/compare/v1.0.9...v1.0.10) (2025-04-15)
+
+
+### Bug Fixes
+
+* update eslint ([#385](https://github.com/thijsvandiessen/mono/issues/385)) ([5cee537](https://github.com/thijsvandiessen/mono/commit/5cee53774c3c2d7783d8d7d1eb630c5e9868d4a7))
+
 ## [1.0.9](https://github.com/thijsvandiessen/mono/compare/v1.0.8...v1.0.9) (2025-04-11)
 
 
