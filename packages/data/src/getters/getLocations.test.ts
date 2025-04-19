@@ -1,20 +1,21 @@
 import { GetLocationsDocument } from '../generated/graphql.js'
 import { client } from '../gqlClient.js'
 import { getLocations } from './getLocations.js'
+import { vi, describe, it, expect } from 'vitest'
 
-jest.mock('../gqlClient', () => {
-  const originalModule = jest.requireActual('../gqlClient')
+vi.mock('../gqlClient', () => {
+  const originalModule = vi.importActual('../gqlClient')
   return {
     __esModule: true,
     ...originalModule,
     client: {
       ...originalModule,
-      query: jest.fn(),
+      query: vi.fn(),
     },
   }
 })
 
-const mockedQuery = jest.mocked(client.query)
+const mockedQuery = vi.mocked(client.query)
 
 describe('getLocations', () => {
   it('should return an object', async () => {
@@ -40,7 +41,7 @@ describe('getLocations', () => {
   })
 
   it('should return an error', async () => {
-    console.log = jest.fn()
+    console.log = vi.fn()
     mockedQuery.mockRejectedValue(new Error('error'))
     const { data, error } = await getLocations({ skip: 0, first: 1 })
     expect(data).toBeNull()
@@ -49,7 +50,7 @@ describe('getLocations', () => {
   })
 
   it('should return an error', async () => {
-    console.log = jest.fn()
+    console.log = vi.fn()
     mockedQuery.mockRejectedValue(new Error('error'))
     const { data, error } = await getLocations({ skip: 0, first: 1 })
     expect(data).toBeNull()

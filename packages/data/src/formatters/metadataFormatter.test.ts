@@ -1,5 +1,6 @@
 import type { GetPageSeoQuery } from '../generated/graphql.js'
 import { metadataFormatter } from './metadataFormatter.js'
+import { vi, describe, it, expect } from 'vitest'
 
 const mockData: GetPageSeoQuery['page'] = {
   __typename: 'PageRecord',
@@ -92,12 +93,12 @@ const mockData: GetPageSeoQuery['page'] = {
   },
 }
 
-jest.mock('../getters/getSiteMetadata', () => {
-  const originalModule = jest.requireActual('../getters/getSiteMetadata')
+vi.mock('../getters/getSiteMetadata', () => {
+  const originalModule = vi.importActual('../getters/getSiteMetadata')
   return {
     __esModule: true,
     ...originalModule,
-    getSiteMetadata: jest.fn(() => ({
+    getSiteMetadata: vi.fn(() => ({
       metadata: {
         title: 'Default title',
         description: 'Default description',

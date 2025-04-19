@@ -1,17 +1,18 @@
 import { renderHook, waitFor } from '@testing-library/react'
 import { getLocation } from '@mono/data'
 import { useLocation } from './useLocation.js'
+import { vi, it, expect, describe } from 'vitest'
 
-jest.mock('@mono/data', () => {
-  const originalModule = jest.requireActual('@mono/data')
+vi.mock('@mono/data', () => {
+  const originalModule = vi.importActual('@mono/data')
   return {
     __esModule: true,
     ...originalModule,
-    getLocation: jest.fn(),
+    getLocation: vi.fn(),
   }
 })
 
-const getLocationMock = jest.mocked(getLocation)
+const getLocationMock = vi.mocked(getLocation)
 
 describe('useLocation', () => {
   it('should return the number of pages', async () => {

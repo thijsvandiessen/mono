@@ -1,8 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@mono/typescript-config/base.json",
-  "compilerOptions": {
-    "types": ["@testing-library/jest-dom"]
-  },
-  "include": ["src/**/*", "src/*", "./jest.config.ts", "./jest.setup.cjs"]
+
+  "include": ["src/**/*", "src/*"]
 }

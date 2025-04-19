@@ -1,4 +1,5 @@
 import { eventsFormatter } from './eventsFormatter.js'
+import { describe, it, expect } from 'vitest'
 
 describe('eventsFormatter', () => {
   it('should return undefined if there is no concert', () => {

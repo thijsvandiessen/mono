@@ -2,7 +2,6 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@mono/typescript-config/base.json",
   "compilerOptions": {
-    "types": ["vitest/jsdom", "@testing-library/jest-dom/vitest"],
     "noEmit": false,
     "declaration": true,
     "outDir": "dist",

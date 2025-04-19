@@ -1,4 +1,5 @@
 import { eventFormatter } from './eventFormatter.js'
+import { describe, it, expect } from 'vitest'
 
 describe('eventFormatter', () => {
   it('should return a location object', () => {

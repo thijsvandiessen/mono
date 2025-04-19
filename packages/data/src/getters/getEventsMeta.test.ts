@@ -1,20 +1,21 @@
 import { GetEventsMetaDocument } from '../generated/graphql.js'
 import { client } from '../gqlClient.js'
 import { getEventsMeta } from './getEventsMeta.js'
+import { vi, describe, it, expect } from 'vitest'
 
-jest.mock('../gqlClient', () => {
-  const originalModule = jest.requireActual('../gqlClient')
+vi.mock('../gqlClient', () => {
+  const originalModule = vi.importActual('../gqlClient')
   return {
     __esModule: true,
     ...originalModule,
     client: {
       ...originalModule,
-      query: jest.fn(),
+      query: vi.fn(),
     },
   }
 })
 
-const mockedQuery = jest.mocked(client.query)
+const mockedQuery = vi.mocked(client.query)
 
 describe('getEventsMeta', () => {
   it('should return an object', async () => {
@@ -42,7 +43,7 @@ describe('getEventsMeta', () => {
   })
 
   it('should return an error', async () => {
-    console.log = jest.fn()
+    console.log = vi.fn()
     mockedQuery.mockRejectedValue(new Error('error'))
     const { data, error } = await getEventsMeta()
     expect(data).toBeNull()

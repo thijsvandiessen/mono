@@ -1,4 +1,5 @@
 import { isValidUrl } from './isValidUrl.js'
+import { describe, expect, it } from 'vitest'
 
 describe('isValidUrl', () => {
   it('should return false when it is no link', () => {

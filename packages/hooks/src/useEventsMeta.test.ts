@@ -1,17 +1,18 @@
 import { renderHook, waitFor } from '@testing-library/react'
 import { getEventsMeta } from '@mono/data'
 import { useEventsMeta } from './useEventsMeta.js'
+import { vi, describe, expect, it } from 'vitest'
 
-jest.mock('@mono/data', () => {
-  const originalModule = jest.requireActual('@mono/data')
+vi.mock('@mono/data', () => {
+  const originalModule = vi.importActual('@mono/data')
   return {
     __esModule: true,
     ...originalModule,
-    getEventsMeta: jest.fn(),
+    getEventsMeta: vi.fn(),
   }
 })
 
-const getEventsMetaMock = jest.mocked(getEventsMeta)
+const getEventsMetaMock = vi.mocked(getEventsMeta)
 
 describe('useEventsMeta', () => {
   it('should return the number of pages', async () => {
