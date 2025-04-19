@@ -1,8 +1,6 @@
-import type { Event } from '@mono/data'
-import { EventListItem } from '../eventListItem'
-import Link from 'next/link'
+import { EventListItem } from '../eventListItem/index.js'
 import React from 'react'
-import { getFutureEvents } from '@mono/data'
+import { getFutureEvents, type Event } from '@mono/data'
 
 export interface Props {
   skip: number
@@ -39,7 +37,7 @@ export const FutureEvents = async ({ skip, first }: Props) => {
           Houd de website in de gaten om up to date te blijven over volgende
           concerten.
         </p>
-        <Link href="/concerten">Bekijk al onze vorige concerten</Link>
+        <a href="/concerten">Bekijk al onze vorige concerten</a>
       </>
     )
 

@@ -1,5 +1,4 @@
 export { resolvedComponent } from './testHelpers/resolvedComponent.js'
-
 export { formatBytes } from './formatBytes.js'
 export { formatDate, dateIsInThePast } from './formatDate.js'
 export { isValidUrl } from './isValidUrl.js'

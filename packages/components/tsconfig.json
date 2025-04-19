@@ -1,13 +1,13 @@
 {
-  "extends": "../../tsconfig.json",
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@mono/typescript-config/base.json",
   "compilerOptions": {
-    "types": ["vitest/jsdom", "@testing-library/jest-dom/vitest"]
+    "types": ["vitest/jsdom", "@testing-library/jest-dom/vitest"],
+    "noEmit": false,
+    "declaration": true,
+    "outDir": "dist",
+    "rootDir": "src"
   },
-  "include": [
-    "declaration.d.ts",
-    "vitest.config.ts",
-    "vitest.setup.ts",
-    "src/**/*",
-    "src/*"
-  ]
+  "include": ["src/**/*", "src/*", "global.d.ts  "],
+  "exclude": ["node_modules", "dist", "src/**/*.scss"]
 }

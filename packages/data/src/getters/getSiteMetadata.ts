@@ -3,7 +3,7 @@ import {
   type GetSiteMetadataQuery,
   type GetSiteMetadataQueryVariables,
 } from '../generated/graphql.js'
-import { client } from '../gqlClient.js'
+import { client } from '../index.js'
 import { formatSiteMetadata } from '../formatters/formatSiteMetadata.js'
 
 export const getSiteMetadata = async () => {

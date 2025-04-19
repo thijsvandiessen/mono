@@ -1,11 +1,10 @@
-import { EventListItem } from '../eventListItem'
-import Image from 'next/image'
-import { LocationDetail } from '../locationDetail'
-import { PageContent } from '../pageContent'
+import { EventListItem } from '../eventListItem/index.js'
+import { LocationDetail } from '../locationDetail/index.js'
+import { PageContent } from '../pageContent/index.js'
 import React from 'react'
 import classNames from 'classnames'
 import { getEventPage } from '@mono/data'
-import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation.js'
 
 import styles from './styles.module.scss'
 
@@ -21,7 +20,7 @@ export const EventPage = async ({ slug }: Props) => {
     <article className={styles.root}>
       <header className={classNames(styles.header)}>
         <div className={classNames(styles.titleContainer, 'content-layout')}>
-          <h2>{data.title}</h2>
+          <h1>{data.title}</h1>
         </div>
       </header>
       <div
@@ -33,13 +32,13 @@ export const EventPage = async ({ slug }: Props) => {
           <div className={styles.sidebarContent}>
             {data.image?.url && (
               <div className={classNames(styles.imageContainer)}>
-                <Image
-                  priority={true} // TODO: only for the first item
+                <img
                   className={classNames(styles.image)}
                   src={data.image.url}
                   alt={data.image.description}
                   width={data.image.width ?? 100}
                   height={data.image.height ?? 100}
+                  loading="eager" // Replacing priority with loading="eager"
                 />
               </div>
             )}

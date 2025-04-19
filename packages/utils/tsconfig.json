@@ -1,4 +1,9 @@
 {
   "extends": "@mono/typescript-config/base.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "rootDir": "src"
+  },
   "include": ["src/**/*", "src/*"]
 }

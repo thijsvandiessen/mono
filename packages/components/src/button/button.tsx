@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import type { ReactNode } from 'react'
 import classNames from 'classnames'
 
@@ -28,7 +27,7 @@ export const Button = ({
   variant = 'primary',
 }: Props) => {
   return (
-    <Link
+    <a
       className={classNames(
         className,
         styles.button,
@@ -44,6 +43,6 @@ export const Button = ({
         {children} <span className={styles.suffix}>{suffix}</span>
       </span>
       {rightIcon}
-    </Link>
+    </a>
   )
 }

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/react'
-import { NavigationSubMenu } from '../navigationSubMenu'
+import { NavigationSubMenu } from '../navigationSubMenu/index.js'
 import React from 'react'
 
 const mockData = [

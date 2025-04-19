@@ -11,7 +11,7 @@ export const client = new Client({
     retryExchange(retryExchangeOptions),
     mapExchange({
       onError(error) {
-        console.log(error, error.graphQLErrors[0]?.extensions)
+        console.log(error)
       },
     }),
     fetchExchange,

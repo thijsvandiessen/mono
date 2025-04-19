@@ -1,1 +1,1 @@
-export { FutureEvents } from './futureEvents'
+export { FutureEvents } from './futureEvents.js'

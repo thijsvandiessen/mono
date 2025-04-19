@@ -1,1 +1,1 @@
-export { NotFound } from './notFound'
+export { NotFound } from './notFound.jsx'

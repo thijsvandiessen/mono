@@ -1,20 +1,16 @@
 {
   "name": "@mono/data",
   "version": "1.0.0",
-  "description": "",
+  "description": "data",
   "type": "module",
   "exports": {
     ".": {
-      "import": "./src/index.ts",
-      "module": "./dist/graphql.js",
-      "types": "./dist/graphql.d.ts"
+      "import": "./dist/data.js",
+      "module": "./dist/index.js",
+      "types": "./src/index.ts"
     }
   },
-  "main": "./dist/graphql.js",
-  "types": "./dist/graphql.d.ts",
-  "files": [
-    "./dist/*"
-  ],
+  "main": "./dist/data.js",
   "scripts": {
     "dev": "vite build --watch",
     "build": "vite build",

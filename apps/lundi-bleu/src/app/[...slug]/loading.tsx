@@ -1,4 +1,4 @@
-import { LoadingSkeleton } from '@mono/components/src/loadingSkeleton'
+import { LoadingSkeleton } from '@mono/components'
 
 export default function Loading() {
   return <LoadingSkeleton />

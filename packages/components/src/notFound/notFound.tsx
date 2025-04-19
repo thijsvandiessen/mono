@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import React from 'react'
 
 export const NotFound = () => {
@@ -7,7 +6,7 @@ export const NotFound = () => {
       <h2>Niet gevonden</h2>
       <p>Deze pagina is niet gevonden.</p>
       <p>
-        <Link href="/">Ga terug naar de homepage</Link>
+        <a href="/">Ga terug naar de homepage</a>
       </p>
     </section>
   )

@@ -1,5 +1,5 @@
-export { useDimensions } from './useDimensions.js'
 export { useEscapeKey } from './useEscapeKey.js'
+export { useDimensions } from './useDimensions.js'
 export { useEventsMeta } from './useEventsMeta.js'
 export { useHrefClick } from './useHrefClick.js'
 export { useIntersectionObserver } from './useIntersectionObserver.js'

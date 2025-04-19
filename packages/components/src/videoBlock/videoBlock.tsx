@@ -6,8 +6,7 @@ import {
   isOfTypeCloudinaryAsset,
 } from '@mono/data'
 import { useCallback, useState } from 'react'
-import Image from 'next/image'
-import { VideoPlaceholder } from '../videoPlaceholder'
+import { VideoPlaceholder } from '../videoPlaceholder/index.js'
 
 import styles from './styles.module.scss'
 
@@ -65,7 +64,7 @@ export const VideoBlock = ({ record, autoplay, aspectRatio }: Props) => {
     >
       <figure className={styles.iframeContainer}>
         {!hasPlayed && asset && (
-          <Image
+          <img
             src={asset.url}
             width={asset.width}
             height={asset.height}

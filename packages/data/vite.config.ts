@@ -4,8 +4,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: ['./src/index.ts'],
-      name: 'graphql',
-      fileName: 'graphql',
+      name: 'data',
+      fileName: 'data',
       formats: ['es'],
     },
     rollupOptions: {

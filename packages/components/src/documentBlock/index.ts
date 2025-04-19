@@ -1,1 +1,1 @@
-export { DocumentBlock } from './documentBlock'
+export { DocumentBlock } from './documentBlock.jsx'

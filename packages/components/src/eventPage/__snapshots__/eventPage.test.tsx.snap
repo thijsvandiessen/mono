@@ -11,9 +11,9 @@ exports[`Concert component > shows all the data 1`] = `
       <div
         class="_titleContainer_b2d4cd content-layout"
       >
-        <h2>
+        <h1>
           title
-        </h2>
+        </h1>
       </div>
     </header>
     <div

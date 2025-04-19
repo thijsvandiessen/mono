@@ -4,7 +4,7 @@ import {
   type GetSiteInfoQueryVariables,
 } from '../generated/graphql.js'
 import type { CombinedError } from '@urql/core'
-import { client } from '../gqlClient.js'
+import { client } from '../index.js'
 
 export const getSiteInfo = async (): Promise<
   | {

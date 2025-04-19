@@ -4,13 +4,13 @@ import type {
   ImageFragment,
   VideoFragment,
 } from '@mono/data'
-import { CallToAction } from '../callToAction'
-import { DocumentBlock } from '../documentBlock'
-import { ImageBlock } from '../imageBlock'
+import { CallToAction } from '../callToAction/index.js'
+import { DocumentBlock } from '../documentBlock/index.js'
+import { ImageBlock } from '../imageBlock/index.js'
 import type { Record } from 'datocms-structured-text-utils'
 import type { RenderBlockContext } from 'react-datocms/structured-text'
-import { VideoBlock } from '../videoBlock'
-import { isOfType } from './isOfType'
+import { VideoBlock } from '../videoBlock/index.js'
+import { isOfType } from './isOfType.js'
 
 import styles from './styles.module.scss'
 

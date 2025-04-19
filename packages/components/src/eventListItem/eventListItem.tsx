@@ -1,8 +1,6 @@
 import { dateIsInThePast, formatDate } from '@mono/utils'
-import { ArrowRight } from '../icons/arrow-right'
+import { ArrowRight } from '../icons/arrow-right.jsx'
 import type { Event } from '@mono/data'
-import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
 import classNames from 'classnames'
 
@@ -47,7 +45,7 @@ export const EventListItem = ({
         {title && <span className="h2">{title}</span>}
         {showLink && (
           <span>
-            <Link href={data.url}>{data.title}</Link>
+            <a href={data.url}>{data.title}</a>
           </span>
         )}
       </h2>
@@ -86,7 +84,7 @@ export const EventListItem = ({
                     {concertPast ? (
                       'Concert voorbij'
                     ) : ticketLink ? (
-                      <Link
+                      <a
                         href={ticketLink}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -95,7 +93,7 @@ export const EventListItem = ({
                           Koop nu kaarten
                           <ArrowRight className={styles.locationLinkIcon} />
                         </span>
-                      </Link>
+                      </a>
                     ) : (
                       'Link voor de kaartverkoop volgt spoedig'
                     )}
@@ -108,8 +106,7 @@ export const EventListItem = ({
 
         {showImage && data.image?.url && (
           <div className={classNames(styles.imageContainer)}>
-            <Image
-              priority={true} // TODO: only for the first item
+            <img
               className={classNames(styles.image)}
               src={data.image.url}
               alt={data.image.description}
@@ -121,7 +118,7 @@ export const EventListItem = ({
       </div>
 
       {showLink && (
-        <Link
+        <a
           className={classNames(styles.eventLink, {
             'text-small': size === 'small',
           })}
@@ -129,7 +126,7 @@ export const EventListItem = ({
         >
           Bekijk concert
           <ArrowRight />
-        </Link>
+        </a>
       )}
     </div>
   )

@@ -1,7 +1,7 @@
-import { PageContent } from '../pageContent'
+import { PageContent } from '../pageContent/index.js'
 import React from 'react'
 import { getPage } from '@mono/data'
-import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation.js'
 
 export interface Props {
   slug: string

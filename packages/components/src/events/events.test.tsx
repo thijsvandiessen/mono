@@ -1,10 +1,10 @@
-import { Events, type Props } from './events'
+import { Events, type Props } from './events.js'
 import { describe, expect, it, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import type { Props as EventProps } from '../event'
+import type { Props as EventProps } from '../event/event.js'
 import React from 'react'
 import { getEvents } from '@mono/data'
-import { mockEvent } from './mocks/mockEvents'
+import { mockEvent } from './mocks/mockEvents.js'
 import { resolvedComponent } from '@mono/utils'
 
 vi.mock('@mono/data', () => ({

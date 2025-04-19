@@ -1,4 +1,3 @@
-import type { Exchange } from '@urql/core'
 import { cacheExchange } from '@urql/exchange-graphcache'
 import introspectedSchema from './generated/introspection.json' with { type: 'json' }
 
@@ -25,4 +24,4 @@ export default cacheExchange({
     HeaderModelBodyField: () => null,
     HeaderRecord: () => null,
   },
-}) as Exchange
+})

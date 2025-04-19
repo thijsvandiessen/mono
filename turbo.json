@@ -5,7 +5,8 @@
       "outputs": [
         "app/**/.next/**",
         "app/**/!.next/cache/**",
-        "packages/**/dist/**"
+        "packages/**/dist/**",
+        "dist/**"
       ],
       "dependsOn": ["^build"]
     },

@@ -1,19 +1,16 @@
 {
   "name": "@mono/hooks",
   "version": "1.0.0",
+  "description": "hooks",
   "type": "module",
   "exports": {
     ".": {
-      "import": "./src/index.ts",
+      "import": "./dist/hooks.js",
       "module": "./dist/hooks.js",
-      "types": "./dist/hooks.d.ts"
+      "types": "./src/hooks.ts"
     }
   },
-  "main": "dist/hooks.js",
-  "types": "dist/hooks.d.ts",
-  "files": [
-    "dist/**/*"
-  ],
+  "main": "./dist/hooks.js",
   "scripts": {
     "dev": "vite build --watch",
     "build": "vite build",

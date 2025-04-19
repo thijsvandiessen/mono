@@ -3,15 +3,12 @@
   "version": "1.0.0",
   "description": "eslint config",
   "type": "module",
-  "files": [
-    "dist/**/*"
-  ],
   "exports": {
     ".": {
       "import": "./src/index.mjs"
     }
   },
-  "main": "index.js",
+  "main": "./src/index.mjs",
   "scripts": {
     "lint": "npm run lint:styles",
     "lint:styles": "prettier . --write  --list-different"

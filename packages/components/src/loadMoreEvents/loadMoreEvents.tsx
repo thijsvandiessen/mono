@@ -1,9 +1,8 @@
 'use client'
-import { type Event, getEvents } from '@mono/data'
+import { ConcertModelOrderBy, type Event, getEvents } from '@mono/data'
 import React, { useEffect, useRef, useState } from 'react'
 import { useEventsMeta, useIntersectionObserver } from '@mono/hooks'
-import { ConcertModelOrderBy } from '@mono/data'
-import { EventListItem } from '../eventListItem'
+import { EventListItem } from '../eventListItem/index.js'
 
 export interface Props {
   initialSkip: number

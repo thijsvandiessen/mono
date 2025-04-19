@@ -5,16 +5,13 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./src/index.ts",
-      "module": "./dist/utils.umd.cjs",
-      "types": "./dist/utils.d.ts"
+      "import": "./dist/utils.js",
+      "types": "./src/index.ts",
+      "require": "./dist/utils.cjs"
     }
   },
-  "main": "dist/utils.umd.cjs",
-  "types": "dist/utils.d.ts",
-  "files": [
-    "dist/*"
-  ],
+  "main": "./dist/utils.cjs",
+  "module": "./dist/utils.js",
   "scripts": {
     "dev": "vite build --watch",
     "build": "vite build",

@@ -1,7 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "./base.json",
-  "compilerOptions": {},
   "include": [
     "./next-env.d.ts",
     "./.next/types/**/*.ts",
@@ -11,5 +10,6 @@
     "./jest.config.ts",
     ".next/types/**/*.ts"
   ],
+
   "exclude": ["node_modules"]
 }

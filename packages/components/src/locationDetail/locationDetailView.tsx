@@ -1,6 +1,6 @@
 'use client'
 import type { Location } from '@mono/data'
-import { Map } from '../map'
+import { Map } from '../map/index.js'
 import React from 'react'
 import styles from './styles.module.scss'
 

@@ -3,9 +3,8 @@ import {
   formatCloudinaryImage,
   isOfTypeCloudinaryAsset,
 } from '@mono/data'
-import { ContentField } from '../contentField'
+import { ContentField } from '../contentField/index.js'
 import type { ElementType } from 'react'
-import Image from 'next/image'
 import React from 'react'
 import classNames from 'classnames'
 import { isEmptyDocument } from 'datocms-structured-text-utils'
@@ -53,13 +52,12 @@ export const Header = ({
       </div>
       {asset?.url && (
         <div className={classNames(styles.headerImageWrapper)}>
-          <Image
+          <img
             className={classNames(styles.headerImage)}
             alt={asset.title ?? title ?? ''}
             src={asset.url}
             width={asset.width ?? 100}
             height={asset.height ?? 100}
-            priority={true}
           />
           <div className={classNames(styles.background)} />
         </div>

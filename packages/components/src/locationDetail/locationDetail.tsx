@@ -1,4 +1,4 @@
-import { LocationDetailView } from './locationDetailView'
+import { LocationDetailView } from './locationDetailView.jsx'
 import React from 'react'
 import { getLocation } from '@mono/data'
 
