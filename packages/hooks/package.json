@@ -7,7 +7,7 @@
     ".": {
       "import": "./dist/hooks.js",
       "module": "./dist/hooks.js",
-      "types": "./src/hooks.ts"
+      "types": "./src/index.ts"
     }
   },
   "main": "./dist/hooks.js",

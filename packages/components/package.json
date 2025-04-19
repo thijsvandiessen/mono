@@ -10,7 +10,7 @@
       "types": "./src/index.ts"
     }
   },
-  "main": "./dist/index.cjs",
+  "main": "./dist/index.js",
   "scripts": {
     "build": "tsc && cpx \"src/**/*.scss\" dist",
     "dev": "tsc --watch",
