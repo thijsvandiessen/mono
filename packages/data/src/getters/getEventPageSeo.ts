@@ -2,9 +2,9 @@ import {
   GetEventSeoDocument,
   type GetEventSeoQuery,
   type GetEventSeoQueryVariables,
-} from '../generated/graphql'
-import { client } from '../gqlClient'
-import { metadataFormatter } from '../formatters/metadataFormatter'
+} from '../generated/graphql.js'
+import { client } from '../gqlClient.js'
+import { metadataFormatter } from '../formatters/metadataFormatter.js'
 import { slugFormatter } from '@mono/utils'
 
 export const getEventPageSeo = async ({ slug }: GetEventSeoQueryVariables) => {

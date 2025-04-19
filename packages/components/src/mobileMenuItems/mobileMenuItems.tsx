@@ -1,7 +1,7 @@
 'use client'
 
 import { GetGeneralInfoDocument } from '@mono/data'
-import { NavigationItem } from '../navigationItem'
+import { NavigationItem } from '../navigationItem/index.js'
 import React from 'react'
 import classNames from 'classnames'
 import styles from './styles.module.scss'

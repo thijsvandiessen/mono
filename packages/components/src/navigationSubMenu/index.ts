@@ -1,1 +1,1 @@
-export { NavigationSubMenu } from './navigationSubMenu'
+export { NavigationSubMenu } from './navigationSubMenu.jsx'

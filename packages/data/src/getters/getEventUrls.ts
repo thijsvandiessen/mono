@@ -3,11 +3,11 @@ import {
   GetEventsUrlsDocument,
   type GetEventsUrlsQuery,
   type GetEventsUrlsQueryVariables,
-} from '../generated/graphql'
+} from '../generated/graphql.js'
 import type { CombinedError } from '@urql/core'
-import type { PageLink } from '../types/pageLink'
-import { client } from '../gqlClient'
-import { eventUrlFormatter } from '../formatters/eventUrlFormatter'
+import type { PageLink } from '../types/pageLink.js'
+import { client } from '../gqlClient.js'
+import { eventUrlFormatter } from '../formatters/eventUrlFormatter.js'
 
 interface Props extends GetEventsUrlsQueryVariables {
   skip: number

@@ -1,2 +1,1 @@
-export { Button } from './button'
-export type { Props as ButtonProps } from './button'
+export { Button, type Props as ButtonProps } from './button.jsx'

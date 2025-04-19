@@ -3,9 +3,9 @@ import type {
   ConcertLinkFragment,
   PageLinkFragment,
 } from '@mono/data'
-import { ArrowRight } from '../icons/arrow-right'
-import { Button } from '../button'
-import { isOfType } from '../contentField/isOfType'
+import { ArrowRight } from '../icons/arrow-right.jsx'
+import { Button } from '../button/index.js'
+import { isOfType } from '../contentField/isOfType.js'
 import { slugFormatter } from '@mono/utils'
 
 interface Props {

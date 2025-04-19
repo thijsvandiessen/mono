@@ -1,1 +1,1 @@
-export { LoadMoreEvents } from './loadMoreEvents'
+export { LoadMoreEvents } from './loadMoreEvents.jsx'

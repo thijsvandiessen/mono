@@ -1,6 +1,6 @@
-import { GetPagesMetaDocument } from '../generated/graphql'
-import { client } from '../gqlClient'
-import { getPagesMeta } from './getPagesMeta'
+import { GetPagesMetaDocument } from '../generated/graphql.js'
+import { client } from '../gqlClient.js'
+import { getPagesMeta } from './getPagesMeta.js'
 
 jest.mock('../gqlClient', () => {
   const originalModule = jest.requireActual('../gqlClient')

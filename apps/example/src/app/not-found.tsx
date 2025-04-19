@@ -1,4 +1,4 @@
-import { NotFound } from '@mono/components/src/notFound'
+import { NotFound } from '@mono/components'
 
 export default function NotFoundError() {
   return <NotFound />

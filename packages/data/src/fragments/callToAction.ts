@@ -1,8 +1,8 @@
 import { type AnyVariables, type TypedDocumentNode, gql } from '@urql/core'
-import type { CallToActionFragment } from '../generated/graphql'
-import { concertLink } from './concertLink'
-import { identifiable } from './identifiable'
-import { pageLink } from './pageLink'
+import type { CallToActionFragment } from '../generated/graphql.js'
+import { concertLink } from './concertLink.js'
+import { identifiable } from './identifiable.js'
+import { pageLink } from './pageLink.js'
 
 export const callToAction: TypedDocumentNode<
   CallToActionFragment,

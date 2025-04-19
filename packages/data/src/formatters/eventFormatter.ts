@@ -1,9 +1,9 @@
-import type { ConcertDetailFragment } from '../generated/graphql'
-import type { Event } from '../types/event'
-import type { Location } from '../types/location'
-import { formatCloudinaryImage } from './formatCloudinaryImage'
-import { isOfTypeCloudinaryAsset } from '../types/image'
-import { locationItemFormatter } from './locationItemFormatter'
+import type { ConcertDetailFragment } from '../generated/graphql.js'
+import type { Event } from '../types/event.js'
+import type { Location } from '../types/location.js'
+import { formatCloudinaryImage } from './formatCloudinaryImage.js'
+import { isOfTypeCloudinaryAsset } from '../types/image.js'
+import { locationItemFormatter } from './locationItemFormatter.js'
 import { slugFormatter } from '@mono/utils'
 
 export const eventFormatter = (

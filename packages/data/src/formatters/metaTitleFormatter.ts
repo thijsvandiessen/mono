@@ -1,8 +1,8 @@
 import type {
   EventPageSeoFragment,
   PageDetailSeoFragment,
-} from '../generated/graphql'
-import { getSiteMetadata } from '../getters/getSiteMetadata'
+} from '../generated/graphql.js'
+import { getSiteMetadata } from '../getters/getSiteMetadata.js'
 
 export const metaTitleFormatter = async (
   data: PageDetailSeoFragment | EventPageSeoFragment | undefined

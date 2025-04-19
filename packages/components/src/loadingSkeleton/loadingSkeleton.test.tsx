@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { LoadingSkeleton } from './loadingSkeleton'
+import { LoadingSkeleton } from './loadingSkeleton.jsx'
 import React from 'react'
 import { render } from '@testing-library/react'
 

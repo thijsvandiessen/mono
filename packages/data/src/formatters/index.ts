@@ -1,2 +1,2 @@
-export { formatCloudinaryDocument } from './formatCloudinaryDocument'
-export { formatCloudinaryImage } from './formatCloudinaryImage'
+export { formatCloudinaryDocument } from './formatCloudinaryDocument.js'
+export { formatCloudinaryImage } from './formatCloudinaryImage.js'

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { NotFound } from './notFound'
+import { NotFound } from './notFound.jsx'
 import React from 'react'
 import { render } from '@testing-library/react'
 

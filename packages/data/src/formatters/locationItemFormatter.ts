@@ -1,6 +1,6 @@
-import type { Location } from '../types/location'
-import type { LocationItemFragment } from '../generated/graphql'
-import { locationFormatter } from './locationFormatter'
+import type { Location } from '../types/location.js'
+import type { LocationItemFragment } from '../generated/graphql.js'
+import { locationFormatter } from './locationFormatter.js'
 
 export const locationItemFormatter = (
   location: LocationItemFragment

@@ -1,4 +1,4 @@
-import { fileFormatter } from './fileFormatter'
+import { fileFormatter } from './fileFormatter.js'
 
 describe('fileFormatter', () => {
   it('should return an object', () => {

@@ -1,6 +1,6 @@
 import { renderHook, waitFor } from '@testing-library/react'
 import { getLocation } from '@mono/data'
-import { useLocation } from './useLocation'
+import { useLocation } from './useLocation.js'
 
 jest.mock('@mono/data', () => {
   const originalModule = jest.requireActual('@mono/data')

@@ -1,5 +1,5 @@
 'use client'
-import { ErrorMessage } from '@mono/components/src/errorMessage'
+import { ErrorMessage } from '@mono/components'
 
 export default function GlobalError({
   error,

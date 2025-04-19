@@ -10,7 +10,7 @@ export default ({ mode }: { mode: string }) => {
     build: {
       lib: {
         // Could also be a dictionary or array of multiple entry points
-        entry: 'src/index.ts',
+        entry: ['./src/index.ts'],
         name: 'search-site',
         // the proper extensions will be added
         fileName: 'search-site',

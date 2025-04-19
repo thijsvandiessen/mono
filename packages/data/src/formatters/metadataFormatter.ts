@@ -1,10 +1,10 @@
 import type {
   EventPageSeoFragment,
   PageDetailSeoFragment,
-} from '../generated/graphql'
+} from '../generated/graphql.js'
 import type { Metadata } from 'next'
-import { getSiteMetadata } from '../getters/getSiteMetadata'
-import { metaTitleFormatter } from './metaTitleFormatter'
+import { getSiteMetadata } from '../getters/getSiteMetadata.js'
+import { metaTitleFormatter } from './metaTitleFormatter.js'
 
 export const metadataFormatter = async (
   data: PageDetailSeoFragment | EventPageSeoFragment | undefined,

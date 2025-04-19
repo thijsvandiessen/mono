@@ -1,9 +1,9 @@
 import type {
   GetEventsUrlsQuery,
   GetEventsUrlsQueryVariables,
-} from '../generated/graphql'
+} from '../generated/graphql.js'
 import { type TypedDocumentNode, gql } from '@urql/core'
-import { eventLink } from '../fragments/eventLink'
+import { eventLink } from '../fragments/eventLink.js'
 
 export const GET_EVENT_URLS: TypedDocumentNode<
   GetEventsUrlsQuery,

@@ -1,6 +1,6 @@
 import React, { type FunctionComponent, type ReactElement } from 'react'
-import { Footer } from '../footer'
-import { Navigation } from '../navigation'
+import { Footer } from '../footer/index.js'
+import { Navigation } from '../navigation/index.js'
 import classNames from 'classnames'
 import styles from './styles.module.scss'
 

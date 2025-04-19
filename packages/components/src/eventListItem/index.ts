@@ -1,2 +1,1 @@
-export type { Props } from './eventListItem'
-export { EventListItem } from './eventListItem'
+export { EventListItem, type Props } from './eventListItem.jsx'

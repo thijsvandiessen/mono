@@ -1,2 +1,2 @@
-export { Location } from './location'
-export { LocationView } from './locationView'
+export { Location } from './location.jsx'
+export { LocationView } from './locationView.jsx'

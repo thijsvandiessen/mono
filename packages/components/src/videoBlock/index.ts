@@ -1,1 +1,1 @@
-export { VideoBlock } from './videoBlock'
+export { VideoBlock } from './videoBlock.jsx'

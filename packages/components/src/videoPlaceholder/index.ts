@@ -1,1 +1,1 @@
-export { VideoPlaceholder } from './videoPlaceholder'
+export { VideoPlaceholder } from './videoPlaceholder.jsx'

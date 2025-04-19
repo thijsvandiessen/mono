@@ -1,9 +1,9 @@
 import type {
   ImageFragment,
   ResponsiveImageFragment,
-} from '../generated/graphql'
+} from '../generated/graphql.js'
 import { type TypedDocumentNode, gql } from '@urql/core'
-import { identifiable } from './identifiable'
+import { identifiable } from './identifiable.js'
 
 export const responsiveImage: TypedDocumentNode<ResponsiveImageFragment> = gql`
   fragment responsiveImage on ResponsiveImage {

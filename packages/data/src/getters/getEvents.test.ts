@@ -1,6 +1,6 @@
-import { GetEventDocument } from '../generated/graphql'
-import { client } from '../gqlClient'
-import { getEvents } from './getEvents'
+import { GetEventDocument } from '../generated/graphql.js'
+import { client } from '../gqlClient.js'
+import { getEvents } from './getEvents.js'
 
 jest.mock('../gqlClient', () => {
   const originalModule = jest.requireActual('../gqlClient')

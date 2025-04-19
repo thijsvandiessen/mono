@@ -2,9 +2,9 @@ import {
   GetPagesMetaDocument,
   type GetPagesMetaQuery,
   type GetPagesMetaQueryVariables,
-} from '../generated/graphql'
+} from '../generated/graphql.js'
 import type { CombinedError } from '@urql/core'
-import { client } from '../gqlClient'
+import { client } from '../gqlClient.js'
 
 export const getPagesMeta = async (): Promise<
   | {

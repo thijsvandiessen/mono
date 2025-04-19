@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import React from 'react'
 import classNames from 'classnames'
 import { slugFormatter } from '@mono/utils'
@@ -22,13 +21,13 @@ export const NavigationSubMenuItem = ({
 
   return (
     <li className={classNames(styles.navItem)}>
-      <Link
+      <a
         className={classNames(styles.link, 'text-large')}
         href={slugFormatter({ slug })}
         onClick={onClick}
       >
         {label}
-      </Link>
+      </a>
     </li>
   )
 }

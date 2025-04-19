@@ -1,5 +1,5 @@
-import type { GetEventsUrlsQuery } from '../generated/graphql'
-import type { PageLink } from '../types/pageLink'
+import type { GetEventsUrlsQuery } from '../generated/graphql.js'
+import type { PageLink } from '../types/pageLink.js'
 import { slugFormatter } from '@mono/utils'
 
 export const eventUrlFormatter = (

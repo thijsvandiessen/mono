@@ -1,4 +1,4 @@
-import { ContentField } from '../contentField'
+import { ContentField } from '../contentField/index.js'
 import type { TwoColumFragment } from '@mono/data'
 import classNames from 'classnames'
 import { isStructuredText } from 'datocms-structured-text-utils'

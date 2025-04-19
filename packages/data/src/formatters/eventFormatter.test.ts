@@ -1,4 +1,4 @@
-import { eventFormatter } from './eventFormatter'
+import { eventFormatter } from './eventFormatter.js'
 
 describe('eventFormatter', () => {
   it('should return a location object', () => {

@@ -1,5 +1,5 @@
-import type { GetPageSeoQuery } from '../generated/graphql'
-import { metadataFormatter } from './metadataFormatter'
+import type { GetPageSeoQuery } from '../generated/graphql.js'
+import { metadataFormatter } from './metadataFormatter.js'
 
 const mockData: GetPageSeoQuery['page'] = {
   __typename: 'PageRecord',

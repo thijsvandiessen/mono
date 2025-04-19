@@ -1,1 +1,1 @@
-export { SearchSite } from './searchSite'
+export { SearchSite } from './searchSite.js'

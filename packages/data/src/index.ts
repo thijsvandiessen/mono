@@ -1,4 +1,4 @@
-export { client } from './gqlClient'
+export { client } from './gqlClient.js'
 export {
   getEvent,
   getEventPage,
@@ -16,7 +16,7 @@ export {
   getPagesMeta,
   getSiteInfo,
   getSiteMetadata,
-} from './getters'
+} from './getters/index.js'
 
 export type {
   Author,
@@ -27,8 +27,11 @@ export type {
   Image,
   Location,
   Music,
-} from './types'
+} from './types/index.js'
 
-export { isOfTypeCloudinaryAsset } from './types'
-export { formatCloudinaryDocument, formatCloudinaryImage } from './formatters'
-export * from './generated/graphql'
+export { isOfTypeCloudinaryAsset } from './types/index.js'
+export {
+  formatCloudinaryDocument,
+  formatCloudinaryImage,
+} from './formatters/index.js'
+export * from './generated/graphql.js'

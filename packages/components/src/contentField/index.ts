@@ -1,1 +1,1 @@
-export { ContentField } from './contentField'
+export { ContentField } from './contentField.jsx'

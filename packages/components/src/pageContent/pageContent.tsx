@@ -1,8 +1,7 @@
-import { ContentField } from '../contentField'
-import { type Event } from '@mono/data'
-import { Header } from '../header'
-import { type PageDetailFragment } from '@mono/data'
-import { TwoColumContentField } from '../twoColumContentField'
+import { ContentField } from '../contentField/index.js'
+import { Header } from '../header/index.js'
+import { type PageDetailFragment, type Event } from '@mono/data'
+import { TwoColumContentField } from '../twoColumContentField/index.js'
 import classNames from 'classnames'
 import styles from './styles.module.scss'
 

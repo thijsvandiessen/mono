@@ -1,1 +1,1 @@
-export { SearchApp } from './SearchApp'
+export { SearchApp } from './SearchApp.js'

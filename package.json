@@ -11,7 +11,7 @@
   "scripts": {
     "build": "npm run build --workspaces --if-present",
     "codegen": "npm run download-schema --workspace=packages/data && npm run codegen --workspace=packages/data",
-    "dev": "concurrently \"npm run dev --workspace=packages/data\" \"npm run dev --workspace=packages/hooks\" \"npm run dev --workspace=packages/utils\" \"npm run dev --workspace=apps/lundi-bleu\" \"npm run dev --workspace=apps/example\"",
+    "dev": "concurrently \"npm run dev --workspace=apps/lundi-bleu\" \"npm run dev --workspace=apps/example\"",
     "lint": "npm run lint --workspaces --if-present",
     "test": "npm test --workspaces --if-present"
   },

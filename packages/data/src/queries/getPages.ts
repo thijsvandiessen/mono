@@ -1,9 +1,9 @@
 import type {
   GetPagesQuery,
   GetPagesQueryVariables,
-} from '../generated/graphql'
+} from '../generated/graphql.js'
 import { type TypedDocumentNode, gql } from '@urql/core'
-import { pageLink } from '../fragments/pageLink'
+import { pageLink } from '../fragments/pageLink.js'
 
 export const GET_PAGES: TypedDocumentNode<
   GetPagesQuery,

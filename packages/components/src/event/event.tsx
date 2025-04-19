@@ -1,4 +1,4 @@
-import { EventListItem } from '../eventListItem'
+import { EventListItem } from '../eventListItem/index.js'
 import React from 'react'
 import { getEvent } from '@mono/data'
 

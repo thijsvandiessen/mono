@@ -1,8 +1,7 @@
 import type { ConcertLinkFragment, PageLinkFragment } from '@mono/data'
-import Link from 'next/link'
 import type { Record } from 'datocms-structured-text-utils'
 import { type RenderRecordLinkContext } from 'react-datocms/structured-text'
-import { isOfType } from './isOfType'
+import { isOfType } from './isOfType.js'
 import { slugFormatter } from '@mono/utils'
 
 export const renderLinkToRecord = ({
@@ -11,19 +10,19 @@ export const renderLinkToRecord = ({
 }: RenderRecordLinkContext<Record>) => {
   if (isOfType<PageLinkFragment>(record, 'PageRecord')) {
     if (!record.slug) return null
-    return <Link href={slugFormatter({ slug: record.slug })}>{children}</Link>
+    return <a href={slugFormatter({ slug: record.slug })}>{children}</a>
   }
   if (isOfType<ConcertLinkFragment>(record, 'ConcertRecord')) {
     if (!record.slug) return null
     return (
-      <Link
+      <a
         href={slugFormatter({
           slug: record.slug,
           prefix: '/concerten',
         })}
       >
         {children}
-      </Link>
+      </a>
     )
   }
 

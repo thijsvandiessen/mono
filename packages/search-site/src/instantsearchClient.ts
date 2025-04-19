@@ -1,5 +1,5 @@
 import instantsearch from 'instantsearch.js'
-import { searchClient } from './searchClient'
+import { searchClient } from './searchClient.js'
 
 if (!process.env.ALGOLIA_INDEX_NAME)
   throw new Error('Missing Algolia index name')

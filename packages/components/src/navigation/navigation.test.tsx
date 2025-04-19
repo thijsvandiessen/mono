@@ -1,9 +1,9 @@
 import { describe, expect, it, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { Navigation } from './navigation'
+import { Navigation } from './navigation.js'
 import React from 'react'
 import { getGeneralInfo } from '@mono/data'
-import { mockMenuData } from './mocks/mockMenuData'
+import { mockMenuData } from './mocks/mockMenuData.js'
 import { resolvedComponent } from '@mono/utils'
 
 global.ResizeObserver = vi.fn().mockImplementation(() => ({

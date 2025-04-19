@@ -1,7 +1,5 @@
-import Link from 'next/link'
 import classNames from 'classnames'
-import { getGeneralInfo } from '@mono/data'
-import { getSiteMetadata } from '@mono/data'
+import { getGeneralInfo, getSiteMetadata } from '@mono/data'
 import { slugFormatter } from '@mono/utils'
 import styles from './styles.module.scss'
 
@@ -24,12 +22,12 @@ export const Footer = async () => {
               if ('link' in item && item?.link?.slug && item.label) {
                 return (
                   <li key={item.id}>
-                    <Link
+                    <a
                       className={classNames(styles.link)}
                       href={slugFormatter({ slug: item?.link?.slug })}
                     >
                       {item.label}
-                    </Link>
+                    </a>
                   </li>
                 )
               }
@@ -43,14 +41,14 @@ export const Footer = async () => {
           <ul className={classNames(styles.list)}>
             {metadata?.socials?.map((social) => (
               <li key={social.name}>
-                <Link
+                <a
                   className={classNames(styles.link)}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   {social.name}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { DefaultPage } from '@mono/components/src/defaultPage'
+import { DefaultPage } from '@mono/components'
 import { getPageSeo } from '@mono/data'
 import { viewport } from '@mono/utils'
 

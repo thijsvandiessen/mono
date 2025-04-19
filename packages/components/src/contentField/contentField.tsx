@@ -5,9 +5,9 @@ import type {
 } from '@mono/data'
 import { StructuredText } from 'react-datocms/structured-text'
 import { isStructuredText } from 'datocms-structured-text-utils'
-import { renderBlock } from './renderBlock'
-import { renderInlineRecord } from './renderInlineRecord'
-import { renderLinkToRecord } from './renderLinkToRecord'
+import { renderBlock } from './renderBlock.jsx'
+import { renderInlineRecord } from './renderInlineRecord.jsx'
+import { renderLinkToRecord } from './renderLinkToRecord.jsx'
 
 import styles from './styles.module.scss'
 

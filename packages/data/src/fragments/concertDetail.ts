@@ -1,9 +1,9 @@
 import { type TypedDocumentNode, gql } from '@urql/core'
-import { textBlock, twoColum } from './textBlock'
-import type { ConcertDetailFragment } from '../generated/graphql'
-import { header } from './header'
-import { identifiable } from './identifiable'
-import { locationItem } from './locationItem'
+import { textBlock, twoColum } from './textBlock.js'
+import type { ConcertDetailFragment } from '../generated/graphql.js'
+import { header } from './header.js'
+import { identifiable } from './identifiable.js'
+import { locationItem } from './locationItem.js'
 
 export const concertDetail: TypedDocumentNode<ConcertDetailFragment> = gql`
   fragment concertDetail on ConcertRecord {

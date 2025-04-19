@@ -1,1 +1,1 @@
-export { ConcertsPage } from './concertsPage'
+export { ConcertsPage } from './concertsPage.jsx'

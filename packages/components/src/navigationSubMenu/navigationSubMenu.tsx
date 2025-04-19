@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { useEscapeKey, useOutsideClick } from '@mono/hooks'
-import { NavigationSubMenuItem } from '../navigationSubMenuItem'
+import { NavigationSubMenuItem } from '../navigationSubMenuItem/index.js'
 import type { SubmenuItemFragment } from '@mono/data'
 import classNames from 'classnames'
 import styles from './styles.module.scss'

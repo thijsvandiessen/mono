@@ -3,7 +3,6 @@ import {
   formatCloudinaryImage,
   isOfTypeCloudinaryAsset,
 } from '@mono/data'
-import Image from 'next/image'
 import React from 'react'
 
 import styles from './styles.module.scss'
@@ -19,7 +18,7 @@ export const ImageBlock = ({ record }: Props) => {
   )
   if (!asset?.url) return null
   return (
-    <Image
+    <img
       className={styles.image}
       src={asset.url}
       alt={asset.title}
