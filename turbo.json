@@ -5,30 +5,23 @@
       "outputs": [
         "app/**/.next/**",
         "app/**/!.next/cache/**",
-        "packages/**/dist/**",
-        "dist/**"
-      ],
-      "dependsOn": ["^build"]
-    },
-    "analyze": {
-      "outputs": [
-        "app/**/.next/**",
-        "app/**/!.next/cache/**",
-        "packages/**/coverage/**"
+        "packages/**/dist/**"
       ]
     },
-    "@mono/data#codegen": {
-      "outputs": ["packages/data/src/generated/**"]
+    "codegen": {
+      "outputs": ["packages/data/src/generated/**"],
+      "dependsOn": ["^build"]
     },
     "lint": {
-      "dependsOn": []
+      "dependsOn": ["^build"]
     },
     "test": {
-      "dependsOn": []
+      "dependsOn": ["^build"]
     },
     "dev": {
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "dependsOn": ["^build"]
     }
   },
   "remoteCache": {
