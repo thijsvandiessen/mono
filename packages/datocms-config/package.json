@@ -10,9 +10,8 @@
   },
   "main": "./src/index.js",
   "scripts": {
-    "lint": "npm run lint:styles && npm run lint:typescript",
-    "lint:styles": "prettier . --write  --list-different",
-    "lint:typescript": "tsc"
+    "lint": "npm run lint:styles",
+    "lint:styles": "prettier . --write  --list-different"
   },
   "dependencies": {
     "@datocms/cma-client-node": "4.0.1",

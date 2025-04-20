@@ -1,6 +1,5 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@mono/typescript-config/base.json",
-
   "include": ["src/**/*", "src/*"]
 }

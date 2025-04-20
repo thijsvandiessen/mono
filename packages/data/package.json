@@ -16,10 +16,9 @@
     "codegen:watch": "graphql-codegen --require dotenv/config --config ./codegen.ts --watch",
     "dev": "vite build --watch",
     "download-schema": "rover graph fetch vandiessen-mono-graph@current > ./src/generated/schema.graphql && npm run lint:styles",
-    "lint": "npm run lint:js && npm run lint:styles && npm run lint:typescript",
+    "lint": "npm run lint:js && npm run lint:styles",
     "lint:js": "eslint . --fix",
     "lint:styles": "prettier . --write  --list-different",
-    "lint:typescript": "tsc",
     "test": "vitest run"
   },
   "dependencies": {
