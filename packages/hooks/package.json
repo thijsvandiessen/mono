@@ -11,8 +11,10 @@
       }
     }
   },
+  "main": "./dist/index.js",
   "scripts": {
     "build": "vite build",
+    "typecheck": "tsc",
     "dev": "vite build --watch",
     "lint": "npm run lint:js && npm run lint:styles",
     "lint:js": "eslint . --fix",

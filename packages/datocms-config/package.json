@@ -12,7 +12,8 @@
   },
   "scripts": {
     "lint": "npm run lint:styles",
-    "lint:styles": "prettier . --write --list-different"
+    "lint:styles": "prettier . --write --list-different",
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@datocms/cma-client-node": "4.0.1",

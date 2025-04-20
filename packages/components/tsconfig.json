@@ -6,8 +6,9 @@
     "declaration": true,
     "outDir": "dist",
     "rootDir": "src",
-    "incremental": true
+    "composite": false,
+    "incremental": false
   },
   "include": ["src/**/*", "src/*", "global.d.ts"],
-  "exclude": ["node_modules", "dist", "src/**/*.scss"]
+  "exclude": ["node_modules", "src/**/*.scss"]
 }

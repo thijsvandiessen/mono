@@ -11,8 +11,10 @@
       }
     }
   },
+  "main": "./dist/index.js",
   "scripts": {
     "build": "vite build",
+    "typecheck": "tsc",
     "codegen": "graphql-codegen-esm --config ./codegen.ts",
     "codegen:watch": "graphql-codegen-esm --require dotenv/config --config ./codegen.ts --watch",
     "dev": "vite build --watch",

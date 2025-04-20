@@ -10,8 +10,10 @@
       }
     }
   },
+  "main": "./src/index.mjs",
   "scripts": {
     "lint": "npm run lint:styles",
+    "typecheck": "tsc",
     "lint:styles": "prettier . --write  --list-different"
   },
   "devDependencies": {

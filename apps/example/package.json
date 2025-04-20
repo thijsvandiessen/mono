@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "next build",
+    "typecheck": "tsc",
     "dev": "next dev --turbo -p 3000",
     "lint": "npm run lint:js && npm run lint:styles",
     "lint:js": "eslint . --fix",
