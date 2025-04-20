@@ -4,9 +4,9 @@ export default defineConfig({
   build: {
     lib: {
       entry: ['./src/index.ts'],
-      name: 'utils',
+      name: 'index',
       formats: ['es'],
-      fileName: 'utils',
+      fileName: 'index',
     },
     rollupOptions: {
       output: {
