@@ -5,6 +5,9 @@
   "description": "Monorepo for small websites",
   "type": "module",
   "workspaces": [
+    "packages/utils",
+    "packages/data",
+    "packages/hooks",
     "packages/*",
     "apps/*"
   ],

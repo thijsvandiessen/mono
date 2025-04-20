@@ -12,7 +12,8 @@
   },
   "main": "./dist/index.js",
   "scripts": {
-    "build": "tsc && cpx \"src/**/*.scss\" dist",
+    "build": "tsc && npm run build:scss",
+    "build:scss": "cpx \"src/**/*.scss\" dist",
     "dev": "tsc --watch",
     "lint": "npm run lint:js && npm run lint:styles",
     "lint:js": "eslint . --fix",
