@@ -5,12 +5,11 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/data.js",
-      "module": "./dist/index.js",
+      "import": "./dist/index.js",
       "types": "./src/index.ts"
     }
   },
-  "main": "./dist/data.js",
+  "main": "./dist/index.js",
   "scripts": {
     "build": "vite build",
     "codegen": "graphql-codegen --config ./codegen.ts",

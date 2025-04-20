@@ -5,12 +5,11 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/hooks.js",
-      "module": "./dist/hooks.js",
+      "import": "./dist/index.js",
       "types": "./src/index.ts"
     }
   },
-  "main": "./dist/hooks.js",
+  "main": "./dist/index.js",
   "scripts": {
     "build": "vite build",
     "dev": "vite build --watch",

@@ -5,9 +5,9 @@ export default defineConfig({
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: ['./src/index.ts'],
-      name: 'hooks',
+      name: 'index',
       // the proper extensions will be added
-      fileName: 'hooks',
+      fileName: 'index',
       formats: ['es'],
     },
     rollupOptions: {

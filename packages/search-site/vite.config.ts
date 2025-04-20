@@ -11,9 +11,9 @@ export default ({ mode }: { mode: string }) => {
       lib: {
         // Could also be a dictionary or array of multiple entry points
         entry: ['./src/index.ts'],
-        name: 'search-site',
+        name: 'index',
         // the proper extensions will be added
-        fileName: 'search-site',
+        fileName: 'index',
       },
     },
     plugins: [],
