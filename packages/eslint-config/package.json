@@ -5,10 +5,11 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./src/index.mjs"
+      "import": {
+        "default": "./src/index.mjs"
+      }
     }
   },
-  "main": "./src/index.mjs",
   "scripts": {
     "lint": "npm run lint:styles",
     "lint:styles": "prettier . --write  --list-different"

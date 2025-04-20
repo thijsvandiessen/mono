@@ -3,6 +3,7 @@ import type { CodegenConfig } from '@graphql-codegen/cli'
 const config: CodegenConfig = {
   schema: './src/generated/schema.graphql',
   documents: ['./**/*.ts'],
+  emitLegacyCommonJSImports: false,
   generates: {
     './src/generated/': {
       preset: 'client',
@@ -20,6 +21,8 @@ const config: CodegenConfig = {
           MetaTagAttributes: 'Record<string, string>',
           UploadId: 'string',
         },
+        useTypeImports: true,
+        verbatimModuleSyntax: true,
       },
       presetConfig: {
         persistedDocuments: true,

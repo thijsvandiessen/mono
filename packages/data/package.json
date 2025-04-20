@@ -5,15 +5,16 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
     }
   },
-  "main": "./dist/index.js",
   "scripts": {
     "build": "vite build",
-    "codegen": "graphql-codegen --config ./codegen.ts",
-    "codegen:watch": "graphql-codegen --require dotenv/config --config ./codegen.ts --watch",
+    "codegen": "graphql-codegen-esm --config ./codegen.ts",
+    "codegen:watch": "graphql-codegen-esm --require dotenv/config --config ./codegen.ts --watch",
     "dev": "vite build --watch",
     "download-schema": "rover graph fetch vandiessen-mono-graph@current > ./src/generated/schema.graphql && npm run lint:styles",
     "lint": "npm run lint:js && npm run lint:styles",
