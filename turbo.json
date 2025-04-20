@@ -12,9 +12,7 @@
       "outputs": ["packages/data/src/generated/**"],
       "dependsOn": ["^build"]
     },
-    "lint": {
-      "dependsOn": ["^build"]
-    },
+    "lint": {},
     "test": {
       "dependsOn": ["^build"]
     },

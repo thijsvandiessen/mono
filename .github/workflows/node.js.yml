@@ -36,11 +36,11 @@ jobs:
       - name: Validate fast with oxlint
         run: npx oxlint@0.16.6
 
+      - name: Check formatting and eslint
+        run: npm run lint
+
       - name: Build project
         run: npm run build
-
-      - name: Check formatting, eslint and typescript
-        run: npm run lint
 
       - name: Test project
         run: npm run test

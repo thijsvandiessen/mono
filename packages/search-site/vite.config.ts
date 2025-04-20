@@ -1,24 +1,14 @@
-import { defineConfig, loadEnv } from 'vite'
-import { config } from 'dotenv'
-import path from 'node:path'
+import { defineConfig } from 'vite'
 
-export default ({ mode }: { mode: string }) => {
-  config({ path: path.resolve(process.cwd(), '.env') })
-  process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
-
-  return defineConfig({
-    build: {
-      lib: {
-        // Could also be a dictionary or array of multiple entry points
-        entry: ['./src/index.ts'],
-        name: 'index',
-        // the proper extensions will be added
-        fileName: 'index',
-      },
+export default defineConfig({
+  build: {
+    lib: {
+      // Could also be a dictionary or array of multiple entry points
+      entry: ['./src/index.ts'],
+      name: 'index',
+      // the proper extensions will be added
+      fileName: 'index',
     },
-    plugins: [],
-    define: {
-      'process.env': process.env,
-    },
-  })
-}
+  },
+  plugins: [],
+})

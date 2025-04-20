@@ -7,10 +7,9 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev --turbo -p 4000",
-    "lint": "npm run lint:js && npm run lint:styles && npm run lint:typescript",
+    "lint": "npm run lint:js && npm run lint:styles",
     "lint:js": "eslint . --fix",
     "lint:styles": "prettier . --write --list-different",
-    "lint:typescript": "tsc",
     "start": "next start"
   },
   "dependencies": {
