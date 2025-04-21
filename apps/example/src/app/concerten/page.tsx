@@ -11,9 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return data
 }
 
-export function generateViewport(): Viewport {
-  return viewport
-}
+export const generateViewport = (): Viewport => viewport
 
 const Page = () => <ConcertsPage />
 

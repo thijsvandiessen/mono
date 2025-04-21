@@ -16,9 +16,7 @@ export async function generateMetadata({
   return data
 }
 
-export function generateViewport(): Viewport {
-  return viewport
-}
+export const generateViewport = (): Viewport => viewport
 
 const Page = async ({ params }: PageProps) => {
   const { slug } = await params

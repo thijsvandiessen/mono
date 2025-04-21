@@ -5,12 +5,10 @@ interface Props {
   children: ReactElement
 }
 
-const RootLayout = ({ children }: Props) => {
-  return (
-    <html lang="nl-NL">
-      <Body>{children}</Body>
-    </html>
-  )
-}
+const RootLayout = ({ children }: Props) => (
+  <html lang="nl-NL">
+    <Body>{children}</Body>
+  </html>
+)
 
 export default RootLayout
