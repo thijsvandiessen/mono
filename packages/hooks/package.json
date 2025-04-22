@@ -35,7 +35,7 @@
     "@types/react-dom": "19.1.2",
     "@mono/eslint-config": "1.0.0",
     "dotenv": "16.5.0",
-    "eslint": "9.25.0",
+    "eslint": "9.25.1",
     "eslint-plugin-testing-library": "7.1.1",
     "jest": "29.7.0",
     "jest-environment-jsdom": "29.7.0",
