@@ -1,4 +1,4 @@
-import { EventPage, type Props } from './eventPage'
+import { EventPage, type Props } from './eventPage.js'
 import { describe, expect, it, vi } from 'vitest'
 import React from 'react'
 import { getEventPage } from '@mono/data'

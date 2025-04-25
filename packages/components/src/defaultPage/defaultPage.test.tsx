@@ -1,4 +1,4 @@
-import { DefaultPage, type Props } from './defaultPage'
+import { DefaultPage, type Props } from './defaultPage.js'
 import { describe, expect, it, vi } from 'vitest'
 import React from 'react'
 import { getPage } from '@mono/data'

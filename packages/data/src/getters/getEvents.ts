@@ -3,11 +3,11 @@ import {
   GetEventsDocument,
   type GetEventsQuery,
   type GetEventsQueryVariables,
-} from '../generated/graphql'
+} from '../generated/graphql.js'
 import type { CombinedError } from '@urql/core'
-import type { Event } from '../types/event'
-import { client } from '../gqlClient'
-import { eventsFormatter } from '../formatters/eventsFormatter'
+import type { Event } from '../types/event.js'
+import { client } from '../gqlClient.js'
+import { eventsFormatter } from '../formatters/eventsFormatter.js'
 
 export const getEvents = async ({
   skip,

@@ -1,14 +1,15 @@
 import { renderHook } from '@testing-library/react'
-import { useIntersectionObserver } from './useIntersectionObserver'
+import { useIntersectionObserver } from './useIntersectionObserver.js'
 import { useRef } from 'react'
+import { vi, describe, test, expect } from 'vitest'
 
 describe('useIntersectionObserver', () => {
   test('should pass', () => {
     const mockObserver = {
-      observe: jest.fn(),
-      disconnect: jest.fn(),
+      observe: vi.fn(),
+      disconnect: vi.fn(),
     }
-    const mockIntersectionObserver = jest.fn()
+    const mockIntersectionObserver = vi.fn()
     mockIntersectionObserver.mockImplementation((callback) => {
       callback([{ isIntersecting: true }], mockObserver)
       return mockObserver

@@ -1,7 +1,9 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "@mono/typescript-config/base.json",
   "compilerOptions": {
-    "lib": ["ESNext", "DOM"]
+    "outDir": "dist",
+    "rootDir": "src"
   },
-  "include": ["jest.setup.cjs", "src/**/*", "src/*"]
+  "references": [{ "path": "../utils" }],
+  "include": ["src/**/*", "src/*", "src/generated/**/*.json"]
 }

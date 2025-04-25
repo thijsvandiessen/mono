@@ -1,7 +1,7 @@
 import { type TypedDocumentNode, gql } from '@urql/core'
-import type { GeneralInfoFragment } from '../generated/graphql'
-import { menuItem } from './menuItem'
-import { submenuItem } from './subMenuItem'
+import type { GeneralInfoFragment } from '../generated/graphql.js'
+import { menuItem } from './menuItem.js'
+import { submenuItem } from './subMenuItem.js'
 
 export const generalInfo: TypedDocumentNode<GeneralInfoFragment> = gql`
   fragment generalInfo on GeneralRecord {

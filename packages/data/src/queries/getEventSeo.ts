@@ -1,9 +1,9 @@
 import type {
   GetEventSeoQuery,
   GetEventSeoQueryVariables,
-} from '../generated/graphql'
+} from '../generated/graphql.js'
 import { type TypedDocumentNode, gql } from '@urql/core'
-import { eventPageSeo } from '../fragments/eventPageSeo'
+import { eventPageSeo } from '../fragments/eventPageSeo.js'
 
 export const GET_EVENT_SEO: TypedDocumentNode<
   GetEventSeoQuery,

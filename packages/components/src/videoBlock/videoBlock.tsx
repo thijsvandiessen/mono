@@ -6,9 +6,8 @@ import {
   isOfTypeCloudinaryAsset,
 } from '@mono/data'
 import { useCallback, useState } from 'react'
-import Image from 'next/image'
-import { VideoPlaceholder } from '../videoPlaceholder'
-
+import { VideoPlaceholder } from '../videoPlaceholder/index.js'
+import { Image } from '@mono/next-js'
 import styles from './styles.module.scss'
 
 type Props = {
@@ -77,7 +76,7 @@ export const VideoBlock = ({ record, autoplay, aspectRatio }: Props) => {
         {!hasPlayed && !thumbnail && video.thumbnailUrl && (
           // Domain of the video thumbnailUrl is unknown so we use an
           // img tag if the thumbnail is not defined
-          <img
+          <Image
             src={video.thumbnailUrl}
             className={styles.thumbnail}
             alt=""

@@ -1,20 +1,21 @@
-import { GetSiteInfoDocument } from '../generated/graphql'
-import { client } from '../gqlClient'
-import { getSiteInfo } from './getSiteInfo'
+import { GetSiteInfoDocument } from '../generated/graphql.js'
+import { client } from '../index.js'
+import { getSiteInfo } from './getSiteInfo.js'
+import { vi, describe, it, expect } from 'vitest'
 
-jest.mock('../gqlClient', () => {
-  const originalModule = jest.requireActual('../gqlClient')
+vi.mock('../index', () => {
+  const originalModule = vi.importActual('../index')
   return {
     __esModule: true,
     ...originalModule,
     client: {
       ...originalModule,
-      query: jest.fn(),
+      query: vi.fn(),
     },
   }
 })
 
-const mockedQuery = jest.mocked(client.query)
+const mockedQuery = vi.mocked(client.query)
 
 describe('getSiteInfo', () => {
   it('should return an object', async () => {
@@ -38,7 +39,7 @@ describe('getSiteInfo', () => {
   })
 
   it('should return an error', async () => {
-    console.log = jest.fn()
+    console.log = vi.fn()
     mockedQuery.mockRejectedValue(new Error('error'))
     const { data, error } = await getSiteInfo()
     expect(data).toBeNull()

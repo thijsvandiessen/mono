@@ -1,7 +1,9 @@
 {
-  "extends": "../../tsconfig.json",
-  "include": ["src/**/*", "src/*"],
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@mono/typescript-config/base.json",
   "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
     "lib": [
       "ESNext",
       "WebWorker",
@@ -9,5 +11,7 @@
       "WebWorker.AsyncIterable",
       "Webworker.Iterable"
     ]
-  }
+  },
+  "references": [],
+  "include": ["src/**/*", "src/*"]
 }

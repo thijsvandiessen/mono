@@ -3,11 +3,11 @@ import {
   GetFutureEventsDocument,
   type GetFutureEventsQuery,
   type GetFutureEventsQueryVariables,
-} from '../generated/graphql'
+} from '../generated/graphql.js'
 import type { CombinedError } from '@urql/core'
-import type { Event } from '../types'
-import { client } from '../gqlClient'
-import { eventsFormatter } from '../formatters/eventsFormatter'
+import type { Event } from '../types/event.js'
+import { client } from '../gqlClient.js'
+import { eventsFormatter } from '../formatters/eventsFormatter.js'
 
 interface Props extends GetFutureEventsQueryVariables {
   skip: number

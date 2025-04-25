@@ -1,9 +1,9 @@
 import type {
   GetSiteMetadataQuery,
   GetSiteMetadataQueryVariables,
-} from '../generated/graphql'
+} from '../generated/graphql.js'
 import { type TypedDocumentNode, gql } from '@urql/core'
-import { siteMetadata } from '../fragments/siteMetadata'
+import { siteMetadata } from '../fragments/siteMetadata.js'
 
 export const GET_SITE_METADATA: TypedDocumentNode<
   GetSiteMetadataQuery,

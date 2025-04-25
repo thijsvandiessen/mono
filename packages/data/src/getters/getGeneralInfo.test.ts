@@ -1,20 +1,21 @@
-import { GetGeneralInfoDocument } from '../generated/graphql'
-import { client } from '../gqlClient'
-import { getGeneralInfo } from './getGeneralInfo'
+import { GetGeneralInfoDocument } from '../generated/graphql.js'
+import { client } from '../gqlClient.js'
+import { getGeneralInfo } from './getGeneralInfo.js'
+import { vi, describe, it, expect } from 'vitest'
 
-jest.mock('../gqlClient', () => {
-  const originalModule = jest.requireActual('../gqlClient')
+vi.mock('../gqlClient', () => {
+  const originalModule = vi.importActual('../gqlClient')
   return {
     __esModule: true,
     ...originalModule,
     client: {
       ...originalModule,
-      query: jest.fn(),
+      query: vi.fn(),
     },
   }
 })
 
-const mockedQuery = jest.mocked(client.query)
+const mockedQuery = vi.mocked(client.query)
 
 describe('getGeneralInfo', () => {
   it('should return an object', async () => {
@@ -37,7 +38,7 @@ describe('getGeneralInfo', () => {
     expect(data).toEqual({})
   })
   it('should return an error', async () => {
-    console.log = jest.fn()
+    console.log = vi.fn()
     mockedQuery.mockRejectedValue(new Error('error'))
     const { data, error } = await getGeneralInfo()
     expect(data).toBeNull()

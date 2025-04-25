@@ -1,6 +1,7 @@
-import { Hit } from './hit'
+import { Hit } from './hit.js'
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
+import { describe, expect, it } from 'vitest'
 
 describe('Hit component', () => {
   const hit = {
@@ -11,12 +12,13 @@ describe('Hit component', () => {
   }
 
   it('renders the title', () => {
-    const { getByText } = render(<Hit hit={hit} />)
-    expect(getByText('Test Title')).toBeInTheDocument()
+    render(<Hit hit={hit} />)
+    expect(screen.getByText('Test Title')).toBeInTheDocument()
   })
 
   it('renders the price', () => {
-    const { getByText } = render(<Hit hit={hit} />)
-    expect(getByText('$100')).toBeInTheDocument()
+    render(<Hit hit={hit} />)
+    const prices = screen.getAllByText(/\$\s*100/i)
+    expect(prices).toHaveLength(2)
   })
 })

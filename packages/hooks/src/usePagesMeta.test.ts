@@ -1,17 +1,18 @@
 import { renderHook, waitFor } from '@testing-library/react'
 import { getPagesMeta } from '@mono/data'
-import { usePagesMeta } from './usePagesMeta'
+import { usePagesMeta } from './usePagesMeta.js'
+import { vi, describe, it, expect } from 'vitest'
 
-jest.mock('@mono/data', () => {
-  const originalModule = jest.requireActual('@mono/data')
+vi.mock('@mono/data', () => {
+  const originalModule = vi.importActual('@mono/data')
   return {
     __esModule: true,
     ...originalModule,
-    getPagesMeta: jest.fn(),
+    getPagesMeta: vi.fn(),
   }
 })
 
-const getPagesMetaMock = jest.mocked(getPagesMeta)
+const getPagesMetaMock = vi.mocked(getPagesMeta)
 
 describe('usePagesMeta', () => {
   it('should return the number of pages', async () => {

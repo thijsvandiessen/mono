@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { DefaultLayout } from './defaultLayout'
+import { DefaultLayout } from './defaultLayout.jsx'
 import { render } from '@testing-library/react'
 
 vi.mock('../navigation', () => {

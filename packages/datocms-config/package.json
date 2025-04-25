@@ -5,14 +5,14 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./src/index.ts"
+      "import": {
+        "default": "./src/index.ts"
+      }
     }
   },
-  "main": "index.js",
   "scripts": {
-    "lint": "npm run lint:styles && npm run lint:typescript",
-    "lint:styles": "prettier . --write  --list-different",
-    "lint:typescript": "tsc"
+    "lint": "npm run lint:styles",
+    "lint:styles": "prettier . --write --list-different"
   },
   "dependencies": {
     "@datocms/cma-client-node": "4.0.1",
@@ -21,10 +21,10 @@
     "zod": "3.24.3"
   },
   "devDependencies": {
+    "@mono/eslint-config": "1.0.0",
+    "@mono/typescript-config": "1.0.0",
     "eslint": "9.25.1",
     "prettier": "3.5.3",
-    "@mono/eslint-config": "1.0.0",
-    "typescript": "5.8.3",
-    "vite": "6.3.3"
+    "typescript": "5.8.3"
   }
 }

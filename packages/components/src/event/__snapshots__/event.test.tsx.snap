@@ -46,6 +46,7 @@ exports[`Concert component > shows all the data 1`] = `
           data-nimg="1"
           decoding="async"
           height="100"
+          loading="lazy"
           src="/_next/image?url=https%3A%2F%2Fexample.nl%2Fsome-image.png&w=256&q=75"
           srcset="/_next/image?url=https%3A%2F%2Fexample.nl%2Fsome-image.png&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Fexample.nl%2Fsome-image.png&w=256&q=75 2x"
           style="color: transparent;"

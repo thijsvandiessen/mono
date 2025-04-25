@@ -1,4 +1,9 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "@mono/typescript-config/base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "references": [],
   "include": ["src/**/*", "src/*"]
 }

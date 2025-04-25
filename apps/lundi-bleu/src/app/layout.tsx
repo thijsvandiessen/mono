@@ -1,16 +1,14 @@
 import React, { type ReactElement } from 'react'
-import { Body } from '@mono/components/src/body'
+import { Body } from '@mono/components'
 
 interface Props {
   children: ReactElement
 }
 
-const RootLayout = ({ children }: Props) => {
-  return (
-    <html lang="nl-NL">
-      <Body>{children}</Body>
-    </html>
-  )
-}
+const RootLayout = ({ children }: Props) => (
+  <html lang="nl-NL">
+    <Body>{children}</Body>
+  </html>
+)
 
 export default RootLayout

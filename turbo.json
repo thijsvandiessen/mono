@@ -2,32 +2,20 @@
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
     "build": {
-      "outputs": [
-        "app/**/.next/**",
-        "app/**/!.next/cache/**",
-        "packages/**/dist/**"
-      ],
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
+    },
+    "codegen": {
+      "outputs": ["src/generated/**"],
       "dependsOn": ["^build"]
     },
-    "analyze": {
-      "outputs": [
-        "app/**/.next/**",
-        "app/**/!.next/cache/**",
-        "packages/**/coverage/**"
-      ]
-    },
-    "@mono/data#codegen": {
-      "outputs": ["packages/data/src/generated/**"]
-    },
-    "lint": {
-      "dependsOn": []
-    },
+    "lint": {},
     "test": {
-      "dependsOn": []
+      "dependsOn": ["^build"]
     },
     "dev": {
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "dependsOn": ["^build"]
     }
   },
   "remoteCache": {

@@ -1,1 +1,1 @@
-export { MobileMenu } from './mobileMenu'
+export { MobileMenu } from './mobileMenu.jsx'

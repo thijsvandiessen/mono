@@ -7,16 +7,15 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev --turbo -p 4000",
-    "lint": "npm run lint:js && npm run lint:styles && npm run lint:typescript",
+    "lint": "npm run lint:js && npm run lint:styles",
     "lint:js": "eslint . --fix",
     "lint:styles": "prettier . --write --list-different",
-    "lint:typescript": "tsc",
     "start": "next start"
   },
   "dependencies": {
     "@mono/components": "1.0.0",
     "@mono/data": "1.0.0",
-    "@mono/next-config": "1.0.0",
+    "@mono/next-js": "1.0.0",
     "@mono/utils": "1.0.0",
     "classnames": "2.5.1",
     "next": "15.3.1",
@@ -26,9 +25,9 @@
   "devDependencies": {
     "@testing-library/jest-dom": "6.6.3",
     "@testing-library/react": "16.3.0",
-    "@types/jest": "29.5.14",
     "@types/node": "22.14.1",
     "@mono/eslint-config": "1.0.0",
+    "@mono/typescript-config": "1.0.0",
     "@types/react": "19.1.2",
     "@types/react-dom": "19.1.2",
     "dotenv": "16.5.0",

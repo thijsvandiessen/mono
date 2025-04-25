@@ -3,13 +3,13 @@ import {
   formatCloudinaryImage,
   isOfTypeCloudinaryAsset,
 } from '@mono/data'
-import { ContentField } from '../contentField'
+import { ContentField } from '../contentField/index.js'
 import type { ElementType } from 'react'
-import Image from 'next/image'
 import React from 'react'
 import classNames from 'classnames'
 import { isEmptyDocument } from 'datocms-structured-text-utils'
 import styles from './styles.module.scss'
+import { Image } from '@mono/next-js'
 
 interface Props {
   className?: string
@@ -59,7 +59,6 @@ export const Header = ({
             src={asset.url}
             width={asset.width ?? 100}
             height={asset.height ?? 100}
-            priority={true}
           />
           <div className={classNames(styles.background)} />
         </div>

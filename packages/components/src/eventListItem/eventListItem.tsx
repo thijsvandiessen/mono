@@ -1,10 +1,9 @@
 import { dateIsInThePast, formatDate } from '@mono/utils'
-import { ArrowRight } from '../icons/arrow-right'
+import { ArrowRight } from '../icons/arrow-right.jsx'
 import type { Event } from '@mono/data'
-import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
 import classNames from 'classnames'
+import { Link, Image } from '@mono/next-js'
 
 import styles from './styles.module.scss'
 
@@ -109,7 +108,6 @@ export const EventListItem = ({
         {showImage && data.image?.url && (
           <div className={classNames(styles.imageContainer)}>
             <Image
-              priority={true} // TODO: only for the first item
               className={classNames(styles.image)}
               src={data.image.url}
               alt={data.image.description}

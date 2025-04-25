@@ -4,38 +4,47 @@
   "private": true,
   "description": "components",
   "type": "module",
-  "files": [
-    "src/**/*"
-  ],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
   "scripts": {
-    "lint": "npm run lint:js && npm run lint:styles && npm run lint:typescript",
+    "build": "npm run build:scss && tsc",
+    "build:scss": "cpx \"src/**/*.scss\" dist",
+    "dev": "tsc --watch",
+    "lint": "npm run lint:js && npm run lint:styles",
     "lint:js": "eslint . --fix",
     "lint:styles": "prettier . --write --list-different",
-    "lint:typescript": "tsc",
     "test": "vitest run"
   },
   "dependencies": {
     "@mono/data": "1.0.0",
     "@mono/hooks": "1.0.0",
+    "@mono/next-js": "1.0.0",
     "@mono/search-site": "1.0.0",
     "@mono/utils": "1.0.0",
+    "@react-google-maps/api": "2.20.6",
     "classnames": "2.5.1",
     "datocms-structured-text-utils": "5.0.0",
-    "next": "15.3.1",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
     "react-datocms": "7.2.2",
-    "@react-google-maps/api": "2.20.6",
+    "react-dom": "19.1.0",
     "urql": "4.2.2"
   },
   "devDependencies": {
+    "@mono/eslint-config": "1.0.0",
+    "@mono/typescript-config": "1.0.0",
     "@testing-library/jest-dom": "6.6.3",
     "@testing-library/react": "16.3.0",
-    "@mono/eslint-config": "1.0.0",
     "@types/node": "22.14.1",
     "@types/react": "19.1.2",
     "@types/react-dom": "19.1.2",
     "@vitejs/plugin-react": "4.4.1",
+    "cpx2": "8.0.0",
     "dotenv": "16.5.0",
     "eslint": "9.25.1",
     "eslint-plugin-testing-library": "7.1.1",
@@ -44,7 +53,6 @@
     "sass": "1.87.0",
     "turbo": "2.5.1",
     "typescript": "5.8.3",
-    "vite-tsconfig-paths": "5.1.4",
     "vitest": "3.1.2"
   }
 }

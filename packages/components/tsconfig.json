@@ -1,13 +1,16 @@
 {
-  "extends": "../../tsconfig.json",
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@mono/typescript-config/base.json",
   "compilerOptions": {
-    "types": ["vitest/jsdom", "@testing-library/jest-dom/vitest"]
+    "outDir": "dist",
+    "rootDir": "src"
   },
-  "include": [
-    "declaration.d.ts",
-    "vitest.config.ts",
-    "vitest.setup.ts",
-    "src/**/*",
-    "src/*"
-  ]
+  "references": [
+    { "path": "../data" },
+    { "path": "../utils" },
+    { "path": "../next-js" },
+    { "path": "../hooks" }
+  ],
+  "include": ["src/**/*", "src/*", "global.d.ts"],
+  "exclude": ["node_modules", "src/**/*.scss"]
 }

@@ -3,24 +3,21 @@
   "version": "1.0.0",
   "description": "eslint config",
   "type": "module",
-  "files": [
-    "dist/**/*"
-  ],
   "exports": {
     ".": {
-      "import": "./src/index.mjs"
+      "import": {
+        "default": "./src/index.mjs"
+      }
     }
   },
-  "main": "index.js",
   "scripts": {
     "lint": "npm run lint:styles",
     "lint:styles": "prettier . --write  --list-different"
   },
   "devDependencies": {
     "eslint": "9.25.1",
-    "prettier": "3.5.3",
-    "globals": "16.0.0",
     "eslint-plugin-testing-library": "7.1.1",
+    "prettier": "3.5.3",
     "typescript": "5.8.3"
   }
 }

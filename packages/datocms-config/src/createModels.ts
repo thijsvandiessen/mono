@@ -1,6 +1,6 @@
 import type { Client } from '@datocms/cma-client-node'
 import fs from 'node:fs'
-import { validateAndTransform } from './validators/itemType'
+import { validateAndTransform } from './validators/itemType.js'
 
 export const createModels = (client: Client) => {
   try {

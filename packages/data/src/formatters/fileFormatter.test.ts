@@ -1,4 +1,5 @@
-import { fileFormatter } from './fileFormatter'
+import { fileFormatter } from './fileFormatter.js'
+import { describe, it, expect } from 'vitest'
 
 describe('fileFormatter', () => {
   it('should return an object', () => {
