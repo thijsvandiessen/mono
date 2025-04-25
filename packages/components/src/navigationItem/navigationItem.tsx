@@ -2,6 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import { slugFormatter } from '@mono/utils'
 import styles from './styles.module.scss'
+import { Link } from '@mono/next-js'
 
 export interface NavigationItemProps {
   slug?: string | null
@@ -16,12 +17,12 @@ export const NavigationItem = ({ slug, label }: NavigationItemProps) => {
 
   return (
     <li className={classNames(styles.navItem)}>
-      <a
+      <Link
         className={classNames(styles.link, 'text-large')}
         href={slugFormatter({ slug })}
       >
         {label}
-      </a>
+      </Link>
     </li>
   )
 }

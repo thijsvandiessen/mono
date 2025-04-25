@@ -1,15 +1,15 @@
 import NextLink from 'next/link.js'
-import { forwardRef, type ComponentPropsWithoutRef } from 'react'
+import {
+  forwardRef,
+  type ComponentPropsWithoutRef,
+  type LinkHTMLAttributes,
+} from 'react'
 
-import { type ReactNode } from 'react'
-
-export type LinkProps = ComponentPropsWithoutRef<typeof NextLink> & {
-  children?: ReactNode
-  className?: string
-  target?: string
-  rel?: string
-  href: string
-}
+export type LinkProps = ComponentPropsWithoutRef<typeof NextLink> &
+  LinkHTMLAttributes<HTMLAnchorElement> & {
+    target?: '_self' | '_blank' | '_parent' | '_top'
+    rel?: string
+  }
 
 export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
   ({ children, ...props }, ref) => (

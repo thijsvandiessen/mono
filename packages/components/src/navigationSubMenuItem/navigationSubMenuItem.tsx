@@ -1,6 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import { slugFormatter } from '@mono/utils'
+import { Link } from '@mono/next-js'
 import styles from './styles.module.scss'
 
 export interface NavigationSubMenuItemProps {
@@ -21,13 +22,13 @@ export const NavigationSubMenuItem = ({
 
   return (
     <li className={classNames(styles.navItem)}>
-      <a
+      <Link
         className={classNames(styles.link, 'text-large')}
         href={slugFormatter({ slug })}
         onClick={onClick}
       >
         {label}
-      </a>
+      </Link>
     </li>
   )
 }
