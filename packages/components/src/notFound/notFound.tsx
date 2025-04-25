@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from '@mono/next-js'
 
 export const NotFound = () => {
   return (
@@ -6,7 +7,7 @@ export const NotFound = () => {
       <h2>Niet gevonden</h2>
       <p>Deze pagina is niet gevonden.</p>
       <p>
-        <a href="/">Ga terug naar de homepage</a>
+        <Link href="/">Ga terug naar de homepage</Link>
       </p>
     </section>
   )

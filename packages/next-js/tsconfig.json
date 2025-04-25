@@ -2,6 +2,9 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@mono/typescript-config/base.json",
   "compilerOptions": {
+    "jsx": "react-jsx",
+    "module": "Preserve",
+    "moduleResolution": "bundler",
     "outDir": "dist",
     "rootDir": "src"
   },

@@ -3,6 +3,7 @@ import { ArrowRight } from '../icons/arrow-right.jsx'
 import type { Event } from '@mono/data'
 import React from 'react'
 import classNames from 'classnames'
+import { Link } from '@mono/next-js'
 
 import styles from './styles.module.scss'
 
@@ -45,7 +46,7 @@ export const EventListItem = ({
         {title && <span className="h2">{title}</span>}
         {showLink && (
           <span>
-            <a href={data.url}>{data.title}</a>
+            <Link href={data.url}>{data.title}</Link>
           </span>
         )}
       </h2>
@@ -84,7 +85,7 @@ export const EventListItem = ({
                     {concertPast ? (
                       'Concert voorbij'
                     ) : ticketLink ? (
-                      <a
+                      <Link
                         href={ticketLink}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -93,7 +94,7 @@ export const EventListItem = ({
                           Koop nu kaarten
                           <ArrowRight className={styles.locationLinkIcon} />
                         </span>
-                      </a>
+                      </Link>
                     ) : (
                       'Link voor de kaartverkoop volgt spoedig'
                     )}

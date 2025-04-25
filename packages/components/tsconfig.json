@@ -8,6 +8,7 @@
   "references": [
     { "path": "../data" },
     { "path": "../utils" },
+    { "path": "../next-js" },
     { "path": "../hooks" }
   ],
   "include": ["src/**/*", "src/*", "global.d.ts"],

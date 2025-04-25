@@ -9,12 +9,15 @@
       }
     ]
   },
-  "references": [{ "path": "../../packages/components" }],
+  "references": [
+    { "path": "../../packages/components" },
+    { "path": "../../packages/next-js" }
+  ],
   "include": [
     ".next-env.d.ts",
     ".next/types/**/*.ts",
     "src/**/*",
-    "next.config.js"
+    "next.config.ts"
   ],
   "exclude": ["node_modules"]
 }

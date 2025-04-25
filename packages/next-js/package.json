@@ -2,11 +2,13 @@
   "name": "@mono/next-js",
   "version": "1.0.0",
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": {
-        "default": "./dist/index.js"
-      }
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
     }
   },
   "scripts": {
@@ -15,6 +17,11 @@
     "lint:js": "eslint . --fix",
     "lint:styles": "prettier . --write  --list-different",
     "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "15.3.1",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
     "@mono/eslint-config": "1.0.0",

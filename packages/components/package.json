@@ -25,6 +25,7 @@
   "dependencies": {
     "@mono/data": "1.0.0",
     "@mono/hooks": "1.0.0",
+    "@mono/next-js": "1.0.0",
     "@mono/search-site": "1.0.0",
     "@mono/utils": "1.0.0",
     "@react-google-maps/api": "2.20.6",

@@ -7,9 +7,11 @@
     { "path": "./packages/components" },
     { "path": "./packages/data" },
     { "path": "./packages/datocms-config" },
+
     { "path": "./packages/hooks" },
-    { "path": "./packages/search-site" },
     { "path": "./packages/next-js" },
+    { "path": "./packages/search-site" },
+
     { "path": "./packages/utils" }
   ]
 }

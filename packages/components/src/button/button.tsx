@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import classNames from 'classnames'
+import { Link } from '@mono/next-js'
 
 import styles from './styles.module.scss'
 
@@ -27,7 +28,7 @@ export const Button = ({
   variant = 'primary',
 }: Props) => {
   return (
-    <a
+    <Link
       className={classNames(
         className,
         styles.button,
@@ -43,6 +44,6 @@ export const Button = ({
         {children} <span className={styles.suffix}>{suffix}</span>
       </span>
       {rightIcon}
-    </a>
+    </Link>
   )
 }
