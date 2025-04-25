@@ -3,7 +3,7 @@ import { ArrowRight } from '../icons/arrow-right.jsx'
 import type { Event } from '@mono/data'
 import React from 'react'
 import classNames from 'classnames'
-import { Link } from '@mono/next-js'
+import { Link, Image } from '@mono/next-js'
 
 import styles from './styles.module.scss'
 
@@ -107,7 +107,7 @@ export const EventListItem = ({
 
         {showImage && data.image?.url && (
           <div className={classNames(styles.imageContainer)}>
-            <img
+            <Image
               className={classNames(styles.image)}
               src={data.image.url}
               alt={data.image.description}
@@ -119,7 +119,7 @@ export const EventListItem = ({
       </div>
 
       {showLink && (
-        <a
+        <Link
           className={classNames(styles.eventLink, {
             'text-small': size === 'small',
           })}
@@ -127,7 +127,7 @@ export const EventListItem = ({
         >
           Bekijk concert
           <ArrowRight />
-        </a>
+        </Link>
       )}
     </div>
   )

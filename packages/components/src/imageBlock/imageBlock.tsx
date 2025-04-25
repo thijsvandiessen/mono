@@ -4,6 +4,7 @@ import {
   isOfTypeCloudinaryAsset,
 } from '@mono/data'
 import React from 'react'
+import { Image } from '@mono/next-js'
 
 import styles from './styles.module.scss'
 
@@ -18,7 +19,7 @@ export const ImageBlock = ({ record }: Props) => {
   )
   if (!asset?.url) return null
   return (
-    <img
+    <Image
       className={styles.image}
       src={asset.url}
       alt={asset.title}

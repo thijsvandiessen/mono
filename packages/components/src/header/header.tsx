@@ -9,6 +9,7 @@ import React from 'react'
 import classNames from 'classnames'
 import { isEmptyDocument } from 'datocms-structured-text-utils'
 import styles from './styles.module.scss'
+import { Image } from '@mono/next-js'
 
 interface Props {
   className?: string
@@ -52,7 +53,7 @@ export const Header = ({
       </div>
       {asset?.url && (
         <div className={classNames(styles.headerImageWrapper)}>
-          <img
+          <Image
             className={classNames(styles.headerImage)}
             alt={asset.title ?? title ?? ''}
             src={asset.url}

@@ -4,7 +4,7 @@ import { Header } from '../header/index.js'
 import { LoadMoreEvents } from '../loadMoreEvents/index.js'
 import { PageContent } from '../pageContent/index.js'
 import classNames from 'classnames'
-import { notFound } from 'next/navigation.js'
+import { notFound } from '@mono/next-js'
 import styles from './styles.module.scss'
 
 export const ConcertsPage = async () => {

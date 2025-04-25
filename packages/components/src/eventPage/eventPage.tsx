@@ -4,7 +4,7 @@ import { PageContent } from '../pageContent/index.js'
 import React from 'react'
 import classNames from 'classnames'
 import { getEventPage } from '@mono/data'
-import { notFound } from 'next/navigation.js'
+import { notFound, Image } from '@mono/next-js'
 
 import styles from './styles.module.scss'
 
@@ -32,7 +32,7 @@ export const EventPage = async ({ slug }: Props) => {
           <div className={styles.sidebarContent}>
             {data.image?.url && (
               <div className={classNames(styles.imageContainer)}>
-                <img
+                <Image
                   className={classNames(styles.image)}
                   src={data.image.url}
                   alt={data.image.description}
