@@ -12,9 +12,8 @@
       }
     }
   },
-  "main": "./dist/index.js",
   "scripts": {
-    "build": "tsc && npm run build:scss",
+    "build": "npm run build:scss && tsc",
     "typecheck": "tsc",
     "build:scss": "cpx \"src/**/*.scss\" dist",
     "dev": "tsc --watch",

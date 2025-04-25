@@ -5,16 +5,11 @@
   "description": "Monorepo for small websites",
   "type": "module",
   "workspaces": [
-    "packages/utils",
-    "packages/data",
-    "packages/hooks",
-    "packages/search-site",
-    "packages/components",
     "packages/*",
     "apps/*"
   ],
   "scripts": {
-    "build": "npm run build --workspaces --if-present",
+    "build": "tsc --build && npm run build --workspaces --if-present",
     "typecheck": "npm run typecheck --workspaces --if-present",
     "codegen": "npm run download-schema --workspace=packages/data && npm run codegen --workspace=packages/data",
     "dev": "concurrently \"npm run dev --workspace=apps/lundi-bleu\" \"npm run dev --workspace=apps/example\"",

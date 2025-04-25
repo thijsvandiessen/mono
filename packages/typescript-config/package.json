@@ -2,5 +2,15 @@
   "name": "@mono/typescript-config",
   "version": "1.0.0",
   "description": "typescript config",
-  "type": "module"
+  "type": "module",
+  "exports": {
+    "./base.json": {
+      "import": {
+        "default": "./src/base.json"
+      },
+      "require": {
+        "default": "./src/base.json"
+      }
+    }
+  }
 }

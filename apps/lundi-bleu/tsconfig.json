@@ -2,12 +2,14 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@mono/typescript-config/base.json",
   "compilerOptions": {
+    "noEmit": true,
     "plugins": [
       {
         "name": "next"
       }
     ]
   },
+  "references": [{ "path": "../../packages/components" }],
   "include": [
     ".next-env.d.ts",
     ".next/types/**/*.ts",

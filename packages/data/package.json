@@ -11,13 +11,12 @@
       }
     }
   },
-  "main": "./dist/index.js",
   "scripts": {
-    "build": "vite build",
+    "build": "tsc",
     "typecheck": "tsc",
     "codegen": "graphql-codegen-esm --config ./codegen.ts",
     "codegen:watch": "graphql-codegen-esm --require dotenv/config --config ./codegen.ts --watch",
-    "dev": "vite build --watch",
+    "dev": "tsc --watch",
     "download-schema": "rover graph fetch vandiessen-mono-graph@current > ./src/generated/schema.graphql && npm run lint:styles",
     "lint": "npm run lint:js && npm run lint:styles",
     "lint:js": "eslint . --fix",

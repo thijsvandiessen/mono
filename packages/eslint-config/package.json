@@ -10,7 +10,6 @@
       }
     }
   },
-  "main": "./src/index.mjs",
   "scripts": {
     "lint": "npm run lint:styles",
     "typecheck": "tsc",

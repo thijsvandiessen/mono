@@ -1,18 +1,27 @@
 {
-  "name": "@mono/next-config",
+  "name": "@mono/next-js",
   "version": "1.0.0",
   "type": "module",
-  "main": "index.js",
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./dist/index.js"
+      }
+    }
+  },
   "scripts": {
+    "build": "tsc",
     "lint": "npm run lint:js && npm run lint:styles",
     "lint:js": "eslint . --fix",
-    "lint:styles": "prettier . --write  --list-different"
+    "lint:styles": "prettier . --write  --list-different",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@mono/eslint-config": "1.0.0",
     "eslint": "9.25.0",
     "eslint-config-next": "15.3.1",
     "eslint-plugin-testing-library": "7.1.1",
-    "prettier": "3.5.3"
+    "prettier": "3.5.3",
+    "typescript": "5.8.3"
   }
 }

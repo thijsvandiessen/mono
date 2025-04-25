@@ -11,11 +11,10 @@
       }
     }
   },
-  "main": "./dist/index.umd.cjs",
   "scripts": {
-    "build": "vite build",
+    "build": "tsc",
     "typecheck": "tsc",
-    "dev": "vite build --watch",
+    "dev": "tsc --watch",
     "lint": "npm run lint:js && npm run lint:styles",
     "lint:js": "eslint . --fix",
     "lint:styles": "prettier . --write  --list-different",

@@ -1,9 +1,9 @@
 {
   "extends": "@mono/typescript-config/base.json",
   "compilerOptions": {
-    "lib": ["ESNext", "DOM"],
     "outDir": "dist",
     "rootDir": "src"
   },
-  "include": ["src/**/*", "src/generated/**/*.json"]
+  "references": [{ "path": "../utils" }],
+  "include": ["src/**/*", "src/*", "src/generated/**/*.json"]
 }
