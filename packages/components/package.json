@@ -14,7 +14,6 @@
   },
   "scripts": {
     "build": "npm run build:scss && tsc",
-    "typecheck": "tsc",
     "build:scss": "cpx \"src/**/*.scss\" dist",
     "dev": "tsc --watch",
     "lint": "npm run lint:js && npm run lint:styles",
@@ -45,17 +44,16 @@
     "@types/node": "22.14.1",
     "@types/react": "19.1.2",
     "@types/react-dom": "19.1.2",
-    "@vitejs/plugin-react": "4.3.4",
+    "@vitejs/plugin-react": "4.4.1",
     "cpx2": "8.0.0",
     "dotenv": "16.5.0",
-    "eslint": "9.25.0",
+    "eslint": "9.25.1",
     "eslint-plugin-testing-library": "7.1.1",
     "jsdom": "26.1.0",
     "prettier": "3.5.3",
-    "sass": "1.86.3",
-    "turbo": "2.5.0",
+    "sass": "1.87.0",
+    "turbo": "2.5.1",
     "typescript": "5.8.3",
-    "vite-tsconfig-paths": "5.1.4",
-    "vitest": "3.1.1"
+    "vitest": "3.1.2"
   }
 }
