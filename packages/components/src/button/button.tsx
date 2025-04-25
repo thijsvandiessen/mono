@@ -8,7 +8,7 @@ export interface Props {
   className?: string
   href?: string
   children: ReactNode
-  target?: string
+  target?: '_blank'
   rel?: string
   leftIcon?: ReactNode
   rightIcon?: ReactNode

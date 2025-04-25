@@ -7,7 +7,7 @@ import {
 
 export type LinkProps = ComponentPropsWithoutRef<typeof NextLink> &
   LinkHTMLAttributes<HTMLAnchorElement> & {
-    target?: '_self' | '_blank' | '_parent' | '_top'
+    target?: '_blank'
     rel?: string
   }
 
