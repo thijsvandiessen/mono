@@ -5,5 +5,7 @@ export type ImageProps = ComponentProps<typeof NextImage> &
   ImgHTMLAttributes<HTMLImageElement>
 
 export const Image = forwardRef<HTMLImageElement, ImageProps>(
-  (props: ImageProps) => <NextImage {...props} />
+  function Image(props, ref) {
+    return <NextImage ref={ref} {...props} />
+  }
 )
