@@ -1,6 +1,10 @@
 import { headerConfig } from './headerConfig.js'
 
-export const customNextConfig = ({ domain }) => ({
+type Props = {
+  domain: string
+}
+
+export const customNextConfig = ({ domain }: Props) => ({
   poweredByHeader: false,
   reactStrictMode: true,
   experimental: {
