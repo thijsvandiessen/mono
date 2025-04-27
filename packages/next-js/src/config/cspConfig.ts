@@ -1,4 +1,8 @@
-export const csp = ({ domain }) => [
+type Props = {
+  domain: string
+}
+
+export const csp = ({ domain }: Props) => [
   `default-src 'self' 'unsafe-inline'`,
   `script-src 'self' 'unsafe-inline' 'unsafe-eval' https://maps.googleapis.com`,
   `manifest-src ${domain}/manifest.json`, // TODO

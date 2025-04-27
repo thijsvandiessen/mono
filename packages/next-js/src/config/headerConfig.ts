@@ -1,6 +1,10 @@
 import { csp } from './cspConfig.js'
 
-export const headerConfig = ({ domain }) => [
+type Props = {
+  domain: string
+}
+
+export const headerConfig = ({ domain }: Props) => [
   {
     key: 'X-DNS-Prefetch-Control',
     value: 'on',

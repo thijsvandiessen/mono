@@ -16,7 +16,6 @@
     "@mono/components": "1.0.0",
     "@mono/data": "1.0.0",
     "@mono/next-js": "1.0.0",
-    "@mono/next-js-config": "1.0.0",
     "@mono/utils": "1.0.0",
     "classnames": "2.5.1",
     "next": "15.3.1",
