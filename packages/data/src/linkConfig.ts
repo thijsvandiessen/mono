@@ -5,12 +5,14 @@ const getUrl = () => {
   return '/graphql' as const
 }
 
+const clientName = process.env.NEXT_PUBLIC_SITE_NAME ?? ''
+
 export const linkConfig = {
   url: getUrl(),
   headers: {
     'Content-Language': 'nl-NL',
-    // 'apollographql-client-name': 'example',
-    'apollographql-client-version': 'specific-version', // TODO: comit hash?
+    'apollographql-client-name': clientName,
+    'apollographql-client-version': 'specific-version', // TODO: commit hash?
   },
   next: { revalidate: 3600 },
 }

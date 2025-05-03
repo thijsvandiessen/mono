@@ -3,9 +3,11 @@ provider "hcp" {
 }
 
 provider "google" {
-  project     = var.google_project_id
-  region      = var.google_project_region
-  credentials = var.GCP_CREDENTIALS
+  project               = var.google_project_id
+  billing_project       = var.google_project_id
+  user_project_override = true
+  region                = var.google_project_region
+  credentials           = var.GCP_CREDENTIALS
 }
 
 provider "vercel" {
