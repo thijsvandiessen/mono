@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.10](https://github.com/thijsvandiessen/mono/compare/v1.0.9...v1.0.10) (2025-05-04)
+
+
+### Bug Fixes
+
+* explicitly enable ([#437](https://github.com/thijsvandiessen/mono/issues/437)) ([ae8256e](https://github.com/thijsvandiessen/mono/commit/ae8256efb38289281b4a64d35a7e6eac66bd5893))
+* next check fix ([#423](https://github.com/thijsvandiessen/mono/issues/423)) ([c26b6dc](https://github.com/thijsvandiessen/mono/commit/c26b6dca5ef5bc963ac66486e68cff7a62ab45f9))
+* nextjs config ([#425](https://github.com/thijsvandiessen/mono/issues/425)) ([17886c9](https://github.com/thijsvandiessen/mono/commit/17886c91caac01eb97a7e9e24600be444fc0b63b))
+* revert next config ([#417](https://github.com/thijsvandiessen/mono/issues/417)) ([c5ff02a](https://github.com/thijsvandiessen/mono/commit/c5ff02ad171a1a0c76abcfc067eae409e11e9ee7))
+* terraform config ([#436](https://github.com/thijsvandiessen/mono/issues/436)) ([de98257](https://github.com/thijsvandiessen/mono/commit/de98257448c69ff9b3a418cb8613f2e61e72e66b))
+* typescript config package ([#396](https://github.com/thijsvandiessen/mono/issues/396)) ([de9a751](https://github.com/thijsvandiessen/mono/commit/de9a751e20ff8a9311e247c5828269f9286c8ee1))
+* update eslint ([#385](https://github.com/thijsvandiessen/mono/issues/385)) ([5cee537](https://github.com/thijsvandiessen/mono/commit/5cee53774c3c2d7783d8d7d1eb630c5e9868d4a7))
+
 ## [1.0.9](https://github.com/thijsvandiessen/mono/compare/v1.0.8...v1.0.9) (2025-04-11)
 
 
