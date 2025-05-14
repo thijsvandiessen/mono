@@ -16,7 +16,7 @@
     "test": "npm test --workspaces --if-present"
   },
   "devDependencies": {
-    "@apollo/rover": "0.29.1",
+    "@apollo/rover": "0.30.0",
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
     "@swc/core": "1.11.24",
