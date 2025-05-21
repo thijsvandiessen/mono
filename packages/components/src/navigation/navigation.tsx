@@ -13,9 +13,9 @@ export const Navigation = async () => {
   return (
     <nav className={classNames(styles.root, 'content-layout')}>
       <div className={classNames(styles.content)}>
-        <MobileMenu />
+        <MobileMenu escapedMenuString={JSON.stringify(data.general)} />
         <ul className={classNames(styles.list)}>
-          {data.general.menu.map((item) => {
+          {data.general.menu?.map((item) => {
             if ('link' in item) {
               return (
                 <NavigationItem

@@ -7,6 +7,8 @@ const mockData: GetPageSeoQuery['page'] = {
   title: 'some title',
   _createdAt: 'some-date-time-string',
   _updatedAt: 'some-date-time-string',
+  _firstPublishedAt: 'some date time string',
+  _publishedAt: 'some date time string',
   id: 'some-id',
   _seoMetaTags: [
     { attributes: null, content: 'Contact', tag: 'title' },
