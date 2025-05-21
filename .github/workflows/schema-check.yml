@@ -11,7 +11,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  Schema-check:
+  schema-check:
+    name: 'Schema • ${{ matrix.site }}'
     runs-on: ubuntu-latest
     environment: apollo
     env:
@@ -22,8 +23,8 @@ jobs:
     strategy:
       matrix:
         include:
-          - site: 'lundi-main'
-            secret: ${{ secrets.DATOCMS_ACCESS_TOKEN }}
+          - site: lundi-main
+            secret_name: DATOCMS_ACCESS_TOKEN
 
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
@@ -38,7 +39,7 @@ jobs:
         run: rover config whoami
       - name: Validate ${{ matrix.site }} schema
         env:
-          DATOCMS_ACCESS_TOKEN: ${{ secrets[matrix.secret] }}
+          DATOCMS_ACCESS_TOKEN: ${{ secrets[matrix.secret_name] }}
         run: |
           rover graph introspect https://graphql.datocms.com \
             --header "Authorization: Bearer ${{ env.DATOCMS_ACCESS_TOKEN }}" \
@@ -47,7 +48,7 @@ jobs:
             --name lundi-bleu-dato-cms
       - name: Generate SDL
         env:
-          DATOCMS_ACCESS_TOKEN: ${{ secrets[matrix.secret] }}
+          DATOCMS_ACCESS_TOKEN: ${{ secrets[matrix.secret_name] }}
         run: |
           rover graph introspect https://graphql.datocms.com \
               --header "Authorization: Bearer ${{ env.DATOCMS_ACCESS_TOKEN }}" \
