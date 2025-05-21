@@ -1,0 +1,14 @@
+{
+  "name": "e2e",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright end-to-end tests",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.41.2",
+    "typescript": "5.8.3"
+  }
+}
