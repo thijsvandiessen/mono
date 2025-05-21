@@ -14,8 +14,8 @@ vi.mock('@mono/data', () => ({
 vi.mock('@mono/hooks', () => ({
   __esModule: true,
   ...vi.importActual('@mono/hooks'),
-  useEventsMeta: vi.fn(() => ({ numberOfEvents: 10 })),
   useIntersectionObserver: vi.fn(() => []),
+  useLoadMoreEvents: vi.fn(() => ({ events: [], ref: null })),
 }))
 
 const getEventsMock = vi.mocked(getEvents)
