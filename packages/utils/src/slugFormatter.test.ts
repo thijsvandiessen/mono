@@ -22,7 +22,7 @@ describe('slugFormatter', () => {
     expect(slugFormatter({ slug: '' })).toEqual('/')
   })
 
-  it('should return an extranal url', () => {
+  it('should return an external url', () => {
     expect(slugFormatter({ slug: 'https://example.com' })).toEqual(
       'https://example.com'
     )
