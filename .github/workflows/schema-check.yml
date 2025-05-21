@@ -28,6 +28,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+
       - name: Install Rover
         run: |
           curl -sSL https://rover.apollo.dev/nix/v0.29.1 | sh
@@ -35,6 +36,7 @@ jobs:
           # Add Rover to the $GITHUB_PATH so it can be used in another step
           # https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#adding-a-system-path
           echo "$HOME/.rover/bin" >> $GITHUB_PATH
+
       - name: Check whoami
         run: rover config whoami
       - name: Validate ${{ matrix.site }} schema
