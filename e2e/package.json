@@ -4,7 +4,7 @@
   "description": "Playwright end-to-end tests",
   "type": "module",
   "scripts": {
-    "test": "playwright test"
+    "e2e": "playwright test"
   },
   "devDependencies": {
     "@playwright/test": "1.52.0",

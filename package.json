@@ -15,7 +15,7 @@
     "dev": "concurrently \"npm run dev --workspace=apps/lundi-bleu\" \"npm run dev --workspace=apps/example\"",
     "lint": "npm run lint --workspaces --if-present",
     "test": "npm test --workspaces --if-present",
-    "e2e": "npm run test --workspace=e2e"
+    "e2e": "npm run e2e --workspace=e2e"
   },
   "devDependencies": {
     "@apollo/rover": "0.31.0",
