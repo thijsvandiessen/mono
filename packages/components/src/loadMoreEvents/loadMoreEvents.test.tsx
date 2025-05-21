@@ -27,7 +27,9 @@ describe('Events component', () => {
       error: undefined,
     })
 
-    const { container } = render(<LoadMoreEvents initialSkip={1} />)
+    const { container } = render(
+      <LoadMoreEvents initialSkip={1} numberOfEvents={10} />
+    )
 
     expect(screen.getByText('1 van 10 concerten')).toBeInTheDocument()
     expect(container).toMatchSnapshot()

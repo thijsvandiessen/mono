@@ -1,11 +1,13 @@
-import { ConcertModelOrderBy, getEvents, getPage } from '@mono/data'
-import { Event } from '../event/index.js'
+import {
+  ConcertModelOrderBy,
+  getEvents,
+  getEventsMeta,
+  getPage,
+} from '@mono/data'
 import { Header } from '../header/index.js'
-import { LoadMoreEvents } from '../loadMoreEvents/index.js'
 import { PageContent } from '../pageContent/index.js'
-import classNames from 'classnames'
 import { notFound } from '@mono/next-js'
-import styles from './styles.module.scss'
+import { Events } from './events.jsx'
 
 export const ConcertsPage = async () => {
   const first = 10
@@ -14,30 +16,19 @@ export const ConcertsPage = async () => {
     first,
     order: ConcertModelOrderBy.PositionAsc,
   })
+  const eventsMeta = await getEventsMeta()
   const { data: pageData } = await getPage({ slug: 'concerten' })
-
-  const events = (
-    <div className={classNames(styles.concerts, 'content-layout')}>
-      {eventData?.map((event) => {
-        if (!event?.id) return
-
-        return (
-          <Event
-            className="content-layout--small"
-            key={event.id}
-            id={event.id}
-          />
-        )
-      })}
-
-      <LoadMoreEvents initialSkip={first} />
-    </div>
-  )
 
   if (!eventData && !pageData) return notFound()
 
   if (!pageData) {
-    return events
+    return (
+      <Events
+        eventData={eventData}
+        first={first}
+        numberOfEvents={eventsMeta.data?.count ?? 0}
+      />
+    )
   }
 
   let header = null
@@ -56,7 +47,11 @@ export const ConcertsPage = async () => {
           title={pageData.title || ''}
         />
       )}
-      {events}
+      <Events
+        eventData={eventData}
+        first={first}
+        numberOfEvents={eventsMeta.data?.count ?? 0}
+      />
       <PageContent sectionClassName="content-layout" items={pageContent} />
     </>
   )

@@ -16,11 +16,9 @@ export const client = new Client({
     }),
     fetchExchange,
   ],
-  fetchOptions: () => {
-    return {
-      headers: { ...linkConfig.headers },
-      next: { revalidate: 3600 },
-    }
-  },
+  fetchOptions: () => ({
+    headers: linkConfig.headers,
+    next: { revalidate: 3600 },
+  }),
   suspense: true,
 })

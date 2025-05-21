@@ -1,18 +1,17 @@
-'use client'
-
-import { GetGeneralInfoDocument } from '@mono/data'
+import { type GetGeneralInfoQuery } from '@mono/data'
 import { NavigationItem } from '../navigationItem/index.js'
 import React from 'react'
 import classNames from 'classnames'
 import styles from './styles.module.scss'
-import { useQuery } from 'urql'
 
-export const MobileMenuItems = () => {
-  const [result] = useQuery({ query: GetGeneralInfoDocument })
-
+export const MobileMenuItems = ({
+  general,
+}: {
+  general: GetGeneralInfoQuery['general']
+}) => {
   return (
     <ul className={styles.root}>
-      {result?.data?.general?.menu.map((item) => {
+      {general?.menu?.map((item) => {
         if ('link' in item) {
           return (
             <NavigationItem

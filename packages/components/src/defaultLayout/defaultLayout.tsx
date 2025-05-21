@@ -1,4 +1,4 @@
-import React, { type FunctionComponent, type ReactElement } from 'react'
+import React, { type ReactElement } from 'react'
 import { Footer } from '../footer/index.js'
 import { Navigation } from '../navigation/index.js'
 import classNames from 'classnames'
@@ -8,12 +8,10 @@ type Props = {
   children: ReactElement
 }
 
-export const DefaultLayout: FunctionComponent<Props> = ({ children }) => {
-  return (
-    <div className={classNames(styles.main)}>
-      <Navigation />
-      <main>{children}</main>
-      <Footer />
-    </div>
-  )
-}
+export const DefaultLayout = ({ children }: Props) => (
+  <div className={classNames(styles.main)}>
+    <Navigation />
+    <main>{children}</main>
+    <Footer />
+  </div>
+)

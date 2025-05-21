@@ -17,31 +17,45 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.REPO_SCOPED_TOKEN }}
       APOLLO_KEY: ${{ secrets.APOLLO_KEY }}
-      DATOCMS_ACCESS_TOKEN: ${{ secrets.DATOCMS_ACCESS_TOKEN }}
       APOLLO_VCS_COMMIT: ${{ github.event.pull_request.head.sha }}
+
+    strategy:
+      matrix:
+        lundi:
+          - { name: lundi-main, secret: ${{ secrets.DATOCMS_ACCESS_TOKEN }} }
+
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+
       - name: Install Rover
         run: |
-          curl -sSL https://rover.apollo.dev/nix/v0.23.0 | sh
+          curl -sSL https://rover.apollo.dev/nix/v0.29.1 | sh
 
           # Add Rover to the $GITHUB_PATH so it can be used in another step
           # https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#adding-a-system-path
           echo "$HOME/.rover/bin" >> $GITHUB_PATH
+
       - name: Check whoami
         run: rover config whoami
-      - name: Validating subgraph schema changes
-        if: ${{ env.DATOCMS_ACCESS_TOKEN != '' }}
+
+      - name: Validate ${{ matrix.lundi.name }} schema
+        env:
+          DATOCMS_ACCESS_TOKEN: ${{ secrets[matrix.lundi.secret] }}
         run: |
-          rover graph introspect https://graphql.datocms.com --header "Authorization: Bearer ${{ env.DATOCMS_ACCESS_TOKEN }}" \
+            rover graph introspect https://graphql.datocms.com \
+              --header "Authorization: Bearer ${{ env.DATOCMS_ACCESS_TOKEN }}" \
             | rover subgraph check vandiessen-mono-graph@current \
-            --schema - --name lundi-bleu-dato-cms
-      - name: Downloading datocms schema
-        if: ${{ env.DATOCMS_ACCESS_TOKEN != '' }}
+              --schema - \
+              --name lundi-bleu-dato-cms
+
+      - name: Generate SDL
+        env:
+          DATOCMS_ACCESS_TOKEN: ${{ secrets[matrix.lundi.secret] }}
         run: |
-          rover graph introspect https://graphql.datocms.com --header "Authorization: Bearer ${{ env.DATOCMS_ACCESS_TOKEN }}" \
-          > ./packages/data/src/generated/datocms.graphql
+          rover graph introspect https://graphql.datocms.com \
+              --header "Authorization: Bearer ${{ env.DATOCMS_ACCESS_TOKEN }}" \
+            > ./packages/data/src/generated/${{ matrix.lundi.name }}.graphql
+  
       - name: Publishing lundi-bleu-dato-cms schema
-        if: ${{ env.APOLLO_KEY != '' }}
         run: |
-          rover subgraph publish vandiessen-mono-graph@current --name lundi-bleu-dato-cms --schema ./packages/data/src/generated/datocms.graphql
+          rover subgraph publish vandiessen-mono-graph@current --name lundi-bleu-dato-cms --schema ./packages/data/src/generated/${{ matrix.lundi.name }}.graphql

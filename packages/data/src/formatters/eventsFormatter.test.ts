@@ -16,6 +16,8 @@ describe('eventsFormatter', () => {
           slug: 'required-slug',
           _updatedAt: '2023-08-14T09:37:24+01:00',
           _createdAt: '2023-09-01T13:32:36+01:00',
+          _firstPublishedAt: 'some date time string',
+          _publishedAt: 'some date time string',
           locations: [
             {
               id: 'locations-id',
