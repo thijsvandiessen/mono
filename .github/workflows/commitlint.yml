@@ -5,6 +5,11 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - reopened
   merge_group:
     types: [checks_requested]
     branches: [main]
