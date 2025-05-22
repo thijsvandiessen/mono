@@ -20,7 +20,9 @@ const mockedQuery = vi.mocked(client.query)
 describe('getGeneralInfo', () => {
   it('should return an object', async () => {
     mockedQuery.mockResolvedValue({
-      data: {},
+      data: {
+        general: { id: '1', title: 'main', menu: [] },
+      },
       operation: {
         key: 1,
         query: GetGeneralInfoDocument,
@@ -35,7 +37,7 @@ describe('getGeneralInfo', () => {
       hasNext: false,
     })
     const { data } = await getGeneralInfo()
-    expect(data).toEqual({})
+    expect(data).toEqual({ id: '1', title: 'main', menu: [] })
   })
   it('should return an error', async () => {
     console.log = vi.fn()

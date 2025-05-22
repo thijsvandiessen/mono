@@ -8,30 +8,30 @@ import styles from './styles.module.scss'
 
 export const Navigation = async () => {
   const { data } = await getGeneralInfo()
-  if (!data?.general) return null
+  if (!data) return null
 
   return (
     <nav className={classNames(styles.root, 'content-layout')}>
       <div className={classNames(styles.content)}>
-        <MobileMenu escapedMenuString={JSON.stringify(data.general)} />
+        <MobileMenu escapedMenuString={JSON.stringify(data)} />
         <ul className={classNames(styles.list)}>
-          {data.general.menu?.map((item) => {
-            if ('link' in item) {
+          {data.menu?.map((item) => {
+            if ('slug' in item) {
               return (
                 <NavigationItem
                   key={item.id}
-                  slug={item?.link?.slug}
+                  slug={item.slug}
                   label={item.label}
                 />
               )
             }
 
-            if ('menu' in item) {
+            if ('items' in item) {
               return (
                 <NavigationSubMenu
                   key={item.id}
                   label={item.label}
-                  item={JSON.stringify(item.menu)}
+                  item={JSON.stringify(item.items)}
                 />
               )
             }

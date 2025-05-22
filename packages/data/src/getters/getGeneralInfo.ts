@@ -5,10 +5,12 @@ import {
 } from '../generated/graphql.js'
 import type { CombinedError } from '@urql/core'
 import { client } from '../gqlClient.js'
+import { navigationFormatter } from '../formatters/navigationFormatter.js'
+import type { Navigation } from '../types/navigation.js'
 
 export const getGeneralInfo = async (): Promise<
   | {
-      data?: GetGeneralInfoQuery
+      data?: Navigation | null
       error?: CombinedError
     }
   | {
@@ -23,7 +25,7 @@ export const getGeneralInfo = async (): Promise<
     >(GetGeneralInfoDocument, {})
 
     return {
-      data,
+      data: data?.general ? navigationFormatter(data.general) : null,
       error,
     }
   } catch (error) {
