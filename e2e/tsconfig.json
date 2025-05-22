@@ -1,8 +1,8 @@
 {
   "extends": "@mono/typescript-config/base.json",
   "compilerOptions": {
-    "types": ["@playwright/test"],
-    "outDir": "dist"
+    "types": ["@playwright/test", "node"],
+    "noEmit": true
   },
   "include": ["tests/**/*.ts", "playwright.config.ts"]
 }

@@ -19,6 +19,7 @@ export default defineConfig({
   ],
   webServer: {
     command: 'npm run dev',
+    reuseExistingServer: !process.env.CI,
     cwd: '../',
     url: 'http://localhost:3000',
     timeout: 30 * 1000, // 30 sec – bump if your build is slow

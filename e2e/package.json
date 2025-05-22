@@ -4,10 +4,12 @@
   "description": "Playwright end-to-end tests",
   "type": "module",
   "scripts": {
+    "build": "tsc --build",
     "e2e": "playwright test"
   },
   "devDependencies": {
     "@playwright/test": "1.52.0",
+    "@types/node": "22.15.20",
     "typescript": "5.8.3"
   }
 }
