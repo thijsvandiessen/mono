@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.11](https://github.com/thijsvandiessen/mono/compare/v1.0.10...v1.0.11) (2025-05-22)
+
+
+### Bug Fixes
+
+* add e2e task dependency on build ([#492](https://github.com/thijsvandiessen/mono/issues/492)) ([af6a928](https://github.com/thijsvandiessen/mono/commit/af6a9283e9c62dd352c2a19aa79f94f5d12620e0))
+* add extra tests for useLocation hook ([#484](https://github.com/thijsvandiessen/mono/issues/484)) ([9ae3f5f](https://github.com/thijsvandiessen/mono/commit/9ae3f5f01c6b9474da274099c8cbe91066364d49))
+* Add Playwright e2e workspace ([#485](https://github.com/thijsvandiessen/mono/issues/485)) ([0fb3f58](https://github.com/thijsvandiessen/mono/commit/0fb3f586df83be2044ef5c963f55cf735c000b24))
+* gql check ([#483](https://github.com/thijsvandiessen/mono/issues/483)) ([bc6df45](https://github.com/thijsvandiessen/mono/commit/bc6df455be6936106cff854eeea9af0779ddfddc))
+* optimize dato requests ([#480](https://github.com/thijsvandiessen/mono/issues/480)) ([019997b](https://github.com/thijsvandiessen/mono/commit/019997b5121b64b9a2db126d7918cc122a93ce4b))
+* refactor navigation formatter narrowing ([#491](https://github.com/thijsvandiessen/mono/issues/491)) ([c1be9f2](https://github.com/thijsvandiessen/mono/commit/c1be9f283c77766af21e92a329bff9b86bf6c6e1))
+
 ## [1.0.10](https://github.com/thijsvandiessen/mono/compare/v1.0.9...v1.0.10) (2025-05-04)
 
 
