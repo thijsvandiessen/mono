@@ -10,6 +10,7 @@ import classNames from 'classnames'
 import { isEmptyDocument } from 'datocms-structured-text-utils'
 import styles from './styles.module.scss'
 import { Image } from '@mono/next-js'
+import layoutStyles from '../body/styles.module.scss'
 
 interface Props {
   className?: string
@@ -39,11 +40,11 @@ export const Header = ({
         [`${styles.withBody}`]: !isEmptyDocument(body),
       })}
     >
-      <div className={classNames(styles.headerContent, 'content-layout')}>
+      <div className={classNames(styles.headerContent, layoutStyles.contentLayout)}>
         {title && (
           <h1
             className={classNames({
-              'sr-only': body ?? (!body && asset?.url),
+              [layoutStyles.srOnly]: body ?? (!body && asset?.url),
             })}
           >
             {title}

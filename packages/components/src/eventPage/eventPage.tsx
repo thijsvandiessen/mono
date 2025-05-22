@@ -7,6 +7,7 @@ import { getEventPage } from '@mono/data'
 import { notFound, Image } from '@mono/next-js'
 
 import styles from './styles.module.scss'
+import layoutStyles from '../body/styles.module.scss'
 
 export interface Props {
   slug: string
@@ -19,12 +20,12 @@ export const EventPage = async ({ slug }: Props) => {
   return (
     <article className={styles.root}>
       <header className={classNames(styles.header)}>
-        <div className={classNames(styles.titleContainer, 'content-layout')}>
+        <div className={classNames(styles.titleContainer, layoutStyles.contentLayout)}>
           <h1>{data.title}</h1>
         </div>
       </header>
       <div
-        className={classNames(styles.container, 'content-layout', {
+        className={classNames(styles.container, layoutStyles.contentLayout, {
           [`${styles.noGrid}`]: !data.image?.url,
         })}
       >

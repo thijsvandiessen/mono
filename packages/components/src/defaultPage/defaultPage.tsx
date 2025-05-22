@@ -2,6 +2,7 @@ import { PageContent } from '../pageContent/index.js'
 import React from 'react'
 import { getPage } from '@mono/data'
 import { notFound } from '@mono/next-js'
+import layoutStyles from '../body/styles.module.scss'
 
 export interface Props {
   slug: string
@@ -14,7 +15,7 @@ export const DefaultPage = async ({ slug }: Props) => {
   return (
     <article>
       <PageContent
-        sectionClassName="content-layout"
+        sectionClassName={layoutStyles.contentLayout}
         items={data.content}
         pageTitle={data.title || ''}
       />

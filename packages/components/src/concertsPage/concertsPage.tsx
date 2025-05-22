@@ -8,6 +8,7 @@ import { Header } from '../header/index.js'
 import { PageContent } from '../pageContent/index.js'
 import { notFound } from '@mono/next-js'
 import { Events } from './events.jsx'
+import layoutStyles from '../body/styles.module.scss'
 
 export const ConcertsPage = async () => {
   const first = 10
@@ -52,7 +53,10 @@ export const ConcertsPage = async () => {
         first={first}
         numberOfEvents={eventsMeta.data?.count ?? 0}
       />
-      <PageContent sectionClassName="content-layout" items={pageContent} />
+      <PageContent
+        sectionClassName={layoutStyles.contentLayout}
+        items={pageContent}
+      />
     </>
   )
 }

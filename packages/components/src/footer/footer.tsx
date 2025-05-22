@@ -3,6 +3,7 @@ import { getGeneralInfo, getSiteMetadata } from '@mono/data'
 import { slugFormatter } from '@mono/utils'
 import styles from './styles.module.scss'
 import { Link } from '@mono/next-js'
+import layoutStyles from '../body/styles.module.scss'
 
 export const Footer = async () => {
   const { data } = await getGeneralInfo()
@@ -11,7 +12,7 @@ export const Footer = async () => {
 
   return (
     <footer className={classNames(styles.root)}>
-      <div className={classNames(styles.content, 'content-layout')}>
+      <div className={classNames(styles.content, layoutStyles.contentLayout)}>
         <div>
           <h2 className={classNames(styles.title)}>{metadata?.title}</h2>
         </div>

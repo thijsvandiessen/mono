@@ -1,6 +1,8 @@
+import layoutStyles from '../body/styles.module.scss'
+
 export const StyleGuide = () => {
   return (
-    <div className="content-layout">
+    <div className={layoutStyles.contentLayout}>
       <h1>style guide</h1>
 
       <h2>headings</h2>

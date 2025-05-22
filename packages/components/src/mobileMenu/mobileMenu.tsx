@@ -6,6 +6,7 @@ import { Hamburger } from '../icons/hamburger.jsx'
 import { MobileMenuItems } from '../mobileMenuItems/index.js'
 import classNames from 'classnames'
 import styles from './styles.module.scss'
+import layoutStyles from '../body/styles.module.scss'
 import { useDimensions, useHrefClick } from '@mono/hooks'
 import type { GetGeneralInfoQuery } from '@mono/data'
 
@@ -27,9 +28,9 @@ export const MobileMenu = ({
 
   useEffect(() => {
     if (width < 768) {
-      document.body.classList.toggle('noscroll', open)
+      document.body.classList.toggle(layoutStyles.noScroll, open)
     } else {
-      document.body.classList.remove('noscroll')
+      document.body.classList.remove(layoutStyles.noScroll)
     }
   }, [open, width])
 

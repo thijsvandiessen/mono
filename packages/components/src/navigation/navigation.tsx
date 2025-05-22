@@ -5,13 +5,14 @@ import React from 'react'
 import classNames from 'classnames'
 import { getGeneralInfo } from '@mono/data'
 import styles from './styles.module.scss'
+import layoutStyles from '../body/styles.module.scss'
 
 export const Navigation = async () => {
   const { data } = await getGeneralInfo()
   if (!data?.general) return null
 
   return (
-    <nav className={classNames(styles.root, 'content-layout')}>
+    <nav className={classNames(styles.root, layoutStyles.contentLayout)}>
       <div className={classNames(styles.content)}>
         <MobileMenu escapedMenuString={JSON.stringify(data.general)} />
         <ul className={classNames(styles.list)}>

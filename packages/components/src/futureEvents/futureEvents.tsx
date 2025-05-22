@@ -2,6 +2,7 @@ import { EventListItem } from '../eventListItem/index.js'
 import React from 'react'
 import { getFutureEvents, type Event } from '@mono/data'
 import { Link } from '@mono/next-js'
+import layoutStyles from '../body/styles.module.scss'
 export interface Props {
   skip: number
   first: number
@@ -47,7 +48,7 @@ export const FutureEvents = async ({ skip, first }: Props) => {
         if (!event?.id) return null
         return (
           <EventListItem
-            className="content-layout--small"
+            className={layoutStyles.contentLayoutSmall}
             key={event.id}
             data={event}
             size="large"

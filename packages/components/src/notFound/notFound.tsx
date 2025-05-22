@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from '@mono/next-js'
+import layoutStyles from '../body/styles.module.scss'
 
 export const NotFound = () => {
   return (
-    <section className="content-layout">
+    <section className={layoutStyles.contentLayout}>
       <h2>Niet gevonden</h2>
       <p>Deze pagina is niet gevonden.</p>
       <p>

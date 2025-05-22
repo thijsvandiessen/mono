@@ -3,6 +3,7 @@
 import React from 'react'
 import { EventListItem } from '../eventListItem/index.js'
 import { useLoadMoreEvents } from '@mono/hooks'
+import layoutStyles from '../body/styles.module.scss'
 
 export interface Props {
   initialSkip: number
@@ -18,7 +19,7 @@ export const LoadMoreEvents = ({ initialSkip, numberOfEvents }: Props) => {
         if (!event?.id) return
         return (
           <EventListItem
-            className="content-layout--small"
+            className={layoutStyles.contentLayoutSmall}
             key={event.id}
             data={event}
             isLast={events.length - 1 === index}

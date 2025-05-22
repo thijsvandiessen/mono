@@ -9,6 +9,7 @@ import { useCallback, useState } from 'react'
 import { VideoPlaceholder } from '../videoPlaceholder/index.js'
 import { Image } from '@mono/next-js'
 import styles from './styles.module.scss'
+import layoutStyles from '../body/styles.module.scss'
 
 type Props = {
   record: VideoFragment
@@ -93,7 +94,7 @@ export const VideoBlock = ({ record, autoplay, aspectRatio }: Props) => {
             allow="autoplay"
           />
         )}
-        <figcaption className="sr-only">{video.title}</figcaption>
+        <figcaption className={layoutStyles.srOnly}>{video.title}</figcaption>
       </figure>
     </VideoPlaceholder>
   )
