@@ -8,16 +8,10 @@ import { client } from '../gqlClient.js'
 import { navigationFormatter } from '../formatters/navigationFormatter.js'
 import type { Navigation } from '../types/navigation.js'
 
-export const getGeneralInfo = async (): Promise<
-  | {
-      data?: Navigation | null
-      error?: CombinedError
-    }
-  | {
-      data: null
-      error: unknown
-    }
-> => {
+export const getGeneralInfo = async (): Promise<{
+  data?: Navigation
+  error: CombinedError | unknown
+}> => {
   try {
     const { data, error } = await client.query<
       GetGeneralInfoQuery,
@@ -25,11 +19,11 @@ export const getGeneralInfo = async (): Promise<
     >(GetGeneralInfoDocument, {})
 
     return {
-      data: data?.general ? navigationFormatter(data.general) : null,
+      data: data?.general ? navigationFormatter(data.general) : undefined,
       error,
     }
   } catch (error) {
     if (error instanceof Error) console.log(error.message)
-    return { data: null, error }
+    return { data: undefined, error }
   }
 }

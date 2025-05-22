@@ -9,8 +9,4 @@ export {
 } from './image.js'
 export type { Location } from './location.js'
 export type { Music } from './music.js'
-export type {
-  Navigation,
-  NavigationItem,
-  NavigationSubMenu,
-} from './navigation.js'
+export type { Navigation, NavigationItem, SubMenuItem } from './navigation.js'

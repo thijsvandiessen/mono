@@ -29,7 +29,7 @@ export type {
   Music,
   Navigation,
   NavigationItem,
-  NavigationSubMenu,
+  SubMenuItem,
 } from './types/index.js'
 
 export { isOfTypeCloudinaryAsset } from './types/index.js'

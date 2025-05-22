@@ -6,27 +6,25 @@ import type {
 import type {
   Navigation,
   NavigationItem,
-  NavigationSubMenu,
+  SubMenuItem,
 } from '../types/navigation.js'
 
-const navigationItemFormatter = (
-  item: MenuItemFragment,
-): NavigationItem => ({
+const navigationItemFormatter = (item: MenuItemFragment): NavigationItem => ({
   id: item.id,
   label: item.label ?? undefined,
   slug: item.link?.slug ?? undefined,
 })
 
 const navigationSubMenuFormatter = (
-  item: SubmenuItemFragment,
-): NavigationSubMenu => ({
+  item: SubmenuItemFragment
+): SubMenuItem => ({
   id: item.id,
   label: item.label ?? undefined,
   items: item.menu.map((sub) => navigationItemFormatter(sub)),
 })
 
 export const navigationFormatter = (
-  general: GeneralInfoFragment,
+  general: GeneralInfoFragment
 ): Navigation => ({
   id: general.id,
   title: general.title ?? undefined,
