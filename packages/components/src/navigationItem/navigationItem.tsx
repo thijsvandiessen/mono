@@ -5,8 +5,8 @@ import styles from './styles.module.scss'
 import { Link } from '@mono/next-js'
 
 export interface NavigationItemProps {
-  slug?: string | null
-  label?: string | null
+  slug?: string
+  label?: string
 }
 
 export const NavigationItem = ({ slug, label }: NavigationItemProps) => {

@@ -8,7 +8,7 @@ import styles from './styles.module.scss'
 import { NavigationSubMenuItem } from '../navigationSubMenuItem/navigationSubMenuItem.jsx'
 
 export interface SubMenuProps {
-  label?: string | null
+  label?: string
   item: string
 }
 

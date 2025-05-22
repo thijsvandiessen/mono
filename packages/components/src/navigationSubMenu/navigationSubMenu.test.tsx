@@ -2,22 +2,23 @@ import { describe, expect, it } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/react'
 import { NavigationSubMenu } from '../navigationSubMenu/index.js'
 import React from 'react'
+import type { NavigationItem } from '@mono/data'
 
-const mockData = [
+const mockData: NavigationItem[] = [
   {
     id: '194164582',
     label: 'specific page',
-    link: { slug: 'specific/page' },
+    slug: 'specific/page',
   },
   {
     id: '194164583',
     label: 'homepage',
-    link: { slug: 'homepage', title: 'home' },
+    slug: 'homepage',
   },
   {
     id: '194164584',
     label: 'external',
-    link: { slug: 'https://example.com' },
+    slug: 'https://example.com',
   },
 ]
 
