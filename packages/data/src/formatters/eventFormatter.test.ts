@@ -8,6 +8,8 @@ describe('eventFormatter', () => {
         __typename: 'ConcertRecord',
         _createdAt: 'some date time string',
         _updatedAt: 'some date time string',
+        _firstPublishedAt: 'some date time string',
+        _publishedAt: 'some date time string',
         id: 'some-id',
         title: 'required title',
         locations: [

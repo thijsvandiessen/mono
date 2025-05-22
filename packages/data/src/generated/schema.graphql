@@ -25,11 +25,11 @@ type CallToActionRecord implements RecordInterface {
   Editing URL
   """
   _editingUrl: String
-  _firstPublishedAt: DateTime
+  _firstPublishedAt: DateTime!
   _isValid: BooleanType!
   _modelApiKey: String!
   _publicationScheduledAt: DateTime
-  _publishedAt: DateTime
+  _publishedAt: DateTime!
 
   """
   Generates SEO and Social card meta tags to be used in your frontend
@@ -88,11 +88,11 @@ type ConcertListRecord implements RecordInterface {
   Editing URL
   """
   _editingUrl: String
-  _firstPublishedAt: DateTime
+  _firstPublishedAt: DateTime!
   _isValid: BooleanType!
   _modelApiKey: String!
   _publicationScheduledAt: DateTime
-  _publishedAt: DateTime
+  _publishedAt: DateTime!
 
   """
   Generates SEO and Social card meta tags to be used in your frontend
@@ -205,11 +205,11 @@ type ConcertRecord implements RecordInterface {
   Editing URL
   """
   _editingUrl: String
-  _firstPublishedAt: DateTime
+  _firstPublishedAt: DateTime!
   _isValid: BooleanType!
   _modelApiKey: String!
   _publicationScheduledAt: DateTime
-  _publishedAt: DateTime
+  _publishedAt: DateTime!
 
   """
   Generates SEO and Social card meta tags to be used in your frontend
@@ -330,11 +330,11 @@ type DocumentRecord implements RecordInterface {
   Editing URL
   """
   _editingUrl: String
-  _firstPublishedAt: DateTime
+  _firstPublishedAt: DateTime!
   _isValid: BooleanType!
   _modelApiKey: String!
   _publicationScheduledAt: DateTime
-  _publishedAt: DateTime
+  _publishedAt: DateTime!
 
   """
   Generates SEO and Social card meta tags to be used in your frontend
@@ -623,11 +623,11 @@ type GeneralRecord implements RecordInterface {
   Editing URL
   """
   _editingUrl: String
-  _firstPublishedAt: DateTime
+  _firstPublishedAt: DateTime!
   _isValid: BooleanType!
   _modelApiKey: String!
   _publicationScheduledAt: DateTime
-  _publishedAt: DateTime
+  _publishedAt: DateTime!
 
   """
   Generates SEO and Social card meta tags to be used in your frontend
@@ -674,11 +674,11 @@ type HeaderRecord implements RecordInterface {
   Editing URL
   """
   _editingUrl: String
-  _firstPublishedAt: DateTime
+  _firstPublishedAt: DateTime!
   _isValid: BooleanType!
   _modelApiKey: String!
   _publicationScheduledAt: DateTime
-  _publishedAt: DateTime
+  _publishedAt: DateTime!
 
   """
   Generates SEO and Social card meta tags to be used in your frontend
@@ -707,11 +707,11 @@ type ImageRecord implements RecordInterface {
   Editing URL
   """
   _editingUrl: String
-  _firstPublishedAt: DateTime
+  _firstPublishedAt: DateTime!
   _isValid: BooleanType!
   _modelApiKey: String!
   _publicationScheduledAt: DateTime
-  _publishedAt: DateTime
+  _publishedAt: DateTime!
 
   """
   Generates SEO and Social card meta tags to be used in your frontend
@@ -2830,11 +2830,11 @@ type LocationItemRecord implements RecordInterface {
   Editing URL
   """
   _editingUrl: String
-  _firstPublishedAt: DateTime
+  _firstPublishedAt: DateTime!
   _isValid: BooleanType!
   _modelApiKey: String!
   _publicationScheduledAt: DateTime
-  _publishedAt: DateTime
+  _publishedAt: DateTime!
 
   """
   Generates SEO and Social card meta tags to be used in your frontend
@@ -2906,11 +2906,11 @@ type LocationRecord implements RecordInterface {
   Editing URL
   """
   _editingUrl: String
-  _firstPublishedAt: DateTime
+  _firstPublishedAt: DateTime!
   _isValid: BooleanType!
   _modelApiKey: String!
   _publicationScheduledAt: DateTime
-  _publishedAt: DateTime
+  _publishedAt: DateTime!
 
   """
   Generates SEO and Social card meta tags to be used in your frontend
@@ -2942,11 +2942,11 @@ type MenuItemRecord implements RecordInterface {
   Editing URL
   """
   _editingUrl: String
-  _firstPublishedAt: DateTime
+  _firstPublishedAt: DateTime!
   _isValid: BooleanType!
   _modelApiKey: String!
   _publicationScheduledAt: DateTime
-  _publishedAt: DateTime
+  _publishedAt: DateTime!
 
   """
   Generates SEO and Social card meta tags to be used in your frontend
@@ -3040,11 +3040,11 @@ type PageRecord implements RecordInterface {
   Editing URL
   """
   _editingUrl: String
-  _firstPublishedAt: DateTime
+  _firstPublishedAt: DateTime!
   _isValid: BooleanType!
   _modelApiKey: String!
   _publicationScheduledAt: DateTime
-  _publishedAt: DateTime
+  _publishedAt: DateTime!
 
   """
   Generates SEO and Social card meta tags to be used in your frontend
@@ -3402,11 +3402,11 @@ interface RecordInterface {
   Editing URL
   """
   _editingUrl: String
-  _firstPublishedAt: DateTime
+  _firstPublishedAt: DateTime!
   _isValid: BooleanType!
   _modelApiKey: String!
   _publicationScheduledAt: DateTime
-  _publishedAt: DateTime
+  _publishedAt: DateTime!
 
   """
   Generates SEO and Social card meta tags to be used in your frontend
@@ -3630,11 +3630,11 @@ type SubmenuItemRecord implements RecordInterface {
   Editing URL
   """
   _editingUrl: String
-  _firstPublishedAt: DateTime
+  _firstPublishedAt: DateTime!
   _isValid: BooleanType!
   _modelApiKey: String!
   _publicationScheduledAt: DateTime
-  _publishedAt: DateTime
+  _publishedAt: DateTime!
 
   """
   Generates SEO and Social card meta tags to be used in your frontend
@@ -3684,11 +3684,11 @@ type TextBlockRecord implements RecordInterface {
   Editing URL
   """
   _editingUrl: String
-  _firstPublishedAt: DateTime
+  _firstPublishedAt: DateTime!
   _isValid: BooleanType!
   _modelApiKey: String!
   _publicationScheduledAt: DateTime
-  _publishedAt: DateTime
+  _publishedAt: DateTime!
 
   """
   Generates SEO and Social card meta tags to be used in your frontend
@@ -3746,11 +3746,11 @@ type TwoColumnRecord implements RecordInterface {
   Editing URL
   """
   _editingUrl: String
-  _firstPublishedAt: DateTime
+  _firstPublishedAt: DateTime!
   _isValid: BooleanType!
   _modelApiKey: String!
   _publicationScheduledAt: DateTime
-  _publishedAt: DateTime
+  _publishedAt: DateTime!
 
   """
   Generates SEO and Social card meta tags to be used in your frontend
@@ -4515,11 +4515,11 @@ type VideoRecord implements RecordInterface {
   Editing URL
   """
   _editingUrl: String
-  _firstPublishedAt: DateTime
+  _firstPublishedAt: DateTime!
   _isValid: BooleanType!
   _modelApiKey: String!
   _publicationScheduledAt: DateTime
-  _publishedAt: DateTime
+  _publishedAt: DateTime!
 
   """
   Generates SEO and Social card meta tags to be used in your frontend

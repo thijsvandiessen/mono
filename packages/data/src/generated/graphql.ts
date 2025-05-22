@@ -59,11 +59,11 @@ export type CallToActionRecord = RecordInterface & {
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _firstPublishedAt: Scalars['DateTime']['output']
   _isValid: Scalars['BooleanType']['output']
   _modelApiKey: Scalars['String']['output']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt: Scalars['DateTime']['output']
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
@@ -117,11 +117,11 @@ export type ConcertListRecord = RecordInterface & {
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _firstPublishedAt: Scalars['DateTime']['output']
   _isValid: Scalars['BooleanType']['output']
   _modelApiKey: Scalars['String']['output']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt: Scalars['DateTime']['output']
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
@@ -213,11 +213,11 @@ export type ConcertRecord = RecordInterface & {
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _firstPublishedAt: Scalars['DateTime']['output']
   _isValid: Scalars['BooleanType']['output']
   _modelApiKey: Scalars['String']['output']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt: Scalars['DateTime']['output']
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
@@ -280,11 +280,11 @@ export type DocumentRecord = RecordInterface & {
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _firstPublishedAt: Scalars['DateTime']['output']
   _isValid: Scalars['BooleanType']['output']
   _modelApiKey: Scalars['String']['output']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt: Scalars['DateTime']['output']
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
@@ -457,11 +457,11 @@ export type GeneralRecord = RecordInterface & {
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _firstPublishedAt: Scalars['DateTime']['output']
   _isValid: Scalars['BooleanType']['output']
   _modelApiKey: Scalars['String']['output']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt: Scalars['DateTime']['output']
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
@@ -503,11 +503,11 @@ export type HeaderRecord = RecordInterface & {
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _firstPublishedAt: Scalars['DateTime']['output']
   _isValid: Scalars['BooleanType']['output']
   _modelApiKey: Scalars['String']['output']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt: Scalars['DateTime']['output']
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
@@ -529,11 +529,11 @@ export type ImageRecord = RecordInterface & {
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _firstPublishedAt: Scalars['DateTime']['output']
   _isValid: Scalars['BooleanType']['output']
   _modelApiKey: Scalars['String']['output']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt: Scalars['DateTime']['output']
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
@@ -2423,11 +2423,11 @@ export type LocationItemRecord = RecordInterface & {
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _firstPublishedAt: Scalars['DateTime']['output']
   _isValid: Scalars['BooleanType']['output']
   _modelApiKey: Scalars['String']['output']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt: Scalars['DateTime']['output']
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
@@ -2492,11 +2492,11 @@ export type LocationRecord = RecordInterface & {
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _firstPublishedAt: Scalars['DateTime']['output']
   _isValid: Scalars['BooleanType']['output']
   _modelApiKey: Scalars['String']['output']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt: Scalars['DateTime']['output']
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
@@ -2521,11 +2521,11 @@ export type MenuItemRecord = RecordInterface & {
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _firstPublishedAt: Scalars['DateTime']['output']
   _isValid: Scalars['BooleanType']['output']
   _modelApiKey: Scalars['String']['output']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt: Scalars['DateTime']['output']
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
@@ -2606,11 +2606,11 @@ export type PageRecord = RecordInterface & {
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _firstPublishedAt: Scalars['DateTime']['output']
   _isValid: Scalars['BooleanType']['output']
   _modelApiKey: Scalars['String']['output']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt: Scalars['DateTime']['output']
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
@@ -2807,11 +2807,11 @@ export type RecordInterface = {
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _firstPublishedAt: Scalars['DateTime']['output']
   _isValid: Scalars['BooleanType']['output']
   _modelApiKey: Scalars['String']['output']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt: Scalars['DateTime']['output']
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
@@ -2953,11 +2953,11 @@ export type SubmenuItemRecord = RecordInterface & {
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _firstPublishedAt: Scalars['DateTime']['output']
   _isValid: Scalars['BooleanType']['output']
   _modelApiKey: Scalars['String']['output']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt: Scalars['DateTime']['output']
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
@@ -3002,11 +3002,11 @@ export type TextBlockRecord = RecordInterface & {
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _firstPublishedAt: Scalars['DateTime']['output']
   _isValid: Scalars['BooleanType']['output']
   _modelApiKey: Scalars['String']['output']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt: Scalars['DateTime']['output']
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
@@ -3059,11 +3059,11 @@ export type TwoColumnRecord = RecordInterface & {
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _firstPublishedAt: Scalars['DateTime']['output']
   _isValid: Scalars['BooleanType']['output']
   _modelApiKey: Scalars['String']['output']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt: Scalars['DateTime']['output']
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
@@ -3484,11 +3484,11 @@ export type VideoRecord = RecordInterface & {
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _firstPublishedAt: Scalars['DateTime']['output']
   _isValid: Scalars['BooleanType']['output']
   _modelApiKey: Scalars['String']['output']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt: Scalars['DateTime']['output']
   /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
@@ -3517,8 +3517,8 @@ export type CallToActionFragment = {
   variant?: string | null
   externalUrl?: string | null
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
   pageLink?:
@@ -3527,8 +3527,8 @@ export type CallToActionFragment = {
         title?: string | null
         slug?: string | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
       }
@@ -3537,8 +3537,8 @@ export type CallToActionFragment = {
         title?: string | null
         slug?: string | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
       }
@@ -3561,8 +3561,8 @@ export type ConcertDetailFragment = {
   slug?: string | null
   poster?: unknown | null
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
   locations: Array<{
@@ -3587,8 +3587,8 @@ export type ConcertDetailFragment = {
         __typename: 'HeaderRecord'
         cover?: unknown | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
         body?: {
@@ -3600,8 +3600,8 @@ export type ConcertDetailFragment = {
             variant?: string | null
             externalUrl?: string | null
             _createdAt: string
-            _firstPublishedAt?: string | null
-            _publishedAt?: string | null
+            _firstPublishedAt: string
+            _publishedAt: string
             _updatedAt: string
             id: string
             pageLink?:
@@ -3610,8 +3610,8 @@ export type ConcertDetailFragment = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -3620,8 +3620,8 @@ export type ConcertDetailFragment = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -3633,8 +3633,8 @@ export type ConcertDetailFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -3643,8 +3643,8 @@ export type ConcertDetailFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -3654,8 +3654,8 @@ export type ConcertDetailFragment = {
     | {
         __typename: 'TextBlockRecord'
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
         content?: {
@@ -3667,8 +3667,8 @@ export type ConcertDetailFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -3677,8 +3677,8 @@ export type ConcertDetailFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -3690,8 +3690,8 @@ export type ConcertDetailFragment = {
                 variant?: string | null
                 externalUrl?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
                 pageLink?:
@@ -3700,8 +3700,8 @@ export type ConcertDetailFragment = {
                       title?: string | null
                       slug?: string | null
                       _createdAt: string
-                      _firstPublishedAt?: string | null
-                      _publishedAt?: string | null
+                      _firstPublishedAt: string
+                      _publishedAt: string
                       _updatedAt: string
                       id: string
                     }
@@ -3710,8 +3710,8 @@ export type ConcertDetailFragment = {
                       title?: string | null
                       slug?: string | null
                       _createdAt: string
-                      _firstPublishedAt?: string | null
-                      _publishedAt?: string | null
+                      _firstPublishedAt: string
+                      _publishedAt: string
                       _updatedAt: string
                       id: string
                     }
@@ -3721,8 +3721,8 @@ export type ConcertDetailFragment = {
                 __typename: 'DocumentRecord'
                 document?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -3730,8 +3730,8 @@ export type ConcertDetailFragment = {
                 __typename: 'ImageRecord'
                 image?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -3740,8 +3740,8 @@ export type ConcertDetailFragment = {
                 title?: string | null
                 thumbnail?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
                 media?: {
@@ -3761,8 +3761,8 @@ export type ConcertDetailFragment = {
     | {
         __typename: 'TwoColumnRecord'
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
         leftContent?: {
@@ -3774,8 +3774,8 @@ export type ConcertDetailFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -3784,8 +3784,8 @@ export type ConcertDetailFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -3797,8 +3797,8 @@ export type ConcertDetailFragment = {
                 variant?: string | null
                 externalUrl?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
                 pageLink?:
@@ -3807,8 +3807,8 @@ export type ConcertDetailFragment = {
                       title?: string | null
                       slug?: string | null
                       _createdAt: string
-                      _firstPublishedAt?: string | null
-                      _publishedAt?: string | null
+                      _firstPublishedAt: string
+                      _publishedAt: string
                       _updatedAt: string
                       id: string
                     }
@@ -3817,8 +3817,8 @@ export type ConcertDetailFragment = {
                       title?: string | null
                       slug?: string | null
                       _createdAt: string
-                      _firstPublishedAt?: string | null
-                      _publishedAt?: string | null
+                      _firstPublishedAt: string
+                      _publishedAt: string
                       _updatedAt: string
                       id: string
                     }
@@ -3828,8 +3828,8 @@ export type ConcertDetailFragment = {
                 __typename: 'DocumentRecord'
                 document?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -3837,8 +3837,8 @@ export type ConcertDetailFragment = {
                 __typename: 'ImageRecord'
                 image?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -3847,8 +3847,8 @@ export type ConcertDetailFragment = {
                 title?: string | null
                 thumbnail?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
                 media?: {
@@ -3873,8 +3873,8 @@ export type ConcertDetailFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -3883,8 +3883,8 @@ export type ConcertDetailFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -3896,8 +3896,8 @@ export type ConcertDetailFragment = {
                 variant?: string | null
                 externalUrl?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
                 pageLink?:
@@ -3906,8 +3906,8 @@ export type ConcertDetailFragment = {
                       title?: string | null
                       slug?: string | null
                       _createdAt: string
-                      _firstPublishedAt?: string | null
-                      _publishedAt?: string | null
+                      _firstPublishedAt: string
+                      _publishedAt: string
                       _updatedAt: string
                       id: string
                     }
@@ -3916,8 +3916,8 @@ export type ConcertDetailFragment = {
                       title?: string | null
                       slug?: string | null
                       _createdAt: string
-                      _firstPublishedAt?: string | null
-                      _publishedAt?: string | null
+                      _firstPublishedAt: string
+                      _publishedAt: string
                       _updatedAt: string
                       id: string
                     }
@@ -3927,8 +3927,8 @@ export type ConcertDetailFragment = {
                 __typename: 'DocumentRecord'
                 document?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -3936,8 +3936,8 @@ export type ConcertDetailFragment = {
                 __typename: 'ImageRecord'
                 image?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -3946,8 +3946,8 @@ export type ConcertDetailFragment = {
                 title?: string | null
                 thumbnail?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
                 media?: {
@@ -3972,8 +3972,8 @@ export type ConcertLinkFragment = {
   title?: string | null
   slug?: string | null
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
 }
@@ -3989,8 +3989,8 @@ export type EventLinkFragment = {
   title?: string | null
   slug?: string | null
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
 }
@@ -3999,8 +3999,8 @@ export type EventPageSeoFragment = {
   __typename: 'ConcertRecord'
   title?: string | null
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
   _seoMetaTags: Array<{
@@ -4056,8 +4056,8 @@ export type GeneralInfoFragment = {
               title?: string | null
               slug?: string | null
               _createdAt: string
-              _firstPublishedAt?: string | null
-              _publishedAt?: string | null
+              _firstPublishedAt: string
+              _publishedAt: string
               _updatedAt: string
               id: string
             }
@@ -4066,8 +4066,8 @@ export type GeneralInfoFragment = {
               title?: string | null
               slug?: string | null
               _createdAt: string
-              _firstPublishedAt?: string | null
-              _publishedAt?: string | null
+              _firstPublishedAt: string
+              _publishedAt: string
               _updatedAt: string
               id: string
             }
@@ -4087,8 +4087,8 @@ export type GeneralInfoFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -4097,8 +4097,8 @@ export type GeneralInfoFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -4112,8 +4112,8 @@ export type HeaderFragment = {
   __typename: 'HeaderRecord'
   cover?: unknown | null
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
   body?: {
@@ -4125,8 +4125,8 @@ export type HeaderFragment = {
       variant?: string | null
       externalUrl?: string | null
       _createdAt: string
-      _firstPublishedAt?: string | null
-      _publishedAt?: string | null
+      _firstPublishedAt: string
+      _publishedAt: string
       _updatedAt: string
       id: string
       pageLink?:
@@ -4135,8 +4135,8 @@ export type HeaderFragment = {
             title?: string | null
             slug?: string | null
             _createdAt: string
-            _firstPublishedAt?: string | null
-            _publishedAt?: string | null
+            _firstPublishedAt: string
+            _publishedAt: string
             _updatedAt: string
             id: string
           }
@@ -4145,8 +4145,8 @@ export type HeaderFragment = {
             title?: string | null
             slug?: string | null
             _createdAt: string
-            _firstPublishedAt?: string | null
-            _publishedAt?: string | null
+            _firstPublishedAt: string
+            _publishedAt: string
             _updatedAt: string
             id: string
           }
@@ -4158,8 +4158,8 @@ export type HeaderFragment = {
           title?: string | null
           slug?: string | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
         }
@@ -4168,8 +4168,8 @@ export type HeaderFragment = {
           title?: string | null
           slug?: string | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
         }
@@ -4186,8 +4186,8 @@ export type HeaderBodyFragment = {
     variant?: string | null
     externalUrl?: string | null
     _createdAt: string
-    _firstPublishedAt?: string | null
-    _publishedAt?: string | null
+    _firstPublishedAt: string
+    _publishedAt: string
     _updatedAt: string
     id: string
     pageLink?:
@@ -4196,8 +4196,8 @@ export type HeaderBodyFragment = {
           title?: string | null
           slug?: string | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
         }
@@ -4206,8 +4206,8 @@ export type HeaderBodyFragment = {
           title?: string | null
           slug?: string | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
         }
@@ -4219,8 +4219,8 @@ export type HeaderBodyFragment = {
         title?: string | null
         slug?: string | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
       }
@@ -4229,8 +4229,8 @@ export type HeaderBodyFragment = {
         title?: string | null
         slug?: string | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
       }
@@ -4240,8 +4240,8 @@ export type HeaderBodyFragment = {
 type Identifiable_CallToActionRecord_Fragment = {
   __typename: 'CallToActionRecord'
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
 }
@@ -4249,8 +4249,8 @@ type Identifiable_CallToActionRecord_Fragment = {
 type Identifiable_ConcertListRecord_Fragment = {
   __typename: 'ConcertListRecord'
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
 }
@@ -4258,8 +4258,8 @@ type Identifiable_ConcertListRecord_Fragment = {
 type Identifiable_ConcertRecord_Fragment = {
   __typename: 'ConcertRecord'
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
 }
@@ -4267,8 +4267,8 @@ type Identifiable_ConcertRecord_Fragment = {
 type Identifiable_DocumentRecord_Fragment = {
   __typename: 'DocumentRecord'
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
 }
@@ -4276,8 +4276,8 @@ type Identifiable_DocumentRecord_Fragment = {
 type Identifiable_GeneralRecord_Fragment = {
   __typename: 'GeneralRecord'
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
 }
@@ -4285,8 +4285,8 @@ type Identifiable_GeneralRecord_Fragment = {
 type Identifiable_HeaderRecord_Fragment = {
   __typename: 'HeaderRecord'
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
 }
@@ -4294,8 +4294,8 @@ type Identifiable_HeaderRecord_Fragment = {
 type Identifiable_ImageRecord_Fragment = {
   __typename: 'ImageRecord'
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
 }
@@ -4303,8 +4303,8 @@ type Identifiable_ImageRecord_Fragment = {
 type Identifiable_LocationItemRecord_Fragment = {
   __typename: 'LocationItemRecord'
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
 }
@@ -4312,8 +4312,8 @@ type Identifiable_LocationItemRecord_Fragment = {
 type Identifiable_LocationRecord_Fragment = {
   __typename: 'LocationRecord'
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
 }
@@ -4321,8 +4321,8 @@ type Identifiable_LocationRecord_Fragment = {
 type Identifiable_MenuItemRecord_Fragment = {
   __typename: 'MenuItemRecord'
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
 }
@@ -4330,8 +4330,8 @@ type Identifiable_MenuItemRecord_Fragment = {
 type Identifiable_PageRecord_Fragment = {
   __typename: 'PageRecord'
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
 }
@@ -4339,8 +4339,8 @@ type Identifiable_PageRecord_Fragment = {
 type Identifiable_SubmenuItemRecord_Fragment = {
   __typename: 'SubmenuItemRecord'
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
 }
@@ -4348,8 +4348,8 @@ type Identifiable_SubmenuItemRecord_Fragment = {
 type Identifiable_TextBlockRecord_Fragment = {
   __typename: 'TextBlockRecord'
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
 }
@@ -4357,8 +4357,8 @@ type Identifiable_TextBlockRecord_Fragment = {
 type Identifiable_TwoColumnRecord_Fragment = {
   __typename: 'TwoColumnRecord'
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
 }
@@ -4366,8 +4366,8 @@ type Identifiable_TwoColumnRecord_Fragment = {
 type Identifiable_VideoRecord_Fragment = {
   __typename: 'VideoRecord'
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
 }
@@ -4405,8 +4405,8 @@ export type ImageFragment = {
   __typename: 'ImageRecord'
   image?: unknown | null
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
 }
@@ -4415,8 +4415,8 @@ export type DocumentFragment = {
   __typename: 'DocumentRecord'
   document?: unknown | null
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
 }
@@ -4461,8 +4461,8 @@ export type MenuItemFragment = {
         title?: string | null
         slug?: string | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
       }
@@ -4471,8 +4471,8 @@ export type MenuItemFragment = {
         title?: string | null
         slug?: string | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
       }
@@ -4484,8 +4484,8 @@ export type PageFragment = {
   title?: string | null
   slug?: string | null
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
   content: Array<
@@ -4493,8 +4493,8 @@ export type PageFragment = {
         __typename: 'HeaderRecord'
         cover?: unknown | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
         body?: {
@@ -4506,8 +4506,8 @@ export type PageFragment = {
             variant?: string | null
             externalUrl?: string | null
             _createdAt: string
-            _firstPublishedAt?: string | null
-            _publishedAt?: string | null
+            _firstPublishedAt: string
+            _publishedAt: string
             _updatedAt: string
             id: string
             pageLink?:
@@ -4516,8 +4516,8 @@ export type PageFragment = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -4526,8 +4526,8 @@ export type PageFragment = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -4539,8 +4539,8 @@ export type PageFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -4549,8 +4549,8 @@ export type PageFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -4560,8 +4560,8 @@ export type PageFragment = {
     | {
         __typename: 'TextBlockRecord'
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
         content?: {
@@ -4573,8 +4573,8 @@ export type PageFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -4583,8 +4583,8 @@ export type PageFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -4596,8 +4596,8 @@ export type PageFragment = {
                 variant?: string | null
                 externalUrl?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
                 pageLink?:
@@ -4606,8 +4606,8 @@ export type PageFragment = {
                       title?: string | null
                       slug?: string | null
                       _createdAt: string
-                      _firstPublishedAt?: string | null
-                      _publishedAt?: string | null
+                      _firstPublishedAt: string
+                      _publishedAt: string
                       _updatedAt: string
                       id: string
                     }
@@ -4616,8 +4616,8 @@ export type PageFragment = {
                       title?: string | null
                       slug?: string | null
                       _createdAt: string
-                      _firstPublishedAt?: string | null
-                      _publishedAt?: string | null
+                      _firstPublishedAt: string
+                      _publishedAt: string
                       _updatedAt: string
                       id: string
                     }
@@ -4627,8 +4627,8 @@ export type PageFragment = {
                 __typename: 'DocumentRecord'
                 document?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -4636,8 +4636,8 @@ export type PageFragment = {
                 __typename: 'ImageRecord'
                 image?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -4646,8 +4646,8 @@ export type PageFragment = {
                 title?: string | null
                 thumbnail?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
                 media?: {
@@ -4667,8 +4667,8 @@ export type PageFragment = {
     | {
         __typename: 'TwoColumnRecord'
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
         leftContent?: {
@@ -4680,8 +4680,8 @@ export type PageFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -4690,8 +4690,8 @@ export type PageFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -4703,8 +4703,8 @@ export type PageFragment = {
                 variant?: string | null
                 externalUrl?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
                 pageLink?:
@@ -4713,8 +4713,8 @@ export type PageFragment = {
                       title?: string | null
                       slug?: string | null
                       _createdAt: string
-                      _firstPublishedAt?: string | null
-                      _publishedAt?: string | null
+                      _firstPublishedAt: string
+                      _publishedAt: string
                       _updatedAt: string
                       id: string
                     }
@@ -4723,8 +4723,8 @@ export type PageFragment = {
                       title?: string | null
                       slug?: string | null
                       _createdAt: string
-                      _firstPublishedAt?: string | null
-                      _publishedAt?: string | null
+                      _firstPublishedAt: string
+                      _publishedAt: string
                       _updatedAt: string
                       id: string
                     }
@@ -4734,8 +4734,8 @@ export type PageFragment = {
                 __typename: 'DocumentRecord'
                 document?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -4743,8 +4743,8 @@ export type PageFragment = {
                 __typename: 'ImageRecord'
                 image?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -4753,8 +4753,8 @@ export type PageFragment = {
                 title?: string | null
                 thumbnail?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
                 media?: {
@@ -4779,8 +4779,8 @@ export type PageFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -4789,8 +4789,8 @@ export type PageFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -4802,8 +4802,8 @@ export type PageFragment = {
                 variant?: string | null
                 externalUrl?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
                 pageLink?:
@@ -4812,8 +4812,8 @@ export type PageFragment = {
                       title?: string | null
                       slug?: string | null
                       _createdAt: string
-                      _firstPublishedAt?: string | null
-                      _publishedAt?: string | null
+                      _firstPublishedAt: string
+                      _publishedAt: string
                       _updatedAt: string
                       id: string
                     }
@@ -4822,8 +4822,8 @@ export type PageFragment = {
                       title?: string | null
                       slug?: string | null
                       _createdAt: string
-                      _firstPublishedAt?: string | null
-                      _publishedAt?: string | null
+                      _firstPublishedAt: string
+                      _publishedAt: string
                       _updatedAt: string
                       id: string
                     }
@@ -4833,8 +4833,8 @@ export type PageFragment = {
                 __typename: 'DocumentRecord'
                 document?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -4842,8 +4842,8 @@ export type PageFragment = {
                 __typename: 'ImageRecord'
                 image?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -4852,8 +4852,8 @@ export type PageFragment = {
                 title?: string | null
                 thumbnail?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
                 media?: {
@@ -4878,8 +4878,8 @@ export type PageDetailFragment = {
   title?: string | null
   slug?: string | null
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
   content: Array<
@@ -4887,8 +4887,8 @@ export type PageDetailFragment = {
         __typename: 'HeaderRecord'
         cover?: unknown | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
         body?: {
@@ -4900,8 +4900,8 @@ export type PageDetailFragment = {
             variant?: string | null
             externalUrl?: string | null
             _createdAt: string
-            _firstPublishedAt?: string | null
-            _publishedAt?: string | null
+            _firstPublishedAt: string
+            _publishedAt: string
             _updatedAt: string
             id: string
             pageLink?:
@@ -4910,8 +4910,8 @@ export type PageDetailFragment = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -4920,8 +4920,8 @@ export type PageDetailFragment = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -4933,8 +4933,8 @@ export type PageDetailFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -4943,8 +4943,8 @@ export type PageDetailFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -4954,8 +4954,8 @@ export type PageDetailFragment = {
     | {
         __typename: 'TextBlockRecord'
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
         content?: {
@@ -4967,8 +4967,8 @@ export type PageDetailFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -4977,8 +4977,8 @@ export type PageDetailFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -4990,8 +4990,8 @@ export type PageDetailFragment = {
                 variant?: string | null
                 externalUrl?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
                 pageLink?:
@@ -5000,8 +5000,8 @@ export type PageDetailFragment = {
                       title?: string | null
                       slug?: string | null
                       _createdAt: string
-                      _firstPublishedAt?: string | null
-                      _publishedAt?: string | null
+                      _firstPublishedAt: string
+                      _publishedAt: string
                       _updatedAt: string
                       id: string
                     }
@@ -5010,8 +5010,8 @@ export type PageDetailFragment = {
                       title?: string | null
                       slug?: string | null
                       _createdAt: string
-                      _firstPublishedAt?: string | null
-                      _publishedAt?: string | null
+                      _firstPublishedAt: string
+                      _publishedAt: string
                       _updatedAt: string
                       id: string
                     }
@@ -5021,8 +5021,8 @@ export type PageDetailFragment = {
                 __typename: 'DocumentRecord'
                 document?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -5030,8 +5030,8 @@ export type PageDetailFragment = {
                 __typename: 'ImageRecord'
                 image?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -5040,8 +5040,8 @@ export type PageDetailFragment = {
                 title?: string | null
                 thumbnail?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
                 media?: {
@@ -5061,8 +5061,8 @@ export type PageDetailFragment = {
     | {
         __typename: 'TwoColumnRecord'
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
         leftContent?: {
@@ -5074,8 +5074,8 @@ export type PageDetailFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -5084,8 +5084,8 @@ export type PageDetailFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -5097,8 +5097,8 @@ export type PageDetailFragment = {
                 variant?: string | null
                 externalUrl?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
                 pageLink?:
@@ -5107,8 +5107,8 @@ export type PageDetailFragment = {
                       title?: string | null
                       slug?: string | null
                       _createdAt: string
-                      _firstPublishedAt?: string | null
-                      _publishedAt?: string | null
+                      _firstPublishedAt: string
+                      _publishedAt: string
                       _updatedAt: string
                       id: string
                     }
@@ -5117,8 +5117,8 @@ export type PageDetailFragment = {
                       title?: string | null
                       slug?: string | null
                       _createdAt: string
-                      _firstPublishedAt?: string | null
-                      _publishedAt?: string | null
+                      _firstPublishedAt: string
+                      _publishedAt: string
                       _updatedAt: string
                       id: string
                     }
@@ -5128,8 +5128,8 @@ export type PageDetailFragment = {
                 __typename: 'DocumentRecord'
                 document?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -5137,8 +5137,8 @@ export type PageDetailFragment = {
                 __typename: 'ImageRecord'
                 image?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -5147,8 +5147,8 @@ export type PageDetailFragment = {
                 title?: string | null
                 thumbnail?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
                 media?: {
@@ -5173,8 +5173,8 @@ export type PageDetailFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -5183,8 +5183,8 @@ export type PageDetailFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -5196,8 +5196,8 @@ export type PageDetailFragment = {
                 variant?: string | null
                 externalUrl?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
                 pageLink?:
@@ -5206,8 +5206,8 @@ export type PageDetailFragment = {
                       title?: string | null
                       slug?: string | null
                       _createdAt: string
-                      _firstPublishedAt?: string | null
-                      _publishedAt?: string | null
+                      _firstPublishedAt: string
+                      _publishedAt: string
                       _updatedAt: string
                       id: string
                     }
@@ -5216,8 +5216,8 @@ export type PageDetailFragment = {
                       title?: string | null
                       slug?: string | null
                       _createdAt: string
-                      _firstPublishedAt?: string | null
-                      _publishedAt?: string | null
+                      _firstPublishedAt: string
+                      _publishedAt: string
                       _updatedAt: string
                       id: string
                     }
@@ -5227,8 +5227,8 @@ export type PageDetailFragment = {
                 __typename: 'DocumentRecord'
                 document?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -5236,8 +5236,8 @@ export type PageDetailFragment = {
                 __typename: 'ImageRecord'
                 image?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -5246,8 +5246,8 @@ export type PageDetailFragment = {
                 title?: string | null
                 thumbnail?: unknown | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
                 media?: {
@@ -5271,8 +5271,8 @@ export type PageDetailSeoFragment = {
   __typename: 'PageRecord'
   title?: string | null
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
   _seoMetaTags: Array<{
@@ -5294,8 +5294,8 @@ export type PageLinkFragment = {
   title?: string | null
   slug?: string | null
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
 }
@@ -5326,8 +5326,8 @@ export type SiteMetadataFragment = {
   title?: string | null
   siteMetadata?: unknown | null
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
 }
@@ -5346,8 +5346,8 @@ export type SubmenuItemFragment = {
           title?: string | null
           slug?: string | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
         }
@@ -5356,8 +5356,8 @@ export type SubmenuItemFragment = {
           title?: string | null
           slug?: string | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
         }
@@ -5381,8 +5381,8 @@ export type TextBlockContentFragment = {
         title?: string | null
         slug?: string | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
       }
@@ -5391,8 +5391,8 @@ export type TextBlockContentFragment = {
         title?: string | null
         slug?: string | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
       }
@@ -5404,8 +5404,8 @@ export type TextBlockContentFragment = {
         variant?: string | null
         externalUrl?: string | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
         pageLink?:
@@ -5414,8 +5414,8 @@ export type TextBlockContentFragment = {
               title?: string | null
               slug?: string | null
               _createdAt: string
-              _firstPublishedAt?: string | null
-              _publishedAt?: string | null
+              _firstPublishedAt: string
+              _publishedAt: string
               _updatedAt: string
               id: string
             }
@@ -5424,8 +5424,8 @@ export type TextBlockContentFragment = {
               title?: string | null
               slug?: string | null
               _createdAt: string
-              _firstPublishedAt?: string | null
-              _publishedAt?: string | null
+              _firstPublishedAt: string
+              _publishedAt: string
               _updatedAt: string
               id: string
             }
@@ -5435,8 +5435,8 @@ export type TextBlockContentFragment = {
         __typename: 'DocumentRecord'
         document?: unknown | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
       }
@@ -5444,8 +5444,8 @@ export type TextBlockContentFragment = {
         __typename: 'ImageRecord'
         image?: unknown | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
       }
@@ -5454,8 +5454,8 @@ export type TextBlockContentFragment = {
         title?: string | null
         thumbnail?: unknown | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
         media?: {
@@ -5481,8 +5481,8 @@ export type LeftContentFragment = {
         title?: string | null
         slug?: string | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
       }
@@ -5491,8 +5491,8 @@ export type LeftContentFragment = {
         title?: string | null
         slug?: string | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
       }
@@ -5504,8 +5504,8 @@ export type LeftContentFragment = {
         variant?: string | null
         externalUrl?: string | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
         pageLink?:
@@ -5514,8 +5514,8 @@ export type LeftContentFragment = {
               title?: string | null
               slug?: string | null
               _createdAt: string
-              _firstPublishedAt?: string | null
-              _publishedAt?: string | null
+              _firstPublishedAt: string
+              _publishedAt: string
               _updatedAt: string
               id: string
             }
@@ -5524,8 +5524,8 @@ export type LeftContentFragment = {
               title?: string | null
               slug?: string | null
               _createdAt: string
-              _firstPublishedAt?: string | null
-              _publishedAt?: string | null
+              _firstPublishedAt: string
+              _publishedAt: string
               _updatedAt: string
               id: string
             }
@@ -5535,8 +5535,8 @@ export type LeftContentFragment = {
         __typename: 'DocumentRecord'
         document?: unknown | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
       }
@@ -5544,8 +5544,8 @@ export type LeftContentFragment = {
         __typename: 'ImageRecord'
         image?: unknown | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
       }
@@ -5554,8 +5554,8 @@ export type LeftContentFragment = {
         title?: string | null
         thumbnail?: unknown | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
         media?: {
@@ -5581,8 +5581,8 @@ export type RightContentFragment = {
         title?: string | null
         slug?: string | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
       }
@@ -5591,8 +5591,8 @@ export type RightContentFragment = {
         title?: string | null
         slug?: string | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
       }
@@ -5604,8 +5604,8 @@ export type RightContentFragment = {
         variant?: string | null
         externalUrl?: string | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
         pageLink?:
@@ -5614,8 +5614,8 @@ export type RightContentFragment = {
               title?: string | null
               slug?: string | null
               _createdAt: string
-              _firstPublishedAt?: string | null
-              _publishedAt?: string | null
+              _firstPublishedAt: string
+              _publishedAt: string
               _updatedAt: string
               id: string
             }
@@ -5624,8 +5624,8 @@ export type RightContentFragment = {
               title?: string | null
               slug?: string | null
               _createdAt: string
-              _firstPublishedAt?: string | null
-              _publishedAt?: string | null
+              _firstPublishedAt: string
+              _publishedAt: string
               _updatedAt: string
               id: string
             }
@@ -5635,8 +5635,8 @@ export type RightContentFragment = {
         __typename: 'DocumentRecord'
         document?: unknown | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
       }
@@ -5644,8 +5644,8 @@ export type RightContentFragment = {
         __typename: 'ImageRecord'
         image?: unknown | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
       }
@@ -5654,8 +5654,8 @@ export type RightContentFragment = {
         title?: string | null
         thumbnail?: unknown | null
         _createdAt: string
-        _firstPublishedAt?: string | null
-        _publishedAt?: string | null
+        _firstPublishedAt: string
+        _publishedAt: string
         _updatedAt: string
         id: string
         media?: {
@@ -5675,8 +5675,8 @@ export type RightContentFragment = {
 export type TextBlockFragment = {
   __typename: 'TextBlockRecord'
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
   content?: {
@@ -5688,8 +5688,8 @@ export type TextBlockFragment = {
           title?: string | null
           slug?: string | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
         }
@@ -5698,8 +5698,8 @@ export type TextBlockFragment = {
           title?: string | null
           slug?: string | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
         }
@@ -5711,8 +5711,8 @@ export type TextBlockFragment = {
           variant?: string | null
           externalUrl?: string | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
           pageLink?:
@@ -5721,8 +5721,8 @@ export type TextBlockFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -5731,8 +5731,8 @@ export type TextBlockFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -5742,8 +5742,8 @@ export type TextBlockFragment = {
           __typename: 'DocumentRecord'
           document?: unknown | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
         }
@@ -5751,8 +5751,8 @@ export type TextBlockFragment = {
           __typename: 'ImageRecord'
           image?: unknown | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
         }
@@ -5761,8 +5761,8 @@ export type TextBlockFragment = {
           title?: string | null
           thumbnail?: unknown | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
           media?: {
@@ -5783,8 +5783,8 @@ export type TextBlockFragment = {
 export type TwoColumFragment = {
   __typename: 'TwoColumnRecord'
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
   leftContent?: {
@@ -5796,8 +5796,8 @@ export type TwoColumFragment = {
           title?: string | null
           slug?: string | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
         }
@@ -5806,8 +5806,8 @@ export type TwoColumFragment = {
           title?: string | null
           slug?: string | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
         }
@@ -5819,8 +5819,8 @@ export type TwoColumFragment = {
           variant?: string | null
           externalUrl?: string | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
           pageLink?:
@@ -5829,8 +5829,8 @@ export type TwoColumFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -5839,8 +5839,8 @@ export type TwoColumFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -5850,8 +5850,8 @@ export type TwoColumFragment = {
           __typename: 'DocumentRecord'
           document?: unknown | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
         }
@@ -5859,8 +5859,8 @@ export type TwoColumFragment = {
           __typename: 'ImageRecord'
           image?: unknown | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
         }
@@ -5869,8 +5869,8 @@ export type TwoColumFragment = {
           title?: string | null
           thumbnail?: unknown | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
           media?: {
@@ -5895,8 +5895,8 @@ export type TwoColumFragment = {
           title?: string | null
           slug?: string | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
         }
@@ -5905,8 +5905,8 @@ export type TwoColumFragment = {
           title?: string | null
           slug?: string | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
         }
@@ -5918,8 +5918,8 @@ export type TwoColumFragment = {
           variant?: string | null
           externalUrl?: string | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
           pageLink?:
@@ -5928,8 +5928,8 @@ export type TwoColumFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -5938,8 +5938,8 @@ export type TwoColumFragment = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -5949,8 +5949,8 @@ export type TwoColumFragment = {
           __typename: 'DocumentRecord'
           document?: unknown | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
         }
@@ -5958,8 +5958,8 @@ export type TwoColumFragment = {
           __typename: 'ImageRecord'
           image?: unknown | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
         }
@@ -5968,8 +5968,8 @@ export type TwoColumFragment = {
           title?: string | null
           thumbnail?: unknown | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
           media?: {
@@ -6001,8 +6001,8 @@ export type VideoFragment = {
   title?: string | null
   thumbnail?: unknown | null
   _createdAt: string
-  _firstPublishedAt?: string | null
-  _publishedAt?: string | null
+  _firstPublishedAt: string
+  _publishedAt: string
   _updatedAt: string
   id: string
   media?: {
@@ -6040,8 +6040,8 @@ export type GetEventQuery = {
     slug?: string | null
     poster?: unknown | null
     _createdAt: string
-    _firstPublishedAt?: string | null
-    _publishedAt?: string | null
+    _firstPublishedAt: string
+    _publishedAt: string
     _updatedAt: string
     id: string
     locations: Array<{
@@ -6066,8 +6066,8 @@ export type GetEventQuery = {
           __typename: 'HeaderRecord'
           cover?: unknown | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
           body?: {
@@ -6079,8 +6079,8 @@ export type GetEventQuery = {
               variant?: string | null
               externalUrl?: string | null
               _createdAt: string
-              _firstPublishedAt?: string | null
-              _publishedAt?: string | null
+              _firstPublishedAt: string
+              _publishedAt: string
               _updatedAt: string
               id: string
               pageLink?:
@@ -6089,8 +6089,8 @@ export type GetEventQuery = {
                     title?: string | null
                     slug?: string | null
                     _createdAt: string
-                    _firstPublishedAt?: string | null
-                    _publishedAt?: string | null
+                    _firstPublishedAt: string
+                    _publishedAt: string
                     _updatedAt: string
                     id: string
                   }
@@ -6099,8 +6099,8 @@ export type GetEventQuery = {
                     title?: string | null
                     slug?: string | null
                     _createdAt: string
-                    _firstPublishedAt?: string | null
-                    _publishedAt?: string | null
+                    _firstPublishedAt: string
+                    _publishedAt: string
                     _updatedAt: string
                     id: string
                   }
@@ -6112,8 +6112,8 @@ export type GetEventQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6122,8 +6122,8 @@ export type GetEventQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6133,8 +6133,8 @@ export type GetEventQuery = {
       | {
           __typename: 'TextBlockRecord'
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
           content?: {
@@ -6146,8 +6146,8 @@ export type GetEventQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6156,8 +6156,8 @@ export type GetEventQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6169,8 +6169,8 @@ export type GetEventQuery = {
                   variant?: string | null
                   externalUrl?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   pageLink?:
@@ -6179,8 +6179,8 @@ export type GetEventQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -6189,8 +6189,8 @@ export type GetEventQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -6200,8 +6200,8 @@ export type GetEventQuery = {
                   __typename: 'DocumentRecord'
                   document?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6209,8 +6209,8 @@ export type GetEventQuery = {
                   __typename: 'ImageRecord'
                   image?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6219,8 +6219,8 @@ export type GetEventQuery = {
                   title?: string | null
                   thumbnail?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   media?: {
@@ -6240,8 +6240,8 @@ export type GetEventQuery = {
       | {
           __typename: 'TwoColumnRecord'
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
           leftContent?: {
@@ -6253,8 +6253,8 @@ export type GetEventQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6263,8 +6263,8 @@ export type GetEventQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6276,8 +6276,8 @@ export type GetEventQuery = {
                   variant?: string | null
                   externalUrl?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   pageLink?:
@@ -6286,8 +6286,8 @@ export type GetEventQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -6296,8 +6296,8 @@ export type GetEventQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -6307,8 +6307,8 @@ export type GetEventQuery = {
                   __typename: 'DocumentRecord'
                   document?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6316,8 +6316,8 @@ export type GetEventQuery = {
                   __typename: 'ImageRecord'
                   image?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6326,8 +6326,8 @@ export type GetEventQuery = {
                   title?: string | null
                   thumbnail?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   media?: {
@@ -6352,8 +6352,8 @@ export type GetEventQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6362,8 +6362,8 @@ export type GetEventQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6375,8 +6375,8 @@ export type GetEventQuery = {
                   variant?: string | null
                   externalUrl?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   pageLink?:
@@ -6385,8 +6385,8 @@ export type GetEventQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -6395,8 +6395,8 @@ export type GetEventQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -6406,8 +6406,8 @@ export type GetEventQuery = {
                   __typename: 'DocumentRecord'
                   document?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6415,8 +6415,8 @@ export type GetEventQuery = {
                   __typename: 'ImageRecord'
                   image?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6425,8 +6425,8 @@ export type GetEventQuery = {
                   title?: string | null
                   thumbnail?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   media?: {
@@ -6459,8 +6459,8 @@ export type GetEventPageQuery = {
     slug?: string | null
     poster?: unknown | null
     _createdAt: string
-    _firstPublishedAt?: string | null
-    _publishedAt?: string | null
+    _firstPublishedAt: string
+    _publishedAt: string
     _updatedAt: string
     id: string
     locations: Array<{
@@ -6485,8 +6485,8 @@ export type GetEventPageQuery = {
           __typename: 'HeaderRecord'
           cover?: unknown | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
           body?: {
@@ -6498,8 +6498,8 @@ export type GetEventPageQuery = {
               variant?: string | null
               externalUrl?: string | null
               _createdAt: string
-              _firstPublishedAt?: string | null
-              _publishedAt?: string | null
+              _firstPublishedAt: string
+              _publishedAt: string
               _updatedAt: string
               id: string
               pageLink?:
@@ -6508,8 +6508,8 @@ export type GetEventPageQuery = {
                     title?: string | null
                     slug?: string | null
                     _createdAt: string
-                    _firstPublishedAt?: string | null
-                    _publishedAt?: string | null
+                    _firstPublishedAt: string
+                    _publishedAt: string
                     _updatedAt: string
                     id: string
                   }
@@ -6518,8 +6518,8 @@ export type GetEventPageQuery = {
                     title?: string | null
                     slug?: string | null
                     _createdAt: string
-                    _firstPublishedAt?: string | null
-                    _publishedAt?: string | null
+                    _firstPublishedAt: string
+                    _publishedAt: string
                     _updatedAt: string
                     id: string
                   }
@@ -6531,8 +6531,8 @@ export type GetEventPageQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6541,8 +6541,8 @@ export type GetEventPageQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6552,8 +6552,8 @@ export type GetEventPageQuery = {
       | {
           __typename: 'TextBlockRecord'
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
           content?: {
@@ -6565,8 +6565,8 @@ export type GetEventPageQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6575,8 +6575,8 @@ export type GetEventPageQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6588,8 +6588,8 @@ export type GetEventPageQuery = {
                   variant?: string | null
                   externalUrl?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   pageLink?:
@@ -6598,8 +6598,8 @@ export type GetEventPageQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -6608,8 +6608,8 @@ export type GetEventPageQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -6619,8 +6619,8 @@ export type GetEventPageQuery = {
                   __typename: 'DocumentRecord'
                   document?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6628,8 +6628,8 @@ export type GetEventPageQuery = {
                   __typename: 'ImageRecord'
                   image?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6638,8 +6638,8 @@ export type GetEventPageQuery = {
                   title?: string | null
                   thumbnail?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   media?: {
@@ -6659,8 +6659,8 @@ export type GetEventPageQuery = {
       | {
           __typename: 'TwoColumnRecord'
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
           leftContent?: {
@@ -6672,8 +6672,8 @@ export type GetEventPageQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6682,8 +6682,8 @@ export type GetEventPageQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6695,8 +6695,8 @@ export type GetEventPageQuery = {
                   variant?: string | null
                   externalUrl?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   pageLink?:
@@ -6705,8 +6705,8 @@ export type GetEventPageQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -6715,8 +6715,8 @@ export type GetEventPageQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -6726,8 +6726,8 @@ export type GetEventPageQuery = {
                   __typename: 'DocumentRecord'
                   document?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6735,8 +6735,8 @@ export type GetEventPageQuery = {
                   __typename: 'ImageRecord'
                   image?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6745,8 +6745,8 @@ export type GetEventPageQuery = {
                   title?: string | null
                   thumbnail?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   media?: {
@@ -6771,8 +6771,8 @@ export type GetEventPageQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6781,8 +6781,8 @@ export type GetEventPageQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6794,8 +6794,8 @@ export type GetEventPageQuery = {
                   variant?: string | null
                   externalUrl?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   pageLink?:
@@ -6804,8 +6804,8 @@ export type GetEventPageQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -6814,8 +6814,8 @@ export type GetEventPageQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -6825,8 +6825,8 @@ export type GetEventPageQuery = {
                   __typename: 'DocumentRecord'
                   document?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6834,8 +6834,8 @@ export type GetEventPageQuery = {
                   __typename: 'ImageRecord'
                   image?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -6844,8 +6844,8 @@ export type GetEventPageQuery = {
                   title?: string | null
                   thumbnail?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   media?: {
@@ -6876,8 +6876,8 @@ export type GetEventSeoQuery = {
     __typename: 'ConcertRecord'
     title?: string | null
     _createdAt: string
-    _firstPublishedAt?: string | null
-    _publishedAt?: string | null
+    _firstPublishedAt: string
+    _publishedAt: string
     _updatedAt: string
     id: string
     _seoMetaTags: Array<{
@@ -6910,8 +6910,8 @@ export type GetEventsUrlsQuery = {
     title?: string | null
     slug?: string | null
     _createdAt: string
-    _firstPublishedAt?: string | null
-    _publishedAt?: string | null
+    _firstPublishedAt: string
+    _publishedAt: string
     _updatedAt: string
     id: string
   }>
@@ -6933,8 +6933,8 @@ export type GetEventsQuery = {
     slug?: string | null
     poster?: unknown | null
     _createdAt: string
-    _firstPublishedAt?: string | null
-    _publishedAt?: string | null
+    _firstPublishedAt: string
+    _publishedAt: string
     _updatedAt: string
     id: string
     locations: Array<{
@@ -6959,8 +6959,8 @@ export type GetEventsQuery = {
           __typename: 'HeaderRecord'
           cover?: unknown | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
           body?: {
@@ -6972,8 +6972,8 @@ export type GetEventsQuery = {
               variant?: string | null
               externalUrl?: string | null
               _createdAt: string
-              _firstPublishedAt?: string | null
-              _publishedAt?: string | null
+              _firstPublishedAt: string
+              _publishedAt: string
               _updatedAt: string
               id: string
               pageLink?:
@@ -6982,8 +6982,8 @@ export type GetEventsQuery = {
                     title?: string | null
                     slug?: string | null
                     _createdAt: string
-                    _firstPublishedAt?: string | null
-                    _publishedAt?: string | null
+                    _firstPublishedAt: string
+                    _publishedAt: string
                     _updatedAt: string
                     id: string
                   }
@@ -6992,8 +6992,8 @@ export type GetEventsQuery = {
                     title?: string | null
                     slug?: string | null
                     _createdAt: string
-                    _firstPublishedAt?: string | null
-                    _publishedAt?: string | null
+                    _firstPublishedAt: string
+                    _publishedAt: string
                     _updatedAt: string
                     id: string
                   }
@@ -7005,8 +7005,8 @@ export type GetEventsQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7015,8 +7015,8 @@ export type GetEventsQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7026,8 +7026,8 @@ export type GetEventsQuery = {
       | {
           __typename: 'TextBlockRecord'
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
           content?: {
@@ -7039,8 +7039,8 @@ export type GetEventsQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7049,8 +7049,8 @@ export type GetEventsQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7062,8 +7062,8 @@ export type GetEventsQuery = {
                   variant?: string | null
                   externalUrl?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   pageLink?:
@@ -7072,8 +7072,8 @@ export type GetEventsQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -7082,8 +7082,8 @@ export type GetEventsQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -7093,8 +7093,8 @@ export type GetEventsQuery = {
                   __typename: 'DocumentRecord'
                   document?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7102,8 +7102,8 @@ export type GetEventsQuery = {
                   __typename: 'ImageRecord'
                   image?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7112,8 +7112,8 @@ export type GetEventsQuery = {
                   title?: string | null
                   thumbnail?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   media?: {
@@ -7133,8 +7133,8 @@ export type GetEventsQuery = {
       | {
           __typename: 'TwoColumnRecord'
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
           leftContent?: {
@@ -7146,8 +7146,8 @@ export type GetEventsQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7156,8 +7156,8 @@ export type GetEventsQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7169,8 +7169,8 @@ export type GetEventsQuery = {
                   variant?: string | null
                   externalUrl?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   pageLink?:
@@ -7179,8 +7179,8 @@ export type GetEventsQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -7189,8 +7189,8 @@ export type GetEventsQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -7200,8 +7200,8 @@ export type GetEventsQuery = {
                   __typename: 'DocumentRecord'
                   document?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7209,8 +7209,8 @@ export type GetEventsQuery = {
                   __typename: 'ImageRecord'
                   image?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7219,8 +7219,8 @@ export type GetEventsQuery = {
                   title?: string | null
                   thumbnail?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   media?: {
@@ -7245,8 +7245,8 @@ export type GetEventsQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7255,8 +7255,8 @@ export type GetEventsQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7268,8 +7268,8 @@ export type GetEventsQuery = {
                   variant?: string | null
                   externalUrl?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   pageLink?:
@@ -7278,8 +7278,8 @@ export type GetEventsQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -7288,8 +7288,8 @@ export type GetEventsQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -7299,8 +7299,8 @@ export type GetEventsQuery = {
                   __typename: 'DocumentRecord'
                   document?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7308,8 +7308,8 @@ export type GetEventsQuery = {
                   __typename: 'ImageRecord'
                   image?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7318,8 +7318,8 @@ export type GetEventsQuery = {
                   title?: string | null
                   thumbnail?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   media?: {
@@ -7364,8 +7364,8 @@ export type GetFutureEventsQuery = {
     slug?: string | null
     poster?: unknown | null
     _createdAt: string
-    _firstPublishedAt?: string | null
-    _publishedAt?: string | null
+    _firstPublishedAt: string
+    _publishedAt: string
     _updatedAt: string
     id: string
     locations: Array<{
@@ -7390,8 +7390,8 @@ export type GetFutureEventsQuery = {
           __typename: 'HeaderRecord'
           cover?: unknown | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
           body?: {
@@ -7403,8 +7403,8 @@ export type GetFutureEventsQuery = {
               variant?: string | null
               externalUrl?: string | null
               _createdAt: string
-              _firstPublishedAt?: string | null
-              _publishedAt?: string | null
+              _firstPublishedAt: string
+              _publishedAt: string
               _updatedAt: string
               id: string
               pageLink?:
@@ -7413,8 +7413,8 @@ export type GetFutureEventsQuery = {
                     title?: string | null
                     slug?: string | null
                     _createdAt: string
-                    _firstPublishedAt?: string | null
-                    _publishedAt?: string | null
+                    _firstPublishedAt: string
+                    _publishedAt: string
                     _updatedAt: string
                     id: string
                   }
@@ -7423,8 +7423,8 @@ export type GetFutureEventsQuery = {
                     title?: string | null
                     slug?: string | null
                     _createdAt: string
-                    _firstPublishedAt?: string | null
-                    _publishedAt?: string | null
+                    _firstPublishedAt: string
+                    _publishedAt: string
                     _updatedAt: string
                     id: string
                   }
@@ -7436,8 +7436,8 @@ export type GetFutureEventsQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7446,8 +7446,8 @@ export type GetFutureEventsQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7457,8 +7457,8 @@ export type GetFutureEventsQuery = {
       | {
           __typename: 'TextBlockRecord'
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
           content?: {
@@ -7470,8 +7470,8 @@ export type GetFutureEventsQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7480,8 +7480,8 @@ export type GetFutureEventsQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7493,8 +7493,8 @@ export type GetFutureEventsQuery = {
                   variant?: string | null
                   externalUrl?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   pageLink?:
@@ -7503,8 +7503,8 @@ export type GetFutureEventsQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -7513,8 +7513,8 @@ export type GetFutureEventsQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -7524,8 +7524,8 @@ export type GetFutureEventsQuery = {
                   __typename: 'DocumentRecord'
                   document?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7533,8 +7533,8 @@ export type GetFutureEventsQuery = {
                   __typename: 'ImageRecord'
                   image?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7543,8 +7543,8 @@ export type GetFutureEventsQuery = {
                   title?: string | null
                   thumbnail?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   media?: {
@@ -7564,8 +7564,8 @@ export type GetFutureEventsQuery = {
       | {
           __typename: 'TwoColumnRecord'
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
           leftContent?: {
@@ -7577,8 +7577,8 @@ export type GetFutureEventsQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7587,8 +7587,8 @@ export type GetFutureEventsQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7600,8 +7600,8 @@ export type GetFutureEventsQuery = {
                   variant?: string | null
                   externalUrl?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   pageLink?:
@@ -7610,8 +7610,8 @@ export type GetFutureEventsQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -7620,8 +7620,8 @@ export type GetFutureEventsQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -7631,8 +7631,8 @@ export type GetFutureEventsQuery = {
                   __typename: 'DocumentRecord'
                   document?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7640,8 +7640,8 @@ export type GetFutureEventsQuery = {
                   __typename: 'ImageRecord'
                   image?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7650,8 +7650,8 @@ export type GetFutureEventsQuery = {
                   title?: string | null
                   thumbnail?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   media?: {
@@ -7676,8 +7676,8 @@ export type GetFutureEventsQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7686,8 +7686,8 @@ export type GetFutureEventsQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7699,8 +7699,8 @@ export type GetFutureEventsQuery = {
                   variant?: string | null
                   externalUrl?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   pageLink?:
@@ -7709,8 +7709,8 @@ export type GetFutureEventsQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -7719,8 +7719,8 @@ export type GetFutureEventsQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -7730,8 +7730,8 @@ export type GetFutureEventsQuery = {
                   __typename: 'DocumentRecord'
                   document?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7739,8 +7739,8 @@ export type GetFutureEventsQuery = {
                   __typename: 'ImageRecord'
                   image?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7749,8 +7749,8 @@ export type GetFutureEventsQuery = {
                   title?: string | null
                   thumbnail?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   media?: {
@@ -7790,8 +7790,8 @@ export type GetGeneralInfoQuery = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -7800,8 +7800,8 @@ export type GetGeneralInfoQuery = {
                 title?: string | null
                 slug?: string | null
                 _createdAt: string
-                _firstPublishedAt?: string | null
-                _publishedAt?: string | null
+                _firstPublishedAt: string
+                _publishedAt: string
                 _updatedAt: string
                 id: string
               }
@@ -7821,8 +7821,8 @@ export type GetGeneralInfoQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7831,8 +7831,8 @@ export type GetGeneralInfoQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7896,8 +7896,8 @@ export type GetPageQuery = {
     title?: string | null
     slug?: string | null
     _createdAt: string
-    _firstPublishedAt?: string | null
-    _publishedAt?: string | null
+    _firstPublishedAt: string
+    _publishedAt: string
     _updatedAt: string
     id: string
     content: Array<
@@ -7905,8 +7905,8 @@ export type GetPageQuery = {
           __typename: 'HeaderRecord'
           cover?: unknown | null
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
           body?: {
@@ -7918,8 +7918,8 @@ export type GetPageQuery = {
               variant?: string | null
               externalUrl?: string | null
               _createdAt: string
-              _firstPublishedAt?: string | null
-              _publishedAt?: string | null
+              _firstPublishedAt: string
+              _publishedAt: string
               _updatedAt: string
               id: string
               pageLink?:
@@ -7928,8 +7928,8 @@ export type GetPageQuery = {
                     title?: string | null
                     slug?: string | null
                     _createdAt: string
-                    _firstPublishedAt?: string | null
-                    _publishedAt?: string | null
+                    _firstPublishedAt: string
+                    _publishedAt: string
                     _updatedAt: string
                     id: string
                   }
@@ -7938,8 +7938,8 @@ export type GetPageQuery = {
                     title?: string | null
                     slug?: string | null
                     _createdAt: string
-                    _firstPublishedAt?: string | null
-                    _publishedAt?: string | null
+                    _firstPublishedAt: string
+                    _publishedAt: string
                     _updatedAt: string
                     id: string
                   }
@@ -7951,8 +7951,8 @@ export type GetPageQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7961,8 +7961,8 @@ export type GetPageQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7972,8 +7972,8 @@ export type GetPageQuery = {
       | {
           __typename: 'TextBlockRecord'
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
           content?: {
@@ -7985,8 +7985,8 @@ export type GetPageQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -7995,8 +7995,8 @@ export type GetPageQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -8008,8 +8008,8 @@ export type GetPageQuery = {
                   variant?: string | null
                   externalUrl?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   pageLink?:
@@ -8018,8 +8018,8 @@ export type GetPageQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -8028,8 +8028,8 @@ export type GetPageQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -8039,8 +8039,8 @@ export type GetPageQuery = {
                   __typename: 'DocumentRecord'
                   document?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -8048,8 +8048,8 @@ export type GetPageQuery = {
                   __typename: 'ImageRecord'
                   image?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -8058,8 +8058,8 @@ export type GetPageQuery = {
                   title?: string | null
                   thumbnail?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   media?: {
@@ -8079,8 +8079,8 @@ export type GetPageQuery = {
       | {
           __typename: 'TwoColumnRecord'
           _createdAt: string
-          _firstPublishedAt?: string | null
-          _publishedAt?: string | null
+          _firstPublishedAt: string
+          _publishedAt: string
           _updatedAt: string
           id: string
           leftContent?: {
@@ -8092,8 +8092,8 @@ export type GetPageQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -8102,8 +8102,8 @@ export type GetPageQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -8115,8 +8115,8 @@ export type GetPageQuery = {
                   variant?: string | null
                   externalUrl?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   pageLink?:
@@ -8125,8 +8125,8 @@ export type GetPageQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -8135,8 +8135,8 @@ export type GetPageQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -8146,8 +8146,8 @@ export type GetPageQuery = {
                   __typename: 'DocumentRecord'
                   document?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -8155,8 +8155,8 @@ export type GetPageQuery = {
                   __typename: 'ImageRecord'
                   image?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -8165,8 +8165,8 @@ export type GetPageQuery = {
                   title?: string | null
                   thumbnail?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   media?: {
@@ -8191,8 +8191,8 @@ export type GetPageQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -8201,8 +8201,8 @@ export type GetPageQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -8214,8 +8214,8 @@ export type GetPageQuery = {
                   variant?: string | null
                   externalUrl?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   pageLink?:
@@ -8224,8 +8224,8 @@ export type GetPageQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -8234,8 +8234,8 @@ export type GetPageQuery = {
                         title?: string | null
                         slug?: string | null
                         _createdAt: string
-                        _firstPublishedAt?: string | null
-                        _publishedAt?: string | null
+                        _firstPublishedAt: string
+                        _publishedAt: string
                         _updatedAt: string
                         id: string
                       }
@@ -8245,8 +8245,8 @@ export type GetPageQuery = {
                   __typename: 'DocumentRecord'
                   document?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -8254,8 +8254,8 @@ export type GetPageQuery = {
                   __typename: 'ImageRecord'
                   image?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -8264,8 +8264,8 @@ export type GetPageQuery = {
                   title?: string | null
                   thumbnail?: unknown | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                   media?: {
@@ -8296,8 +8296,8 @@ export type GetPageSeoQuery = {
     __typename: 'PageRecord'
     title?: string | null
     _createdAt: string
-    _firstPublishedAt?: string | null
-    _publishedAt?: string | null
+    _firstPublishedAt: string
+    _publishedAt: string
     _updatedAt: string
     id: string
     _seoMetaTags: Array<{
@@ -8330,8 +8330,8 @@ export type GetPagesQuery = {
     title?: string | null
     slug?: string | null
     _createdAt: string
-    _firstPublishedAt?: string | null
-    _publishedAt?: string | null
+    _firstPublishedAt: string
+    _publishedAt: string
     _updatedAt: string
     id: string
   }>
@@ -8376,8 +8376,8 @@ export type GetSiteMetadataQuery = {
     title?: string | null
     siteMetadata?: unknown | null
     _createdAt: string
-    _firstPublishedAt?: string | null
-    _publishedAt?: string | null
+    _firstPublishedAt: string
+    _publishedAt: string
     _updatedAt: string
     id: string
   } | null
@@ -8405,8 +8405,8 @@ export type GetSubmenuQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }
@@ -8415,8 +8415,8 @@ export type GetSubmenuQuery = {
                   title?: string | null
                   slug?: string | null
                   _createdAt: string
-                  _firstPublishedAt?: string | null
-                  _publishedAt?: string | null
+                  _firstPublishedAt: string
+                  _publishedAt: string
                   _updatedAt: string
                   id: string
                 }

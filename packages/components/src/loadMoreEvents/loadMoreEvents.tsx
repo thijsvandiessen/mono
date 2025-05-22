@@ -1,59 +1,16 @@
 'use client'
-import { ConcertModelOrderBy, type Event, getEvents } from '@mono/data'
-import React, { useEffect, useRef, useState } from 'react'
-import { useEventsMeta, useIntersectionObserver } from '@mono/hooks'
+
+import React from 'react'
 import { EventListItem } from '../eventListItem/index.js'
+import { useLoadMoreEvents } from '@mono/hooks'
 
 export interface Props {
   initialSkip: number
+  numberOfEvents: number
 }
 
-export const LoadMoreEvents = ({ initialSkip }: Props) => {
-  const [skip, setSkip] = useState(initialSkip)
-  const [loading, setLoading] = useState(false)
-  const [events, setEvents] = useState<(Event | undefined)[]>([])
-  const ref = useRef<HTMLDivElement | null>(null)
-  const { numberOfEvents } = useEventsMeta()
-  const [entry] = useIntersectionObserver({
-    enabled: Boolean(numberOfEvents),
-    ref,
-  })
-
-  useEffect(() => {
-    const interval = 10
-    if (loading) return
-    if (!entry?.isIntersecting) return
-    if (!numberOfEvents) return
-    if (events.length === numberOfEvents - initialSkip) return
-    if (skip > numberOfEvents) return
-    setLoading(true)
-    // TODO: abort signal to stop fetching
-    getEvents({
-      skip,
-      first: interval,
-      order: [ConcertModelOrderBy.PositionAsc],
-    })
-      .then(({ data }) => {
-        if (!data) return
-        setEvents((prev) => [...prev, ...data])
-        setSkip((prev) => {
-          return prev + interval
-        })
-      })
-      .catch(() => {
-        console.log('TODO: render an error')
-      })
-      .finally(() => {
-        setLoading(false)
-      })
-  }, [
-    loading,
-    skip,
-    numberOfEvents,
-    entry?.isIntersecting,
-    events.length,
-    initialSkip,
-  ])
+export const LoadMoreEvents = ({ initialSkip, numberOfEvents }: Props) => {
+  const { events, ref } = useLoadMoreEvents({ initialSkip, numberOfEvents })
 
   return (
     <>

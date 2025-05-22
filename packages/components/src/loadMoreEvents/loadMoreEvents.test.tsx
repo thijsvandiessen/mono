@@ -14,8 +14,8 @@ vi.mock('@mono/data', () => ({
 vi.mock('@mono/hooks', () => ({
   __esModule: true,
   ...vi.importActual('@mono/hooks'),
-  useEventsMeta: vi.fn(() => ({ numberOfEvents: 10 })),
   useIntersectionObserver: vi.fn(() => []),
+  useLoadMoreEvents: vi.fn(() => ({ events: [], ref: null })),
 }))
 
 const getEventsMock = vi.mocked(getEvents)
@@ -27,7 +27,9 @@ describe('Events component', () => {
       error: undefined,
     })
 
-    const { container } = render(<LoadMoreEvents initialSkip={1} />)
+    const { container } = render(
+      <LoadMoreEvents initialSkip={1} numberOfEvents={10} />
+    )
 
     expect(screen.getByText('1 van 10 concerten')).toBeInTheDocument()
     expect(container).toMatchSnapshot()

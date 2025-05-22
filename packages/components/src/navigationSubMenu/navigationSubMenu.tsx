@@ -13,7 +13,7 @@ export interface SubMenuProps {
 }
 
 export const NavigationSubMenu = ({ label, item }: SubMenuProps) => {
-  const submenu: SubmenuItemFragment['menu'] = JSON.parse(item)
+  const submenu = JSON.parse(item) as SubmenuItemFragment['menu']
   const [visible, setVisible] = useState(false)
   const ref = useOutsideClick<HTMLLIElement>(() => setVisible(false))
   useEscapeKey(() => setVisible(false))
