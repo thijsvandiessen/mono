@@ -2,18 +2,18 @@
 
 import React, { useState } from 'react'
 import { useEscapeKey, useOutsideClick } from '@mono/hooks'
-import { NavigationSubMenuItem } from '../navigationSubMenuItem/index.js'
-import type { SubmenuItemFragment } from '@mono/data'
+import type { NavigationItem } from '@mono/data'
 import classNames from 'classnames'
 import styles from './styles.module.scss'
+import { NavigationSubMenuItem } from '../navigationSubMenuItem/navigationSubMenuItem.jsx'
 
 export interface SubMenuProps {
-  label?: string | null
+  label?: string
   item: string
 }
 
 export const NavigationSubMenu = ({ label, item }: SubMenuProps) => {
-  const submenu = JSON.parse(item) as SubmenuItemFragment['menu']
+  const submenu = JSON.parse(item) as NavigationItem[]
   const [visible, setVisible] = useState(false)
   const ref = useOutsideClick<HTMLLIElement>(() => setVisible(false))
   useEscapeKey(() => setVisible(false))
@@ -40,13 +40,12 @@ export const NavigationSubMenu = ({ label, item }: SubMenuProps) => {
             {submenu?.map((item) => (
               <NavigationSubMenuItem
                 key={item.id}
-                slug={item?.link?.slug}
+                slug={item.slug}
                 label={item.label}
                 onClick={handleClick}
               />
             ))}
           </ul>
-
           <div className={classNames(styles.arrow)} />
         </>
       )}

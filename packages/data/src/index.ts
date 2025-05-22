@@ -27,11 +27,15 @@ export type {
   Image,
   Location,
   Music,
+  Navigation,
+  NavigationItem,
+  SubMenuItem,
 } from './types/index.js'
 
 export { isOfTypeCloudinaryAsset } from './types/index.js'
 export {
   formatCloudinaryDocument,
   formatCloudinaryImage,
+  navigationFormatter,
 } from './formatters/index.js'
 export * from './generated/graphql.js'

@@ -7,16 +7,14 @@ import { MobileMenuItems } from '../mobileMenuItems/index.js'
 import classNames from 'classnames'
 import styles from './styles.module.scss'
 import { useDimensions, useHrefClick } from '@mono/hooks'
-import type { GetGeneralInfoQuery } from '@mono/data'
+import type { Navigation } from '@mono/data'
 
 export const MobileMenu = ({
   escapedMenuString,
 }: {
   escapedMenuString: string
 }) => {
-  const general = JSON.parse(
-    escapedMenuString
-  ) as GetGeneralInfoQuery['general']
+  const general = JSON.parse(escapedMenuString) as Navigation
   const [open, setOpen] = useState(false)
   useHrefClick(() => setOpen(false))
   const { width } = useDimensions()
