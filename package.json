@@ -6,14 +6,16 @@
   "type": "module",
   "workspaces": [
     "packages/*",
-    "apps/*"
+    "apps/*",
+    "e2e"
   ],
   "scripts": {
-    "build": "tsc --build --verbose && npm run build --workspaces --if-present",
+    "build": "tsc --build && npm run build --workspaces --if-present",
     "codegen": "npm run download-schema --workspace=packages/data && npm run codegen --workspace=packages/data",
     "dev": "concurrently \"tsc --build --watch\" \"npm run dev --workspace=apps/lundi-bleu\" \"npm run dev --workspace=apps/example\"",
     "lint": "npm run lint --workspaces --if-present",
-    "test": "npm test --workspaces --if-present"
+    "test": "npm test --workspaces --if-present",
+    "e2e": "npm run e2e --workspace=e2e"
   },
   "devDependencies": {
     "@apollo/rover": "0.31.0",
