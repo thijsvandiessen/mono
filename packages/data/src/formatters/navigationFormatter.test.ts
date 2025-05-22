@@ -1,9 +1,10 @@
+import type { GeneralInfoFragment } from '../generated/graphql.js'
 import { navigationFormatter } from './navigationFormatter.js'
 import { describe, it, expect } from 'vitest'
 
 describe('navigationFormatter', () => {
   it('should format navigation data', () => {
-    const input = {
+    const input: GeneralInfoFragment = {
       id: '1',
       title: 'main',
       menu: [
