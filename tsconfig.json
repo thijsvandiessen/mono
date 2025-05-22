@@ -2,16 +2,35 @@
   "files": [],
   "include": [],
   "references": [
-    { "path": "./apps/example" },
-    { "path": "./apps/lundi-bleu" },
-    { "path": "./packages/components" },
-    { "path": "./packages/data" },
-    { "path": "./packages/datocms-config" },
-
-    { "path": "./packages/hooks" },
-    { "path": "./packages/next-js" },
-    { "path": "./packages/search-site" },
-
-    { "path": "./packages/utils" }
+    {
+      "path": "./apps/example"
+    },
+    {
+      "path": "./apps/lundi-bleu"
+    },
+    {
+      "path": "./packages/components"
+    },
+    {
+      "path": "./packages/data"
+    },
+    {
+      "path": "./packages/datocms-config"
+    },
+    {
+      "path": "./packages/hooks"
+    },
+    {
+      "path": "./packages/next-js"
+    },
+    {
+      "path": "./packages/search-site"
+    },
+    {
+      "path": "./packages/utils"
+    },
+    {
+      "path": "./e2e"
+    }
   ]
 }
