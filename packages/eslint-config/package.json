@@ -15,7 +15,7 @@
     "lint:styles": "prettier . --write  --list-different"
   },
   "devDependencies": {
-    "eslint": "9.27.0",
+    "eslint": "9.28.0",
     "eslint-plugin-testing-library": "7.3.0",
     "prettier": "3.5.3",
     "typescript": "5.8.3"
