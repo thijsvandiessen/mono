@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "eslint": "9.28.0",
-    "eslint-plugin-testing-library": "7.3.0",
+    "eslint-plugin-testing-library": "7.4.0",
     "prettier": "3.5.3",
     "typescript": "5.8.3"
   }
