@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.12](https://github.com/thijsvandiessen/mono/compare/v1.0.11...v1.0.12) (2025-06-10)
+
+
+### Bug Fixes
+
+* useDimensions effect dependency ([#545](https://github.com/thijsvandiessen/mono/issues/545)) ([274dc55](https://github.com/thijsvandiessen/mono/commit/274dc55ccdb649e3805fb3301a4c943e528f2199))
+
 ## [1.0.11](https://github.com/thijsvandiessen/mono/compare/v1.0.10...v1.0.11) (2025-05-22)
 
 
