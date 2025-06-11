@@ -47,7 +47,7 @@
     "cpx2": "8.0.0",
     "dotenv": "16.5.0",
     "eslint": "9.28.0",
-    "eslint-plugin-testing-library": "7.5.0",
+    "eslint-plugin-testing-library": "7.5.2",
     "jsdom": "26.1.0",
     "prettier": "3.5.3",
     "sass": "1.89.1",
