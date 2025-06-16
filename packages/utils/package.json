@@ -14,7 +14,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "lint": "npm run lint:js && npm run lint:styles",
+    "lint": "pnpm run lint:js && pnpm run lint:styles",
     "lint:js": "eslint . --fix",
     "lint:styles": "prettier . --write  --list-different",
     "test": "vitest run"
@@ -24,8 +24,8 @@
     "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "@mono/eslint-config": "1.0.0",
-    "@mono/typescript-config": "1.0.0",
+    "@mono/eslint-config": "workspace:*",
+    "@mono/typescript-config": "workspace:*",
     "@testing-library/jest-dom": "6.6.3",
     "@testing-library/react": "16.3.0",
     "@types/node": "22.15.21",
@@ -38,6 +38,7 @@
     "prettier": "3.5.3",
     "turbo": "2.5.3",
     "typescript": "5.8.3",
-    "vitest": "3.1.4"
+    "vitest": "3.1.4",
+    "vite-tsconfig-paths": "5.1.4"
   }
 }

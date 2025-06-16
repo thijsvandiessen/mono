@@ -7,16 +7,15 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev --turbo -p 4000",
-    "lint": "npm run lint:js && npm run lint:styles",
-    "lint:js": "eslint . --fix",
+    "lint": "pnpm run lint:styles",
     "lint:styles": "prettier . --write --list-different",
     "start": "next start"
   },
   "dependencies": {
-    "@mono/components": "1.0.0",
-    "@mono/data": "1.0.0",
-    "@mono/next-js": "1.0.0",
-    "@mono/utils": "1.0.0",
+    "@mono/components": "workspace:*",
+    "@mono/data": "workspace:*",
+    "@mono/next-js": "workspace:*",
+    "@mono/utils": "workspace:*",
     "classnames": "2.5.1",
     "next": "15.3.2",
     "react": "19.1.0",
@@ -26,18 +25,14 @@
     "@testing-library/jest-dom": "6.6.3",
     "@testing-library/react": "16.3.0",
     "@types/node": "22.15.21",
-    "@mono/eslint-config": "1.0.0",
-    "@mono/typescript-config": "1.0.0",
+    "@mono/typescript-config": "workspace:*",
     "@types/react": "19.1.5",
     "@types/react-dom": "19.1.5",
     "dotenv": "16.5.0",
-    "eslint": "9.27.0",
-    "eslint-config-next": "15.3.2",
-    "eslint-config-prettier": "10.1.5",
-    "eslint-plugin-testing-library": "7.2.1",
     "prettier": "3.5.3",
     "sass": "1.89.0",
     "turbo": "2.5.3",
-    "typescript": "5.8.3"
+    "typescript": "5.8.3",
+    "vitest": "3.1.4"
   }
 }

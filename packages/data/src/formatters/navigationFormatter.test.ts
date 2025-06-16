@@ -48,7 +48,11 @@ describe('navigationFormatter', () => {
       title: 'main',
       menu: [
         { id: '2', label: 'contact', slug: 'contact' },
-        { id: '3', label: 'submenu', items: [{ id: '4', label: 'child', slug: 'child' }] },
+        {
+          id: '3',
+          label: 'submenu',
+          items: [{ id: '4', label: 'child', slug: 'child' }],
+        },
       ],
     })
   })
