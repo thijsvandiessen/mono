@@ -50,7 +50,7 @@
     "eslint-plugin-testing-library": "7.5.3",
     "jsdom": "26.1.0",
     "prettier": "3.5.3",
-    "sass": "1.89.1",
+    "sass": "1.89.2",
     "turbo": "2.5.4",
     "typescript": "5.8.3",
     "vitest": "3.2.0"
