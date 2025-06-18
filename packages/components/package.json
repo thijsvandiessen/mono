@@ -27,7 +27,7 @@
     "@mono/next-js": "1.0.0",
     "@mono/search-site": "1.0.0",
     "@mono/utils": "1.0.0",
-    "@react-google-maps/api": "2.20.6",
+    "@react-google-maps/api": "2.20.7",
     "classnames": "2.5.1",
     "datocms-structured-text-utils": "5.0.0",
     "react": "19.1.0",
