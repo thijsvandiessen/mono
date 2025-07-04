@@ -3,22 +3,22 @@
 exports[`Concert component > shows all the data 1`] = `
 <div>
   <nav
-    class="_root_4e3066 content-layout"
+    class="_root_2ae623 content-layout"
   >
     <div
-      class="_content_4e3066"
+      class="_content_2ae623"
     >
       <div
-        class="_root_7f7da6"
+        class="_root_63d4a6"
       >
         <button
           aria-label="Menu"
-          class="_menuButton_7f7da6"
+          class="_menuButton_63d4a6"
           type="button"
         >
           <svg
             aria-hidden="true"
-            class="_menuIcon_7f7da6 _icon_68e996"
+            class="_menuIcon_63d4a6 _icon_884e08"
             height="24px"
             viewBox="0 0 24 24"
             width="24px"
@@ -32,33 +32,33 @@ exports[`Concert component > shows all the data 1`] = `
         </button>
       </div>
       <ul
-        class="_list_4e3066"
+        class="_list_2ae623"
       >
         <li
-          class="_navItem_df8f2d"
+          class="_navItem_5ff49f"
         >
           <a
-            class="_link_df8f2d text-large"
+            class="_link_5ff49f text-large"
             href="/contact"
           >
             contact
           </a>
         </li>
         <li
-          class="_navItem_df8f2d"
+          class="_navItem_5ff49f"
         >
           <a
-            class="_link_df8f2d text-large"
+            class="_link_5ff49f text-large"
             href="/"
           >
             homepage
           </a>
         </li>
         <li
-          class="_listItem_906789"
+          class="_listItem_e39c6c"
         >
           <button
-            class="_button_906789 text-large"
+            class="_button_e39c6c text-large"
             type="button"
           >
             level 1

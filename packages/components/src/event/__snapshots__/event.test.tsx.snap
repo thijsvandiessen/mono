@@ -3,10 +3,10 @@
 exports[`Concert component > shows all the data 1`] = `
 <div>
   <div
-    class="_root_c1825e _hasImage_c1825e _oneLocation_c1825e"
+    class="_root_5aadb9 _hasImage_5aadb9 _oneLocation_5aadb9"
   >
     <h2
-      class="_title_c1825e h3"
+      class="_title_5aadb9 h3"
     >
       <span>
         <a
@@ -17,32 +17,32 @@ exports[`Concert component > shows all the data 1`] = `
       </span>
     </h2>
     <div
-      class="_content_c1825e"
+      class="_content_5aadb9"
     >
       <ul
-        class="_locations_c1825e"
+        class="_locations_5aadb9"
       >
         <li
-          class="_location_c1825e"
+          class="_location_5aadb9"
         >
           <h3
-            class="_locationTitle_c1825e h5"
+            class="_locationTitle_5aadb9 h5"
           >
             Vrijdag 1 september — 14:32
           </h3>
           <p
-            class="_locationLinkContainer_c1825e text-small"
+            class="_locationLinkContainer_5aadb9 text-small"
           >
             Concert voorbij
           </p>
         </li>
       </ul>
       <div
-        class="_imageContainer_c1825e"
+        class="_imageContainer_5aadb9"
       >
         <img
           alt="desc"
-          class="_image_c1825e"
+          class="_image_5aadb9"
           data-nimg="1"
           decoding="async"
           height="100"
@@ -55,13 +55,13 @@ exports[`Concert component > shows all the data 1`] = `
       </div>
     </div>
     <a
-      class="_eventLink_c1825e text-small"
+      class="_eventLink_5aadb9 text-small"
       href="some-slug"
     >
       Bekijk concert
       <svg
         aria-hidden="true"
-        class="_icon_68e996"
+        class="_icon_884e08"
         height="24px"
         viewBox="0 0 24 24"
         width="24px"

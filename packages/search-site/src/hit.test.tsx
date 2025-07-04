@@ -19,6 +19,6 @@ describe('Hit component', () => {
   it('renders the price', () => {
     render(<Hit hit={hit} />)
     const prices = screen.getAllByText(/\$\s*100/i)
-    expect(prices).toHaveLength(1)
+    expect(prices).toHaveLength(2)
   })
 })

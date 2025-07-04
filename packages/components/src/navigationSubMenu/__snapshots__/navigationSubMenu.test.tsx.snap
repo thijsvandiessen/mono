@@ -3,10 +3,10 @@
 exports[`navigationSubMenu > should render a button 1`] = `
 <div>
   <li
-    class="_listItem_906789"
+    class="_listItem_e39c6c"
   >
     <button
-      class="_button_906789 text-large"
+      class="_button_e39c6c text-large"
       type="button"
     >
       root label
@@ -18,42 +18,42 @@ exports[`navigationSubMenu > should render a button 1`] = `
 exports[`navigationSubMenu > should render a button 2`] = `
 <div>
   <li
-    class="_listItem_906789"
+    class="_listItem_e39c6c"
   >
     <button
-      class="_button_906789 text-large"
+      class="_button_e39c6c text-large"
       type="button"
     >
       root label
     </button>
     <ul
-      class="_list_906789"
+      class="_list_e39c6c"
     >
       <li
-        class="_navItem_16c685"
+        class="_navItem_ac9245"
       >
         <a
-          class="_link_16c685 text-large"
+          class="_link_ac9245 text-large"
           href="/specific/page"
         >
           specific page
         </a>
       </li>
       <li
-        class="_navItem_16c685"
+        class="_navItem_ac9245"
       >
         <a
-          class="_link_16c685 text-large"
+          class="_link_ac9245 text-large"
           href="/"
         >
           homepage
         </a>
       </li>
       <li
-        class="_navItem_16c685"
+        class="_navItem_ac9245"
       >
         <a
-          class="_link_16c685 text-large"
+          class="_link_ac9245 text-large"
           href="https://example.com"
         >
           external
@@ -61,7 +61,7 @@ exports[`navigationSubMenu > should render a button 2`] = `
       </li>
     </ul>
     <div
-      class="_arrow_906789"
+      class="_arrow_e39c6c"
     />
   </li>
 </div>
