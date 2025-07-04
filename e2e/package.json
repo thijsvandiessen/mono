@@ -7,11 +7,9 @@
     "build": "tsc --build",
     "e2e": "playwright test"
   },
-  "dependencies": {
-    "@playwright/test": "1.52.0"
-  },
   "devDependencies": {
     "@mono/typescript-config": "workspace:*",
+    "@playwright/test": "1.52.0",
     "@types/node": "22.15.30",
     "typescript": "5.8.3"
   }
