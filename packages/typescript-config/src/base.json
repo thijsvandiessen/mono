@@ -24,7 +24,7 @@
     "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "types": ["vitest/jsdom", "@testing-library/jest-dom/vitest"],
+    "types": ["vitest/jsdom", "@testing-library/jest-dom"],
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,

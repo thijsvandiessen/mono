@@ -15,10 +15,10 @@
     "lint:styles": "prettier . --write  --list-different"
   },
   "devDependencies": {
-    "eslint": "9.27.0",
-    "eslint-plugin-testing-library": "7.2.1",
+    "eslint": "9.29.0",
+    "eslint-plugin-testing-library": "7.5.3",
     "prettier": "3.5.3",
     "typescript": "5.8.3",
-    "vitest": "3.1.4"
+    "vitest": "3.2.4"
   }
 }

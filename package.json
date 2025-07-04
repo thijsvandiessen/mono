@@ -18,27 +18,24 @@
     "e2e": "pnpm run -r e2e"
   },
   "devDependencies": {
-    "@apollo/rover": "0.31.1",
+    "@apollo/rover": "0.33.0",
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
-    "@swc/core": "1.11.29",
-    "@testing-library/jest-dom": "6.6.3",
-    "@testing-library/react": "16.3.0",
-    "@types/node": "22.15.21",
-    "@types/react": "19.1.5",
-    "@types/react-dom": "19.1.5",
+    "@swc/core": "1.12.4",
+    "@types/node": "22.15.30",
+    "@types/react": "19.1.8",
+    "@types/react-dom": "19.1.6",
     "concurrently": "9.1.2",
     "dotenv": "16.5.0",
-    "eslint": "9.27.0",
+    "eslint": "9.29.0",
     "prettier": "3.5.3",
-    "sass": "1.89.0",
+    "sass": "1.89.2",
     "ts-node": "10.9.2",
-    "turbo": "2.5.3",
-    "typescript": "5.8.3",
-    "vitest": "3.1.4"
+    "turbo": "2.5.4",
+    "typescript": "5.8.3"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.41.0"
+    "@rollup/rollup-linux-x64-gnu": "4.44.0"
   },
   "packageManager": "pnpm@10.12.1"
 }

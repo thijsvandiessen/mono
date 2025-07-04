@@ -12,5 +12,8 @@
         "default": "./src/base.json"
       }
     }
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "6.6.3"
   }
 }

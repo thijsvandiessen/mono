@@ -20,25 +20,25 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "algoliasearch": "5.25.0",
+    "algoliasearch": "5.29.0",
     "dotenv": "16.5.0",
-    "instantsearch.js": "4.78.3",
+    "instantsearch.js": "4.79.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-instantsearch": "7.15.7"
+    "react-instantsearch": "7.16.0"
   },
   "devDependencies": {
     "@mono/eslint-config": "workspace:*",
     "@mono/typescript-config": "workspace:*",
     "@testing-library/jest-dom": "6.6.3",
     "@testing-library/react": "16.3.0",
-    "@types/node": "22.15.21",
-    "@types/react": "19.1.5",
-    "@types/react-dom": "19.1.5",
-    "@vitejs/plugin-react": "4.4.1",
+    "@types/node": "22.15.30",
+    "@types/react": "19.1.8",
+    "@types/react-dom": "19.1.6",
+    "@vitejs/plugin-react": "4.5.2",
     "prettier": "3.5.3",
     "typescript": "5.8.3",
-    "vitest": "3.1.4",
+    "vitest": "3.2.4",
     "vite-tsconfig-paths": "5.1.4"
   }
 }
