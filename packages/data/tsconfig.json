@@ -4,6 +4,6 @@
     "outDir": "dist",
     "rootDir": "src"
   },
-  "references": [{ "path": "../utils" }],
+  "references": [{ "path": "../utils" }, { "path": "../next-js" }],
   "include": ["src/**/*", "src/*", "src/generated/**/*.json"]
 }

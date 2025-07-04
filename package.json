@@ -10,20 +10,18 @@
     "e2e"
   ],
   "scripts": {
-    "build": "tsc --build && npm run build --workspaces --if-present",
-    "codegen": "npm run download-schema --workspace=packages/data && npm run codegen --workspace=packages/data",
-    "dev": "concurrently \"tsc --build --watch\" \"npm run dev --workspace=apps/lundi-bleu\" \"npm run dev --workspace=apps/example\"",
-    "lint": "npm run lint --workspaces --if-present",
-    "test": "npm test --workspaces --if-present",
-    "e2e": "npm run e2e --workspace=e2e"
+    "build": "tsc --build && pnpm run -r build",
+    "codegen": "pnpm -r download-schema && pnpm -r codegen",
+    "dev": "concurrently \"tsc --build --watch\" \"pnpm run --filter lundi-bleu dev\" \"pnpm run --filter example dev\"",
+    "lint": "pnpm run -r lint",
+    "test": "pnpm run -r test",
+    "e2e": "pnpm run -r e2e"
   },
   "devDependencies": {
     "@apollo/rover": "0.33.0",
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
     "@swc/core": "1.12.4",
-    "@testing-library/jest-dom": "6.6.3",
-    "@testing-library/react": "16.3.0",
     "@types/node": "22.15.30",
     "@types/react": "19.1.8",
     "@types/react-dom": "19.1.6",
@@ -34,10 +32,11 @@
     "sass": "1.89.2",
     "ts-node": "10.9.2",
     "turbo": "2.5.4",
-    "typescript": "5.8.3"
+    "typescript": "5.8.3",
+    "vitest": "3.2.4"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "4.44.0"
   },
-  "packageManager": "npm@11.2.0"
+  "packageManager": "pnpm@10.12.1"
 }

@@ -2,7 +2,7 @@ import type {
   EventPageSeoFragment,
   PageDetailSeoFragment,
 } from '../generated/graphql.js'
-import type { Metadata } from 'next'
+import type { Metadata } from '@mono/next-js'
 import { getSiteMetadata } from '../getters/getSiteMetadata.js'
 import { metaTitleFormatter } from './metaTitleFormatter.js'
 

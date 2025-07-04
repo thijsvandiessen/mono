@@ -11,13 +11,14 @@
     }
   },
   "scripts": {
-    "lint": "npm run lint:styles",
+    "lint": "pnpm run lint:styles",
     "lint:styles": "prettier . --write  --list-different"
   },
   "devDependencies": {
     "eslint": "9.29.0",
     "eslint-plugin-testing-library": "7.5.3",
     "prettier": "3.5.3",
-    "typescript": "5.8.3"
+    "typescript": "5.8.3",
+    "vitest": "3.2.4"
   }
 }

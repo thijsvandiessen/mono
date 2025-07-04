@@ -3,10 +3,10 @@
 exports[`NavigationSubMenuItem > should render a link 1`] = `
 <div>
   <li
-    class="_navItem_16c685"
+    class="_navItem_ac9245"
   >
     <a
-      class="_link_16c685 text-large"
+      class="_link_ac9245 text-large"
       href="/url"
     >
       homepage

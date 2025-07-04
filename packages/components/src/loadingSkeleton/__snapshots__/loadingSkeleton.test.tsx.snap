@@ -3,7 +3,7 @@
 exports[`Loading skeleton component > should render 1`] = `
 <div>
   <div
-    class="_loadingWrapper_a0a619"
+    class="_loadingWrapper_b3dcfe"
   />
 </div>
 `;

@@ -12,5 +12,8 @@
         "default": "./src/base.json"
       }
     }
+  },
+  "devDependencies": {
+    "vitest": "3.2.4"
   }
 }

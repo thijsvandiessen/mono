@@ -3,13 +3,13 @@
 exports[`Concert component > shows all the data 1`] = `
 <div>
   <article
-    class="_root_b2d4cd"
+    class="_root_3155da"
   >
     <header
-      class="_header_b2d4cd"
+      class="_header_3155da"
     >
       <div
-        class="_titleContainer_b2d4cd content-layout"
+        class="_titleContainer_3155da content-layout"
       >
         <h1>
           title
@@ -17,21 +17,21 @@ exports[`Concert component > shows all the data 1`] = `
       </div>
     </header>
     <div
-      class="_container_b2d4cd content-layout _noGrid_b2d4cd"
+      class="_container_3155da content-layout _noGrid_3155da"
     >
       <aside
-        class="_sidebar_b2d4cd"
+        class="_sidebar_3155da"
       >
         <div
-          class="_sidebarContent_b2d4cd"
+          class="_sidebarContent_3155da"
         />
       </aside>
       <div
-        class="_content_b2d4cd"
+        class="_content_3155da"
       />
     </div>
     <div
-      class="_locations_b2d4cd"
+      class="_locations_3155da"
     />
   </article>
 </div>

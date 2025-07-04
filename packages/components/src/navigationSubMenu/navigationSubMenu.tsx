@@ -6,11 +6,7 @@ import type { NavigationItem } from '@mono/data'
 import classNames from 'classnames'
 import styles from './styles.module.scss'
 import { NavigationSubMenuItem } from '../navigationSubMenuItem/navigationSubMenuItem.jsx'
-
-export interface SubMenuProps {
-  label?: string
-  item: string
-}
+import type { SubMenuProps } from './navigationSubMenu.types.js'
 
 export const NavigationSubMenu = ({ label, item }: SubMenuProps) => {
   const submenu = JSON.parse(item) as NavigationItem[]

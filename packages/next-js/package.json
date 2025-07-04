@@ -13,7 +13,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "lint": "npm run lint:js && npm run lint:styles",
+    "lint": "pnpm run lint:js && pnpm run lint:styles",
     "lint:js": "eslint . --fix",
     "lint:styles": "prettier . --write  --list-different"
   },
@@ -23,11 +23,13 @@
     "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "@mono/eslint-config": "1.0.0",
+    "@mono/eslint-config": "workspace:*",
+    "@mono/typescript-config": "workspace:*",
     "eslint": "9.29.0",
     "eslint-config-next": "15.3.3",
     "eslint-plugin-testing-library": "7.5.3",
     "prettier": "3.5.3",
-    "typescript": "5.8.3"
+    "typescript": "5.8.3",
+    "vitest": "3.2.4"
   }
 }
