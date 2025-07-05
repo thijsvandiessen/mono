@@ -10,13 +10,14 @@
       "dependsOn": ["^build"]
     },
     "lint": {
-      "dependsOn": ["^lint"]
+      "dependsOn": []
     },
     "test": {
       "dependsOn": ["^build"]
     },
     "e2e": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "outputs": []
     },
     "dev": {
       "cache": false,
@@ -28,5 +29,13 @@
     "signature": false
   },
   "globalDependencies": [".env", "tsconfig.json"],
+  "globalEnv": [
+    "FULL_ACCESS_API_TOKEN",
+    "NEXT_PUBLIC_GOOGLE_MAPS_API_KEY",
+    "NEXT_PUBLIC_ALGOLIA_APPLICATION_ID",
+    "NEXT_PUBLIC_ALGOLIA_API_KEY",
+    "NEXT_PUBLIC_ALGOLIA_INDEX_NAME",
+    "DATO_CMS_GRAPHQL_TOKEN"
+  ],
   "envMode": "strict"
 }
