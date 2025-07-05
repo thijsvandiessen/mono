@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.12](https://github.com/thijsvandiessen/mono/compare/v1.0.11...v1.0.12) (2025-07-05)
+
+
+### Bug Fixes
+
+* dependabot package ecosystem ([#594](https://github.com/thijsvandiessen/mono/issues/594)) ([973ad68](https://github.com/thijsvandiessen/mono/commit/973ad68baf2bf6e8c04e3d3450e4d10a9af30eee))
+* pnpm implementation ([#557](https://github.com/thijsvandiessen/mono/issues/557)) ([800ccef](https://github.com/thijsvandiessen/mono/commit/800ccef5a68a9472951bda63a897b62226037865))
+* update pnpm ([#600](https://github.com/thijsvandiessen/mono/issues/600)) ([cb8d113](https://github.com/thijsvandiessen/mono/commit/cb8d113cba90d72c83b2030501d37e118b80a08c))
+* useDimensions effect dependency ([#545](https://github.com/thijsvandiessen/mono/issues/545)) ([274dc55](https://github.com/thijsvandiessen/mono/commit/274dc55ccdb649e3805fb3301a4c943e528f2199))
+
 ## [1.0.11](https://github.com/thijsvandiessen/mono/compare/v1.0.10...v1.0.11) (2025-05-22)
 
 
