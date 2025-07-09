@@ -21,7 +21,7 @@
     "@apollo/rover": "0.33.0",
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
-    "@swc/core": "1.12.4",
+    "@swc/core": "1.12.11",
     "@types/node": "22.15.30",
     "@types/react": "19.1.8",
     "@types/react-dom": "19.1.6",
