@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@apollo/rover':
-        specifier: 0.33.0
-        version: 0.33.0
+        specifier: 0.34.1
+        version: 0.34.1
       '@commitlint/cli':
         specifier: 19.8.1
         version: 19.8.1(@types/node@22.15.30)(typescript@5.8.3)
@@ -311,8 +311,8 @@ importers:
         version: 19.1.0
     devDependencies:
       '@apollo/rover':
-        specifier: 0.33.0
-        version: 0.33.0
+        specifier: 0.34.1
+        version: 0.34.1
       '@commitlint/config-conventional':
         specifier: 19.8.1
         version: 19.8.1
@@ -727,8 +727,8 @@ packages:
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
 
-  '@apollo/rover@0.33.0':
-    resolution: {integrity: sha512-1xPSRHa7Dexpuyp5w9ApWH8QpQgJs32DpivQkW/5OePmK8tU4app2bKOTOx4ScLVfq/DHuK38THnWavLnV+H3g==}
+  '@apollo/rover@0.34.1':
+    resolution: {integrity: sha512-Aj91fsdOg1/jrvP82w1tnLn1Ek3SmtiQsZ3SOckUgr/RZG8Vjvxign64MUXt99qiEj/dfi1G7p/HhEkTZGetQQ==}
     engines: {node: '>=14', npm: '>=6'}
     hasBin: true
 
@@ -5478,7 +5478,7 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.12
       '@jridgewell/trace-mapping': 0.3.29
 
-  '@apollo/rover@0.33.0':
+  '@apollo/rover@0.34.1':
     dependencies:
       axios: 1.10.0
       axios-proxy-builder: 0.1.2
