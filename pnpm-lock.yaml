@@ -398,8 +398,8 @@ importers:
         specifier: 4.17.2
         version: 4.17.2
       zod:
-        specifier: 3.25.76
-        version: 3.25.76
+        specifier: 4.0.3
+        version: 4.0.3
     devDependencies:
       '@mono/eslint-config':
         specifier: workspace:*
@@ -5383,8 +5383,8 @@ packages:
     resolution: {integrity: sha512-AyeEbWOu/TAXdxlV9wmGcR0+yh2j3vYPGOECcIj2S7MkrLyC7ne+oye2BKTItt0ii2PHk4cDy+95+LshzbXnGg==}
     engines: {node: '>=12.20'}
 
-  zod@3.25.76:
-    resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
+  zod@4.0.3:
+    resolution: {integrity: sha512-V78FonTAxtGAyF2xR75x0YoW8uKXdQiusoPtzbT07vH3mZiGdTQN6INuivHyYT6M2V2YRFDEKIF4ylTJh54EXg==}
 
 snapshots:
 
@@ -10695,4 +10695,4 @@ snapshots:
 
   yocto-queue@1.2.1: {}
 
-  zod@3.25.76: {}
+  zod@4.0.3: {}
