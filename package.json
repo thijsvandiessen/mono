@@ -18,7 +18,7 @@
     "e2e": "pnpm run -r e2e"
   },
   "devDependencies": {
-    "@apollo/rover": "0.33.0",
+    "@apollo/rover": "0.34.1",
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
     "@swc/core": "1.12.11",
