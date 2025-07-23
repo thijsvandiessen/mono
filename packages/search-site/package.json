@@ -25,7 +25,7 @@
     "instantsearch.js": "4.79.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-instantsearch": "7.16.1"
+    "react-instantsearch": "7.16.2"
   },
   "devDependencies": {
     "@mono/eslint-config": "workspace:*",
