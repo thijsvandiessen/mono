@@ -259,8 +259,8 @@ importers:
         specifier: 9.31.0
         version: 9.31.0(jiti@2.4.2)
       eslint-plugin-testing-library:
-        specifier: 7.6.0
-        version: 7.6.0(eslint@9.31.0(jiti@2.4.2))(typescript@5.8.3)
+        specifier: 7.6.3
+        version: 7.6.3(eslint@9.31.0(jiti@2.4.2))(typescript@5.8.3)
       jsdom:
         specifier: 26.1.0
         version: 26.1.0
@@ -365,8 +365,8 @@ importers:
         specifier: 9.31.0
         version: 9.31.0(jiti@2.4.2)
       eslint-plugin-testing-library:
-        specifier: 7.6.0
-        version: 7.6.0(eslint@9.31.0(jiti@2.4.2))(typescript@5.8.3)
+        specifier: 7.6.3
+        version: 7.6.3(eslint@9.31.0(jiti@2.4.2))(typescript@5.8.3)
       jest-environment-jsdom:
         specifier: 29.7.0
         version: 29.7.0
@@ -426,8 +426,8 @@ importers:
         specifier: 9.31.0
         version: 9.31.0(jiti@2.4.2)
       eslint-plugin-testing-library:
-        specifier: 7.6.0
-        version: 7.6.0(eslint@9.31.0(jiti@2.4.2))(typescript@5.8.3)
+        specifier: 7.6.3
+        version: 7.6.3(eslint@9.31.0(jiti@2.4.2))(typescript@5.8.3)
       prettier:
         specifier: 3.6.2
         version: 3.6.2
@@ -521,8 +521,8 @@ importers:
         specifier: 15.4.2
         version: 15.4.2(eslint@9.31.0(jiti@2.4.2))(typescript@5.8.3)
       eslint-plugin-testing-library:
-        specifier: 7.6.0
-        version: 7.6.0(eslint@9.31.0(jiti@2.4.2))(typescript@5.8.3)
+        specifier: 7.6.3
+        version: 7.6.3(eslint@9.31.0(jiti@2.4.2))(typescript@5.8.3)
       prettier:
         specifier: 3.6.2
         version: 3.6.2
@@ -637,8 +637,8 @@ importers:
         specifier: 9.31.0
         version: 9.31.0(jiti@2.4.2)
       eslint-plugin-testing-library:
-        specifier: 7.6.0
-        version: 7.6.0(eslint@9.31.0(jiti@2.4.2))(typescript@5.8.3)
+        specifier: 7.6.3
+        version: 7.6.3(eslint@9.31.0(jiti@2.4.2))(typescript@5.8.3)
       prettier:
         specifier: 3.6.2
         version: 3.6.2
@@ -3172,8 +3172,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
 
-  eslint-plugin-testing-library@7.6.0:
-    resolution: {integrity: sha512-rxCz4VQFb45kDeFLnQcjGpeb72r4HmCh6v49d+DhrD2HVpnJuwK/GOnPjezWS7CytkNjQjpXcPopxLN++FlXxw==}
+  eslint-plugin-testing-library@7.6.3:
+    resolution: {integrity: sha512-tI/epV/DD4+nJ51VGg7MWfqajMAW0+U+9dTLFrnqrJHoPO2TyGRU8ASrPNFPe2zzDT1qwznkCeeqMzViALgiig==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0, pnpm: ^9.14.0}
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
@@ -8249,7 +8249,7 @@ snapshots:
       string.prototype.matchall: 4.0.12
       string.prototype.repeat: 1.0.0
 
-  eslint-plugin-testing-library@7.6.0(eslint@9.31.0(jiti@2.4.2))(typescript@5.8.3):
+  eslint-plugin-testing-library@7.6.3(eslint@9.31.0(jiti@2.4.2))(typescript@5.8.3):
     dependencies:
       '@typescript-eslint/scope-manager': 8.38.0
       '@typescript-eslint/utils': 8.38.0(eslint@9.31.0(jiti@2.4.2))(typescript@5.8.3)
