@@ -27,7 +27,7 @@
     "@mono/typescript-config": "workspace:*",
     "eslint": "9.31.0",
     "eslint-config-next": "15.4.2",
-    "eslint-plugin-testing-library": "7.6.0",
+    "eslint-plugin-testing-library": "7.6.6",
     "prettier": "3.6.2",
     "typescript": "5.8.3",
     "vitest": "3.2.4"
