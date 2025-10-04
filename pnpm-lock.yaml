@@ -380,8 +380,8 @@ importers:
   packages/datocms-config:
     dependencies:
       '@datocms/cma-client-node':
-        specifier: 4.0.2
-        version: 4.0.2
+        specifier: 5.1.20
+        version: 5.1.20
       dotenv:
         specifier: 17.2.3
         version: 17.2.3
@@ -950,14 +950,14 @@ packages:
     resolution: {integrity: sha512-Vd/9EVDiu6PPJt9yAh6roZP6El1xHrdvIVGjyBsHR0RYwNHgL7FJPyIIW4fANJNG6FtyZfvlRPpFI4ZM/lubvw==}
     engines: {node: '>=18'}
 
-  '@datocms/cma-client-node@4.0.2':
-    resolution: {integrity: sha512-tiduimUbtH28Uc5gcBZu5QriMXdjb1vnw60hp6n5CKicVDQTm7703W3yp0fVWyDCW4gKLS66rfKzAobPn9zgyA==}
+  '@datocms/cma-client-node@5.1.20':
+    resolution: {integrity: sha512-/m4gtZE/EQ1pQ2Nu/S+dw/khET77/CK2eqI+CzqVr3XSUtvEaoMfyIKe3A3ulM6/oy3CYhvUD8n4H22ve+Ro6g==}
 
-  '@datocms/cma-client@4.0.2':
-    resolution: {integrity: sha512-AhtI7hGZxjHcScE+Wkk01BFgkiL+tNft0oMDyuKlVEKF0zRCqRHipwf8lwfO5zQP4XFQ6Qn4Fh/B8oF30q/BIA==}
+  '@datocms/cma-client@5.1.20':
+    resolution: {integrity: sha512-u+s+ipX2IpLHXxeB7QsOi6XR9VP/h6feoknHZG3cefw4CO5PkiW9wEJfXGD505wujfzxGaq6YSBNY2ipqvgyew==}
 
-  '@datocms/rest-client-utils@4.0.2':
-    resolution: {integrity: sha512-aKg8bl9mHebWSnBgX1f3Y9hGkX0b+fHlEmhTvZ2JqzrVcu7RZjEWe612RFpyuTISv3hgIRbgmcE7KDfJe/WnfA==}
+  '@datocms/rest-client-utils@5.1.13':
+    resolution: {integrity: sha512-0sGxoLnjagcMb8/lCcar3XuAW7UCszraNsAiCBnb14ibodJbhCQwERkO8kmR9APYh+hlcm8DJ2yVyQAcg413ng==}
 
   '@emnapi/core@1.4.5':
     resolution: {integrity: sha512-XsLw1dEOpkSX/WucdqUhPWP7hDxSvZiY+fsUC14h+FtQ2Ifni4znbBt8punRX+Uj2JG/uDb8nEHVKvrVlvdZ5Q==}
@@ -2146,8 +2146,8 @@ packages:
   '@types/json5@0.0.29':
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
 
-  '@types/node@20.19.18':
-    resolution: {integrity: sha512-KeYVbfnbsBCyKG8e3gmUqAfyZNcoj/qpEbHRkQkfZdKOBrU7QQ+BsTdfqLSWX9/m1ytYreMhpKvp+EZi3UFYAg==}
+  '@types/node@20.19.19':
+    resolution: {integrity: sha512-pb1Uqj5WJP7wrcbLU7Ru4QtA0+3kAXrkutGiD26wUKzSMgNNaPARTUDQmElUXp64kh3cWdou3Q0C7qwwxqSFmg==}
 
   '@types/node@22.15.30':
     resolution: {integrity: sha512-6Q7lr06bEHdlfplU6YRbgG1SFBdlsfNC4/lX+SkhiTs0cpJkOElmWls8PxDFv4yY/xKb8Y6SO0OmSX4wgqTZbA==}
@@ -2930,6 +2930,9 @@ packages:
 
   datocms-structured-text-utils@5.0.0:
     resolution: {integrity: sha512-orMYif1+D/5zTkZ/LgQpgm0yCF/JSyy8ANVrCLGaOib/xSLOSM5PEcbkYgaky/cjzgsF70fMZnUlcDdIWY00og==}
+
+  datocms-structured-text-utils@5.1.6:
+    resolution: {integrity: sha512-LDk8R5byWmBmK5dIWiTvfPe7pBn9xkZ3VMxevsoNuiffVsz2T3SgtdqNBnGIKaEmxJ3dln/IvxSbkvULf1Y9Eg==}
 
   debounce@1.2.1:
     resolution: {integrity: sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==}
@@ -4924,8 +4927,8 @@ packages:
     resolution: {integrity: sha512-jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw==}
     engines: {node: '>=0.6.0'}
 
-  tmp@0.2.3:
-    resolution: {integrity: sha512-nZD7m9iCPC5g0pYmcaxogYKggSfLsdxl8of3Q/oIbqCqLLIO9IAF0GWjX1z9NZRHPiXv8Wex4yDCaZsgEw0Y8w==}
+  tmp@0.2.5:
+    resolution: {integrity: sha512-voyz6MApa1rQGUxT3E+BK7/ROe8itEx7vD8/HEvt4xwXucvQ5G5oeEiHkmHZJuBO21RpOf+YYm9MOivj709jow==}
     engines: {node: '>=14.14'}
 
   to-regex-range@5.0.1:
@@ -5801,19 +5804,20 @@ snapshots:
 
   '@csstools/css-tokenizer@3.0.4': {}
 
-  '@datocms/cma-client-node@4.0.2':
+  '@datocms/cma-client-node@5.1.20':
     dependencies:
-      '@datocms/cma-client': 4.0.2
-      '@datocms/rest-client-utils': 4.0.2
+      '@datocms/cma-client': 5.1.20
+      '@datocms/rest-client-utils': 5.1.13
       mime-types: 2.1.35
       tmp-promise: 3.0.3
 
-  '@datocms/cma-client@4.0.2':
+  '@datocms/cma-client@5.1.20':
     dependencies:
-      '@datocms/rest-client-utils': 4.0.2
+      '@datocms/rest-client-utils': 5.1.13
+      datocms-structured-text-utils: 5.1.6
       uuid: 9.0.1
 
-  '@datocms/rest-client-utils@4.0.2':
+  '@datocms/rest-client-utils@5.1.13':
     dependencies:
       async-scheduler: 1.4.4
 
@@ -7049,7 +7053,7 @@ snapshots:
 
   '@types/json5@0.0.29': {}
 
-  '@types/node@20.19.18':
+  '@types/node@20.19.19':
     dependencies:
       undici-types: 6.21.0
     optional: true
@@ -7963,6 +7967,10 @@ snapshots:
     dependencies:
       array-flatten: 3.0.0
 
+  datocms-structured-text-utils@5.1.6:
+    dependencies:
+      array-flatten: 3.0.0
+
   debounce@1.2.1: {}
 
   debounce@2.2.0: {}
@@ -8714,7 +8722,7 @@ snapshots:
 
   happy-dom@18.0.1:
     dependencies:
-      '@types/node': 20.19.18
+      '@types/node': 20.19.19
       '@types/whatwg-mimetype': 3.0.2
       whatwg-mimetype: 3.0.0
     optional: true
@@ -10247,13 +10255,13 @@ snapshots:
 
   tmp-promise@3.0.3:
     dependencies:
-      tmp: 0.2.3
+      tmp: 0.2.5
 
   tmp@0.0.33:
     dependencies:
       os-tmpdir: 1.0.2
 
-  tmp@0.2.3: {}
+  tmp@0.2.5: {}
 
   to-regex-range@5.0.1:
     dependencies:
