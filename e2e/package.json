@@ -9,8 +9,8 @@
   },
   "devDependencies": {
     "@mono/typescript-config": "workspace:*",
-    "@playwright/test": "1.54.1",
-    "@types/node": "22.15.30",
-    "typescript": "5.8.3"
+    "@playwright/test": "1.55.1",
+    "@types/node": "24.6.2",
+    "typescript": "5.9.3"
   }
 }

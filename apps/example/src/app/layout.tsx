@@ -1,8 +1,8 @@
-import React, { type ReactElement } from 'react'
+import React, { type ReactNode } from 'react'
 import { Body } from '@mono/components'
 
 interface Props {
-  children: ReactElement
+  children: ReactNode
 }
 
 const RootLayout = ({ children }: Props) => (

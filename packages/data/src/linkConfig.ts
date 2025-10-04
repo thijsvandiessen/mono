@@ -10,6 +10,7 @@ export const linkConfig = {
   url: getUrl(),
   headers: {
     'Content-Language': 'nl-NL',
+    'content-type': 'application/json',
     'apollographql-client-name': clientName,
     'apollographql-client-version': 'specific-version', // TODO: commit hash?
   },

@@ -1,11 +1,11 @@
-import React, { type ReactElement } from 'react'
+import React, { type ReactNode } from 'react'
 import { Footer } from '../footer/index.js'
 import { Navigation } from '../navigation/index.js'
 import classNames from 'classnames'
 import styles from './styles.module.scss'
 
 type Props = {
-  children: ReactElement
+  children: ReactNode
 }
 
 export const DefaultLayout = ({ children }: Props) => (
