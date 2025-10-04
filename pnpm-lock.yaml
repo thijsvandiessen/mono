@@ -33,8 +33,8 @@ importers:
         specifier: 9.2.0
         version: 9.2.0
       dotenv:
-        specifier: 16.5.0
-        version: 16.5.0
+        specifier: 17.2.3
+        version: 17.2.3
       eslint:
         specifier: 9.31.0
         version: 9.31.0(jiti@2.4.2)
@@ -101,8 +101,8 @@ importers:
         specifier: 19.1.6
         version: 19.1.6(@types/react@19.1.8)
       dotenv:
-        specifier: 16.5.0
-        version: 16.5.0
+        specifier: 17.2.3
+        version: 17.2.3
       prettier:
         specifier: 3.6.2
         version: 3.6.2
@@ -156,8 +156,8 @@ importers:
         specifier: 19.1.6
         version: 19.1.6(@types/react@19.1.8)
       dotenv:
-        specifier: 16.5.0
-        version: 16.5.0
+        specifier: 17.2.3
+        version: 17.2.3
       prettier:
         specifier: 3.6.2
         version: 3.6.2
@@ -253,8 +253,8 @@ importers:
         specifier: 8.0.0
         version: 8.0.0
       dotenv:
-        specifier: 16.5.0
-        version: 16.5.0
+        specifier: 17.2.3
+        version: 17.2.3
       eslint:
         specifier: 9.31.0
         version: 9.31.0(jiti@2.4.2)
@@ -359,8 +359,8 @@ importers:
         specifier: 4.6.0
         version: 4.6.0(vite@6.3.5(@types/node@22.15.30)(jiti@2.4.2)(sass@1.89.2)(yaml@2.8.0))
       dotenv:
-        specifier: 16.5.0
-        version: 16.5.0
+        specifier: 17.2.3
+        version: 17.2.3
       eslint:
         specifier: 9.31.0
         version: 9.31.0(jiti@2.4.2)
@@ -392,8 +392,8 @@ importers:
         specifier: 4.0.2
         version: 4.0.2
       dotenv:
-        specifier: 16.5.0
-        version: 16.5.0
+        specifier: 17.2.3
+        version: 17.2.3
       memfs:
         specifier: 4.17.2
         version: 4.17.2
@@ -475,8 +475,8 @@ importers:
         specifier: 4.6.0
         version: 4.6.0(vite@6.3.5(@types/node@22.15.30)(jiti@2.4.2)(sass@1.89.2)(yaml@2.8.0))
       dotenv:
-        specifier: 16.5.0
-        version: 16.5.0
+        specifier: 17.2.3
+        version: 17.2.3
       eslint:
         specifier: 9.31.0
         version: 9.31.0(jiti@2.4.2)
@@ -539,8 +539,8 @@ importers:
         specifier: 5.36.0
         version: 5.36.0
       dotenv:
-        specifier: 16.5.0
-        version: 16.5.0
+        specifier: 17.2.3
+        version: 17.2.3
       instantsearch.js:
         specifier: 4.79.1
         version: 4.79.1(algoliasearch@5.36.0)
@@ -631,8 +631,8 @@ importers:
         specifier: 4.6.0
         version: 4.6.0(vite@6.3.5(@types/node@22.15.30)(jiti@2.4.2)(sass@1.89.2)(yaml@2.8.0))
       dotenv:
-        specifier: 16.5.0
-        version: 16.5.0
+        specifier: 17.2.3
+        version: 17.2.3
       eslint:
         specifier: 9.31.0
         version: 9.31.0(jiti@2.4.2)
@@ -835,8 +835,8 @@ packages:
     resolution: {integrity: sha512-vbavdySgbTTrmFE+EsiqUTzlOr5bzlnJtUv9PynGCAKvfQqjIXbvFdumPM/GxMDfyuGMJaJAU6TO4zc1Jf1i8Q==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/runtime@7.28.3':
-    resolution: {integrity: sha512-9uIQ10o0WGdpP6GDhXcdOJPJuDgFtIDtN/9+ArJQ2NAfAmiuhTQdzkaTGR33v43GYS2UrSA0eX2pPPHoFVvpxA==}
+  '@babel/runtime@7.28.4':
+    resolution: {integrity: sha512-Q/N6JNWvIvPnLDvjlE1OUBLPQHH6l3CltCEsHIujp45zQUSSh8K+gHnaEX45yAT1nyngnINhvWtzN+Nb9D8RAQ==}
     engines: {node: '>=6.9.0'}
 
   '@babel/template@7.27.2':
@@ -1391,6 +1391,7 @@ packages:
   '@graphql-tools/prisma-loader@8.0.17':
     resolution: {integrity: sha512-fnuTLeQhqRbA156pAyzJYN0KxCjKYRU5bz1q/SKOwElSnAU4k7/G1kyVsWLh7fneY78LoMNH5n+KlFV8iQlnyg==}
     engines: {node: '>=16.0.0'}
+    deprecated: 'This package was intended to be used with an older versions of Prisma.\nThe newer versions of Prisma has a different approach to GraphQL integration.\nTherefore, this package is no longer needed and has been deprecated and removed.\nLearn more: https://www.prisma.io/graphql'
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
@@ -2151,8 +2152,8 @@ packages:
   '@types/json5@0.0.29':
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
 
-  '@types/node@20.19.11':
-    resolution: {integrity: sha512-uug3FEEGv0r+jrecvUUpbY8lLisvIjg6AAic6a2bSP5OEOLeJsDSnvhCDov7ipFFMXS3orMpzlmi0ZcuGkBbow==}
+  '@types/node@20.19.18':
+    resolution: {integrity: sha512-KeYVbfnbsBCyKG8e3gmUqAfyZNcoj/qpEbHRkQkfZdKOBrU7QQ+BsTdfqLSWX9/m1ytYreMhpKvp+EZi3UFYAg==}
 
   '@types/node@22.15.30':
     resolution: {integrity: sha512-6Q7lr06bEHdlfplU6YRbgG1SFBdlsfNC4/lX+SkhiTs0cpJkOElmWls8PxDFv4yY/xKb8Y6SO0OmSX4wgqTZbA==}
@@ -3038,6 +3039,10 @@ packages:
 
   dotenv@16.5.0:
     resolution: {integrity: sha512-m/C+AwOAr9/W1UOIZUo232ejMNnJAJtYQjUbHoNTBNTJSvqzzDh7vnrei3o3r3m9blf6ZoDkvcw0VmozNRFJxg==}
+    engines: {node: '>=12'}
+
+  dotenv@17.2.3:
+    resolution: {integrity: sha512-JVUnt+DUIzu87TABbhPmNfVdBDt18BLOWjMUFJMSi/Qqg7NTYtabbvSNJGOJ7afbRuv9D/lngizHtP7QyLQ+9w==}
     engines: {node: '>=12'}
 
   dset@3.1.4:
@@ -5638,7 +5643,7 @@ snapshots:
 
   '@babel/runtime@7.27.6': {}
 
-  '@babel/runtime@7.28.3': {}
+  '@babel/runtime@7.28.4': {}
 
   '@babel/template@7.27.2':
     dependencies:
@@ -6942,7 +6947,7 @@ snapshots:
   '@testing-library/dom@10.4.0':
     dependencies:
       '@babel/code-frame': 7.27.1
-      '@babel/runtime': 7.28.3
+      '@babel/runtime': 7.28.4
       '@types/aria-query': 5.0.4
       aria-query: 5.3.0
       chalk: 4.1.2
@@ -7050,7 +7055,7 @@ snapshots:
 
   '@types/json5@0.0.29': {}
 
-  '@types/node@20.19.11':
+  '@types/node@20.19.18':
     dependencies:
       undici-types: 6.21.0
     optional: true
@@ -8040,6 +8045,8 @@ snapshots:
 
   dotenv@16.5.0: {}
 
+  dotenv@17.2.3: {}
+
   dset@3.1.4: {}
 
   dunder-proto@1.0.1:
@@ -8713,7 +8720,7 @@ snapshots:
 
   happy-dom@18.0.1:
     dependencies:
-      '@types/node': 20.19.11
+      '@types/node': 20.19.18
       '@types/whatwg-mimetype': 3.0.2
       whatwg-mimetype: 3.0.0
     optional: true
