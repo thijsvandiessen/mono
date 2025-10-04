@@ -16,7 +16,7 @@ vi.mock('@mono/data', () => {
 
 const getLocationMock = vi.mocked(getLocation)
 
-describe('Concert component', () => {
+describe('Location component', () => {
   it('shows all the data', async () => {
     getLocationMock.mockResolvedValue({
       data: {
