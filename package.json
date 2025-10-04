@@ -13,9 +13,9 @@
     "build": "tsc --build && pnpm run -r build",
     "codegen": "pnpm -r download-schema && pnpm -r codegen",
     "dev": "concurrently \"tsc --build --watch\" \"pnpm run --filter lundi-bleu dev\" \"pnpm run --filter example dev\"",
+    "e2e": "pnpm run -r e2e",
     "lint": "pnpm run -r lint",
-    "test": "pnpm run -r test",
-    "e2e": "pnpm run -r e2e"
+    "test": "pnpm run -r test"
   },
   "devDependencies": {
     "@apollo/rover": "0.36.2",
