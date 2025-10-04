@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.13](https://github.com/thijsvandiessen/mono/compare/v1.0.12...v1.0.13) (2025-10-04)
+
+
+### Bug Fixes
+
+* update react to 19.2.0 ([#669](https://github.com/thijsvandiessen/mono/issues/669)) ([1834feb](https://github.com/thijsvandiessen/mono/commit/1834feb6b2538f3adde1516a8e3d949cb62af237))
+* updates ([#672](https://github.com/thijsvandiessen/mono/issues/672)) ([6820c0f](https://github.com/thijsvandiessen/mono/commit/6820c0f0e47658d716be7dd378fb57fc8ccf43e1))
+
 ## [1.0.12](https://github.com/thijsvandiessen/mono/compare/v1.0.11...v1.0.12) (2025-07-05)
 
 
