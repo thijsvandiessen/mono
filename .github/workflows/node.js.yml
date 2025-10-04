@@ -39,10 +39,10 @@ jobs:
         run: npx oxlint@1.19.0
 
       - name: Check formatting and eslint
-        run: pnpm exec turbo lint
+        run: pnpm exec turbo --token=${{ env.TURBO_TOKEN }} --team=${{ env.TURBO_TEAM }} lint
 
       - name: Build project
-        run: pnpm exec turbo build
+        run: pnpm exec turbo --token=${{ env.TURBO_TOKEN }} --team=${{ env.TURBO_TEAM }} build
 
       - name: Test project
-        run: pnpm exec turbo test
+        run: pnpm exec turbo --token=${{ env.TURBO_TOKEN }} --team=${{ env.TURBO_TEAM }} test
