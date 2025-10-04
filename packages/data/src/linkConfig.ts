@@ -1,8 +1,5 @@
 const getUrl = () => {
-  if (typeof window === 'undefined')
-    return 'https://current--vandiessen-mono-graph.apollographos.net/graphql' as const
-
-  return '/graphql' as const
+  return 'https://current--vandiessen-mono-graph.apollographos.net/graphql' as const
 }
 const clientName = process.env.NEXT_PUBLIC_SITE_NAME ?? ''
 
