@@ -502,6 +502,12 @@ importers:
       '@mono/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
+      '@types/react':
+        specifier: 19.2.0
+        version: 19.2.0
+      '@types/react-dom':
+        specifier: 19.2.0
+        version: 19.2.0(@types/react@19.2.0)
       eslint:
         specifier: 9.31.0
         version: 9.31.0(jiti@2.4.2)
