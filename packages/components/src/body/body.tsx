@@ -1,9 +1,9 @@
 import './global.scss'
-import React, { type ReactElement } from 'react'
+import React, { type ReactNode } from 'react'
 import { DefaultLayout } from '../defaultLayout/index.js'
 
 interface Props {
-  children: ReactElement
+  children: ReactNode
 }
 
 export const Body = ({ children }: Props) => (

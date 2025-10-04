@@ -17,7 +17,7 @@
     },
     "e2e": {
       "dependsOn": ["^build"],
-      "outputs": []
+      "outputs": [".last-run.json"]
     },
     "dev": {
       "cache": false,

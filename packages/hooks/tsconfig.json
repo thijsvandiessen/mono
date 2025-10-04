@@ -1,6 +1,7 @@
 {
   "extends": "@mono/typescript-config/base.json",
   "compilerOptions": {
+    "lib": ["DOM", "ESNext"],
     "outDir": "dist",
     "rootDir": "src"
   },

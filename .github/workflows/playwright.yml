@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TURBO_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-      TURBO_TEAM: ${{ secrets.VERCEL_ORG_ID }}
+      TURBO_TEAM: ${{ secrets.VERCEL_TEAM }}
     strategy:
       matrix:
         node-version: [20.x, 22.x, 24.x]
