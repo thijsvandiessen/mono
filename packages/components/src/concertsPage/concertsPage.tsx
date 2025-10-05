@@ -21,38 +21,28 @@ export const ConcertsPage = async () => {
 
   if (!eventData && !pageData) return notFound()
 
-  if (!pageData) {
-    return (
-      <Events
-        eventData={eventData}
-        first={first}
-        numberOfEvents={eventsMeta.data?.count ?? 0}
-      />
-    )
-  }
-
-  let header = null
-  let pageContent = pageData?.content
-  if (pageData?.content[0]?.__typename === 'HeaderRecord') {
-    header = pageData?.content[0]
-    pageContent = pageData?.content.slice(1)
-  }
-
   return (
     <>
-      {header && (
-        <Header
-          body={header.body}
-          cover={header.cover}
-          title={pageData.title || ''}
-        />
-      )}
+      {pageData?.content[0]?.__typename === 'HeaderRecord' &&
+        pageData?.content[0] && (
+          <Header
+            body={pageData?.content[0].body}
+            cover={pageData?.content[0].cover}
+            title={pageData?.title ?? ''}
+          />
+        )}
       <Events
         eventData={eventData}
         first={first}
         numberOfEvents={eventsMeta.data?.count ?? 0}
       />
-      <PageContent sectionClassName="content-layout" items={pageContent} />
+      {pageData?.content.slice(1) && (
+        <PageContent
+          pageTitle={pageData?.title ?? ''}
+          sectionClassName="content-layout"
+          items={pageData?.content.slice(1)}
+        />
+      )}
     </>
   )
 }

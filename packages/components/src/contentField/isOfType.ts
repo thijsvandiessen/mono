@@ -1,7 +1,7 @@
-import type { Record } from 'datocms-structured-text-utils'
+import type { CdaStructuredTextRecord } from 'datocms-structured-text-utils'
 
-export function isOfType<T extends Record>(
-  x: T | Record,
+export function isOfType<T extends CdaStructuredTextRecord>(
+  x: T | CdaStructuredTextRecord,
   typename: string
 ): x is T {
   if (x.__typename === typename) return true

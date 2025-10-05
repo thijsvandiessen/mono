@@ -35,12 +35,6 @@ $shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.1);
   }
 }
 
-.titleContainer {
-  @media screen and (min-width: 50rem) {
-    text-align: center;
-  }
-}
-
 .program {
   list-style: none;
   padding: 0;
@@ -130,7 +124,7 @@ $sidebar-translate: 50px;
   text-transform: uppercase;
 }
 
-.imageContainer + .persons {
+.imageContainer+.persons {
   margin-top: 1rem;
 
   @media screen and (min-width: 50rem) {

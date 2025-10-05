@@ -1,5 +1,5 @@
 import type { ConcertLinkFragment, PageLinkFragment } from '@mono/data'
-import type { Record } from 'datocms-structured-text-utils'
+import type { CdaStructuredTextRecord } from 'datocms-structured-text-utils'
 import type { RenderInlineRecordContext } from 'react-datocms/structured-text'
 import { isOfType } from './isOfType.js'
 import { slugFormatter } from '@mono/utils'
@@ -8,7 +8,7 @@ import { Link } from '@mono/next-js'
 export const renderInlineRecord = ({
   record,
 }: RenderInlineRecordContext<
-  Record | PageLinkFragment | ConcertLinkFragment
+  CdaStructuredTextRecord | PageLinkFragment | ConcertLinkFragment
 >) => {
   if (isOfType<PageLinkFragment>(record, 'PageRecord')) {
     if (!record.slug) return null

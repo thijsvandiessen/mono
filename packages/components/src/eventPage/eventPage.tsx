@@ -19,7 +19,7 @@ export const EventPage = async ({ slug }: Props) => {
   return (
     <article className={styles.root}>
       <header className={classNames(styles.header)}>
-        <div className={classNames(styles.titleContainer, 'content-layout')}>
+        <div className={classNames('content-layout')}>
           <h1>{data.title}</h1>
         </div>
       </header>
@@ -60,6 +60,7 @@ export const EventPage = async ({ slug }: Props) => {
           )}
 
           <PageContent
+            pageTitle={data.title ?? ''}
             sectionClassName={styles.pageContent}
             items={data.content}
           />

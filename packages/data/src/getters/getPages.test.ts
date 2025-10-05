@@ -42,7 +42,7 @@ describe('getPages', () => {
     console.log = vi.fn()
     mockedQuery.mockRejectedValue(new Error('error'))
     const { data, error } = await getPages({ skip: 0, first: 1 })
-    expect(data).toBeNull()
+    expect(data).toEqual([])
     expect(error).toBeInstanceOf(Error)
     expect(console.log).toHaveBeenLastCalledWith('error')
   })

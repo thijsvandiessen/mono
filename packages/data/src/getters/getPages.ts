@@ -17,7 +17,7 @@ export const getPages = async ({
       error?: CombinedError
     }
   | {
-      data: null
+      data: PageLink[]
       error: unknown
     }
 > => {
@@ -36,6 +36,6 @@ export const getPages = async ({
     }
   } catch (error) {
     if (error instanceof Error) console.log(error.message)
-    return { data: null, error }
+    return { data: [], error }
   }
 }
