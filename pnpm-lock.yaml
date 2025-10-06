@@ -596,6 +596,9 @@ importers:
 
   packages/utils:
     dependencies:
+      '@mono/data':
+        specifier: workspace:*
+        version: link:../data
       react:
         specifier: 19.2.0
         version: 19.2.0

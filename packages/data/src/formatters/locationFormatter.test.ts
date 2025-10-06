@@ -4,11 +4,21 @@ import { describe, it, expect } from 'vitest'
 describe('locationFormatter', () => {
   it('should return a location object', () => {
     expect(locationFormatter({ id: 'some-id' })).toEqual({
-      address: undefined,
+      address: null,
       id: 'some-id',
-      lat: undefined,
-      lng: undefined,
-      title: undefined,
+      lat: null,
+      lng: null,
+      title: null,
+    })
+  })
+
+  it('should return a an object with id', () => {
+    expect(locationFormatter(undefined)).toEqual({
+      address: null,
+      id: '',
+      lat: null,
+      lng: null,
+      title: null,
     })
   })
 })

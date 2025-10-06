@@ -4,11 +4,10 @@ import { locationFormatter } from './locationFormatter.js'
 
 export const locationItemFormatter = (
   location: LocationItemFragment
-): Location | undefined => {
-  if (!location.location?.id) return
+): Location => {
   return {
-    ...locationFormatter(location.location),
-    startTime: location.dateTime ?? undefined,
-    ticketLink: location.ticketLink ?? undefined,
+    ...locationFormatter(location.location ?? undefined),
+    startTime: location?.dateTime ?? null,
+    ticketLink: location?.ticketLink ?? null,
   }
 }

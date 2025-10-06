@@ -10,8 +10,8 @@ interface Props {
 export const useLoadMoreEvents = ({ initialSkip, numberOfEvents }: Props) => {
   const [skip, setSkip] = useState(initialSkip)
   const [loading, setLoading] = useState(false)
-  const [events, setEvents] = useState<(Event | undefined)[]>([])
-  const ref = useRef<HTMLDivElement | null>(null)
+  const [events, setEvents] = useState<Event[]>([])
+  const ref = useRef<HTMLDivElement>(null)
   const [entry] = useIntersectionObserver({
     enabled: Boolean(numberOfEvents),
     ref,
@@ -32,7 +32,6 @@ export const useLoadMoreEvents = ({ initialSkip, numberOfEvents }: Props) => {
       order: [ConcertModelOrderBy.PositionAsc],
     })
       .then(({ data }) => {
-        if (!data) return
         setEvents((prev) => [...prev, ...data])
         setSkip((prev) => {
           return prev + interval

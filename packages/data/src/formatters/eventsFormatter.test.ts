@@ -36,11 +36,12 @@ describe('eventsFormatter', () => {
         locations: [
           {
             id: 'location-id',
-            address: undefined,
-            lat: undefined,
-            lng: undefined,
-            startTime: undefined,
-            title: undefined,
+            address: null,
+            lat: null,
+            lng: null,
+            startTime: null,
+            title: null,
+            ticketLink: null,
           },
         ],
         title: 'required title',

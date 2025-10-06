@@ -1,7 +1,7 @@
 import type { Event } from '@mono/data'
 
 export interface EventsProps {
-  eventData: Event[] | null
+  eventData: Event[]
   first: number
   numberOfEvents: number
 }

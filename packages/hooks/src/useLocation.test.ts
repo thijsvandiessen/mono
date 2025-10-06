@@ -19,6 +19,12 @@ describe('useLocation', () => {
     getLocationMock.mockResolvedValue({
       data: {
         id: 'some-id',
+        title: 'title',
+        address: 'address',
+        lat: null,
+        lng: null,
+        ticketLink: null,
+        startTime: null,
       },
       error: undefined,
     })
@@ -32,7 +38,15 @@ describe('useLocation', () => {
 
   it('should call getLocation with the id', async () => {
     getLocationMock.mockResolvedValue({
-      data: { id: 'some-id' },
+      data: {
+        id: 'some-id',
+        title: 'title',
+        address: 'address',
+        lat: null,
+        lng: null,
+        ticketLink: null,
+        startTime: null,
+      },
       error: undefined,
     })
 

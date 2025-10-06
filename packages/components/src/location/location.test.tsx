@@ -23,6 +23,8 @@ describe('Location component', () => {
         id: 'mock-ids',
         title: 'title',
         address: 'some address lines',
+        ticketLink: 'https://example.com',
+        startTime: '2023-09-01T13:32:36+01:00',
         lat: 5,
         lng: 42,
       },

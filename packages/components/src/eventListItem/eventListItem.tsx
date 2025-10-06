@@ -54,7 +54,7 @@ export const EventListItem = ({
         {data.locations.length > 0 && (
           <ul className={styles.locations}>
             {data.locations.map((item) => {
-              if (!item?.id) return null
+              if (!(typeof item?.id === 'string')) return null
               const ticketLink = item.ticketLink
               const concertPast =
                 item.startTime && dateIsInThePast(item.startTime)
