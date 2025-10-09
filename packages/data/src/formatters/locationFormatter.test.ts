@@ -9,6 +9,8 @@ describe('locationFormatter', () => {
       lat: null,
       lng: null,
       title: null,
+      startTime: null,
+      ticketLink: null,
     })
   })
 
@@ -19,6 +21,8 @@ describe('locationFormatter', () => {
       lat: null,
       lng: null,
       title: null,
+      startTime: null,
+      ticketLink: null,
     })
   })
 })

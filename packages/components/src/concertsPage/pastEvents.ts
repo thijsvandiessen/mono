@@ -4,16 +4,12 @@ interface Props {
   events: Event[]
 }
 
-export const pastEvents = ({ events }: Props) => {
-  return events.filter((event) => {
-    if (!event?.id) return false
-
-    const pastLocations = event.locations.filter((location) => {
-      if (!location.startTime) return false
+export const pastEvents = ({ events }: Props) =>
+  events.filter((event) => {
+    if (event.locations.length === 0) return true
+    return event.locations.some((location) => {
+      if (!location.startTime) return true
 
       return new Date(location.startTime) < new Date()
     })
-
-    return pastLocations.length > 0
   })
-}

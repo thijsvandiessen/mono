@@ -1,8 +1,8 @@
 import type { Location } from '../types/location.js'
 import type { LocationFragment } from '../generated/graphql.js'
 
-export const locationsFormatter = (locations: LocationFragment[]): Location[] =>
-  locations.map((location) => ({
+export const locationsFormatter = (fragment: LocationFragment[]): Location[] =>
+  fragment.map((location) => ({
     id: location?.id ?? '',
     title: location?.title ?? null,
     address: location.addressTitle ?? null,

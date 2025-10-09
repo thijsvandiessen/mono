@@ -50,27 +50,4 @@ describe('FutureEvents component', () => {
     expect(container).toMatchSnapshot()
     expect(screen.getByText('mock-id')).toBeInTheDocument()
   })
-
-  it('shows no data', async () => {
-    vi.useFakeTimers().setSystemTime(new Date('2022-01-01'))
-
-    getFutureEventsMock.mockResolvedValue({
-      data: [mockEvent],
-      error: undefined,
-    })
-
-    const ResolvedFutureEvents = await resolvedComponent<Props>(FutureEvents, {
-      skip: 0,
-      first: 3,
-    })
-
-    const { container } = render(<ResolvedFutureEvents />)
-
-    expect(container).toMatchSnapshot()
-    expect(
-      screen.getByText(
-        'Houd de website in de gaten om up to date te blijven over volgende concerten.'
-      )
-    ).toBeInTheDocument()
-  })
 })

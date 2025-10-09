@@ -27,10 +27,9 @@ export const Map = ({ id, pin, googleMapsApiKey, dimensions }: Props) => {
   })
 
   const onLoad = useCallback(
-    (map: google.maps.Map | null | google.maps.StreetViewPanorama) => {
-      const marker = new google.maps.Marker({
+    (map: google.maps.Map | null | undefined) => {
+      const marker = new google.maps.marker.AdvancedMarkerElement({
         position: { lat: pin.lat, lng: pin.lng },
-        clickable: Boolean(pin.title),
         map,
         title: pin.title,
       })
@@ -41,8 +40,8 @@ export const Map = ({ id, pin, googleMapsApiKey, dimensions }: Props) => {
 
       marker.addListener('click', () => {
         infoWindow.close()
-        infoWindow.setContent(marker.getTitle())
-        infoWindow.open(marker.getMap(), marker)
+        infoWindow.setContent(marker.title)
+        infoWindow.open(marker.map, marker)
       })
     },
     [pin.lat, pin.lng, pin.title]

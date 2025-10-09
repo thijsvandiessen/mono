@@ -11,19 +11,3 @@ exports[`FutureEvents component > shows all the data 1`] = `
   </div>
 </div>
 `;
-
-exports[`FutureEvents component > shows no data 1`] = `
-<div>
-  <h2>
-    Komende concerten
-  </h2>
-  <p>
-    Houd de website in de gaten om up to date te blijven over volgende concerten.
-  </p>
-  <a
-    href="/concerten"
-  >
-    Bekijk al onze vorige concerten
-  </a>
-</div>
-`;

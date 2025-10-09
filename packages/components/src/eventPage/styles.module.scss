@@ -124,7 +124,7 @@ $sidebar-translate: 50px;
   text-transform: uppercase;
 }
 
-.imageContainer+.persons {
+.imageContainer + .persons {
   margin-top: 1rem;
 
   @media screen and (min-width: 50rem) {

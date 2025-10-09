@@ -51,7 +51,9 @@ export const EventPage = async ({ slug }: Props) => {
                 data={data}
                 size="large"
                 isLast={true}
-                title="Agenda"
+                title={
+                  data.locations.some((item) => item.id) ? 'Agenda' : undefined
+                }
                 showLink={false}
                 showImage={false}
                 showProgram={false}
@@ -71,7 +73,7 @@ export const EventPage = async ({ slug }: Props) => {
           if (!location?.id || !location.startTime) return null
           return (
             <LocationDetail
-              key={location?.id}
+              key={location.id}
               id={location.id}
               startTime={location.startTime}
             />

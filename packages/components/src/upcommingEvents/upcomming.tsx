@@ -11,13 +11,7 @@ interface UpcommingEventsProps {
 export const UpcommingEvents = ({ eventData }: UpcommingEventsProps) => {
   const upcomming = upcomingEvents({ events: eventData })
 
-  if (!upcomming || upcomming.length === 0) {
-    return (
-      <h2 className={styles.header}>
-        Er zijn momenteel geen aankomende concerten.
-      </h2>
-    )
-  }
+  if (upcomming.length === 0) return null
 
   return (
     <div>
@@ -32,6 +26,10 @@ export const UpcommingEvents = ({ eventData }: UpcommingEventsProps) => {
         )
       })}
       <hr />
+
+      {eventData.length > upcomming.length && (
+        <h2 className={styles.header}>Overige concerten</h2>
+      )}
     </div>
   )
 }

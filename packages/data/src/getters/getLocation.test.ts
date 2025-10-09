@@ -43,6 +43,8 @@ describe('getLocation', () => {
       lat: null,
       lng: null,
       title: null,
+      startTime: null,
+      ticketLink: null,
     })
   })
   it('should return an error', async () => {

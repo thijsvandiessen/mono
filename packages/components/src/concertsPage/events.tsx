@@ -10,9 +10,6 @@ import { pastEvents } from './pastEvents.js'
 export const Events = ({ eventData, first, numberOfEvents }: EventsProps) => (
   <div className={classNames(styles.concerts, 'content-layout')}>
     <UpcommingEvents eventData={eventData} />
-
-    <h2 className={styles.header}>Afgelopen concerten</h2>
-
     {pastEvents({ events: eventData }).map((event) => {
       return (
         <Event className="content-layout--small" key={event.id} id={event.id} />

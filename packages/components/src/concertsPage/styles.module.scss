@@ -7,7 +7,7 @@
     margin-bottom: var(--layout-default-desktop-spacing);
   }
 
-  &>*:last-child {
+  & > *:last-child {
     margin-top: 2rem;
   }
 }
@@ -23,5 +23,4 @@
   color: var(--colour-primary);
 
   background: var(--colour-background);
-
 }

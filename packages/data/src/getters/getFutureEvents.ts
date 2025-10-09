@@ -25,7 +25,7 @@ export const getFutureEvents = async ({
       error?: CombinedError
     }
   | {
-      data: never[]
+      data: Event[]
       error: unknown
     }
 > => {
@@ -40,8 +40,19 @@ export const getFutureEvents = async ({
       filter,
     })
 
+    const allEvents = data?.allConcerts
+      ? eventsFormatter(data?.allConcerts)
+      : []
+
+    const events = allEvents.filter((event) => {
+      return event.locations.some((location) => {
+        if (!location?.startTime) return true
+        return new Date(location.startTime) > new Date()
+      })
+    }, [])
+
     return {
-      data: data?.allConcerts ? eventsFormatter(data.allConcerts) : [],
+      data: events,
       error,
     }
   } catch (error) {
