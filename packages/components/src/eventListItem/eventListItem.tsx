@@ -54,8 +54,9 @@ export const EventListItem = ({
         {data.locations.length > 0 && (
           <ul className={styles.locations}>
             {data.locations.map((item) => {
-              if (!item?.id) return null
-              const ticketLink = item.ticketLink
+              if (item.id === '') return null
+              if (item.startTime === null) return null
+
               const concertPast =
                 item.startTime && dateIsInThePast(item.startTime)
               const startTime = item.startTime && formatDate(item.startTime)
@@ -79,14 +80,14 @@ export const EventListItem = ({
                   )}
                   <p
                     className={classNames(styles.locationLinkContainer, {
-                      'text-small': size === 'small' || !ticketLink,
+                      'text-small': size === 'small' || !item.ticketLink,
                     })}
                   >
                     {concertPast ? (
                       'Concert voorbij'
-                    ) : ticketLink ? (
+                    ) : item.ticketLink ? (
                       <Link
-                        href={ticketLink}
+                        href={item.ticketLink}
                         target="_blank"
                         rel="noopener noreferrer"
                       >

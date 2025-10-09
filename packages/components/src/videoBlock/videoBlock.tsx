@@ -87,7 +87,7 @@ export const VideoBlock = ({ record, autoplay, aspectRatio }: Props) => {
         {hasPlayed && (
           <iframe
             className={styles.iframe}
-            title={video.title || ''}
+            title={video.title ?? ''}
             src={videoUrl()}
             allowFullScreen
             allow="autoplay"

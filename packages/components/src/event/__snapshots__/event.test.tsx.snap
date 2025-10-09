@@ -28,8 +28,13 @@ exports[`Concert component > shows all the data 1`] = `
           <h3
             class="_locationTitle_5aadb9 h5"
           >
-            Vrijdag 1 september — 14:32
+            test
           </h3>
+          <p
+            class="_locationSubtitle_5aadb9"
+          >
+            Vrijdag 1 september — 14:32
+          </p>
           <p
             class="_locationLinkContainer_5aadb9 text-small"
           >

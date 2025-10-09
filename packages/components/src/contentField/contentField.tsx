@@ -4,7 +4,7 @@ import type {
   TwoColumFragment,
 } from '@mono/data'
 import { StructuredText } from 'react-datocms/structured-text'
-import { isStructuredText } from 'datocms-structured-text-utils'
+import { isCdaStructuredTextValue } from 'datocms-structured-text-utils'
 import { renderBlock } from './renderBlock.jsx'
 import { renderInlineRecord } from './renderInlineRecord.jsx'
 import { renderLinkToRecord } from './renderLinkToRecord.jsx'
@@ -20,7 +20,7 @@ interface Props {
 }
 
 export const ContentField = ({ data }: Props) => {
-  if (!isStructuredText(data)) return
+  if (!isCdaStructuredTextValue(data)) return
 
   return (
     <div className={styles.structuredText}>

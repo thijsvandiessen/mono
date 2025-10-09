@@ -6,8 +6,8 @@ import classNames from 'classnames'
 import styles from './styles.module.scss'
 
 export interface Props {
+  pageTitle: string
   sectionClassName?: string
-  pageTitle?: string
   items: Event['content'] | PageDetailFragment['content']
 }
 

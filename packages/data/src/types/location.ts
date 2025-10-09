@@ -1,9 +1,9 @@
 export interface Location {
   id: string
-  title?: string
-  address?: string
-  lat?: number
-  lng?: number
-  startTime?: string
-  ticketLink?: string
+  title: string | null
+  address: string | null
+  lat: number | null
+  lng: number | null
+  startTime: string | null
+  ticketLink: string | null
 }

@@ -18,9 +18,15 @@ vi.mock('../gqlClient', () => {
 const mockedQuery = vi.mocked(client.query)
 
 describe('getLocations', () => {
-  it('should return an object', async () => {
+  it('should return an object if an id is received', async () => {
     mockedQuery.mockResolvedValue({
-      data: { allLocations: [{}] },
+      data: {
+        allLocations: [
+          {
+            id: 'some-id',
+          },
+        ],
+      },
       operation: {
         key: 1,
         query: GetLocationsDocument,
@@ -36,7 +42,15 @@ describe('getLocations', () => {
     })
     const { data } = await getLocations({ skip: 0, first: 1 })
     expect(data).toEqual([
-      { address: '', id: '', lat: undefined, lng: undefined, title: '' },
+      {
+        id: 'some-id',
+        address: null,
+        lat: null,
+        lng: null,
+        title: null,
+        startTime: null,
+        ticketLink: null,
+      },
     ])
   })
 

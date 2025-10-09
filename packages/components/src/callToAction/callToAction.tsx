@@ -21,7 +21,7 @@ export const CallToAction = ({ record }: Props) => {
   if (!pageLink) {
     return (
       <Button
-        href={externalUrl || ''}
+        href={externalUrl ?? '#'}
         target="_blank"
         rel="noopener noreferrer"
         rightIcon={<ArrowRight />}

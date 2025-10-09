@@ -195,6 +195,8 @@ body {
 }
 
 hr {
-  border-color: var(--colour-secondary-light);
   margin: 1rem 0;
+  height: 0.2rem;
+  background-color: var(--colour-secondary);
+  border: none;
 }

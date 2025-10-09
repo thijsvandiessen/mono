@@ -21,7 +21,7 @@ export const eventFormatter = (
       (prevLocations: Location[], currentLocation) => {
         const location = locationItemFormatter(currentLocation)
 
-        if (location) {
+        if (location && !prevLocations.find((loc) => loc.id === location.id)) {
           prevLocations.push(location)
         }
 

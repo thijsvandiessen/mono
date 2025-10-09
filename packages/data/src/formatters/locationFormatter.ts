@@ -1,10 +1,14 @@
 import type { Location } from '../types/location.js'
 import type { LocationFragment } from '../generated/graphql.js'
 
-export const locationFormatter = (location: LocationFragment): Location => ({
-  id: location.id,
-  title: location?.title ?? undefined,
-  address: location?.addressTitle ?? undefined,
-  lat: location?.address?.latitude,
-  lng: location?.address?.longitude,
+export const locationFormatter = (
+  location: LocationFragment | undefined
+): Location => ({
+  id: location?.id ?? '',
+  title: location?.title ?? null,
+  address: location?.addressTitle ?? null,
+  lat: location?.address?.latitude ?? null,
+  lng: location?.address?.longitude ?? null,
+  startTime: null,
+  ticketLink: null,
 })

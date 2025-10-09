@@ -19,6 +19,12 @@ describe('useLocation', () => {
     getLocationMock.mockResolvedValue({
       data: {
         id: 'some-id',
+        title: 'title',
+        address: 'address',
+        lat: null,
+        lng: null,
+        ticketLink: null,
+        startTime: null,
       },
       error: undefined,
     })
@@ -26,13 +32,29 @@ describe('useLocation', () => {
     const { result } = renderHook(() => useLocation({ id: 'some-id' }))
 
     await waitFor(() => {
-      expect(result.current).toEqual({ id: 'some-id' })
+      expect(result.current).toEqual({
+        address: 'address',
+        id: 'some-id',
+        lat: null,
+        lng: null,
+        startTime: null,
+        ticketLink: null,
+        title: 'title',
+      })
     })
   })
 
   it('should call getLocation with the id', async () => {
     getLocationMock.mockResolvedValue({
-      data: { id: 'some-id' },
+      data: {
+        id: 'some-id',
+        title: 'title',
+        address: 'address',
+        lat: null,
+        lng: null,
+        ticketLink: null,
+        startTime: null,
+      },
       error: undefined,
     })
 

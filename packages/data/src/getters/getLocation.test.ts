@@ -39,10 +39,12 @@ describe('getLocation', () => {
     const { data } = await getLocation({ id: 'test' })
     expect(data).toEqual({
       id: 'some-id',
-      address: undefined,
-      lat: undefined,
-      lng: undefined,
-      title: undefined,
+      address: null,
+      lat: null,
+      lng: null,
+      title: null,
+      startTime: null,
+      ticketLink: null,
     })
   })
   it('should return an error', async () => {

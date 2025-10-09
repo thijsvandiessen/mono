@@ -19,7 +19,7 @@ export const getEvents = async ({
       error?: CombinedError
     }
   | {
-      data: null
+      data: Event[]
       error: unknown
     }
 > => {
@@ -39,6 +39,6 @@ export const getEvents = async ({
     }
   } catch (error) {
     if (error instanceof Error) console.log(error.message)
-    return { data: null, error }
+    return { data: [], error }
   }
 }

@@ -1,0 +1,12 @@
+.header {
+  padding: var(--layout-content-padding);
+  padding-left: 0;
+
+  @media screen and (min-width: 50rem) {
+    padding: var(--layout-content-padding);
+  }
+
+  color: var(--colour-primary);
+
+  background: var(--colour-background);
+}

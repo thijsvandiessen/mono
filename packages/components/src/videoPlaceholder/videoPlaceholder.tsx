@@ -22,7 +22,7 @@ export const VideoPlaceholder = ({
   onPlayButtonClick,
 }: Props) => {
   const [hasIntersected, setHasIntersected] = useState(false)
-  const containerRef = useRef<HTMLDivElement | null>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
   const [entry] = useIntersectionObserver({
     enabled: true,
     ref: containerRef,

@@ -44,6 +44,10 @@ $padding-large-left: 2.5rem;
   margin-bottom: 0.5rem;
   color: var(--colour-primary);
 
+  @media screen and (min-width: 50rem) {
+    max-width: 30rem;
+  }
+
   a {
     color: var(--colour-primary);
   }
