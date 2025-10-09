@@ -20,7 +20,6 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@mono/data": "workspace:*",
     "react": "19.2.0",
     "react-dom": "19.2.0"
   },
