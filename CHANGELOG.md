@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.14](https://github.com/thijsvandiessen/mono/compare/v1.0.13...v1.0.14) (2025-10-09)
+
+
+### Bug Fixes
+
+* concerts page ([#673](https://github.com/thijsvandiessen/mono/issues/673)) ([8069f36](https://github.com/thijsvandiessen/mono/commit/8069f3639c0cb9d2da53b13525b1be7baa5af27d))
+
 ## [1.0.13](https://github.com/thijsvandiessen/mono/compare/v1.0.12...v1.0.13) (2025-10-04)
 
 
