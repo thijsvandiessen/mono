@@ -29,7 +29,7 @@ export const getLocation = async ({
     })
 
     return {
-      data: data?.location?.id ? locationFormatter(data.location) : null,
+      data: data?.location ? locationFormatter(data.location) : null,
       error,
     }
   } catch (error) {
