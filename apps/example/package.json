@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@mono/typescript-config": "workspace:*",
-    "@types/node": "24.6.2",
+    "@types/node": "24.7.1",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.0",
     "dotenv": "17.2.3",
