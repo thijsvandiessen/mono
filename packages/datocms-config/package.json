@@ -17,7 +17,7 @@
   "dependencies": {
     "@datocms/cma-client-node": "5.1.20",
     "dotenv": "17.2.3",
-    "memfs": "4.48.1",
+    "memfs": "4.49.0",
     "zod": "4.1.11"
   },
   "devDependencies": {
