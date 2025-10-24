@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@mono/typescript-config": "workspace:*",
-    "@playwright/test": "1.56.0",
+    "@playwright/test": "1.56.1",
     "@types/node": "24.8.0",
     "typescript": "5.9.3"
   }
