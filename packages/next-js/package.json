@@ -14,7 +14,7 @@
   "scripts": {
     "build": "tsc",
     "lint": "pnpm run lint:js && pnpm run lint:styles",
-    "lint:js": "eslint . --fix",
+    "lint:js": "eslint",
     "lint:styles": "prettier . --write  --list-different"
   },
   "dependencies": {
@@ -32,6 +32,6 @@
     "eslint-plugin-testing-library": "7.13.3",
     "prettier": "3.6.2",
     "typescript": "5.9.3",
-    "vitest": "3.2.4"
+    "vitest": "4.0.3"
   }
 }

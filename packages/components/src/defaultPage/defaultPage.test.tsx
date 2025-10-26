@@ -5,8 +5,10 @@ import { getPage } from '@mono/data'
 import { render } from '@testing-library/react'
 import { resolvedComponent } from '@mono/utils'
 
-vi.mock('../navigation', () => {
-  const originalModule = vi.importActual('../navigation')
+vi.mock('../navigation/index.js', () => {
+  const originalModule = vi.importActual<
+    typeof import('../navigation/index.js')
+  >('../navigation/index.js')
   return {
     __esModule: true,
     ...originalModule,
@@ -15,7 +17,8 @@ vi.mock('../navigation', () => {
 })
 
 vi.mock('@mono/data', () => {
-  const originalModule = vi.importActual('@mono/data')
+  const originalModule =
+    vi.importActual<typeof import('@mono/data')>('@mono/data')
   return {
     __esModule: true,
     ...originalModule,

@@ -4,7 +4,9 @@ import { usePagesMeta } from './usePagesMeta.js'
 import { vi, describe, it, expect } from 'vitest'
 
 vi.mock('@mono/data', () => {
-  const originalModule = vi.importActual('@mono/data')
+  const originalModule =
+    vi.importActual<typeof import('@mono/data')>('@mono/data')
+
   return {
     __esModule: true,
     ...originalModule,
@@ -13,7 +15,6 @@ vi.mock('@mono/data', () => {
 })
 
 const getPagesMetaMock = vi.mocked(getPagesMeta)
-
 describe('usePagesMeta', () => {
   it('should return the number of pages', async () => {
     getPagesMetaMock.mockResolvedValue({

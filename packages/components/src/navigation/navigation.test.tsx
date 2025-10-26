@@ -6,14 +6,16 @@ import { getGeneralInfo } from '@mono/data'
 import { mockMenuData } from './mocks/mockMenuData.js'
 import { resolvedComponent } from '@mono/utils'
 
-global.ResizeObserver = vi.fn().mockImplementation(() => ({
+const ResizeObserverMock = vi.fn().mockImplementation(() => ({
   observe: vi.fn(),
   unobserve: vi.fn(),
   disconnect: vi.fn(),
 }))
 
+vi.stubGlobal('ResizeObserver', ResizeObserverMock)
+
 vi.mock('@mono/data', () => ({
-  ...vi.importActual('@mono/data'),
+  ...vi.importActual<typeof import('@mono/data')>('@mono/data'),
   __esModule: true,
   client: vi.fn(),
   getGeneralInfo: vi.fn(),
@@ -28,7 +30,6 @@ vi.mock('@mono/data', () => ({
 }))
 
 const getGeneralInfoMock = vi.mocked(getGeneralInfo)
-
 describe('Concert component', () => {
   it('shows all the data', async () => {
     getGeneralInfoMock.mockResolvedValueOnce({

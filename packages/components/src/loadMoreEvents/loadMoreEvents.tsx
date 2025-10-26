@@ -29,7 +29,6 @@ export const LoadMoreEvents = ({ initialSkip, numberOfEvents }: Props) => {
       {numberOfEvents ? (
         <div ref={ref}>
           <p className="text-small">
-            {/* TODO: simplify/fix this logic */}
             {events.length + initialSkip} van {numberOfEvents} concerten
           </p>
         </div>

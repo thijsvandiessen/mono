@@ -18,7 +18,7 @@
     "dev": "tsc --watch",
     "download-schema": "rover graph fetch vandiessen-mono-graph@current > ./src/generated/schema.graphql && pnpm run lint:styles",
     "lint": "pnpm run lint:js && pnpm run lint:styles",
-    "lint:js": "eslint . --fix",
+    "lint:js": "eslint",
     "lint:styles": "prettier . --write  --list-different",
     "test": "vitest run"
   },
@@ -45,7 +45,7 @@
     "@mono/typescript-config": "workspace:*",
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.0",
-    "@types/node": "24.8.0",
+    "@types/node": "24.9.1",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
     "@vitejs/plugin-react": "5.0.4",
@@ -56,6 +56,6 @@
     "turbo": "2.5.8",
     "typescript": "5.9.3",
     "vite-tsconfig-paths": "5.1.4",
-    "vitest": "3.2.4"
+    "vitest": "4.0.3"
   }
 }

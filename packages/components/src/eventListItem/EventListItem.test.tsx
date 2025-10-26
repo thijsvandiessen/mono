@@ -5,8 +5,10 @@ import React from 'react'
 import { getEvent } from '@mono/data'
 import { mockEvent } from './mocks/mockEvent.js'
 
-vi.mock('../location/location', () => {
-  const originalModule = vi.importActual('../location/location')
+vi.mock('../location/index.js', () => {
+  const originalModule = vi.importActual<typeof import('../location/index.js')>(
+    '../location/index.js'
+  )
   return {
     __esModule: true,
     ...originalModule,
@@ -15,7 +17,8 @@ vi.mock('../location/location', () => {
 })
 
 vi.mock('@mono/data', () => {
-  const originalModule = vi.importActual('@mono/data')
+  const originalModule =
+    vi.importActual<typeof import('@mono/data')>('@mono/data')
   return {
     __esModule: true,
     ...originalModule,
@@ -24,7 +27,6 @@ vi.mock('@mono/data', () => {
 })
 
 const getEventMock = vi.mocked(getEvent)
-
 describe('Concert component', () => {
   it('shows all the data', () => {
     getEventMock.mockResolvedValue({

@@ -1,4 +1,4 @@
-import { Hit } from './hit.js'
+import { Hit } from './hit.jsx'
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'

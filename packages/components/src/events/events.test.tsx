@@ -8,15 +8,15 @@ import { mockEvent } from './mocks/mockEvents.js'
 import { resolvedComponent } from '@mono/utils'
 
 vi.mock('@mono/data', () => ({
-  ...vi.importActual('@mono/data'),
+  ...vi.importActual<typeof import('@mono/data')>('@mono/data'),
   __esModule: true,
   getEvents: vi.fn(),
   ConcertModelOrderBy: vi.fn(),
 }))
 
-vi.mock('../event/event', () => ({
-  ...vi.importActual('../event/event'),
+vi.mock('../event/index.js', () => ({
   __esModule: true,
+  ...vi.importActual<typeof import('../event/index.js')>('../event/index.js'),
   Event: (props: EventProps) => (
     <div>
       [Event]: <span>{props.id}</span>

@@ -3,8 +3,9 @@ import { client } from '../gqlClient.js'
 import { getLocations } from './getLocations.js'
 import { vi, describe, it, expect } from 'vitest'
 
-vi.mock('../gqlClient', () => {
-  const originalModule = vi.importActual('../gqlClient')
+vi.mock('../gqlClient.js', () => {
+  const originalModule =
+    vi.importActual<typeof import('../gqlClient.js')>('../gqlClient.js')
   return {
     __esModule: true,
     ...originalModule,
@@ -16,7 +17,6 @@ vi.mock('../gqlClient', () => {
 })
 
 const mockedQuery = vi.mocked(client.query)
-
 describe('getLocations', () => {
   it('should return an object if an id is received', async () => {
     mockedQuery.mockResolvedValue({

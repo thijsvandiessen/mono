@@ -8,7 +8,8 @@ import { mockEvent } from './mocks/mockEvents.js'
 import { resolvedComponent } from '@mono/utils'
 
 vi.mock('@mono/data', () => {
-  const originalModule = vi.importActual('@mono/data')
+  const originalModule =
+    vi.importActual<typeof import('@mono/data')>('@mono/data')
   return {
     __esModule: true,
     ...originalModule,
@@ -16,8 +17,10 @@ vi.mock('@mono/data', () => {
   }
 })
 
-vi.mock('../eventListItem/eventListItem', () => {
-  const originalModule = vi.importActual('../eventListItem/eventListItem')
+vi.mock('../eventListItem/index.js', () => {
+  const originalModule = vi.importActual<
+    typeof import('../eventListItem/index.js')
+  >('../eventListItem/index.js')
   return {
     __esModule: true,
     ...originalModule,
@@ -30,7 +33,6 @@ vi.mock('../eventListItem/eventListItem', () => {
 })
 
 const getFutureEventsMock = vi.mocked(getFutureEvents)
-
 describe('FutureEvents component', () => {
   it('shows all the data', async () => {
     vi.useFakeTimers().setSystemTime(new Date('2020-01-01'))

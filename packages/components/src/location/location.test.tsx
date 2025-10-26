@@ -6,7 +6,8 @@ import { getLocation } from '@mono/data'
 import { resolvedComponent } from '@mono/utils'
 
 vi.mock('@mono/data', () => {
-  const originalModule = vi.importActual('@mono/data')
+  const originalModule =
+    vi.importActual<typeof import('@mono/data')>('@mono/data')
   return {
     __esModule: true,
     ...originalModule,
@@ -15,7 +16,6 @@ vi.mock('@mono/data', () => {
 })
 
 const getLocationMock = vi.mocked(getLocation)
-
 describe('Location component', () => {
   it('shows all the data', async () => {
     getLocationMock.mockResolvedValue({
