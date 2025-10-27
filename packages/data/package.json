@@ -20,7 +20,7 @@
     "lint": "pnpm run lint:js && pnpm run lint:styles",
     "lint:js": "eslint",
     "lint:styles": "prettier . --write  --list-different",
-    "test": "vitest run"
+    "test": "vitest run -c ./vitest.config.ts"
   },
   "dependencies": {
     "@graphql-typed-document-node/core": "3.2.0",

@@ -2,7 +2,8 @@ import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   test: {
-    pool: 'threads',
     projects: ['packages/*/vitest.config.ts'],
+    pool: 'threads',
+    isolate: true,
   },
 })

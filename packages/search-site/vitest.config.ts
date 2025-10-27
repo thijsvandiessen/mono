@@ -9,5 +9,6 @@ export default defineConfig({
     setupFiles: ['./src/vitest.setup.ts'],
     exclude: [...configDefaults.exclude, 'dist/**'],
     pool: 'threads',
+    isolate: true,
   },
 })

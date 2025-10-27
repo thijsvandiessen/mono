@@ -8,6 +8,7 @@
     ".": {
       "import": {
         "types": "./dist/index.d.ts",
+        "import": "./dist/index.js",
         "default": "./dist/index.js"
       }
     }
@@ -19,7 +20,7 @@
     "lint": "pnpm run lint:js && pnpm run lint:styles",
     "lint:js": "eslint",
     "lint:styles": "prettier . --write --list-different",
-    "test": "vitest run --no-file-parallelism"
+    "test": "vitest run -c ./vitest.config.ts"
   },
   "dependencies": {
     "@mono/data": "workspace:*",
