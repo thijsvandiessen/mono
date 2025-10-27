@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Location component > shows all the data 1`] = `
+<div>
+  <address>
+    <h2>
+      title
+    </h2>
+    <p>
+      some address lines
+    </p>
+    <p>
+      Fri Sep 01 2023
+    </p>
+  </address>
+</div>
+`;

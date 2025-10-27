@@ -31,22 +31,22 @@ describe('useIntersectionObserver', () => {
 
     vi.stubGlobal('IntersectionObserver', IntersectionObserverMock)
 
-    const el = document.createElement('div')
+    const div = document.createElement('div')
 
     const { result, unmount } = renderHook(() => {
-      const ref = useRef<HTMLElement>(el)
+      const ref = useRef<HTMLElement>(div)
       return useIntersectionObserver({ enabled: true, ref })
     })
 
-    expect(observe).toHaveBeenCalledWith(el)
+    expect(observe).toHaveBeenCalledWith(div)
 
     act(() => {
-      const rect = el.getBoundingClientRect()
+      const rect = div.getBoundingClientRect()
       cb(
         [
           {
             isIntersecting: true,
-            target: el,
+            target: div,
             intersectionRatio: 1,
             time: 0,
             boundingClientRect: rect,

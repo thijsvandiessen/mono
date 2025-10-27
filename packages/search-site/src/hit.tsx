@@ -1,5 +1,3 @@
-import React from 'react'
-
 type Hit = {
   image: string
   title: string

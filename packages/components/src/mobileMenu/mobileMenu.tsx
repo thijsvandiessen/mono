@@ -25,9 +25,9 @@ export const MobileMenu = ({
 
   useEffect(() => {
     if (width < 768) {
-      document.body.classList.toggle('noscroll', open)
+      globalThis.document.body.classList.toggle('noscroll', open)
     } else {
-      document.body.classList.remove('noscroll')
+      globalThis.document.body.classList.remove('noscroll')
     }
   }, [open, width])
 

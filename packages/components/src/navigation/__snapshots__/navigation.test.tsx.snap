@@ -1,0 +1,51 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Concert component > shows all the data 1`] = `
+<div>
+  <nav
+    class="_root_2ae623 content-layout"
+  >
+    <div
+      class="_content_2ae623"
+    >
+      <nav>
+        [MobileMenu]
+      </nav>
+      <ul
+        class="_list_2ae623"
+      >
+        <li
+          class="_navItem_5ff49f"
+        >
+          <a
+            class="_link_5ff49f text-large"
+            href="/contact"
+          >
+            contact
+          </a>
+        </li>
+        <li
+          class="_navItem_5ff49f"
+        >
+          <a
+            class="_link_5ff49f text-large"
+            href="/"
+          >
+            homepage
+          </a>
+        </li>
+        <li
+          class="_listItem_e39c6c"
+        >
+          <button
+            class="_button_e39c6c text-large"
+            type="button"
+          >
+            level 1
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+`;
