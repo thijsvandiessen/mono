@@ -1,5 +1,5 @@
 const getUrl = () => {
-  if (typeof window !== 'undefined') {
+  if (typeof globalThis.window !== 'undefined') {
     return '/graphql' as const
   }
   return 'https://current--vandiessen-mono-graph.apollographos.net/graphql' as const
