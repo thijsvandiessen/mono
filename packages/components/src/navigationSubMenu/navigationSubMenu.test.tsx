@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/react'
 import { NavigationSubMenu } from '../navigationSubMenu/index.js'
 import React from 'react'
@@ -35,8 +35,8 @@ vi.mock('@mono/next-js', () => {
 
 vi.mock('@mono/hooks', () => ({
   __esModule: true,
-  useEscapeKey: vi.fn((cb) => cb()),
-  useOutsideClick: vi.fn((cb) => cb()),
+  useEscapeKey: vi.fn(),
+  useOutsideClick: vi.fn(),
 }))
 
 describe('navigationSubMenu', () => {
