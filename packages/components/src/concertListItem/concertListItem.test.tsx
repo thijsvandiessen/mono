@@ -5,6 +5,26 @@ import React from 'react'
 import { getConcert } from '@mono/data'
 import { mockConcert } from './mocks/mockConcert.js'
 
+vi.mock('@mono/next-js', () => {
+  return {
+    _esModule: true,
+    Link: vi.fn(({ href, onClick, className, children }) => (
+      <a className={className} href={href} onClick={onClick}>
+        {children}
+      </a>
+    )),
+    Image: vi.fn((className, src, alt, width, height) => (
+      <img
+        className={className}
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+      />
+    )),
+  }
+})
+
 vi.mock('../location/index.js', () => {
   const originalModule = vi.importActual<typeof import('../location/index.js')>(
     '../location/index.js'

@@ -26,24 +26,22 @@ export const Button = ({
   rightIcon,
   suffix,
   variant = 'primary',
-}: Props) => {
-  return (
-    <Link
-      className={classNames(
-        className,
-        styles.button,
-        styles[variant],
-        'text-small'
-      )}
-      href={href}
-      target={target}
-      rel={rel}
-    >
-      {leftIcon}
-      <span>
-        {children} <span className={styles.suffix}>{suffix}</span>
-      </span>
-      {rightIcon}
-    </Link>
-  )
-}
+}: Props) => (
+  <Link
+    className={classNames(
+      className,
+      styles.button,
+      styles[variant],
+      'text-small'
+    )}
+    href={href}
+    target={target}
+    rel={rel}
+  >
+    {leftIcon}
+    <span>
+      {children} <span className={styles.suffix}>{suffix}</span>
+    </span>
+    {rightIcon}
+  </Link>
+)

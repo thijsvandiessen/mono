@@ -1,6 +1,17 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { NavigationSubMenuItem } from '../navigationSubMenuItem/index.js'
+
+vi.mock('@mono/next-js', () => {
+  return {
+    _esModule: true,
+    Link: vi.fn(({ href, onClick, className, children }) => (
+      <a className={className} href={href} onClick={onClick}>
+        {children}
+      </a>
+    )),
+  }
+})
 
 describe('NavigationSubMenuItem', () => {
   it('should render a link', () => {
