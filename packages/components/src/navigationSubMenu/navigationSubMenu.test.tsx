@@ -22,6 +22,23 @@ const mockData: NavigationItem[] = [
   },
 ]
 
+vi.mock('@mono/next-js', () => {
+  return {
+    _esModule: true,
+    Link: vi.fn(({ href, onClick, className, children }) => (
+      <a className={className} href={href} onClick={onClick}>
+        {children}
+      </a>
+    )),
+  }
+})
+
+vi.mock('@mono/hooks', () => ({
+  __esModule: true,
+  useEscapeKey: vi.fn((cb) => cb()),
+  useOutsideClick: vi.fn((cb) => cb()),
+}))
+
 describe('navigationSubMenu', () => {
   it('should render a button', () => {
     const { container } = render(
