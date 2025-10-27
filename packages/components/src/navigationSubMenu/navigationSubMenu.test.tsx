@@ -2,25 +2,7 @@ import { describe, expect, it, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { NavigationSubMenu } from '../navigationSubMenu/index.js'
 import React from 'react'
-import type { NavigationItem } from '@mono/data'
-
-const mockData: NavigationItem[] = [
-  {
-    id: '194164582',
-    label: 'specific page',
-    slug: 'specific/page',
-  },
-  {
-    id: '194164583',
-    label: 'homepage',
-    slug: 'homepage',
-  },
-  {
-    id: '194164584',
-    label: 'external',
-    slug: 'https://example.com',
-  },
-]
+import { mockData } from './mocks/mockData.js'
 
 vi.mock('../navigationSubMenuItem/index.js', () => ({
   __esModule: true,
