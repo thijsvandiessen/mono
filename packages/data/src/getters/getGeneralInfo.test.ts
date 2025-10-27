@@ -10,7 +10,6 @@ vi.mock('../gqlClient.js', () => {
     __esModule: true,
     ...originalModule,
     client: {
-      ...originalModule,
       query: vi.fn(),
     },
   }

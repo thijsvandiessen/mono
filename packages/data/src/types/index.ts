@@ -1,6 +1,6 @@
 export type { Author } from './author.js'
 export type { BlogPost } from './blogPost.js'
-export type { Event } from './event.js'
+export type { Concert } from './concert.js'
 export type { PageLink } from './pageLink.js'
 export {
   type CloudinaryAsset,

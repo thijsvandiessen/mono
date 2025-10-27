@@ -1,6 +1,6 @@
 import { ContentField } from '../contentField/index.js'
 import { Header } from '../header/index.js'
-import { type PageDetailFragment, type Event } from '@mono/data'
+import { type PageDetailFragment, type Concert } from '@mono/data'
 import { TwoColumContentField } from '../twoColumContentField/index.js'
 import classNames from 'classnames'
 import styles from './styles.module.scss'
@@ -8,7 +8,7 @@ import styles from './styles.module.scss'
 export interface Props {
   pageTitle: string
   sectionClassName?: string
-  items: Event['content'] | PageDetailFragment['content']
+  items: Concert['content'] | PageDetailFragment['content']
 }
 
 export const PageContent = ({ sectionClassName, items, pageTitle }: Props) => {

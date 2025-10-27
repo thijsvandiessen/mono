@@ -3,20 +3,15 @@ import { DefaultLayout } from './defaultLayout.jsx'
 import { render } from '@testing-library/react'
 
 vi.mock('../navigation/index.js', () => {
-  const originalModule = vi.importActual<
-    typeof import('../navigation/index.js')
-  >('../navigation/index.js')
   return {
-    ...originalModule,
+    _esModule: true,
     Navigation: vi.fn(() => <nav>[Navigation]</nav>),
   }
 })
 
 vi.mock('../footer/index.js', () => {
-  const originalModule =
-    vi.importActual<typeof import('../footer/index.js')>('../footer/index.js')
   return {
-    ...originalModule,
+    _esModule: true,
     Footer: vi.fn(() => <footer>[Footer]</footer>),
   }
 })

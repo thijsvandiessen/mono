@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next'
-import { EventPage } from '@mono/components'
-import { getEventPageSeo } from '@mono/data'
+import { ConcertPage } from '@mono/components'
+import { getConcertPageSeo } from '@mono/data'
 import { viewport } from '@mono/utils'
 
 interface PageProps {
@@ -12,7 +12,7 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { slug } = await params
-  const { data } = await getEventPageSeo({ slug })
+  const { data } = await getConcertPageSeo({ slug })
   return data
 }
 
@@ -20,7 +20,7 @@ export const generateViewport = (): Viewport => viewport
 
 const Page = async ({ params }: PageProps) => {
   const { slug } = await params
-  return <EventPage slug={slug} />
+  return <ConcertPage slug={slug} />
 }
 
 export default Page
