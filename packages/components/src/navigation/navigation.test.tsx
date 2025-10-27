@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import { Navigation } from './navigation.js'
 import { getGeneralInfo } from '@mono/data'
 import { mockMenuData } from './mocks/mockMenuData.js'
