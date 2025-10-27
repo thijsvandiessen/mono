@@ -33,9 +33,9 @@ export const CallToAction = ({ record }: Props) => {
   }
 
   const { slug } = pageLink
+  if (!slug) return null
 
   if (isOfType<PageLinkFragment>(pageLink, 'PageRecord')) {
-    if (!slug) return null
     return (
       <Button
         href={slugFormatter({ slug })}
@@ -48,7 +48,6 @@ export const CallToAction = ({ record }: Props) => {
   }
 
   if (isOfType<ConcertLinkFragment>(pageLink, 'ConcertRecord')) {
-    if (!slug) return null
     return (
       <Button
         href={slugFormatter({

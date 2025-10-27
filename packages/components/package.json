@@ -19,7 +19,7 @@
     "lint": "pnpm run lint:js && pnpm run lint:styles",
     "lint:js": "eslint",
     "lint:styles": "prettier . --write --list-different",
-    "test": "vitest run"
+    "test": "vitest run --no-file-parallelism"
   },
   "dependencies": {
     "@mono/data": "workspace:*",
