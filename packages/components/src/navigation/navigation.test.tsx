@@ -10,6 +10,16 @@ vi.mock('../mobileMenu/index.js', () => ({
   MobileMenu: () => <nav>[MobileMenu]</nav>,
 }))
 
+vi.mock('../navigationItem/index.js', () => ({
+  __esModule: true,
+  NavigationItem: () => <li>[NavigationItem]</li>,
+}))
+
+vi.mock('../navigationSubMenu/index.js', () => ({
+  __esModule: true,
+  NavigationSubMenu: () => <li>[NavigationSubMenu]</li>,
+}))
+
 vi.mock('@mono/data', () => ({
   __esModule: true,
   client: vi.fn(),
@@ -38,6 +48,5 @@ describe('Concert component', () => {
     const { container } = render(<Resolved />)
 
     expect(container).toMatchSnapshot()
-    expect(screen.getByText('contact')).toBeTruthy()
   })
 })

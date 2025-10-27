@@ -14,35 +14,14 @@ exports[`Concert component > shows all the data 1`] = `
       <ul
         class="_list_2ae623"
       >
-        <li
-          class="_navItem_5ff49f"
-        >
-          <a
-            class="_link_5ff49f text-large"
-            href="/contact"
-          >
-            contact
-          </a>
+        <li>
+          [NavigationItem]
         </li>
-        <li
-          class="_navItem_5ff49f"
-        >
-          <a
-            class="_link_5ff49f text-large"
-            href="/"
-          >
-            homepage
-          </a>
+        <li>
+          [NavigationItem]
         </li>
-        <li
-          class="_listItem_e39c6c"
-        >
-          <button
-            class="_button_e39c6c text-large"
-            type="button"
-          >
-            level 1
-          </button>
+        <li>
+          [NavigationSubMenu]
         </li>
       </ul>
     </div>

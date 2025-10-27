@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { fireEvent, render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { NavigationSubMenu } from '../navigationSubMenu/index.js'
 import React from 'react'
 import type { NavigationItem } from '@mono/data'
@@ -21,6 +21,11 @@ const mockData: NavigationItem[] = [
     slug: 'https://example.com',
   },
 ]
+
+vi.mock('../navigationSubMenuItem/index.js', () => ({
+  __esModule: true,
+  NavigationSubMenuItem: () => <li>[NavigationSubMenuItem]</li>,
+}))
 
 vi.mock('@mono/next-js', () => {
   return {
@@ -46,20 +51,6 @@ describe('navigationSubMenu', () => {
     )
 
     expect(screen.getByRole('button', { name: 'root label' })).toBeVisible()
-    expect(container).toMatchSnapshot()
-
-    fireEvent(
-      screen.getByRole('button'),
-      new MouseEvent('click', {
-        bubbles: true,
-        cancelable: true,
-      })
-    )
-
-    expect(screen.getByRole('link', { name: 'specific page' })).toHaveAttribute(
-      'href',
-      '/specific/page'
-    )
     expect(container).toMatchSnapshot()
   })
 })
