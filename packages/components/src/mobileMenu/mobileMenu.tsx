@@ -1,8 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Cross } from '../icons/cross.jsx'
-import { Hamburger } from '../icons/hamburger.jsx'
+import { Cross, Hamburger } from '../icons/index.js'
 import { MobileMenuItems } from '../mobileMenuItems/index.js'
 import classNames from 'classnames'
 import styles from './styles.module.scss'

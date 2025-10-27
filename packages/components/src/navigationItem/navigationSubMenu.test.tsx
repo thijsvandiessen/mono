@@ -19,7 +19,7 @@ describe('NavigationItem', () => {
   })
 
   it('should render a label warning', () => {
-    render(<NavigationItem slug={'test'} />)
+    render(<NavigationItem slug="test" />)
 
     expect(screen.getByText('No label specified'))
   })

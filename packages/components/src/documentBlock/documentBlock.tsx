@@ -3,9 +3,8 @@ import {
   formatCloudinaryDocument,
   isOfTypeCloudinaryAsset,
 } from '@mono/data'
-import { ArrowDown } from '../icons/arrow-down.jsx'
+import { ArrowDown } from '../icons/index.js'
 import { Button } from '../button/index.js'
-import React from 'react'
 import classNames from 'classnames'
 import { formatBytes } from '@mono/utils'
 import styles from './styles.module.scss'

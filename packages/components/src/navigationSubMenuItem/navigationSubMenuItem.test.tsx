@@ -16,11 +16,7 @@ vi.mock('@mono/next-js', () => {
 describe('NavigationSubMenuItem', () => {
   it('should render a link', () => {
     const { container } = render(
-      <NavigationSubMenuItem
-        onClick={() => null}
-        slug={'url'}
-        label={'homepage'}
-      />
+      <NavigationSubMenuItem onClick={() => null} slug="url" label="homepage" />
     )
 
     expect(screen.getByRole('link', { name: 'homepage' })).toBeVisible()
@@ -34,7 +30,7 @@ describe('NavigationSubMenuItem', () => {
   })
 
   it('should render a label warning', () => {
-    render(<NavigationSubMenuItem onClick={() => null} slug={'test'} />)
+    render(<NavigationSubMenuItem onClick={() => null} slug="test" />)
 
     expect(screen.getByText('No label specified')).toBeVisible()
   })

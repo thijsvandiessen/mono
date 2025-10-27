@@ -1,6 +1,5 @@
 import { DefaultPage, type Props } from './defaultPage.js'
 import { describe, expect, it, vi } from 'vitest'
-import React from 'react'
 import { getPage } from '@mono/data'
 import { render } from '@testing-library/react'
 import { resolvedComponent } from '@mono/utils'

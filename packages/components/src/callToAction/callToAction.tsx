@@ -3,7 +3,7 @@ import type {
   ConcertLinkFragment,
   PageLinkFragment,
 } from '@mono/data'
-import { ArrowRight } from '../icons/arrow-right.jsx'
+import { ArrowRight } from '../icons/index.js'
 import { Button } from '../button/index.js'
 import { isOfType } from '../contentField/isOfType.js'
 import { slugFormatter } from '@mono/utils'

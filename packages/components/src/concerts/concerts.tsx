@@ -1,6 +1,5 @@
 import { ConcertModelOrderBy, getConcerts } from '@mono/data'
-import { Concert } from '../concert/concert.jsx'
-import React from 'react'
+import { Concert } from '../concert/index.js'
 
 export interface Props {
   skip: number

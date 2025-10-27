@@ -1,7 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { ConcertListItem } from './concertListItem.jsx'
-import React from 'react'
 import { getConcert } from '@mono/data'
 import { mockConcert } from './mocks/mockConcert.js'
 

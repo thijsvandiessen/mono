@@ -1,7 +1,6 @@
 import { ConcertListItem } from '../concertListItem/index.js'
 import { LocationDetail } from '../locationDetail/index.js'
 import { PageContent } from '../pageContent/index.js'
-import React from 'react'
 import classNames from 'classnames'
 import { getConcertPage } from '@mono/data'
 import { notFound, Image } from '@mono/next-js'

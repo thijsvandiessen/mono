@@ -1,7 +1,6 @@
 import { dateIsInThePast, formatDate } from '@mono/utils'
-import { ArrowRight } from '../icons/arrow-right.jsx'
+import { ArrowRight } from '../icons/index.js'
 import type { Concert } from '@mono/data'
-import React from 'react'
 import classNames from 'classnames'
 import { Link, Image } from '@mono/next-js'
 

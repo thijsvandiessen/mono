@@ -1,6 +1,5 @@
-import React from 'react'
 import type { Concert } from '@mono/data'
-import { Concert as ConcertComponent } from '../concert/concert.jsx'
+import { Concert as ConcertComponent } from '../concert/index.js'
 import styles from './styles.module.scss'
 import { upcomingConcerts } from './upcommingConcerts.js'
 

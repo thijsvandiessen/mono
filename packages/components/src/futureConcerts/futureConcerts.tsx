@@ -1,5 +1,4 @@
 import { ConcertListItem } from '../concertListItem/index.js'
-import React from 'react'
 import { getFutureConcerts } from '@mono/data'
 export interface Props {
   skip: number
