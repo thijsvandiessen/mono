@@ -5,3 +5,10 @@ packages:
 
 ignoredBuiltDependencies:
   - '@swc/core'
+
+onlyBuiltDependencies:
+  - '@apollo/rover'
+  - '@parcel/watcher'
+  - esbuild
+  - sharp
+  - unrs-resolver
