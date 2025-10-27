@@ -1,5 +1,5 @@
 import type {
-  EventPageSeoFragment,
+  ConcertPageSeoFragment,
   PageDetailSeoFragment,
 } from '../generated/graphql.js'
 import type { Metadata } from '@mono/next-js'
@@ -7,7 +7,7 @@ import { getSiteMetadata } from '../getters/getSiteMetadata.js'
 import { metaTitleFormatter } from './metaTitleFormatter.js'
 
 export const metadataFormatter = async (
-  data: PageDetailSeoFragment | EventPageSeoFragment | undefined,
+  data: PageDetailSeoFragment | ConcertPageSeoFragment | undefined,
   slug: string
 ): Promise<Metadata> => {
   const { metadata } = await getSiteMetadata()

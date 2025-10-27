@@ -1,7 +1,7 @@
-import type { Event } from '@mono/data'
+import type { Concert } from '@mono/data'
 
-export interface EventsProps {
-  eventData: Event[]
+export interface ConcertsProps {
+  concertData: Concert[]
   first: number
-  numberOfEvents: number
+  numberOfConcerts: number
 }

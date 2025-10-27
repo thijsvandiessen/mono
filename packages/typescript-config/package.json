@@ -4,16 +4,16 @@
   "description": "typescript config",
   "type": "module",
   "exports": {
-    "./base.json": {
+    ".": {
       "import": {
-        "default": "./src/base.json"
+        "default": "./tsconfig.json"
       },
       "require": {
-        "default": "./src/base.json"
+        "default": "./tsconfig.json"
       }
     }
   },
   "devDependencies": {
-    "vitest": "3.2.4"
+    "vitest": "4.0.3"
   }
 }

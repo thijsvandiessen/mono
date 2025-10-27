@@ -14,9 +14,10 @@ export const useIntersectionObserver = ({ enabled, ref, options }: Props) => {
   }
 
   useEffect(() => {
+    if (typeof globalThis.window === 'undefined') return
     if (!enabled) return
     if (!ref?.current) return
-    const hasIOSupport = !!window.IntersectionObserver
+    const hasIOSupport = !!globalThis.window.IntersectionObserver
     if (!hasIOSupport || !ref.current) return
 
     const observer = new IntersectionObserver(callback, options)

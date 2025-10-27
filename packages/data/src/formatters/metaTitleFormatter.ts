@@ -1,11 +1,11 @@
 import type {
-  EventPageSeoFragment,
+  ConcertPageSeoFragment,
   PageDetailSeoFragment,
 } from '../generated/graphql.js'
 import { getSiteMetadata } from '../getters/getSiteMetadata.js'
 
 export const metaTitleFormatter = async (
-  data: PageDetailSeoFragment | EventPageSeoFragment | undefined
+  data: PageDetailSeoFragment | ConcertPageSeoFragment | undefined
 ) => {
   const { metadata } = await getSiteMetadata()
   const defaultSiteName = metadata?.title || ''

@@ -18,9 +18,8 @@ type Documents = {
   '\n  fragment colors on ColorField {\n    alpha\n    blue\n    cssRgb\n    green\n    hex\n    red\n  }\n': typeof types.ColorsFragmentDoc
   '\n  fragment concertDetail on ConcertRecord {\n    ...identifiable\n    title\n    slug\n    poster\n    locations {\n      ...locationItem\n    }\n    content {\n      ... on HeaderRecord {\n        ...header\n      }\n      ... on TextBlockRecord {\n        ...textBlock\n      }\n      ... on TwoColumnRecord {\n        ...twoColum\n      }\n    }\n  }\n  \n  \n  \n  \n  \n': typeof types.ConcertDetailFragmentDoc
   '\n    fragment concertLink on ConcertRecord {\n      ...identifiable\n      title\n      slug\n    }\n    \n  ': typeof types.ConcertLinkFragmentDoc
+  '\n  fragment concertPageSeo on ConcertRecord {\n    ...identifiable\n    title\n    _seoMetaTags {\n      ...tag\n    }\n    seo {\n      ...seoField\n    }\n  }\n  \n  \n  \n': typeof types.ConcertPageSeoFragmentDoc
   '\n  fragment coordinates on LatLonField {\n    latitude\n    longitude\n  }\n': typeof types.CoordinatesFragmentDoc
-  '\n  fragment eventLink on ConcertRecord {\n    ...identifiable\n    title\n    slug\n  }\n  \n': typeof types.EventLinkFragmentDoc
-  '\n  fragment eventPageSeo on ConcertRecord {\n    ...identifiable\n    title\n    _seoMetaTags {\n      ...tag\n    }\n    seo {\n      ...seoField\n    }\n  }\n  \n  \n  \n': typeof types.EventPageSeoFragmentDoc
   '\n  fragment file on FileField {\n    id\n    alt\n    width\n    height\n    title\n    url\n    video {\n      ...videoUpload\n    }\n  }\n  \n  \n  \n  \n': typeof types.FileFragmentDoc
   '\n  fragment focalPoint on focalPoint {\n    x\n    y\n  }\n': typeof types.FocalPointFragmentDoc
   '\n  fragment generalInfo on GeneralRecord {\n    id\n    title\n    menu {\n      ... on MenuItemRecord {\n        ...menuItem\n      }\n      ... on SubmenuItemRecord {\n        ...submenuItem\n      }\n    }\n  }\n  \n  \n': typeof types.GeneralInfoFragmentDoc
@@ -50,13 +49,13 @@ type Documents = {
   '\n  fragment videoUpload on UploadVideoField {\n    mp4Url\n    muxAssetId\n    muxPlaybackId\n    streamingUrl\n    thumbnailUrl\n  }\n': typeof types.VideoUploadFragmentDoc
   '\n  fragment video on VideoRecord {\n    ...identifiable\n    title\n    media {\n      ...videoField\n    }\n    thumbnail\n  }\n  \n': typeof types.VideoFragmentDoc
   '\n  fragment videoField on VideoField {\n    height\n    provider\n    providerUid\n    thumbnailUrl\n    title\n    url\n    width\n  }\n': typeof types.VideoFieldFragmentDoc
-  '\n  query getEvent($id: ItemId!) {\n    concert(filter: { id: { eq: $id } }) {\n      ...concertDetail\n    }\n  }\n  \n': typeof types.GetEventDocument
-  '\n  query getEventPage($slug: String!) {\n    concert(filter: { slug: { eq: $slug } }) {\n      ...concertDetail\n    }\n  }\n  \n': typeof types.GetEventPageDocument
-  '\n  query getEventSeo($slug: String!) {\n    concert(filter: { slug: { eq: $slug } }) {\n      ...eventPageSeo\n    }\n  }\n  \n': typeof types.GetEventSeoDocument
-  '\n  query getEventsUrls(\n    $skip: IntType!\n    $first: IntType!\n    $order: [ConcertModelOrderBy]\n  ) {\n    allConcerts(first: $first, skip: $skip, orderBy: $order) {\n      ...eventLink\n    }\n  }\n  \n': typeof types.GetEventsUrlsDocument
-  '\n  query getEvents(\n    $skip: IntType!\n    $first: IntType!\n    $order: [ConcertModelOrderBy]\n  ) {\n    allConcerts(first: $first, skip: $skip, orderBy: $order) {\n      ...concertDetail\n    }\n  }\n  \n': typeof types.GetEventsDocument
-  '\n  query getEventsMeta {\n    _allConcertsMeta {\n      count\n    }\n  }\n': typeof types.GetEventsMetaDocument
-  '\n  query getFutureEvents(\n    $skip: IntType!\n    $first: IntType!\n    $order: [ConcertModelOrderBy]\n    $filter: ConcertModelFilter\n  ) {\n    allConcerts(first: $first, skip: $skip, orderBy: $order, filter: $filter) {\n      ...concertDetail\n    }\n  }\n  \n': typeof types.GetFutureEventsDocument
+  '\n  query getConcert($id: ItemId!) {\n    concert(filter: { id: { eq: $id } }) {\n      ...concertDetail\n    }\n  }\n  \n': typeof types.GetConcertDocument
+  '\n  query getConcertPage($slug: String!) {\n    concert(filter: { slug: { eq: $slug } }) {\n      ...concertDetail\n    }\n  }\n  \n': typeof types.GetConcertPageDocument
+  '\n  query getConcertSeo($slug: String!) {\n    concert(filter: { slug: { eq: $slug } }) {\n      ...concertPageSeo\n    }\n  }\n  \n': typeof types.GetConcertSeoDocument
+  '\n  query getConcertsUrls(\n    $skip: IntType!\n    $first: IntType!\n    $order: [ConcertModelOrderBy]\n  ) {\n    allConcerts(first: $first, skip: $skip, orderBy: $order) {\n      ...concertLink\n    }\n  }\n  \n': typeof types.GetConcertsUrlsDocument
+  '\n  query getConcerts(\n    $skip: IntType!\n    $first: IntType!\n    $order: [ConcertModelOrderBy]\n  ) {\n    allConcerts(first: $first, skip: $skip, orderBy: $order) {\n      ...concertDetail\n    }\n  }\n  \n': typeof types.GetConcertsDocument
+  '\n  query getConcertsMeta {\n    _allConcertsMeta {\n      count\n    }\n  }\n': typeof types.GetConcertsMetaDocument
+  '\n  query getFutureConcerts(\n    $skip: IntType!\n    $first: IntType!\n    $order: [ConcertModelOrderBy]\n    $filter: ConcertModelFilter\n  ) {\n    allConcerts(first: $first, skip: $skip, orderBy: $order, filter: $filter) {\n      ...concertDetail\n    }\n  }\n  \n': typeof types.GetFutureConcertsDocument
   '\n  query getGeneralInfo {\n    general {\n      ...generalInfo\n    }\n  }\n  \n': typeof types.GetGeneralInfoDocument
   '\n  query getLocation($id: ItemId) {\n    location(filter: { id: { eq: $id } }) {\n      ...location\n    }\n  }\n  \n': typeof types.GetLocationDocument
   '\n  query getLocations(\n    $first: IntType\n    $skip: IntType\n    $order: [LocationModelOrderBy]\n  ) {\n    allLocations(first: $first, skip: $skip, orderBy: $order) {\n      ...location\n    }\n  }\n  \n': typeof types.GetLocationsDocument
@@ -77,12 +76,10 @@ const documents: Documents = {
     types.ConcertDetailFragmentDoc,
   '\n    fragment concertLink on ConcertRecord {\n      ...identifiable\n      title\n      slug\n    }\n    \n  ':
     types.ConcertLinkFragmentDoc,
+  '\n  fragment concertPageSeo on ConcertRecord {\n    ...identifiable\n    title\n    _seoMetaTags {\n      ...tag\n    }\n    seo {\n      ...seoField\n    }\n  }\n  \n  \n  \n':
+    types.ConcertPageSeoFragmentDoc,
   '\n  fragment coordinates on LatLonField {\n    latitude\n    longitude\n  }\n':
     types.CoordinatesFragmentDoc,
-  '\n  fragment eventLink on ConcertRecord {\n    ...identifiable\n    title\n    slug\n  }\n  \n':
-    types.EventLinkFragmentDoc,
-  '\n  fragment eventPageSeo on ConcertRecord {\n    ...identifiable\n    title\n    _seoMetaTags {\n      ...tag\n    }\n    seo {\n      ...seoField\n    }\n  }\n  \n  \n  \n':
-    types.EventPageSeoFragmentDoc,
   '\n  fragment file on FileField {\n    id\n    alt\n    width\n    height\n    title\n    url\n    video {\n      ...videoUpload\n    }\n  }\n  \n  \n  \n  \n':
     types.FileFragmentDoc,
   '\n  fragment focalPoint on focalPoint {\n    x\n    y\n  }\n':
@@ -141,20 +138,20 @@ const documents: Documents = {
     types.VideoFragmentDoc,
   '\n  fragment videoField on VideoField {\n    height\n    provider\n    providerUid\n    thumbnailUrl\n    title\n    url\n    width\n  }\n':
     types.VideoFieldFragmentDoc,
-  '\n  query getEvent($id: ItemId!) {\n    concert(filter: { id: { eq: $id } }) {\n      ...concertDetail\n    }\n  }\n  \n':
-    types.GetEventDocument,
-  '\n  query getEventPage($slug: String!) {\n    concert(filter: { slug: { eq: $slug } }) {\n      ...concertDetail\n    }\n  }\n  \n':
-    types.GetEventPageDocument,
-  '\n  query getEventSeo($slug: String!) {\n    concert(filter: { slug: { eq: $slug } }) {\n      ...eventPageSeo\n    }\n  }\n  \n':
-    types.GetEventSeoDocument,
-  '\n  query getEventsUrls(\n    $skip: IntType!\n    $first: IntType!\n    $order: [ConcertModelOrderBy]\n  ) {\n    allConcerts(first: $first, skip: $skip, orderBy: $order) {\n      ...eventLink\n    }\n  }\n  \n':
-    types.GetEventsUrlsDocument,
-  '\n  query getEvents(\n    $skip: IntType!\n    $first: IntType!\n    $order: [ConcertModelOrderBy]\n  ) {\n    allConcerts(first: $first, skip: $skip, orderBy: $order) {\n      ...concertDetail\n    }\n  }\n  \n':
-    types.GetEventsDocument,
-  '\n  query getEventsMeta {\n    _allConcertsMeta {\n      count\n    }\n  }\n':
-    types.GetEventsMetaDocument,
-  '\n  query getFutureEvents(\n    $skip: IntType!\n    $first: IntType!\n    $order: [ConcertModelOrderBy]\n    $filter: ConcertModelFilter\n  ) {\n    allConcerts(first: $first, skip: $skip, orderBy: $order, filter: $filter) {\n      ...concertDetail\n    }\n  }\n  \n':
-    types.GetFutureEventsDocument,
+  '\n  query getConcert($id: ItemId!) {\n    concert(filter: { id: { eq: $id } }) {\n      ...concertDetail\n    }\n  }\n  \n':
+    types.GetConcertDocument,
+  '\n  query getConcertPage($slug: String!) {\n    concert(filter: { slug: { eq: $slug } }) {\n      ...concertDetail\n    }\n  }\n  \n':
+    types.GetConcertPageDocument,
+  '\n  query getConcertSeo($slug: String!) {\n    concert(filter: { slug: { eq: $slug } }) {\n      ...concertPageSeo\n    }\n  }\n  \n':
+    types.GetConcertSeoDocument,
+  '\n  query getConcertsUrls(\n    $skip: IntType!\n    $first: IntType!\n    $order: [ConcertModelOrderBy]\n  ) {\n    allConcerts(first: $first, skip: $skip, orderBy: $order) {\n      ...concertLink\n    }\n  }\n  \n':
+    types.GetConcertsUrlsDocument,
+  '\n  query getConcerts(\n    $skip: IntType!\n    $first: IntType!\n    $order: [ConcertModelOrderBy]\n  ) {\n    allConcerts(first: $first, skip: $skip, orderBy: $order) {\n      ...concertDetail\n    }\n  }\n  \n':
+    types.GetConcertsDocument,
+  '\n  query getConcertsMeta {\n    _allConcertsMeta {\n      count\n    }\n  }\n':
+    types.GetConcertsMetaDocument,
+  '\n  query getFutureConcerts(\n    $skip: IntType!\n    $first: IntType!\n    $order: [ConcertModelOrderBy]\n    $filter: ConcertModelFilter\n  ) {\n    allConcerts(first: $first, skip: $skip, orderBy: $order, filter: $filter) {\n      ...concertDetail\n    }\n  }\n  \n':
+    types.GetFutureConcertsDocument,
   '\n  query getGeneralInfo {\n    general {\n      ...generalInfo\n    }\n  }\n  \n':
     types.GetGeneralInfoDocument,
   '\n  query getLocation($id: ItemId) {\n    location(filter: { id: { eq: $id } }) {\n      ...location\n    }\n  }\n  \n':
@@ -219,20 +216,14 @@ export function gql(
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(
+  source: '\n  fragment concertPageSeo on ConcertRecord {\n    ...identifiable\n    title\n    _seoMetaTags {\n      ...tag\n    }\n    seo {\n      ...seoField\n    }\n  }\n  \n  \n  \n'
+): (typeof documents)['\n  fragment concertPageSeo on ConcertRecord {\n    ...identifiable\n    title\n    _seoMetaTags {\n      ...tag\n    }\n    seo {\n      ...seoField\n    }\n  }\n  \n  \n  \n']
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(
   source: '\n  fragment coordinates on LatLonField {\n    latitude\n    longitude\n  }\n'
 ): (typeof documents)['\n  fragment coordinates on LatLonField {\n    latitude\n    longitude\n  }\n']
-/**
- * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function gql(
-  source: '\n  fragment eventLink on ConcertRecord {\n    ...identifiable\n    title\n    slug\n  }\n  \n'
-): (typeof documents)['\n  fragment eventLink on ConcertRecord {\n    ...identifiable\n    title\n    slug\n  }\n  \n']
-/**
- * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function gql(
-  source: '\n  fragment eventPageSeo on ConcertRecord {\n    ...identifiable\n    title\n    _seoMetaTags {\n      ...tag\n    }\n    seo {\n      ...seoField\n    }\n  }\n  \n  \n  \n'
-): (typeof documents)['\n  fragment eventPageSeo on ConcertRecord {\n    ...identifiable\n    title\n    _seoMetaTags {\n      ...tag\n    }\n    seo {\n      ...seoField\n    }\n  }\n  \n  \n  \n']
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
@@ -411,44 +402,44 @@ export function gql(
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(
-  source: '\n  query getEvent($id: ItemId!) {\n    concert(filter: { id: { eq: $id } }) {\n      ...concertDetail\n    }\n  }\n  \n'
-): (typeof documents)['\n  query getEvent($id: ItemId!) {\n    concert(filter: { id: { eq: $id } }) {\n      ...concertDetail\n    }\n  }\n  \n']
+  source: '\n  query getConcert($id: ItemId!) {\n    concert(filter: { id: { eq: $id } }) {\n      ...concertDetail\n    }\n  }\n  \n'
+): (typeof documents)['\n  query getConcert($id: ItemId!) {\n    concert(filter: { id: { eq: $id } }) {\n      ...concertDetail\n    }\n  }\n  \n']
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(
-  source: '\n  query getEventPage($slug: String!) {\n    concert(filter: { slug: { eq: $slug } }) {\n      ...concertDetail\n    }\n  }\n  \n'
-): (typeof documents)['\n  query getEventPage($slug: String!) {\n    concert(filter: { slug: { eq: $slug } }) {\n      ...concertDetail\n    }\n  }\n  \n']
+  source: '\n  query getConcertPage($slug: String!) {\n    concert(filter: { slug: { eq: $slug } }) {\n      ...concertDetail\n    }\n  }\n  \n'
+): (typeof documents)['\n  query getConcertPage($slug: String!) {\n    concert(filter: { slug: { eq: $slug } }) {\n      ...concertDetail\n    }\n  }\n  \n']
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(
-  source: '\n  query getEventSeo($slug: String!) {\n    concert(filter: { slug: { eq: $slug } }) {\n      ...eventPageSeo\n    }\n  }\n  \n'
-): (typeof documents)['\n  query getEventSeo($slug: String!) {\n    concert(filter: { slug: { eq: $slug } }) {\n      ...eventPageSeo\n    }\n  }\n  \n']
+  source: '\n  query getConcertSeo($slug: String!) {\n    concert(filter: { slug: { eq: $slug } }) {\n      ...concertPageSeo\n    }\n  }\n  \n'
+): (typeof documents)['\n  query getConcertSeo($slug: String!) {\n    concert(filter: { slug: { eq: $slug } }) {\n      ...concertPageSeo\n    }\n  }\n  \n']
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(
-  source: '\n  query getEventsUrls(\n    $skip: IntType!\n    $first: IntType!\n    $order: [ConcertModelOrderBy]\n  ) {\n    allConcerts(first: $first, skip: $skip, orderBy: $order) {\n      ...eventLink\n    }\n  }\n  \n'
-): (typeof documents)['\n  query getEventsUrls(\n    $skip: IntType!\n    $first: IntType!\n    $order: [ConcertModelOrderBy]\n  ) {\n    allConcerts(first: $first, skip: $skip, orderBy: $order) {\n      ...eventLink\n    }\n  }\n  \n']
+  source: '\n  query getConcertsUrls(\n    $skip: IntType!\n    $first: IntType!\n    $order: [ConcertModelOrderBy]\n  ) {\n    allConcerts(first: $first, skip: $skip, orderBy: $order) {\n      ...concertLink\n    }\n  }\n  \n'
+): (typeof documents)['\n  query getConcertsUrls(\n    $skip: IntType!\n    $first: IntType!\n    $order: [ConcertModelOrderBy]\n  ) {\n    allConcerts(first: $first, skip: $skip, orderBy: $order) {\n      ...concertLink\n    }\n  }\n  \n']
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(
-  source: '\n  query getEvents(\n    $skip: IntType!\n    $first: IntType!\n    $order: [ConcertModelOrderBy]\n  ) {\n    allConcerts(first: $first, skip: $skip, orderBy: $order) {\n      ...concertDetail\n    }\n  }\n  \n'
-): (typeof documents)['\n  query getEvents(\n    $skip: IntType!\n    $first: IntType!\n    $order: [ConcertModelOrderBy]\n  ) {\n    allConcerts(first: $first, skip: $skip, orderBy: $order) {\n      ...concertDetail\n    }\n  }\n  \n']
+  source: '\n  query getConcerts(\n    $skip: IntType!\n    $first: IntType!\n    $order: [ConcertModelOrderBy]\n  ) {\n    allConcerts(first: $first, skip: $skip, orderBy: $order) {\n      ...concertDetail\n    }\n  }\n  \n'
+): (typeof documents)['\n  query getConcerts(\n    $skip: IntType!\n    $first: IntType!\n    $order: [ConcertModelOrderBy]\n  ) {\n    allConcerts(first: $first, skip: $skip, orderBy: $order) {\n      ...concertDetail\n    }\n  }\n  \n']
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(
-  source: '\n  query getEventsMeta {\n    _allConcertsMeta {\n      count\n    }\n  }\n'
-): (typeof documents)['\n  query getEventsMeta {\n    _allConcertsMeta {\n      count\n    }\n  }\n']
+  source: '\n  query getConcertsMeta {\n    _allConcertsMeta {\n      count\n    }\n  }\n'
+): (typeof documents)['\n  query getConcertsMeta {\n    _allConcertsMeta {\n      count\n    }\n  }\n']
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(
-  source: '\n  query getFutureEvents(\n    $skip: IntType!\n    $first: IntType!\n    $order: [ConcertModelOrderBy]\n    $filter: ConcertModelFilter\n  ) {\n    allConcerts(first: $first, skip: $skip, orderBy: $order, filter: $filter) {\n      ...concertDetail\n    }\n  }\n  \n'
-): (typeof documents)['\n  query getFutureEvents(\n    $skip: IntType!\n    $first: IntType!\n    $order: [ConcertModelOrderBy]\n    $filter: ConcertModelFilter\n  ) {\n    allConcerts(first: $first, skip: $skip, orderBy: $order, filter: $filter) {\n      ...concertDetail\n    }\n  }\n  \n']
+  source: '\n  query getFutureConcerts(\n    $skip: IntType!\n    $first: IntType!\n    $order: [ConcertModelOrderBy]\n    $filter: ConcertModelFilter\n  ) {\n    allConcerts(first: $first, skip: $skip, orderBy: $order, filter: $filter) {\n      ...concertDetail\n    }\n  }\n  \n'
+): (typeof documents)['\n  query getFutureConcerts(\n    $skip: IntType!\n    $first: IntType!\n    $order: [ConcertModelOrderBy]\n    $filter: ConcertModelFilter\n  ) {\n    allConcerts(first: $first, skip: $skip, orderBy: $order, filter: $filter) {\n      ...concertDetail\n    }\n  }\n  \n']
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

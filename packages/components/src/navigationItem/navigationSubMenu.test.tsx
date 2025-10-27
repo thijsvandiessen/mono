@@ -1,7 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { NavigationItem } from '../navigationItem/index.js'
-import React from 'react'
 
 describe('NavigationItem', () => {
   it('should render a link', () => {
@@ -20,7 +19,7 @@ describe('NavigationItem', () => {
   })
 
   it('should render a label warning', () => {
-    render(<NavigationItem slug={'test'} />)
+    render(<NavigationItem slug="test" />)
 
     expect(screen.getByText('No label specified'))
   })

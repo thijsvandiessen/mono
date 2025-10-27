@@ -1,8 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Cross } from '../icons/cross.jsx'
-import { Hamburger } from '../icons/hamburger.jsx'
+import { Cross, Hamburger } from '../icons/index.js'
 import { MobileMenuItems } from '../mobileMenuItems/index.js'
 import classNames from 'classnames'
 import styles from './styles.module.scss'
@@ -25,9 +24,9 @@ export const MobileMenu = ({
 
   useEffect(() => {
     if (width < 768) {
-      document.body.classList.toggle('noscroll', open)
+      globalThis.document.body.classList.toggle('noscroll', open)
     } else {
-      document.body.classList.remove('noscroll')
+      globalThis.document.body.classList.remove('noscroll')
     }
   }, [open, width])
 

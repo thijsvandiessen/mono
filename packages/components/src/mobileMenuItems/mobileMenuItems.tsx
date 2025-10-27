@@ -1,5 +1,4 @@
 import { NavigationItem } from '../navigationItem/index.js'
-import React from 'react'
 import classNames from 'classnames'
 import styles from './styles.module.scss'
 import type { MobileMenuItemsProps } from './mobileMenuItems.type.js'
@@ -31,7 +30,7 @@ export const MobileMenuItems = ({ general }: MobileMenuItemsProps) => (
           </li>
         )
       }
-      return <NavigationItem key={item.id} slug={'/'} label={'Error'} />
+      return <NavigationItem key={item.id} slug={'/'} label="Error" />
     })}
   </ul>
 )

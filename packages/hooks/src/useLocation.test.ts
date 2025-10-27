@@ -4,7 +4,8 @@ import { useLocation } from './useLocation.js'
 import { vi, it, expect, describe } from 'vitest'
 
 vi.mock('@mono/data', () => {
-  const originalModule = vi.importActual('@mono/data')
+  const originalModule =
+    vi.importActual<typeof import('@mono/data')>('@mono/data')
   return {
     __esModule: true,
     ...originalModule,
@@ -13,7 +14,6 @@ vi.mock('@mono/data', () => {
 })
 
 const getLocationMock = vi.mocked(getLocation)
-
 describe('useLocation', () => {
   it('should return the number of pages', async () => {
     getLocationMock.mockResolvedValue({

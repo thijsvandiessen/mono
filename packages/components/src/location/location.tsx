@@ -1,5 +1,4 @@
 import { LocationView } from './locationView.jsx'
-import React from 'react'
 import { getLocation } from '@mono/data'
 
 export interface Props {

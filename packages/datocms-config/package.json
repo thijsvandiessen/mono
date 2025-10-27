@@ -6,11 +6,13 @@
   "exports": {
     ".": {
       "import": {
-        "default": "./src/index.ts"
+        "import": "./dist/index.ts",
+        "default": "./dist/index.ts"
       }
     }
   },
   "scripts": {
+    "build": "tsc",
     "lint": "pnpm run lint:styles",
     "lint:styles": "prettier . --write --list-different"
   },
@@ -26,6 +28,6 @@
     "eslint": "9.37.0",
     "prettier": "3.6.2",
     "typescript": "5.9.3",
-    "vitest": "3.2.4"
+    "vitest": "4.0.3"
   }
 }

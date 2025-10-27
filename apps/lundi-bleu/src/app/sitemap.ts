@@ -1,7 +1,7 @@
 import {
   type PageLink,
-  getEventUrls,
-  getEventsMeta,
+  getConcertUrls,
+  getConcertsMeta,
   getPages,
   getPagesMeta,
 } from '@mono/data'
@@ -10,10 +10,10 @@ const URL = 'https://lundi-bleu.nl'
 
 export default async function sitemap() {
   const pagesMeta = await getPagesMeta()
-  const eventsMeta = await getEventsMeta()
+  const concertsMeta = await getConcertsMeta()
 
   const pageCount = pagesMeta.data?.count ?? 0
-  const eventCount = eventsMeta.data?.count ?? 0
+  const concertCount = concertsMeta.data?.count ?? 0
 
   const pages: PageLink[] = []
 
@@ -25,8 +25,8 @@ export default async function sitemap() {
     })
   }
 
-  for (let step = 0; step < eventCount; step += 100) {
-    const { data } = await getEventUrls({ skip: step, first: 100 })
+  for (let step = 0; step < concertCount; step += 100) {
+    const { data } = await getConcertUrls({ skip: step, first: 100 })
     data?.map((item) => {
       pages.push(item)
     })

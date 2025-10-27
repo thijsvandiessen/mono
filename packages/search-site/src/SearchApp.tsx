@@ -6,7 +6,6 @@
 //   SearchBox,
 // } from 'react-instantsearch'
 // import { Hit } from './hit.js'
-import React from 'react'
 // import { searchClient } from './searchClient.js'
 
 export const SearchApp = () => {

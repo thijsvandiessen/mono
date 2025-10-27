@@ -95,8 +95,10 @@ const mockData: GetPageSeoQuery['page'] = {
   },
 }
 
-vi.mock('../getters/getSiteMetadata', () => {
-  const originalModule = vi.importActual('../getters/getSiteMetadata')
+vi.mock('../getters/getSiteMetadata.js', () => {
+  const originalModule = vi.importActual<
+    typeof import('../getters/getSiteMetadata.js')
+  >('../getters/getSiteMetadata.js')
   return {
     __esModule: true,
     ...originalModule,
@@ -110,7 +112,6 @@ vi.mock('../getters/getSiteMetadata', () => {
     })),
   }
 })
-
 describe('metadataFormatter', () => {
   it('should return defaults', async () => {
     const res = await metadataFormatter(undefined, 'some-page')

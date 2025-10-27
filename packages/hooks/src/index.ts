@@ -1,7 +1,7 @@
 export { useEscapeKey } from './useEscapeKey.js'
 export { useDimensions } from './useDimensions.js'
 export { useHrefClick } from './useHrefClick.js'
-export { useLoadMoreEvents } from './useLoadMoreEvents.js'
+export { useLoadMoreConcerts } from './useLoadMoreConcerts.js'
 export { useIntersectionObserver } from './useIntersectionObserver.js'
 export { useLocation } from './useLocation.js'
 export { useOutsideClick } from './useOutsideClick.js'

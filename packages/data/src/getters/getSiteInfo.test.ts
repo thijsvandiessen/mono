@@ -3,8 +3,9 @@ import { client } from '../index.js'
 import { getSiteInfo } from './getSiteInfo.js'
 import { vi, describe, it, expect } from 'vitest'
 
-vi.mock('../index', () => {
-  const originalModule = vi.importActual('../index')
+vi.mock('../index.js', () => {
+  const originalModule =
+    vi.importActual<typeof import('../index.js')>('../index.js')
   return {
     __esModule: true,
     ...originalModule,
@@ -16,7 +17,6 @@ vi.mock('../index', () => {
 })
 
 const mockedQuery = vi.mocked(client.query)
-
 describe('getSiteInfo', () => {
   it('should return an object', async () => {
     mockedQuery.mockResolvedValue({

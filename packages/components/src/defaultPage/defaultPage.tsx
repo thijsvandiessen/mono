@@ -1,5 +1,4 @@
 import { PageContent } from '../pageContent/index.js'
-import React from 'react'
 import { getPage } from '@mono/data'
 import { notFound } from '@mono/next-js'
 

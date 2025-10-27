@@ -1,12 +1,12 @@
 export { client } from './gqlClient.js'
 export {
-  getEvent,
-  getEventPage,
-  getEventPageSeo,
-  getEvents,
-  getEventsMeta,
-  getEventUrls,
-  getFutureEvents,
+  getConcert,
+  getConcertPage,
+  getConcertPageSeo,
+  getConcerts,
+  getConcertsMeta,
+  getConcertUrls,
+  getFutureConcerts,
   getGeneralInfo,
   getLocation,
   getLocations,
@@ -21,7 +21,7 @@ export {
 export type {
   Author,
   BlogPost,
-  Event,
+  Concert,
   PageLink,
   CloudinaryAsset,
   Image,

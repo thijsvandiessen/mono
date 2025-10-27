@@ -15,25 +15,25 @@
     "dev": "concurrently \"tsc --build --watch\" \"pnpm run --filter lundi-bleu dev\" \"pnpm run --filter example dev\"",
     "e2e": "pnpm run -r e2e",
     "lint": "pnpm run -r lint",
-    "test": "pnpm run -r test"
+    "test": "vitest run"
   },
   "devDependencies": {
     "@apollo/rover": "0.36.2",
     "@commitlint/cli": "20.1.0",
     "@commitlint/config-conventional": "20.0.0",
-    "@swc/core": "1.13.5",
-    "@types/node": "24.8.0",
+    "@swc/core": "1.13.21",
+    "@types/node": "24.9.1",
     "concurrently": "9.2.1",
     "dotenv": "17.2.3",
-    "eslint": "9.37.0",
+    "eslint": "9.38.0",
     "prettier": "3.6.2",
     "ts-node": "10.9.2",
     "turbo": "2.5.8",
     "typescript": "5.9.3",
-    "vitest": "3.2.4"
+    "vitest": "4.0.3"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "4.52.5"
   },
-  "packageManager": "pnpm@10.18.0"
+  "packageManager": "pnpm@10.19.0+sha512.c9fc7236e92adf5c8af42fd5bf1612df99c2ceb62f27047032f4720b33f8eacdde311865e91c411f2774f618d82f320808ecb51718bfa82c060c4ba7c76a32b8"
 }

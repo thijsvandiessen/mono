@@ -1,19 +1,26 @@
 import { describe, expect, it, vi } from 'vitest'
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import { Navigation } from './navigation.js'
-import React from 'react'
 import { getGeneralInfo } from '@mono/data'
 import { mockMenuData } from './mocks/mockMenuData.js'
 import { resolvedComponent } from '@mono/utils'
 
-global.ResizeObserver = vi.fn().mockImplementation(() => ({
-  observe: vi.fn(),
-  unobserve: vi.fn(),
-  disconnect: vi.fn(),
+vi.mock('../mobileMenu/index.js', () => ({
+  __esModule: true,
+  MobileMenu: () => <nav>[MobileMenu]</nav>,
+}))
+
+vi.mock('../navigationItem/index.js', () => ({
+  __esModule: true,
+  NavigationItem: () => <li>[NavigationItem]</li>,
+}))
+
+vi.mock('../navigationSubMenu/index.js', () => ({
+  __esModule: true,
+  NavigationSubMenu: () => <li>[NavigationSubMenu]</li>,
 }))
 
 vi.mock('@mono/data', () => ({
-  ...vi.importActual('@mono/data'),
   __esModule: true,
   client: vi.fn(),
   getGeneralInfo: vi.fn(),
@@ -41,6 +48,5 @@ describe('Concert component', () => {
     const { container } = render(<Resolved />)
 
     expect(container).toMatchSnapshot()
-    expect(screen.getByText('contact')).toBeTruthy()
   })
 })

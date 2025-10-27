@@ -1,7 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@mono/typescript-config/base.json",
+  "extends": "@mono/typescript-config",
   "compilerOptions": {
+    "types": ["node"],
     "module": "Preserve",
     "moduleResolution": "bundler",
     "outDir": "dist",

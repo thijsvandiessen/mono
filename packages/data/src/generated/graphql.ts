@@ -1,7 +1,7 @@
 /* eslint-disable */
 import type { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core'
 export type Maybe<T> = T | null
-export type InputMaybe<T> = Maybe<T>
+export type InputMaybe<T> = T | null | undefined
 export type Exact<T extends { [key: string]: unknown }> = {
   [K in keyof T]: T[K]
 }
@@ -3978,24 +3978,7 @@ export type ConcertLinkFragment = {
   id: string
 }
 
-export type CoordinatesFragment = {
-  __typename?: 'LatLonField'
-  latitude: number
-  longitude: number
-}
-
-export type EventLinkFragment = {
-  __typename: 'ConcertRecord'
-  title?: string | null
-  slug?: string | null
-  _createdAt: string
-  _firstPublishedAt: string
-  _publishedAt: string
-  _updatedAt: string
-  id: string
-}
-
-export type EventPageSeoFragment = {
+export type ConcertPageSeoFragment = {
   __typename: 'ConcertRecord'
   title?: string | null
   _createdAt: string
@@ -4015,6 +3998,12 @@ export type EventPageSeoFragment = {
     title?: string | null
     twitterCard?: string | null
   } | null
+}
+
+export type CoordinatesFragment = {
+  __typename?: 'LatLonField'
+  latitude: number
+  longitude: number
 }
 
 export type FileFragment = {
@@ -6028,11 +6017,11 @@ export type VideoFieldFragment = {
   width: number
 }
 
-export type GetEventQueryVariables = Exact<{
+export type GetConcertQueryVariables = Exact<{
   id: Scalars['ItemId']['input']
 }>
 
-export type GetEventQuery = {
+export type GetConcertQuery = {
   __typename?: 'Query'
   concert?: {
     __typename: 'ConcertRecord'
@@ -6447,11 +6436,11 @@ export type GetEventQuery = {
   } | null
 }
 
-export type GetEventPageQueryVariables = Exact<{
+export type GetConcertPageQueryVariables = Exact<{
   slug: Scalars['String']['input']
 }>
 
-export type GetEventPageQuery = {
+export type GetConcertPageQuery = {
   __typename?: 'Query'
   concert?: {
     __typename: 'ConcertRecord'
@@ -6866,11 +6855,11 @@ export type GetEventPageQuery = {
   } | null
 }
 
-export type GetEventSeoQueryVariables = Exact<{
+export type GetConcertSeoQueryVariables = Exact<{
   slug: Scalars['String']['input']
 }>
 
-export type GetEventSeoQuery = {
+export type GetConcertSeoQuery = {
   __typename?: 'Query'
   concert?: {
     __typename: 'ConcertRecord'
@@ -6895,7 +6884,7 @@ export type GetEventSeoQuery = {
   } | null
 }
 
-export type GetEventsUrlsQueryVariables = Exact<{
+export type GetConcertsUrlsQueryVariables = Exact<{
   skip: Scalars['IntType']['input']
   first: Scalars['IntType']['input']
   order?: InputMaybe<
@@ -6903,7 +6892,7 @@ export type GetEventsUrlsQueryVariables = Exact<{
   >
 }>
 
-export type GetEventsUrlsQuery = {
+export type GetConcertsUrlsQuery = {
   __typename?: 'Query'
   allConcerts: Array<{
     __typename: 'ConcertRecord'
@@ -6917,7 +6906,7 @@ export type GetEventsUrlsQuery = {
   }>
 }
 
-export type GetEventsQueryVariables = Exact<{
+export type GetConcertsQueryVariables = Exact<{
   skip: Scalars['IntType']['input']
   first: Scalars['IntType']['input']
   order?: InputMaybe<
@@ -6925,7 +6914,7 @@ export type GetEventsQueryVariables = Exact<{
   >
 }>
 
-export type GetEventsQuery = {
+export type GetConcertsQuery = {
   __typename?: 'Query'
   allConcerts: Array<{
     __typename: 'ConcertRecord'
@@ -7340,14 +7329,14 @@ export type GetEventsQuery = {
   }>
 }
 
-export type GetEventsMetaQueryVariables = Exact<{ [key: string]: never }>
+export type GetConcertsMetaQueryVariables = Exact<{ [key: string]: never }>
 
-export type GetEventsMetaQuery = {
+export type GetConcertsMetaQuery = {
   __typename?: 'Query'
   _allConcertsMeta: { __typename?: 'CollectionMetadata'; count: number }
 }
 
-export type GetFutureEventsQueryVariables = Exact<{
+export type GetFutureConcertsQueryVariables = Exact<{
   skip: Scalars['IntType']['input']
   first: Scalars['IntType']['input']
   order?: InputMaybe<
@@ -7356,7 +7345,7 @@ export type GetFutureEventsQueryVariables = Exact<{
   filter?: InputMaybe<ConcertModelFilter>
 }>
 
-export type GetFutureEventsQuery = {
+export type GetFutureConcertsQuery = {
   __typename?: 'Query'
   allConcerts: Array<{
     __typename: 'ConcertRecord'
@@ -12291,49 +12280,6 @@ export const ConcertDetailFragmentDoc = {
     },
   ],
 } as unknown as DocumentNode<ConcertDetailFragment, unknown>
-export const EventLinkFragmentDoc = {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'eventLink' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'ConcertRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          {
-            kind: 'FragmentSpread',
-            name: { kind: 'Name', value: 'identifiable' },
-          },
-          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'identifiable' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'RecordInterface' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: '_createdAt' } },
-          { kind: 'Field', name: { kind: 'Name', value: '_firstPublishedAt' } },
-          { kind: 'Field', name: { kind: 'Name', value: '_publishedAt' } },
-          { kind: 'Field', name: { kind: 'Name', value: '_updatedAt' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<EventLinkFragment, unknown>
 export const TagFragmentDoc = {
   kind: 'Document',
   definitions: [
@@ -12376,12 +12322,12 @@ export const SeoFieldFragmentDoc = {
     },
   ],
 } as unknown as DocumentNode<SeoFieldFragment, unknown>
-export const EventPageSeoFragmentDoc = {
+export const ConcertPageSeoFragmentDoc = {
   kind: 'Document',
   definitions: [
     {
       kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'eventPageSeo' },
+      name: { kind: 'Name', value: 'concertPageSeo' },
       typeCondition: {
         kind: 'NamedType',
         name: { kind: 'Name', value: 'ConcertRecord' },
@@ -12475,7 +12421,7 @@ export const EventPageSeoFragmentDoc = {
       },
     },
   ],
-} as unknown as DocumentNode<EventPageSeoFragment, unknown>
+} as unknown as DocumentNode<ConcertPageSeoFragment, unknown>
 export const VideoUploadFragmentDoc = {
   kind: 'Document',
   definitions: [
@@ -14970,14 +14916,14 @@ export const SiteMetadataFragmentDoc = {
     },
   ],
 } as unknown as DocumentNode<SiteMetadataFragment, unknown>
-export const GetEventDocument = {
-  __meta__: { hash: '85d1809e4a603451368661d24907bc3f7fe3af73' },
+export const GetConcertDocument = {
+  __meta__: { hash: '53cecd3bea2e69d7ce13c7984fba78a524905d70' },
   kind: 'Document',
   definitions: [
     {
       kind: 'OperationDefinition',
       operation: 'query',
-      name: { kind: 'Name', value: 'getEvent' },
+      name: { kind: 'Name', value: 'getConcert' },
       variableDefinitions: [
         {
           kind: 'VariableDefinition',
@@ -15976,15 +15922,15 @@ export const GetEventDocument = {
       },
     },
   ],
-} as unknown as DocumentNode<GetEventQuery, GetEventQueryVariables>
-export const GetEventPageDocument = {
-  __meta__: { hash: 'd99708bc2f59a9452008846360fc323a306b9cf5' },
+} as unknown as DocumentNode<GetConcertQuery, GetConcertQueryVariables>
+export const GetConcertPageDocument = {
+  __meta__: { hash: 'bb224e8b95a7cc1496c225912ffbefcee8bd3d5d' },
   kind: 'Document',
   definitions: [
     {
       kind: 'OperationDefinition',
       operation: 'query',
-      name: { kind: 'Name', value: 'getEventPage' },
+      name: { kind: 'Name', value: 'getConcertPage' },
       variableDefinitions: [
         {
           kind: 'VariableDefinition',
@@ -16983,15 +16929,15 @@ export const GetEventPageDocument = {
       },
     },
   ],
-} as unknown as DocumentNode<GetEventPageQuery, GetEventPageQueryVariables>
-export const GetEventSeoDocument = {
-  __meta__: { hash: 'b9650c4e2497e00a27be98d51294c42d3a7560cd' },
+} as unknown as DocumentNode<GetConcertPageQuery, GetConcertPageQueryVariables>
+export const GetConcertSeoDocument = {
+  __meta__: { hash: 'f3625c85d7ad9ec6d62b765a1b293cf515f57ead' },
   kind: 'Document',
   definitions: [
     {
       kind: 'OperationDefinition',
       operation: 'query',
-      name: { kind: 'Name', value: 'getEventSeo' },
+      name: { kind: 'Name', value: 'getConcertSeo' },
       variableDefinitions: [
         {
           kind: 'VariableDefinition',
@@ -17044,7 +16990,7 @@ export const GetEventSeoDocument = {
               selections: [
                 {
                   kind: 'FragmentSpread',
-                  name: { kind: 'Name', value: 'eventPageSeo' },
+                  name: { kind: 'Name', value: 'concertPageSeo' },
                 },
               ],
             },
@@ -17105,7 +17051,7 @@ export const GetEventSeoDocument = {
     },
     {
       kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'eventPageSeo' },
+      name: { kind: 'Name', value: 'concertPageSeo' },
       typeCondition: {
         kind: 'NamedType',
         name: { kind: 'Name', value: 'ConcertRecord' },
@@ -17148,15 +17094,15 @@ export const GetEventSeoDocument = {
       },
     },
   ],
-} as unknown as DocumentNode<GetEventSeoQuery, GetEventSeoQueryVariables>
-export const GetEventsUrlsDocument = {
-  __meta__: { hash: '6aca3034179f4489db57f6de59c8b80c9c2d471c' },
+} as unknown as DocumentNode<GetConcertSeoQuery, GetConcertSeoQueryVariables>
+export const GetConcertsUrlsDocument = {
+  __meta__: { hash: '3056e5b524da89bb4d70aafa0a9b88192fd758cc' },
   kind: 'Document',
   definitions: [
     {
       kind: 'OperationDefinition',
       operation: 'query',
-      name: { kind: 'Name', value: 'getEventsUrls' },
+      name: { kind: 'Name', value: 'getConcertsUrls' },
       variableDefinitions: [
         {
           kind: 'VariableDefinition',
@@ -17235,7 +17181,7 @@ export const GetEventsUrlsDocument = {
               selections: [
                 {
                   kind: 'FragmentSpread',
-                  name: { kind: 'Name', value: 'eventLink' },
+                  name: { kind: 'Name', value: 'concertLink' },
                 },
               ],
             },
@@ -17264,7 +17210,7 @@ export const GetEventsUrlsDocument = {
     },
     {
       kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'eventLink' },
+      name: { kind: 'Name', value: 'concertLink' },
       typeCondition: {
         kind: 'NamedType',
         name: { kind: 'Name', value: 'ConcertRecord' },
@@ -17282,15 +17228,18 @@ export const GetEventsUrlsDocument = {
       },
     },
   ],
-} as unknown as DocumentNode<GetEventsUrlsQuery, GetEventsUrlsQueryVariables>
-export const GetEventsDocument = {
-  __meta__: { hash: '37579c2eb93d83a403a6737884df7d0eeec7d5d3' },
+} as unknown as DocumentNode<
+  GetConcertsUrlsQuery,
+  GetConcertsUrlsQueryVariables
+>
+export const GetConcertsDocument = {
+  __meta__: { hash: 'e4d6cc00a00fdd0359dc0c3bb4c56bf6f38a5b83' },
   kind: 'Document',
   definitions: [
     {
       kind: 'OperationDefinition',
       operation: 'query',
-      name: { kind: 'Name', value: 'getEvents' },
+      name: { kind: 'Name', value: 'getConcerts' },
       variableDefinitions: [
         {
           kind: 'VariableDefinition',
@@ -18315,15 +18264,15 @@ export const GetEventsDocument = {
       },
     },
   ],
-} as unknown as DocumentNode<GetEventsQuery, GetEventsQueryVariables>
-export const GetEventsMetaDocument = {
-  __meta__: { hash: '5f4e0c315c52944b06ab4f74ded51360edf7746e' },
+} as unknown as DocumentNode<GetConcertsQuery, GetConcertsQueryVariables>
+export const GetConcertsMetaDocument = {
+  __meta__: { hash: '2392096a179965cb6b6b7c530b97bada3e30d8d7' },
   kind: 'Document',
   definitions: [
     {
       kind: 'OperationDefinition',
       operation: 'query',
-      name: { kind: 'Name', value: 'getEventsMeta' },
+      name: { kind: 'Name', value: 'getConcertsMeta' },
       selectionSet: {
         kind: 'SelectionSet',
         selections: [
@@ -18341,15 +18290,18 @@ export const GetEventsMetaDocument = {
       },
     },
   ],
-} as unknown as DocumentNode<GetEventsMetaQuery, GetEventsMetaQueryVariables>
-export const GetFutureEventsDocument = {
-  __meta__: { hash: 'b69036513ae83ae3f23b63e72eee8c843712230a' },
+} as unknown as DocumentNode<
+  GetConcertsMetaQuery,
+  GetConcertsMetaQueryVariables
+>
+export const GetFutureConcertsDocument = {
+  __meta__: { hash: '3738b0e0dc73f393a9dc0e6cf9d54161a3c3277e' },
   kind: 'Document',
   definitions: [
     {
       kind: 'OperationDefinition',
       operation: 'query',
-      name: { kind: 'Name', value: 'getFutureEvents' },
+      name: { kind: 'Name', value: 'getFutureConcerts' },
       variableDefinitions: [
         {
           kind: 'VariableDefinition',
@@ -19394,8 +19346,8 @@ export const GetFutureEventsDocument = {
     },
   ],
 } as unknown as DocumentNode<
-  GetFutureEventsQuery,
-  GetFutureEventsQueryVariables
+  GetFutureConcertsQuery,
+  GetFutureConcertsQueryVariables
 >
 export const GetGeneralInfoDocument = {
   __meta__: { hash: 'e9ca276953ca87df468b2c6b2899cfc8e52b5cae' },

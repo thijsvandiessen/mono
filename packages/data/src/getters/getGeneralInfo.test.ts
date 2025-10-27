@@ -3,20 +3,19 @@ import { client } from '../gqlClient.js'
 import { getGeneralInfo } from './getGeneralInfo.js'
 import { vi, describe, it, expect } from 'vitest'
 
-vi.mock('../gqlClient', () => {
-  const originalModule = vi.importActual('../gqlClient')
+vi.mock('../gqlClient.js', () => {
+  const originalModule =
+    vi.importActual<typeof import('../gqlClient.js')>('../gqlClient.js')
   return {
     __esModule: true,
     ...originalModule,
     client: {
-      ...originalModule,
       query: vi.fn(),
     },
   }
 })
 
 const mockedQuery = vi.mocked(client.query)
-
 describe('getGeneralInfo', () => {
   it('should return an object', async () => {
     mockedQuery.mockResolvedValue({

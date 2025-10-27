@@ -1,4 +1,14 @@
 packages:
-  - 'apps/**/*'
-  - 'packages/**/*'
-  - 'e2e'
+  - apps/**/*
+  - packages/**/*
+  - e2e
+
+ignoredBuiltDependencies:
+  - '@swc/core'
+
+onlyBuiltDependencies:
+  - '@apollo/rover'
+  - '@parcel/watcher'
+  - esbuild
+  - sharp
+  - unrs-resolver

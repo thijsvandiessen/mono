@@ -2,18 +2,16 @@ import { describe, expect, it, vi } from 'vitest'
 import { DefaultLayout } from './defaultLayout.jsx'
 import { render } from '@testing-library/react'
 
-vi.mock('../navigation', () => {
-  const originalModule = vi.importActual('../navigation')
+vi.mock('../navigation/index.js', () => {
   return {
-    ...originalModule,
+    _esModule: true,
     Navigation: vi.fn(() => <nav>[Navigation]</nav>),
   }
 })
 
-vi.mock('../footer', () => {
-  const originalModule = vi.importActual('../footer')
+vi.mock('../footer/index.js', () => {
   return {
-    ...originalModule,
+    _esModule: true,
     Footer: vi.fn(() => <footer>[Footer]</footer>),
   }
 })
