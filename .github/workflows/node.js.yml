@@ -36,7 +36,7 @@ jobs:
         run: pnpm i
 
       - name: Validate fast with oxlint
-        run: npx oxlint@1.19.0
+        run: npx oxlint@1.24.0
 
       - name: Check formatting and eslint
         run: pnpm exec turbo lint

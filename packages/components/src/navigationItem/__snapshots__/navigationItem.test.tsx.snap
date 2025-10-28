@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NavigationItem > should render a link 1`] = `
+<div>
+  <li
+    class="_navItem_5ff49f"
+  >
+    <a
+      class="_link_5ff49f text-large"
+      href="/url"
+    >
+      homepage
+    </a>
+  </li>
+</div>
+`;

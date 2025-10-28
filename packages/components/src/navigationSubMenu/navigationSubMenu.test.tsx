@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { NavigationSubMenu } from '../navigationSubMenu/index.js'
+import { NavigationSubMenu } from './index.js'
 import React from 'react'
 import { mockData } from './mocks/mockData.js'
 

@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "next build",
-    "dev": "next dev --turbo -p 4000",
+    "dev": "NODE_OPTIONS='--inspect' next dev --turbo -p 4000",
     "lint": "pnpm run lint:styles",
     "lint:styles": "prettier . --write --list-different",
     "start": "next start"
@@ -17,7 +17,7 @@
     "@mono/next-js": "workspace:*",
     "@mono/utils": "workspace:*",
     "classnames": "2.5.1",
-    "next": "15.5.5",
+    "next": "16.0.0",
     "react": "19.2.0",
     "react-dom": "19.2.0"
   },
@@ -26,6 +26,7 @@
     "@types/node": "24.9.1",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
+    "babel-plugin-react-compiler": "1.0.0",
     "dotenv": "17.2.3",
     "prettier": "3.6.2",
     "sass": "1.93.2",
