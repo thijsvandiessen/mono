@@ -1,11 +1,12 @@
 'use client'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api'
-import React, { useCallback } from 'react'
+import React, { useCallback, useId } from 'react'
 
 interface Pin {
   lat: number
   lng: number
   title: string
+  description: string
 }
 
 interface Dimensions {
@@ -21,28 +22,52 @@ export interface Props {
 }
 
 export const Map = ({ id, pin, googleMapsApiKey, dimensions }: Props) => {
+  const mapId = useId()
   const { isLoaded } = useJsApiLoader({
     id,
     googleMapsApiKey,
   })
 
   const onLoad = useCallback(
-    (map: google.maps.Map | null | undefined) => {
-      const marker = new google.maps.marker.AdvancedMarkerElement({
-        position: { lat: pin.lat, lng: pin.lng },
-        map,
-        title: pin.title,
-      })
+    (googleMap: google.maps.Map) => {
+      async function initMap(): Promise<void> {
+        //  Request the needed libraries.
+        const { AdvancedMarkerElement } = await Promise.resolve(
+          google.maps.importLibrary(
+            'marker'
+          ) as Promise<google.maps.MarkerLibrary>
+        )
 
-      const infoWindow = new google.maps.InfoWindow({
-        // ariaLabel: title,
-      })
+        const map = new google.maps.Map(googleMap.getDiv(), {
+          zoom: 14,
+          center: { lat: pin.lat, lng: pin.lng },
+          mapId,
+        })
 
-      marker.addListener('click', () => {
-        infoWindow.close()
-        infoWindow.setContent(marker.title)
-        infoWindow.open(marker.map, marker)
-      })
+        // Set map options.
+        map.setOptions({
+          mapTypeControl: false,
+        })
+
+        const marker = new AdvancedMarkerElement({
+          map,
+          position: { lat: pin.lat, lng: pin.lng },
+          title: pin.title,
+        })
+
+        const infoWindow = new google.maps.InfoWindow({
+          ariaLabel: `${pin.title} - ${pin.description}`,
+        })
+
+        marker.addListener('click', () => {
+          infoWindow.close()
+          infoWindow.setHeaderContent(pin.title)
+          infoWindow.setContent(pin.description)
+          infoWindow.open(marker.map, marker)
+        })
+      }
+
+      initMap()
     },
     [pin.lat, pin.lng, pin.title]
   )
@@ -60,6 +85,7 @@ export const Map = ({ id, pin, googleMapsApiKey, dimensions }: Props) => {
 
   return (
     <GoogleMap
+      id={mapId}
       mapContainerStyle={{
         width: dimensions.width,
         height: dimensions.height,
@@ -69,7 +95,6 @@ export const Map = ({ id, pin, googleMapsApiKey, dimensions }: Props) => {
         lat: pin.lat,
         lng: pin.lng,
       }}
-      zoom={14}
     />
   )
 }

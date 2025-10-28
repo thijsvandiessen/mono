@@ -5,7 +5,7 @@ type Props = {
   domain: string
 }
 
-export const customNextConfig: NextConfig = ({ domain }: Props) => ({
+export const customNextConfig = ({ domain }: Props): NextConfig => ({
   poweredByHeader: false,
   reactStrictMode: true,
   experimental: {

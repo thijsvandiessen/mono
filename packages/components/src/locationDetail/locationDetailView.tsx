@@ -23,6 +23,7 @@ export const LocationDetailView = ({ data, googleMapsApiKey }: Props) => {
           id="concert-location"
           pin={{
             title: title ?? '',
+            description: address ?? '',
             lat,
             lng,
           }}
