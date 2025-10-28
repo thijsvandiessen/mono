@@ -15,7 +15,7 @@
     "dev": "concurrently \"tsc --build --watch\" \"pnpm run --filter lundi-bleu dev\" \"pnpm run --filter example dev\"",
     "e2e": "pnpm run -r e2e",
     "lint": "pnpm run -r lint",
-    "test": "vitest run"
+    "test": "vitest run -c ./vitest.config.ts"
   },
   "devDependencies": {
     "@apollo/rover": "0.36.2",
