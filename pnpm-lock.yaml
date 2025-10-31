@@ -46,7 +46,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 4.0.6
-        version: 4.0.6(@types/node@24.9.2)(happy-dom@18.0.1)(jiti@2.4.2)(jsdom@27.0.1(postcss@8.5.6))(sass@1.93.2)(yaml@2.8.0)
+        version: 4.0.6(@types/node@24.9.2)(happy-dom@18.0.1)(jiti@2.4.2)(jsdom@27.1.0)(sass@1.93.2)(yaml@2.8.0)
     optionalDependencies:
       '@rollup/rollup-linux-x64-gnu':
         specifier: 4.52.5
@@ -259,8 +259,8 @@ importers:
         specifier: 7.13.3
         version: 7.13.3(eslint@9.38.0(jiti@2.4.2))(typescript@5.9.3)
       jsdom:
-        specifier: 27.0.1
-        version: 27.0.1(postcss@8.5.6)
+        specifier: 27.1.0
+        version: 27.1.0
       prettier:
         specifier: 3.6.2
         version: 3.6.2
@@ -278,7 +278,7 @@ importers:
         version: 5.1.4(typescript@5.9.3)(vite@7.1.12(@types/node@24.9.2)(jiti@2.4.2)(sass@1.93.2)(yaml@2.8.0))
       vitest:
         specifier: 4.0.6
-        version: 4.0.6(@types/node@24.9.2)(happy-dom@18.0.1)(jiti@2.4.2)(jsdom@27.0.1(postcss@8.5.6))(sass@1.93.2)(yaml@2.8.0)
+        version: 4.0.6(@types/node@24.9.2)(happy-dom@18.0.1)(jiti@2.4.2)(jsdom@27.1.0)(sass@1.93.2)(yaml@2.8.0)
 
   packages/data:
     dependencies:
@@ -378,7 +378,7 @@ importers:
         version: 5.1.4(typescript@5.9.3)(vite@7.1.12(@types/node@24.9.2)(jiti@2.4.2)(sass@1.93.2)(yaml@2.8.0))
       vitest:
         specifier: 4.0.6
-        version: 4.0.6(@types/node@24.9.2)(happy-dom@18.0.1)(jiti@2.4.2)(jsdom@27.0.1(postcss@8.5.6))(sass@1.93.2)(yaml@2.8.0)
+        version: 4.0.6(@types/node@24.9.2)(happy-dom@18.0.1)(jiti@2.4.2)(jsdom@27.1.0)(sass@1.93.2)(yaml@2.8.0)
 
   packages/datocms-config:
     dependencies:
@@ -412,7 +412,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 4.0.6
-        version: 4.0.6(@types/node@24.9.2)(happy-dom@18.0.1)(jiti@2.4.2)(jsdom@27.0.1(postcss@8.5.6))(sass@1.93.2)(yaml@2.8.0)
+        version: 4.0.6(@types/node@24.9.2)(happy-dom@18.0.1)(jiti@2.4.2)(jsdom@27.1.0)(sass@1.93.2)(yaml@2.8.0)
 
   packages/eslint-config:
     devDependencies:
@@ -430,7 +430,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 4.0.6
-        version: 4.0.6(@types/node@24.9.2)(happy-dom@18.0.1)(jiti@2.4.2)(jsdom@27.0.1(postcss@8.5.6))(sass@1.93.2)(yaml@2.8.0)
+        version: 4.0.6(@types/node@24.9.2)(happy-dom@18.0.1)(jiti@2.4.2)(jsdom@27.1.0)(sass@1.93.2)(yaml@2.8.0)
 
   packages/hooks:
     dependencies:
@@ -472,8 +472,8 @@ importers:
         specifier: 9.38.0
         version: 9.38.0(jiti@2.4.2)
       jsdom:
-        specifier: 27.0.1
-        version: 27.0.1(postcss@8.5.6)
+        specifier: 27.1.0
+        version: 27.1.0
       prettier:
         specifier: 3.6.2
         version: 3.6.2
@@ -488,7 +488,7 @@ importers:
         version: 5.1.4(typescript@5.9.3)(vite@7.1.12(@types/node@24.9.2)(jiti@2.4.2)(sass@1.93.2)(yaml@2.8.0))
       vitest:
         specifier: 4.0.6
-        version: 4.0.6(@types/node@24.9.2)(happy-dom@18.0.1)(jiti@2.4.2)(jsdom@27.0.1(postcss@8.5.6))(sass@1.93.2)(yaml@2.8.0)
+        version: 4.0.6(@types/node@24.9.2)(happy-dom@18.0.1)(jiti@2.4.2)(jsdom@27.1.0)(sass@1.93.2)(yaml@2.8.0)
 
   packages/next-js:
     dependencies:
@@ -531,7 +531,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 4.0.6
-        version: 4.0.6(@types/node@24.9.2)(happy-dom@18.0.1)(jiti@2.4.2)(jsdom@27.0.1(postcss@8.5.6))(sass@1.93.2)(yaml@2.8.0)
+        version: 4.0.6(@types/node@24.9.2)(happy-dom@18.0.1)(jiti@2.4.2)(jsdom@27.1.0)(sass@1.93.2)(yaml@2.8.0)
 
   packages/search-site:
     dependencies:
@@ -579,8 +579,8 @@ importers:
         specifier: 5.1.0
         version: 5.1.0(vite@7.1.12(@types/node@24.9.2)(jiti@2.4.2)(sass@1.93.2)(yaml@2.8.0))
       jsdom:
-        specifier: 27.0.1
-        version: 27.0.1(postcss@8.5.6)
+        specifier: 27.1.0
+        version: 27.1.0
       prettier:
         specifier: 3.6.2
         version: 3.6.2
@@ -592,13 +592,13 @@ importers:
         version: 5.1.4(typescript@5.9.3)(vite@7.1.12(@types/node@24.9.2)(jiti@2.4.2)(sass@1.93.2)(yaml@2.8.0))
       vitest:
         specifier: 4.0.6
-        version: 4.0.6(@types/node@24.9.2)(happy-dom@18.0.1)(jiti@2.4.2)(jsdom@27.0.1(postcss@8.5.6))(sass@1.93.2)(yaml@2.8.0)
+        version: 4.0.6(@types/node@24.9.2)(happy-dom@18.0.1)(jiti@2.4.2)(jsdom@27.1.0)(sass@1.93.2)(yaml@2.8.0)
 
   packages/typescript-config:
     devDependencies:
       vitest:
         specifier: 4.0.6
-        version: 4.0.6(@types/node@24.9.2)(happy-dom@18.0.1)(jiti@2.4.2)(jsdom@27.0.1(postcss@8.5.6))(sass@1.93.2)(yaml@2.8.0)
+        version: 4.0.6(@types/node@24.9.2)(happy-dom@18.0.1)(jiti@2.4.2)(jsdom@27.1.0)(sass@1.93.2)(yaml@2.8.0)
 
   packages/utils:
     dependencies:
@@ -656,7 +656,7 @@ importers:
         version: 5.1.4(typescript@5.9.3)(vite@7.1.12(@types/node@24.9.2)(jiti@2.4.2)(sass@1.93.2)(yaml@2.8.0))
       vitest:
         specifier: 4.0.6
-        version: 4.0.6(@types/node@24.9.2)(happy-dom@18.0.1)(jiti@2.4.2)(jsdom@27.0.1(postcss@8.5.6))(sass@1.93.2)(yaml@2.8.0)
+        version: 4.0.6(@types/node@24.9.2)(happy-dom@18.0.1)(jiti@2.4.2)(jsdom@27.1.0)(sass@1.93.2)(yaml@2.8.0)
 
 packages:
 
@@ -667,6 +667,9 @@ packages:
     peerDependenciesMeta:
       graphql:
         optional: true
+
+  '@acemir/cssom@0.9.19':
+    resolution: {integrity: sha512-Pp2gAQXPZ2o7lt4j0IMwNRXqQ3pagxtDj5wctL5U2Lz4oV0ocDNlkgx4DpxfyKav4S/bePuI+SMqcBSUHLy9kg==}
 
   '@adobe/css-tools@4.4.3':
     resolution: {integrity: sha512-VQKMkwriZbaOgVCby1UDY/LDk5fIjhQicCvVPFqfe+69fWaPWydbWJ3wRt59/YzIwda1I81loas3oCoHxnqvdA==}
@@ -977,11 +980,9 @@ packages:
     peerDependencies:
       '@csstools/css-tokenizer': ^3.0.4
 
-  '@csstools/css-syntax-patches-for-csstree@1.0.14':
-    resolution: {integrity: sha512-zSlIxa20WvMojjpCSy8WrNpcZ61RqfTfX3XTaOeVlGJrt/8HF3YbzgFZa01yTbT4GWQLwfTcC3EB8i3XnB647Q==}
+  '@csstools/css-syntax-patches-for-csstree@1.0.15':
+    resolution: {integrity: sha512-q0p6zkVq2lJnmzZVPR33doA51G7YOja+FBvRdp5ISIthL0MtFCgYHHhR563z9WFGxcOn0WfjSkPDJ5Qig3H3Sw==}
     engines: {node: '>=18'}
-    peerDependencies:
-      postcss: ^8.4
 
   '@csstools/css-tokenizer@3.0.4':
     resolution: {integrity: sha512-Vd/9EVDiu6PPJt9yAh6roZP6El1xHrdvIVGjyBsHR0RYwNHgL7FJPyIIW4fANJNG6FtyZfvlRPpFI4ZM/lubvw==}
@@ -2613,8 +2614,8 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
-  agent-base@7.1.3:
-    resolution: {integrity: sha512-jRR5wdylq8CkOe6hei19GGZnxM6rBGwFl3Bg0YItGDimvjGtAvdZk4Pu6Cl4u4Igsws4a1fd1Vq3ezrhn4KmFw==}
+  agent-base@7.1.4:
+    resolution: {integrity: sha512-MnA+YT8fwfJPgBx3m60MNqakm30XOkyIoH1y6huTQvC0PwZG7ki8NacLBcrPbNoo8vEZy7Jpuk7+jMO+CUovTQ==}
     engines: {node: '>= 14'}
 
   ai@5.0.81:
@@ -2982,8 +2983,8 @@ packages:
   css.escape@1.5.1:
     resolution: {integrity: sha512-YUifsXXuknHlUsmlgyY0PKzgPOr7/FjCePfHNt0jxm83wHZi44VDMQ7/fGNkjY3/jV1MC+1CmZbaHzugyeRtpg==}
 
-  cssstyle@5.3.1:
-    resolution: {integrity: sha512-g5PC9Aiph9eiczFpcgUhd9S4UUO3F+LHGRIi5NUMZ+4xtoIYbHNZwZnWA2JsFGe8OU8nl4WyaEFiZuGuxlutJQ==}
+  cssstyle@5.3.2:
+    resolution: {integrity: sha512-zDMqXh8Vs1CdRYZQ2M633m/SFgcjlu8RB8b/1h82i+6vpArF507NSYIWJHGlJaTWoS+imcnctmEz43txhbVkOw==}
     engines: {node: '>=20'}
 
   csstype@3.1.3:
@@ -3927,9 +3928,9 @@ packages:
     resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
     hasBin: true
 
-  jsdom@27.0.1:
-    resolution: {integrity: sha512-SNSQteBL1IlV2zqhwwolaG9CwhIhTvVHWg3kTss/cLE7H/X4644mtPQqYvCfsSrGQWt9hSZcgOXX8bOZaMN+kA==}
-    engines: {node: '>=20'}
+  jsdom@27.1.0:
+    resolution: {integrity: sha512-Pcfm3eZ+eO4JdZCXthW9tCDT3nF4K+9dmeZ+5X39n+Kqz0DDIABRP5CAEOHRFZk8RGuC2efksTJxrjp8EXCunQ==}
+    engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
     peerDependencies:
       canvas: ^3.0.0
     peerDependenciesMeta:
@@ -4065,10 +4066,6 @@ packages:
 
   lower-case@2.0.2:
     resolution: {integrity: sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==}
-
-  lru-cache@11.1.0:
-    resolution: {integrity: sha512-QIXZUBJUx+2zHUdQujWejBkcD9+cs94tLn0+YL8UrCh+D5sCXZ4c7LaEH48pNwRY3MLDgqUFyhlCyjJPf1WP0A==}
-    engines: {node: 20 || >=22}
 
   lru-cache@11.2.2:
     resolution: {integrity: sha512-F9ODfyqML2coTIsQpSkRHnLSZMtkU8Q+mSfcaIyKwy58u+8k5nvAYeiNhsyMARvzNcXJ9QfWVrcPsC9e9rAxtg==}
@@ -4594,9 +4591,6 @@ packages:
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
 
-  rrweb-cssom@0.8.0:
-    resolution: {integrity: sha512-guoltQEx+9aMf2gDZ0s62EcV8lsXR+0w8915TC3ITdn2YueuNjdAYh/levpU9nFaoChh9RUS5ZdQMrKfVEN9tw==}
-
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
 
@@ -4884,11 +4878,11 @@ packages:
   title-case@3.0.3:
     resolution: {integrity: sha512-e1zGYRvbffpcHIrnuqT0Dh+gEJtDaxDSoG4JAIpq4oDFyooziLBIiYQv0GBT4FUAnUop5uZ1hiIAj7oAF6sOCA==}
 
-  tldts-core@7.0.16:
-    resolution: {integrity: sha512-XHhPmHxphLi+LGbH0G/O7dmUH9V65OY20R7vH8gETHsp5AZCjBk9l8sqmRKLaGOxnETU7XNSDUPtewAy/K6jbA==}
+  tldts-core@7.0.17:
+    resolution: {integrity: sha512-DieYoGrP78PWKsrXr8MZwtQ7GLCUeLxihtjC1jZsW1DnvSMdKPitJSe8OSYDM2u5H6g3kWJZpePqkp43TfLh0g==}
 
-  tldts@7.0.16:
-    resolution: {integrity: sha512-5bdPHSwbKTeHmXrgecID4Ljff8rQjv7g8zKQPkCozRo2HWWni+p310FSn5ImI+9kWw9kK4lzOB5q/a6iv0IJsw==}
+  tldts@7.0.17:
+    resolution: {integrity: sha512-Y1KQBgDd/NUc+LfOtKS6mNsC9CCaH+m2P1RoIZy7RAPo3C3/t8X45+zgut31cRZtZ3xKPjfn3TkGTrctC2TQIQ==}
     hasBin: true
 
   tmp-promise@3.0.3:
@@ -5278,18 +5272,6 @@ packages:
     resolution: {integrity: sha512-42AtmgqjV+X1VpdOfyTGOYRi0/zsoLqtXQckTmqTeybT+BDIbM/Guxo7x3pE2vtpr1ok6xRqM9OpBe+Jyoqyww==}
     engines: {node: '>=18'}
 
-  ws@8.18.2:
-    resolution: {integrity: sha512-DMricUmwGZUVr++AEAe2uiVM7UoO9MAVZMDu05UQOaUII0lp+zOzLLU4Xqh/JvTqklB1T4uELaaPBKyjE1r4fQ==}
-    engines: {node: '>=10.0.0'}
-    peerDependencies:
-      bufferutil: ^4.0.1
-      utf-8-validate: '>=5.0.2'
-    peerDependenciesMeta:
-      bufferutil:
-        optional: true
-      utf-8-validate:
-        optional: true
-
   ws@8.18.3:
     resolution: {integrity: sha512-PEIGCY5tSlUt50cqyMXfCzX+oOPqN0vuGqWzbcJ2xvnkzkq46oOpz7dQaTDBdfICb4N14+GARUDw2XV2N4tvzg==}
     engines: {node: '>=10.0.0'}
@@ -5368,6 +5350,8 @@ snapshots:
   '@0no-co/graphql.web@1.1.2(graphql@16.11.0)':
     optionalDependencies:
       graphql: 16.11.0
+
+  '@acemir/cssom@0.9.19': {}
 
   '@adobe/css-tools@4.4.3': {}
 
@@ -5791,9 +5775,7 @@ snapshots:
     dependencies:
       '@csstools/css-tokenizer': 3.0.4
 
-  '@csstools/css-syntax-patches-for-csstree@1.0.14(postcss@8.5.6)':
-    dependencies:
-      postcss: 8.5.6
+  '@csstools/css-syntax-patches-for-csstree@1.0.15': {}
 
   '@csstools/css-tokenizer@3.0.4': {}
 
@@ -6237,10 +6219,10 @@ snapshots:
       '@graphql-tools/utils': 10.9.1(graphql@16.11.0)
       '@whatwg-node/disposablestack': 0.0.6
       graphql: 16.11.0
-      graphql-ws: 6.0.5(graphql@16.11.0)(ws@8.18.2)
-      isomorphic-ws: 5.0.0(ws@8.18.2)
+      graphql-ws: 6.0.5(graphql@16.11.0)(ws@8.18.3)
+      isomorphic-ws: 5.0.0(ws@8.18.3)
       tslib: 2.8.1
-      ws: 8.18.2
+      ws: 8.18.3
     transitivePeerDependencies:
       - '@fastify/websocket'
       - bufferutil
@@ -6268,9 +6250,9 @@ snapshots:
       '@graphql-tools/utils': 10.9.1(graphql@16.11.0)
       '@types/ws': 8.18.1
       graphql: 16.11.0
-      isomorphic-ws: 5.0.0(ws@8.18.2)
+      isomorphic-ws: 5.0.0(ws@8.18.3)
       tslib: 2.8.1
-      ws: 8.18.2
+      ws: 8.18.3
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -6403,10 +6385,10 @@ snapshots:
       '@whatwg-node/fetch': 0.10.8
       '@whatwg-node/promise-helpers': 1.3.2
       graphql: 16.11.0
-      isomorphic-ws: 5.0.0(ws@8.18.2)
+      isomorphic-ws: 5.0.0(ws@8.18.3)
       sync-fetch: 0.6.0-2
       tslib: 2.8.1
-      ws: 8.18.2
+      ws: 8.18.3
     transitivePeerDependencies:
       - '@fastify/websocket'
       - '@types/node'
@@ -7478,7 +7460,7 @@ snapshots:
 
   acorn@8.15.0: {}
 
-  agent-base@7.1.3: {}
+  agent-base@7.1.4: {}
 
   ai@5.0.81(zod@4.1.12):
     dependencies:
@@ -7928,13 +7910,11 @@ snapshots:
 
   css.escape@1.5.1: {}
 
-  cssstyle@5.3.1(postcss@8.5.6):
+  cssstyle@5.3.2:
     dependencies:
       '@asamuzakjp/css-color': 4.0.5
-      '@csstools/css-syntax-patches-for-csstree': 1.0.14(postcss@8.5.6)
+      '@csstools/css-syntax-patches-for-csstree': 1.0.15
       css-tree: 3.1.0
-    transitivePeerDependencies:
-      - postcss
 
   csstype@3.1.3: {}
 
@@ -8709,11 +8689,11 @@ snapshots:
       graphql: 16.11.0
       tslib: 2.8.1
 
-  graphql-ws@6.0.5(graphql@16.11.0)(ws@8.18.2):
+  graphql-ws@6.0.5(graphql@16.11.0)(ws@8.18.3):
     dependencies:
       graphql: 16.11.0
     optionalDependencies:
-      ws: 8.18.2
+      ws: 8.18.3
 
   graphql@16.11.0: {}
 
@@ -8772,14 +8752,14 @@ snapshots:
 
   http-proxy-agent@7.0.2:
     dependencies:
-      agent-base: 7.1.3
+      agent-base: 7.1.4
       debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
 
   https-proxy-agent@7.0.6:
     dependencies:
-      agent-base: 7.1.3
+      agent-base: 7.1.4
       debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
@@ -9016,9 +8996,9 @@ snapshots:
 
   isexe@2.0.0: {}
 
-  isomorphic-ws@5.0.0(ws@8.18.2):
+  isomorphic-ws@5.0.0(ws@8.18.3):
     dependencies:
-      ws: 8.18.2
+      ws: 8.18.3
 
   iterator.prototype@1.1.5:
     dependencies:
@@ -9041,10 +9021,11 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
-  jsdom@27.0.1(postcss@8.5.6):
+  jsdom@27.1.0:
     dependencies:
+      '@acemir/cssom': 0.9.19
       '@asamuzakjp/dom-selector': 6.7.3
-      cssstyle: 5.3.1(postcss@8.5.6)
+      cssstyle: 5.3.2
       data-urls: 6.0.0
       decimal.js: 10.6.0
       html-encoding-sniffer: 4.0.0
@@ -9052,7 +9033,6 @@ snapshots:
       https-proxy-agent: 7.0.6
       is-potential-custom-element-name: 1.0.1
       parse5: 8.0.0
-      rrweb-cssom: 0.8.0
       saxes: 6.0.0
       symbol-tree: 3.2.4
       tough-cookie: 6.0.0
@@ -9065,7 +9045,6 @@ snapshots:
       xml-name-validator: 5.0.0
     transitivePeerDependencies:
       - bufferutil
-      - postcss
       - supports-color
       - utf-8-validate
 
@@ -9191,8 +9170,6 @@ snapshots:
   lower-case@2.0.2:
     dependencies:
       tslib: 2.8.1
-
-  lru-cache@11.1.0: {}
 
   lru-cache@11.2.2: {}
 
@@ -9489,7 +9466,7 @@ snapshots:
 
   path-scurry@2.0.0:
     dependencies:
-      lru-cache: 11.1.0
+      lru-cache: 11.2.2
       minipass: 7.1.2
 
   path-type@4.0.0: {}
@@ -9724,8 +9701,6 @@ snapshots:
       '@rollup/rollup-win32-x64-gnu': 4.52.5
       '@rollup/rollup-win32-x64-msvc': 4.52.5
       fsevents: 2.3.3
-
-  rrweb-cssom@0.8.0: {}
 
   run-parallel@1.2.0:
     dependencies:
@@ -10073,11 +10048,11 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  tldts-core@7.0.16: {}
+  tldts-core@7.0.17: {}
 
-  tldts@7.0.16:
+  tldts@7.0.17:
     dependencies:
-      tldts-core: 7.0.16
+      tldts-core: 7.0.17
 
   tmp-promise@3.0.3:
     dependencies:
@@ -10091,7 +10066,7 @@ snapshots:
 
   tough-cookie@6.0.0:
     dependencies:
-      tldts: 7.0.16
+      tldts: 7.0.17
 
   tr46@0.0.3: {}
 
@@ -10339,7 +10314,7 @@ snapshots:
       sass: 1.93.2
       yaml: 2.8.0
 
-  vitest@4.0.6(@types/node@24.9.2)(happy-dom@18.0.1)(jiti@2.4.2)(jsdom@27.0.1(postcss@8.5.6))(sass@1.93.2)(yaml@2.8.0):
+  vitest@4.0.6(@types/node@24.9.2)(happy-dom@18.0.1)(jiti@2.4.2)(jsdom@27.1.0)(sass@1.93.2)(yaml@2.8.0):
     dependencies:
       '@vitest/expect': 4.0.6
       '@vitest/mocker': 4.0.6(vite@7.1.12(@types/node@24.9.2)(jiti@2.4.2)(sass@1.93.2)(yaml@2.8.0))
@@ -10364,7 +10339,7 @@ snapshots:
     optionalDependencies:
       '@types/node': 24.9.2
       happy-dom: 18.0.1
-      jsdom: 27.0.1(postcss@8.5.6)
+      jsdom: 27.1.0
     transitivePeerDependencies:
       - jiti
       - less
@@ -10490,8 +10465,6 @@ snapshots:
       ansi-styles: 6.2.3
       string-width: 7.2.0
       strip-ansi: 7.1.0
-
-  ws@8.18.2: {}
 
   ws@8.18.3: {}
 
