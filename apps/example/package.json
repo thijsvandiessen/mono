@@ -30,7 +30,7 @@
     "dotenv": "17.2.3",
     "prettier": "3.6.2",
     "sass": "1.93.2",
-    "turbo": "2.5.8",
+    "turbo": "2.6.0",
     "typescript": "5.9.3"
   }
 }
