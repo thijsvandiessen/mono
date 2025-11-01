@@ -29,11 +29,14 @@ export const VideoPlaceholder = ({
   })
 
   useEffect(() => {
-    if (entry?.isIntersecting) {
-      setHasIntersected(true)
-    }
-  }, [entry?.isIntersecting])
+    if (!entry?.isIntersecting) return
 
+    const raf = requestAnimationFrame(() => {
+      setHasIntersected(true)
+    })
+
+    return () => cancelAnimationFrame(raf)
+  }, [entry?.isIntersecting])
   return (
     <div ref={containerRef} className={styles.root} style={{ aspectRatio }}>
       {hasIntersected ? children : null}

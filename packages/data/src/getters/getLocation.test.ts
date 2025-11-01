@@ -1,7 +1,7 @@
 import { GetLocationDocument } from '../generated/graphql.js'
 import { client } from '../gqlClient.js'
 import { getLocation } from './getLocation.js'
-import { vi, describe, it, expect } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
 vi.mock('../gqlClient.js', () => {
   const originalModule =

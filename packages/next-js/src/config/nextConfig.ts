@@ -1,5 +1,5 @@
-import { headerConfig } from './headerConfig.js'
 import type { NextConfig } from 'next'
+import { headerConfig } from './headerConfig.js'
 
 type Props = {
   domain: string
@@ -28,12 +28,14 @@ export const customNextConfig = ({ domain }: Props): NextConfig => ({
   sassOptions: {
     silenceDeprecations: ['legacy-js-api'],
   },
-  rewrites: async () => [
-    {
-      source: '/graphql',
-      destination:
-        'https://current--vandiessen-mono-graph.apollographos.net/graphql',
-    },
-  ],
-  headers: async () => [{ source: '/(.*)', headers: headerConfig({ domain }) }],
+  rewrites: () =>
+    Promise.resolve([
+      {
+        source: '/graphql',
+        destination:
+          'https://current--vandiessen-mono-graph.apollographos.net/graphql',
+      },
+    ]),
+  headers: () =>
+    Promise.resolve([{ source: '/(.*)', headers: headerConfig({ domain }) }]),
 })

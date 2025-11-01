@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useIntersectionObserver } from './useIntersectionObserver.js'
-import { ConcertModelOrderBy, getConcerts, type Concert } from '@mono/data'
+import { type Concert, ConcertModelOrderBy, getConcerts } from '@mono/data'
 
 interface Props {
   initialSkip: number
@@ -27,25 +27,33 @@ export const useLoadMoreConcerts = ({
     if (!numberOfConcerts) return
     if (concerts.length === numberOfConcerts - initialSkip) return
     if (skip > numberOfConcerts) return
-    setLoading(true)
-    // TODO: abort signal to stop fetching
-    getConcerts({
-      skip,
-      first: interval,
-      order: [ConcertModelOrderBy.PositionAsc],
-    })
-      .then(({ data }) => {
-        setConcerts((prev) => [...prev, ...data])
-        setSkip((prev) => {
-          return prev + interval
+    let cancelled = false
+    const raf = requestAnimationFrame(() => {
+      if (cancelled) return
+      setLoading(true)
+      // TODO: abort signal to stop fetching
+      getConcerts({
+        skip,
+        first: interval,
+        order: [ConcertModelOrderBy.PositionAsc],
+      })
+        .then(({ data }) => {
+          if (!data || cancelled) return
+          setConcerts((prev) => [...prev, ...data])
+          setSkip((prev) => prev + interval)
         })
-      })
-      .catch(() => {
-        console.log('TODO: render an error')
-      })
-      .finally(() => {
-        setLoading(false)
-      })
+        .catch(() => {
+          if (!cancelled) console.log('TODO: render an error')
+        })
+        .finally(() => {
+          if (!cancelled) setLoading(false)
+        })
+    })
+
+    return () => {
+      cancelled = true
+      cancelAnimationFrame(raf)
+    }
   }, [
     loading,
     skip,
