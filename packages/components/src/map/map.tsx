@@ -1,8 +1,9 @@
 'use client'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api'
-import React, { useCallback, useId } from 'react'
+import React, { useId } from 'react'
+import { initMap } from './initMap.js'
 
-interface Pin {
+export interface Pin {
   lat: number
   lng: number
   title: string
@@ -28,50 +29,6 @@ export const Map = ({ id, pin, googleMapsApiKey, dimensions }: Props) => {
     googleMapsApiKey,
   })
 
-  const onLoad = useCallback(
-    (googleMap: google.maps.Map) => {
-      async function initMap(): Promise<void> {
-        //  Request the needed libraries.
-        const { AdvancedMarkerElement } = await Promise.resolve(
-          google.maps.importLibrary(
-            'marker'
-          ) as Promise<google.maps.MarkerLibrary>
-        )
-
-        const map = new google.maps.Map(googleMap.getDiv(), {
-          zoom: 14,
-          center: { lat: pin.lat, lng: pin.lng },
-          mapId,
-        })
-
-        // Set map options.
-        map.setOptions({
-          mapTypeControl: false,
-        })
-
-        const marker = new AdvancedMarkerElement({
-          map,
-          position: { lat: pin.lat, lng: pin.lng },
-          title: pin.title,
-        })
-
-        const infoWindow = new google.maps.InfoWindow({
-          ariaLabel: `${pin.title} - ${pin.description}`,
-        })
-
-        marker.addListener('click', () => {
-          infoWindow.close()
-          infoWindow.setHeaderContent(pin.title)
-          infoWindow.setContent(pin.description)
-          infoWindow.open(marker.map, marker)
-        })
-      }
-
-      initMap()
-    },
-    [pin.lat, pin.lng, pin.title]
-  )
-
   if (!isLoaded)
     return (
       <div
@@ -90,7 +47,7 @@ export const Map = ({ id, pin, googleMapsApiKey, dimensions }: Props) => {
         width: dimensions.width,
         height: dimensions.height,
       }}
-      onLoad={onLoad}
+      onLoad={(map) => initMap({ googleMap: map, pin, mapId })}
       center={{
         lat: pin.lat,
         lng: pin.lng,
