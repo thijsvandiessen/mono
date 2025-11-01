@@ -1,7 +1,7 @@
-import { renderHook, act } from '@testing-library/react'
+import { act, renderHook } from '@testing-library/react'
 import { useIntersectionObserver } from './useIntersectionObserver.js'
 import { useRef } from 'react'
-import { vi, describe, test, expect, afterEach } from 'vitest'
+import { afterEach, describe, expect, test, vi } from 'vitest'
 
 describe('useIntersectionObserver', () => {
   afterEach(() => {

@@ -1,9 +1,9 @@
-import NextLink from 'next/link.js'
 import {
-  forwardRef,
   type ComponentPropsWithoutRef,
   type LinkHTMLAttributes,
+  forwardRef,
 } from 'react'
+import NextLink from 'next/link.js'
 
 export type LinkProps = ComponentPropsWithoutRef<typeof NextLink> &
   LinkHTMLAttributes<HTMLAnchorElement> & {

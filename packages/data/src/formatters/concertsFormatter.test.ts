@@ -1,5 +1,5 @@
 import { concertsFormatter } from './concertsFormatter.js'
-import { describe, it, expect } from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 describe('concertsFormatter', () => {
   it('should return undefined if there is no concert', () => {

@@ -1,7 +1,7 @@
 import { renderHook, waitFor } from '@testing-library/react'
 import { getLocation } from '@mono/data'
 import { useLocation } from './useLocation.js'
-import { vi, it, expect, describe } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
 vi.mock('@mono/data', () => {
   const originalModule =

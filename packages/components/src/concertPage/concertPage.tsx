@@ -3,7 +3,7 @@ import { LocationDetail } from '../locationDetail/index.js'
 import { PageContent } from '../pageContent/index.js'
 import classNames from 'classnames'
 import { getConcertPage } from '@mono/data'
-import { notFound, Image } from '@mono/next-js'
+import { Image, notFound } from '@mono/next-js'
 
 import styles from './styles.module.scss'
 

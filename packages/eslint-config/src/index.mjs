@@ -1,4 +1,6 @@
 import testingLibrary from 'eslint-plugin-testing-library'
+import eslint from '@eslint/js'
+import tseslint from 'typescript-eslint'
 
 export const eslintConfig = {
   plugins: {
@@ -19,3 +21,8 @@ export const eslintConfig = {
     ],
   },
 }
+
+export const recommended = [
+  eslint.configs.recommended,
+  tseslint.configs.recommended,
+]

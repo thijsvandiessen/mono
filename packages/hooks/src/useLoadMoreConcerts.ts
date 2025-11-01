@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useIntersectionObserver } from './useIntersectionObserver.js'
-import { ConcertModelOrderBy, getConcerts, type Concert } from '@mono/data'
+import { type Concert, ConcertModelOrderBy, getConcerts } from '@mono/data'
 
 interface Props {
   initialSkip: number

@@ -1,7 +1,7 @@
 import { GetSiteInfoDocument } from '../generated/graphql.js'
 import { client } from '../index.js'
 import { getSiteInfo } from './getSiteInfo.js'
-import { vi, describe, it, expect } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
 vi.mock('../index.js', () => {
   const originalModule =

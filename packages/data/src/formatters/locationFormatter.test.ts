@@ -1,5 +1,5 @@
 import { locationFormatter } from './locationFormatter.js'
-import { describe, it, expect } from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 describe('locationFormatter', () => {
   it('should return a location object', () => {

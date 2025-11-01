@@ -2,7 +2,7 @@ import { dateIsInThePast, formatDate } from '@mono/utils'
 import { ArrowRight } from '../icons/index.js'
 import type { Concert } from '@mono/data'
 import classNames from 'classnames'
-import { Link, Image } from '@mono/next-js'
+import { Image, Link } from '@mono/next-js'
 
 import styles from './styles.module.scss'
 

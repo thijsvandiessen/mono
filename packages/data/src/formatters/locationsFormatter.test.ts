@@ -1,5 +1,5 @@
 import { locationsFormatter } from './locationsFormatter.js'
-import { describe, it, expect } from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 describe('locationsFormatter', () => {
   it('should return an empty array', () => {
