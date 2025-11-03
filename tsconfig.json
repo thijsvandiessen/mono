@@ -21,6 +21,9 @@
       "path": "./packages/hooks"
     },
     {
+      "path": "./packages/eslint-config"
+    },
+    {
       "path": "./packages/next-js"
     },
     {

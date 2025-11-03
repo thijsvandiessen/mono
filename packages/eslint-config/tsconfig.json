@@ -1,0 +1,9 @@
+{
+  "extends": "@mono/typescript-config",
+  "compilerOptions": {
+    "lib": ["ESNext"],
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "include": ["src/**/*", "src/*"]
+}
