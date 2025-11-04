@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.15](https://github.com/thijsvandiessen/mono/compare/v1.0.14...v1.0.15) (2025-11-01)
+
+
+### Bug Fixes
+
+* update eslint plugins ([#728](https://github.com/thijsvandiessen/mono/issues/728)) ([1fd3fca](https://github.com/thijsvandiessen/mono/commit/1fd3fcad4c8fb1b08d1f9928b8deded171ea305b))
+* update next.js to 16 ([#711](https://github.com/thijsvandiessen/mono/issues/711)) ([b33ad51](https://github.com/thijsvandiessen/mono/commit/b33ad5171445bedd6f33aa5f6c7892b48d6972cb))
+* update packages ([#703](https://github.com/thijsvandiessen/mono/issues/703)) ([3e9143d](https://github.com/thijsvandiessen/mono/commit/3e9143da8e5153d09aaa4902cc13b89d0a9cd92d))
+
 ## [1.0.14](https://github.com/thijsvandiessen/mono/compare/v1.0.13...v1.0.14) (2025-10-09)
 
 
