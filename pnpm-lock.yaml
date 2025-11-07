@@ -49,8 +49,8 @@ importers:
         version: 4.0.8(@types/node@24.10.0)(happy-dom@18.0.1)(jiti@2.4.2)(jsdom@27.1.0)(sass@1.93.3)(yaml@2.8.0)
     optionalDependencies:
       '@rollup/rollup-linux-x64-gnu':
-        specifier: 4.52.5
-        version: 4.52.5
+        specifier: 4.53.0
+        version: 4.53.0
 
   apps/example:
     dependencies:
@@ -2116,11 +2116,6 @@ packages:
   '@rollup/rollup-linux-s390x-gnu@4.53.0':
     resolution: {integrity: sha512-MA/NVneZyIskjvXdh2NR9YcPi7eHWBlQOWP2X8OymzyeUEB0JfUpmbKQZngHmOlyleV2IoR5nHIgMSRjLskOnA==}
     cpu: [s390x]
-    os: [linux]
-
-  '@rollup/rollup-linux-x64-gnu@4.52.5':
-    resolution: {integrity: sha512-hXGLYpdhiNElzN770+H2nlx+jRog8TyynpTVzdlc6bndktjKWyZyiCsuDAlpd+j+W+WNqfcyAWz9HxxIGfZm1Q==}
-    cpu: [x64]
     os: [linux]
 
   '@rollup/rollup-linux-x64-gnu@4.53.0':
@@ -6959,9 +6954,6 @@ snapshots:
     optional: true
 
   '@rollup/rollup-linux-s390x-gnu@4.53.0':
-    optional: true
-
-  '@rollup/rollup-linux-x64-gnu@4.52.5':
     optional: true
 
   '@rollup/rollup-linux-x64-gnu@4.53.0':
