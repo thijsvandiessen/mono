@@ -17,7 +17,7 @@ jobs:
       TURBO_TEAM: ${{ secrets.VERCEL_TEAM }}
     strategy:
       matrix:
-        node-version: [20.x, 22.x, 24.x]
+        node-version: [22.x, 24.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
@@ -38,11 +38,11 @@ jobs:
       - name: Validate fast with oxlint
         run: npx oxlint@1.24.0
 
-      - name: Check formatting and eslint
-        run: pnpm exec turbo lint
-
       - name: Build project
         run: pnpm exec turbo build
+
+      - name: Check formatting and eslint
+        run: pnpm exec turbo lint
 
       - name: Test project
         run: pnpm exec turbo test
