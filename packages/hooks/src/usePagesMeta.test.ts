@@ -1,7 +1,7 @@
+import { describe, expect, it, vi } from 'vitest'
 import { renderHook, waitFor } from '@testing-library/react'
 import { getPagesMeta } from '@mono/data'
 import { usePagesMeta } from './usePagesMeta.js'
-import { describe, expect, it, vi } from 'vitest'
 
 vi.mock('@mono/data', () => {
   const originalModule =

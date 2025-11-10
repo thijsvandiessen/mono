@@ -1,12 +1,12 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import { Cross, Hamburger } from '../icons/index.js'
+import { useDimensions, useHrefClick } from '@mono/hooks'
+import { useEffect, useState } from 'react'
 import { MobileMenuItems } from '../mobileMenuItems/index.js'
+import type { Navigation } from '@mono/data'
 import classNames from 'classnames'
 import styles from './styles.module.scss'
-import { useDimensions, useHrefClick } from '@mono/hooks'
-import type { Navigation } from '@mono/data'
 
 export const MobileMenu = ({
   escapedMenuString,

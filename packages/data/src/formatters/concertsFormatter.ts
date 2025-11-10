@@ -1,5 +1,5 @@
-import type { ConcertDetailFragment } from '../generated/graphql.js'
 import type { Concert } from '../types/concert.js'
+import type { ConcertDetailFragment } from '../generated/graphql.js'
 import { concertFormatter } from './concertFormatter.js'
 
 export const concertsFormatter = (

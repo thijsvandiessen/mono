@@ -6,8 +6,8 @@ import {
   isOfTypeCloudinaryAsset,
 } from '@mono/data'
 import { useCallback, useState } from 'react'
-import { VideoPlaceholder } from '../videoPlaceholder/index.js'
 import { Image } from '@mono/next-js'
+import { VideoPlaceholder } from '../videoPlaceholder/index.js'
 import styles from './styles.module.scss'
 
 type Props = {

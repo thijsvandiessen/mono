@@ -3,8 +3,8 @@ import {
   formatCloudinaryImage,
   isOfTypeCloudinaryAsset,
 } from '@mono/data'
-import React from 'react'
 import { Image } from '@mono/next-js'
+import React from 'react'
 
 import styles from './styles.module.scss'
 

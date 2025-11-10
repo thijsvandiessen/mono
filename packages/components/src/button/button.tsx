@@ -1,6 +1,6 @@
+import { Link } from '@mono/next-js'
 import type { ReactNode } from 'react'
 import classNames from 'classnames'
-import { Link } from '@mono/next-js'
 
 import styles from './styles.module.scss'
 

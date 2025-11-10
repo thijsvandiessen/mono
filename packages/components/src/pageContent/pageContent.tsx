@@ -1,6 +1,6 @@
+import { type Concert, type PageDetailFragment } from '@mono/data'
 import { ContentField } from '../contentField/index.js'
 import { Header } from '../header/index.js'
-import { type Concert, type PageDetailFragment } from '@mono/data'
 import { TwoColumContentField } from '../twoColumContentField/index.js'
 import classNames from 'classnames'
 import styles from './styles.module.scss'

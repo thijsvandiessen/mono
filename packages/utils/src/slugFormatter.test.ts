@@ -1,5 +1,5 @@
-import { slugFormatter } from './slugFormatter.js'
 import { describe, expect, it } from 'vitest'
+import { slugFormatter } from './slugFormatter.js'
 
 describe('slugFormatter', () => {
   it('should return the homepage', () => {

@@ -1,7 +1,7 @@
+import { describe, expect, it, vi } from 'vitest'
 import { GetConcertDocument } from '../generated/graphql.js'
 import { client } from '../gqlClient.js'
 import { getConcerts } from './getConcerts.js'
-import { describe, expect, it, vi } from 'vitest'
 
 vi.mock('../gqlClient.js', () => {
   const originalModule =

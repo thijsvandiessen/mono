@@ -1,7 +1,7 @@
 'use client'
 
-import React from 'react'
 import { ConcertListItem } from '../concertListItem/index.js'
+import React from 'react'
 import { useLoadMoreConcerts } from '@mono/hooks'
 
 export interface Props {
