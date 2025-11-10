@@ -47,7 +47,7 @@
     "@vitejs/plugin-react": "5.1.0",
     "cpx2": "8.0.0",
     "dotenv": "17.2.3",
-    "eslint": "9.39.0",
+    "eslint": "9.39.1",
     "eslint-plugin-testing-library": "7.13.3",
     "jsdom": "27.1.0",
     "prettier": "3.6.2",
@@ -55,6 +55,6 @@
     "turbo": "2.6.0",
     "typescript": "5.9.3",
     "vite-tsconfig-paths": "5.1.4",
-    "vitest": "4.0.6"
+    "vitest": "4.0.8"
   }
 }

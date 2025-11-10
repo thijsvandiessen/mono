@@ -27,11 +27,11 @@
     "@mono/typescript-config": "workspace:*",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
-    "eslint": "9.39.0",
+    "eslint": "9.39.1",
     "eslint-config-next": "16.0.1",
     "eslint-plugin-testing-library": "7.13.3",
     "prettier": "3.6.2",
     "typescript": "5.9.3",
-    "vitest": "4.0.6"
+    "vitest": "4.0.8"
   }
 }
