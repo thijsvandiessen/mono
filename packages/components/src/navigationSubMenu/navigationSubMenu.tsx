@@ -3,10 +3,10 @@
 import React, { useState } from 'react'
 import { useEscapeKey, useOutsideClick } from '@mono/hooks'
 import type { NavigationItem } from '@mono/data'
-import classNames from 'classnames'
-import styles from './styles.module.scss'
 import { NavigationSubMenuItem } from '../navigationSubMenuItem/index.js'
 import type { SubMenuProps } from './navigationSubMenu.types.js'
+import classNames from 'classnames'
+import styles from './styles.module.scss'
 
 export const NavigationSubMenu = ({ label, item }: SubMenuProps) => {
   const submenu = JSON.parse(item) as NavigationItem[]

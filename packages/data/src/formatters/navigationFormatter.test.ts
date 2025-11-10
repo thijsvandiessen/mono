@@ -1,6 +1,6 @@
+import { describe, expect, it } from 'vitest'
 import type { GeneralInfoFragment } from '../generated/graphql.js'
 import { navigationFormatter } from './navigationFormatter.js'
-import { describe, expect, it } from 'vitest'
 
 describe('navigationFormatter', () => {
   it('should format navigation data', () => {

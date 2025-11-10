@@ -1,5 +1,5 @@
-import { concertFormatter } from './concertFormatter.js'
 import { describe, expect, it } from 'vitest'
+import { concertFormatter } from './concertFormatter.js'
 
 describe('concertFormatter', () => {
   it('should return a location object', () => {

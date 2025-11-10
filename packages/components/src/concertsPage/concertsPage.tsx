@@ -4,10 +4,10 @@ import {
   getConcertsMeta,
   getPage,
 } from '@mono/data'
+import { Concerts } from './concerts.jsx'
 import { Header } from '../header/index.js'
 import { PageContent } from '../pageContent/index.js'
 import { notFound } from '@mono/next-js'
-import { Concerts } from './concerts.jsx'
 
 export const ConcertsPage = async () => {
   const first = 10

@@ -1,8 +1,8 @@
 import { describe, expect, it, vi } from 'vitest'
-import { render } from '@testing-library/react'
 import { Navigation } from './navigation.js'
 import { getGeneralInfo } from '@mono/data'
 import { mockMenuData } from './mocks/mockMenuData.js'
+import { render } from '@testing-library/react'
 import { resolvedComponent } from '@mono/utils'
 
 vi.mock('../mobileMenu/index.js', () => ({

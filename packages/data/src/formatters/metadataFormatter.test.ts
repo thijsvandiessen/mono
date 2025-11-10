@@ -1,6 +1,6 @@
+import { describe, expect, it, vi } from 'vitest'
 import type { GetPageSeoQuery } from '../generated/graphql.js'
 import { metadataFormatter } from './metadataFormatter.js'
-import { describe, expect, it, vi } from 'vitest'
 
 const mockData: GetPageSeoQuery['page'] = {
   __typename: 'PageRecord',

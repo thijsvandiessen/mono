@@ -5,9 +5,9 @@ import type {
   VideoFragment,
 } from '@mono/data'
 import { CallToAction } from '../callToAction/index.js'
+import type { CdaStructuredTextRecord } from 'datocms-structured-text-utils'
 import { DocumentBlock } from '../documentBlock/index.js'
 import { ImageBlock } from '../imageBlock/index.js'
-import type { CdaStructuredTextRecord } from 'datocms-structured-text-utils'
 import type { RenderBlockContext } from 'react-datocms/structured-text'
 import { VideoBlock } from '../videoBlock/index.js'
 import { isOfType } from './isOfType.js'

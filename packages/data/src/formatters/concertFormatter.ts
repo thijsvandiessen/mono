@@ -1,5 +1,5 @@
-import type { ConcertDetailFragment } from '../generated/graphql.js'
 import type { Concert } from '../types/concert.js'
+import type { ConcertDetailFragment } from '../generated/graphql.js'
 import type { Location } from '../types/location.js'
 import { formatCloudinaryImage } from './formatCloudinaryImage.js'
 import { isOfTypeCloudinaryAsset } from '../types/image.js'

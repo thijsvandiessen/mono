@@ -1,9 +1,9 @@
+import { Image, notFound } from '@mono/next-js'
 import { ConcertListItem } from '../concertListItem/index.js'
 import { LocationDetail } from '../locationDetail/index.js'
 import { PageContent } from '../pageContent/index.js'
 import classNames from 'classnames'
 import { getConcertPage } from '@mono/data'
-import { Image, notFound } from '@mono/next-js'
 
 import styles from './styles.module.scss'
 

@@ -1,10 +1,10 @@
-import classNames from 'classnames'
-import styles from './styles.module.scss'
-import { LoadMoreConcerts } from '../loadMoreConcerts/index.js'
 import { Concert } from '../concert/index.js'
 import type { ConcertsProps } from './concertsPage.types.js'
+import { LoadMoreConcerts } from '../loadMoreConcerts/index.js'
 import { UpcommingConcerts } from '../upcommingConcerts/upcomming.jsx'
+import classNames from 'classnames'
 import { pastConcerts } from './pastConcerts.js'
+import styles from './styles.module.scss'
 
 export const Concerts = ({
   concertData,

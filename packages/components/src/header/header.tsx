@@ -5,11 +5,11 @@ import {
 } from '@mono/data'
 import { ContentField } from '../contentField/index.js'
 import type { ElementType } from 'react'
+import { Image } from '@mono/next-js'
 import React from 'react'
 import classNames from 'classnames'
 import { isEmptyDocument } from 'datocms-structured-text-utils'
 import styles from './styles.module.scss'
-import { Image } from '@mono/next-js'
 
 interface Props {
   className?: string

@@ -1,8 +1,8 @@
-import classNames from 'classnames'
 import { getGeneralInfo, getSiteMetadata } from '@mono/data'
+import { Link } from '@mono/next-js'
+import classNames from 'classnames'
 import { slugFormatter } from '@mono/utils'
 import styles from './styles.module.scss'
-import { Link } from '@mono/next-js'
 
 export const Footer = async () => {
   const { data } = await getGeneralInfo()

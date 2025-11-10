@@ -1,8 +1,8 @@
+import { Image, Link } from '@mono/next-js'
 import { dateIsInThePast, formatDate } from '@mono/utils'
 import { ArrowRight } from '../icons/index.js'
 import type { Concert } from '@mono/data'
 import classNames from 'classnames'
-import { Image, Link } from '@mono/next-js'
 
 import styles from './styles.module.scss'
 

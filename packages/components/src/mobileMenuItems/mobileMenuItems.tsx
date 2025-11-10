@@ -1,7 +1,7 @@
+import type { MobileMenuItemsProps } from './mobileMenuItems.type.js'
 import { NavigationItem } from '../navigationItem/index.js'
 import classNames from 'classnames'
 import styles from './styles.module.scss'
-import type { MobileMenuItemsProps } from './mobileMenuItems.type.js'
 
 export const MobileMenuItems = ({ general }: MobileMenuItemsProps) => (
   <ul className={styles.root}>
