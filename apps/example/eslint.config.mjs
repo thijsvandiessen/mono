@@ -8,7 +8,14 @@ import {
 import nextVitals from 'eslint-config-next/core-web-vitals'
 
 export default defineConfig([
-  globalIgnores(['dist/*', 'node_modules']),
+  globalIgnores([
+    'node_modules',
+    '.next/**',
+    'out/**',
+    'build/**',
+    'next-env.d.ts',
+    '.turbo/**',
+  ]),
   eslintConfig,
   ...recommended,
   ...nextVitals,

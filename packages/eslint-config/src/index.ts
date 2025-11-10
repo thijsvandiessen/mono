@@ -4,6 +4,8 @@ import tseslint, { type Config } from 'typescript-eslint'
 import reactHooks from 'eslint-plugin-react-hooks'
 import type { Linter } from 'eslint'
 
+export { defineConfig, globalIgnores } from 'eslint/config'
+
 export const eslintConfig = {
   plugins: {
     'testing-library': testingLibrary,

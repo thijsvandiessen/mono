@@ -7,13 +7,15 @@
   "scripts": {
     "build": "next build",
     "dev": "NODE_OPTIONS='--inspect' next dev --turbo -p 4000",
-    "lint": "pnpm run lint:styles",
-    "lint:styles": "prettier . --write --list-different",
+    "lint": "pnpm run lint:js && pnpm run lint:styles",
+    "lint:js": "eslint",
+    "lint:styles": "prettier . --write  --list-different",
     "start": "next start"
   },
   "dependencies": {
     "@mono/components": "workspace:*",
     "@mono/data": "workspace:*",
+    "@mono/eslint-config": "workspace:*",
     "@mono/next-js": "workspace:*",
     "@mono/utils": "workspace:*",
     "classnames": "2.5.1",
@@ -28,6 +30,9 @@
     "@types/react-dom": "19.2.2",
     "babel-plugin-react-compiler": "1.0.0",
     "dotenv": "17.2.3",
+    "eslint": "9.39.1",
+    "eslint-config-next": "16.0.1",
+    "eslint-plugin-testing-library": "7.13.3",
     "prettier": "3.6.2",
     "sass": "1.93.3",
     "turbo": "2.6.0",
