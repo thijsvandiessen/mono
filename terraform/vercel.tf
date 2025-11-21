@@ -1,19 +1,17 @@
 resource "vercel_project" "lundi" {
-  name                       = "lundi"
-  framework                  = "nextjs"
-  install_command            = "cd ../.. && pnpm i"
-  build_command              = "turbo build"
-  root_directory             = "apps/lundi-bleu"
-  serverless_function_region = "fra1"
+  name            = "lundi"
+  framework       = "nextjs"
+  install_command = "cd ../.. && pnpm i"
+  build_command   = "turbo build"
+  root_directory  = "apps/lundi-bleu"
 }
 
 resource "vercel_project" "example" {
-  name                       = "example"
-  framework                  = "nextjs"
-  install_command            = "cd ../.. && pnpm i"
-  build_command              = "turbo build"
-  root_directory             = "apps/example"
-  serverless_function_region = "fra1"
+  name            = "example"
+  framework       = "nextjs"
+  install_command = "cd ../.. && pnpm i"
+  build_command   = "turbo build"
+  root_directory  = "apps/example"
 }
 
 data "vercel_project_directory" "mono" {
@@ -65,7 +63,13 @@ resource "vercel_project_environment_variables" "lundi" {
       value     = "lundi-bleu"
       target    = ["preview", "production"]
       sensitive = false
-  }]
+      }, {
+      key       = "REVALIDATE_TOKEN"
+      value     = var.REVALIDATE_TOKEN
+      target    = ["preview", "production"]
+      sensitive = true
+    }
+  ]
 }
 
 resource "vercel_project_environment_variables" "example" {
