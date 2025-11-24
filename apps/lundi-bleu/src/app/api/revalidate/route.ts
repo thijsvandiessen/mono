@@ -1,11 +1,12 @@
-import type { NextRequest } from 'next/server'
-import { handleRevalidateRequest } from '@mono/next-js'
+import { NextResponse } from 'next/server.js'
+import { revalidateTag } from 'next/cache.js'
 
-export function POST(request: NextRequest) {
-  return handleRevalidateRequest(request)
+export function POST() {
+  revalidateTag('content', 'max')
+  return NextResponse.json({ revalidated: true })
 }
 
-export function GET(request: NextRequest) {
-  return handleRevalidateRequest(request)
+export function GET() {
+  revalidateTag('content', 'max')
+  return NextResponse.json({ revalidated: true })
 }
-
