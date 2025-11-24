@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.16](https://github.com/thijsvandiessen/mono/compare/v1.0.15...v1.0.16) (2025-11-24)
+
+
+### Bug Fixes
+
+* revalidate endpoint ([#769](https://github.com/thijsvandiessen/mono/issues/769)) ([093d3dd](https://github.com/thijsvandiessen/mono/commit/093d3dda0eca293cff6e3b3827004ddc751e0c60))
+* revalidate endpoint ([#796](https://github.com/thijsvandiessen/mono/issues/796)) ([8589fc2](https://github.com/thijsvandiessen/mono/commit/8589fc24d45a285928fb34eba466bfd0fb342a59))
+
 ## [1.0.15](https://github.com/thijsvandiessen/mono/compare/v1.0.14...v1.0.15) (2025-11-01)
 
 
