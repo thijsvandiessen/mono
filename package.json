@@ -21,7 +21,7 @@
     "@apollo/rover": "0.36.2",
     "@commitlint/cli": "20.1.0",
     "@commitlint/config-conventional": "20.0.0",
-    "@swc/core": "1.15.2",
+    "@swc/core": "1.15.3",
     "@types/node": "24.10.1",
     "concurrently": "9.2.1",
     "dotenv": "17.2.3",
@@ -30,10 +30,10 @@
     "ts-node": "10.9.2",
     "turbo": "2.6.1",
     "typescript": "5.9.3",
-    "vitest": "4.0.8"
+    "vitest": "4.0.13"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.53.2"
+    "@rollup/rollup-linux-x64-gnu": "4.53.3"
   },
   "packageManager": "pnpm@10.23.0+sha512.21c4e5698002ade97e4efe8b8b4a89a8de3c85a37919f957e7a0f30f38fbc5bbdd05980ffe29179b2fb6e6e691242e098d945d1601772cad0fef5fb6411e2a4b"
 }

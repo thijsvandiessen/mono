@@ -18,22 +18,22 @@
     "@mono/next-js": "workspace:*",
     "@mono/utils": "workspace:*",
     "classnames": "2.5.1",
-    "next": "16.0.3",
+    "next": "16.0.4",
     "react": "19.2.0",
     "react-dom": "19.2.0"
   },
   "devDependencies": {
     "@mono/typescript-config": "workspace:*",
     "@types/node": "24.10.1",
-    "@types/react": "19.2.4",
+    "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
     "babel-plugin-react-compiler": "1.0.0",
     "dotenv": "17.2.3",
     "eslint": "9.39.1",
     "eslint-config-next": "16.0.3",
-    "eslint-plugin-testing-library": "7.13.4",
+    "eslint-plugin-testing-library": "7.13.5",
     "prettier": "3.6.2",
-    "sass": "1.94.0",
+    "sass": "1.94.2",
     "turbo": "2.6.1",
     "typescript": "5.9.3"
   }
