@@ -41,6 +41,12 @@ variable "GOOGLE_MAPS_API_KEY" {
   default   = ""
 }
 
+variable "REVALIDATE_TOKEN" {
+  sensitive = true
+  type      = string
+  default   = ""
+}
+
 variable "TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA" {
   type    = string
   default = ""

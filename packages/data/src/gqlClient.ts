@@ -18,7 +18,10 @@ export const client = new Client({
   ],
   fetchOptions: () => ({
     headers: linkConfig.headers,
-    next: { revalidate: 3600 },
+    next: {
+      revalidate: 3600,
+      tags: ['site-content'],
+    },
   }),
   suspense: true,
 })

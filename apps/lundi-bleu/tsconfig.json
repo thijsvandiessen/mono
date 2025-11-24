@@ -3,6 +3,8 @@
   "extends": "@mono/typescript-config",
   "compilerOptions": {
     "noEmit": true,
+    "moduleResolution": "bundler",
+    "module": "preserve",
     "plugins": [
       {
         "name": "next"
