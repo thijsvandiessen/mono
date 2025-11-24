@@ -17,7 +17,7 @@
     "lint:styles": "prettier . --write --list-different"
   },
   "dependencies": {
-    "@datocms/cma-client-node": "5.1.28",
+    "@datocms/cma-client-node": "5.1.29",
     "dotenv": "17.2.3",
     "memfs": "4.51.0",
     "zod": "4.1.12"
@@ -28,6 +28,6 @@
     "eslint": "9.39.1",
     "prettier": "3.6.2",
     "typescript": "5.9.3",
-    "vitest": "4.0.8"
+    "vitest": "4.0.13"
   }
 }
