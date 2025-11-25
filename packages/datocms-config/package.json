@@ -20,7 +20,7 @@
     "@datocms/cma-client-node": "5.1.29",
     "dotenv": "17.2.3",
     "memfs": "4.51.0",
-    "zod": "4.1.12"
+    "zod": "4.1.13"
   },
   "devDependencies": {
     "@mono/eslint-config": "workspace:*",
