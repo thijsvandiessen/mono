@@ -26,8 +26,9 @@ export const eslintConfig = {
   },
 }
 
-export const recommended: Readonly<Config | Linter.Config>[] = [
+export const recommended: Linter.Config[] = [
   eslint.configs.recommended,
-  tseslint.configs.recommended,
   reactHooks.configs.flat.recommended,
 ]
+
+export const tsLintConfig: Config = tseslint.configs.recommended
