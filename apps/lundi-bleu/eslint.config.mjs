@@ -7,7 +7,7 @@ import {
 
 import nextVitals from 'eslint-config-next/core-web-vitals'
 
-export default defineConfig([
+export default defineConfig(
   globalIgnores([
     'node_modules',
     '.next/**',
@@ -18,5 +18,5 @@ export default defineConfig([
   ]),
   eslintConfig,
   ...recommended,
-  ...nextVitals,
-])
+  ...nextVitals
+)
