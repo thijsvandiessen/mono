@@ -18,7 +18,7 @@
     "test": "vitest run -c ./vitest.config.ts"
   },
   "devDependencies": {
-    "@apollo/rover": "0.36.2",
+    "@apollo/rover": "0.37.0",
     "@commitlint/cli": "20.1.0",
     "@commitlint/config-conventional": "20.0.0",
     "@swc/core": "1.15.3",

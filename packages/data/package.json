@@ -33,7 +33,7 @@
     "react": "19.2.0"
   },
   "devDependencies": {
-    "@apollo/rover": "0.36.2",
+    "@apollo/rover": "0.37.0",
     "@commitlint/config-conventional": "20.0.0",
     "@graphql-codegen/cli": "6.1.0",
     "@graphql-codegen/client-preset": "5.2.1",
