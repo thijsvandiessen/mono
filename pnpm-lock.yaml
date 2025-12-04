@@ -74,13 +74,13 @@ importers:
         version: 2.5.1
       next:
         specifier: 16.0.7
-        version: 16.0.7(@opentelemetry/api@1.9.0)(@playwright/test@1.57.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(sass@1.94.2)
+        version: 16.0.7(@opentelemetry/api@1.9.0)(@playwright/test@1.57.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(sass@1.94.2)
       react:
-        specifier: 19.2.0
-        version: 19.2.0
+        specifier: 19.2.1
+        version: 19.2.1
       react-dom:
-        specifier: 19.2.0
-        version: 19.2.0(react@19.2.0)
+        specifier: 19.2.1
+        version: 19.2.1(react@19.2.1)
     devDependencies:
       '@mono/typescript-config':
         specifier: workspace:*
@@ -89,11 +89,11 @@ importers:
         specifier: 24.10.1
         version: 24.10.1
       '@types/react':
-        specifier: 19.2.7
-        version: 19.2.7
+        specifier: 19.2.1
+        version: 19.2.1
       '@types/react-dom':
-        specifier: 19.2.3
-        version: 19.2.3(@types/react@19.2.7)
+        specifier: 19.2.1
+        version: 19.2.1(@types/react@19.2.1)
       babel-plugin-react-compiler:
         specifier: 1.0.0
         version: 1.0.0
@@ -144,13 +144,13 @@ importers:
         version: 2.5.1
       next:
         specifier: 16.0.7
-        version: 16.0.7(@opentelemetry/api@1.9.0)(@playwright/test@1.57.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(sass@1.94.2)
+        version: 16.0.7(@opentelemetry/api@1.9.0)(@playwright/test@1.57.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(sass@1.94.2)
       react:
-        specifier: 19.2.0
-        version: 19.2.0
+        specifier: 19.2.1
+        version: 19.2.1
       react-dom:
-        specifier: 19.2.0
-        version: 19.2.0(react@19.2.0)
+        specifier: 19.2.1
+        version: 19.2.1(react@19.2.1)
     devDependencies:
       '@mono/typescript-config':
         specifier: workspace:*
@@ -159,11 +159,11 @@ importers:
         specifier: 24.10.1
         version: 24.10.1
       '@types/react':
-        specifier: 19.2.7
-        version: 19.2.7
+        specifier: 19.2.1
+        version: 19.2.1
       '@types/react-dom':
-        specifier: 19.2.3
-        version: 19.2.3(@types/react@19.2.7)
+        specifier: 19.2.1
+        version: 19.2.1(@types/react@19.2.1)
       babel-plugin-react-compiler:
         specifier: 1.0.0
         version: 1.0.0
@@ -226,7 +226,7 @@ importers:
         version: link:../utils
       '@react-google-maps/api':
         specifier: 2.20.7
-        version: 2.20.7(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        version: 2.20.7(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       classnames:
         specifier: 2.5.1
         version: 2.5.1
@@ -234,17 +234,17 @@ importers:
         specifier: 5.1.6
         version: 5.1.6
       react:
-        specifier: 19.2.0
-        version: 19.2.0
+        specifier: 19.2.1
+        version: 19.2.1
       react-datocms:
         specifier: 7.2.3
-        version: 7.2.3(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(graphql@16.12.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        version: 7.2.3(@types/react-dom@19.2.1(@types/react@19.2.1))(@types/react@19.2.1)(graphql@16.12.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       react-dom:
-        specifier: 19.2.0
-        version: 19.2.0(react@19.2.0)
+        specifier: 19.2.1
+        version: 19.2.1(react@19.2.1)
       urql:
         specifier: 5.0.1
-        version: 5.0.1(@urql/core@6.0.1(graphql@16.12.0))(react@19.2.0)
+        version: 5.0.1(@urql/core@6.0.1(graphql@16.12.0))(react@19.2.1)
     devDependencies:
       '@mono/eslint-config':
         specifier: workspace:*
@@ -257,16 +257,16 @@ importers:
         version: 6.9.1
       '@testing-library/react':
         specifier: 16.3.0
-        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.1(@types/react@19.2.1))(@types/react@19.2.1)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       '@types/node':
         specifier: 24.10.1
         version: 24.10.1
       '@types/react':
-        specifier: 19.2.7
-        version: 19.2.7
+        specifier: 19.2.1
+        version: 19.2.1
       '@types/react-dom':
-        specifier: 19.2.3
-        version: 19.2.3(@types/react@19.2.7)
+        specifier: 19.2.1
+        version: 19.2.1(@types/react@19.2.1)
       '@vitejs/plugin-react':
         specifier: 5.1.1
         version: 5.1.1(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(sass@1.94.2)(yaml@2.8.1))
@@ -328,8 +328,8 @@ importers:
         specifier: 16.12.0
         version: 16.12.0
       react:
-        specifier: 19.2.0
-        version: 19.2.0
+        specifier: 19.2.1
+        version: 19.2.1
     devDependencies:
       '@apollo/rover':
         specifier: 0.37.0
@@ -366,16 +366,16 @@ importers:
         version: 6.9.1
       '@testing-library/react':
         specifier: 16.3.0
-        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.1(@types/react@19.2.1))(@types/react@19.2.1)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       '@types/node':
         specifier: 24.10.1
         version: 24.10.1
       '@types/react':
-        specifier: 19.2.7
-        version: 19.2.7
+        specifier: 19.2.1
+        version: 19.2.1
       '@types/react-dom':
-        specifier: 19.2.3
-        version: 19.2.3(@types/react@19.2.7)
+        specifier: 19.2.1
+        version: 19.2.1(@types/react@19.2.1)
       '@vitejs/plugin-react':
         specifier: 5.1.1
         version: 5.1.1(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(sass@1.94.2)(yaml@2.8.1))
@@ -474,8 +474,8 @@ importers:
         specifier: workspace:*
         version: link:../data
       react:
-        specifier: 19.2.0
-        version: 19.2.0
+        specifier: 19.2.1
+        version: 19.2.1
     devDependencies:
       '@mono/eslint-config':
         specifier: workspace:*
@@ -488,16 +488,16 @@ importers:
         version: 6.9.1
       '@testing-library/react':
         specifier: 16.3.0
-        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.1(@types/react@19.2.1))(@types/react@19.2.1)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       '@types/node':
         specifier: 24.10.1
         version: 24.10.1
       '@types/react':
-        specifier: 19.2.7
-        version: 19.2.7
+        specifier: 19.2.1
+        version: 19.2.1
       '@types/react-dom':
-        specifier: 19.2.3
-        version: 19.2.3(@types/react@19.2.7)
+        specifier: 19.2.1
+        version: 19.2.1(@types/react@19.2.1)
       '@vitejs/plugin-react':
         specifier: 5.1.1
         version: 5.1.1(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(sass@1.94.2)(yaml@2.8.1))
@@ -530,13 +530,13 @@ importers:
     dependencies:
       next:
         specifier: 16.0.7
-        version: 16.0.7(@opentelemetry/api@1.9.0)(@playwright/test@1.57.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(sass@1.94.2)
+        version: 16.0.7(@opentelemetry/api@1.9.0)(@playwright/test@1.57.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(sass@1.94.2)
       react:
-        specifier: 19.2.0
-        version: 19.2.0
+        specifier: 19.2.1
+        version: 19.2.1
       react-dom:
-        specifier: 19.2.0
-        version: 19.2.0(react@19.2.0)
+        specifier: 19.2.1
+        version: 19.2.1(react@19.2.1)
       zod:
         specifier: 4.1.13
         version: 4.1.13
@@ -548,11 +548,11 @@ importers:
         specifier: workspace:*
         version: link:../typescript-config
       '@types/react':
-        specifier: 19.2.7
-        version: 19.2.7
+        specifier: 19.2.1
+        version: 19.2.1
       '@types/react-dom':
-        specifier: 19.2.3
-        version: 19.2.3(@types/react@19.2.7)
+        specifier: 19.2.1
+        version: 19.2.1(@types/react@19.2.1)
       eslint:
         specifier: 9.39.1
         version: 9.39.1(jiti@2.6.1)
@@ -584,14 +584,14 @@ importers:
         specifier: 4.84.0
         version: 4.84.0(algoliasearch@5.45.0)
       react:
-        specifier: 19.2.0
-        version: 19.2.0
+        specifier: 19.2.1
+        version: 19.2.1
       react-dom:
-        specifier: 19.2.0
-        version: 19.2.0(react@19.2.0)
+        specifier: 19.2.1
+        version: 19.2.1(react@19.2.1)
       react-instantsearch:
         specifier: 7.20.0
-        version: 7.20.0(algoliasearch@5.45.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        version: 7.20.0(algoliasearch@5.45.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
     devDependencies:
       '@mono/eslint-config':
         specifier: workspace:*
@@ -604,16 +604,16 @@ importers:
         version: 6.9.1
       '@testing-library/react':
         specifier: 16.3.0
-        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.1(@types/react@19.2.1))(@types/react@19.2.1)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       '@types/node':
         specifier: 24.10.1
         version: 24.10.1
       '@types/react':
-        specifier: 19.2.7
-        version: 19.2.7
+        specifier: 19.2.1
+        version: 19.2.1
       '@types/react-dom':
-        specifier: 19.2.3
-        version: 19.2.3(@types/react@19.2.7)
+        specifier: 19.2.1
+        version: 19.2.1(@types/react@19.2.1)
       '@vitejs/plugin-react':
         specifier: 5.1.1
         version: 5.1.1(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(sass@1.94.2)(yaml@2.8.1))
@@ -642,11 +642,11 @@ importers:
   packages/utils:
     dependencies:
       react:
-        specifier: 19.2.0
-        version: 19.2.0
+        specifier: 19.2.1
+        version: 19.2.1
       react-dom:
-        specifier: 19.2.0
-        version: 19.2.0(react@19.2.0)
+        specifier: 19.2.1
+        version: 19.2.1(react@19.2.1)
     devDependencies:
       '@mono/eslint-config':
         specifier: workspace:*
@@ -659,16 +659,16 @@ importers:
         version: 6.9.1
       '@testing-library/react':
         specifier: 16.3.0
-        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.1(@types/react@19.2.1))(@types/react@19.2.1)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       '@types/node':
         specifier: 24.10.1
         version: 24.10.1
       '@types/react':
-        specifier: 19.2.7
-        version: 19.2.7
+        specifier: 19.2.1
+        version: 19.2.1
       '@types/react-dom':
-        specifier: 19.2.3
-        version: 19.2.3(@types/react@19.2.7)
+        specifier: 19.2.1
+        version: 19.2.1(@types/react@19.2.1)
       '@vitejs/plugin-react':
         specifier: 5.1.1
         version: 5.1.1(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(sass@1.94.2)(yaml@2.8.1))
@@ -2422,12 +2422,12 @@ packages:
   '@types/qs@6.14.0':
     resolution: {integrity: sha512-eOunJqu0K1923aExK6y8p6fsihYEn/BYuQ4g0CxAAgFc4b/ZLN4CrsRZ55srTdqoiLzU2B2evC+apEIxprEzkQ==}
 
-  '@types/react-dom@19.2.3':
+  '@types/react-dom@19.2.1':
     resolution: {integrity: sha512-jp2L/eY6fn+KgVVQAOqYItbF0VY/YApe5Mz2F0aykSO8gx31bYCZyvSeYxCHKvzHG5eZjc+zyaS5BrBWya2+kQ==}
     peerDependencies:
       '@types/react': ^19.2.0
 
-  '@types/react@19.2.7':
+  '@types/react@19.2.1':
     resolution: {integrity: sha512-MWtvHrGZLFttgeEj28VXHxpmwYbor/ATPYbBfSFZEIRK0ecCFLl2Qo55z52Hss+UV9CRN7trSeq1zbgx7YDWWg==}
 
   '@types/whatwg-mimetype@3.0.2':
@@ -4581,7 +4581,7 @@ packages:
     peerDependencies:
       react: '>= 16.12.0 || ^19.0.0-rc'
 
-  react-dom@19.2.0:
+  react-dom@19.2.1:
     resolution: {integrity: sha512-UlbRu4cAiGaIewkPyiRGJk0imDN2T3JjieT6spoL2UeSf5od4n5LB/mQ4ejmxhCFT1tYe8IvaFulzynWovsEFQ==}
     peerDependencies:
       react: ^19.2.0
@@ -4622,7 +4622,7 @@ packages:
     resolution: {integrity: sha512-26TUbLzLfHQ5jO5N7y3Mx88eeKo0Ml0UjCQuX4BMfOd/JX+enQqlKpL1CZnmjeBRvQE8TR+ds9j1rqx9CxhKHQ==}
     engines: {node: '>=0.12.0'}
 
-  react@19.2.0:
+  react@19.2.1:
     resolution: {integrity: sha512-tmbWg6W31tQLeB5cdIBOicJDJRR2KzXsV7uSK9iNfLWQ5bIZfxuPEHp7M8wiHyHnn0DD1i7w3Zmin0FtkrwoCQ==}
     engines: {node: '>=0.10.0'}
 
@@ -6956,23 +6956,23 @@ snapshots:
       '@jsonjoy.com/codegen': 1.0.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@mux/mux-player-react@3.4.1(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+  '@mux/mux-player-react@3.4.1(@types/react-dom@19.2.1(@types/react@19.2.1))(@types/react@19.2.1)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)':
     dependencies:
-      '@mux/mux-player': 3.4.1(react@19.2.0)
+      '@mux/mux-player': 3.4.1(react@19.2.1)
       '@mux/playback-core': 0.29.1
       prop-types: 15.8.1
       react: 19.2.0
-      react-dom: 19.2.0(react@19.2.0)
+      react-dom: 19.2.0(react@19.2.1)
     optionalDependencies:
       '@types/react': 19.2.7
-      '@types/react-dom': 19.2.3(@types/react@19.2.7)
+      '@types/react-dom': 19.2.3(@types/react@19.2.1)
 
-  '@mux/mux-player@3.4.1(react@19.2.0)':
+  '@mux/mux-player@3.4.1(react@19.2.1)':
     dependencies:
       '@mux/mux-video': 0.25.3
       '@mux/playback-core': 0.29.1
-      media-chrome: 4.11.1(react@19.2.0)
-      player.style: 0.1.9(react@19.2.0)
+      media-chrome: 4.11.1(react@19.2.1)
+      player.style: 0.1.9(react@19.2.1)
     transitivePeerDependencies:
       - react
 
@@ -7106,7 +7106,7 @@ snapshots:
     dependencies:
       playwright: 1.57.0
 
-  '@react-google-maps/api@2.20.7(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+  '@react-google-maps/api@2.20.7(react-dom@19.2.1(react@19.2.1))(react@19.2.1)':
     dependencies:
       '@googlemaps/js-api-loader': 1.16.8
       '@googlemaps/markerclusterer': 2.5.3
@@ -7115,7 +7115,7 @@ snapshots:
       '@types/google.maps': 3.58.1
       invariant: 2.2.4
       react: 19.2.0
-      react-dom: 19.2.0(react@19.2.0)
+      react-dom: 19.2.0(react@19.2.1)
 
   '@react-google-maps/infobox@2.20.0': {}
 
@@ -7271,15 +7271,15 @@ snapshots:
       picocolors: 1.1.1
       redent: 3.0.0
 
-  '@testing-library/react@16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+  '@testing-library/react@16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.1(@types/react@19.2.1))(@types/react@19.2.1)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)':
     dependencies:
       '@babel/runtime': 7.27.6
       '@testing-library/dom': 10.4.0
       react: 19.2.0
-      react-dom: 19.2.0(react@19.2.0)
+      react-dom: 19.2.0(react@19.2.1)
     optionalDependencies:
       '@types/react': 19.2.7
-      '@types/react-dom': 19.2.3(@types/react@19.2.7)
+      '@types/react-dom': 19.2.3(@types/react@19.2.1)
 
   '@theguild/federation-composition@0.20.2(graphql@16.12.0)':
     dependencies:
@@ -7361,11 +7361,11 @@ snapshots:
 
   '@types/qs@6.14.0': {}
 
-  '@types/react-dom@19.2.3(@types/react@19.2.7)':
+  '@types/react-dom@19.2.1(@types/react@19.2.1)':
     dependencies:
       '@types/react': 19.2.7
 
-  '@types/react@19.2.7':
+  '@types/react@19.2.1':
     dependencies:
       csstype: 3.2.3
 
@@ -7945,7 +7945,7 @@ snapshots:
     dependencies:
       custom-media-element: 1.4.5
 
-  ce-la-react@0.3.0(react@19.2.0):
+  ce-la-react@0.3.0(react@19.2.1):
     dependencies:
       react: 19.2.0
 
@@ -9027,11 +9027,11 @@ snapshots:
 
   ini@4.1.1: {}
 
-  instantsearch-ui-components@0.15.0(react@19.2.0):
+  instantsearch-ui-components@0.15.0(react@19.2.1):
     dependencies:
       '@babel/runtime': 7.28.4
       ai: 5.0.95(zod@4.1.13)
-      markdown-to-jsx: 7.7.17(react@19.2.0)
+      markdown-to-jsx: 7.7.17(react@19.2.1)
       zod: 4.1.13
       zod-to-json-schema: 3.24.6(zod@4.1.13)
     transitivePeerDependencies:
@@ -9049,7 +9049,7 @@ snapshots:
       algoliasearch-helper: 3.26.1(algoliasearch@5.45.0)
       hogan.js: 3.0.2
       htm: 3.1.1
-      instantsearch-ui-components: 0.15.0(react@19.2.0)
+      instantsearch-ui-components: 0.15.0(react@19.2.1)
       preact: 10.27.2
       qs: 6.9.7
       react: 19.2.0
@@ -9423,7 +9423,7 @@ snapshots:
 
   map-cache@0.2.2: {}
 
-  markdown-to-jsx@7.7.17(react@19.2.0):
+  markdown-to-jsx@7.7.17(react@19.2.1):
     optionalDependencies:
       react: 19.2.0
 
@@ -9431,10 +9431,10 @@ snapshots:
 
   mdn-data@2.12.2: {}
 
-  media-chrome@4.11.1(react@19.2.0):
+  media-chrome@4.11.1(react@19.2.1):
     dependencies:
       '@vercel/edge': 1.2.2
-      ce-la-react: 0.3.0(react@19.2.0)
+      ce-la-react: 0.3.0(react@19.2.1)
     transitivePeerDependencies:
       - react
 
@@ -9506,15 +9506,15 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  next@16.0.7(@opentelemetry/api@1.9.0)(@playwright/test@1.57.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(sass@1.94.2):
+  next@16.0.7(@opentelemetry/api@1.9.0)(@playwright/test@1.57.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(sass@1.94.2):
     dependencies:
       '@next/env': 16.0.7
       '@swc/helpers': 0.5.15
       caniuse-lite: 1.0.30001759
       postcss: 8.4.31
       react: 19.2.0
-      react-dom: 19.2.0(react@19.2.0)
-      styled-jsx: 5.1.6(react@19.2.0)
+      react-dom: 19.2.0(react@19.2.1)
+      styled-jsx: 5.1.6(react@19.2.1)
     optionalDependencies:
       '@next/swc-darwin-arm64': 16.0.7
       '@next/swc-darwin-x64': 16.0.7
@@ -9715,9 +9715,9 @@ snapshots:
 
   picomatch@4.0.3: {}
 
-  player.style@0.1.9(react@19.2.0):
+  player.style@0.1.9(react@19.2.1):
     dependencies:
-      media-chrome: 4.11.1(react@19.2.0)
+      media-chrome: 4.11.1(react@19.2.1)
     transitivePeerDependencies:
       - react
 
@@ -9773,28 +9773,28 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
-  react-datocms@7.2.3(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(graphql@16.12.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
+  react-datocms@7.2.3(@types/react-dom@19.2.1(@types/react@19.2.1))(@types/react@19.2.1)(graphql@16.12.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1):
     dependencies:
-      '@mux/mux-player-react': 3.4.1(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      '@mux/mux-player-react': 3.4.1(@types/react-dom@19.2.1(@types/react@19.2.1))(@types/react@19.2.1)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       datocms-listen: 0.1.15(graphql@16.12.0)
       datocms-structured-text-generic-html-renderer: 5.0.0
       datocms-structured-text-utils: 5.1.6
       react: 19.2.0
-      react-intersection-observer: 9.16.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      react-intersection-observer: 9.16.0(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       react-string-replace: 1.1.1
-      use-deep-compare-effect: 1.8.1(react@19.2.0)
+      use-deep-compare-effect: 1.8.1(react@19.2.1)
     transitivePeerDependencies:
       - '@types/react'
       - '@types/react-dom'
       - graphql
       - react-dom
 
-  react-dom@19.2.0(react@19.2.0):
+  react-dom@19.2.1(react@19.2.1):
     dependencies:
       react: 19.2.0
       scheduler: 0.27.0
 
-  react-instantsearch-core@7.20.0(algoliasearch@5.45.0)(react@19.2.0):
+  react-instantsearch-core@7.20.0(algoliasearch@5.45.0)(react@19.2.1):
     dependencies:
       '@babel/runtime': 7.28.4
       ai: 5.0.95(zod@4.1.13)
@@ -9802,25 +9802,25 @@ snapshots:
       algoliasearch-helper: 3.26.1(algoliasearch@5.45.0)
       instantsearch.js: 4.84.0(algoliasearch@5.45.0)
       react: 19.2.0
-      use-sync-external-store: 1.6.0(react@19.2.0)
+      use-sync-external-store: 1.6.0(react@19.2.1)
       zod: 4.1.13
       zod-to-json-schema: 3.24.6(zod@4.1.13)
 
-  react-instantsearch@7.20.0(algoliasearch@5.45.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
+  react-instantsearch@7.20.0(algoliasearch@5.45.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1):
     dependencies:
       '@babel/runtime': 7.28.4
       algoliasearch: 5.45.0
-      instantsearch-ui-components: 0.15.0(react@19.2.0)
+      instantsearch-ui-components: 0.15.0(react@19.2.1)
       instantsearch.js: 4.84.0(algoliasearch@5.45.0)
       react: 19.2.0
-      react-dom: 19.2.0(react@19.2.0)
-      react-instantsearch-core: 7.20.0(algoliasearch@5.45.0)(react@19.2.0)
+      react-dom: 19.2.0(react@19.2.1)
+      react-instantsearch-core: 7.20.0(algoliasearch@5.45.0)(react@19.2.1)
 
-  react-intersection-observer@9.16.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
+  react-intersection-observer@9.16.0(react-dom@19.2.1(react@19.2.1))(react@19.2.1):
     dependencies:
       react: 19.2.0
     optionalDependencies:
-      react-dom: 19.2.0(react@19.2.0)
+      react-dom: 19.2.0(react@19.2.1)
 
   react-is@16.13.1: {}
 
@@ -9830,7 +9830,7 @@ snapshots:
 
   react-string-replace@1.1.1: {}
 
-  react@19.2.0: {}
+  react@19.2.1: {}
 
   readdirp@4.1.2: {}
 
@@ -10219,7 +10219,7 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  styled-jsx@5.1.6(react@19.2.0):
+  styled-jsx@5.1.6(react@19.2.1):
     dependencies:
       client-only: 0.0.1
       react: 19.2.0
@@ -10509,19 +10509,19 @@ snapshots:
 
   urlpattern-polyfill@10.1.0: {}
 
-  urql@5.0.1(@urql/core@6.0.1(graphql@16.12.0))(react@19.2.0):
+  urql@5.0.1(@urql/core@6.0.1(graphql@16.12.0))(react@19.2.1):
     dependencies:
       '@urql/core': 6.0.1(graphql@16.12.0)
       react: 19.2.0
       wonka: 6.3.5
 
-  use-deep-compare-effect@1.8.1(react@19.2.0):
+  use-deep-compare-effect@1.8.1(react@19.2.1):
     dependencies:
       '@babel/runtime': 7.28.4
       dequal: 2.0.3
       react: 19.2.0
 
-  use-sync-external-store@1.6.0(react@19.2.0):
+  use-sync-external-store@1.6.0(react@19.2.1):
     dependencies:
       react: 19.2.0
 
