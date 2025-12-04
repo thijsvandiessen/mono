@@ -28,7 +28,7 @@
     "eslint": "9.39.1",
     "prettier": "3.7.3",
     "ts-node": "10.9.2",
-    "turbo": "2.6.1",
+    "turbo": "2.6.3",
     "typescript": "5.9.3",
     "vitest": "4.0.15"
   },
