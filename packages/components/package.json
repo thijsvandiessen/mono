@@ -52,7 +52,7 @@
     "jsdom": "27.2.0",
     "prettier": "3.7.3",
     "sass": "1.94.2",
-    "turbo": "2.6.1",
+    "turbo": "2.6.3",
     "typescript": "5.9.3",
     "vite-tsconfig-paths": "5.1.4",
     "vitest": "4.0.15"
