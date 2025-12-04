@@ -237,8 +237,8 @@ importers:
         specifier: 19.2.0
         version: 19.2.0
       react-datocms:
-        specifier: 7.2.3
-        version: 7.2.3(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(graphql@16.12.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        specifier: 7.2.4
+        version: 7.2.4(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(graphql@16.12.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       react-dom:
         specifier: 19.2.0
         version: 19.2.0(react@19.2.0)
@@ -701,6 +701,14 @@ packages:
 
   '@0no-co/graphql.web@1.1.2':
     resolution: {integrity: sha512-N2NGsU5FLBhT8NZ+3l2YrzZSHITjNXNuDhC4iDiikv0IujaJ0Xc6xIxQZ/Ek3Cb+rgPjnLHYyJm11tInuJn+cw==}
+    peerDependencies:
+      graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
+    peerDependenciesMeta:
+      graphql:
+        optional: true
+
+  '@0no-co/graphql.web@1.2.0':
+    resolution: {integrity: sha512-/1iHy9TTr63gE1YcR5idjx8UREz1s0kFhydf3bBLCXyqjhkIc6igAzTOx3zPifCwFR87tsh/4Pa9cNts6d2otw==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     peerDependenciesMeta:
@@ -1941,8 +1949,11 @@ packages:
     peerDependencies:
       tslib: '2'
 
-  '@mux/mux-player-react@3.4.1':
-    resolution: {integrity: sha512-suZ22lqa/zW9XdUrm+JcNDXPrvFg8TllibhQXgPKfIrrKZhfbCgcepU6trzuBTEX5Ymxq5aQCLJpHxfHDPqKVg==}
+  '@mux/mux-data-google-ima@0.2.8':
+    resolution: {integrity: sha512-0ZEkHdcZ6bS8QtcjFcoJeZxJTpX7qRIledf4q1trMWPznugvtajCjCM2kieK/pzkZj1JM6liDRFs1PJSfVUs2A==}
+
+  '@mux/mux-player-react@3.10.0':
+    resolution: {integrity: sha512-Ec+BSCJFIdwAB3AUWKc+BBap8brgFm7c5eay7MF83TfdC25WVZqsVD8RqUq1gc0g1nZ9mlspR2TIaS/+mLXQ+Q==}
     peerDependencies:
       '@types/react': ^17.0.0 || ^17.0.0-0 || ^18 || ^18.0.0-0 || ^19 || ^19.0.0-0
       '@types/react-dom': '*'
@@ -1954,14 +1965,14 @@ packages:
       '@types/react-dom':
         optional: true
 
-  '@mux/mux-player@3.4.1':
-    resolution: {integrity: sha512-vgWys0mCqPRezJNMH5HFHQ/uVd+NOinNhOZDjC5uPO1kuE6W19HU67BXz7eMi3Qe4hL64ptwIzyyWNZBtkXP+Q==}
+  '@mux/mux-player@3.10.0':
+    resolution: {integrity: sha512-p2+ZrBNtSInmlf26MaJofrGsYgZdiAc7r9Wk1tHfttKI0/U9aeTj5xufx28SsfzlNoU2qEkoHyiGQZgQKKdrnA==}
 
-  '@mux/mux-video@0.25.3':
-    resolution: {integrity: sha512-078GgUuHju5IdBGdhfCtng5EDNmrV94i3VmkFXxUIUm6sO1PFP2GFMWCAcLna6n6nEE6KZ0eBtAnZnsnbOCuxA==}
+  '@mux/mux-video@0.29.0':
+    resolution: {integrity: sha512-G33I58GFho6iFdD0gAmud0Q2YvbjjzLoLtbCibt8DRJQa4ULR9WAvsyTi8BM301hguGjxuHKdQjVtgH8cVa7bA==}
 
-  '@mux/playback-core@0.29.1':
-    resolution: {integrity: sha512-ugywkgOu1sWZYzHWrr2lOJrpSnI19jYK9GWeEYlQAxpDgoImj6MW9KRzb/d2RRCUJYN7y65btFIRx++rKaHZHA==}
+  '@mux/playback-core@0.32.0':
+    resolution: {integrity: sha512-uXg7Qo/JvW7BviyDTnlHVqmLKqAxlP40wIE4+fawKQKM9MsmWSoxg6pRMW0wtMJ7pCg3jitefoox9OtKzVAy7g==}
 
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
@@ -2652,9 +2663,6 @@ packages:
     peerDependencies:
       '@urql/core': ^6.0.0
 
-  '@vercel/edge@1.2.2':
-    resolution: {integrity: sha512-1+y+f6rk0Yc9ss9bRDgz/gdpLimwoRteKHhrcgHvEpjbP1nyT3ByqEMWm2BTcpIO5UtDmIFXc8zdq4LR190PDA==}
-
   '@vercel/oidc@3.0.3':
     resolution: {integrity: sha512-yNEQvPcVrK9sIe637+I0jD6leluPxzwJKx/Haw6F4H77CdDsszUn5V3o96LPziXkSNE2B83+Z3mjqGKBK/R6Gg==}
     engines: {node: '>= 20'}
@@ -2947,11 +2955,11 @@ packages:
   capital-case@1.0.4:
     resolution: {integrity: sha512-ds37W8CytHgwnhGGTi88pcPyR15qoNkOpYwmMMfnWqqWgESapLqvDx6huFjQ5vqWSn2Z06173XNA7LtMOeUh1A==}
 
-  castable-video@1.1.10:
-    resolution: {integrity: sha512-/T1I0A4VG769wTEZ8gWuy1Crn9saAfRTd1UYTb8xbOPlN78+zOi/1nU2dD5koNkfE5VWvgabkIqrGKmyNXOjSQ==}
+  castable-video@1.1.11:
+    resolution: {integrity: sha512-LCRTK6oe7SB1SiUQFzZCo6D6gcEzijqBTVIuj3smKpQdesXM18QTbCVqWgh9MfOeQgTx/i9ji5jGcdqNPeWg2g==}
 
-  ce-la-react@0.3.0:
-    resolution: {integrity: sha512-84SEDLNHaAjykzlkqgKRq95hA3qnxrsTrwh4hTgBq6tfpINqajxz4bkz9q4orhUfpqDPQRgdCzYTF3bHcvTIlQ==}
+  ce-la-react@0.3.2:
+    resolution: {integrity: sha512-QJ6k4lOD/btI08xG8jBPxRCGXvCnusGGkTsiXk0u3NqUu/W+BXRnFD4PYjwtqh8AWmGa5LDbGk0fLQsqr0nSMA==}
     peerDependencies:
       react: '>=17.0.0'
 
@@ -3157,8 +3165,8 @@ packages:
   datocms-listen@0.1.15:
     resolution: {integrity: sha512-0LcdKYW/ilWdyrRzQ+YbkAk4r2dge63vzHtfv19L8pfbfYurQgXP9/ck703QZL//YqBoc0OKBS4BP4WUQ6JDKA==}
 
-  datocms-structured-text-generic-html-renderer@5.0.0:
-    resolution: {integrity: sha512-WVVWFO2dMx9ILmZKKV22QTbuV4bjoms9PqdUSSWCcGpJmWnVIiZhSzqsXZ41ijvyGYNBtUo35N1y5hB9ROl6bw==}
+  datocms-structured-text-generic-html-renderer@5.1.6:
+    resolution: {integrity: sha512-1qaxEoyPKhFm+P4kbV0XuKUbTMxrgMILCW6+3xJKeIaufrnqQwSh+qL1//0LtNo7eXxv3Sc8gKCGqw5aF6JTFQ==}
 
   datocms-structured-text-utils@5.1.6:
     resolution: {integrity: sha512-LDk8R5byWmBmK5dIWiTvfPe7pBn9xkZ3VMxevsoNuiffVsz2T3SgtdqNBnGIKaEmxJ3dln/IvxSbkvULf1Y9Eg==}
@@ -3783,8 +3791,8 @@ packages:
   hermes-parser@0.25.1:
     resolution: {integrity: sha512-6pEjquH3rqaI6cYAXYPcz9MS4rY6R4ngRgrgfDshRptUZIc3lw0MCIJIGDj9++mfySOuPTHB4nrSW99BCvOPIA==}
 
-  hls.js@1.5.20:
-    resolution: {integrity: sha512-uu0VXUK52JhihhnN/MVVo1lvqNNuhoxkonqgO3IpjvQiGpJBdIXMGkofjQb/j9zvV7a1SW8U9g1FslWx/1HOiQ==}
+  hls.js@1.6.15:
+    resolution: {integrity: sha512-E3a5VwgXimGHwpRGV+WxRTKeSp2DW5DI5MWv34ulL3t5UNmyJWCQ1KmLEHbYzcfThfXG8amBL+fCYPneGHC4VA==}
 
   hogan.js@3.0.2:
     resolution: {integrity: sha512-RqGs4wavGYJWE07t35JQccByczmNUXQT0E12ZYV1VKYu5UiAU9lsos/yBAcf840+zrUQQxgVduCR5/B8nNtibg==}
@@ -4248,11 +4256,11 @@ packages:
   mdn-data@2.12.2:
     resolution: {integrity: sha512-IEn+pegP1aManZuckezWCO+XZQDplx1366JoVhTpMpBB1sPey/SbveZQUosKiKiGYjg1wH4pMlNgXbCiYgihQA==}
 
-  media-chrome@4.11.1:
-    resolution: {integrity: sha512-+2niDc4qOwlpFAjwxg1OaizK/zKV6y7QqGm4nBFEVlSaG0ZBgOmfc4IXAPiirZqAlZGaFFUaMqCl1SpGU0/naA==}
+  media-chrome@4.16.1:
+    resolution: {integrity: sha512-qtFlsy0lNDVCyVo//ZCAfRPKwgehfOYp6rThZzDUuZ5ypv41yqUfAxK+P9TOs+XSVWXATPTT2WRV0fbW0BH4vQ==}
 
-  media-tracks@0.3.3:
-    resolution: {integrity: sha512-9P2FuUHnZZ3iji+2RQk7Zkh5AmZTnOG5fODACnjhCVveX1McY3jmCRHofIEI+yTBqplz7LXy48c7fQ3Uigp88w==}
+  media-tracks@0.3.4:
+    resolution: {integrity: sha512-5SUElzGMYXA7bcyZBL1YzLTxH9Iyw1AeYNJxzByqbestrrtB0F3wfiWUr7aROpwodO4fwnxOt78Xjb3o3ONNQg==}
 
   memfs@4.51.1:
     resolution: {integrity: sha512-Eyt3XrufitN2ZL9c/uIRMyDwXanLI88h/L3MoWqNY747ha3dMR9dWqp8cRT5ntjZ0U1TNuq4U91ZXK0sMBjYOQ==}
@@ -4326,6 +4334,9 @@ packages:
   mute-stream@2.0.0:
     resolution: {integrity: sha512-WWdIxpyjEn+FhQJQQv9aQAYlHoNVdzIzUySNV1gHUPDSdZJ3yZn7pAAbQcV7B56Mvu881q9FZV+0Vx2xC44VWA==}
     engines: {node: ^18.17.0 || >=20.5.0}
+
+  mux-embed@5.14.0:
+    resolution: {integrity: sha512-vcuw2WWGQ3uh9HfJwaJ8JMlKN4l+8xGfFAUAYNJOcIxP2sPUoRvlu3SY00yg9YBKLfK9E6peaPl+HszWS0Iseg==}
 
   mux-embed@5.9.0:
     resolution: {integrity: sha512-wmunL3uoPhma/tWy8PrDPZkvJpXvSFBwbD3KkC4PG8Ztjfb1X3hRJwGUAQyRz7z99b/ovLm2UTTitrkvStjH4w==}
@@ -4544,8 +4555,8 @@ packages:
     resolution: {integrity: sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==}
     engines: {node: '>=12'}
 
-  player.style@0.1.9:
-    resolution: {integrity: sha512-aFmIhHMrnAP8YliFYFMnRw+5AlHqBvnqWy4vHGo2kFxlC+XjmTXqgg62qSxlE8ubAY83c0ViEZGYglSJi6mGCA==}
+  player.style@0.3.1:
+    resolution: {integrity: sha512-z/T8hJGaTkHT9vdXgWdOgF37eB1FV7/j52VXQZ2lgEhpru9oT8TaUWIxp6GoxTnhPBM4X6nSbpkAHrT7UTjUKg==}
 
   playwright-core@1.57.0:
     resolution: {integrity: sha512-agTcKlMw/mjBWOnD6kFZttAAGHgi/Nw0CZ2o6JqWSbMlI219lAFLZZCyqByTsvVAJq5XA5H8cA6PrvBRpBWEuQ==}
@@ -4608,8 +4619,8 @@ packages:
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
-  react-datocms@7.2.3:
-    resolution: {integrity: sha512-gUJJD5J2Dq/VmF3Fi83p8aIqVXoNc5zC1Ikyhs59bygQlaHxPqoHMFcplQ5fFzjCLktOE0CnunVDyfbk/gbtRw==}
+  react-datocms@7.2.4:
+    resolution: {integrity: sha512-ybi4wQD4RF1q22DemqPYWD5laIXjpzGYWcE9u6kJ/CvTPWIzsAMwCttJ7bYOQQ6t9D240/SESFeFBHeuozdcEw==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
       react: '>= 16.12.0 || ^19.0.0-rc'
@@ -5498,6 +5509,10 @@ packages:
 snapshots:
 
   '@0no-co/graphql.web@1.1.2(graphql@16.12.0)':
+    optionalDependencies:
+      graphql: 16.12.0
+
+  '@0no-co/graphql.web@1.2.0(graphql@16.12.0)':
     optionalDependencies:
       graphql: 16.12.0
 
@@ -7003,10 +7018,14 @@ snapshots:
       '@jsonjoy.com/codegen': 1.0.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@mux/mux-player-react@3.4.1(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+  '@mux/mux-data-google-ima@0.2.8':
     dependencies:
-      '@mux/mux-player': 3.4.1(react@19.2.0)
-      '@mux/playback-core': 0.29.1
+      mux-embed: 5.9.0
+
+  '@mux/mux-player-react@3.10.0(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+    dependencies:
+      '@mux/mux-player': 3.10.0(react@19.2.0)
+      '@mux/playback-core': 0.32.0
       prop-types: 15.8.1
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
@@ -7014,26 +7033,27 @@ snapshots:
       '@types/react': 19.2.7
       '@types/react-dom': 19.2.3(@types/react@19.2.7)
 
-  '@mux/mux-player@3.4.1(react@19.2.0)':
+  '@mux/mux-player@3.10.0(react@19.2.0)':
     dependencies:
-      '@mux/mux-video': 0.25.3
-      '@mux/playback-core': 0.29.1
-      media-chrome: 4.11.1(react@19.2.0)
-      player.style: 0.1.9(react@19.2.0)
+      '@mux/mux-video': 0.29.0
+      '@mux/playback-core': 0.32.0
+      media-chrome: 4.16.1(react@19.2.0)
+      player.style: 0.3.1(react@19.2.0)
     transitivePeerDependencies:
       - react
 
-  '@mux/mux-video@0.25.3':
+  '@mux/mux-video@0.29.0':
     dependencies:
-      '@mux/playback-core': 0.29.1
-      castable-video: 1.1.10
+      '@mux/mux-data-google-ima': 0.2.8
+      '@mux/playback-core': 0.32.0
+      castable-video: 1.1.11
       custom-media-element: 1.4.5
-      media-tracks: 0.3.3
+      media-tracks: 0.3.4
 
-  '@mux/playback-core@0.29.1':
+  '@mux/playback-core@0.32.0':
     dependencies:
-      hls.js: 1.5.20
-      mux-embed: 5.9.0
+      hls.js: 1.6.15
+      mux-embed: 5.14.0
 
   '@napi-rs/wasm-runtime@0.2.12':
     dependencies:
@@ -7645,8 +7665,6 @@ snapshots:
       '@urql/core': 6.0.1(graphql@16.12.0)
       wonka: 6.3.5
 
-  '@vercel/edge@1.2.2': {}
-
   '@vercel/oidc@3.0.3': {}
 
   '@vercel/oidc@3.0.5': {}
@@ -7998,11 +8016,11 @@ snapshots:
       tslib: 2.8.1
       upper-case-first: 2.0.2
 
-  castable-video@1.1.10:
+  castable-video@1.1.11:
     dependencies:
       custom-media-element: 1.4.5
 
-  ce-la-react@0.3.0(react@19.2.0):
+  ce-la-react@0.3.2(react@19.2.0):
     dependencies:
       react: 19.2.0
 
@@ -8243,11 +8261,11 @@ snapshots:
 
   datocms-listen@0.1.15(graphql@16.12.0):
     dependencies:
-      '@0no-co/graphql.web': 1.1.2(graphql@16.12.0)
+      '@0no-co/graphql.web': 1.2.0(graphql@16.12.0)
     transitivePeerDependencies:
       - graphql
 
-  datocms-structured-text-generic-html-renderer@5.0.0:
+  datocms-structured-text-generic-html-renderer@5.1.6:
     dependencies:
       datocms-structured-text-utils: 5.1.6
 
@@ -9022,7 +9040,7 @@ snapshots:
     dependencies:
       hermes-estree: 0.25.1
 
-  hls.js@1.5.20: {}
+  hls.js@1.6.15: {}
 
   hogan.js@3.0.2:
     dependencies:
@@ -9518,14 +9536,13 @@ snapshots:
 
   mdn-data@2.12.2: {}
 
-  media-chrome@4.11.1(react@19.2.0):
+  media-chrome@4.16.1(react@19.2.0):
     dependencies:
-      '@vercel/edge': 1.2.2
-      ce-la-react: 0.3.0(react@19.2.0)
+      ce-la-react: 0.3.2(react@19.2.0)
     transitivePeerDependencies:
       - react
 
-  media-tracks@0.3.3: {}
+  media-tracks@0.3.4: {}
 
   memfs@4.51.1:
     dependencies:
@@ -9584,6 +9601,8 @@ snapshots:
   ms@2.1.3: {}
 
   mute-stream@2.0.0: {}
+
+  mux-embed@5.14.0: {}
 
   mux-embed@5.9.0: {}
 
@@ -9802,9 +9821,9 @@ snapshots:
 
   picomatch@4.0.3: {}
 
-  player.style@0.1.9(react@19.2.0):
+  player.style@0.3.1(react@19.2.0):
     dependencies:
-      media-chrome: 4.11.1(react@19.2.0)
+      media-chrome: 4.16.1(react@19.2.0)
     transitivePeerDependencies:
       - react
 
@@ -9862,11 +9881,11 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
-  react-datocms@7.2.3(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(graphql@16.12.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
+  react-datocms@7.2.4(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(graphql@16.12.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
     dependencies:
-      '@mux/mux-player-react': 3.4.1(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      '@mux/mux-player-react': 3.10.0(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       datocms-listen: 0.1.15(graphql@16.12.0)
-      datocms-structured-text-generic-html-renderer: 5.0.0
+      datocms-structured-text-generic-html-renderer: 5.1.6
       datocms-structured-text-utils: 5.1.6
       react: 19.2.0
       react-intersection-observer: 9.16.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
