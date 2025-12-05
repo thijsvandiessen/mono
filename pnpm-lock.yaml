@@ -231,8 +231,8 @@ importers:
         specifier: 2.5.1
         version: 2.5.1
       datocms-structured-text-utils:
-        specifier: 5.1.6
-        version: 5.1.6
+        specifier: 5.1.7
+        version: 5.1.7
       react:
         specifier: 19.2.0
         version: 19.2.0
@@ -3175,8 +3175,8 @@ packages:
   datocms-structured-text-generic-html-renderer@5.1.6:
     resolution: {integrity: sha512-1qaxEoyPKhFm+P4kbV0XuKUbTMxrgMILCW6+3xJKeIaufrnqQwSh+qL1//0LtNo7eXxv3Sc8gKCGqw5aF6JTFQ==}
 
-  datocms-structured-text-utils@5.1.6:
-    resolution: {integrity: sha512-LDk8R5byWmBmK5dIWiTvfPe7pBn9xkZ3VMxevsoNuiffVsz2T3SgtdqNBnGIKaEmxJ3dln/IvxSbkvULf1Y9Eg==}
+  datocms-structured-text-utils@5.1.7:
+    resolution: {integrity: sha512-026bnrFQwKG/V9gUoLgGvOI5+hVJSzSpxTrb7MmjpV5ScZ0XTIjorhe34Ew3V7BJz/8zWpdRqiY+UB82dnRD8g==}
 
   debounce@2.2.0:
     resolution: {integrity: sha512-Xks6RUDLZFdz8LIdR6q0MTH44k7FikOmnh5xkSjMig6ch45afc8sjTjRQf3P6ax8dMgcQrYO/AR2RGWURrruqw==}
@@ -5965,7 +5965,7 @@ snapshots:
   '@datocms/cma-client@5.2.0':
     dependencies:
       '@datocms/rest-client-utils': 5.1.13
-      datocms-structured-text-utils: 5.1.6
+      datocms-structured-text-utils: 5.1.7
       uuid: 9.0.1
 
   '@datocms/rest-client-utils@5.1.13':
@@ -8280,9 +8280,9 @@ snapshots:
 
   datocms-structured-text-generic-html-renderer@5.1.6:
     dependencies:
-      datocms-structured-text-utils: 5.1.6
+      datocms-structured-text-utils: 5.1.7
 
-  datocms-structured-text-utils@5.1.6:
+  datocms-structured-text-utils@5.1.7:
     dependencies:
       array-flatten: 3.0.0
 
@@ -9899,7 +9899,7 @@ snapshots:
       '@mux/mux-player-react': 3.10.0(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       datocms-listen: 0.1.15(graphql@16.12.0)
       datocms-structured-text-generic-html-renderer: 5.1.6
-      datocms-structured-text-utils: 5.1.6
+      datocms-structured-text-utils: 5.1.7
       react: 19.2.0
       react-intersection-observer: 9.16.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       react-string-replace: 1.1.1
