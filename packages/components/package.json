@@ -31,9 +31,9 @@
     "@react-google-maps/api": "2.20.7",
     "classnames": "2.5.1",
     "datocms-structured-text-utils": "5.1.7",
-    "react": "19.2.0",
+    "react": "19.2.1",
     "react-datocms": "7.2.4",
-    "react-dom": "19.2.0",
+    "react-dom": "19.2.1",
     "urql": "5.0.1"
   },
   "devDependencies": {
