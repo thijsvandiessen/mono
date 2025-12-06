@@ -1,6 +1,6 @@
 {
   "name": "mono-vandiessen",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "private": true,
   "description": "Monorepo for small websites",
   "type": "module",

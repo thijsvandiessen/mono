@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.17](https://github.com/thijsvandiessen/mono/compare/v1.0.16...v1.0.17) (2025-12-06)
+
+
+### Bug Fixes
+
+* update react cve ([#830](https://github.com/thijsvandiessen/mono/issues/830)) ([3a548ac](https://github.com/thijsvandiessen/mono/commit/3a548ac7c021958621846b625ba9a083f96a6bcf))
+
 ## [1.0.16](https://github.com/thijsvandiessen/mono/compare/v1.0.15...v1.0.16) (2025-11-24)
 
 
