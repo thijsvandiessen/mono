@@ -581,8 +581,8 @@ importers:
         specifier: 17.2.3
         version: 17.2.3
       instantsearch.js:
-        specifier: 4.85.1
-        version: 4.85.1(algoliasearch@5.46.0)
+        specifier: 4.85.2
+        version: 4.85.2(algoliasearch@5.46.0)
       react:
         specifier: 19.2.1
         version: 19.2.1
@@ -3849,6 +3849,11 @@ packages:
 
   instantsearch.js@4.85.1:
     resolution: {integrity: sha512-fmFbTUrONO/1V7VdI4Ykcof4HOD2S86vuvwfvdaZFgI11+JXT18G5RjjpGLMEtrypDOwZFSNxkvWXnNmB8zz/g==}
+    peerDependencies:
+      algoliasearch: '>= 3.1 < 6'
+
+  instantsearch.js@4.85.2:
+    resolution: {integrity: sha512-GNrsiD7JRaXOBQ+fT0zPjBKk9hJaZMe1Cr80ZcW+ZgRcGCZF+DRT/DStDcVqc3BrWnOzbebS/d+Ffle4gZ3gNQ==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 6'
 
@@ -9053,6 +9058,26 @@ snapshots:
       - react
 
   instantsearch.js@4.85.1(algoliasearch@5.46.0):
+    dependencies:
+      '@algolia/events': 4.0.1
+      '@types/dom-speech-recognition': 0.0.1
+      '@types/google.maps': 3.58.1
+      '@types/hogan.js': 3.0.5
+      '@types/qs': 6.14.0
+      ai: 5.0.108(zod@4.1.13)
+      algoliasearch: 5.46.0
+      algoliasearch-helper: 3.26.1(algoliasearch@5.46.0)
+      hogan.js: 3.0.2
+      htm: 3.1.1
+      instantsearch-ui-components: 0.15.2(react@19.2.1)
+      preact: 10.28.0
+      qs: 6.9.7
+      react: 19.2.1
+      search-insights: 2.17.3
+      zod: 4.1.13
+      zod-to-json-schema: 3.24.6(zod@4.1.13)
+
+  instantsearch.js@4.85.2(algoliasearch@5.46.0):
     dependencies:
       '@algolia/events': 4.0.1
       '@types/dom-speech-recognition': 0.0.1
