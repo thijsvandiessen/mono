@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.18](https://github.com/thijsvandiessen/mono/compare/v1.0.17...v1.0.18) (2025-12-12)
+
+
+### Bug Fixes
+
+* react again ([#857](https://github.com/thijsvandiessen/mono/issues/857)) ([d7b04ab](https://github.com/thijsvandiessen/mono/commit/d7b04ab6d3509de74d8e0539737764e32305277f))
+* simple ui components ([#856](https://github.com/thijsvandiessen/mono/issues/856)) ([540ed38](https://github.com/thijsvandiessen/mono/commit/540ed3864cf8a2efa7fc4ca451d36758bf0afcdf))
+
 ## [1.0.17](https://github.com/thijsvandiessen/mono/compare/v1.0.16...v1.0.17) (2025-12-06)
 
 
