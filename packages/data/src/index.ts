@@ -37,5 +37,6 @@ export {
   formatCloudinaryDocument,
   formatCloudinaryImage,
   navigationFormatter,
+  type SiteMetadata,
 } from './formatters/index.js'
 export * from './generated/graphql.js'

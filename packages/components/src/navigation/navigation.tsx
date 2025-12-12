@@ -1,22 +1,23 @@
 import { MobileMenu } from '../mobileMenu/index.js'
+import type { Navigation as NavigationData } from '@mono/data'
 import { NavigationItem } from '../navigationItem/index.js'
 import { NavigationSubMenu } from '../navigationSubMenu/index.js'
 import React from 'react'
 import classNames from 'classnames'
-import { getGeneralInfo } from '@mono/data'
 import styles from './styles.module.scss'
 
-export const Navigation = async () => {
-  const { data } = await getGeneralInfo()
-  if (!data) return null
+interface Props {
+  data: NavigationData
+}
 
+export const Navigation = ({ data }: Props) => {
   return (
     <nav className={classNames(styles.root, 'content-layout')}>
       <div className={classNames(styles.content)}>
         <MobileMenu escapedMenuString={JSON.stringify(data)} />
         <ul className={classNames(styles.list)}>
           {data.menu?.map((item) => {
-            if ('slug' in item) {
+            if ('slug' in item && item.slug) {
               return (
                 <NavigationItem
                   key={item.id}
@@ -36,7 +37,7 @@ export const Navigation = async () => {
               )
             }
 
-            return <NavigationItem key={item.id} slug={'/'} label={'Error'} />
+            return null
           })}
         </ul>
       </div>

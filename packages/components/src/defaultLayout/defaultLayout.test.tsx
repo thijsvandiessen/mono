@@ -1,5 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 import { DefaultLayout } from './defaultLayout.jsx'
+import { mockMenuData } from '../navigation/mocks/mockMenuData.js'
 import { render } from '@testing-library/react'
 
 vi.mock('../navigation/index.js', () => {
@@ -19,7 +20,15 @@ vi.mock('../footer/index.js', () => {
 describe('Default layout', () => {
   it('shows all the data', () => {
     const { container } = render(
-      <DefaultLayout>
+      <DefaultLayout
+        data={mockMenuData}
+        metadata={{
+          title: 'title',
+          description: 'description',
+          base_url: 'https://example.com',
+          socials: [],
+        }}
+      >
         <div>main content</div>
       </DefaultLayout>
     )

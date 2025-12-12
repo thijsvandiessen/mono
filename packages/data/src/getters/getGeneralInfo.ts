@@ -9,7 +9,7 @@ import { client } from '../gqlClient.js'
 import { navigationFormatter } from '../formatters/navigationFormatter.js'
 
 export const getGeneralInfo = async (): Promise<{
-  data?: Navigation
+  data: Navigation | null
   error: CombinedError | unknown
 }> => {
   try {
@@ -19,11 +19,11 @@ export const getGeneralInfo = async (): Promise<{
     >(GetGeneralInfoDocument, {})
 
     return {
-      data: data?.general ? navigationFormatter(data.general) : undefined,
+      data: data?.general ? navigationFormatter(data.general) : null,
       error,
     }
   } catch (error) {
     if (error instanceof Error) console.log(error.message)
-    return { data: undefined, error }
+    return { data: null, error }
   }
 }
