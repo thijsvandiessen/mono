@@ -1,14 +1,15 @@
-import { getGeneralInfo, getSiteMetadata } from '@mono/data'
+import { type Navigation, type SiteMetadata } from '@mono/data'
 import { Link } from '@mono/next-js'
 import classNames from 'classnames'
 import { slugFormatter } from '@mono/utils'
 import styles from './styles.module.scss'
 
-export const Footer = async () => {
-  const { data } = await getGeneralInfo()
-  const { metadata } = await getSiteMetadata()
-  if (!data) return null
+interface Props {
+  data: Navigation
+  metadata: SiteMetadata
+}
 
+export const Footer = ({ data, metadata }: Props) => {
   return (
     <footer className={classNames(styles.root)}>
       <div className={classNames(styles.content, 'content-layout')}>

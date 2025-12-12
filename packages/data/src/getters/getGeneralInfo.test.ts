@@ -42,7 +42,7 @@ describe('getGeneralInfo', () => {
     console.log = vi.fn()
     mockedQuery.mockRejectedValue(new Error('error'))
     const { data, error } = await getGeneralInfo()
-    expect(data).toBeUndefined()
+    expect(data).toBeNull()
     expect(error).toBeInstanceOf(Error)
     expect(console.log).toHaveBeenLastCalledWith('error')
   })

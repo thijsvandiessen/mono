@@ -3,7 +3,6 @@ import { Navigation } from './navigation.js'
 import { getGeneralInfo } from '@mono/data'
 import { mockMenuData } from './mocks/mockMenuData.js'
 import { render } from '@testing-library/react'
-import { resolvedComponent } from '@mono/utils'
 
 vi.mock('../mobileMenu/index.js', () => ({
   __esModule: true,
@@ -37,15 +36,13 @@ vi.mock('@mono/data', () => ({
 const getGeneralInfoMock = vi.mocked(getGeneralInfo)
 
 describe('Concert component', () => {
-  it('shows all the data', async () => {
+  it('shows all the data', () => {
     getGeneralInfoMock.mockResolvedValueOnce({
       data: mockMenuData,
       error: undefined,
     })
 
-    const Resolved = await resolvedComponent(Navigation, {})
-
-    const { container } = render(<Resolved />)
+    const { container } = render(<Navigation data={mockMenuData} />)
 
     expect(container).toMatchSnapshot()
   })

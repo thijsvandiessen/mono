@@ -5,7 +5,7 @@ export interface social {
   url: string
 }
 
-export interface siteMetadata {
+export interface SiteMetadata {
   base_url: string
   title: string
   description: string
@@ -60,7 +60,7 @@ function getSocials(data: object): social[] {
 
 export const formatSiteMetadata = (
   data?: GetSiteMetadataQuery['general']
-): siteMetadata => {
+): SiteMetadata => {
   if (!data?.siteMetadata || typeof data.siteMetadata !== 'object') {
     return { base_url: '', title: '', description: '', socials: [] }
   }
