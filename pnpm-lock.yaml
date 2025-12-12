@@ -74,13 +74,13 @@ importers:
         version: 2.5.1
       next:
         specifier: 16.0.10
-        version: 16.0.10(@opentelemetry/api@1.9.0)(@playwright/test@1.57.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(sass@1.96.0)
+        version: 16.0.10(@opentelemetry/api@1.9.0)(@playwright/test@1.57.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.3(react@19.2.1))(react@19.2.1)(sass@1.96.0)
       react:
         specifier: 19.2.1
         version: 19.2.1
       react-dom:
-        specifier: 19.2.1
-        version: 19.2.1(react@19.2.1)
+        specifier: 19.2.3
+        version: 19.2.3(react@19.2.1)
     devDependencies:
       '@mono/typescript-config':
         specifier: workspace:*
@@ -144,13 +144,13 @@ importers:
         version: 2.5.1
       next:
         specifier: 16.0.10
-        version: 16.0.10(@opentelemetry/api@1.9.0)(@playwright/test@1.57.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(sass@1.96.0)
+        version: 16.0.10(@opentelemetry/api@1.9.0)(@playwright/test@1.57.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.3(react@19.2.1))(react@19.2.1)(sass@1.96.0)
       react:
         specifier: 19.2.1
         version: 19.2.1
       react-dom:
-        specifier: 19.2.1
-        version: 19.2.1(react@19.2.1)
+        specifier: 19.2.3
+        version: 19.2.3(react@19.2.1)
     devDependencies:
       '@mono/typescript-config':
         specifier: workspace:*
@@ -226,7 +226,7 @@ importers:
         version: link:../utils
       '@react-google-maps/api':
         specifier: 2.20.7
-        version: 2.20.7(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+        version: 2.20.7(react-dom@19.2.3(react@19.2.1))(react@19.2.1)
       classnames:
         specifier: 2.5.1
         version: 2.5.1
@@ -238,10 +238,10 @@ importers:
         version: 19.2.1
       react-datocms:
         specifier: 7.2.4
-        version: 7.2.4(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(graphql@16.12.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+        version: 7.2.4(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(graphql@16.12.0)(react-dom@19.2.3(react@19.2.1))(react@19.2.1)
       react-dom:
-        specifier: 19.2.1
-        version: 19.2.1(react@19.2.1)
+        specifier: 19.2.3
+        version: 19.2.3(react@19.2.1)
       urql:
         specifier: 5.0.1
         version: 5.0.1(@urql/core@6.0.1(graphql@16.12.0))(react@19.2.1)
@@ -257,7 +257,7 @@ importers:
         version: 6.9.1
       '@testing-library/react':
         specifier: 16.3.0
-        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.1))(react@19.2.1)
       '@types/node':
         specifier: 24.10.2
         version: 24.10.2
@@ -366,7 +366,7 @@ importers:
         version: 6.9.1
       '@testing-library/react':
         specifier: 16.3.0
-        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.1))(react@19.2.1)
       '@types/node':
         specifier: 24.10.2
         version: 24.10.2
@@ -488,7 +488,7 @@ importers:
         version: 6.9.1
       '@testing-library/react':
         specifier: 16.3.0
-        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.1))(react@19.2.1)
       '@types/node':
         specifier: 24.10.2
         version: 24.10.2
@@ -530,13 +530,13 @@ importers:
     dependencies:
       next:
         specifier: 16.0.10
-        version: 16.0.10(@opentelemetry/api@1.9.0)(@playwright/test@1.57.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(sass@1.96.0)
+        version: 16.0.10(@opentelemetry/api@1.9.0)(@playwright/test@1.57.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.3(react@19.2.1))(react@19.2.1)(sass@1.96.0)
       react:
         specifier: 19.2.1
         version: 19.2.1
       react-dom:
-        specifier: 19.2.1
-        version: 19.2.1(react@19.2.1)
+        specifier: 19.2.3
+        version: 19.2.3(react@19.2.1)
       zod:
         specifier: 4.1.13
         version: 4.1.13
@@ -587,11 +587,11 @@ importers:
         specifier: 19.2.1
         version: 19.2.1
       react-dom:
-        specifier: 19.2.1
-        version: 19.2.1(react@19.2.1)
+        specifier: 19.2.3
+        version: 19.2.3(react@19.2.1)
       react-instantsearch:
         specifier: 7.21.0
-        version: 7.21.0(algoliasearch@5.46.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+        version: 7.21.0(algoliasearch@5.46.0)(react-dom@19.2.3(react@19.2.1))(react@19.2.1)
     devDependencies:
       '@mono/eslint-config':
         specifier: workspace:*
@@ -604,7 +604,7 @@ importers:
         version: 6.9.1
       '@testing-library/react':
         specifier: 16.3.0
-        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.1))(react@19.2.1)
       '@types/node':
         specifier: 24.10.2
         version: 24.10.2
@@ -645,8 +645,8 @@ importers:
         specifier: 19.2.1
         version: 19.2.1
       react-dom:
-        specifier: 19.2.1
-        version: 19.2.1(react@19.2.1)
+        specifier: 19.2.3
+        version: 19.2.3(react@19.2.1)
     devDependencies:
       '@mono/eslint-config':
         specifier: workspace:*
@@ -659,7 +659,7 @@ importers:
         version: 6.9.1
       '@testing-library/react':
         specifier: 16.3.0
-        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.1))(react@19.2.1)
       '@types/node':
         specifier: 24.10.2
         version: 24.10.2
@@ -4554,10 +4554,10 @@ packages:
     peerDependencies:
       react: '>= 16.12.0 || ^19.0.0-rc'
 
-  react-dom@19.2.1:
-    resolution: {integrity: sha512-ibrK8llX2a4eOskq1mXKu/TGZj9qzomO+sNfO98M6d9zIPOEhlBkMkBUBLd1vgS0gQsLDBzA+8jJBVXDnfHmJg==}
+  react-dom@19.2.3:
+    resolution: {integrity: sha512-yELu4WmLPw5Mr/lmeEpox5rw3RETacE++JgHqQzd2dg+YbJuat3jH4ingc+WPZhxaoFzdv9y33G+F7Nl5O0GBg==}
     peerDependencies:
-      react: ^19.2.1
+      react: ^19.2.3
 
   react-instantsearch-core@7.21.0:
     resolution: {integrity: sha512-1IXRoyYxiIHhNQZC3U0I7YEs6zlG5NmlrBeU1t2b1Nce2BiYZmFBShVeGyGRA0Zw52j9bv5Gy84jmg/VffmxCg==}
@@ -6936,13 +6936,13 @@ snapshots:
     dependencies:
       mux-embed: 5.9.0
 
-  '@mux/mux-player-react@3.10.0(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)':
+  '@mux/mux-player-react@3.10.0(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.1))(react@19.2.1)':
     dependencies:
       '@mux/mux-player': 3.10.0(react@19.2.1)
       '@mux/playback-core': 0.32.0
       prop-types: 15.8.1
       react: 19.2.1
-      react-dom: 19.2.1(react@19.2.1)
+      react-dom: 19.2.3(react@19.2.1)
     optionalDependencies:
       '@types/react': 19.2.7
       '@types/react-dom': 19.2.3(@types/react@19.2.7)
@@ -7087,7 +7087,7 @@ snapshots:
     dependencies:
       playwright: 1.57.0
 
-  '@react-google-maps/api@2.20.7(react-dom@19.2.1(react@19.2.1))(react@19.2.1)':
+  '@react-google-maps/api@2.20.7(react-dom@19.2.3(react@19.2.1))(react@19.2.1)':
     dependencies:
       '@googlemaps/js-api-loader': 1.16.8
       '@googlemaps/markerclusterer': 2.5.3
@@ -7096,7 +7096,7 @@ snapshots:
       '@types/google.maps': 3.58.1
       invariant: 2.2.4
       react: 19.2.1
-      react-dom: 19.2.1(react@19.2.1)
+      react-dom: 19.2.3(react@19.2.1)
 
   '@react-google-maps/infobox@2.20.0': {}
 
@@ -7252,12 +7252,12 @@ snapshots:
       picocolors: 1.1.1
       redent: 3.0.0
 
-  '@testing-library/react@16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)':
+  '@testing-library/react@16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.1))(react@19.2.1)':
     dependencies:
       '@babel/runtime': 7.27.6
       '@testing-library/dom': 10.4.0
       react: 19.2.1
-      react-dom: 19.2.1(react@19.2.1)
+      react-dom: 19.2.3(react@19.2.1)
     optionalDependencies:
       '@types/react': 19.2.7
       '@types/react-dom': 19.2.3(@types/react@19.2.7)
@@ -9435,14 +9435,14 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  next@16.0.10(@opentelemetry/api@1.9.0)(@playwright/test@1.57.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(sass@1.96.0):
+  next@16.0.10(@opentelemetry/api@1.9.0)(@playwright/test@1.57.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.3(react@19.2.1))(react@19.2.1)(sass@1.96.0):
     dependencies:
       '@next/env': 16.0.10
       '@swc/helpers': 0.5.15
       caniuse-lite: 1.0.30001760
       postcss: 8.4.31
       react: 19.2.1
-      react-dom: 19.2.1(react@19.2.1)
+      react-dom: 19.2.3(react@19.2.1)
       styled-jsx: 5.1.6(react@19.2.1)
     optionalDependencies:
       '@next/swc-darwin-arm64': 16.0.10
@@ -9702,14 +9702,14 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
-  react-datocms@7.2.4(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(graphql@16.12.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1):
+  react-datocms@7.2.4(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(graphql@16.12.0)(react-dom@19.2.3(react@19.2.1))(react@19.2.1):
     dependencies:
-      '@mux/mux-player-react': 3.10.0(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+      '@mux/mux-player-react': 3.10.0(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.1))(react@19.2.1)
       datocms-listen: 0.1.15(graphql@16.12.0)
       datocms-structured-text-generic-html-renderer: 5.1.6
       datocms-structured-text-utils: 5.1.7
       react: 19.2.1
-      react-intersection-observer: 9.16.0(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+      react-intersection-observer: 9.16.0(react-dom@19.2.3(react@19.2.1))(react@19.2.1)
       react-string-replace: 1.1.1
       use-deep-compare-effect: 1.8.1(react@19.2.1)
     transitivePeerDependencies:
@@ -9718,7 +9718,7 @@ snapshots:
       - graphql
       - react-dom
 
-  react-dom@19.2.1(react@19.2.1):
+  react-dom@19.2.3(react@19.2.1):
     dependencies:
       react: 19.2.1
       scheduler: 0.27.0
@@ -9735,21 +9735,21 @@ snapshots:
       zod: 4.1.13
       zod-to-json-schema: 3.24.6(zod@4.1.13)
 
-  react-instantsearch@7.21.0(algoliasearch@5.46.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1):
+  react-instantsearch@7.21.0(algoliasearch@5.46.0)(react-dom@19.2.3(react@19.2.1))(react@19.2.1):
     dependencies:
       '@babel/runtime': 7.28.4
       algoliasearch: 5.46.0
       instantsearch-ui-components: 0.15.2(react@19.2.1)
       instantsearch.js: 4.85.2(algoliasearch@5.46.0)
       react: 19.2.1
-      react-dom: 19.2.1(react@19.2.1)
+      react-dom: 19.2.3(react@19.2.1)
       react-instantsearch-core: 7.21.0(algoliasearch@5.46.0)(react@19.2.1)
 
-  react-intersection-observer@9.16.0(react-dom@19.2.1(react@19.2.1))(react@19.2.1):
+  react-intersection-observer@9.16.0(react-dom@19.2.3(react@19.2.1))(react@19.2.1):
     dependencies:
       react: 19.2.1
     optionalDependencies:
-      react-dom: 19.2.1(react@19.2.1)
+      react-dom: 19.2.3(react@19.2.1)
 
   react-is@16.13.1: {}
 
