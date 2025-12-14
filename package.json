@@ -12,7 +12,7 @@
   "scripts": {
     "build": "tsc --build && pnpm run -r build",
     "codegen": "pnpm -r download-schema && pnpm -r codegen",
-    "dev": "concurrently \"tsc --build --watch\" \"pnpm run --filter lundi-bleu dev\" \"pnpm run --filter example dev\"",
+    "dev": "pnpm -r --parallel --stream dev",
     "e2e": "pnpm run -r e2e",
     "lint": "pnpm run -r lint",
     "test": "vitest run -c ./vitest.config.ts"
@@ -25,7 +25,7 @@
     "@types/node": "24.10.2",
     "concurrently": "9.2.1",
     "dotenv": "17.2.3",
-    "eslint": "9.39.1",
+    "eslint": "9.39.2",
     "prettier": "3.7.4",
     "ts-node": "10.9.2",
     "turbo": "2.6.3",
