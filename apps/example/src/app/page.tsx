@@ -4,6 +4,7 @@ import { getPageSeo } from '@mono/data'
 import { viewport } from '@mono/utils'
 
 const homepageSlug = 'homepage'
+
 export async function generateMetadata(): Promise<Metadata> {
   const { data } = await getPageSeo({ slug: homepageSlug })
   return data

@@ -1,5 +1,5 @@
 import { MobileMenu } from '../mobileMenu/index.js'
-import type { Navigation as NavigationData } from '@mono/data'
+import { type NavigationData } from '@mono/data'
 import { NavigationItem } from '../navigationItem/index.js'
 import { NavigationSubMenu } from '../navigationSubMenu/index.js'
 import React from 'react'

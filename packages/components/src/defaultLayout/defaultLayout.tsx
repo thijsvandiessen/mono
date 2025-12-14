@@ -1,4 +1,4 @@
-import type { Navigation as NavigationData, SiteMetadata } from '@mono/data'
+import type { NavigationData, SiteMetadata } from '@mono/data'
 import React, { type ReactNode } from 'react'
 import { Footer } from '../footer/index.js'
 import { Navigation } from '../navigation/index.js'
@@ -7,14 +7,18 @@ import styles from './styles.module.scss'
 
 type Props = {
   children: ReactNode
-  data: NavigationData
+  navigationData: NavigationData
   metadata: SiteMetadata
 }
 
-export const DefaultLayout = ({ children, data, metadata }: Props) => (
+export const DefaultLayout = ({
+  children,
+  metadata,
+  navigationData,
+}: Props) => (
   <div className={classNames(styles.main)}>
-    <Navigation data={data} />
+    <Navigation data={navigationData} />
     <main>{children}</main>
-    <Footer metadata={metadata} data={data} />
+    <Footer metadata={metadata} data={navigationData} />
   </div>
 )
