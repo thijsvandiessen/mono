@@ -6,16 +6,10 @@ import {
 import type { CombinedError } from '@urql/core'
 import { client } from '../index.js'
 
-export const getSiteInfo = async (): Promise<
-  | {
-      data?: GetSiteInfoQuery['_site'] | null
-      error?: CombinedError
-    }
-  | {
-      data: null
-      error: unknown
-    }
-> => {
+export const getSiteInfo = async (): Promise<{
+  data?: GetSiteInfoQuery['_site'] | null
+  error?: CombinedError | unknown
+}> => {
   try {
     const { data, error } = await client.query<
       GetSiteInfoQuery,

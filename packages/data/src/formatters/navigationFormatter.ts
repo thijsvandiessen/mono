@@ -4,7 +4,7 @@ import type {
   SubmenuItemFragment,
 } from '../generated/graphql.js'
 import type {
-  Navigation,
+  NavigationData,
   NavigationItem,
   SubMenuItem,
 } from '../types/navigation.js'
@@ -24,14 +24,18 @@ const navigationSubMenuFormatter = (
 })
 
 export const navigationFormatter = (
-  general: GeneralInfoFragment
-): Navigation => ({
-  id: general.id,
-  title: general.title ?? undefined,
-  menu: general.menu.map((item) => {
-    if ('menu' in item) {
-      return navigationSubMenuFormatter(item)
-    }
-    return navigationItemFormatter(item)
-  }),
-})
+  general?: GeneralInfoFragment
+): NavigationData => {
+  return {
+    id: general?.id ?? 'none',
+    title: general?.title ?? undefined,
+    menu: general?.menu
+      ? general.menu.map((item: MenuItemFragment | SubmenuItemFragment) => {
+          if ('menu' in item) {
+            return navigationSubMenuFormatter(item)
+          }
+          return navigationItemFormatter(item)
+        })
+      : [],
+  }
+}

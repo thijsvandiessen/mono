@@ -1,21 +1,18 @@
 import './global.scss'
+import type { NavigationData, SiteMetadata } from '@mono/data'
 import React, { type ReactNode } from 'react'
-import { getGeneralInfo, getSiteMetadata } from '@mono/data'
 import { DefaultLayout } from '../defaultLayout/index.js'
 
 interface Props {
   children: ReactNode
+  navigationData: NavigationData
+  metadata: SiteMetadata
 }
 
-export const Body = async ({ children }: Props) => {
-  const { data } = await getGeneralInfo()
-  const { metadata } = await getSiteMetadata()
-
-  if (!data) return null
-
+export const Body = async ({ children, navigationData, metadata }: Props) => {
   return (
     <body>
-      <DefaultLayout data={data} metadata={metadata}>
+      <DefaultLayout navigationData={navigationData} metadata={metadata}>
         {children}
       </DefaultLayout>
     </body>

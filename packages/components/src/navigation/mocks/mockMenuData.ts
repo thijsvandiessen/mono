@@ -1,6 +1,6 @@
-import type { Navigation } from '@mono/data'
+import type { NavigationData } from '@mono/data'
 
-export const mockMenuData: Navigation = {
+export const mockMenuData: NavigationData = {
   id: '187236701',
   title: 'algemene info',
   menu: [
