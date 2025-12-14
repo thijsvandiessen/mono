@@ -1,6 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
 import { Navigation } from './navigation.js'
-import { getGeneralInfo } from '@mono/data'
 import { mockMenuData } from './mocks/mockMenuData.js'
 import { render } from '@testing-library/react'
 
@@ -33,15 +32,8 @@ vi.mock('@mono/data', () => ({
   })),
 }))
 
-const getGeneralInfoMock = vi.mocked(getGeneralInfo)
-
 describe('Concert component', () => {
   it('shows all the data', () => {
-    getGeneralInfoMock.mockResolvedValueOnce({
-      data: mockMenuData,
-      error: undefined,
-    })
-
     const { container } = render(<Navigation data={mockMenuData} />)
 
     expect(container).toMatchSnapshot()

@@ -6,16 +6,10 @@ import {
 import type { CombinedError } from '@urql/core'
 import { client } from '../gqlClient.js'
 
-export const getPagesMeta = async (): Promise<
-  | {
-      data: GetPagesMetaQuery['_allPagesMeta'] | null | undefined
-      error?: CombinedError
-    }
-  | {
-      data: null
-      error: unknown
-    }
-> => {
+export const getPagesMeta = async (): Promise<{
+  data: GetPagesMetaQuery['_allPagesMeta'] | null | undefined
+  error?: CombinedError | unknown
+}> => {
   try {
     const { data, error } = await client.query<
       GetPagesMetaQuery,

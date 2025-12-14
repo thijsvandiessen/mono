@@ -27,7 +27,7 @@ export type {
   Image,
   Location,
   Music,
-  Navigation,
+  NavigationData,
   NavigationItem,
   SubMenuItem,
 } from './types/index.js'

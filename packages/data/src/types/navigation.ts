@@ -10,7 +10,7 @@ export interface SubMenuItem {
   items: NavigationItem[]
 }
 
-export interface Navigation {
+export interface NavigationData {
   id: string
   title?: string
   menu: Array<NavigationItem | SubMenuItem>

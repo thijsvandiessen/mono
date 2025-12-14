@@ -21,7 +21,7 @@ describe('Default layout', () => {
   it('shows all the data', () => {
     const { container } = render(
       <DefaultLayout
-        data={mockMenuData}
+        navigationData={mockMenuData}
         metadata={{
           title: 'title',
           description: 'description',

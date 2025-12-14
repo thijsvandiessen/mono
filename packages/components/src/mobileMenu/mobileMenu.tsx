@@ -4,7 +4,7 @@ import { Cross, Hamburger } from '../icons/index.js'
 import { useDimensions, useHrefClick } from '@mono/hooks'
 import { useEffect, useState } from 'react'
 import { MobileMenuItems } from '../mobileMenuItems/index.js'
-import type { Navigation } from '@mono/data'
+import type { NavigationData } from '@mono/data'
 import classNames from 'classnames'
 import styles from './styles.module.scss'
 
@@ -13,7 +13,7 @@ export const MobileMenu = ({
 }: {
   escapedMenuString: string
 }) => {
-  const general = JSON.parse(escapedMenuString) as Navigation
+  const general = JSON.parse(escapedMenuString) as NavigationData
   const [open, setOpen] = useState(false)
   useHrefClick(() => setOpen(false))
   const { width } = useDimensions()

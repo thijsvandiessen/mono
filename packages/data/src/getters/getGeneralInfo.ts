@@ -4,12 +4,12 @@ import {
   type GetGeneralInfoQueryVariables,
 } from '../generated/graphql.js'
 import type { CombinedError } from '@urql/core'
-import type { Navigation } from '../types/navigation.js'
+import type { NavigationData } from '../types/navigation.js'
 import { client } from '../gqlClient.js'
 import { navigationFormatter } from '../formatters/navigationFormatter.js'
 
 export const getGeneralInfo = async (): Promise<{
-  data: Navigation | null
+  data: NavigationData
   error: CombinedError | unknown
 }> => {
   try {
@@ -19,11 +19,11 @@ export const getGeneralInfo = async (): Promise<{
     >(GetGeneralInfoDocument, {})
 
     return {
-      data: data?.general ? navigationFormatter(data.general) : null,
+      data: navigationFormatter(data?.general ?? undefined),
       error,
     }
   } catch (error) {
     if (error instanceof Error) console.log(error.message)
-    return { data: null, error }
+    return { data: navigationFormatter(), error }
   }
 }

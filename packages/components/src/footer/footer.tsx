@@ -1,11 +1,11 @@
-import { type Navigation, type SiteMetadata } from '@mono/data'
+import { type NavigationData, type SiteMetadata } from '@mono/data'
 import { Link } from '@mono/next-js'
 import classNames from 'classnames'
 import { slugFormatter } from '@mono/utils'
 import styles from './styles.module.scss'
 
 interface Props {
-  data: Navigation
+  data: NavigationData
   metadata: SiteMetadata
 }
 
