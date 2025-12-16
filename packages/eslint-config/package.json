@@ -22,10 +22,10 @@
     "@mono/typescript-config": "workspace:*",
     "eslint": "9.39.2",
     "eslint-plugin-react-hooks": "7.0.1",
-    "eslint-plugin-testing-library": "7.14.0",
+    "eslint-plugin-testing-library": "7.15.0",
     "prettier": "3.7.4",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.49.0",
+    "typescript-eslint": "8.50.0",
     "vitest": "4.0.15"
   }
 }
