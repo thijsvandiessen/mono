@@ -1,41 +1,31 @@
 {
-  "name": "lundi-bleu",
-  "version": "1.0.0",
+  "name": "vandiessen",
+  "version": "0.1.0",
   "private": true,
-  "description": "The public Lundi Bleu website",
-  "type": "module",
   "scripts": {
     "build": "next build",
-    "dev": "next dev --turbo -p 4000",
+    "dev": "next dev --turbo -p 4005",
     "lint": "pnpm run lint:js && pnpm run lint:styles",
     "lint:js": "eslint",
     "lint:styles": "prettier . --write  --list-different",
     "start": "next start"
   },
   "dependencies": {
-    "@mono/components": "workspace:*",
-    "@mono/data": "workspace:*",
-    "@mono/eslint-config": "workspace:*",
-    "@mono/next-js": "workspace:*",
-    "@mono/utils": "workspace:*",
-    "classnames": "2.5.1",
     "next": "16.0.10",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
   "devDependencies": {
+    "@mono/next-js": "workspace:*",
+    "@mono/eslint-config": "workspace:*",
     "@mono/typescript-config": "workspace:*",
+    "@tailwindcss/postcss": "4.1.18",
     "@types/node": "24.10.2",
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
-    "babel-plugin-react-compiler": "1.0.0",
-    "dotenv": "17.2.3",
     "eslint": "9.39.2",
     "eslint-config-next": "16.0.10",
-    "eslint-plugin-testing-library": "7.15.0",
-    "prettier": "3.7.4",
-    "sass": "1.96.0",
-    "turbo": "2.6.3",
+    "tailwindcss": "4.1.18",
     "typescript": "5.9.3"
   }
 }

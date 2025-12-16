@@ -60,3 +60,49 @@ variable "TFC_CONFIGURATION_VERSION_GIT_BRANCH" {
   type    = string
   default = ""
 }
+
+locals {
+  env_targets = ["preview", "production"]
+  repo_root   = abspath("..")
+}
+
+moved {
+  from = vercel_project.lundi
+  to   = module.lundi.vercel_project.app
+}
+
+moved {
+  from = vercel_deployment.lundi
+  to   = module.lundi.vercel_deployment.app
+}
+
+moved {
+  from = vercel_project_deployment_retention.lundi
+  to   = module.lundi.vercel_project_deployment_retention.app
+}
+
+moved {
+  from = vercel_project_environment_variables.lundi
+  to   = module.lundi.vercel_project_environment_variables.app
+}
+
+moved {
+  from = vercel_project.example
+  to   = module.example.vercel_project.app
+}
+
+moved {
+  from = vercel_deployment.example
+  to   = module.example.vercel_deployment.app
+}
+
+moved {
+  from = vercel_project_deployment_retention.example
+  to   = module.example.vercel_project_deployment_retention.app
+}
+
+moved {
+  from = vercel_project_environment_variables.example
+  to   = module.example.vercel_project_environment_variables.app
+}
+
