@@ -10,7 +10,7 @@
   "devDependencies": {
     "@mono/typescript-config": "workspace:*",
     "@playwright/test": "1.57.0",
-    "@types/node": "24.10.2",
+    "@types/node": "25.0.2",
     "typescript": "5.9.3"
   }
 }
