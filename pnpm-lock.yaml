@@ -107,8 +107,8 @@ importers:
         specifier: 16.0.10
         version: 16.0.10(@typescript-eslint/parser@8.49.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       eslint-plugin-testing-library:
-        specifier: 7.15.0
-        version: 7.15.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
+        specifier: 7.15.1
+        version: 7.15.1(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       prettier:
         specifier: 3.7.4
         version: 3.7.4
@@ -177,8 +177,8 @@ importers:
         specifier: 16.0.10
         version: 16.0.10(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       eslint-plugin-testing-library:
-        specifier: 7.15.0
-        version: 7.15.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
+        specifier: 7.15.1
+        version: 7.15.1(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       prettier:
         specifier: 3.7.4
         version: 3.7.4
@@ -326,8 +326,8 @@ importers:
         specifier: 9.39.2
         version: 9.39.2(jiti@2.6.1)
       eslint-plugin-testing-library:
-        specifier: 7.15.0
-        version: 7.15.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
+        specifier: 7.15.1
+        version: 7.15.1(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       jsdom:
         specifier: 27.3.0
         version: 27.3.0(postcss@8.5.6)
@@ -432,8 +432,8 @@ importers:
         specifier: 9.39.2
         version: 9.39.2(jiti@2.6.1)
       eslint-plugin-testing-library:
-        specifier: 7.15.0
-        version: 7.15.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
+        specifier: 7.15.1
+        version: 7.15.1(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       prettier:
         specifier: 3.7.4
         version: 3.7.4
@@ -499,8 +499,8 @@ importers:
         specifier: 7.0.1
         version: 7.0.1(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-testing-library:
-        specifier: 7.15.0
-        version: 7.15.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
+        specifier: 7.15.1
+        version: 7.15.1(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       prettier:
         specifier: 3.7.4
         version: 3.7.4
@@ -606,8 +606,8 @@ importers:
         specifier: 16.0.10
         version: 16.0.10(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       eslint-plugin-testing-library:
-        specifier: 7.15.0
-        version: 7.15.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
+        specifier: 7.15.1
+        version: 7.15.1(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       prettier:
         specifier: 3.7.4
         version: 3.7.4
@@ -725,8 +725,8 @@ importers:
         specifier: 9.39.2
         version: 9.39.2(jiti@2.6.1)
       eslint-plugin-testing-library:
-        specifier: 7.15.0
-        version: 7.15.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
+        specifier: 7.15.1
+        version: 7.15.1(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       prettier:
         specifier: 3.7.4
         version: 3.7.4
@@ -3582,8 +3582,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
 
-  eslint-plugin-testing-library@7.15.0:
-    resolution: {integrity: sha512-DZTtxVscjJtynrukYqpa99jTaODwprdubrV0nYfPnvHke54YpsmZ53pPgLKJ06AOef1ym4BVXRNM4LoW/q0InQ==}
+  eslint-plugin-testing-library@7.15.1:
+    resolution: {integrity: sha512-bz4s4S3yCbTShgcv4S8XE3Ku5psYtKyuoded/WQyFS3sNt7mzRnCSUkSNbNOgfq/6f79EQZ++1jZL6anbnyrRA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
@@ -7768,7 +7768,7 @@ snapshots:
   '@typescript-eslint/project-service@8.49.0(typescript@5.9.3)':
     dependencies:
       '@typescript-eslint/tsconfig-utils': 8.49.0(typescript@5.9.3)
-      '@typescript-eslint/types': 8.49.0
+      '@typescript-eslint/types': 8.50.0
       debug: 4.4.3
       typescript: 5.9.3
     transitivePeerDependencies:
@@ -9000,10 +9000,10 @@ snapshots:
       string.prototype.matchall: 4.0.12
       string.prototype.repeat: 1.0.0
 
-  eslint-plugin-testing-library@7.15.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3):
+  eslint-plugin-testing-library@7.15.1(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3):
     dependencies:
-      '@typescript-eslint/scope-manager': 8.49.0
-      '@typescript-eslint/utils': 8.49.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
+      '@typescript-eslint/scope-manager': 8.50.0
+      '@typescript-eslint/utils': 8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       eslint: 9.39.2(jiti@2.6.1)
     transitivePeerDependencies:
       - supports-color
