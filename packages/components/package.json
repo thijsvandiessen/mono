@@ -28,7 +28,7 @@
     "@mono/next-js": "workspace:*",
     "@mono/search-site": "workspace:*",
     "@mono/utils": "workspace:*",
-    "@react-google-maps/api": "2.20.7",
+    "@react-google-maps/api": "2.20.8",
     "classnames": "2.5.1",
     "datocms-structured-text-utils": "5.1.7",
     "react": "19.2.3",
