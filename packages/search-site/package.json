@@ -21,7 +21,7 @@
     "test": "vitest run -c ./vitest.config.ts"
   },
   "dependencies": {
-    "algoliasearch": "5.46.0",
+    "algoliasearch": "5.46.1",
     "dotenv": "17.2.3",
     "instantsearch.js": "4.85.2",
     "react": "19.2.3",
