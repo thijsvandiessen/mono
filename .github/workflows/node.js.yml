@@ -29,11 +29,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
 
-      - name: Enable Corepack
-        run: corepack enable
-
       - name: Install dependencies
-        run: pnpm i
+        run: pnpm install --frozen-lockfile
 
       - name: Validate fast with oxlint
         run: npx oxlint@1.24.0
@@ -41,7 +38,7 @@ jobs:
       - name: Build project
         run: pnpm exec turbo build
 
-      - name: Check formatting and eslint
+      - name: Check formatting
         run: pnpm exec turbo lint
 
       - name: Test project
