@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.19](https://github.com/thijsvandiessen/mono/compare/v1.0.18...v1.0.19) (2025-12-21)
+
+
+### Bug Fixes
+
+* frozen lockfile ([#890](https://github.com/thijsvandiessen/mono/issues/890)) ([1580246](https://github.com/thijsvandiessen/mono/commit/1580246e830b9d785a429f51f6361acf229f3769))
+
 ## [1.0.18](https://github.com/thijsvandiessen/mono/compare/v1.0.17...v1.0.18) (2025-12-16)
 
 
