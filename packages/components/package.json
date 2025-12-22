@@ -51,7 +51,7 @@
     "eslint-plugin-testing-library": "7.15.3",
     "jsdom": "27.3.0",
     "prettier": "3.7.4",
-    "sass": "1.97.0",
+    "sass": "1.97.1",
     "turbo": "2.7.1",
     "typescript": "5.9.3",
     "vite-tsconfig-paths": "6.0.3",
