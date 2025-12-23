@@ -49,8 +49,8 @@ importers:
         version: 4.0.16(@opentelemetry/api@1.9.0)(@types/node@25.0.3)(happy-dom@18.0.1)(jiti@2.6.1)(jsdom@27.3.0(postcss@8.5.6))(lightningcss@1.30.2)(sass@1.97.1)(yaml@2.8.1)
     optionalDependencies:
       '@rollup/rollup-linux-x64-gnu':
-        specifier: 4.53.5
-        version: 4.53.5
+        specifier: 4.54.0
+        version: 4.54.0
 
   apps/example:
     dependencies:
@@ -2269,6 +2269,11 @@ packages:
 
   '@rollup/rollup-linux-x64-gnu@4.53.5':
     resolution: {integrity: sha512-Pg6E+oP7GvZ4XwgRJBuSXZjcqpIW3yCBhK4BcsANvb47qMvAbCjR6E+1a/U2WXz1JJxp9/4Dno3/iSJLcm5auw==}
+    cpu: [x64]
+    os: [linux]
+
+  '@rollup/rollup-linux-x64-gnu@4.54.0':
+    resolution: {integrity: sha512-WGt5J8Ij/rvyqpFexxk3ffKqqbLf9AqrTBbWDk7ApGUzaIs6V+s2s84kAxklFwmMF/vBNGrVdYgbblCOFFezMQ==}
     cpu: [x64]
     os: [linux]
 
@@ -7429,6 +7434,9 @@ snapshots:
     optional: true
 
   '@rollup/rollup-linux-x64-gnu@4.53.5':
+    optional: true
+
+  '@rollup/rollup-linux-x64-gnu@4.54.0':
     optional: true
 
   '@rollup/rollup-linux-x64-musl@4.53.5':
