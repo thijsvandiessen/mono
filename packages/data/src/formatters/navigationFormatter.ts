@@ -8,27 +8,48 @@ import type {
   NavigationItem,
   SubMenuItem,
 } from '../types/navigation.js'
+import { z } from 'zod'
 
-const navigationItemFormatter = (item: MenuItemFragment): NavigationItem => ({
-  id: item.id,
-  label: item.label ?? undefined,
-  slug: item.link?.slug ?? undefined,
+const navigationItemSchema = z.object({
+  id: z.string(),
+  label: z.string(),
+  slug: z.string(),
 })
 
-const navigationSubMenuFormatter = (
-  item: SubmenuItemFragment
-): SubMenuItem => ({
-  id: item.id,
-  label: item.label ?? undefined,
-  items: item.menu.map((sub) => navigationItemFormatter(sub)),
+const navigationSubMenuSchema = z.object({
+  id: z.string(),
+  label: z.string(),
+  items: z.array(navigationItemSchema),
 })
+
+const navigationDataSchema = z.object({
+  id: z.string().min(1),
+  title: z.string().default(''),
+  menu: z.array(z.union([navigationItemSchema, navigationSubMenuSchema])),
+})
+
+const navigationItemFormatter = (item: MenuItemFragment): NavigationItem => {
+  return navigationItemSchema.parse({
+    id: item.id,
+    label: item.label,
+    slug: item.link?.slug,
+  })
+}
+
+const navigationSubMenuFormatter = (item: SubmenuItemFragment): SubMenuItem => {
+  return navigationSubMenuSchema.parse({
+    id: item.id,
+    label: item.label,
+    items: item.menu.map((sub) => navigationItemFormatter(sub)),
+  })
+}
 
 export const navigationFormatter = (
   general?: GeneralInfoFragment
 ): NavigationData => {
-  return {
-    id: general?.id ?? 'none',
-    title: general?.title ?? undefined,
+  return navigationDataSchema.parse({
+    id: general?.id,
+    title: general?.title ?? '',
     menu: general?.menu
       ? general.menu.map((item: MenuItemFragment | SubmenuItemFragment) => {
           if ('menu' in item) {
@@ -37,5 +58,5 @@ export const navigationFormatter = (
           return navigationItemFormatter(item)
         })
       : [],
-  }
+  })
 }

@@ -56,15 +56,15 @@ select {
 }
 
 :root {
-  --colour-background: #ffffff;
-  --colour-light: #e2edef;
-  --colour-grey: #899ca0;
-  --colour-primary: #003541;
-  --colour-primary-dark: #07161a;
-  --colour-primary-light: #73d6ed;
-  --colour-secondary: #ab4e1e;
-  --colour-secondary-dark: #88411d;
-  --colour-secondary-light: #ffc19a;
+  --color-background: #ffffff;
+  --color-light: #e2edef;
+  --color-grey: #899ca0;
+  --color-primary: #003541;
+  --color-primary-dark: #07161a;
+  --color-primary-light: #73d6ed;
+  --color-secondary: #ab4e1e;
+  --color-secondary-dark: #88411d;
+  --color-secondary-light: #ffc19a;
 
   --typography-sans: 'dm-sans', serif;
   --typography-serif: 'dm-serif', serif;
@@ -146,8 +146,8 @@ select {
 
 body {
   font-family: var(--typography-sans);
-  background-color: var(--colour-background);
-  color: var(--colour-primary-dark);
+  background-color: var(--color-background);
+  color: var(--color-primary-dark);
   font-size: 1.125em;
   word-break: break-word;
 }
@@ -197,6 +197,6 @@ body {
 hr {
   margin: 1rem 0;
   height: 0.2rem;
-  background-color: var(--colour-secondary);
+  background-color: var(--color-secondary);
   border: none;
 }

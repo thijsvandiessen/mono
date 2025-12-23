@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--colour-primary);
+  background-color: var(--color-primary);
   padding: 4rem 0;
 
   @media screen and (min-width: 50rem) {
@@ -40,7 +40,7 @@ header.header.withImage {
 .headerContent {
   position: relative;
   height: 100%;
-  color: var(--colour-background);
+  color: var(--color-background);
   text-align: left;
   z-index: 1;
   overflow: hidden;
@@ -48,7 +48,7 @@ header.header.withImage {
   h2,
   h1 {
     font-size: 2.375rem;
-    color: var(--colour-secondary-light);
+    color: var(--color-secondary-light);
     text-overflow: ellipsis;
 
     @media screen and (min-width: 50rem) {
@@ -69,7 +69,7 @@ header.header.withImage {
 .header.withImage {
   h1,
   h2 {
-    color: var(--colour-background);
+    color: var(--color-background);
   }
 }
 
@@ -105,8 +105,8 @@ header.header.withImage {
   object-fit: cover;
   background: linear-gradient(
     0.25turn,
-    var(--colour-secondary),
-    var(--colour-primary)
+    var(--color-secondary),
+    var(--color-primary)
   );
   opacity: 0;
 }

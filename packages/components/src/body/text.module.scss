@@ -94,7 +94,7 @@ p,
 
 a {
   text-decoration: none;
-  color: var(--colour-secondary);
+  color: var(--color-secondary);
   transition:
     color 0.2s ease-in-out,
     background-color 0.2s ease-in-out;
@@ -102,13 +102,13 @@ a {
   &:hover,
   &:focus {
     text-decoration: underline;
-    color: var(--colour-secondary-dark);
+    color: var(--color-secondary-dark);
   }
 }
 
 mark,
 .mark {
-  background-color: var(--colour-secondary-light);
+  background-color: var(--color-secondary-light);
 }
 
 pre {

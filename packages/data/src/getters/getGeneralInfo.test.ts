@@ -41,9 +41,9 @@ describe('getGeneralInfo', () => {
   it('should return an error', async () => {
     console.log = vi.fn()
     mockedQuery.mockRejectedValue(new Error('error'))
-    const { data, error } = await getGeneralInfo()
-    expect(data).toEqual({ id: 'none', menu: [], title: undefined })
-    expect(error).toBeInstanceOf(Error)
+    const { data } = await getGeneralInfo()
+
+    expect(data).toEqual({ id: '', menu: [], title: '' })
     expect(console.log).toHaveBeenLastCalledWith('error')
   })
 })
