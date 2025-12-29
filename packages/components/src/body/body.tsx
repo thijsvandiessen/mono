@@ -9,12 +9,10 @@ interface Props {
   metadata: SiteMetadata
 }
 
-export const Body = async ({ children, navigationData, metadata }: Props) => {
-  return (
-    <body>
-      <DefaultLayout navigationData={navigationData} metadata={metadata}>
-        {children}
-      </DefaultLayout>
-    </body>
-  )
-}
+export const Body = ({ children, navigationData, metadata }: Props) => (
+  <body>
+    <DefaultLayout navigationData={navigationData} metadata={metadata}>
+      {children}
+    </DefaultLayout>
+  </body>
+)

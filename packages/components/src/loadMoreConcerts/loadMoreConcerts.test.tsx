@@ -35,7 +35,6 @@ describe('Concerts component', () => {
   it('shows all the data', () => {
     getConcertsMock.mockResolvedValue({
       data: [mockConcert],
-      error: undefined,
     })
 
     screen.debug()

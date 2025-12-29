@@ -2,31 +2,18 @@ import type {
   GeneralInfoFragment,
   MenuItemFragment,
   SubmenuItemFragment,
-} from '../generated/graphql.js'
+} from '../../generated/graphql.js'
 import type {
   NavigationData,
   NavigationItem,
   SubMenuItem,
-} from '../types/navigation.js'
-import { z } from 'zod'
+} from '../../types/navigation.js'
 
-const navigationItemSchema = z.object({
-  id: z.string(),
-  label: z.string(),
-  slug: z.string(),
-})
-
-const navigationSubMenuSchema = z.object({
-  id: z.string(),
-  label: z.string(),
-  items: z.array(navigationItemSchema),
-})
-
-const navigationDataSchema = z.object({
-  id: z.string().min(1),
-  title: z.string().default(''),
-  menu: z.array(z.union([navigationItemSchema, navigationSubMenuSchema])),
-})
+import {
+  navigationDataSchema,
+  navigationItemSchema,
+  navigationSubMenuSchema,
+} from './schema.js'
 
 const navigationItemFormatter = (item: MenuItemFragment): NavigationItem => {
   return navigationItemSchema.parse({

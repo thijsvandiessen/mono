@@ -5,7 +5,7 @@ import {
 } from '../generated/graphql.js'
 import type { CombinedError } from '@urql/core'
 import { client } from '../index.js'
-import { formatSiteMetadata } from '../formatters/formatSiteMetadata.js'
+import { formatSiteMetadata } from '../formatters/siteMetadata/formatSiteMetadata.js'
 
 export const getSiteMetadata = async (): Promise<{
   metadata: ReturnType<typeof formatSiteMetadata>

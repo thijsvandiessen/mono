@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import type { GeneralInfoFragment } from '../generated/graphql.js'
+import type { GeneralInfoFragment } from '../../generated/graphql.js'
 import { ZodError } from 'zod'
-import { navigationFormatter } from './navigationFormatter.js'
+import { navigationFormatter } from './navigation.js'
 
 describe('navigationFormatter', () => {
   it('should format navigation data', () => {

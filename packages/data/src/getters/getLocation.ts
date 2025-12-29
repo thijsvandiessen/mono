@@ -6,7 +6,7 @@ import {
 import type { CombinedError } from '@urql/core'
 import type { Location } from '../types/location.js'
 import { client } from '../gqlClient.js'
-import { locationFormatter } from '../formatters/locationFormatter.js'
+import { locationFormatter } from '../formatters/location/location.js'
 
 export const getLocation = async ({
   id,

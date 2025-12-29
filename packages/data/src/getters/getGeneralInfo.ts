@@ -6,7 +6,7 @@ import {
 import type { DocumentInput } from '@urql/core'
 import type { NavigationData } from '../types/navigation.js'
 import { client } from '../gqlClient.js'
-import { navigationFormatter } from '../formatters/navigationFormatter.js'
+import { navigationFormatter } from '../formatters/navigation/navigation.js'
 
 const emptyNavigation: NavigationData = {
   id: '',

@@ -7,7 +7,7 @@ import {
 import type { CombinedError } from '@urql/core'
 import type { PageLink } from '../types/pageLink.js'
 import { client } from '../gqlClient.js'
-import { concertUrlFormatter } from '../formatters/concertUrlFormatter.js'
+import { concertUrlFormatter } from '../formatters/concert/concertUrlFormatter.js'
 
 interface Props extends GetConcertsUrlsQueryVariables {
   skip: number
