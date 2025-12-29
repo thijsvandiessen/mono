@@ -6,7 +6,7 @@ import {
 import type { CombinedError } from '@urql/core'
 import type { Concert } from '../types/concert.js'
 import { client } from '../gqlClient.js'
-import { concertFormatter } from '../formatters/concert/concert.js'
+import { concertFormatter } from '../formatters/index.js'
 
 export const getConcertPage = async ({
   slug,

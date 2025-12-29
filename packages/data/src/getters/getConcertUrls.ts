@@ -7,7 +7,7 @@ import {
 import type { CombinedError } from '@urql/core'
 import type { PageLink } from '../types/pageLink.js'
 import { client } from '../gqlClient.js'
-import { concertUrlFormatter } from '../formatters/concert/concertUrlFormatter.js'
+import { concertUrlFormatter } from '../formatters/index.js'
 
 interface Props extends GetConcertsUrlsQueryVariables {
   skip: number
@@ -40,7 +40,7 @@ export const getConcertUrls = async ({
 
     return {
       data: data?.allConcerts.length
-        ? concertUrlFormatter(data.allConcerts)
+        ? concertUrlFormatter(data.allConcerts, '/concerten')
         : [],
       error,
     }

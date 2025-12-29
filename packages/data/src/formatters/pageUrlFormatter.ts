@@ -9,13 +9,12 @@ export const pageUrlFormatter = (pages: GetPagesQuery['allPages']) =>
       if (!currentValue.slug) return prev
       if (!currentValue.title) return prev
 
-      return [
-        ...prev,
-        {
-          title: currentValue.title,
-          url: slugFormatter({ slug: currentValue.slug }),
-          updatedAt: new Date(currentValue._updatedAt),
-        },
-      ]
+      prev.push({
+        title: currentValue.title,
+        url: slugFormatter({ slug: currentValue.slug }),
+        updatedAt: new Date(currentValue._updatedAt),
+      })
+
+      return prev
     }, [])
   )

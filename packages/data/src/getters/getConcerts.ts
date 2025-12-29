@@ -6,7 +6,7 @@ import {
 } from '../generated/graphql.js'
 import type { Concert } from '../types/concert.js'
 import { client } from '../gqlClient.js'
-import { concertsFormatter } from '../formatters/concert/concerts.js'
+import { concertsFormatter } from '../formatters/index.js'
 
 export const getConcerts = async ({
   skip,
