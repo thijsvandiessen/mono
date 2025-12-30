@@ -23,7 +23,7 @@
   "dependencies": {
     "algoliasearch": "5.46.2",
     "dotenv": "17.2.3",
-    "instantsearch.js": "4.85.2",
+    "instantsearch.js": "4.86.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-instantsearch": "7.22.0"
