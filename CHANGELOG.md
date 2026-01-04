@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.19](https://github.com/thijsvandiessen/mono/compare/v1.0.18...v1.0.19) (2026-01-04)
+
+
+### Bug Fixes
+
+* frozen lockfile ([#890](https://github.com/thijsvandiessen/mono/issues/890)) ([1580246](https://github.com/thijsvandiessen/mono/commit/1580246e830b9d785a429f51f6361acf229f3769))
+* xmas fixes ([#903](https://github.com/thijsvandiessen/mono/issues/903)) ([ebb33e5](https://github.com/thijsvandiessen/mono/commit/ebb33e5311ab9642b4b8bdba9ffbd2d476ae3ee0))
+
 ## [1.0.18](https://github.com/thijsvandiessen/mono/compare/v1.0.17...v1.0.18) (2025-12-16)
 
 
