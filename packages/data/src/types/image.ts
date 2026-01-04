@@ -1,5 +1,5 @@
+import { CloudinaryAssetSchema } from './image.schema.js'
 import type { Scalars } from '../generated/graphql.js'
-
 interface CloudinaryUser {
   type?: 'string' | null
   id?: 'string' | null
@@ -22,7 +22,7 @@ export interface CloudinaryAsset {
   id: string
   resource_type: string
   secure_url: string
-  tags: []
+  tags: string[]
   type: string
   uploaded_by?: null
   url?: string
@@ -53,15 +53,13 @@ export const isOfTypeCloudinaryAsset = (
     'version',
   ] as const satisfies Array<keyof CloudinaryAsset>
 
-  switch (true) {
-    case asset && typeof asset === 'object':
-      for (const key of keys) {
-        if (!(key in asset)) return false
-      }
+  if (asset && typeof asset === 'object') {
+    for (const key of keys) {
+      if (!(key in asset)) return false
+    }
 
-      return true
-
-    default:
-      return false
+    return CloudinaryAssetSchema.safeParse(asset).success
   }
+
+  return false
 }

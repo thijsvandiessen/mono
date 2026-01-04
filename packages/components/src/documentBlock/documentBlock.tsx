@@ -14,11 +14,11 @@ interface Props {
 }
 
 export const DocumentBlock = ({ record }: Props) => {
-  if (!record) return null
   const asset = formatCloudinaryDocument(
     isOfTypeCloudinaryAsset(record.document) ? record.document : undefined
   )
-  if (!asset?.url) return null
+  if (!asset) return null
+
   return (
     <p className={styles.root}>
       <span className={classNames(styles.title, 'h4')}>
