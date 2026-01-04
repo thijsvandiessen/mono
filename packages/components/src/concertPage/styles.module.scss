@@ -26,12 +26,12 @@ $shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.1);
 .header {
   grid-area: header;
 
-  background-color: var(--colour-primary);
-  color: var(--colour-secondary-light);
+  background-color: var(--color-primary);
+  color: var(--color-secondary-light);
   padding: 4rem 0;
 
   @media screen and (min-width: 50rem) {
-    padding: 6rem 0;
+    padding: 8rem 0;
   }
 }
 
@@ -47,7 +47,7 @@ $shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.1);
 }
 
 .programItem {
-  color: var(--colour-background);
+  color: var(--color-background);
 }
 
 .programTitle {
@@ -103,7 +103,7 @@ $sidebar-translate: 50px;
   list-style: none;
   padding: 0;
   margin: 0;
-  background-color: var(--colour-background);
+  background-color: var(--color-background);
   border-radius: 8px;
 
   @media screen and (min-width: 50rem) {

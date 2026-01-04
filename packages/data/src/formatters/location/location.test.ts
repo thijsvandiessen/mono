@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { locationFormatter } from './locationFormatter.js'
+import { ZodError } from 'zod'
+import { locationFormatter } from '../location/location.js'
 
 describe('locationFormatter', () => {
   it('should return a location object', () => {
@@ -14,15 +15,7 @@ describe('locationFormatter', () => {
     })
   })
 
-  it('should return a an object with id', () => {
-    expect(locationFormatter(undefined)).toEqual({
-      address: null,
-      id: '',
-      lat: null,
-      lng: null,
-      title: null,
-      startTime: null,
-      ticketLink: null,
-    })
+  it('should return an error', () => {
+    expect(() => locationFormatter(undefined)).toThrowError(ZodError)
   })
 })

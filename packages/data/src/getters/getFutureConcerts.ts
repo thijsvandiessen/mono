@@ -7,7 +7,7 @@ import {
 import type { CombinedError } from '@urql/core'
 import type { Concert } from '../types/concert.js'
 import { client } from '../gqlClient.js'
-import { concertsFormatter } from '../formatters/concertsFormatter.js'
+import { concertsFormatter } from '../formatters/index.js'
 
 interface Props extends GetFutureConcertsQueryVariables {
   skip: number

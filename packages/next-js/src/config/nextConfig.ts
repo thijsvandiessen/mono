@@ -9,10 +9,8 @@ export const customNextConfig = ({ domain }: Props): NextConfig => ({
   poweredByHeader: false,
   reactStrictMode: true,
   reactCompiler: true,
-  experimental: {
-    // typedRoutes: true,
-    // serverActions: true,
-  },
+  typedRoutes: true,
+  experimental: {},
   images: {
     remotePatterns: [
       {

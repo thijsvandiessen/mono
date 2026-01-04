@@ -30,7 +30,7 @@ export const MobileMenuItems = ({ general }: MobileMenuItemsProps) => (
           </li>
         )
       }
-      return <NavigationItem key={item.id} slug={'/'} label="Error" />
+      return null
     })}
   </ul>
 )

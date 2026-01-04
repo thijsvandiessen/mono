@@ -1,27 +1,28 @@
 import type {
   ConcertPageSeoFragment,
   PageDetailSeoFragment,
-} from '../generated/graphql.js'
+} from '../../generated/graphql.js'
 import type { Metadata } from '@mono/next-js'
-import { getSiteMetadata } from '../getters/getSiteMetadata.js'
-import { metaTitleFormatter } from './metaTitleFormatter.js'
+import type { SiteMetadata } from '../siteMetadata/metadata.type.js'
+import { metaTitleFormatter } from '../metaTitleFormatter.js'
+import { metadataSchema } from './schema.js'
 
-export const metadataFormatter = async (
-  data: PageDetailSeoFragment | ConcertPageSeoFragment | undefined,
+export const metadataFormatter = (
+  data: PageDetailSeoFragment | ConcertPageSeoFragment | undefined | null,
+  siteMetadata: SiteMetadata,
   slug: string
-): Promise<Metadata> => {
-  const { metadata } = await getSiteMetadata()
-  const title = await metaTitleFormatter(data)
-  const base = metadata?.base_url || 'https://example.com'
+): Metadata => {
+  const title = metaTitleFormatter(data, siteMetadata)
+  const base = siteMetadata?.base_url || 'https://example.com'
 
-  const defaultDescription = metadata?.description || ''
+  const defaultDescription = siteMetadata?.description || ''
   const defaultLocale = 'nl-NL'
 
   const url = new URL(slug, base)
   const currentUrl = slug === 'homepage' ? base : url.href
   const canonical = data ? currentUrl : undefined
 
-  return {
+  return metadataSchema.parse({
     title,
     description: data?.seo?.description ?? defaultDescription,
     metadataBase: new URL(base),
@@ -93,5 +94,5 @@ export const metadataFormatter = async (
     //     },
     //   ],
     // },
-  }
+  })
 }

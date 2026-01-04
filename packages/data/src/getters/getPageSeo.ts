@@ -4,9 +4,12 @@ import {
   type GetPageSeoQueryVariables,
 } from '../generated/graphql.js'
 import { client } from '../gqlClient.js'
-import { metadataFormatter } from '../formatters/metadataFormatter.js'
+import { getSiteMetadata } from './getSiteMetadata.js'
+import { metadataFormatter } from '../formatters/index.js'
 
 export const getPageSeo = async ({ slug }: GetPageSeoQueryVariables) => {
+  const { metadata } = await getSiteMetadata()
+
   try {
     const { data, error } = await client.query<
       GetPageSeoQuery,
@@ -14,11 +17,11 @@ export const getPageSeo = async ({ slug }: GetPageSeoQueryVariables) => {
     >(GetPageSeoDocument, { slug })
 
     return {
-      data: await metadataFormatter(data?.page ?? undefined, slug),
+      data: metadataFormatter(data?.page ?? undefined, metadata, slug),
       error,
     }
   } catch (error) {
     if (error instanceof Error) console.log(error.message)
-    return { data: await metadataFormatter(undefined, slug), error }
+    return { data: metadataFormatter(undefined, metadata, slug), error }
   }
 }

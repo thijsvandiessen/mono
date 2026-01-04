@@ -1,6 +1,6 @@
 .root {
-  background-color: var(--colour-primary);
-  color: var(--colour-background);
+  background-color: var(--color-primary);
+  color: var(--color-background);
   padding-top: 3rem;
   padding-bottom: 3rem;
   align-self: end;
@@ -23,7 +23,7 @@
 }
 
 .title {
-  color: var(--colour-secondary-light);
+  color: var(--color-secondary-light);
   margin-bottom: 0.5rem;
 }
 
@@ -37,11 +37,11 @@
 }
 
 .link {
-  color: var(--colour-background);
+  color: var(--color-background);
 
   &:hover,
   &:focus {
-    color: var(--colour-background);
+    color: var(--color-background);
   }
 }
 

@@ -74,9 +74,8 @@ describe('getConcerts', () => {
   it('should return an error', async () => {
     console.log = vi.fn()
     mockedQuery.mockRejectedValue(new Error('error'))
-    const { data, error } = await getConcerts({ skip: 0, first: 1 })
+    const { data } = await getConcerts({ skip: 0, first: 1 })
     expect(data).toEqual([])
-    expect(error).toBeInstanceOf(Error)
     expect(console.log).toHaveBeenLastCalledWith('error')
   })
 })

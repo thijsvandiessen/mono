@@ -17,7 +17,7 @@ $padding-large-left: 2.5rem;
   top: calc(var(--layout-default-mobile-spacing) * -1);
   content: '';
   height: calc(100% + var(--layout-default-mobile-spacing));
-  border-left: $border-size solid var(--colour-secondary);
+  border-left: $border-size solid var(--color-secondary);
   z-index: -1;
   transform: translateX(-1rem);
 
@@ -42,14 +42,14 @@ $padding-large-left: 2.5rem;
   display: flex;
   flex-direction: column;
   margin-bottom: 0.5rem;
-  color: var(--colour-primary);
+  color: var(--color-primary);
 
   @media screen and (min-width: 50rem) {
     max-width: 30rem;
   }
 
   a {
-    color: var(--colour-primary);
+    color: var(--color-primary);
   }
 }
 
@@ -94,7 +94,7 @@ $padding-large-left: 2.5rem;
 
 .imageContainer {
   border-radius: 8px;
-  background-color: var(--colour-secondary-light);
+  background-color: var(--color-secondary-light);
   flex-shrink: 0;
   max-width: fit-content;
 
@@ -150,7 +150,7 @@ $padding-large-left: 2.5rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--colour-primary);
+  color: var(--color-primary);
 }
 
 .hasImage .concertLink {
@@ -250,7 +250,7 @@ $padding-large-left: 2.5rem;
   transform: translateX(-3.65rem);
   width: $dash-size + 1rem;
   height: $dash-size;
-  background-color: var(--colour-secondary);
+  background-color: var(--color-secondary);
 }
 
 .large .locationTitle::before {
@@ -264,7 +264,7 @@ $padding-large-left: 2.5rem;
 }
 
 .large::before {
-  border-left: $border-size solid var(--colour-secondary);
+  border-left: $border-size solid var(--color-secondary);
   // transform: translateX(1rem);
 }
 
@@ -281,7 +281,7 @@ $padding-large-left: 2.5rem;
 .isLast .location:last-child .locationTitle::after {
   @extend %line;
 
-  border-color: var(--colour-background);
+  border-color: var(--color-background);
   border-width: $border-size * 2;
   height: calc(100% + var(--layout-default-mobile-spacing) + $image-height);
   top: calc($dash-offset + 1rem);

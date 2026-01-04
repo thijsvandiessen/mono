@@ -6,7 +6,7 @@ import {
 import type { CombinedError } from '@urql/core'
 import type { PageLink } from '../types/pageLink.js'
 import { client } from '../gqlClient.js'
-import { pageUrlFormatter } from '../formatters/pageUrlFormatter.js'
+import { pageUrlFormatter } from '../formatters/index.js'
 
 export const getPages = async ({
   skip,

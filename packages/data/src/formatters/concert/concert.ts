@@ -1,9 +1,10 @@
-import type { Concert } from '../types/concert.js'
-import type { ConcertDetailFragment } from '../generated/graphql.js'
-import type { Location } from '../types/location.js'
-import { formatCloudinaryImage } from './formatCloudinaryImage.js'
-import { isOfTypeCloudinaryAsset } from '../types/image.js'
-import { locationItemFormatter } from './locationItemFormatter.js'
+import type { Concert } from '../../types/concert.js'
+import type { ConcertDetailFragment } from '../../generated/graphql.js'
+import type { Location } from '../../types/location.js'
+import { concertSchema } from '../schemas.js'
+import { formatCloudinaryImage } from '../formatCloudinaryImage.js'
+import { isOfTypeCloudinaryAsset } from '../../types/image.js'
+import { locationItemFormatter } from '../location/locationItem.js'
 import { slugFormatter } from '@mono/utils'
 
 export const concertFormatter = (
@@ -11,7 +12,7 @@ export const concertFormatter = (
 ): Concert | undefined => {
   if (!concert?.title) return
   if (!concert?.slug) return
-  return {
+  return concertSchema.parse({
     id: concert.id,
     title: concert.title,
     image: formatCloudinaryImage(
@@ -31,5 +32,5 @@ export const concertFormatter = (
     ),
     url: slugFormatter({ slug: concert.slug, prefix: '/concerten' }),
     content: concert.content,
-  }
+  })
 }

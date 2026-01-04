@@ -2,18 +2,29 @@ import type {
   ConcertPageSeoFragment,
   PageDetailSeoFragment,
 } from '../generated/graphql.js'
-import { getSiteMetadata } from '../getters/getSiteMetadata.js'
+import type { SiteMetadata } from './siteMetadata/metadata.type.js'
+import { z } from 'zod'
 
-export const metaTitleFormatter = async (
-  data: PageDetailSeoFragment | ConcertPageSeoFragment | undefined
+const metaTitleSchema = z.string()
+
+export const metaTitleFormatter = (
+  data: PageDetailSeoFragment | ConcertPageSeoFragment | undefined | null,
+  metadata: SiteMetadata
 ) => {
-  const { metadata } = await getSiteMetadata()
   const defaultSiteName = metadata?.title || ''
 
-  if (!defaultSiteName) return data?.seo?.title || data?.title || ''
-  if (data?.seo?.title) return `${data.seo.title} | ${defaultSiteName}`
-  if (data?.title === 'homepage') return defaultSiteName
-  if (data?.title) return `${data.title} | ${defaultSiteName}`
+  if (!defaultSiteName) {
+    return metaTitleSchema.parse(data?.seo?.title || data?.title || '')
+  }
+  if (data?.seo?.title) {
+    return metaTitleSchema.parse(`${data.seo.title} | ${defaultSiteName}`)
+  }
+  if (data?.title === 'homepage') {
+    return metaTitleSchema.parse(defaultSiteName)
+  }
+  if (data?.title) {
+    return metaTitleSchema.parse(`${data.title} | ${defaultSiteName}`)
+  }
 
-  return defaultSiteName
+  return metaTitleSchema.parse(defaultSiteName)
 }

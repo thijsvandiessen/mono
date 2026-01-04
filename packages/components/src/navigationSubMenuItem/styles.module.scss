@@ -1,6 +1,6 @@
 .link {
   display: block;
-  color: var(--colour-primary-dark);
+  color: var(--color-primary-dark);
   font-family: var(--typography-serif);
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -8,6 +8,6 @@
   &:hover,
   &:focus {
     text-decoration: none;
-    color: var(--colour-secondary);
+    color: var(--color-secondary);
   }
 }
