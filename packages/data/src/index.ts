@@ -23,7 +23,6 @@ export type {
   BlogPost,
   Concert,
   PageLink,
-  CloudinaryAsset,
   Image,
   Location,
   Music,

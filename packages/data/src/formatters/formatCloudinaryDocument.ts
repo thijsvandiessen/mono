@@ -1,16 +1,16 @@
-import type { CloudinaryAsset } from '../types/image.js'
+import type { CloudinaryAsset } from '../types/image.schema.js'
 import { z } from 'zod'
 
 interface Document {
   id: string
   url: string
-  bytes?: number
+  bytes: number
 }
 
 const documentSchema = z.object({
   id: z.string(),
   url: z.string(),
-  bytes: z.number().optional(),
+  bytes: z.number(),
 })
 
 export const formatCloudinaryDocument = (

@@ -1,33 +1,29 @@
 import { z } from 'zod'
 
 const CloudinaryUserSchema = z.object({
-  type: z.literal('string').nullable().optional(),
-  id: z.literal('string').nullable().optional(),
+  type: z.string(),
+  id: z.string(),
 })
 
-const CloudinaryDescriptionSchema = z.object({
-  en: z.string().nullable().optional(),
+export const CloudinaryAssetSchema = z.object({
+  bytes: z.number(),
+  secure_url: z.string(),
+  id: z.string(),
+  public_id: z.string(),
+  resource_type: z.string(),
+  width: z.number(),
+  height: z.number(),
+  created_at: z.union([z.date(), z.string()]).optional(),
+  tags: z.array(z.string()),
+  created_by: CloudinaryUserSchema,
+  duration: z.number().nullable(),
+  format: z.string(),
+  metadata: z.union([z.array(z.string()), z.object().optional()]).optional(),
+  type: z.string(),
+  uploaded_by: CloudinaryUserSchema,
+  url: z.string().optional(),
+  version: z.number(),
+  alt: z.record(z.string(), z.string()).optional(),
 })
 
-export const CloudinaryAssetSchema = z
-  .object({
-    bytes: z.number(),
-    created_at: z.string().datetime().nullable().optional(),
-    created_by: CloudinaryUserSchema.nullable().optional(),
-    duration: z.string().nullable().optional(),
-    format: z.string(),
-    width: z.number(),
-    height: z.number(),
-    metadata: z.array(z.unknown()).optional(),
-    public_id: z.string().optional(),
-    id: z.string(),
-    resource_type: z.string(),
-    secure_url: z.string(),
-    tags: z.array(z.string()),
-    type: z.string(),
-    uploaded_by: z.null().optional(),
-    url: z.string().optional(),
-    version: z.number(),
-    alt: CloudinaryDescriptionSchema.optional(),
-  })
-  .catchall(z.unknown())
+export type CloudinaryAsset = z.infer<typeof CloudinaryAssetSchema>

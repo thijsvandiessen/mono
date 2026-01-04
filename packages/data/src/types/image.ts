@@ -1,34 +1,4 @@
-import { CloudinaryAssetSchema } from './image.schema.js'
-import type { Scalars } from '../generated/graphql.js'
-interface CloudinaryUser {
-  type?: 'string' | null
-  id?: 'string' | null
-}
-
-interface CloudinaryDescription {
-  en?: string | null
-}
-
-export interface CloudinaryAsset {
-  bytes: number
-  created_at?: Scalars['DateTime'] | null
-  created_by?: CloudinaryUser | null
-  duration?: string | null
-  format: string
-  width: number
-  height: number
-  metadata?: unknown[]
-  public_id?: string
-  id: string
-  resource_type: string
-  secure_url: string
-  tags: string[]
-  type: string
-  uploaded_by?: null
-  url?: string
-  version: number
-  alt?: CloudinaryDescription
-}
+import { type CloudinaryAsset, CloudinaryAssetSchema } from './image.schema.js'
 
 export interface Image {
   id: string
@@ -42,24 +12,6 @@ export interface Image {
 export const isOfTypeCloudinaryAsset = (
   asset?: unknown
 ): asset is CloudinaryAsset => {
-  const keys = [
-    'resource_type',
-    'type',
-    'width',
-    'height',
-    'id',
-    'format',
-    'secure_url',
-    'version',
-  ] as const satisfies Array<keyof CloudinaryAsset>
-
-  if (asset && typeof asset === 'object') {
-    for (const key of keys) {
-      if (!(key in asset)) return false
-    }
-
-    return CloudinaryAssetSchema.safeParse(asset).success
-  }
-
-  return false
+  console.log('isOfTypeCloudinaryAsset', asset)
+  return CloudinaryAssetSchema.safeParse(asset).success
 }

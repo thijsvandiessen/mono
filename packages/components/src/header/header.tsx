@@ -59,6 +59,7 @@ export const Header = ({
             src={asset.url}
             width={asset.width ?? 100}
             height={asset.height ?? 100}
+            loading="eager"
           />
           <div className={classNames(styles.background)} />
         </div>
