@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.20](https://github.com/thijsvandiessen/mono/compare/v1.0.19...v1.0.20) (2026-01-04)
+
+
+### Bug Fixes
+
+* cloudinary asset schema ([#914](https://github.com/thijsvandiessen/mono/issues/914)) ([0f29327](https://github.com/thijsvandiessen/mono/commit/0f2932748c9f1a1f57851fd57f5a7ef45932b7fc))
+
 ## [1.0.19](https://github.com/thijsvandiessen/mono/compare/v1.0.18...v1.0.19) (2026-01-04)
 
 
