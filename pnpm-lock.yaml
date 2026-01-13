@@ -456,8 +456,8 @@ importers:
   packages/datocms-config:
     dependencies:
       '@datocms/cma-client-node':
-        specifier: 5.2.4
-        version: 5.2.4
+        specifier: 5.2.5
+        version: 5.2.5
       dotenv:
         specifier: 17.2.3
         version: 17.2.3
@@ -1134,11 +1134,11 @@ packages:
     resolution: {integrity: sha512-Vd/9EVDiu6PPJt9yAh6roZP6El1xHrdvIVGjyBsHR0RYwNHgL7FJPyIIW4fANJNG6FtyZfvlRPpFI4ZM/lubvw==}
     engines: {node: '>=18'}
 
-  '@datocms/cma-client-node@5.2.4':
-    resolution: {integrity: sha512-O0zfjABPLktLY4KbIPuPNtwAmd/nK1ByE/2nkeqOXk6ZkYGkVNikU1cADjFDMGkBqI7JmZQzNUKokUu5nto5LA==}
+  '@datocms/cma-client-node@5.2.5':
+    resolution: {integrity: sha512-lTmU+Dgxaqmy7jfTkAjjHLoBe+Zqwh+xgQ/l+kG8nkoVFMTLZrYtAdHIL5Xjv60ALkRfUxf610IgfCwwODmjOA==}
 
-  '@datocms/cma-client@5.2.4':
-    resolution: {integrity: sha512-OEQNarqTl/gwlstYrw10fQd+28LjEta4bBVRiNEyUy3v/pxs5IuE5VjcefnPY6NELtC3l+h6MkmDLlpmN2rnyg==}
+  '@datocms/cma-client@5.2.5':
+    resolution: {integrity: sha512-n6OvEMJta+DzVGRIqkD7chqAc/5kfMX1dQJQtKoLZpYTK3qw1bPMGbgOsVHrLSLMG/fpr302Y24Jf5j6ej2Z/A==}
 
   '@datocms/rest-client-utils@5.1.13':
     resolution: {integrity: sha512-0sGxoLnjagcMb8/lCcar3XuAW7UCszraNsAiCBnb14ibodJbhCQwERkO8kmR9APYh+hlcm8DJ2yVyQAcg413ng==}
@@ -2650,8 +2650,8 @@ packages:
   '@types/json5@0.0.29':
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
 
-  '@types/node@20.19.28':
-    resolution: {integrity: sha512-VyKBr25BuFDzBFCK5sUM6ZXiWfqgCTwTAOK8qzGV/m9FCirXYDlmczJ+d5dXBAQALGCdRRdbteKYfJ84NGEusw==}
+  '@types/node@20.19.29':
+    resolution: {integrity: sha512-YrT9ArrGaHForBaCNwFjoqJWmn8G1Pr7+BH/vwyLHciA9qT/wSiuOhxGCT50JA5xLvFBd6PIiGkE3afxcPE1nw==}
 
   '@types/node@25.0.6':
     resolution: {integrity: sha512-NNu0sjyNxpoiW3YuVFfNz7mxSQ+S4X2G28uqg2s+CzoqoQjLPsWSbsFFyztIAqt2vb8kfEAsJNepMGPTxFDx3Q==}
@@ -6378,14 +6378,14 @@ snapshots:
 
   '@csstools/css-tokenizer@3.0.4': {}
 
-  '@datocms/cma-client-node@5.2.4':
+  '@datocms/cma-client-node@5.2.5':
     dependencies:
-      '@datocms/cma-client': 5.2.4
+      '@datocms/cma-client': 5.2.5
       '@datocms/rest-client-utils': 5.1.13
       mime-types: 2.1.35
       tmp-promise: 3.0.3
 
-  '@datocms/cma-client@5.2.4':
+  '@datocms/cma-client@5.2.5':
     dependencies:
       '@datocms/rest-client-utils': 5.1.13
       datocms-structured-text-utils: 5.1.7
@@ -7934,7 +7934,7 @@ snapshots:
 
   '@types/json5@0.0.29': {}
 
-  '@types/node@20.19.28':
+  '@types/node@20.19.29':
     dependencies:
       undici-types: 6.21.0
     optional: true
@@ -9652,7 +9652,7 @@ snapshots:
 
   happy-dom@18.0.1:
     dependencies:
-      '@types/node': 20.19.28
+      '@types/node': 20.19.29
       '@types/whatwg-mimetype': 3.0.2
       whatwg-mimetype: 3.0.0
     optional: true
