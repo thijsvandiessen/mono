@@ -456,8 +456,8 @@ importers:
   packages/datocms-config:
     dependencies:
       '@datocms/cma-client-node':
-        specifier: 5.2.5
-        version: 5.2.5
+        specifier: 5.2.6
+        version: 5.2.6
       dotenv:
         specifier: 17.2.3
         version: 17.2.3
@@ -1134,14 +1134,14 @@ packages:
     resolution: {integrity: sha512-Vd/9EVDiu6PPJt9yAh6roZP6El1xHrdvIVGjyBsHR0RYwNHgL7FJPyIIW4fANJNG6FtyZfvlRPpFI4ZM/lubvw==}
     engines: {node: '>=18'}
 
-  '@datocms/cma-client-node@5.2.5':
-    resolution: {integrity: sha512-lTmU+Dgxaqmy7jfTkAjjHLoBe+Zqwh+xgQ/l+kG8nkoVFMTLZrYtAdHIL5Xjv60ALkRfUxf610IgfCwwODmjOA==}
+  '@datocms/cma-client-node@5.2.6':
+    resolution: {integrity: sha512-FTk21RCmJZLDlfV9ekKijzmDO3p7E2OatRVODCeAFF1YYC5eUsCCJFD/SHZiov0sv98PaNSA+HI28RItsRX0xw==}
 
-  '@datocms/cma-client@5.2.5':
-    resolution: {integrity: sha512-n6OvEMJta+DzVGRIqkD7chqAc/5kfMX1dQJQtKoLZpYTK3qw1bPMGbgOsVHrLSLMG/fpr302Y24Jf5j6ej2Z/A==}
+  '@datocms/cma-client@5.2.6':
+    resolution: {integrity: sha512-r7ur6kP39bkx07klINp9oYl3quO3fd+/9tiNyZOoDIBpNKtwy0Qjg5yRNgE9ObJIi/ycrWCM/QhYA73XhoQx/w==}
 
-  '@datocms/rest-client-utils@5.1.13':
-    resolution: {integrity: sha512-0sGxoLnjagcMb8/lCcar3XuAW7UCszraNsAiCBnb14ibodJbhCQwERkO8kmR9APYh+hlcm8DJ2yVyQAcg413ng==}
+  '@datocms/rest-client-utils@5.2.6':
+    resolution: {integrity: sha512-pcB6g4IZB1Q6LglfqN8e+s/wjDGKDml8F2u5W+BFfVnAYO+xVXPTO/XGTdbpyh137xinXXCMCTuu2pTaygb18w==}
 
   '@emnapi/core@1.8.1':
     resolution: {integrity: sha512-AvT9QFpxK0Zd8J0jopedNm+w/2fIzvtPKPjqyw9jwvBaReTTqPBk9Hixaz7KbjimP+QNz605/XnjFcDAL2pqBg==}
@@ -6398,20 +6398,20 @@ snapshots:
 
   '@csstools/css-tokenizer@3.0.4': {}
 
-  '@datocms/cma-client-node@5.2.5':
+  '@datocms/cma-client-node@5.2.6':
     dependencies:
-      '@datocms/cma-client': 5.2.5
-      '@datocms/rest-client-utils': 5.1.13
+      '@datocms/cma-client': 5.2.6
+      '@datocms/rest-client-utils': 5.2.6
       mime-types: 2.1.35
       tmp-promise: 3.0.3
 
-  '@datocms/cma-client@5.2.5':
+  '@datocms/cma-client@5.2.6':
     dependencies:
-      '@datocms/rest-client-utils': 5.1.13
+      '@datocms/rest-client-utils': 5.2.6
       datocms-structured-text-utils: 5.1.7
       uuid: 9.0.1
 
-  '@datocms/rest-client-utils@5.1.13':
+  '@datocms/rest-client-utils@5.2.6':
     dependencies:
       async-scheduler: 1.4.4
 
