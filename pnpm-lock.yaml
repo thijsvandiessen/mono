@@ -283,8 +283,8 @@ importers:
         specifier: 19.2.3
         version: 19.2.3
       react-datocms:
-        specifier: 7.2.10
-        version: 7.2.10(@types/react-dom@19.2.3(@types/react@19.2.9))(@types/react@19.2.9)(graphql@16.12.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: 7.2.14
+        version: 7.2.14(@types/react-dom@19.2.3(@types/react@19.2.9))(@types/react@19.2.9)(graphql@16.12.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       react-dom:
         specifier: 19.2.3
         version: 19.2.3(react@19.2.3)
@@ -1143,8 +1143,8 @@ packages:
   '@datocms/cma-client@5.2.6':
     resolution: {integrity: sha512-r7ur6kP39bkx07klINp9oYl3quO3fd+/9tiNyZOoDIBpNKtwy0Qjg5yRNgE9ObJIi/ycrWCM/QhYA73XhoQx/w==}
 
-  '@datocms/content-link@0.3.12':
-    resolution: {integrity: sha512-5ccoNdvdopoKtTsETzXQdscEvbm8KbX/AMwjFvKYPELslfT2Cp+rB8o/+gSGWN7WU6JJcyc6P1OID55myVPhSQ==}
+  '@datocms/content-link@0.3.15':
+    resolution: {integrity: sha512-umBkMRvVmMAmT5pRLbkpgDHMiONWabWKzUTR3FCIFNIfy0yzg1aJJF2kcP+kFcvDmoSPQpaSPcSjmNBW4kCmEQ==}
     engines: {node: '>=18'}
 
   '@datocms/rest-client-utils@5.2.6':
@@ -4979,8 +4979,8 @@ packages:
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
-  react-datocms@7.2.10:
-    resolution: {integrity: sha512-UkmVvIPZzvxczNGV/IawRRYRgkiT2CryNcpMYjqNugG0xN/lnXFUmg+aNPWO87MfkBHhOEY24ErlFwuDoIY+Sw==}
+  react-datocms@7.2.14:
+    resolution: {integrity: sha512-0rtWae92GnPLe+0WmOmt2raq27e/Fw+OLUEK+ZvGP1hZro/2kEyeD0KlWvrAKXUlaGtmf8vSE9CzoXfYfqxz/g==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
       react: '>= 16.12.0'
@@ -6427,7 +6427,7 @@ snapshots:
       datocms-structured-text-utils: 5.1.7
       uuid: 9.0.1
 
-  '@datocms/content-link@0.3.12': {}
+  '@datocms/content-link@0.3.15': {}
 
   '@datocms/rest-client-utils@5.2.6':
     dependencies:
@@ -10579,9 +10579,9 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
-  react-datocms@7.2.10(@types/react-dom@19.2.3(@types/react@19.2.9))(@types/react@19.2.9)(graphql@16.12.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
+  react-datocms@7.2.14(@types/react-dom@19.2.3(@types/react@19.2.9))(@types/react@19.2.9)(graphql@16.12.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
     dependencies:
-      '@datocms/content-link': 0.3.12
+      '@datocms/content-link': 0.3.15
       '@mux/mux-player-react': 3.10.2(@types/react-dom@19.2.3(@types/react@19.2.9))(@types/react@19.2.9)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       datocms-listen: 1.0.2(graphql@16.12.0)
       datocms-structured-text-generic-html-renderer: 5.1.7
