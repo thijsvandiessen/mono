@@ -630,8 +630,8 @@ importers:
         specifier: 17.2.3
         version: 17.2.3
       instantsearch.js:
-        specifier: 4.87.0
-        version: 4.87.0(algoliasearch@5.47.0)
+        specifier: 4.87.1
+        version: 4.87.1(algoliasearch@5.47.0)
       react:
         specifier: 19.2.3
         version: 19.2.3
@@ -2767,8 +2767,8 @@ packages:
   '@types/json5@0.0.29':
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
 
-  '@types/node@20.19.30':
-    resolution: {integrity: sha512-WJtwWJu7UdlvzEAUm484QNg5eAoq5QR08KDNx7g45Usrs2NtOPiX8ugDqmKdXkyL03rBqU5dYNYVQetEpBHq2g==}
+  '@types/node@20.19.31':
+    resolution: {integrity: sha512-5jsi0wpncvTD33Sh1UCgacK37FFwDn+EG7wCmEvs62fCvBL+n8/76cAYDok21NF6+jaVWIqKwCZyX7Vbu8eB3A==}
 
   '@types/node@25.1.0':
     resolution: {integrity: sha512-t7frlewr6+cbx+9Ohpl0NOTKXZNV9xHRmNOvql47BFJKcEG1CxtxlPEEe+gR9uhVWM4DwhnvTF110mIL4yP9RA==}
@@ -4005,6 +4005,7 @@ packages:
   glob@11.0.3:
     resolution: {integrity: sha512-2Nim7dha1KVkaiF4q6Dj+ngPPMdfvLJEOpZk/jKiUAkqKebpGAWQXAq9z1xu9HKu5lWfqw/FASuccEjyznjPaA==}
     engines: {node: 20 || >=22}
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
     hasBin: true
 
   global-directory@4.0.1:
@@ -4191,16 +4192,16 @@ packages:
   instantsearch-ui-components@0.16.0:
     resolution: {integrity: sha512-3CoUlEqiFgQ1cd/y90aPi355JVMY757XSrpojC1m8blLPW0nokx4AwH723dHUGU2MtvI0U49dB2F5EGUS0FZkA==}
 
-  instantsearch-ui-components@0.17.0:
-    resolution: {integrity: sha512-hx9GhWfBVEpOUt617WoFipgyDEPvd2awM6snOF2K//ddFLrpsgG9sOCa9re4/b3i3WQvEiottOXx0eqjHI0Z7g==}
+  instantsearch-ui-components@0.17.1:
+    resolution: {integrity: sha512-uOn39sNs9ukK0N6pklVdxbE5dapIdSJmkh/WJPPtOe4bpnvLzzvvexQYpUJ9vy1xQJMaQcAoPMoMKfBXwUA29A==}
 
   instantsearch.js@4.86.1:
     resolution: {integrity: sha512-ETazkxnWj3aOsHgQem1JQ4roqhfpkA32CZEW+ccP+rQqSbO4sCEEMJTy1A1BMiTD1iCoBFWD+x+8Bx73DOm/Gg==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 6'
 
-  instantsearch.js@4.87.0:
-    resolution: {integrity: sha512-xJy6RkgSGfb28I4zwya5yrOIkUoUS6xk/HDSmT/11yUzvk7XqYVMz2yoz7lITk/fSiKpikU+m/Wi9RWFUs72bw==}
+  instantsearch.js@4.87.1:
+    resolution: {integrity: sha512-KkOSosDPnCXZg5QNZ6AnW+wWJaTsK0kXzUyr4/ugGE/Tm5Fn5D08yC9RFT4JxlvDJw+re0ov1xBbWKBcBn8XuA==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 6'
 
@@ -4976,8 +4977,8 @@ packages:
     resolution: {integrity: sha512-3Ybi1tAuwAP9s0r1UQ2J4n5Y0G05bJkpUIO0/bI9MhwmD70S5aTWbXGBwxHrelT+XM1k6dM0pk+SwNkpTRN7Pg==}
     engines: {node: ^10 || ^12 || >=14}
 
-  preact@10.28.2:
-    resolution: {integrity: sha512-lbteaWGzGHdlIuiJ0l2Jq454m6kcpI1zNje6d8MlGAFlYvP2GO4ibnat7P74Esfz4sPTdM6UxtTwh/d3pwM9JA==}
+  preact@10.28.3:
+    resolution: {integrity: sha512-tCmoRkPQLpBeWzpmbhryairGnhW9tKV6c6gr/w+RhoRoKEJwsjzipwp//1oCpGPOchvSLaAPlpcJi9MwMmoPyA==}
 
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
@@ -5404,7 +5405,7 @@ packages:
   tar@7.5.2:
     resolution: {integrity: sha512-7NyxrTE4Anh8km8iEy7o0QYPs+0JKBTj5ZaqHg6B39erLg0qYXN3BijtShwbsNSvQ+LN75+KV+C4QR/f6Gwnpg==}
     engines: {node: '>=18'}
-    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exhorbitant rates) by contacting i@izs.me
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   text-extensions@2.4.0:
     resolution: {integrity: sha512-te/NtwBwfiNRLf9Ijqx3T0nlqZiQ2XrrtBvu+cLL8ZRrGkO0NHTug8MYFKyoSrv/sHTaSKfilUkizV6XhxMJ3g==}
@@ -8127,7 +8128,7 @@ snapshots:
 
   '@types/json5@0.0.29': {}
 
-  '@types/node@20.19.30':
+  '@types/node@20.19.31':
     dependencies:
       undici-types: 6.21.0
     optional: true
@@ -9708,7 +9709,7 @@ snapshots:
 
   happy-dom@18.0.1:
     dependencies:
-      '@types/node': 20.19.30
+      '@types/node': 20.19.31
       '@types/whatwg-mimetype': 3.0.2
       whatwg-mimetype: 3.0.0
     optional: true
@@ -9816,10 +9817,9 @@ snapshots:
     transitivePeerDependencies:
       - react
 
-  instantsearch-ui-components@0.17.0(react@19.2.3):
+  instantsearch-ui-components@0.17.1(react@19.2.3):
     dependencies:
       '@babel/runtime': 7.28.6
-      ai: 5.0.123(zod@4.3.6)
       markdown-to-jsx: 7.7.17(react@19.2.3)
       zod: 4.3.6
       zod-to-json-schema: 3.24.6(zod@4.3.6)
@@ -9839,27 +9839,26 @@ snapshots:
       hogan.js: 3.0.2
       htm: 3.1.1
       instantsearch-ui-components: 0.16.0(react@19.2.3)
-      preact: 10.28.2
+      preact: 10.28.3
       qs: 6.14.1
       react: 19.2.3
       search-insights: 2.17.3
       zod: 4.3.6
       zod-to-json-schema: 3.24.6(zod@4.3.6)
 
-  instantsearch.js@4.87.0(algoliasearch@5.47.0):
+  instantsearch.js@4.87.1(algoliasearch@5.47.0):
     dependencies:
       '@algolia/events': 4.0.1
       '@types/dom-speech-recognition': 0.0.1
       '@types/google.maps': 3.58.1
       '@types/hogan.js': 3.0.5
       '@types/qs': 6.14.0
-      ai: 5.0.123(zod@4.3.6)
       algoliasearch: 5.47.0
       algoliasearch-helper: 3.27.0(algoliasearch@5.47.0)
       hogan.js: 3.0.2
       htm: 3.1.1
-      instantsearch-ui-components: 0.17.0(react@19.2.3)
-      preact: 10.28.2
+      instantsearch-ui-components: 0.17.1(react@19.2.3)
+      preact: 10.28.3
       qs: 6.14.1
       react: 19.2.3
       search-insights: 2.17.3
@@ -10616,7 +10615,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  preact@10.28.2: {}
+  preact@10.28.3: {}
 
   prelude-ls@1.2.1: {}
 
