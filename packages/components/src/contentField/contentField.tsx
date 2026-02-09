@@ -21,7 +21,6 @@ interface Props {
 
 export const ContentField = ({ data }: Props) => {
   if (!isCdaStructuredTextValue(data)) return
-
   return (
     <div className={styles.structuredText}>
       <StructuredText

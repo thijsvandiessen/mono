@@ -11,16 +11,10 @@ export const Concerts = ({
   first,
   numberOfConcerts,
 }: ConcertsProps) => (
-  <div className={classNames(styles.concerts, 'content-layout')}>
+  <div className={classNames(styles.concerts)}>
     <UpcommingConcerts concertData={concertData} />
     {pastConcerts({ concerts: concertData }).map((concert) => {
-      return (
-        <Concert
-          className="content-layout--small"
-          key={concert.id}
-          id={concert.id}
-        />
-      )
+      return <Concert key={concert.id} id={concert.id} />
     })}
 
     <LoadMoreConcerts initialSkip={first} numberOfConcerts={numberOfConcerts} />

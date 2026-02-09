@@ -1,7 +1,11 @@
 .root {
   background-color: var(--color-background);
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin: 1.5rem;
+
+  @media screen and (min-width: 83rem) {
+    margin: 1.5rem auto;
+    width: 80rem;
+  }
 }
 
 .content {

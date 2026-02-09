@@ -16,15 +16,8 @@ export const UpcommingConcerts = ({ concertData }: UpcommingConcertsProps) => {
     <div>
       <h2 className={styles.header}>Aankomende concerten</h2>
       {upcomming.map((concert) => {
-        return (
-          <ConcertComponent
-            className="content-layout--small"
-            key={concert.id}
-            id={concert.id}
-          />
-        )
+        return <ConcertComponent key={concert.id} id={concert.id} />
       })}
-      <hr />
 
       {concertData.length > upcomming.length && (
         <h2 className={styles.header}>Overige concerten</h2>

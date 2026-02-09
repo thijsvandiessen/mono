@@ -1,6 +1,6 @@
 import { type CloudinaryAsset, CloudinaryAssetSchema } from './image.schema.js'
 
-export interface Image {
+export interface ImageSchema {
   id: string
   title: string
   description: string
@@ -12,6 +12,5 @@ export interface Image {
 export const isOfTypeCloudinaryAsset = (
   asset?: unknown
 ): asset is CloudinaryAsset => {
-  console.log('isOfTypeCloudinaryAsset', asset)
   return CloudinaryAssetSchema.safeParse(asset).success
 }
