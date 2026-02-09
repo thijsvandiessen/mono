@@ -11,7 +11,7 @@ import classNames from 'classnames'
 import styles from './styles.module.scss'
 
 export interface Props {
-  pageTitle: string
+  pageTitle: string | undefined
   items: Concert['content'] | PageDetailFragment['content']
 }
 
