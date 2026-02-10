@@ -6,7 +6,7 @@ import {
   getPagesMeta,
 } from '@mono/data'
 
-const URL = 'https://lundi-bleu.nl'
+const URL = 'https://lundibleu.nl'
 
 export default async function sitemap() {
   const pagesMeta = await getPagesMeta()
