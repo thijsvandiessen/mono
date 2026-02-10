@@ -16,7 +16,7 @@ export const useLoadMoreConcerts = ({
   const [concerts, setConcerts] = useState<Concert[]>([])
   const ref = useRef<HTMLDivElement>(null)
   const [entry] = useIntersectionObserver({
-    enabled: Boolean(numberOfConcerts),
+    enabled: numberOfConcerts > 0,
     ref,
   })
 
@@ -27,9 +27,7 @@ export const useLoadMoreConcerts = ({
     if (!numberOfConcerts) return
     if (concerts.length === numberOfConcerts - initialSkip) return
     if (skip > numberOfConcerts) return
-    let cancelled = false
     const raf = requestAnimationFrame(() => {
-      if (cancelled) return
       setLoading(true)
       // TODO: abort signal to stop fetching
       getConcerts({
@@ -38,20 +36,19 @@ export const useLoadMoreConcerts = ({
         order: [ConcertModelOrderBy.PositionAsc],
       })
         .then(({ data }) => {
-          if (!data || cancelled) return
+          if (!data) return
           setConcerts((prev) => [...prev, ...data])
           setSkip((prev) => prev + interval)
         })
         .catch(() => {
-          if (!cancelled) console.log('TODO: render an error')
+          console.log('TODO: render an error')
         })
         .finally(() => {
-          if (!cancelled) setLoading(false)
+          setLoading(false)
         })
     })
 
     return () => {
-      cancelled = true
       cancelAnimationFrame(raf)
     }
   }, [

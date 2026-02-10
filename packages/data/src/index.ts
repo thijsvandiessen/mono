@@ -23,7 +23,7 @@ export type {
   BlogPost,
   Concert,
   PageLink,
-  Image,
+  ImageSchema,
   Location,
   Music,
   NavigationData,

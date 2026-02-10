@@ -2,7 +2,9 @@
 
 exports[`Concerts component > shows all the data 1`] = `
 <div>
-  <div>
+  <div
+    class="_numberOfConcerts_034b14"
+  >
     <p
       class="text-small"
     >

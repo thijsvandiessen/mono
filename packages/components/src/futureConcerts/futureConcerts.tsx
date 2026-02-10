@@ -12,7 +12,6 @@ export const FutureConcerts = async ({ skip, first }: Props) => {
     <div>
       {data.map((concert, index) => (
         <ConcertListItem
-          className="content-layout--small"
           key={concert.id}
           data={concert}
           size="large"

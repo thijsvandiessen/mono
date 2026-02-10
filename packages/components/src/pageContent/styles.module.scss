@@ -1,10 +1,15 @@
 .defaultSpacing {
   margin-top: var(--layout-default-mobile-spacing);
   margin-bottom: var(--layout-default-mobile-spacing);
+  margin-left: 1rem;
+  margin-right: 1rem;
 
   @media screen and (min-width: 50rem) {
     margin-top: var(--layout-default-desktop-spacing);
     margin-bottom: var(--layout-default-desktop-spacing);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--max-content-width);
   }
 }
 

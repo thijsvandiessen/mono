@@ -12,7 +12,7 @@ interface Props {
 
 export const Navigation = ({ data }: Props) => {
   return (
-    <nav className={classNames(styles.root, 'content-layout')}>
+    <nav className={classNames(styles.root)}>
       <div className={classNames(styles.content)}>
         <MobileMenu escapedMenuString={JSON.stringify(data)} />
         <ul className={classNames(styles.list)}>

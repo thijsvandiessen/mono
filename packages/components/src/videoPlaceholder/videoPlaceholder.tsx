@@ -1,8 +1,7 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { type ReactNode, useEffect, useRef, useState } from 'react'
 import { Play } from '../icons/index.js'
-import type { ReactNode } from 'react'
 import styles from './styles.module.scss'
 import { useIntersectionObserver } from '@mono/hooks'
 

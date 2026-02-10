@@ -1,69 +1,57 @@
-import {
-  type HeaderFragment,
-  formatCloudinaryImage,
-  isOfTypeCloudinaryAsset,
-} from '@mono/data'
-import { ContentField } from '../contentField/index.js'
-import type { ElementType } from 'react'
 import { Image } from '@mono/next-js'
-import React from 'react'
+import type { ImageSchema } from '@mono/data'
+import { type ReactNode } from 'react'
 import classNames from 'classnames'
-import { isEmptyDocument } from 'datocms-structured-text-utils'
 import styles from './styles.module.scss'
 
 interface Props {
   className?: string
-  tag?: ElementType
+  tag?: 'header' | 'section'
   title?: string
-  body?: HeaderFragment['body']
-  cover?: HeaderFragment['cover']
+  body?: ReactNode
+  cover?: ImageSchema
 }
 
 export const Header = ({
   title,
   className,
-  tag = 'header',
   body,
   cover,
+  tag = 'header',
 }: Props) => {
-  const HeaderTag = tag
-
-  const asset = formatCloudinaryImage(
-    isOfTypeCloudinaryAsset(cover) ? cover : undefined
-  )
-
+  const Tag = tag
   return (
-    <HeaderTag
+    <Tag
       className={classNames(className, styles.header, {
-        [`${styles.withImage}`]: asset?.url,
-        [`${styles.withBody}`]: !isEmptyDocument(body),
+        [`${styles.withImage}`]: cover?.url,
+        [`${styles.withBody}`]: body,
       })}
     >
-      <div className={classNames(styles.headerContent, 'content-layout')}>
+      <div className={classNames(styles.headerContent)}>
         {title && (
           <h1
             className={classNames({
-              'sr-only': body ?? (!body && asset?.url),
+              'sr-only': body ?? (body && cover?.url),
             })}
           >
             {title}
           </h1>
         )}
-        <ContentField data={body} />
+        {body}
       </div>
-      {asset?.url && (
+      {cover?.url && (
         <div className={classNames(styles.headerImageWrapper)}>
           <Image
             className={classNames(styles.headerImage)}
-            alt={asset.title ?? title ?? ''}
-            src={asset.url}
-            width={asset.width ?? 100}
-            height={asset.height ?? 100}
+            alt={cover.title}
+            src={cover.url}
+            width={cover.width ?? 100}
+            height={cover.height ?? 100}
             loading="eager"
           />
           <div className={classNames(styles.background)} />
         </div>
       )}
-    </HeaderTag>
+    </Tag>
   )
 }

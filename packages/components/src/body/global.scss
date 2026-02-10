@@ -1,70 +1,17 @@
-/*
-  Josh's Custom CSS Reset
-  https://www.joshwcomeau.com/css/custom-css-reset/
-*/
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-* {
-  margin: 0;
-}
-
-html {
-  text-size-adjust: 100%;
-}
-
 body {
-  line-height: 1.55;
-  -webkit-font-smoothing: antialiased;
-}
-
-article,
-aside,
-footer,
-header,
-nav,
-section,
-figcaption,
-figure,
-main {
-  display: block;
-}
-
-audio,
-video {
-  display: inline-block;
-}
-
-img {
-  vertical-align: middle;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-#root,
-#__next {
-  isolation: isolate;
+  margin: 0;
 }
 
 :root {
   --color-background: #ffffff;
   --color-light: #e2edef;
   --color-grey: #899ca0;
-  --color-primary: #003541;
-  --color-primary-dark: #07161a;
-  --color-primary-light: #73d6ed;
-  --color-secondary: #ab4e1e;
-  --color-secondary-dark: #88411d;
-  --color-secondary-light: #ffc19a;
+  --color-primary: hsl(215deg 100% 15% / 1);
+  --color-primary-dark: hsl(215deg 100% 10% / 1);
+  --color-primary-light: hsl(215deg 100% 60% / 1);
+  --color-secondary: hsl(30deg, 80%, 40%);
+  --color-secondary-dark: hsl(30deg, 80%, 20%);
+  --color-secondary-light: hsl(30deg, 90%, 80%);
 
   --typography-sans: 'dm-sans', serif;
   --typography-serif: 'dm-serif', serif;
@@ -88,7 +35,7 @@ select {
   --full-width: 100%;
   --default-width: 80rem;
 
-  --max-content-width: 50rem;
+  --max-content-width: 48rem;
 
   --content-padding: 24px;
 
@@ -148,6 +95,7 @@ body {
   font-family: var(--typography-sans);
   background-color: var(--color-background);
   color: var(--color-primary-dark);
+  line-height: 1.6;
   font-size: 1.125em;
   word-break: break-word;
 }
@@ -168,35 +116,17 @@ body {
   overflow: hidden;
 }
 
-%content-layout {
-  width: 100%;
-  margin: 0 auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-
-  @media screen and (min-width: 50rem) {
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
-
-  p {
-    max-width: var(--layout-max-content-width);
-  }
-}
-
-.content-layout {
-  @extend %content-layout;
-  max-width: 80rem;
-}
-
-.content-layout--small {
-  margin: 0 auto;
-  max-width: var(--layout-md-width);
-}
-
 hr {
   margin: 1rem 0;
   height: 0.2rem;
   background-color: var(--color-secondary);
   border: none;
+}
+
+a {
+  color: var(--color-primary);
+
+  &:hover {
+    color: var(--color-primary-light);
+  }
 }
