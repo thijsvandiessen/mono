@@ -1,10 +1,8 @@
-.header {
-  color: var(--color-primary);
-  background: var(--color-background);
+.numberOfConcerts {
   margin: 1rem;
 
   @media screen and (min-width: 50rem) {
     max-width: var(--max-content-width);
-    margin: 0 auto;
+    margin: 2rem auto;
   }
 }

@@ -11,7 +11,7 @@ interface Props {
 
 export const Footer = ({ data, metadata }: Props) => (
   <footer className={classNames(styles.root)}>
-    <div className={classNames(styles.content, 'content-layout')}>
+    <div className={classNames(styles.content)}>
       <div>
         <h2 className={classNames(styles.title)}>{metadata?.title}</h2>
       </div>

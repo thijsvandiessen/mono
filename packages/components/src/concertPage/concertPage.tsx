@@ -18,12 +18,10 @@ export const ConcertPage = async ({ slug }: Props) => {
   return (
     <article className={styles.root}>
       <header className={classNames(styles.header)}>
-        <div className={classNames('content-layout')}>
-          <h1>{data.title}</h1>
-        </div>
+        <h1 className={classNames(styles.headerTitle)}>{data.title}</h1>
       </header>
       <div
-        className={classNames(styles.container, 'content-layout', {
+        className={classNames(styles.container, {
           [`${styles.noGrid}`]: !data.image?.url,
         })}
       >
@@ -37,7 +35,7 @@ export const ConcertPage = async ({ slug }: Props) => {
                   alt={data.image.description}
                   width={data.image.width ?? 100}
                   height={data.image.height ?? 100}
-                  loading="eager" // Replacing priority with loading="eager"
+                  loading="eager"
                 />
               </div>
             )}
@@ -60,11 +58,7 @@ export const ConcertPage = async ({ slug }: Props) => {
             </div>
           )}
 
-          <PageContent
-            pageTitle={data.title ?? ''}
-            sectionClassName={styles.pageContent}
-            items={data.content}
-          />
+          <PageContent pageTitle={data.title} items={data.content} />
         </div>
       </div>
       <div className={styles.locations}>

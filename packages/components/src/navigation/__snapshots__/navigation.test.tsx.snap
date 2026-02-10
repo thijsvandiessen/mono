@@ -3,7 +3,7 @@
 exports[`Concert component > shows all the data 1`] = `
 <div>
   <nav
-    class="_root_2ae623 content-layout"
+    class="_root_2ae623"
   >
     <div
       class="_content_2ae623"

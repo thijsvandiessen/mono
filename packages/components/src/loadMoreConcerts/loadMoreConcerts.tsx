@@ -2,6 +2,7 @@
 
 import { ConcertListItem } from '../concertListItem/index.js'
 import React from 'react'
+import styles from './styles.module.scss'
 import { useLoadMoreConcerts } from '@mono/hooks'
 
 export interface Props {
@@ -21,7 +22,6 @@ export const LoadMoreConcerts = ({ initialSkip, numberOfConcerts }: Props) => {
         if (!concert?.id) return
         return (
           <ConcertListItem
-            className="content-layout--small"
             key={concert.id}
             data={concert}
             isLast={concerts.length - 1 === index}
@@ -30,7 +30,7 @@ export const LoadMoreConcerts = ({ initialSkip, numberOfConcerts }: Props) => {
       })}
 
       {numberOfConcerts ? (
-        <div ref={ref}>
+        <div ref={ref} className={styles.numberOfConcerts}>
           <p className="text-small">
             {concerts.length + initialSkip} van {numberOfConcerts} concerten
           </p>
