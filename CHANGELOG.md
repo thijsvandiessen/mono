@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.21](https://github.com/thijsvandiessen/mono/compare/v1.0.20...v1.0.21) (2026-02-10)
+
+
+### Bug Fixes
+
+* scoped css ([#992](https://github.com/thijsvandiessen/mono/issues/992)) ([f294e6d](https://github.com/thijsvandiessen/mono/commit/f294e6d14a620d93f39b61f3bbf0e48d173fb9ad))
+
 ## [1.0.20](https://github.com/thijsvandiessen/mono/compare/v1.0.19...v1.0.20) (2026-01-04)
 
 
