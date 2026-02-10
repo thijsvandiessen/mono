@@ -16,6 +16,11 @@ variable "build_command" {
   default = "turbo build"
 }
 
+variable "node_version" {
+  type    = string
+  default = "24.x"
+}
+
 variable "project_directory_path" {
   type    = string
   default = "../"

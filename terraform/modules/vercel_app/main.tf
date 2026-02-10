@@ -12,6 +12,7 @@ resource "vercel_project" "app" {
   install_command = var.install_command
   build_command   = var.build_command
   root_directory  = var.root_directory
+  node_version    = var.node_version
 }
 
 data "vercel_project_directory" "repo" {
