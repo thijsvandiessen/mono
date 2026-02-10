@@ -1,6 +1,6 @@
 export const StyleGuide = () => {
   return (
-    <div className="content-layout">
+    <div>
       <h1>style guide</h1>
 
       <h2>headings</h2>

@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /style-guide
 
-Sitemap: https://www.lundi-bleu.nl/sitemap.xml
+Sitemap: https://www.lundibleu.nl/sitemap.xml

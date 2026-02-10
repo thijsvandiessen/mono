@@ -7,7 +7,6 @@ import classNames from 'classnames'
 import styles from './styles.module.scss'
 
 export interface Props {
-  className?: string
   data: Concert
   size?: 'small' | 'large'
   isLast?: boolean
@@ -18,7 +17,6 @@ export interface Props {
 }
 
 export const ConcertListItem = ({
-  className,
   data,
   size = 'small',
   isLast,
@@ -27,11 +25,10 @@ export const ConcertListItem = ({
   title,
 }: Props) => (
   <div
-    className={classNames(className, styles.root, {
+    className={classNames(styles.root, {
       [`${styles.large}`]: size === 'large',
       [`${styles.isLast}`]: isLast,
       [`${styles.hasTitle}`]: title,
-      [`${styles.hasImage}`]: data.image?.url && showImage,
       [`${styles.oneLocation}`]: data.locations?.length === 1,
     })}
   >
@@ -85,14 +82,13 @@ export const ConcertListItem = ({
                     'Concert voorbij'
                   ) : item.ticketLink ? (
                     <Link
+                      className={styles.locationLink}
                       href={item.ticketLink}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <span className={styles.locationLink}>
-                        Koop nu kaarten
-                        <ArrowRight className={styles.locationLinkIcon} />
-                      </span>
+                      <span>Koop nu kaarten</span>
+                      <ArrowRight className={styles.locationLinkIcon} />
                     </Link>
                   ) : (
                     'Link voor de kaartverkoop volgt spoedig'
@@ -118,15 +114,17 @@ export const ConcertListItem = ({
     </div>
 
     {showLink && (
-      <Link
-        className={classNames(styles.concertLink, {
-          'text-small': size === 'small',
-        })}
-        href={data.url}
-      >
-        Bekijk concert
-        <ArrowRight />
-      </Link>
+      <div className={styles.concertUrlContainer}>
+        <Link
+          className={classNames(styles.concertLink, {
+            'text-small': size === 'small',
+          })}
+          href={data.url}
+        >
+          Bekijk concert
+          <ArrowRight />
+        </Link>
+      </div>
     )}
   </div>
 )

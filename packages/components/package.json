@@ -16,7 +16,7 @@
   "scripts": {
     "build": "pnpm run build:scss && tsc",
     "build:scss": "cpx \"src/**/*.scss\" dist",
-    "dev": "tsc --watch",
+    "dev": "cpx \"src/**/*.scss\" dist --watch && tsc --watch",
     "lint": "pnpm run lint:js && pnpm run lint:styles",
     "lint:js": "eslint",
     "lint:styles": "prettier . --write --list-different",

@@ -1,10 +1,10 @@
 import type { CloudinaryAsset } from '../types/image.schema.js'
-import type { Image } from '../types/image.js'
+import type { ImageSchema } from '../types/image.js'
 import { imageSchema } from './schemas.js'
 
 export const formatCloudinaryImage = (
   asset: CloudinaryAsset | undefined
-): Image | undefined => {
+): ImageSchema | undefined => {
   if (!asset?.secure_url) return
   const assetId = asset.version ? `v${asset.version}/${asset.id}` : asset.id
   return imageSchema.parse({

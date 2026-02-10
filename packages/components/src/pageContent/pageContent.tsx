@@ -1,4 +1,9 @@
-import { type Concert, type PageDetailFragment } from '@mono/data'
+import {
+  type Concert,
+  type PageDetailFragment,
+  formatCloudinaryImage,
+  isOfTypeCloudinaryAsset,
+} from '@mono/data'
 import { ContentField } from '../contentField/index.js'
 import { Header } from '../header/index.js'
 import { TwoColumContentField } from '../twoColumContentField/index.js'
@@ -6,29 +11,22 @@ import classNames from 'classnames'
 import styles from './styles.module.scss'
 
 export interface Props {
-  pageTitle: string
-  sectionClassName?: string
+  pageTitle: string | undefined
   items: Concert['content'] | PageDetailFragment['content']
 }
 
-export const PageContent = ({ sectionClassName, items, pageTitle }: Props) => {
+export const PageContent = ({ items, pageTitle }: Props) => {
   return items?.map((item, index) => {
     if (item.__typename === 'TwoColumnRecord') {
       return (
-        <section
-          key={item.id}
-          className={classNames(styles.defaultSpacing, sectionClassName)}
-        >
+        <section key={item.id} className={classNames(styles.defaultSpacing)}>
           <TwoColumContentField item={item} />
         </section>
       )
     }
     if (item.__typename === 'TextBlockRecord') {
       return (
-        <section
-          key={item.id}
-          className={classNames(styles.defaultSpacing, sectionClassName)}
-        >
+        <section key={item.id} className={classNames(styles.defaultSpacing)}>
           <ContentField data={item.content} />
         </section>
       )
@@ -42,8 +40,10 @@ export const PageContent = ({ sectionClassName, items, pageTitle }: Props) => {
           })}
           key={item.id}
           title={index === 0 ? pageTitle : undefined}
-          body={item.body}
-          cover={item.cover}
+          body={<ContentField data={item.body} />}
+          cover={formatCloudinaryImage(
+            isOfTypeCloudinaryAsset(item.cover) ? item.cover : undefined
+          )}
           tag={index > 0 ? 'section' : 'header'}
         />
       )
