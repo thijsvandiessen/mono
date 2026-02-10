@@ -23,9 +23,9 @@
     "eslint": "9.39.2",
     "eslint-plugin-react-hooks": "7.0.1",
     "eslint-plugin-testing-library": "7.15.4",
-    "prettier": "3.7.4",
+    "prettier": "3.8.1",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.51.0",
-    "vitest": "4.0.16"
+    "typescript-eslint": "8.55.0",
+    "vitest": "4.0.18"
   }
 }
