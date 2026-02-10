@@ -58,7 +58,7 @@ export const ConcertPage = async ({ slug }: Props) => {
             </div>
           )}
 
-          <PageContent pageTitle={data.title ?? ''} items={data.content} />
+          <PageContent pageTitle={data.title} items={data.content} />
         </div>
       </div>
       <div className={styles.locations}>

@@ -35,7 +35,7 @@ export const ConcertsPage = async () => {
                 ? pageData?.content[0].cover
                 : undefined
             )}
-            title={pageData?.title ?? ''}
+            title={pageData?.title ?? undefined}
           />
         )}
       <Concerts
@@ -45,7 +45,7 @@ export const ConcertsPage = async () => {
       />
       {pageData?.content.slice(1) && (
         <PageContent
-          pageTitle={pageData?.title ?? ''}
+          pageTitle={pageData?.title ?? undefined}
           items={pageData?.content.slice(1)}
         />
       )}

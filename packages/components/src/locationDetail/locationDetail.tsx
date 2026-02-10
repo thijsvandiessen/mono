@@ -9,8 +9,8 @@ export interface Props {
 
 export const LocationDetail = async ({ id, startTime }: Props) => {
   const { data } = await getLocation({ id })
-  const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? ''
-  if (!data) return null
+  const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+  if (!data || !googleMapsApiKey) return null
 
   return (
     <LocationDetailView
