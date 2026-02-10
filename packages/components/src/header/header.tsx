@@ -1,7 +1,6 @@
 import { Image } from '@mono/next-js'
 import type { ImageSchema } from '@mono/data'
-import React from 'react'
-import type { ReactNode } from 'react'
+import { type ReactNode } from 'react'
 import classNames from 'classnames'
 import styles from './styles.module.scss'
 
