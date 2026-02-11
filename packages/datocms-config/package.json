@@ -17,7 +17,7 @@
     "lint:styles": "prettier . --write --list-different"
   },
   "dependencies": {
-    "@datocms/cma-client-node": "5.2.8",
+    "@datocms/cma-client-node": "5.3.0",
     "dotenv": "17.2.3",
     "memfs": "4.56.10",
     "zod": "4.3.6"

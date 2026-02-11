@@ -459,8 +459,8 @@ importers:
   packages/datocms-config:
     dependencies:
       '@datocms/cma-client-node':
-        specifier: 5.2.8
-        version: 5.2.8
+        specifier: 5.3.0
+        version: 5.3.0
       dotenv:
         specifier: 17.2.3
         version: 17.2.3
@@ -1136,11 +1136,11 @@ packages:
   '@datocms/cda-client@0.2.10':
     resolution: {integrity: sha512-uj5M4t0ifwlxBRFdgqnt1Sb4A8RNkv1e6sYa6gP6Bh+oGQwhtnGnvyNazA4KpLhqrO2UAw3dbKB5WltcB5JeAg==}
 
-  '@datocms/cma-client-node@5.2.8':
-    resolution: {integrity: sha512-UG6YnRl4pmom+xzN2aHz/R2N8qsKIsF75w/oJjKS4UgZ6S10g9hZ5i8FkuNrH/blRZqJNr0s1AXn4KIvwoWVSg==}
+  '@datocms/cma-client-node@5.3.0':
+    resolution: {integrity: sha512-m6PmqlHVCMSHMxX0cfk71OBYm/tbKQN6gNeP/gYRds7C7ZhKwfKHw/T1tzt27CV7GeLtMluvUBZdHHy+Q5BU/w==}
 
-  '@datocms/cma-client@5.2.8':
-    resolution: {integrity: sha512-D6JA0J2DFjOZnnH9xcARFGhAb0oEjrrn9p/x7ht3/nY14xICpeoqXZ3TGFtQICKcWLf2BtzUjfL5G0PnO68RNA==}
+  '@datocms/cma-client@5.3.0':
+    resolution: {integrity: sha512-aKezzQ2ViWSLz39hdf+EU4tE2cqme+UwRp2fAr20i4NkeZOPmPBmiiFLPJ2lMrVCKl7eeN2Jd5Zz5oqqPYtgQA==}
 
   '@datocms/content-link@0.3.15':
     resolution: {integrity: sha512-umBkMRvVmMAmT5pRLbkpgDHMiONWabWKzUTR3FCIFNIfy0yzg1aJJF2kcP+kFcvDmoSPQpaSPcSjmNBW4kCmEQ==}
@@ -6413,14 +6413,14 @@ snapshots:
     transitivePeerDependencies:
       - graphql
 
-  '@datocms/cma-client-node@5.2.8':
+  '@datocms/cma-client-node@5.3.0':
     dependencies:
-      '@datocms/cma-client': 5.2.8
+      '@datocms/cma-client': 5.3.0
       '@datocms/rest-client-utils': 5.2.8
       mime-types: 2.1.35
       tmp-promise: 3.0.3
 
-  '@datocms/cma-client@5.2.8':
+  '@datocms/cma-client@5.3.0':
     dependencies:
       '@datocms/rest-client-utils': 5.2.8
       datocms-structured-text-utils: 5.1.7
