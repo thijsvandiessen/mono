@@ -20,7 +20,7 @@
   "devDependencies": {
     "@apollo/rover": "0.37.0",
     "@commitlint/cli": "20.4.1",
-    "@commitlint/config-conventional": "20.4.0",
+    "@commitlint/config-conventional": "20.4.1",
     "@swc/core": "1.15.11",
     "@types/node": "25.2.3",
     "concurrently": "9.2.1",
