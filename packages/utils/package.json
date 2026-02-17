@@ -35,7 +35,7 @@
     "@vitejs/plugin-react": "5.1.4",
     "dotenv": "17.3.1",
     "eslint": "9.39.2",
-    "eslint-plugin-testing-library": "7.15.4",
+    "eslint-plugin-testing-library": "7.16.0",
     "prettier": "3.8.1",
     "turbo": "2.8.9",
     "typescript": "5.9.3",
