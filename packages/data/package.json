@@ -41,7 +41,7 @@
     "@graphql-codegen/introspection": "5.0.0",
     "@graphql-codegen/typescript": "5.0.7",
     "@graphql-codegen/typescript-document-nodes": "5.0.8",
-    "@graphql-codegen/typescript-operations": "5.0.7",
+    "@graphql-codegen/typescript-operations": "5.0.8",
     "@mono/eslint-config": "workspace:*",
     "@mono/typescript-config": "workspace:*",
     "@testing-library/jest-dom": "6.9.1",
