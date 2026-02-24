@@ -39,7 +39,7 @@
     "@graphql-codegen/cli": "6.1.2",
     "@graphql-codegen/client-preset": "5.2.3",
     "@graphql-codegen/introspection": "5.0.0",
-    "@graphql-codegen/typescript": "5.0.7",
+    "@graphql-codegen/typescript": "5.0.8",
     "@graphql-codegen/typescript-document-nodes": "5.0.8",
     "@graphql-codegen/typescript-operations": "5.0.8",
     "@mono/eslint-config": "workspace:*",
