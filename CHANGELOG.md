@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.23](https://github.com/thijsvandiessen/mono/compare/v1.0.22...v1.0.23) (2026-02-26)
+
+
+### Bug Fixes
+
+* one page ([#1046](https://github.com/thijsvandiessen/mono/issues/1046)) ([4554a81](https://github.com/thijsvandiessen/mono/commit/4554a81c5b8236db3e9c2651b9c404d18aedd6a4))
+
 ## [1.0.22](https://github.com/thijsvandiessen/mono/compare/v1.0.21...v1.0.22) (2026-02-10)
 
 
