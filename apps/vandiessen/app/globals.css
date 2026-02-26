@@ -8,8 +8,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-
-  --font-sans: Helvetica, Arial, Roboto, 'Helvetica Neue', sans-serif;
+  --font-sans:
+    var(--font-sans), Helvetica, Arial, Roboto, 'Helvetica Neue', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {

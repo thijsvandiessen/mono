@@ -39,9 +39,11 @@ export const Button = ({
     rel={rel}
   >
     {leftIcon}
-    <span>
-      {children} <span className={styles.suffix}>{suffix}</span>
-    </span>
+    {children && (
+      <span>
+        {children} {suffix && <span className={styles.suffix}>{suffix}</span>}
+      </span>
+    )}
     {rightIcon}
   </Link>
 )
