@@ -18,15 +18,20 @@ export default function Home() {
               />
             </div>
             <h1 className="font-bold text-8xl">
-              I&apos;m Thijs van Diessen, a creative developer
+              I&apos;m Thijs van Diessen, a creative software engineer
             </h1>
             <p>
-              I like to design and develop awesome user experiences and
-              specialized in creating faster websites!
+              I like to design and develop awesome user experiences and am
+              specialized in creating scalable solutions!
             </p>
             <div>
-              <Button href="/projects" variant="primary">
-                My projects
+              <Button
+                href="https://github.com/thijsvandiessen"
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="primary"
+              >
+                My github
               </Button>
             </div>
           </div>

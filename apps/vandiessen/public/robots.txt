@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /style-guide
+
+Sitemap: https://www.vandiessen.com/sitemap.xml
