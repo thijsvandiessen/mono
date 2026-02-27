@@ -47,7 +47,7 @@
     "@vitejs/plugin-react": "5.1.4",
     "cpx2": "8.0.0",
     "dotenv": "17.3.1",
-    "eslint": "9.39.2",
+    "eslint": "10.0.2",
     "eslint-plugin-testing-library": "7.16.0",
     "jsdom": "28.1.0",
     "prettier": "3.8.1",
