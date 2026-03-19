@@ -1,17 +1,15 @@
 const getUrl = () => {
-  if (typeof globalThis.window !== 'undefined') {
-    return '/graphql' as const
-  }
-  return 'https://current--vandiessen-mono-graph.apollographos.net/graphql' as const
+  return 'https://graphql.datocms.com' as const
 }
-const clientName = process.env.NEXT_PUBLIC_SITE_NAME ?? ''
 
 export const linkConfig = {
   url: getUrl(),
   headers: {
     'Content-Language': 'nl-NL',
     'Content-Type': 'application/json',
-    'apollographql-client-name': clientName,
-    'apollographql-client-version': 'specific-version', // TODO: commit hash?
+    Accept: 'application/json',
+    Authorization: `Bearer ${process.env.NEXT_PUBLIC_DATOCMS_READONLY_TOKEN}`,
+    'X-Exclude-Invalid': 'true',
+    'X-Cache-Tags': 'true',
   },
 }

@@ -52,7 +52,7 @@ describe('getConcerts', () => {
         variables: {},
         kind: 'query',
         context: {
-          url: 'https://current--vandiessen-mono-graph.apollographos.net/graphql',
+          url: 'https://graphql.datocms.com/',
           requestPolicy: 'cache-first',
         },
       },
