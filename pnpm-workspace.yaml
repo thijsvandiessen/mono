@@ -7,7 +7,6 @@ ignoredBuiltDependencies:
   - '@swc/core'
 
 onlyBuiltDependencies:
-  - '@apollo/rover'
   - '@parcel/watcher'
   - esbuild
   - sharp

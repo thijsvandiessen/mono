@@ -18,6 +18,3 @@ Prefer colocated Vitest specs using the `*.test.ts(x)` suffix and RTL for compon
 
 ## Commit & Pull Request Guidelines
 Follow Conventional Commits as seen in `git log` (`chore(deps): …`, `feat: …`, etc.) so automated changelog tooling remains coherent. Each commit should encapsulate one logical change plus updated snapshots or schema artifacts. PRs must describe the motivation, link to any issue/ticket, list how to validate (`pnpm lint && pnpm test`), and attach UI screenshots when altering visual components. Ensure reviewers can run locally by noting any new env vars or scripts.
-
-## GraphQL & Configuration Tips
-GraphQL schemas are proxied through Apollo Studio; authenticate once via `rover config auth` or export `$APOLLO_KEY` before running `pnpm codegen`. Only merge code that targets a schema already published to Apollo so generated types stay in sync with production. Coordinate Rover admin access with Thijs van Diessen for new contributors.

@@ -30,8 +30,7 @@ export const customNextConfig = ({ domain }: Props): NextConfig => ({
     Promise.resolve([
       {
         source: '/graphql',
-        destination:
-          'https://current--vandiessen-mono-graph.apollographos.net/graphql',
+        destination: 'https://graphql.datocms.com/',
       },
     ]),
   headers: () =>

@@ -47,6 +47,12 @@ variable "REVALIDATE_TOKEN" {
   default   = ""
 }
 
+variable "DATOCMS_READONLY_TOKEN" {
+  sensitive = false
+  type      = string
+  default   = "value"
+}
+
 variable "TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA" {
   type    = string
   default = ""
