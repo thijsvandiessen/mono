@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.24](https://github.com/thijsvandiessen/mono/compare/v1.0.23...v1.0.24) (2026-03-19)
+
+
+### Bug Fixes
+
+* remove federation ([#1090](https://github.com/thijsvandiessen/mono/issues/1090)) ([6fb86bf](https://github.com/thijsvandiessen/mono/commit/6fb86bf08fd068860b5273fccef108a7645f41a4))
+
 ## [1.0.23](https://github.com/thijsvandiessen/mono/compare/v1.0.22...v1.0.23) (2026-02-26)
 
 
