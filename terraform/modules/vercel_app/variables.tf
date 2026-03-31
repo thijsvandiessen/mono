@@ -11,6 +11,14 @@ variable "install_command" {
   default = "cd ../.. && pnpm i --frozen-lockfile"
 }
 
+variable "framework" {
+  type = string
+}
+
+variable "output_directory" {
+  type = string
+}
+
 variable "build_command" {
   type    = string
   default = "turbo build"

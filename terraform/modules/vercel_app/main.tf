@@ -7,12 +7,13 @@ terraform {
 }
 
 resource "vercel_project" "app" {
-  name            = var.name
-  framework       = "nextjs"
-  install_command = var.install_command
-  build_command   = var.build_command
-  root_directory  = var.root_directory
-  node_version    = var.node_version
+  name             = var.name
+  framework        = var.framework
+  install_command  = var.install_command
+  build_command    = var.build_command
+  output_directory = var.output_directory
+  root_directory   = var.root_directory
+  node_version     = var.node_version
 }
 
 data "vercel_project_directory" "repo" {

@@ -1,0 +1,35 @@
+{
+  "name": "@mono/storybook",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Storybook for components",
+  "type": "module",
+  "scripts": {
+    "build": "storybook build",
+    "dev": "storybook dev -p 6006",
+    "lint": "pnpm run lint:styles",
+    "lint:styles": "prettier . --write --list-different",
+    "start": "serve storybook-static"
+  },
+  "dependencies": {
+    "@mono/components": "workspace:*",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@mono/typescript-config": "workspace:*",
+    "@storybook/addon-essentials": "8.6.12",
+    "@storybook/addon-interactions": "8.6.12",
+    "@storybook/blocks": "8.6.12",
+    "@storybook/react": "8.6.12",
+    "@storybook/react-vite": "8.6.12",
+    "@storybook/test": "8.6.12",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "5.1.4",
+    "storybook": "8.6.12",
+    "typescript": "5.9.3",
+    "vite": "6.2.3",
+    "vite-tsconfig-paths": "6.1.1"
+  }
+}
