@@ -4,7 +4,7 @@ module "lundi" {
   root_directory         = "apps/lundi-bleu"
   production             = var.TFC_CONFIGURATION_VERSION_GIT_TAG != ""
   project_directory_path = local.repo_root
-  build_command          = "cd ../.. && turbo --filter @mono/lundi-bleu... build"
+  build_command          = "turbo build"
   install_command        = "cd ../.. && pnpm i --frozen-lockfile"
   framework              = "nextjs"
   output_directory       = null

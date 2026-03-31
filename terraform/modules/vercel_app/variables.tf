@@ -20,8 +20,7 @@ variable "output_directory" {
 }
 
 variable "build_command" {
-  type    = string
-  default = "turbo build"
+  type = string
 }
 
 variable "node_version" {

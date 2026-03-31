@@ -4,6 +4,7 @@ module "vandiessen" {
   root_directory         = "apps/vandiessen"
   production             = var.TFC_CONFIGURATION_VERSION_GIT_TAG != ""
   project_directory_path = local.repo_root
+  build_command          = "turbo build"
   install_command        = "cd ../.. && pnpm i --frozen-lockfile"
   framework              = "nextjs"
   output_directory       = null
