@@ -7,8 +7,7 @@ variable "root_directory" {
 }
 
 variable "install_command" {
-  type    = string
-  default = "cd ../.. && pnpm i --frozen-lockfile"
+  type = string
 }
 
 variable "framework" {

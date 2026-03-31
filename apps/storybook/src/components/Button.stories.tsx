@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '@mono/components';
+import type { Meta, StoryObj } from '@storybook/react'
+import { Button } from '@mono/components'
 
 const meta = {
   title: 'Components/Button',
@@ -18,11 +18,11 @@ const meta = {
       options: [undefined, '_blank'],
     },
   },
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof Button>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
   args: {
@@ -30,7 +30,7 @@ export const Primary: Story = {
     variant: 'primary',
     href: '#',
   },
-};
+}
 
 export const Secondary: Story = {
   args: {
@@ -38,7 +38,7 @@ export const Secondary: Story = {
     variant: 'secondary',
     href: '#',
   },
-};
+}
 
 export const Tertiary: Story = {
   args: {
@@ -46,7 +46,7 @@ export const Tertiary: Story = {
     variant: 'tertiary',
     href: '#',
   },
-};
+}
 
 export const WithSuffix: Story = {
   args: {
@@ -55,7 +55,7 @@ export const WithSuffix: Story = {
     href: '#',
     suffix: '→',
   },
-};
+}
 
 export const ExternalLink: Story = {
   args: {
@@ -65,4 +65,4 @@ export const ExternalLink: Story = {
     target: '_blank',
     rel: 'noopener noreferrer',
   },
-};
+}
