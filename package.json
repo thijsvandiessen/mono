@@ -19,7 +19,7 @@
     "test": "vitest run -c ./vitest.config.ts"
   },
   "devDependencies": {
-    "@commitlint/cli": "20.4.4",
+    "@commitlint/cli": "20.5.0",
     "@commitlint/config-conventional": "20.5.0",
     "@swc/core": "1.15.18",
     "@types/node": "25.5.0",
