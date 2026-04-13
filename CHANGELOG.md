@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/thijsvandiessen/mono/compare/v1.0.24...v1.1.0) (2026-04-13)
+
+
+### Features
+
+* storybook ([#1096](https://github.com/thijsvandiessen/mono/issues/1096)) ([3b735a5](https://github.com/thijsvandiessen/mono/commit/3b735a5662e7c87dfd1f48cd1e40aca5a1c2c163))
+
 ## [1.0.24](https://github.com/thijsvandiessen/mono/compare/v1.0.23...v1.0.24) (2026-03-19)
 
 
