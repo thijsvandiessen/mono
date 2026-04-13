@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc --build",
+    "install:browsers": "playwright install --with-deps chromium",
     "e2e": "playwright test"
   },
   "devDependencies": {

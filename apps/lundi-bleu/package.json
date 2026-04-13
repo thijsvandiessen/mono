@@ -1,5 +1,5 @@
 {
-  "name": "lundi-bleu",
+  "name": "@mono/lundi-bleu",
   "version": "1.0.0",
   "private": true,
   "description": "The public Lundi Bleu website",

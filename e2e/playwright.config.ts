@@ -8,7 +8,7 @@ export default defineConfig({
   fullyParallel: true,
 
   use: {
-    baseURL: 'http://localhost:3000',
+    baseURL: 'http://127.0.0.1:4000',
   },
 
   projects: [
@@ -18,10 +18,10 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'pnpm run dev',
-    reuseExistingServer: !process.env.CI,
+    command: 'pnpm exec turbo --filter=@mono/lundi-bleu... dev',
+    reuseExistingServer: false,
     cwd: '../',
-    url: 'http://localhost:3000',
-    timeout: 30 * 1000, // 30 sec – bump if your build is slow
+    url: 'http://127.0.0.1:4000',
+    timeout: 30 * 1000,
   },
 })

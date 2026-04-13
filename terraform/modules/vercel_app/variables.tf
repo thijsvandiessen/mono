@@ -7,13 +7,19 @@ variable "root_directory" {
 }
 
 variable "install_command" {
-  type    = string
-  default = "cd ../.. && pnpm i --frozen-lockfile"
+  type = string
+}
+
+variable "framework" {
+  type = string
+}
+
+variable "output_directory" {
+  type = string
 }
 
 variable "build_command" {
-  type    = string
-  default = "turbo build"
+  type = string
 }
 
 variable "node_version" {

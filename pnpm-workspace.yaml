@@ -4,6 +4,7 @@ packages:
   - e2e
 
 ignoredBuiltDependencies:
+  - '@apollo/rover'
   - '@swc/core'
 
 onlyBuiltDependencies:

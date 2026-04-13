@@ -17,11 +17,10 @@
     },
     "e2e": {
       "dependsOn": ["^build"],
-      "outputs": [".last-run.json"]
+      "outputs": ["test-results/.last-run.json"]
     },
     "dev": {
       "cache": false,
-      "persistent": true,
       "dependsOn": ["^build"]
     }
   },
