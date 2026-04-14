@@ -442,8 +442,8 @@ importers:
         specifier: 5.0.9
         version: 5.0.9(graphql@16.13.2)
       '@graphql-codegen/typescript-document-nodes':
-        specifier: 5.0.9
-        version: 5.0.9(graphql@16.13.2)
+        specifier: 5.0.10
+        version: 5.0.10(graphql@16.13.2)
       '@graphql-codegen/typescript-operations':
         specifier: 5.0.9
         version: 5.0.9(graphql@16.13.2)
@@ -1440,8 +1440,8 @@ packages:
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
 
-  '@graphql-codegen/typescript-document-nodes@5.0.9':
-    resolution: {integrity: sha512-hHdxmT2jgK/Cobbc7Fk1mryIozHYgmXIGvWtGHnOv250/iVDRQgvk1zFxHrphdx7O8etm65GU4FdgZdFQw5DhQ==}
+  '@graphql-codegen/typescript-document-nodes@5.0.10':
+    resolution: {integrity: sha512-GwvQFw1cP1kDYL7p0CoXkqfcMqbweKSrqcWzpw0LIomz0QrrwkZJQeQjhlfFe2DjRTtRzRpS/jd+Prg4mJ6QbQ==}
     engines: {node: '>=16'}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -6937,13 +6937,13 @@ snapshots:
       graphql: 16.13.2
       tslib: 2.8.1
 
-  '@graphql-codegen/typescript-document-nodes@5.0.9(graphql@16.13.2)':
+  '@graphql-codegen/typescript-document-nodes@5.0.10(graphql@16.13.2)':
     dependencies:
-      '@graphql-codegen/plugin-helpers': 6.2.0(graphql@16.13.2)
-      '@graphql-codegen/visitor-plugin-common': 6.2.4(graphql@16.13.2)
+      '@graphql-codegen/plugin-helpers': 6.3.0(graphql@16.13.2)
+      '@graphql-codegen/visitor-plugin-common': 6.3.0(graphql@16.13.2)
       auto-bind: 4.0.0
       graphql: 16.13.2
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   '@graphql-codegen/typescript-operations@5.0.9(graphql@16.13.2)':
     dependencies:
