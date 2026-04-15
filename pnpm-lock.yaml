@@ -332,8 +332,8 @@ importers:
         specifier: 19.2.4
         version: 19.2.4(react@19.2.4)
       urql:
-        specifier: 5.0.1
-        version: 5.0.1(@urql/core@6.0.1(graphql@16.13.2))(react@19.2.4)
+        specifier: 5.0.2
+        version: 5.0.2(@urql/core@6.0.1(graphql@16.13.2))(react@19.2.4)
     devDependencies:
       '@mono/eslint-config':
         specifier: workspace:*
@@ -4889,11 +4889,11 @@ packages:
   mdn-data@2.12.2:
     resolution: {integrity: sha512-IEn+pegP1aManZuckezWCO+XZQDplx1366JoVhTpMpBB1sPey/SbveZQUosKiKiGYjg1wH4pMlNgXbCiYgihQA==}
 
-  media-chrome@4.16.1:
-    resolution: {integrity: sha512-qtFlsy0lNDVCyVo//ZCAfRPKwgehfOYp6rThZzDUuZ5ypv41yqUfAxK+P9TOs+XSVWXATPTT2WRV0fbW0BH4vQ==}
-
   media-chrome@4.17.2:
     resolution: {integrity: sha512-o/IgiHx0tdSVwRxxqF5H12FK31A/A8T71sv3KdAvh7b6XeBS9dXwqvIFwlR9kdEuqg3n7xpmRIuL83rmYq8FTg==}
+
+  media-chrome@4.19.0:
+    resolution: {integrity: sha512-HWhDTwts+BSbdPkkB1VsJXp5kvL0IxY7xFT5tBwliM2+89kTPVTnHnev+9it2f9PweANjT/C8/C/S0PW9oyZbA==}
 
   media-tracks@0.3.5:
     resolution: {integrity: sha512-l54rkKXlLBt3ob3zOLWHcnjvwUmX5bNEZ70igyapOZZC9imzqBmq1oz8p2roiV04KhjblFIi2hetLPF1oYVLRA==}
@@ -5170,8 +5170,8 @@ packages:
     resolution: {integrity: sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A==}
     engines: {node: '>=12'}
 
-  player.style@0.3.1:
-    resolution: {integrity: sha512-z/T8hJGaTkHT9vdXgWdOgF37eB1FV7/j52VXQZ2lgEhpru9oT8TaUWIxp6GoxTnhPBM4X6nSbpkAHrT7UTjUKg==}
+  player.style@0.3.3:
+    resolution: {integrity: sha512-j+zu08iyG10cDV3zTfutnmAhuwDHhIDNz9Cyi9E6LZLg7h77J2IxzldVU9Och0JsW2k99O4GykvztnF7iKTxNg==}
 
   playwright-core@1.59.1:
     resolution: {integrity: sha512-HBV/RJg81z5BiiZ9yPzIiClYV/QMsDCKUyogwH9p3MCP6IYjUFu/MActgYAvK0oWyV9NlwM3GLBjADyWgydVyg==}
@@ -5895,8 +5895,8 @@ packages:
   urlpattern-polyfill@10.1.0:
     resolution: {integrity: sha512-IGjKp/o0NL3Bso1PymYURCJxMPNAf/ILOpendP9f5B6e1rTJgdgiOvgfoT8VxCAdY+Wisb9uhGaJJf3yZ2V9nw==}
 
-  urql@5.0.1:
-    resolution: {integrity: sha512-r58gYlWvCTC19QvkTaARaCLV9/bp870byH/qbLaw3S7f8i/bC6x2Szub8RVXptiMxWmqq5dyVBjUL9G+xPEuqg==}
+  urql@5.0.2:
+    resolution: {integrity: sha512-hiBR9GNbMPMZpv9Yd40EMCc94d8eAkGcmt5jcrKVfp26ScjluAQLCEKetJ4SXLy5DJG59Y6gbuA+2yquzh20/w==}
     peerDependencies:
       '@urql/core': ^6.0.0
       react: '>= 16.8.0'
@@ -6070,6 +6070,9 @@ packages:
 
   wonka@6.3.5:
     resolution: {integrity: sha512-SSil+ecw6B4/Dm7Pf2sAshKQ5hWFvfyGlfPbEd6A14dOH6VDjrmbY86u6nZvy9omGwwIPFR8V41+of1EezgoUw==}
+
+  wonka@6.3.6:
+    resolution: {integrity: sha512-MXH+6mDHAZ2GuMpgKS055FR6v0xVP3XwquxIMYXgiW+FejHQlMGlvVRZT4qMCxR+bEo/FCtIdKxwej9WV3YQag==}
 
   word-wrap@1.2.5:
     resolution: {integrity: sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==}
@@ -7679,7 +7682,7 @@ snapshots:
       '@mux/mux-video': 0.29.2
       '@mux/playback-core': 0.32.2
       media-chrome: 4.17.2(react@19.2.4)
-      player.style: 0.3.1(react@19.2.4)
+      player.style: 0.3.3(react@19.2.4)
     transitivePeerDependencies:
       - react
     optional: true
@@ -10457,14 +10460,14 @@ snapshots:
 
   mdn-data@2.12.2: {}
 
-  media-chrome@4.16.1(react@19.2.4):
+  media-chrome@4.17.2(react@19.2.4):
     dependencies:
       ce-la-react: 0.3.2(react@19.2.4)
     transitivePeerDependencies:
       - react
     optional: true
 
-  media-chrome@4.17.2(react@19.2.4):
+  media-chrome@4.19.0(react@19.2.4):
     dependencies:
       ce-la-react: 0.3.2(react@19.2.4)
     transitivePeerDependencies:
@@ -10749,9 +10752,9 @@ snapshots:
 
   picomatch@4.0.4: {}
 
-  player.style@0.3.1(react@19.2.4):
+  player.style@0.3.3(react@19.2.4):
     dependencies:
-      media-chrome: 4.16.1(react@19.2.4)
+      media-chrome: 4.19.0(react@19.2.4)
     transitivePeerDependencies:
       - react
     optional: true
@@ -11627,11 +11630,11 @@ snapshots:
 
   urlpattern-polyfill@10.1.0: {}
 
-  urql@5.0.1(@urql/core@6.0.1(graphql@16.13.2))(react@19.2.4):
+  urql@5.0.2(@urql/core@6.0.1(graphql@16.13.2))(react@19.2.4):
     dependencies:
       '@urql/core': 6.0.1(graphql@16.13.2)
       react: 19.2.4
-      wonka: 6.3.5
+      wonka: 6.3.6
 
   use-deep-compare-effect@1.8.1(react@19.2.4):
     dependencies:
@@ -11783,6 +11786,8 @@ snapshots:
       stackback: 0.0.2
 
   wonka@6.3.5: {}
+
+  wonka@6.3.6: {}
 
   word-wrap@1.2.5: {}
 
