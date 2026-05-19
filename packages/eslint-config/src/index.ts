@@ -1,6 +1,5 @@
 import testingLibrary from 'eslint-plugin-testing-library'
 import eslint from '@eslint/js'
-import tseslint, { type Config } from 'typescript-eslint'
 import reactHooks from 'eslint-plugin-react-hooks'
 import type { Linter } from 'eslint'
 
@@ -30,5 +29,3 @@ export const recommended: Linter.Config[] = [
   eslint.configs.recommended,
   reactHooks.configs.flat.recommended,
 ]
-
-export const tsLintConfig: Config = tseslint.configs.recommended

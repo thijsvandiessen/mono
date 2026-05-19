@@ -26,13 +26,11 @@ export const customNextConfig = ({ domain }: Props): NextConfig => ({
   sassOptions: {
     silenceDeprecations: ['legacy-js-api'],
   },
-  rewrites: () =>
-    Promise.resolve([
-      {
-        source: '/graphql',
-        destination: 'https://graphql.datocms.com/',
-      },
-    ]),
-  headers: () =>
-    Promise.resolve([{ source: '/(.*)', headers: headerConfig({ domain }) }]),
+  rewrites: async () => [
+    {
+      source: '/graphql',
+      destination: 'https://graphql.datocms.com/',
+    },
+  ],
+  headers: async () => [{ source: '/(.*)', headers: headerConfig({ domain }) }],
 })

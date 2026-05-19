@@ -1,15 +1,6 @@
-import {
-  defineConfig,
-  eslintConfig,
-  globalIgnores,
-  recommended,
-} from '@mono/eslint-config'
-
-import nextVitals from 'eslint-config-next/core-web-vitals'
+import { defineConfig, eslintConfig, globalIgnores } from '@mono/eslint-config'
 
 export default defineConfig([
   globalIgnores(['dist/*', 'node_modules']),
   eslintConfig,
-  ...recommended,
-  ...nextVitals,
 ])
