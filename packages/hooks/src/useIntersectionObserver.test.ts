@@ -27,6 +27,7 @@ describe('useIntersectionObserver', () => {
       unobserve = unobserve
       disconnect = disconnect
       takeRecords = takeRecords
+      scrollMargin = '0px'
     }
 
     vi.stubGlobal('IntersectionObserver', IntersectionObserverMock)

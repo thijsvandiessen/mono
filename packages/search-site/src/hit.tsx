@@ -9,7 +9,7 @@ type Props = {
   hit: Hit
 }
 
-export const Hit = ({ hit }: Props) => {
+export const Hit = ({ hit }: Props): React.JSX.Element => {
   return (
     <article>
       <h1>{hit.title}</h1>

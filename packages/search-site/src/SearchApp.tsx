@@ -8,7 +8,7 @@
 // import { Hit } from './hit.js'
 // import { searchClient } from './searchClient.js'
 
-export const SearchApp = () => {
+export const SearchApp = (): React.JSX.Element => {
   return (
     <div>todo</div>
     // <InstantSearch
