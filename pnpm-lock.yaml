@@ -418,8 +418,8 @@ importers:
         version: 4.4.3
     devDependencies:
       '@apollo/rover':
-        specifier: 0.38.0
-        version: 0.38.0
+        specifier: 0.39.1
+        version: 0.39.1
       '@commitlint/config-conventional':
         specifier: 20.5.0
         version: 20.5.0
@@ -850,8 +850,8 @@ packages:
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
     engines: {node: '>=10'}
 
-  '@apollo/rover@0.38.0':
-    resolution: {integrity: sha512-yEbwtXcuMDwyc3zrrL+vyJqQey/9ymG7yrpycI4DERJjmLG4TZFYx9GMkTnHjKUqs4r+KbkxLnQimgJS6+jYag==}
+  '@apollo/rover@0.39.1':
+    resolution: {integrity: sha512-0Gaekct7+l6JkC9W27H6X7op9VARUeWP6Vo22QCgA4Z9LrRmQfBonAA1kVGyQoZT+uEO7gDnXeuzvQz6g+Eztg==}
     engines: {node: '>=22.14.0'}
     hasBin: true
 
@@ -5947,7 +5947,7 @@ snapshots:
 
   '@alloc/quick-lru@5.2.0': {}
 
-  '@apollo/rover@0.38.0':
+  '@apollo/rover@0.39.1':
     dependencies:
       detect-libc: 2.1.2
       tar: 7.5.15

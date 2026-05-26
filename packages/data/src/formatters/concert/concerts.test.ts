@@ -23,6 +23,7 @@ describe('concertsFormatter', () => {
               id: 'locations-id',
               location: {
                 id: 'location-id',
+                title: 'Location Title',
               },
             },
           ],
@@ -32,6 +33,7 @@ describe('concertsFormatter', () => {
     ).toEqual([
       {
         id: 'some-id',
+        title: 'required title',
         image: undefined,
         locations: [
           {
@@ -40,11 +42,10 @@ describe('concertsFormatter', () => {
             lat: null,
             lng: null,
             startTime: null,
-            title: null,
+            title: 'Location Title',
             ticketLink: null,
           },
         ],
-        title: 'required title',
         url: '/concerten/required-slug',
         content: [],
       },

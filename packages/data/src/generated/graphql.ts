@@ -229,8 +229,8 @@ export type ConcertRecord = RecordInterface & {
   position?: Maybe<Scalars['IntType']['output']>
   poster?: Maybe<Scalars['JsonField']['output']>
   seo?: Maybe<SeoField>
-  slug?: Maybe<Scalars['String']['output']>
-  title?: Maybe<Scalars['String']['output']>
+  slug: Scalars['String']['output']
+  title: Scalars['String']['output']
 }
 
 /** Record of type Concert (concert) */
@@ -292,7 +292,7 @@ export type DocumentRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime']['output']
   document?: Maybe<Scalars['JsonField']['output']>
   id: Scalars['ItemId']['output']
-  title?: Maybe<Scalars['String']['output']>
+  title: Scalars['String']['output']
 }
 
 /** Block of type Document (document) */
@@ -2505,7 +2505,7 @@ export type LocationRecord = RecordInterface & {
   address?: Maybe<LatLonField>
   addressTitle?: Maybe<Scalars['String']['output']>
   id: Scalars['ItemId']['output']
-  title?: Maybe<Scalars['String']['output']>
+  title: Scalars['String']['output']
 }
 
 /** Record of type Location (location) */
@@ -2619,8 +2619,8 @@ export type PageRecord = RecordInterface & {
   content: Array<PageModelContentField>
   id: Scalars['ItemId']['output']
   seo?: Maybe<SeoField>
-  slug?: Maybe<Scalars['String']['output']>
-  title?: Maybe<Scalars['String']['output']>
+  slug: Scalars['String']['output']
+  title: Scalars['String']['output']
 }
 
 /** Record of type Pagina (page) */
@@ -3537,8 +3537,8 @@ export type CallToActionFragment = {
   pageLink?:
     | {
         __typename: 'ConcertRecord'
-        title?: string | null
-        slug?: string | null
+        title: string
+        slug: string
         _createdAt: string
         _firstPublishedAt: string
         _publishedAt: string
@@ -3547,8 +3547,8 @@ export type CallToActionFragment = {
       }
     | {
         __typename: 'PageRecord'
-        title?: string | null
-        slug?: string | null
+        title: string
+        slug: string
         _createdAt: string
         _firstPublishedAt: string
         _publishedAt: string
@@ -3570,8 +3570,8 @@ export type ColorsFragment = {
 
 export type ConcertDetailFragment = {
   __typename: 'ConcertRecord'
-  title?: string | null
-  slug?: string | null
+  title: string
+  slug: string
   poster?: unknown | null
   _createdAt: string
   _firstPublishedAt: string
@@ -3586,7 +3586,7 @@ export type ConcertDetailFragment = {
     location?: {
       __typename?: 'LocationRecord'
       id: string
-      title?: string | null
+      title: string
       addressTitle?: string | null
       address?: {
         __typename?: 'LatLonField'
@@ -3620,8 +3620,8 @@ export type ConcertDetailFragment = {
             pageLink?:
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -3630,8 +3630,8 @@ export type ConcertDetailFragment = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -3643,8 +3643,8 @@ export type ConcertDetailFragment = {
           links: Array<
             | {
                 __typename: 'ConcertRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -3653,8 +3653,8 @@ export type ConcertDetailFragment = {
               }
             | {
                 __typename: 'PageRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -3677,8 +3677,8 @@ export type ConcertDetailFragment = {
           links: Array<
             | {
                 __typename: 'ConcertRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -3687,8 +3687,8 @@ export type ConcertDetailFragment = {
               }
             | {
                 __typename: 'PageRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -3710,8 +3710,8 @@ export type ConcertDetailFragment = {
                 pageLink?:
                   | {
                       __typename: 'ConcertRecord'
-                      title?: string | null
-                      slug?: string | null
+                      title: string
+                      slug: string
                       _createdAt: string
                       _firstPublishedAt: string
                       _publishedAt: string
@@ -3720,8 +3720,8 @@ export type ConcertDetailFragment = {
                     }
                   | {
                       __typename: 'PageRecord'
-                      title?: string | null
-                      slug?: string | null
+                      title: string
+                      slug: string
                       _createdAt: string
                       _firstPublishedAt: string
                       _publishedAt: string
@@ -3784,8 +3784,8 @@ export type ConcertDetailFragment = {
           links: Array<
             | {
                 __typename: 'ConcertRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -3794,8 +3794,8 @@ export type ConcertDetailFragment = {
               }
             | {
                 __typename: 'PageRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -3817,8 +3817,8 @@ export type ConcertDetailFragment = {
                 pageLink?:
                   | {
                       __typename: 'ConcertRecord'
-                      title?: string | null
-                      slug?: string | null
+                      title: string
+                      slug: string
                       _createdAt: string
                       _firstPublishedAt: string
                       _publishedAt: string
@@ -3827,8 +3827,8 @@ export type ConcertDetailFragment = {
                     }
                   | {
                       __typename: 'PageRecord'
-                      title?: string | null
-                      slug?: string | null
+                      title: string
+                      slug: string
                       _createdAt: string
                       _firstPublishedAt: string
                       _publishedAt: string
@@ -3883,8 +3883,8 @@ export type ConcertDetailFragment = {
           links: Array<
             | {
                 __typename: 'ConcertRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -3893,8 +3893,8 @@ export type ConcertDetailFragment = {
               }
             | {
                 __typename: 'PageRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -3916,8 +3916,8 @@ export type ConcertDetailFragment = {
                 pageLink?:
                   | {
                       __typename: 'ConcertRecord'
-                      title?: string | null
-                      slug?: string | null
+                      title: string
+                      slug: string
                       _createdAt: string
                       _firstPublishedAt: string
                       _publishedAt: string
@@ -3926,8 +3926,8 @@ export type ConcertDetailFragment = {
                     }
                   | {
                       __typename: 'PageRecord'
-                      title?: string | null
-                      slug?: string | null
+                      title: string
+                      slug: string
                       _createdAt: string
                       _firstPublishedAt: string
                       _publishedAt: string
@@ -3982,8 +3982,8 @@ export type ConcertDetailFragment = {
 
 export type ConcertLinkFragment = {
   __typename: 'ConcertRecord'
-  title?: string | null
-  slug?: string | null
+  title: string
+  slug: string
   _createdAt: string
   _firstPublishedAt: string
   _publishedAt: string
@@ -3993,7 +3993,7 @@ export type ConcertLinkFragment = {
 
 export type ConcertPageSeoFragment = {
   __typename: 'ConcertRecord'
-  title?: string | null
+  title: string
   _createdAt: string
   _firstPublishedAt: string
   _publishedAt: string
@@ -4055,8 +4055,8 @@ export type GeneralInfoFragment = {
         link?:
           | {
               __typename: 'ConcertRecord'
-              title?: string | null
-              slug?: string | null
+              title: string
+              slug: string
               _createdAt: string
               _firstPublishedAt: string
               _publishedAt: string
@@ -4065,8 +4065,8 @@ export type GeneralInfoFragment = {
             }
           | {
               __typename: 'PageRecord'
-              title?: string | null
-              slug?: string | null
+              title: string
+              slug: string
               _createdAt: string
               _firstPublishedAt: string
               _publishedAt: string
@@ -4086,8 +4086,8 @@ export type GeneralInfoFragment = {
           link?:
             | {
                 __typename: 'ConcertRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -4096,8 +4096,8 @@ export type GeneralInfoFragment = {
               }
             | {
                 __typename: 'PageRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -4134,8 +4134,8 @@ export type HeaderFragment = {
       pageLink?:
         | {
             __typename: 'ConcertRecord'
-            title?: string | null
-            slug?: string | null
+            title: string
+            slug: string
             _createdAt: string
             _firstPublishedAt: string
             _publishedAt: string
@@ -4144,8 +4144,8 @@ export type HeaderFragment = {
           }
         | {
             __typename: 'PageRecord'
-            title?: string | null
-            slug?: string | null
+            title: string
+            slug: string
             _createdAt: string
             _firstPublishedAt: string
             _publishedAt: string
@@ -4157,8 +4157,8 @@ export type HeaderFragment = {
     links: Array<
       | {
           __typename: 'ConcertRecord'
-          title?: string | null
-          slug?: string | null
+          title: string
+          slug: string
           _createdAt: string
           _firstPublishedAt: string
           _publishedAt: string
@@ -4167,8 +4167,8 @@ export type HeaderFragment = {
         }
       | {
           __typename: 'PageRecord'
-          title?: string | null
-          slug?: string | null
+          title: string
+          slug: string
           _createdAt: string
           _firstPublishedAt: string
           _publishedAt: string
@@ -4195,8 +4195,8 @@ export type HeaderBodyFragment = {
     pageLink?:
       | {
           __typename: 'ConcertRecord'
-          title?: string | null
-          slug?: string | null
+          title: string
+          slug: string
           _createdAt: string
           _firstPublishedAt: string
           _publishedAt: string
@@ -4205,8 +4205,8 @@ export type HeaderBodyFragment = {
         }
       | {
           __typename: 'PageRecord'
-          title?: string | null
-          slug?: string | null
+          title: string
+          slug: string
           _createdAt: string
           _firstPublishedAt: string
           _publishedAt: string
@@ -4218,8 +4218,8 @@ export type HeaderBodyFragment = {
   links: Array<
     | {
         __typename: 'ConcertRecord'
-        title?: string | null
-        slug?: string | null
+        title: string
+        slug: string
         _createdAt: string
         _firstPublishedAt: string
         _publishedAt: string
@@ -4228,8 +4228,8 @@ export type HeaderBodyFragment = {
       }
     | {
         __typename: 'PageRecord'
-        title?: string | null
-        slug?: string | null
+        title: string
+        slug: string
         _createdAt: string
         _firstPublishedAt: string
         _publishedAt: string
@@ -4426,7 +4426,7 @@ export type DocumentFragment = {
 export type LocationFragment = {
   __typename?: 'LocationRecord'
   id: string
-  title?: string | null
+  title: string
   addressTitle?: string | null
   address?: {
     __typename?: 'LatLonField'
@@ -4443,7 +4443,7 @@ export type LocationItemFragment = {
   location?: {
     __typename?: 'LocationRecord'
     id: string
-    title?: string | null
+    title: string
     addressTitle?: string | null
     address?: {
       __typename?: 'LatLonField'
@@ -4460,8 +4460,8 @@ export type MenuItemFragment = {
   link?:
     | {
         __typename: 'ConcertRecord'
-        title?: string | null
-        slug?: string | null
+        title: string
+        slug: string
         _createdAt: string
         _firstPublishedAt: string
         _publishedAt: string
@@ -4470,8 +4470,8 @@ export type MenuItemFragment = {
       }
     | {
         __typename: 'PageRecord'
-        title?: string | null
-        slug?: string | null
+        title: string
+        slug: string
         _createdAt: string
         _firstPublishedAt: string
         _publishedAt: string
@@ -4483,8 +4483,8 @@ export type MenuItemFragment = {
 
 export type PageFragment = {
   __typename: 'PageRecord'
-  title?: string | null
-  slug?: string | null
+  title: string
+  slug: string
   _createdAt: string
   _firstPublishedAt: string
   _publishedAt: string
@@ -4515,8 +4515,8 @@ export type PageFragment = {
             pageLink?:
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -4525,8 +4525,8 @@ export type PageFragment = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -4538,8 +4538,8 @@ export type PageFragment = {
           links: Array<
             | {
                 __typename: 'ConcertRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -4548,8 +4548,8 @@ export type PageFragment = {
               }
             | {
                 __typename: 'PageRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -4572,8 +4572,8 @@ export type PageFragment = {
           links: Array<
             | {
                 __typename: 'ConcertRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -4582,8 +4582,8 @@ export type PageFragment = {
               }
             | {
                 __typename: 'PageRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -4605,8 +4605,8 @@ export type PageFragment = {
                 pageLink?:
                   | {
                       __typename: 'ConcertRecord'
-                      title?: string | null
-                      slug?: string | null
+                      title: string
+                      slug: string
                       _createdAt: string
                       _firstPublishedAt: string
                       _publishedAt: string
@@ -4615,8 +4615,8 @@ export type PageFragment = {
                     }
                   | {
                       __typename: 'PageRecord'
-                      title?: string | null
-                      slug?: string | null
+                      title: string
+                      slug: string
                       _createdAt: string
                       _firstPublishedAt: string
                       _publishedAt: string
@@ -4679,8 +4679,8 @@ export type PageFragment = {
           links: Array<
             | {
                 __typename: 'ConcertRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -4689,8 +4689,8 @@ export type PageFragment = {
               }
             | {
                 __typename: 'PageRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -4712,8 +4712,8 @@ export type PageFragment = {
                 pageLink?:
                   | {
                       __typename: 'ConcertRecord'
-                      title?: string | null
-                      slug?: string | null
+                      title: string
+                      slug: string
                       _createdAt: string
                       _firstPublishedAt: string
                       _publishedAt: string
@@ -4722,8 +4722,8 @@ export type PageFragment = {
                     }
                   | {
                       __typename: 'PageRecord'
-                      title?: string | null
-                      slug?: string | null
+                      title: string
+                      slug: string
                       _createdAt: string
                       _firstPublishedAt: string
                       _publishedAt: string
@@ -4778,8 +4778,8 @@ export type PageFragment = {
           links: Array<
             | {
                 __typename: 'ConcertRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -4788,8 +4788,8 @@ export type PageFragment = {
               }
             | {
                 __typename: 'PageRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -4811,8 +4811,8 @@ export type PageFragment = {
                 pageLink?:
                   | {
                       __typename: 'ConcertRecord'
-                      title?: string | null
-                      slug?: string | null
+                      title: string
+                      slug: string
                       _createdAt: string
                       _firstPublishedAt: string
                       _publishedAt: string
@@ -4821,8 +4821,8 @@ export type PageFragment = {
                     }
                   | {
                       __typename: 'PageRecord'
-                      title?: string | null
-                      slug?: string | null
+                      title: string
+                      slug: string
                       _createdAt: string
                       _firstPublishedAt: string
                       _publishedAt: string
@@ -4877,8 +4877,8 @@ export type PageFragment = {
 
 export type PageDetailFragment = {
   __typename: 'PageRecord'
-  title?: string | null
-  slug?: string | null
+  title: string
+  slug: string
   _createdAt: string
   _firstPublishedAt: string
   _publishedAt: string
@@ -4909,8 +4909,8 @@ export type PageDetailFragment = {
             pageLink?:
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -4919,8 +4919,8 @@ export type PageDetailFragment = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -4932,8 +4932,8 @@ export type PageDetailFragment = {
           links: Array<
             | {
                 __typename: 'ConcertRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -4942,8 +4942,8 @@ export type PageDetailFragment = {
               }
             | {
                 __typename: 'PageRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -4966,8 +4966,8 @@ export type PageDetailFragment = {
           links: Array<
             | {
                 __typename: 'ConcertRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -4976,8 +4976,8 @@ export type PageDetailFragment = {
               }
             | {
                 __typename: 'PageRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -4999,8 +4999,8 @@ export type PageDetailFragment = {
                 pageLink?:
                   | {
                       __typename: 'ConcertRecord'
-                      title?: string | null
-                      slug?: string | null
+                      title: string
+                      slug: string
                       _createdAt: string
                       _firstPublishedAt: string
                       _publishedAt: string
@@ -5009,8 +5009,8 @@ export type PageDetailFragment = {
                     }
                   | {
                       __typename: 'PageRecord'
-                      title?: string | null
-                      slug?: string | null
+                      title: string
+                      slug: string
                       _createdAt: string
                       _firstPublishedAt: string
                       _publishedAt: string
@@ -5073,8 +5073,8 @@ export type PageDetailFragment = {
           links: Array<
             | {
                 __typename: 'ConcertRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -5083,8 +5083,8 @@ export type PageDetailFragment = {
               }
             | {
                 __typename: 'PageRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -5106,8 +5106,8 @@ export type PageDetailFragment = {
                 pageLink?:
                   | {
                       __typename: 'ConcertRecord'
-                      title?: string | null
-                      slug?: string | null
+                      title: string
+                      slug: string
                       _createdAt: string
                       _firstPublishedAt: string
                       _publishedAt: string
@@ -5116,8 +5116,8 @@ export type PageDetailFragment = {
                     }
                   | {
                       __typename: 'PageRecord'
-                      title?: string | null
-                      slug?: string | null
+                      title: string
+                      slug: string
                       _createdAt: string
                       _firstPublishedAt: string
                       _publishedAt: string
@@ -5172,8 +5172,8 @@ export type PageDetailFragment = {
           links: Array<
             | {
                 __typename: 'ConcertRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -5182,8 +5182,8 @@ export type PageDetailFragment = {
               }
             | {
                 __typename: 'PageRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -5205,8 +5205,8 @@ export type PageDetailFragment = {
                 pageLink?:
                   | {
                       __typename: 'ConcertRecord'
-                      title?: string | null
-                      slug?: string | null
+                      title: string
+                      slug: string
                       _createdAt: string
                       _firstPublishedAt: string
                       _publishedAt: string
@@ -5215,8 +5215,8 @@ export type PageDetailFragment = {
                     }
                   | {
                       __typename: 'PageRecord'
-                      title?: string | null
-                      slug?: string | null
+                      title: string
+                      slug: string
                       _createdAt: string
                       _firstPublishedAt: string
                       _publishedAt: string
@@ -5271,7 +5271,7 @@ export type PageDetailFragment = {
 
 export type PageDetailSeoFragment = {
   __typename: 'PageRecord'
-  title?: string | null
+  title: string
   _createdAt: string
   _firstPublishedAt: string
   _publishedAt: string
@@ -5293,8 +5293,8 @@ export type PageDetailSeoFragment = {
 
 export type PageLinkFragment = {
   __typename: 'PageRecord'
-  title?: string | null
-  slug?: string | null
+  title: string
+  slug: string
   _createdAt: string
   _firstPublishedAt: string
   _publishedAt: string
@@ -5345,8 +5345,8 @@ export type SubmenuItemFragment = {
     link?:
       | {
           __typename: 'ConcertRecord'
-          title?: string | null
-          slug?: string | null
+          title: string
+          slug: string
           _createdAt: string
           _firstPublishedAt: string
           _publishedAt: string
@@ -5355,8 +5355,8 @@ export type SubmenuItemFragment = {
         }
       | {
           __typename: 'PageRecord'
-          title?: string | null
-          slug?: string | null
+          title: string
+          slug: string
           _createdAt: string
           _firstPublishedAt: string
           _publishedAt: string
@@ -5380,8 +5380,8 @@ export type TextBlockContentFragment = {
   links: Array<
     | {
         __typename: 'ConcertRecord'
-        title?: string | null
-        slug?: string | null
+        title: string
+        slug: string
         _createdAt: string
         _firstPublishedAt: string
         _publishedAt: string
@@ -5390,8 +5390,8 @@ export type TextBlockContentFragment = {
       }
     | {
         __typename: 'PageRecord'
-        title?: string | null
-        slug?: string | null
+        title: string
+        slug: string
         _createdAt: string
         _firstPublishedAt: string
         _publishedAt: string
@@ -5413,8 +5413,8 @@ export type TextBlockContentFragment = {
         pageLink?:
           | {
               __typename: 'ConcertRecord'
-              title?: string | null
-              slug?: string | null
+              title: string
+              slug: string
               _createdAt: string
               _firstPublishedAt: string
               _publishedAt: string
@@ -5423,8 +5423,8 @@ export type TextBlockContentFragment = {
             }
           | {
               __typename: 'PageRecord'
-              title?: string | null
-              slug?: string | null
+              title: string
+              slug: string
               _createdAt: string
               _firstPublishedAt: string
               _publishedAt: string
@@ -5480,8 +5480,8 @@ export type LeftContentFragment = {
   links: Array<
     | {
         __typename: 'ConcertRecord'
-        title?: string | null
-        slug?: string | null
+        title: string
+        slug: string
         _createdAt: string
         _firstPublishedAt: string
         _publishedAt: string
@@ -5490,8 +5490,8 @@ export type LeftContentFragment = {
       }
     | {
         __typename: 'PageRecord'
-        title?: string | null
-        slug?: string | null
+        title: string
+        slug: string
         _createdAt: string
         _firstPublishedAt: string
         _publishedAt: string
@@ -5513,8 +5513,8 @@ export type LeftContentFragment = {
         pageLink?:
           | {
               __typename: 'ConcertRecord'
-              title?: string | null
-              slug?: string | null
+              title: string
+              slug: string
               _createdAt: string
               _firstPublishedAt: string
               _publishedAt: string
@@ -5523,8 +5523,8 @@ export type LeftContentFragment = {
             }
           | {
               __typename: 'PageRecord'
-              title?: string | null
-              slug?: string | null
+              title: string
+              slug: string
               _createdAt: string
               _firstPublishedAt: string
               _publishedAt: string
@@ -5580,8 +5580,8 @@ export type RightContentFragment = {
   links: Array<
     | {
         __typename: 'ConcertRecord'
-        title?: string | null
-        slug?: string | null
+        title: string
+        slug: string
         _createdAt: string
         _firstPublishedAt: string
         _publishedAt: string
@@ -5590,8 +5590,8 @@ export type RightContentFragment = {
       }
     | {
         __typename: 'PageRecord'
-        title?: string | null
-        slug?: string | null
+        title: string
+        slug: string
         _createdAt: string
         _firstPublishedAt: string
         _publishedAt: string
@@ -5613,8 +5613,8 @@ export type RightContentFragment = {
         pageLink?:
           | {
               __typename: 'ConcertRecord'
-              title?: string | null
-              slug?: string | null
+              title: string
+              slug: string
               _createdAt: string
               _firstPublishedAt: string
               _publishedAt: string
@@ -5623,8 +5623,8 @@ export type RightContentFragment = {
             }
           | {
               __typename: 'PageRecord'
-              title?: string | null
-              slug?: string | null
+              title: string
+              slug: string
               _createdAt: string
               _firstPublishedAt: string
               _publishedAt: string
@@ -5687,8 +5687,8 @@ export type TextBlockFragment = {
     links: Array<
       | {
           __typename: 'ConcertRecord'
-          title?: string | null
-          slug?: string | null
+          title: string
+          slug: string
           _createdAt: string
           _firstPublishedAt: string
           _publishedAt: string
@@ -5697,8 +5697,8 @@ export type TextBlockFragment = {
         }
       | {
           __typename: 'PageRecord'
-          title?: string | null
-          slug?: string | null
+          title: string
+          slug: string
           _createdAt: string
           _firstPublishedAt: string
           _publishedAt: string
@@ -5720,8 +5720,8 @@ export type TextBlockFragment = {
           pageLink?:
             | {
                 __typename: 'ConcertRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -5730,8 +5730,8 @@ export type TextBlockFragment = {
               }
             | {
                 __typename: 'PageRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -5795,8 +5795,8 @@ export type TwoColumFragment = {
     links: Array<
       | {
           __typename: 'ConcertRecord'
-          title?: string | null
-          slug?: string | null
+          title: string
+          slug: string
           _createdAt: string
           _firstPublishedAt: string
           _publishedAt: string
@@ -5805,8 +5805,8 @@ export type TwoColumFragment = {
         }
       | {
           __typename: 'PageRecord'
-          title?: string | null
-          slug?: string | null
+          title: string
+          slug: string
           _createdAt: string
           _firstPublishedAt: string
           _publishedAt: string
@@ -5828,8 +5828,8 @@ export type TwoColumFragment = {
           pageLink?:
             | {
                 __typename: 'ConcertRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -5838,8 +5838,8 @@ export type TwoColumFragment = {
               }
             | {
                 __typename: 'PageRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -5894,8 +5894,8 @@ export type TwoColumFragment = {
     links: Array<
       | {
           __typename: 'ConcertRecord'
-          title?: string | null
-          slug?: string | null
+          title: string
+          slug: string
           _createdAt: string
           _firstPublishedAt: string
           _publishedAt: string
@@ -5904,8 +5904,8 @@ export type TwoColumFragment = {
         }
       | {
           __typename: 'PageRecord'
-          title?: string | null
-          slug?: string | null
+          title: string
+          slug: string
           _createdAt: string
           _firstPublishedAt: string
           _publishedAt: string
@@ -5927,8 +5927,8 @@ export type TwoColumFragment = {
           pageLink?:
             | {
                 __typename: 'ConcertRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -5937,8 +5937,8 @@ export type TwoColumFragment = {
               }
             | {
                 __typename: 'PageRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -6038,8 +6038,8 @@ export type GetConcertQuery = {
   __typename?: 'Query'
   concert?: {
     __typename: 'ConcertRecord'
-    title?: string | null
-    slug?: string | null
+    title: string
+    slug: string
     poster?: unknown | null
     _createdAt: string
     _firstPublishedAt: string
@@ -6054,7 +6054,7 @@ export type GetConcertQuery = {
       location?: {
         __typename?: 'LocationRecord'
         id: string
-        title?: string | null
+        title: string
         addressTitle?: string | null
         address?: {
           __typename?: 'LatLonField'
@@ -6088,8 +6088,8 @@ export type GetConcertQuery = {
               pageLink?:
                 | {
                     __typename: 'ConcertRecord'
-                    title?: string | null
-                    slug?: string | null
+                    title: string
+                    slug: string
                     _createdAt: string
                     _firstPublishedAt: string
                     _publishedAt: string
@@ -6098,8 +6098,8 @@ export type GetConcertQuery = {
                   }
                 | {
                     __typename: 'PageRecord'
-                    title?: string | null
-                    slug?: string | null
+                    title: string
+                    slug: string
                     _createdAt: string
                     _firstPublishedAt: string
                     _publishedAt: string
@@ -6111,8 +6111,8 @@ export type GetConcertQuery = {
             links: Array<
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -6121,8 +6121,8 @@ export type GetConcertQuery = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -6145,8 +6145,8 @@ export type GetConcertQuery = {
             links: Array<
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -6155,8 +6155,8 @@ export type GetConcertQuery = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -6178,8 +6178,8 @@ export type GetConcertQuery = {
                   pageLink?:
                     | {
                         __typename: 'ConcertRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -6188,8 +6188,8 @@ export type GetConcertQuery = {
                       }
                     | {
                         __typename: 'PageRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -6252,8 +6252,8 @@ export type GetConcertQuery = {
             links: Array<
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -6262,8 +6262,8 @@ export type GetConcertQuery = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -6285,8 +6285,8 @@ export type GetConcertQuery = {
                   pageLink?:
                     | {
                         __typename: 'ConcertRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -6295,8 +6295,8 @@ export type GetConcertQuery = {
                       }
                     | {
                         __typename: 'PageRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -6351,8 +6351,8 @@ export type GetConcertQuery = {
             links: Array<
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -6361,8 +6361,8 @@ export type GetConcertQuery = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -6384,8 +6384,8 @@ export type GetConcertQuery = {
                   pageLink?:
                     | {
                         __typename: 'ConcertRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -6394,8 +6394,8 @@ export type GetConcertQuery = {
                       }
                     | {
                         __typename: 'PageRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -6457,8 +6457,8 @@ export type GetConcertPageQuery = {
   __typename?: 'Query'
   concert?: {
     __typename: 'ConcertRecord'
-    title?: string | null
-    slug?: string | null
+    title: string
+    slug: string
     poster?: unknown | null
     _createdAt: string
     _firstPublishedAt: string
@@ -6473,7 +6473,7 @@ export type GetConcertPageQuery = {
       location?: {
         __typename?: 'LocationRecord'
         id: string
-        title?: string | null
+        title: string
         addressTitle?: string | null
         address?: {
           __typename?: 'LatLonField'
@@ -6507,8 +6507,8 @@ export type GetConcertPageQuery = {
               pageLink?:
                 | {
                     __typename: 'ConcertRecord'
-                    title?: string | null
-                    slug?: string | null
+                    title: string
+                    slug: string
                     _createdAt: string
                     _firstPublishedAt: string
                     _publishedAt: string
@@ -6517,8 +6517,8 @@ export type GetConcertPageQuery = {
                   }
                 | {
                     __typename: 'PageRecord'
-                    title?: string | null
-                    slug?: string | null
+                    title: string
+                    slug: string
                     _createdAt: string
                     _firstPublishedAt: string
                     _publishedAt: string
@@ -6530,8 +6530,8 @@ export type GetConcertPageQuery = {
             links: Array<
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -6540,8 +6540,8 @@ export type GetConcertPageQuery = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -6564,8 +6564,8 @@ export type GetConcertPageQuery = {
             links: Array<
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -6574,8 +6574,8 @@ export type GetConcertPageQuery = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -6597,8 +6597,8 @@ export type GetConcertPageQuery = {
                   pageLink?:
                     | {
                         __typename: 'ConcertRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -6607,8 +6607,8 @@ export type GetConcertPageQuery = {
                       }
                     | {
                         __typename: 'PageRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -6671,8 +6671,8 @@ export type GetConcertPageQuery = {
             links: Array<
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -6681,8 +6681,8 @@ export type GetConcertPageQuery = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -6704,8 +6704,8 @@ export type GetConcertPageQuery = {
                   pageLink?:
                     | {
                         __typename: 'ConcertRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -6714,8 +6714,8 @@ export type GetConcertPageQuery = {
                       }
                     | {
                         __typename: 'PageRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -6770,8 +6770,8 @@ export type GetConcertPageQuery = {
             links: Array<
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -6780,8 +6780,8 @@ export type GetConcertPageQuery = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -6803,8 +6803,8 @@ export type GetConcertPageQuery = {
                   pageLink?:
                     | {
                         __typename: 'ConcertRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -6813,8 +6813,8 @@ export type GetConcertPageQuery = {
                       }
                     | {
                         __typename: 'PageRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -6876,7 +6876,7 @@ export type GetConcertSeoQuery = {
   __typename?: 'Query'
   concert?: {
     __typename: 'ConcertRecord'
-    title?: string | null
+    title: string
     _createdAt: string
     _firstPublishedAt: string
     _publishedAt: string
@@ -6909,8 +6909,8 @@ export type GetConcertsUrlsQuery = {
   __typename?: 'Query'
   allConcerts: Array<{
     __typename: 'ConcertRecord'
-    title?: string | null
-    slug?: string | null
+    title: string
+    slug: string
     _createdAt: string
     _firstPublishedAt: string
     _publishedAt: string
@@ -6931,8 +6931,8 @@ export type GetConcertsQuery = {
   __typename?: 'Query'
   allConcerts: Array<{
     __typename: 'ConcertRecord'
-    title?: string | null
-    slug?: string | null
+    title: string
+    slug: string
     poster?: unknown | null
     _createdAt: string
     _firstPublishedAt: string
@@ -6947,7 +6947,7 @@ export type GetConcertsQuery = {
       location?: {
         __typename?: 'LocationRecord'
         id: string
-        title?: string | null
+        title: string
         addressTitle?: string | null
         address?: {
           __typename?: 'LatLonField'
@@ -6981,8 +6981,8 @@ export type GetConcertsQuery = {
               pageLink?:
                 | {
                     __typename: 'ConcertRecord'
-                    title?: string | null
-                    slug?: string | null
+                    title: string
+                    slug: string
                     _createdAt: string
                     _firstPublishedAt: string
                     _publishedAt: string
@@ -6991,8 +6991,8 @@ export type GetConcertsQuery = {
                   }
                 | {
                     __typename: 'PageRecord'
-                    title?: string | null
-                    slug?: string | null
+                    title: string
+                    slug: string
                     _createdAt: string
                     _firstPublishedAt: string
                     _publishedAt: string
@@ -7004,8 +7004,8 @@ export type GetConcertsQuery = {
             links: Array<
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -7014,8 +7014,8 @@ export type GetConcertsQuery = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -7038,8 +7038,8 @@ export type GetConcertsQuery = {
             links: Array<
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -7048,8 +7048,8 @@ export type GetConcertsQuery = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -7071,8 +7071,8 @@ export type GetConcertsQuery = {
                   pageLink?:
                     | {
                         __typename: 'ConcertRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -7081,8 +7081,8 @@ export type GetConcertsQuery = {
                       }
                     | {
                         __typename: 'PageRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -7145,8 +7145,8 @@ export type GetConcertsQuery = {
             links: Array<
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -7155,8 +7155,8 @@ export type GetConcertsQuery = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -7178,8 +7178,8 @@ export type GetConcertsQuery = {
                   pageLink?:
                     | {
                         __typename: 'ConcertRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -7188,8 +7188,8 @@ export type GetConcertsQuery = {
                       }
                     | {
                         __typename: 'PageRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -7244,8 +7244,8 @@ export type GetConcertsQuery = {
             links: Array<
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -7254,8 +7254,8 @@ export type GetConcertsQuery = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -7277,8 +7277,8 @@ export type GetConcertsQuery = {
                   pageLink?:
                     | {
                         __typename: 'ConcertRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -7287,8 +7287,8 @@ export type GetConcertsQuery = {
                       }
                     | {
                         __typename: 'PageRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -7362,8 +7362,8 @@ export type GetFutureConcertsQuery = {
   __typename?: 'Query'
   allConcerts: Array<{
     __typename: 'ConcertRecord'
-    title?: string | null
-    slug?: string | null
+    title: string
+    slug: string
     poster?: unknown | null
     _createdAt: string
     _firstPublishedAt: string
@@ -7378,7 +7378,7 @@ export type GetFutureConcertsQuery = {
       location?: {
         __typename?: 'LocationRecord'
         id: string
-        title?: string | null
+        title: string
         addressTitle?: string | null
         address?: {
           __typename?: 'LatLonField'
@@ -7412,8 +7412,8 @@ export type GetFutureConcertsQuery = {
               pageLink?:
                 | {
                     __typename: 'ConcertRecord'
-                    title?: string | null
-                    slug?: string | null
+                    title: string
+                    slug: string
                     _createdAt: string
                     _firstPublishedAt: string
                     _publishedAt: string
@@ -7422,8 +7422,8 @@ export type GetFutureConcertsQuery = {
                   }
                 | {
                     __typename: 'PageRecord'
-                    title?: string | null
-                    slug?: string | null
+                    title: string
+                    slug: string
                     _createdAt: string
                     _firstPublishedAt: string
                     _publishedAt: string
@@ -7435,8 +7435,8 @@ export type GetFutureConcertsQuery = {
             links: Array<
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -7445,8 +7445,8 @@ export type GetFutureConcertsQuery = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -7469,8 +7469,8 @@ export type GetFutureConcertsQuery = {
             links: Array<
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -7479,8 +7479,8 @@ export type GetFutureConcertsQuery = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -7502,8 +7502,8 @@ export type GetFutureConcertsQuery = {
                   pageLink?:
                     | {
                         __typename: 'ConcertRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -7512,8 +7512,8 @@ export type GetFutureConcertsQuery = {
                       }
                     | {
                         __typename: 'PageRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -7576,8 +7576,8 @@ export type GetFutureConcertsQuery = {
             links: Array<
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -7586,8 +7586,8 @@ export type GetFutureConcertsQuery = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -7609,8 +7609,8 @@ export type GetFutureConcertsQuery = {
                   pageLink?:
                     | {
                         __typename: 'ConcertRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -7619,8 +7619,8 @@ export type GetFutureConcertsQuery = {
                       }
                     | {
                         __typename: 'PageRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -7675,8 +7675,8 @@ export type GetFutureConcertsQuery = {
             links: Array<
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -7685,8 +7685,8 @@ export type GetFutureConcertsQuery = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -7708,8 +7708,8 @@ export type GetFutureConcertsQuery = {
                   pageLink?:
                     | {
                         __typename: 'ConcertRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -7718,8 +7718,8 @@ export type GetFutureConcertsQuery = {
                       }
                     | {
                         __typename: 'PageRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -7789,8 +7789,8 @@ export type GetGeneralInfoQuery = {
           link?:
             | {
                 __typename: 'ConcertRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -7799,8 +7799,8 @@ export type GetGeneralInfoQuery = {
               }
             | {
                 __typename: 'PageRecord'
-                title?: string | null
-                slug?: string | null
+                title: string
+                slug: string
                 _createdAt: string
                 _firstPublishedAt: string
                 _publishedAt: string
@@ -7820,8 +7820,8 @@ export type GetGeneralInfoQuery = {
             link?:
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -7830,8 +7830,8 @@ export type GetGeneralInfoQuery = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -7854,7 +7854,7 @@ export type GetLocationQuery = {
   location?: {
     __typename?: 'LocationRecord'
     id: string
-    title?: string | null
+    title: string
     addressTitle?: string | null
     address?: {
       __typename?: 'LatLonField'
@@ -7877,7 +7877,7 @@ export type GetLocationsQuery = {
   allLocations: Array<{
     __typename?: 'LocationRecord'
     id: string
-    title?: string | null
+    title: string
     addressTitle?: string | null
     address?: {
       __typename?: 'LatLonField'
@@ -7895,8 +7895,8 @@ export type GetPageQuery = {
   __typename?: 'Query'
   page?: {
     __typename: 'PageRecord'
-    title?: string | null
-    slug?: string | null
+    title: string
+    slug: string
     _createdAt: string
     _firstPublishedAt: string
     _publishedAt: string
@@ -7927,8 +7927,8 @@ export type GetPageQuery = {
               pageLink?:
                 | {
                     __typename: 'ConcertRecord'
-                    title?: string | null
-                    slug?: string | null
+                    title: string
+                    slug: string
                     _createdAt: string
                     _firstPublishedAt: string
                     _publishedAt: string
@@ -7937,8 +7937,8 @@ export type GetPageQuery = {
                   }
                 | {
                     __typename: 'PageRecord'
-                    title?: string | null
-                    slug?: string | null
+                    title: string
+                    slug: string
                     _createdAt: string
                     _firstPublishedAt: string
                     _publishedAt: string
@@ -7950,8 +7950,8 @@ export type GetPageQuery = {
             links: Array<
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -7960,8 +7960,8 @@ export type GetPageQuery = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -7984,8 +7984,8 @@ export type GetPageQuery = {
             links: Array<
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -7994,8 +7994,8 @@ export type GetPageQuery = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -8017,8 +8017,8 @@ export type GetPageQuery = {
                   pageLink?:
                     | {
                         __typename: 'ConcertRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -8027,8 +8027,8 @@ export type GetPageQuery = {
                       }
                     | {
                         __typename: 'PageRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -8091,8 +8091,8 @@ export type GetPageQuery = {
             links: Array<
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -8101,8 +8101,8 @@ export type GetPageQuery = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -8124,8 +8124,8 @@ export type GetPageQuery = {
                   pageLink?:
                     | {
                         __typename: 'ConcertRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -8134,8 +8134,8 @@ export type GetPageQuery = {
                       }
                     | {
                         __typename: 'PageRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -8190,8 +8190,8 @@ export type GetPageQuery = {
             links: Array<
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -8200,8 +8200,8 @@ export type GetPageQuery = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -8223,8 +8223,8 @@ export type GetPageQuery = {
                   pageLink?:
                     | {
                         __typename: 'ConcertRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -8233,8 +8233,8 @@ export type GetPageQuery = {
                       }
                     | {
                         __typename: 'PageRecord'
-                        title?: string | null
-                        slug?: string | null
+                        title: string
+                        slug: string
                         _createdAt: string
                         _firstPublishedAt: string
                         _publishedAt: string
@@ -8296,7 +8296,7 @@ export type GetPageSeoQuery = {
   __typename?: 'Query'
   page?: {
     __typename: 'PageRecord'
-    title?: string | null
+    title: string
     _createdAt: string
     _firstPublishedAt: string
     _publishedAt: string
@@ -8329,8 +8329,8 @@ export type GetPagesQuery = {
   __typename?: 'Query'
   allPages: Array<{
     __typename: 'PageRecord'
-    title?: string | null
-    slug?: string | null
+    title: string
+    slug: string
     _createdAt: string
     _firstPublishedAt: string
     _publishedAt: string
@@ -8404,8 +8404,8 @@ export type GetSubmenuQuery = {
             link?:
               | {
                   __typename: 'ConcertRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
@@ -8414,8 +8414,8 @@ export type GetSubmenuQuery = {
                 }
               | {
                   __typename: 'PageRecord'
-                  title?: string | null
-                  slug?: string | null
+                  title: string
+                  slug: string
                   _createdAt: string
                   _firstPublishedAt: string
                   _publishedAt: string
