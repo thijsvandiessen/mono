@@ -14,34 +14,32 @@ jobs:
     env:
       TURBO_TOKEN: ${{ secrets.VERCEL_TOKEN }}
       TURBO_TEAM: ${{ secrets.VERCEL_TEAM }}
+      NEXT_PUBLIC_DATOCMS_READONLY_TOKEN: ${{ secrets.DATOCMS_ACCESS_TOKEN }}
     strategy:
       matrix:
-        node-version: [20.x, 22.x, 24.x]
+        node-version: [24.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
-
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
       - name: Install pnpm
         uses: pnpm/action-setup@v4
-
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
       - name: Build application
-        run: pnpm exec turbo build
+        run: pnpm build
 
       - name: Install Playwright Browsers
         working-directory: ./e2e
-        run: pnpm exec playwright install --with-deps chromium
+        run: pnpm install:browsers
 
       - name: Run Playwright tests
-        run: pnpm exec turbo e2e
+        run: pnpm e2e
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:

@@ -1,5 +1,5 @@
 {
-  "name": "e2e",
+  "name": "@mono/e2e",
   "version": "1.0.0",
   "description": "Playwright end-to-end tests",
   "type": "module",

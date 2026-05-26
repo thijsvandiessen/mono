@@ -35,4 +35,5 @@ export const customNextConfig = ({ domain }: Props): NextConfig => ({
     ]),
   headers: () =>
     Promise.resolve([{ source: '/(.*)', headers: headerConfig({ domain }) }]),
+  allowedDevOrigins: ['127.0.0.1'],
 })

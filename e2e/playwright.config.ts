@@ -18,7 +18,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'pnpm exec turbo --filter=@mono/lundi-bleu... dev',
+    command: 'pnpm --filter=@mono/lundi-bleu dev',
     reuseExistingServer: false,
     cwd: '../',
     url: 'http://127.0.0.1:4000',
