@@ -19,16 +19,13 @@ jobs:
         node-version: [24.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
-
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
       - name: Install pnpm
         uses: pnpm/action-setup@v4
-
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -38,7 +35,7 @@ jobs:
 
       - name: Install Playwright Browsers
         working-directory: ./e2e
-        run: pnpm exec playwright install --with-deps chromium
+        run: pnpm install:browsers
 
       - name: Run Playwright tests
         run: pnpm e2e
