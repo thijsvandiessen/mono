@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "build": "tsc --build && pnpm run -r build",
-    "codegen": "pnpm -r download-schema && pnpm -r codegen",
+    "codegen": "pnpm --filter @mono/data... download-schema && pnpm --filter @mono/data... codegen",
     "dev": "pnpm -r --parallel --stream dev",
     "e2e": "pnpm --filter @mono/e2e... e2e",
     "e2e:install": "pnpm --filter @mono/e2e... install:browsers",

@@ -16,7 +16,7 @@
     "codegen": "graphql-codegen-esm --config ./codegen.ts",
     "codegen:watch": "graphql-codegen-esm --require dotenv/config --config ./codegen.ts --watch",
     "dev": "tsc --watch",
-    "download-schema": "rover graph fetch vandiessen-mono-graph@current > ./src/generated/schema.graphql && pnpm run lint:styles",
+    "download-schema": "node ./src/download-schema.ts && pnpm run lint:styles",
     "lint": "pnpm run lint:js && pnpm run lint:styles",
     "lint:js": "eslint",
     "lint:styles": "prettier . --write  --list-different",
@@ -34,7 +34,7 @@
     "zod": "4.4.3"
   },
   "devDependencies": {
-    "@apollo/rover": "0.38.0",
+    "@apollo/rover": "0.39.1",
     "@commitlint/config-conventional": "20.5.0",
     "@graphql-codegen/cli": "6.2.1",
     "@graphql-codegen/client-preset": "5.3.0",

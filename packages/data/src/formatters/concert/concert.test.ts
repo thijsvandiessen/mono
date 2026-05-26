@@ -17,6 +17,7 @@ describe('concertFormatter', () => {
             id: 'ignore-this-id',
             location: {
               id: 'location-id',
+              title: 'Location Title',
             },
           },
         ],
@@ -34,7 +35,7 @@ describe('concertFormatter', () => {
           lng: null,
           startTime: null,
           ticketLink: null,
-          title: null,
+          title: 'Location Title',
         },
       ],
       title: 'required title',
@@ -57,12 +58,14 @@ describe('concertFormatter', () => {
           {
             id: 'ignore-this-id',
             location: {
+              title: 'Location Title',
               id: 'location-id',
             },
           },
           {
             id: 'ignore-this-id',
             location: {
+              title: 'Location Title',
               id: 'location-id',
             },
           },
@@ -81,7 +84,7 @@ describe('concertFormatter', () => {
           lng: null,
           startTime: null,
           ticketLink: null,
-          title: null,
+          title: 'Location Title',
         },
       ],
       title: 'required title',

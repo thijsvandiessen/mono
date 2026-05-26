@@ -20,6 +20,7 @@ describe('navigationFormatter', () => {
             _publishedAt: '',
             id: 'p1',
             slug: 'contact',
+            title: 'contact',
           },
         },
         {
@@ -37,6 +38,7 @@ describe('navigationFormatter', () => {
                 _publishedAt: '',
                 id: 'p2',
                 slug: 'child',
+                title: 'child',
               },
             },
           ],
@@ -59,7 +61,7 @@ describe('navigationFormatter', () => {
   })
 
   it('throws when a menu item is missing a slug', () => {
-    const input: GeneralInfoFragment = {
+    const input = {
       id: '1',
       title: 'main',
       menu: [
@@ -73,13 +75,15 @@ describe('navigationFormatter', () => {
             _firstPublishedAt: '',
             _publishedAt: '',
             id: 'p1',
-            slug: null,
+            title: 'homepage',
           },
         },
       ],
     }
 
-    expect(() => navigationFormatter(input)).toThrowError(ZodError)
+    expect(() => navigationFormatter(input as GeneralInfoFragment)).toThrow(
+      ZodError
+    )
   })
 
   it('throws when a submenu is missing a label', () => {
@@ -100,6 +104,7 @@ describe('navigationFormatter', () => {
                 _updatedAt: '',
                 _firstPublishedAt: '',
                 _publishedAt: '',
+                title: 'child',
                 id: 'p2',
                 slug: 'child',
               },
