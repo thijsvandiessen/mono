@@ -13,8 +13,8 @@
     "build": "tsc --build && pnpm run -r build",
     "codegen": "pnpm -r download-schema && pnpm -r codegen",
     "dev": "pnpm -r --parallel --stream dev",
-    "e2e": "pnpm exec turbo e2e",
-    "e2e:install": "pnpm --filter e2e install:browsers",
+    "e2e": "pnpm --filter @mono/e2e... e2e",
+    "e2e:install": "pnpm --filter @mono/e2e... install:browsers",
     "lint": "pnpm run -r lint",
     "test": "vitest run -c ./vitest.config.ts"
   },
