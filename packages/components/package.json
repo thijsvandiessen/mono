@@ -31,9 +31,9 @@
     "@react-google-maps/api": "2.20.8",
     "classnames": "2.5.1",
     "datocms-structured-text-utils": "5.1.7",
-    "react": "19.2.4",
+    "react": "19.2.6",
     "react-datocms": "8.0.0",
-    "react-dom": "19.2.4",
+    "react-dom": "19.2.6",
     "urql": "5.0.2"
   },
   "devDependencies": {
@@ -42,7 +42,7 @@
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.2",
     "@types/node": "25.6.0",
-    "@types/react": "19.2.14",
+    "@types/react": "19.2.15",
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "5.1.4",
     "cpx2": "8.0.2",
