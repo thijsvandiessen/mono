@@ -19,7 +19,7 @@ jobs:
       matrix:
         node-version: [22.x, 24.x]
     steps:
-      - uses: actions/checkout@6
+      - uses: actions/checkout@v6.0.2
       - name: Install pnpm
         uses: pnpm/action-setup@v6
       - name: Use Node.js ${{ matrix.node-version }}
