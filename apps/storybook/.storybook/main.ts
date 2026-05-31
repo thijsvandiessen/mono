@@ -1,8 +1,11 @@
 import { createRequire } from 'node:module'
 import { dirname, join } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import type { StorybookConfig } from '@storybook/react-vite'
+import { mergeConfig } from 'vite'
 
 const require = createRequire(import.meta.url)
+const configDir = dirname(fileURLToPath(import.meta.url))
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -11,6 +14,14 @@ const config: StorybookConfig = {
     name: getAbsolutePath('@storybook/react-vite'),
     options: {},
   },
+  viteFinal: (config) =>
+    mergeConfig(config, {
+      resolve: {
+        alias: {
+          '@mono/next-js': join(configDir, '../src/mocks/monoNextJs.tsx'),
+        },
+      },
+    }),
 }
 
 export default config
