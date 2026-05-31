@@ -41,12 +41,6 @@ variable "GOOGLE_MAPS_API_KEY" {
   default   = ""
 }
 
-variable "REVALIDATE_TOKEN" {
-  sensitive = true
-  type      = string
-  default   = ""
-}
-
 variable "DATOCMS_READONLY_TOKEN" {
   sensitive = false
   type      = string

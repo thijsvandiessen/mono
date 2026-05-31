@@ -1,4 +1,5 @@
 name: Playwright Tests
+
 on:
   push:
     branches: [main]
@@ -7,26 +8,36 @@ on:
   merge_group:
     types: [checks_requested]
     branches: [main]
+
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+
+    container:
+      image: mcr.microsoft.com/playwright:v1.60.0-noble
+      options: --ipc=host
+
     env:
       TURBO_TOKEN: ${{ secrets.VERCEL_TOKEN }}
       TURBO_TEAM: ${{ secrets.VERCEL_TEAM }}
       NEXT_PUBLIC_DATOCMS_READONLY_TOKEN: ${{ secrets.DATOCMS_ACCESS_TOKEN }}
+
     strategy:
       matrix:
         node-version: [24.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - uses: actions/checkout@v6.0.2
+
       - name: Install pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
+
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
+          cache: pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -34,12 +45,9 @@ jobs:
       - name: Build application
         run: pnpm build
 
-      - name: Install Playwright Browsers
-        working-directory: ./e2e
-        run: pnpm install:browsers
-
       - name: Run Playwright tests
         run: pnpm e2e
+
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:

@@ -28,11 +28,5 @@ module "lundi" {
       target    = local.env_targets
       sensitive = false
     },
-    {
-      key       = "REVALIDATE_TOKEN"
-      value     = var.REVALIDATE_TOKEN
-      target    = local.env_targets
-      sensitive = true
-    }
   ]
 }
