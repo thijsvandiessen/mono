@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.1.1](https://github.com/thijsvandiessen/mono/compare/v1.1.0...v1.1.1) (2026-05-31)
+
+
+### Bug Fixes
+
+* concert list item story ([#1147](https://github.com/thijsvandiessen/mono/issues/1147)) ([05c70c7](https://github.com/thijsvandiessen/mono/commit/05c70c733637b5d9074c60cc431dec1dbba0221f))
+* csp update ([#1133](https://github.com/thijsvandiessen/mono/issues/1133)) ([9767339](https://github.com/thijsvandiessen/mono/commit/9767339b4fcf94ced3ac0981f35178573a717856))
+* update ql ([#1148](https://github.com/thijsvandiessen/mono/issues/1148)) ([558ca3d](https://github.com/thijsvandiessen/mono/commit/558ca3df879988e5262e8f5925afa50f82a0ae5b))
+* update schema ([#1136](https://github.com/thijsvandiessen/mono/issues/1136)) ([e3a9dac](https://github.com/thijsvandiessen/mono/commit/e3a9dac4ac7412244e1388bb8ca4b6730c2e5633))
+* variable consistency ([#1145](https://github.com/thijsvandiessen/mono/issues/1145)) ([01f5b0b](https://github.com/thijsvandiessen/mono/commit/01f5b0b0cc3f534c723445c6fd0556954aba9d6e))
+
 ## [1.1.0](https://github.com/thijsvandiessen/mono/compare/v1.0.24...v1.1.0) (2026-04-13)
 
 
