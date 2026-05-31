@@ -21,6 +21,12 @@ module "example" {
       value     = "example-site-name"
       target    = local.env_targets
       sensitive = false
+    },
+    {
+      key       = "NEXT_PUBLIC_DATOCMS_READONLY_TOKEN"
+      value     = var.DATOCMS_READONLY_TOKEN
+      target    = local.env_targets
+      sensitive = false
     }
   ]
 }
