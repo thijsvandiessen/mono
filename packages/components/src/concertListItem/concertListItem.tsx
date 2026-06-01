@@ -97,6 +97,20 @@ export const ConcertListItem = ({
               </li>
             )
           })}
+
+          {showLink && (
+            <li className={styles.concertUrlContainer}>
+              <Link
+                className={classNames(styles.concertLink, {
+                  'text-small': size === 'small',
+                })}
+                href={data.url}
+              >
+                Bekijk concert
+                <ArrowRight />
+              </Link>
+            </li>
+          )}
         </ul>
       )}
 
@@ -112,19 +126,5 @@ export const ConcertListItem = ({
         </div>
       )}
     </div>
-
-    {showLink && (
-      <div className={styles.concertUrlContainer}>
-        <Link
-          className={classNames(styles.concertLink, {
-            'text-small': size === 'small',
-          })}
-          href={data.url}
-        >
-          Bekijk concert
-          <ArrowRight />
-        </Link>
-      </div>
-    )}
   </div>
 )

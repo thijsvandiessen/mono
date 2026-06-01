@@ -102,7 +102,7 @@ $padding-large-left: 2.5rem;
   flex-shrink: 0;
   max-width: fit-content;
 
-  width: 12rem;
+  width: 100%;
   margin: 0 auto;
 
   @media screen and (min-width: 50rem) {
@@ -171,16 +171,20 @@ $padding-large-left: 2.5rem;
 }
 
 .concertLink {
-  width: 100%;
   font-family: var(--typography-sans);
   font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+
   color: var(--color-primary);
 
-  max-width: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+
   margin-top: 1rem;
+  padding: 1rem 0;
+
 
   &:hover {
     color: var(--color-primary-light);
@@ -189,7 +193,7 @@ $padding-large-left: 2.5rem;
   @media screen and (min-width: 50rem) {
     margin: 0;
     max-width: initial;
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
 }
 
@@ -311,9 +315,7 @@ $padding-large-left: 2.5rem;
 
 .large.isLast .location:last-child .locationTitle::after {
   border-width: $border-size * 2;
-  height: calc(
-    100% + var(--layout-default-mobile-spacing) + $image-large-height
-  );
+  height: calc(100% + var(--layout-default-mobile-spacing) + $image-large-height );
   top: calc($dash-large-mobile-offset + 1rem);
   left: calc((2.5rem * -1) - ($border-size / 2));
 
@@ -333,6 +335,10 @@ $padding-large-left: 2.5rem;
 
 .concertUrlContainer {
   margin: 0 1rem;
+
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.5rem;
 
   @media screen and (min-width: 50rem) {
     margin: 1rem 0;
