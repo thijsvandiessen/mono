@@ -9,6 +9,12 @@ const configDir = dirname(fileURLToPath(import.meta.url))
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  staticDirs: [
+    {
+      from: join(configDir, '../../lundi-bleu/public/fonts'),
+      to: '/fonts',
+    },
+  ],
   addons: [getAbsolutePath('@storybook/addon-docs')],
   framework: {
     name: getAbsolutePath('@storybook/react-vite'),
