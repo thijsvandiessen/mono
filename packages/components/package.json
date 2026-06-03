@@ -32,7 +32,7 @@
     "classnames": "2.5.1",
     "datocms-structured-text-utils": "5.1.7",
     "react": "19.2.6",
-    "react-datocms": "8.0.0",
+    "react-datocms": "8.0.3",
     "react-dom": "19.2.6",
     "urql": "5.0.2"
   },
