@@ -323,8 +323,8 @@ importers:
         specifier: 19.2.6
         version: 19.2.6
       react-datocms:
-        specifier: 8.0.0
-        version: 8.0.0(graphql@16.13.2)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: 8.0.3
+        version: 8.0.3(graphql@16.13.2)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react-dom:
         specifier: 19.2.6
         version: 19.2.6(react@19.2.6)
@@ -5018,8 +5018,8 @@ packages:
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
-  react-datocms@8.0.0:
-    resolution: {integrity: sha512-NgfvvyebtP8BCqDV3cbgc/C6dwSco0tp2WF+M3SPz2p+gbcxLe5mAVgORA5EwGrjB2tlZGY/bZZW9c1VkveBDQ==}
+  react-datocms@8.0.3:
+    resolution: {integrity: sha512-vxcEfblJxsCr4CZ9wMzPgG+Ww0xy+YcJxPI6n1GqVKajoNe0J249aX5uoSg8vJWhKkGeOeTIQmwOW7QsIUG33g==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
       '@mux/mux-player-react': '>=2.5.0'
@@ -5993,7 +5993,7 @@ snapshots:
 
   '@ardatan/relay-compiler@13.0.1(graphql@16.13.2)':
     dependencies:
-      '@babel/runtime': 7.29.2
+      '@babel/runtime': 7.29.7
       graphql: 16.13.2
       immutable: 5.1.5
       invariant: 2.2.4
@@ -10452,7 +10452,7 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
-  react-datocms@8.0.0(graphql@16.13.2)(react-dom@19.2.6(react@19.2.6))(react@19.2.6):
+  react-datocms@8.0.3(graphql@16.13.2)(react-dom@19.2.6(react@19.2.6))(react@19.2.6):
     dependencies:
       '@datocms/content-link': 0.3.21
       datocms-listen: 1.0.2(graphql@16.13.2)
@@ -11228,7 +11228,7 @@ snapshots:
 
   use-deep-compare-effect@1.8.1(react@19.2.6):
     dependencies:
-      '@babel/runtime': 7.29.2
+      '@babel/runtime': 7.29.7
       dequal: 2.0.3
       react: 19.2.6
 
