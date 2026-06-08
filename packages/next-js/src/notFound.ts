@@ -1,1 +1,1 @@
-export { notFound } from 'next/navigation.js'
+export { notFound } from "next/navigation.js";

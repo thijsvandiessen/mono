@@ -1,4 +1,4 @@
 export const config = {
-  runtime: 'edge',
-  regions: 'fra1',
-}
+  runtime: "edge",
+  regions: "fra1",
+};

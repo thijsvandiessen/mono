@@ -1,16 +1,16 @@
-'use client'
-import type { Location } from '@mono/data'
-import { Map } from '../map/index.js'
-import React from 'react'
-import styles from './styles.module.scss'
+"use client";
+import type { Location } from "@mono/data";
+import { Map } from "../map/index.js";
+import React from "react";
+import styles from "./styles.module.scss";
 
 export interface Props {
-  data: Location
-  googleMapsApiKey: string
+  data: Location;
+  googleMapsApiKey: string;
 }
 
 export const LocationDetailView = ({ data, googleMapsApiKey }: Props) => {
-  const { title, address, lat, lng } = data
+  const { title, address, lat, lng } = data;
 
   return (
     <address className={styles.root}>
@@ -22,18 +22,18 @@ export const LocationDetailView = ({ data, googleMapsApiKey }: Props) => {
         <Map
           id="concert-location"
           pin={{
-            title: title ?? '',
-            description: address ?? '',
+            title: title ?? "",
+            description: address ?? "",
             lat,
             lng,
           }}
           googleMapsApiKey={googleMapsApiKey}
           dimensions={{
-            width: '100%',
-            height: '400px',
+            width: "100%",
+            height: "400px",
           }}
         />
       ) : null}
     </address>
-  )
-}
+  );
+};

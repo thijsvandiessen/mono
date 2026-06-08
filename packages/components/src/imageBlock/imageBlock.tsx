@@ -1,23 +1,19 @@
-import {
-  type ImageFragment,
-  formatCloudinaryImage,
-  isOfTypeCloudinaryAsset,
-} from '@mono/data'
-import { Image } from '@mono/next-js'
-import React from 'react'
+import { type ImageFragment, formatCloudinaryImage, isOfTypeCloudinaryAsset } from "@mono/data";
+import { Image } from "@mono/next-js";
+import React from "react";
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss";
 
 interface Props {
-  record: ImageFragment
+  record: ImageFragment;
 }
 
 export const ImageBlock = ({ record }: Props) => {
-  if (!record.image) return null
+  if (!record.image) return null;
   const asset = formatCloudinaryImage(
-    isOfTypeCloudinaryAsset(record.image) ? record.image : undefined
-  )
-  if (!asset?.url) return null
+    isOfTypeCloudinaryAsset(record.image) ? record.image : undefined,
+  );
+  if (!asset?.url) return null;
   return (
     <Image
       className={styles.image}
@@ -26,9 +22,9 @@ export const ImageBlock = ({ record }: Props) => {
       height={asset.height}
       width={asset.width}
       style={{
-        width: '100%',
-        height: 'auto',
+        width: "100%",
+        height: "auto",
       }}
     />
-  )
-}
+  );
+};

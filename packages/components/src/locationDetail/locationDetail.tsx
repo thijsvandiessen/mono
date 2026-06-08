@@ -1,21 +1,16 @@
-import { LocationDetailView } from './locationDetailView.jsx'
-import React from 'react'
-import { getLocation } from '@mono/data'
+import { LocationDetailView } from "./locationDetailView.jsx";
+import React from "react";
+import { getLocation } from "@mono/data";
 
 export interface Props {
-  id: string
-  startTime: string
+  id: string;
+  startTime: string;
 }
 
 export const LocationDetail = async ({ id, startTime }: Props) => {
-  const { data } = await getLocation({ id })
-  const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
-  if (!data || !googleMapsApiKey) return null
+  const { data } = await getLocation({ id });
+  const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+  if (!data || !googleMapsApiKey) return null;
 
-  return (
-    <LocationDetailView
-      data={{ ...data, startTime }}
-      googleMapsApiKey={googleMapsApiKey}
-    />
-  )
-}
+  return <LocationDetailView data={{ ...data, startTime }} googleMapsApiKey={googleMapsApiKey} />;
+};

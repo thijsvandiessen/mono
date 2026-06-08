@@ -1,5 +1,5 @@
-import { LoadingSkeleton } from '@mono/components'
+import { LoadingSkeleton } from "@mono/components";
 
 export default function Loading() {
-  return <LoadingSkeleton />
+  return <LoadingSkeleton />;
 }

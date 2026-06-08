@@ -1,18 +1,12 @@
-'use client'
+"use client";
 
-import { useEffect } from 'react'
+import { useEffect } from "react";
 
-export const ErrorMessage = ({
-  error,
-  reset,
-}: {
-  error: Error
-  reset: () => void
-}) => {
+export const ErrorMessage = ({ error, reset }: { error: Error; reset: () => void }) => {
   useEffect(() => {
     // Log the error to an error reporting service
-    console.error(error)
-  }, [error])
+    console.error(error);
+  }, [error]);
 
   return (
     <div>
@@ -26,5 +20,5 @@ export const ErrorMessage = ({
         Probeer opnieuw
       </button>
     </div>
-  )
-}
+  );
+};

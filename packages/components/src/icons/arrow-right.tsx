@@ -1,5 +1,5 @@
-import classNames from 'classnames'
-import styles from './styles.module.scss'
+import classNames from "classnames";
+import styles from "./styles.module.scss";
 
 export const ArrowRight = ({ className }: { className?: string }) => (
   <svg
@@ -15,4 +15,4 @@ export const ArrowRight = ({ className }: { className?: string }) => (
       <path d="M17.8 18.27c-.43 0-.78-.35-.78-.78 0-.21.08-.4.23-.55l4.88-4.88-4.88-4.88a.785.785 0 0 1-.03-1.1c.29-.31.79-.32 1.1-.03l.03.03 5.43 5.43c.3.3.3.79 0 1.1l-5.43 5.43a.78.78 0 0 1-.55.23z" />
     </g>
   </svg>
-)
+);

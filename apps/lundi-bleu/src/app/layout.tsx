@@ -1,14 +1,14 @@
-import React, { type ReactNode } from 'react'
-import { getGeneralInfo, getSiteMetadata } from '@mono/data'
-import { Body } from '@mono/components'
+import React, { type ReactNode } from "react";
+import { getGeneralInfo, getSiteMetadata } from "@mono/data";
+import { Body } from "@mono/components";
 
 interface Props {
-  children: ReactNode
+  children: ReactNode;
 }
 
 const RootLayout = async ({ children }: Props) => {
-  const { data } = await getGeneralInfo()
-  const { metadata } = await getSiteMetadata()
+  const { data } = await getGeneralInfo();
+  const { metadata } = await getSiteMetadata();
 
   return (
     <html lang="nl-NL">
@@ -16,7 +16,7 @@ const RootLayout = async ({ children }: Props) => {
         {children}
       </Body>
     </html>
-  )
-}
+  );
+};
 
-export default RootLayout
+export default RootLayout;

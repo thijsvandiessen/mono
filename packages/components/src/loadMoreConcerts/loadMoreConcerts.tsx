@@ -1,32 +1,28 @@
-'use client'
+"use client";
 
-import { ConcertListItem } from '../concertListItem/index.js'
-import React from 'react'
-import styles from './styles.module.scss'
-import { useLoadMoreConcerts } from '@mono/hooks'
+import { ConcertListItem } from "../concertListItem/index.js";
+import React from "react";
+import styles from "./styles.module.scss";
+import { useLoadMoreConcerts } from "@mono/hooks";
 
 export interface Props {
-  initialSkip: number
-  numberOfConcerts: number
+  initialSkip: number;
+  numberOfConcerts: number;
 }
 
 export const LoadMoreConcerts = ({ initialSkip, numberOfConcerts }: Props) => {
   const { concerts, ref } = useLoadMoreConcerts({
     initialSkip,
     numberOfConcerts,
-  })
+  });
 
   return (
     <>
       {concerts.map((concert, index) => {
-        if (!concert?.id) return
+        if (!concert?.id) return;
         return (
-          <ConcertListItem
-            key={concert.id}
-            data={concert}
-            isLast={concerts.length - 1 === index}
-          />
-        )
+          <ConcertListItem key={concert.id} data={concert} isLast={concerts.length - 1 === index} />
+        );
       })}
 
       {numberOfConcerts ? (
@@ -39,5 +35,5 @@ export const LoadMoreConcerts = ({ initialSkip, numberOfConcerts }: Props) => {
         <p className="text-small">...</p>
       )}
     </>
-  )
-}
+  );
+};

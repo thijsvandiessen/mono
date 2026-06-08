@@ -1,10 +1,7 @@
-import { type AnyVariables, type TypedDocumentNode, gql } from '@urql/core'
-import type { IdentifiableFragment } from '../generated/graphql.js'
+import { type AnyVariables, type TypedDocumentNode, gql } from "@urql/core";
+import type { IdentifiableFragment } from "../generated/graphql.js";
 
-export const identifiable: TypedDocumentNode<
-  IdentifiableFragment,
-  AnyVariables
-> = gql`
+export const identifiable: TypedDocumentNode<IdentifiableFragment, AnyVariables> = gql`
   fragment identifiable on RecordInterface {
     __typename
     _createdAt
@@ -13,4 +10,4 @@ export const identifiable: TypedDocumentNode<
     _updatedAt
     id
   }
-`
+`;

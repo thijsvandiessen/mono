@@ -1,31 +1,31 @@
-import { isValidUrl } from './isValidUrl.js'
+import { isValidUrl } from "./isValidUrl.js";
 
 export interface WithPrefixProps {
-  slug: string
-  prefix?: string
+  slug: string;
+  prefix?: string;
 }
 export function slugFormatter({ slug, prefix }: WithPrefixProps): string {
-  if (prefix === '/') {
-    prefix = undefined
+  if (prefix === "/") {
+    prefix = undefined;
   }
 
-  if (slug === 'homepage' || slug === '') {
-    return '/'
+  if (slug === "homepage" || slug === "") {
+    return "/";
   }
 
   if (isValidUrl(slug)) {
-    return slug
+    return slug;
   }
 
-  if (prefix && !prefix.startsWith('/')) {
-    prefix = `/${prefix}`
+  if (prefix && !prefix.startsWith("/")) {
+    prefix = `/${prefix}`;
   }
 
-  if (slug && !slug.startsWith('/')) {
-    slug = `/${slug}`
+  if (slug && !slug.startsWith("/")) {
+    slug = `/${slug}`;
   }
 
-  if (!prefix) return slug
+  if (!prefix) return slug;
 
-  return prefix + slug
+  return prefix + slug;
 }

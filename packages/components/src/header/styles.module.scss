@@ -102,11 +102,7 @@ header.header.withImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  background: linear-gradient(
-    0.25turn,
-    var(--color-secondary),
-    var(--color-primary)
-  );
+  background: linear-gradient(0.25turn, var(--color-secondary), var(--color-primary));
   opacity: 0;
 }
 

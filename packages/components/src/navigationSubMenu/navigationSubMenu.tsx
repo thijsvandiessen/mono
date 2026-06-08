@@ -1,29 +1,29 @@
-'use client'
+"use client";
 
-import React, { useState } from 'react'
-import { useEscapeKey, useOutsideClick } from '@mono/hooks'
-import type { NavigationItem } from '@mono/data'
-import { NavigationSubMenuItem } from '../navigationSubMenuItem/index.js'
-import type { SubMenuProps } from './navigationSubMenu.types.js'
-import classNames from 'classnames'
-import styles from './styles.module.scss'
+import React, { useState } from "react";
+import { useEscapeKey, useOutsideClick } from "@mono/hooks";
+import type { NavigationItem } from "@mono/data";
+import { NavigationSubMenuItem } from "../navigationSubMenuItem/index.js";
+import type { SubMenuProps } from "./navigationSubMenu.types.js";
+import classNames from "classnames";
+import styles from "./styles.module.scss";
 
 export const NavigationSubMenu = ({ label, item }: SubMenuProps) => {
-  const submenu = JSON.parse(item) as NavigationItem[]
-  const [visible, setVisible] = useState(false)
-  const ref = useOutsideClick<HTMLLIElement>(() => setVisible(false))
-  useEscapeKey(() => setVisible(false))
+  const submenu = JSON.parse(item) as NavigationItem[];
+  const [visible, setVisible] = useState(false);
+  const ref = useOutsideClick<HTMLLIElement>(() => setVisible(false));
+  useEscapeKey(() => setVisible(false));
 
   const handleClick = () => {
-    setVisible(!visible)
-  }
+    setVisible(!visible);
+  };
 
-  if (!label) return null
+  if (!label) return null;
 
   return (
     <li className={classNames(styles.listItem)} ref={ref}>
       <button
-        className={classNames(styles.button, 'text-large')}
+        className={classNames(styles.button, "text-large")}
         disabled={Boolean(submenu?.length === 0)}
         type="button"
         onClick={handleClick}
@@ -46,5 +46,5 @@ export const NavigationSubMenu = ({ label, item }: SubMenuProps) => {
         </>
       )}
     </li>
-  )
-}
+  );
+};

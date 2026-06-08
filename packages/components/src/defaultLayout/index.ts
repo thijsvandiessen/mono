@@ -1,1 +1,1 @@
-export { DefaultLayout } from './defaultLayout.jsx'
+export { DefaultLayout } from "./defaultLayout.jsx";

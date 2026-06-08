@@ -1,50 +1,44 @@
-import { describe, expect, it } from 'vitest'
-import { slugFormatter } from './slugFormatter.js'
+import { describe, expect, it } from "vitest";
+import { slugFormatter } from "./slugFormatter.js";
 
-describe('slugFormatter', () => {
-  it('should return the homepage', () => {
-    expect(slugFormatter({ slug: 'homepage' })).toEqual('/')
-  })
+describe("slugFormatter", () => {
+  it("should return the homepage", () => {
+    expect(slugFormatter({ slug: "homepage" })).toEqual("/");
+  });
 
-  it('should return the homepage', () => {
-    expect(slugFormatter({ slug: '/' })).toEqual('/')
-  })
+  it("should return the homepage", () => {
+    expect(slugFormatter({ slug: "/" })).toEqual("/");
+  });
 
-  it('should return the homepage', () => {
-    expect(slugFormatter({ slug: '/', prefix: '/' })).toEqual('/')
-  })
+  it("should return the homepage", () => {
+    expect(slugFormatter({ slug: "/", prefix: "/" })).toEqual("/");
+  });
 
-  it('should return the homepage and ignore prefix', () => {
-    expect(slugFormatter({ slug: 'homepage', prefix: 'ignore' })).toEqual('/')
-  })
+  it("should return the homepage and ignore prefix", () => {
+    expect(slugFormatter({ slug: "homepage", prefix: "ignore" })).toEqual("/");
+  });
 
-  it('should return the homepage', () => {
-    expect(slugFormatter({ slug: '' })).toEqual('/')
-  })
+  it("should return the homepage", () => {
+    expect(slugFormatter({ slug: "" })).toEqual("/");
+  });
 
-  it('should return an external url', () => {
-    expect(slugFormatter({ slug: 'https://example.com' })).toEqual(
-      'https://example.com'
-    )
-  })
+  it("should return an external url", () => {
+    expect(slugFormatter({ slug: "https://example.com" })).toEqual("https://example.com");
+  });
 
-  it('should not double prefix with a slash', () => {
-    expect(slugFormatter({ slug: '/test' })).toEqual('/test')
-  })
+  it("should not double prefix with a slash", () => {
+    expect(slugFormatter({ slug: "/test" })).toEqual("/test");
+  });
 
-  it('should prefix with a slash', () => {
-    expect(slugFormatter({ slug: 'test' })).toEqual('/test')
-  })
+  it("should prefix with a slash", () => {
+    expect(slugFormatter({ slug: "test" })).toEqual("/test");
+  });
 
-  it('should not double prefix the prefix with a slash', () => {
-    expect(slugFormatter({ slug: 'test', prefix: '/some' })).toEqual(
-      '/some/test'
-    )
-  })
+  it("should not double prefix the prefix with a slash", () => {
+    expect(slugFormatter({ slug: "test", prefix: "/some" })).toEqual("/some/test");
+  });
 
-  it('should prefix', () => {
-    expect(slugFormatter({ slug: 'test', prefix: 'apply' })).toEqual(
-      '/apply/test'
-    )
-  })
-})
+  it("should prefix", () => {
+    expect(slugFormatter({ slug: "test", prefix: "apply" })).toEqual("/apply/test");
+  });
+});

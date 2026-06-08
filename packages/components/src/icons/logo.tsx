@@ -1,5 +1,5 @@
-import classNames from 'classnames'
-import styles from './styles.module.scss'
+import classNames from "classnames";
+import styles from "./styles.module.scss";
 
 export const Logo = ({ className }: { className?: string }) => (
   <svg
@@ -21,4 +21,4 @@ export const Logo = ({ className }: { className?: string }) => (
       fill="#60acbd"
     />
   </svg>
-)
+);

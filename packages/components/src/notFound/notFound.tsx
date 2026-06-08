@@ -1,5 +1,5 @@
-import { Link } from '@mono/next-js'
-import styles from './notFound.module.scss'
+import { Link } from "@mono/next-js";
+import styles from "./notFound.module.scss";
 
 export const NotFound = () => {
   return (
@@ -10,5 +10,5 @@ export const NotFound = () => {
         <Link href="/">Ga terug naar de homepage</Link>
       </p>
     </section>
-  )
-}
+  );
+};

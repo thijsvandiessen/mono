@@ -1,27 +1,23 @@
-import type {
-  CallToActionFragment,
-  ConcertLinkFragment,
-  PageLinkFragment,
-} from '@mono/data'
-import { ArrowRight } from '../icons/index.js'
-import { Button } from '../button/index.js'
-import { isOfType } from '../contentField/isOfType.js'
-import { slugFormatter } from '@mono/utils'
+import type { CallToActionFragment, ConcertLinkFragment, PageLinkFragment } from "@mono/data";
+import { ArrowRight } from "../icons/index.js";
+import { Button } from "../button/index.js";
+import { isOfType } from "../contentField/isOfType.js";
+import { slugFormatter } from "@mono/utils";
 
 interface Props {
-  record: CallToActionFragment
+  record: CallToActionFragment;
 }
 
 export const CallToAction = ({ record }: Props) => {
-  const { pageLink, externalUrl, label, variant } = record
-  const primary = variant === 'primary' ? variant : undefined
-  const secondary = variant === 'secondary' ? variant : undefined
-  const tertiary = variant === 'tertiary' ? variant : undefined
+  const { pageLink, externalUrl, label, variant } = record;
+  const primary = variant === "primary" ? variant : undefined;
+  const secondary = variant === "secondary" ? variant : undefined;
+  const tertiary = variant === "tertiary" ? variant : undefined;
 
   if (!pageLink) {
     return (
       <Button
-        href={externalUrl ?? '#'}
+        href={externalUrl ?? "#"}
         target="_blank"
         rel="noopener noreferrer"
         rightIcon={<ArrowRight />}
@@ -29,13 +25,13 @@ export const CallToAction = ({ record }: Props) => {
       >
         {label}
       </Button>
-    )
+    );
   }
 
-  const { slug } = pageLink
-  if (!slug) return null
+  const { slug } = pageLink;
+  if (!slug) return null;
 
-  if (isOfType<PageLinkFragment>(pageLink, 'PageRecord')) {
+  if (isOfType<PageLinkFragment>(pageLink, "PageRecord")) {
     return (
       <Button
         href={slugFormatter({ slug })}
@@ -44,23 +40,23 @@ export const CallToAction = ({ record }: Props) => {
       >
         {label}
       </Button>
-    )
+    );
   }
 
-  if (isOfType<ConcertLinkFragment>(pageLink, 'ConcertRecord')) {
+  if (isOfType<ConcertLinkFragment>(pageLink, "ConcertRecord")) {
     return (
       <Button
         href={slugFormatter({
           slug,
-          prefix: '/concerten',
+          prefix: "/concerten",
         })}
         rightIcon={<ArrowRight />}
         variant={primary || secondary || tertiary}
       >
         {label}
       </Button>
-    )
+    );
   }
 
-  return null
-}
+  return null;
+};

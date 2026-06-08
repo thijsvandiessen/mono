@@ -1,9 +1,9 @@
 import type {
   GetFutureConcertsQuery,
   GetFutureConcertsQueryVariables,
-} from '../generated/graphql.js'
-import { type TypedDocumentNode, gql } from '@urql/core'
-import { concertDetail } from '../fragments/concertDetail.js'
+} from "../generated/graphql.js";
+import { type TypedDocumentNode, gql } from "@urql/core";
+import { concertDetail } from "../fragments/concertDetail.js";
 
 export const GET_FUTURE_CONCERTS: TypedDocumentNode<
   GetFutureConcertsQuery,
@@ -20,4 +20,4 @@ export const GET_FUTURE_CONCERTS: TypedDocumentNode<
     }
   }
   ${concertDetail}
-`
+`;

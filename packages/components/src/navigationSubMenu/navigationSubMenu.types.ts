@@ -1,4 +1,4 @@
 export interface SubMenuProps {
-  label?: string
-  item: string
+  label?: string;
+  item: string;
 }

@@ -1,5 +1,5 @@
-import classNames from 'classnames'
-import styles from './styles.module.scss'
+import classNames from "classnames";
+import styles from "./styles.module.scss";
 
 export const Hamburger = ({ className }: { className?: string }) => (
   <svg
@@ -15,4 +15,4 @@ export const Hamburger = ({ className }: { className?: string }) => (
       fill="currentColor"
     />
   </svg>
-)
+);

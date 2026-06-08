@@ -1,12 +1,12 @@
-import { type NavigationData, type SiteMetadata } from '@mono/data'
-import { Link } from '@mono/next-js'
-import classNames from 'classnames'
-import { slugFormatter } from '@mono/utils'
-import styles from './styles.module.scss'
+import { type NavigationData, type SiteMetadata } from "@mono/data";
+import { Link } from "@mono/next-js";
+import classNames from "classnames";
+import { slugFormatter } from "@mono/utils";
+import styles from "./styles.module.scss";
 
 interface Props {
-  data: NavigationData
-  metadata: SiteMetadata
+  data: NavigationData;
+  metadata: SiteMetadata;
 }
 
 export const Footer = ({ data, metadata }: Props) => (
@@ -19,7 +19,7 @@ export const Footer = ({ data, metadata }: Props) => (
         <h3 className={classNames(styles.title)}>Navigatie</h3>
         <ul className={classNames(styles.list)}>
           {data.menu.map((item) => {
-            if ('slug' in item && item.slug && item.label) {
+            if ("slug" in item && item.slug && item.label) {
               return (
                 <li key={item.id}>
                   <Link
@@ -29,9 +29,9 @@ export const Footer = ({ data, metadata }: Props) => (
                     {item.label}
                   </Link>
                 </li>
-              )
+              );
             }
-            return null
+            return null;
           })}
         </ul>
       </div>
@@ -55,4 +55,4 @@ export const Footer = ({ data, metadata }: Props) => (
       </div>
     </div>
   </footer>
-)
+);

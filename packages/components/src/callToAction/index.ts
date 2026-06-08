@@ -1,1 +1,1 @@
-export { CallToAction } from './callToAction.jsx'
+export { CallToAction } from "./callToAction.jsx";

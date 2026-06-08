@@ -1,17 +1,17 @@
-import type { Metadata, Viewport } from 'next'
-import { DefaultPage } from '@mono/components'
-import { getPageSeo } from '@mono/data'
-import { viewport } from '@mono/utils'
+import type { Metadata, Viewport } from "next";
+import { DefaultPage } from "@mono/components";
+import { getPageSeo } from "@mono/data";
+import { viewport } from "@mono/utils";
 
-const homepageSlug = 'homepage'
+const homepageSlug = "homepage";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { data } = await getPageSeo({ slug: homepageSlug })
-  return data
+  const { data } = await getPageSeo({ slug: homepageSlug });
+  return data;
 }
 
-export const generateViewport = (): Viewport => viewport
+export const generateViewport = (): Viewport => viewport;
 
-const Page = () => <DefaultPage slug={homepageSlug} />
+const Page = () => <DefaultPage slug={homepageSlug} />;
 
-export default Page
+export default Page;

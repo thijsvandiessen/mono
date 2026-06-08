@@ -1,11 +1,10 @@
-import { describe, expect, it, vi } from 'vitest'
-import { GetSiteInfoDocument } from '../generated/graphql.js'
-import { client } from '../index.js'
-import { getSiteInfo } from './getSiteInfo.js'
+import { describe, expect, it, vi } from "vitest";
+import { GetSiteInfoDocument } from "../generated/graphql.js";
+import { client } from "../index.js";
+import { getSiteInfo } from "./getSiteInfo.js";
 
-vi.mock('../index.js', () => {
-  const originalModule =
-    vi.importActual<typeof import('../index.js')>('../index.js')
+vi.mock("../index.js", () => {
+  const originalModule = vi.importActual<typeof import("../index.js")>("../index.js");
   return {
     __esModule: true,
     ...originalModule,
@@ -13,37 +12,37 @@ vi.mock('../index.js', () => {
       ...originalModule,
       query: vi.fn(),
     },
-  }
-})
+  };
+});
 
-const mockedQuery = vi.mocked(client.query)
-describe('getSiteInfo', () => {
-  it('should return an object', async () => {
+const mockedQuery = vi.mocked(client.query);
+describe("getSiteInfo", () => {
+  it("should return an object", async () => {
     mockedQuery.mockResolvedValue({
       data: { _site: {} },
       operation: {
         key: 1,
         query: GetSiteInfoDocument,
         variables: {},
-        kind: 'query',
+        kind: "query",
         context: {
-          url: 'https://graphql.datocms.com/',
-          requestPolicy: 'cache-first',
+          url: "https://graphql.datocms.com/",
+          requestPolicy: "cache-first",
         },
       },
       stale: false,
       hasNext: false,
-    })
-    const { data } = await getSiteInfo()
-    expect(data).toEqual({})
-  })
+    });
+    const { data } = await getSiteInfo();
+    expect(data).toEqual({});
+  });
 
-  it('should return an error', async () => {
-    console.log = vi.fn()
-    mockedQuery.mockRejectedValue(new Error('error'))
-    const { data, error } = await getSiteInfo()
-    expect(data).toBeNull()
-    expect(error).toBeInstanceOf(Error)
-    expect(console.log).toHaveBeenLastCalledWith('error')
-  })
-})
+  it("should return an error", async () => {
+    console.log = vi.fn();
+    mockedQuery.mockRejectedValue(new Error("error"));
+    const { data, error } = await getSiteInfo();
+    expect(data).toBeNull();
+    expect(error).toBeInstanceOf(Error);
+    expect(console.log).toHaveBeenLastCalledWith("error");
+  });
+});

@@ -1,6 +1,6 @@
-import { type TypedDocumentNode, gql } from '@urql/core'
-import type { LocationItemFragment } from '../generated/graphql.js'
-import { location } from './location.js'
+import { type TypedDocumentNode, gql } from "@urql/core";
+import type { LocationItemFragment } from "../generated/graphql.js";
+import { location } from "./location.js";
 
 export const locationItem: TypedDocumentNode<LocationItemFragment> = gql`
   fragment locationItem on LocationItemRecord {
@@ -12,4 +12,4 @@ export const locationItem: TypedDocumentNode<LocationItemFragment> = gql`
     ticketLink
   }
   ${location}
-`
+`;

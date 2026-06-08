@@ -1,33 +1,33 @@
-import type { ConcertLinkFragment, PageLinkFragment } from '@mono/data'
-import type { CdaStructuredTextRecord } from 'datocms-structured-text-utils'
-import { Link } from '@mono/next-js'
-import { type RenderRecordLinkContext } from 'react-datocms/structured-text'
-import { isOfType } from './isOfType.js'
-import { slugFormatter } from '@mono/utils'
+import type { ConcertLinkFragment, PageLinkFragment } from "@mono/data";
+import type { CdaStructuredTextRecord } from "datocms-structured-text-utils";
+import { Link } from "@mono/next-js";
+import { type RenderRecordLinkContext } from "react-datocms/structured-text";
+import { isOfType } from "./isOfType.js";
+import { slugFormatter } from "@mono/utils";
 
 export const renderLinkToRecord = ({
   record,
   children,
 }: RenderRecordLinkContext<CdaStructuredTextRecord>) => {
-  if (isOfType<PageLinkFragment>(record, 'PageRecord')) {
-    if (!record.slug) return null
-    return <Link href={slugFormatter({ slug: record.slug })}>{children}</Link>
+  if (isOfType<PageLinkFragment>(record, "PageRecord")) {
+    if (!record.slug) return null;
+    return <Link href={slugFormatter({ slug: record.slug })}>{children}</Link>;
   }
-  if (isOfType<ConcertLinkFragment>(record, 'ConcertRecord')) {
-    if (!record.slug) return null
+  if (isOfType<ConcertLinkFragment>(record, "ConcertRecord")) {
+    if (!record.slug) return null;
     return (
       <Link
         href={slugFormatter({
           slug: record.slug,
-          prefix: '/concerten',
+          prefix: "/concerten",
         })}
       >
         {children}
       </Link>
-    )
+    );
   }
 
-  console.error('renderLinkToRecord: Unknown record type', record)
+  console.error("renderLinkToRecord: Unknown record type", record);
 
-  return null
-}
+  return null;
+};

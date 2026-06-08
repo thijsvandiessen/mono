@@ -1,11 +1,10 @@
-import { describe, expect, it, vi } from 'vitest'
-import { GetConcertDocument } from '../generated/graphql.js'
-import { client } from '../gqlClient.js'
-import { getConcerts } from './getConcerts.js'
+import { describe, expect, it, vi } from "vitest";
+import { GetConcertDocument } from "../generated/graphql.js";
+import { client } from "../gqlClient.js";
+import { getConcerts } from "./getConcerts.js";
 
-vi.mock('../gqlClient.js', () => {
-  const originalModule =
-    vi.importActual<typeof import('../gqlClient.js')>('../gqlClient.js')
+vi.mock("../gqlClient.js", () => {
+  const originalModule = vi.importActual<typeof import("../gqlClient.js")>("../gqlClient.js");
   return {
     __esModule: true,
     ...originalModule,
@@ -13,34 +12,34 @@ vi.mock('../gqlClient.js', () => {
       ...originalModule,
       query: vi.fn(),
     },
-  }
-})
+  };
+});
 
-const mockedQuery = vi.mocked(client.query)
-describe('getConcerts', () => {
-  it('should return an object', async () => {
+const mockedQuery = vi.mocked(client.query);
+describe("getConcerts", () => {
+  it("should return an object", async () => {
     mockedQuery.mockResolvedValue({
       data: {
         allConcerts: [
           {
-            __typename: 'ConcertRecord',
-            _createdAt: '2023-09-24T17:30:44+02:00',
-            _firstPublishedAt: '2023-09-24T17:30:44+02:00',
-            _publishedAt: '2023-09-24T17:30:44+02:00',
-            _updatedAt: '2023-09-24T17:30:44+02:00',
-            id: '186234305',
-            title: 'another concert',
-            slug: 'another-concert',
+            __typename: "ConcertRecord",
+            _createdAt: "2023-09-24T17:30:44+02:00",
+            _firstPublishedAt: "2023-09-24T17:30:44+02:00",
+            _publishedAt: "2023-09-24T17:30:44+02:00",
+            _updatedAt: "2023-09-24T17:30:44+02:00",
+            id: "186234305",
+            title: "another concert",
+            slug: "another-concert",
             locations: [],
             poster: {
-              id: '72577339',
+              id: "72577339",
               alt: null,
               width: 342,
               height: 384,
               title: null,
-              url: 'https://www.datocms-assets.com/screenshot.png',
+              url: "https://www.datocms-assets.com/screenshot.png",
               video: null,
-              __typename: 'FileField',
+              __typename: "FileField",
             },
             persons: [],
           },
@@ -50,32 +49,32 @@ describe('getConcerts', () => {
         key: 1,
         query: GetConcertDocument,
         variables: {},
-        kind: 'query',
+        kind: "query",
         context: {
-          url: 'https://graphql.datocms.com/',
-          requestPolicy: 'cache-first',
+          url: "https://graphql.datocms.com/",
+          requestPolicy: "cache-first",
         },
       },
       stale: false,
       hasNext: false,
-    })
-    const { data } = await getConcerts({ skip: 0, first: 1 })
+    });
+    const { data } = await getConcerts({ skip: 0, first: 1 });
     expect(data).toEqual([
       {
-        id: '186234305',
+        id: "186234305",
         image: undefined,
         locations: [],
-        title: 'another concert',
-        url: '/concerten/another-concert',
+        title: "another concert",
+        url: "/concerten/another-concert",
       },
-    ])
-  })
+    ]);
+  });
 
-  it('should return an error', async () => {
-    console.log = vi.fn()
-    mockedQuery.mockRejectedValue(new Error('error'))
-    const { data } = await getConcerts({ skip: 0, first: 1 })
-    expect(data).toEqual([])
-    expect(console.log).toHaveBeenLastCalledWith('error')
-  })
-})
+  it("should return an error", async () => {
+    console.log = vi.fn();
+    mockedQuery.mockRejectedValue(new Error("error"));
+    const { data } = await getConcerts({ skip: 0, first: 1 });
+    expect(data).toEqual([]);
+    expect(console.log).toHaveBeenLastCalledWith("error");
+  });
+});

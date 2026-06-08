@@ -3,15 +3,15 @@ import {
   GetConcertsUrlsDocument,
   type GetConcertsUrlsQuery,
   type GetConcertsUrlsQueryVariables,
-} from '../generated/graphql.js'
-import type { CombinedError } from '@urql/core'
-import type { PageLink } from '../types/pageLink.js'
-import { client } from '../gqlClient.js'
-import { concertUrlFormatter } from '../formatters/index.js'
+} from "../generated/graphql.js";
+import type { CombinedError } from "@urql/core";
+import type { PageLink } from "../types/pageLink.js";
+import { client } from "../gqlClient.js";
+import { concertUrlFormatter } from "../formatters/index.js";
 
 interface Props extends GetConcertsUrlsQueryVariables {
-  skip: number
-  first: number
+  skip: number;
+  first: number;
 }
 
 export const getConcertUrls = async ({
@@ -20,32 +20,30 @@ export const getConcertUrls = async ({
   order = ConcertModelOrderBy.PositionAsc,
 }: Props): Promise<
   | {
-      data: PageLink[]
-      error?: CombinedError
+      data: PageLink[];
+      error?: CombinedError;
     }
   | {
-      data: null
-      error: unknown
+      data: null;
+      error: unknown;
     }
 > => {
   try {
-    const { data, error } = await client.query<
-      GetConcertsUrlsQuery,
-      GetConcertsUrlsQueryVariables
-    >(GetConcertsUrlsDocument, {
-      skip,
-      first,
-      order,
-    })
+    const { data, error } = await client.query<GetConcertsUrlsQuery, GetConcertsUrlsQueryVariables>(
+      GetConcertsUrlsDocument,
+      {
+        skip,
+        first,
+        order,
+      },
+    );
 
     return {
-      data: data?.allConcerts.length
-        ? concertUrlFormatter(data.allConcerts, '/concerten')
-        : [],
+      data: data?.allConcerts.length ? concertUrlFormatter(data.allConcerts, "/concerten") : [],
       error,
-    }
+    };
   } catch (error) {
-    if (error instanceof Error) console.log(error.message)
-    return { data: null, error }
+    if (error instanceof Error) console.log(error.message);
+    return { data: null, error };
   }
-}
+};

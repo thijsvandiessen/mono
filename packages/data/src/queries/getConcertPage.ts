@@ -1,9 +1,6 @@
-import type {
-  GetConcertPageQuery,
-  GetConcertPageQueryVariables,
-} from '../generated/graphql.js'
-import { type TypedDocumentNode, gql } from '@urql/core'
-import { concertDetail } from '../fragments/concertDetail.js'
+import type { GetConcertPageQuery, GetConcertPageQueryVariables } from "../generated/graphql.js";
+import { type TypedDocumentNode, gql } from "@urql/core";
+import { concertDetail } from "../fragments/concertDetail.js";
 
 export const GET_CONCERT_PAGE: TypedDocumentNode<
   GetConcertPageQuery,
@@ -15,4 +12,4 @@ export const GET_CONCERT_PAGE: TypedDocumentNode<
     }
   }
   ${concertDetail}
-`
+`;

@@ -1,1 +1,1 @@
-export { NavigationItem } from './navigationItem.jsx'
+export { NavigationItem } from "./navigationItem.jsx";

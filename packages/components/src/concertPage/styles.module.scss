@@ -5,13 +5,13 @@ $shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
 .container {
   display: grid;
   grid-template-areas:
-    'main'
-    'sidebar';
+    "main"
+    "sidebar";
   grid-template-columns: 1fr;
 
   @media screen and (min-width: 50rem) {
     grid-template-columns: 33% 1fr;
-    grid-template-areas: 'sidebar main';
+    grid-template-areas: "sidebar main";
     max-width: 50rem;
     margin: 0 auto;
   }
@@ -19,8 +19,8 @@ $shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
 
 .noGrid {
   grid-template-areas:
-    'main'
-    'sidebar';
+    "main"
+    "sidebar";
   grid-template-columns: 1fr;
 }
 

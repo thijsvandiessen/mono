@@ -1,9 +1,9 @@
-import { ConcertModelOrderBy, getConcerts } from '@mono/data'
-import { Concert } from '../concert/index.js'
+import { ConcertModelOrderBy, getConcerts } from "@mono/data";
+import { Concert } from "../concert/index.js";
 
 export interface Props {
-  skip: number
-  first: number
+  skip: number;
+  first: number;
 }
 
 export const Concerts = async ({ skip, first }: Props) => {
@@ -11,15 +11,15 @@ export const Concerts = async ({ skip, first }: Props) => {
     skip,
     first,
     order: ConcertModelOrderBy.PositionAsc,
-  })
-  if (!data) return null
+  });
+  if (!data) return null;
 
   return (
     <section>
       {data.map((concert) => {
-        if (!concert?.id) return
-        return <Concert key={concert.id} id={concert.id} />
+        if (!concert?.id) return;
+        return <Concert key={concert.id} id={concert.id} />;
       })}
     </section>
-  )
-}
+  );
+};

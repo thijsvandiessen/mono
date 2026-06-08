@@ -1,8 +1,8 @@
-import { type TypedDocumentNode, gql } from '@urql/core'
-import type { PageDetailSeoFragment } from '../generated/graphql.js'
-import { identifiable } from './identifiable.js'
-import { seoField } from './seoField.js'
-import { tag } from './tag.js'
+import { type TypedDocumentNode, gql } from "@urql/core";
+import type { PageDetailSeoFragment } from "../generated/graphql.js";
+import { identifiable } from "./identifiable.js";
+import { seoField } from "./seoField.js";
+import { tag } from "./tag.js";
 
 export const pageDetailSeo: TypedDocumentNode<PageDetailSeoFragment> = gql`
   fragment pageDetailSeo on PageRecord {
@@ -18,4 +18,4 @@ export const pageDetailSeo: TypedDocumentNode<PageDetailSeoFragment> = gql`
   ${identifiable}
   ${seoField}
   ${tag}
-`
+`;

@@ -1,1 +1,1 @@
-export { TwoColumContentField } from './twoColumContentField.jsx'
+export { TwoColumContentField } from "./twoColumContentField.jsx";

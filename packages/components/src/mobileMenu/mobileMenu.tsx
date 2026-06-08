@@ -1,34 +1,30 @@
-'use client'
+"use client";
 
-import { Cross, Hamburger } from '../icons/index.js'
-import { useDimensions, useHrefClick } from '@mono/hooks'
-import { useEffect, useState } from 'react'
-import { MobileMenuItems } from '../mobileMenuItems/index.js'
-import type { NavigationData } from '@mono/data'
-import classNames from 'classnames'
-import styles from './styles.module.scss'
+import { Cross, Hamburger } from "../icons/index.js";
+import { useDimensions, useHrefClick } from "@mono/hooks";
+import { useEffect, useState } from "react";
+import { MobileMenuItems } from "../mobileMenuItems/index.js";
+import type { NavigationData } from "@mono/data";
+import classNames from "classnames";
+import styles from "./styles.module.scss";
 
-export const MobileMenu = ({
-  escapedMenuString,
-}: {
-  escapedMenuString: string
-}) => {
-  const general = JSON.parse(escapedMenuString) as NavigationData
-  const [open, setOpen] = useState(false)
-  useHrefClick(() => setOpen(false))
-  const { width } = useDimensions()
+export const MobileMenu = ({ escapedMenuString }: { escapedMenuString: string }) => {
+  const general = JSON.parse(escapedMenuString) as NavigationData;
+  const [open, setOpen] = useState(false);
+  useHrefClick(() => setOpen(false));
+  const { width } = useDimensions();
 
   const handleClick = () => {
-    setOpen(!open)
-  }
+    setOpen(!open);
+  };
 
   useEffect(() => {
     if (width < 768) {
-      globalThis.document.body.classList.toggle('noscroll', open)
+      globalThis.document.body.classList.toggle("noscroll", open);
     } else {
-      globalThis.document.body.classList.remove('noscroll')
+      globalThis.document.body.classList.remove("noscroll");
     }
-  }, [open, width])
+  }, [open, width]);
 
   return (
     <div className={classNames(styles.root)}>
@@ -56,5 +52,5 @@ export const MobileMenu = ({
         </div>
       )}
     </div>
-  )
-}
+  );
+};

@@ -1,8 +1,8 @@
-import { Client, fetchExchange, mapExchange } from '@urql/core'
-import cacheExchange from './cacheExchange.js'
-import { linkConfig } from './linkConfig.js'
-import { retryExchange } from '@urql/exchange-retry'
-import { retryExchangeOptions } from './retryExchange.js'
+import { Client, fetchExchange, mapExchange } from "@urql/core";
+import cacheExchange from "./cacheExchange.js";
+import { linkConfig } from "./linkConfig.js";
+import { retryExchange } from "@urql/exchange-retry";
+import { retryExchangeOptions } from "./retryExchange.js";
 
 export const client = new Client({
   url: linkConfig.url,
@@ -11,7 +11,7 @@ export const client = new Client({
     retryExchange(retryExchangeOptions),
     mapExchange({
       onError(error) {
-        console.log(error)
+        console.log(error);
       },
     }),
     fetchExchange,
@@ -20,8 +20,8 @@ export const client = new Client({
     headers: linkConfig.headers,
     next: {
       revalidate: 3600,
-      tags: ['site-content'],
+      tags: ["site-content"],
     },
   }),
   suspense: true,
-})
+});

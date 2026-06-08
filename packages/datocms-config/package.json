@@ -14,7 +14,7 @@
   "scripts": {
     "build": "tsc",
     "lint": "pnpm run lint:styles",
-    "lint:styles": "prettier . --write --list-different"
+    "lint:styles": "oxfmt . --write"
   },
   "dependencies": {
     "@datocms/cma-client-node": "5.4.21",
@@ -26,7 +26,6 @@
     "@mono/eslint-config": "workspace:*",
     "@mono/typescript-config": "workspace:*",
     "eslint": "9.39.2",
-    "prettier": "3.8.3",
     "typescript": "5.9.3",
     "vitest": "4.1.4"
   }

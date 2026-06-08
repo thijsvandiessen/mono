@@ -1,5 +1,5 @@
-import classNames from 'classnames'
-import styles from './styles.module.scss'
+import classNames from "classnames";
+import styles from "./styles.module.scss";
 
 export const Cross = ({ className }: { className?: string }) => (
   <svg
@@ -15,4 +15,4 @@ export const Cross = ({ className }: { className?: string }) => (
       <path d="M18.61 22.3 1.7 5.39c-.93-.93-.93-2.45 0-3.38l.31-.31c.93-.93 2.45-.93 3.38 0L22.3 18.61c.93.93.93 2.45 0 3.38l-.31.31c-.93.93-2.44.93-3.38 0z" />
     </g>
   </svg>
-)
+);

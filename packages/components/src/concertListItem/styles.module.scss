@@ -11,7 +11,7 @@ $padding-large-left: 2.5rem;
   position: absolute;
   left: 0;
   top: calc(var(--layout-default-mobile-spacing) * -1);
-  content: '';
+  content: "";
   height: calc(100% + var(--layout-default-mobile-spacing));
   border-left: $border-size solid var(--color-secondary);
   z-index: -1;
@@ -181,10 +181,8 @@ $padding-large-left: 2.5rem;
   justify-content: center;
   gap: 0.5rem;
 
-
   margin-top: 1rem;
   padding: 1rem 0;
-
 
   &:hover {
     color: var(--color-primary-light);
@@ -267,7 +265,7 @@ $padding-large-left: 2.5rem;
 
 // LocationTitle dots
 .locationTitle::before {
-  content: '';
+  content: "";
   position: absolute;
   transform: translateX(-3.65rem);
   width: 0.5rem + 1rem;
@@ -315,7 +313,7 @@ $padding-large-left: 2.5rem;
 
 .large.isLast .location:last-child .locationTitle::after {
   border-width: $border-size * 2;
-  height: calc(100% + var(--layout-default-mobile-spacing) + $image-large-height );
+  height: calc(100% + var(--layout-default-mobile-spacing) + $image-large-height);
   top: calc($dash-large-mobile-offset + 1rem);
   left: calc((2.5rem * -1) - ($border-size / 2));
 

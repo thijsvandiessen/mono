@@ -1,1 +1,1 @@
-export { ImageBlock } from './imageBlock.jsx'
+export { ImageBlock } from "./imageBlock.jsx";

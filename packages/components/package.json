@@ -19,7 +19,7 @@
     "dev": "cpx \"src/**/*.scss\" dist --watch && tsc --watch",
     "lint": "pnpm run lint:js && pnpm run lint:styles",
     "lint:js": "eslint",
-    "lint:styles": "prettier . --write --list-different",
+    "lint:styles": "oxfmt . --write",
     "test": "vitest run -c ./vitest.config.ts"
   },
   "dependencies": {
@@ -50,7 +50,6 @@
     "eslint": "9.39.2",
     "eslint-plugin-testing-library": "7.16.0",
     "jsdom": "29.1.1",
-    "prettier": "3.8.3",
     "sass": "1.99.0",
     "turbo": "2.9.16",
     "typescript": "5.9.3",

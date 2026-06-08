@@ -1,4 +1,4 @@
-export { client } from './gqlClient.js'
+export { client } from "./gqlClient.js";
 export {
   getConcert,
   getConcertPage,
@@ -16,7 +16,7 @@ export {
   getPagesMeta,
   getSiteInfo,
   getSiteMetadata,
-} from './getters/index.js'
+} from "./getters/index.js";
 
 export type {
   Author,
@@ -29,13 +29,13 @@ export type {
   NavigationData,
   NavigationItem,
   SubMenuItem,
-} from './types/index.js'
+} from "./types/index.js";
 
-export { isOfTypeCloudinaryAsset } from './types/index.js'
+export { isOfTypeCloudinaryAsset } from "./types/index.js";
 export {
   formatCloudinaryDocument,
   formatCloudinaryImage,
   navigationFormatter,
   type SiteMetadata,
-} from './formatters/index.js'
-export * from './generated/graphql.js'
+} from "./formatters/index.js";
+export * from "./generated/graphql.js";

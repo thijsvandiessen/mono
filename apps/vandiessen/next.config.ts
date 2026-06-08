@@ -1,7 +1,7 @@
-import { customNextConfig } from '@mono/next-js'
+import { customNextConfig } from "@mono/next-js";
 
 const nextConfig = customNextConfig({
-  domain: 'vandiessen.com',
-})
+  domain: "vandiessen.com",
+});
 
-export default nextConfig
+export default nextConfig;

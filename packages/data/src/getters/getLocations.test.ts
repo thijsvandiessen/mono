@@ -1,11 +1,10 @@
-import { describe, expect, it, vi } from 'vitest'
-import { GetLocationsDocument } from '../generated/graphql.js'
-import { client } from '../gqlClient.js'
-import { getLocations } from './getLocations.js'
+import { describe, expect, it, vi } from "vitest";
+import { GetLocationsDocument } from "../generated/graphql.js";
+import { client } from "../gqlClient.js";
+import { getLocations } from "./getLocations.js";
 
-vi.mock('../gqlClient.js', () => {
-  const originalModule =
-    vi.importActual<typeof import('../gqlClient.js')>('../gqlClient.js')
+vi.mock("../gqlClient.js", () => {
+  const originalModule = vi.importActual<typeof import("../gqlClient.js")>("../gqlClient.js");
   return {
     __esModule: true,
     ...originalModule,
@@ -13,17 +12,17 @@ vi.mock('../gqlClient.js', () => {
       ...originalModule,
       query: vi.fn(),
     },
-  }
-})
+  };
+});
 
-const mockedQuery = vi.mocked(client.query)
-describe('getLocations', () => {
-  it('should return an object if an id is received', async () => {
+const mockedQuery = vi.mocked(client.query);
+describe("getLocations", () => {
+  it("should return an object if an id is received", async () => {
     mockedQuery.mockResolvedValue({
       data: {
         allLocations: [
           {
-            id: 'some-id',
+            id: "some-id",
           },
         ],
       },
@@ -31,19 +30,19 @@ describe('getLocations', () => {
         key: 1,
         query: GetLocationsDocument,
         variables: {},
-        kind: 'query',
+        kind: "query",
         context: {
-          url: 'https://graphql.datocms.com/',
-          requestPolicy: 'cache-first',
+          url: "https://graphql.datocms.com/",
+          requestPolicy: "cache-first",
         },
       },
       stale: false,
       hasNext: false,
-    })
-    const { data } = await getLocations({ skip: 0, first: 1 })
+    });
+    const { data } = await getLocations({ skip: 0, first: 1 });
     expect(data).toEqual([
       {
-        id: 'some-id',
+        id: "some-id",
         address: null,
         lat: null,
         lng: null,
@@ -51,24 +50,24 @@ describe('getLocations', () => {
         startTime: null,
         ticketLink: null,
       },
-    ])
-  })
+    ]);
+  });
 
-  it('should return an error', async () => {
-    console.log = vi.fn()
-    mockedQuery.mockRejectedValue(new Error('error'))
-    const { data, error } = await getLocations({ skip: 0, first: 1 })
-    expect(data).toBeNull()
-    expect(error).toBeInstanceOf(Error)
-    expect(console.log).toHaveBeenLastCalledWith('error')
-  })
+  it("should return an error", async () => {
+    console.log = vi.fn();
+    mockedQuery.mockRejectedValue(new Error("error"));
+    const { data, error } = await getLocations({ skip: 0, first: 1 });
+    expect(data).toBeNull();
+    expect(error).toBeInstanceOf(Error);
+    expect(console.log).toHaveBeenLastCalledWith("error");
+  });
 
-  it('should return an error', async () => {
-    console.log = vi.fn()
-    mockedQuery.mockRejectedValue(new Error('error'))
-    const { data, error } = await getLocations({ skip: 0, first: 1 })
-    expect(data).toBeNull()
-    expect(error).toBeInstanceOf(Error)
-    expect(console.log).toHaveBeenLastCalledWith('error')
-  })
-})
+  it("should return an error", async () => {
+    console.log = vi.fn();
+    mockedQuery.mockRejectedValue(new Error("error"));
+    const { data, error } = await getLocations({ skip: 0, first: 1 });
+    expect(data).toBeNull();
+    expect(error).toBeInstanceOf(Error);
+    expect(console.log).toHaveBeenLastCalledWith("error");
+  });
+});

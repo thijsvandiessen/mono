@@ -1,6 +1,6 @@
-import { type TypedDocumentNode, gql } from '@urql/core'
-import type { SubmenuItemFragment } from '../generated/graphql.js'
-import { menuItem } from './menuItem.js'
+import { type TypedDocumentNode, gql } from "@urql/core";
+import type { SubmenuItemFragment } from "../generated/graphql.js";
+import { menuItem } from "./menuItem.js";
 
 export const submenuItem: TypedDocumentNode<SubmenuItemFragment> = gql`
   fragment submenuItem on SubmenuItemRecord {
@@ -11,4 +11,4 @@ export const submenuItem: TypedDocumentNode<SubmenuItemFragment> = gql`
     }
   }
   ${menuItem}
-`
+`;

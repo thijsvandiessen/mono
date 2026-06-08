@@ -1,31 +1,31 @@
-import { type RefObject, useEffect, useState } from 'react'
+import { type RefObject, useEffect, useState } from "react";
 
 interface Props {
-  enabled?: boolean
-  ref: RefObject<HTMLElement | null>
-  options?: IntersectionObserverInit
+  enabled?: boolean;
+  ref: RefObject<HTMLElement | null>;
+  options?: IntersectionObserverInit;
 }
 
 export const useIntersectionObserver = ({ enabled, ref, options }: Props) => {
-  const [entry, setEntry] = useState<IntersectionObserverEntry | undefined>()
+  const [entry, setEntry] = useState<IntersectionObserverEntry | undefined>();
 
   const callback = ([entry]: IntersectionObserverEntry[]): void => {
-    setEntry(entry)
-  }
+    setEntry(entry);
+  };
 
   useEffect(() => {
-    if (typeof globalThis.window === 'undefined') return
-    if (!enabled) return
-    if (!ref?.current) return
-    const hasIOSupport = !!globalThis.window.IntersectionObserver
-    if (!hasIOSupport || !ref.current) return
+    if (typeof globalThis.window === "undefined") return;
+    if (!enabled) return;
+    if (!ref?.current) return;
+    const hasIOSupport = !!globalThis.window.IntersectionObserver;
+    if (!hasIOSupport || !ref.current) return;
 
-    const observer = new IntersectionObserver(callback, options)
+    const observer = new IntersectionObserver(callback, options);
 
-    observer.observe(ref.current)
+    observer.observe(ref.current);
 
-    return () => observer.disconnect()
-  }, [enabled, ref, options])
+    return () => observer.disconnect();
+  }, [enabled, ref, options]);
 
-  return [entry]
-}
+  return [entry];
+};
