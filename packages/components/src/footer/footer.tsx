@@ -36,10 +36,10 @@ export const Footer = ({ data, metadata }: Props) => (
         </ul>
       </div>
 
-      <div>
+      {metadata.socials.length > 0 && <div>
         <h3 className={classNames(styles.title)}>Volg ons</h3>
         <ul className={classNames(styles.list)}>
-          {metadata?.socials?.map((social) => (
+          {metadata.socials.map((social) => (
             <li key={social.name}>
               <Link
                 className={classNames(styles.link)}
@@ -52,7 +52,7 @@ export const Footer = ({ data, metadata }: Props) => (
             </li>
           ))}
         </ul>
-      </div>
+      </div>}
     </div>
   </footer>
 );
