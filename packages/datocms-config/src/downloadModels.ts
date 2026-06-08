@@ -9,11 +9,11 @@ export const downloadModels = async (client: Client) => {
   try {
     data.map((itemType) => {
       fs.writeFileSync(
-        `../../packages/data-config/src/models/${itemType.attributes.api_key}.json`,
+        `../../packages/data-config/src/models/${itemType.attributes.name}.json`,
         JSON.stringify(itemType),
       );
 
-      console.log(`Saved ${itemType.attributes.api_key}.json`);
+      console.log(`Saved ${itemType.attributes.name}.json`);
     });
   } catch (error) {
     console.error("Error saving models", error);
