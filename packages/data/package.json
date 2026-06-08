@@ -55,6 +55,6 @@
     "eslint-plugin-testing-library": "7.16.0",
     "turbo": "2.9.16",
     "typescript": "5.9.3",
-    "vitest": "4.1.4"
+    "vitest": "4.1.8"
   }
 }
