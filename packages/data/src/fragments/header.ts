@@ -1,7 +1,7 @@
-import { type TypedDocumentNode, gql } from '@urql/core'
-import type { HeaderFragment } from '../generated/graphql.js'
-import { headerBody } from './headerBody.js'
-import { identifiable } from './identifiable.js'
+import { type TypedDocumentNode, gql } from "@urql/core";
+import type { HeaderFragment } from "../generated/graphql.js";
+import { headerBody } from "./headerBody.js";
+import { identifiable } from "./identifiable.js";
 
 export const header: TypedDocumentNode<HeaderFragment> = gql`
   fragment header on HeaderRecord {
@@ -13,4 +13,4 @@ export const header: TypedDocumentNode<HeaderFragment> = gql`
   }
   ${headerBody}
   ${identifiable}
-`
+`;

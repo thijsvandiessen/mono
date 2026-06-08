@@ -1,1 +1,1 @@
-export { DefaultPage } from './defaultPage.jsx'
+export { DefaultPage } from "./defaultPage.jsx";

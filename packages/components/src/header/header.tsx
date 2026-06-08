@@ -1,25 +1,19 @@
-import { Image } from '@mono/next-js'
-import type { ImageSchema } from '@mono/data'
-import { type ReactNode } from 'react'
-import classNames from 'classnames'
-import styles from './styles.module.scss'
+import { Image } from "@mono/next-js";
+import type { ImageSchema } from "@mono/data";
+import { type ReactNode } from "react";
+import classNames from "classnames";
+import styles from "./styles.module.scss";
 
 interface Props {
-  className?: string
-  tag?: 'header' | 'section'
-  title?: string
-  body?: ReactNode
-  cover?: ImageSchema
+  className?: string;
+  tag?: "header" | "section";
+  title?: string;
+  body?: ReactNode;
+  cover?: ImageSchema;
 }
 
-export const Header = ({
-  title,
-  className,
-  body,
-  cover,
-  tag = 'header',
-}: Props) => {
-  const Tag = tag
+export const Header = ({ title, className, body, cover, tag = "header" }: Props) => {
+  const Tag = tag;
   return (
     <Tag
       className={classNames(className, styles.header, {
@@ -31,7 +25,7 @@ export const Header = ({
         {title && (
           <h1
             className={classNames({
-              'sr-only': body ?? (body && cover?.url),
+              "sr-only": body ?? (body && cover?.url),
             })}
           >
             {title}
@@ -53,5 +47,5 @@ export const Header = ({
         </div>
       )}
     </Tag>
-  )
-}
+  );
+};

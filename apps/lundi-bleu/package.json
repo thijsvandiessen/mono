@@ -9,7 +9,7 @@
     "dev": "next dev --turbo -p 4000",
     "lint": "pnpm run lint:js && pnpm run lint:styles",
     "lint:js": "eslint",
-    "lint:styles": "prettier . --write  --list-different",
+    "lint:styles": "oxfmt . --write",
     "start": "next start"
   },
   "dependencies": {
@@ -33,7 +33,6 @@
     "eslint": "9.39.2",
     "eslint-config-next": "16.2.6",
     "eslint-plugin-testing-library": "7.16.0",
-    "prettier": "3.8.3",
     "sass": "1.99.0",
     "turbo": "2.9.16",
     "typescript": "5.9.3"

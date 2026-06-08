@@ -1,11 +1,10 @@
-import { describe, expect, it, vi } from 'vitest'
-import { GetPageSeoDocument } from '../generated/graphql.js'
-import { client } from '../gqlClient.js'
-import { getPageSeo } from './getPageSeo.js'
+import { describe, expect, it, vi } from "vitest";
+import { GetPageSeoDocument } from "../generated/graphql.js";
+import { client } from "../gqlClient.js";
+import { getPageSeo } from "./getPageSeo.js";
 
-vi.mock('../gqlClient.js', () => {
-  const originalModule =
-    vi.importActual<typeof import('../gqlClient.js')>('../gqlClient.js')
+vi.mock("../gqlClient.js", () => {
+  const originalModule = vi.importActual<typeof import("../gqlClient.js")>("../gqlClient.js");
   return {
     __esModule: true,
     ...originalModule,
@@ -13,95 +12,95 @@ vi.mock('../gqlClient.js', () => {
       ...originalModule,
       query: vi.fn(),
     },
-  }
-})
+  };
+});
 
-const mockedQuery = vi.mocked(client.query)
-describe('getPageSeo', () => {
-  it('should return an object', async () => {
+const mockedQuery = vi.mocked(client.query);
+describe("getPageSeo", () => {
+  it("should return an object", async () => {
     mockedQuery.mockResolvedValue({
       data: {},
       operation: {
         key: 1,
         query: GetPageSeoDocument,
         variables: {},
-        kind: 'query',
+        kind: "query",
         context: {
-          url: 'https://graphql.datocms.com/',
-          requestPolicy: 'cache-first',
+          url: "https://graphql.datocms.com/",
+          requestPolicy: "cache-first",
         },
       },
       stale: false,
       hasNext: false,
-    })
-    const { data } = await getPageSeo({ slug: '' })
+    });
+    const { data } = await getPageSeo({ slug: "" });
     expect(data).toEqual({
       alternates: {
         canonical: undefined,
       },
-      title: '',
-      description: '',
+      title: "",
+      description: "",
       metadataBase: expect.objectContaining({
-        host: 'example.com',
-        hostname: 'example.com',
-        href: 'https://example.com/',
-        origin: 'https://example.com',
+        host: "example.com",
+        hostname: "example.com",
+        href: "https://example.com/",
+        origin: "https://example.com",
       }),
       openGraph: {
-        description: '',
+        description: "",
         images: [
           {
             height: 900,
-            url: '',
+            url: "",
             width: 1200,
           },
         ],
-        locale: 'nl-NL',
-        siteName: '',
-        title: '',
-        type: 'article',
-        url: 'https://example.com/',
+        locale: "nl-NL",
+        siteName: "",
+        title: "",
+        type: "article",
+        url: "https://example.com/",
       },
       twitter: {
-        card: 'summary_large_image',
-        description: '',
-        images: [''],
-        title: '',
+        card: "summary_large_image",
+        description: "",
+        images: [""],
+        title: "",
       },
-    })
-  })
+    });
+  });
 
-  it('should return an error', async () => {
-    console.log = vi.fn()
-    mockedQuery.mockRejectedValue(new Error('error'))
-    const { data, error } = await getPageSeo({ slug: '' })
+  it("should return an error", async () => {
+    console.log = vi.fn();
+    mockedQuery.mockRejectedValue(new Error("error"));
+    const { data, error } = await getPageSeo({ slug: "" });
     expect(data).toEqual({
       alternates: { canonical: undefined },
-      description: '',
+      description: "",
       metadataBase: expect.objectContaining({
-        host: 'example.com',
-        hostname: 'example.com',
-        href: 'https://example.com/',
-        origin: 'https://example.com',
+        host: "example.com",
+        hostname: "example.com",
+        href: "https://example.com/",
+        origin: "https://example.com",
       }),
       openGraph: {
-        description: '',
-        images: [{ height: 900, url: '', width: 1200 }],
-        locale: 'nl-NL',
-        siteName: '',
-        title: '',
-        type: 'article',
-        url: 'https://example.com/',
+        description: "",
+        images: [{ height: 900, url: "", width: 1200 }],
+        locale: "nl-NL",
+        siteName: "",
+        title: "",
+        type: "article",
+        url: "https://example.com/",
       },
-      title: '',
+      title: "",
       twitter: {
-        card: 'summary_large_image',
-        description: '',
-        images: [''],
-        title: '',
+        card: "summary_large_image",
+        description: "",
+        images: [""],
+        title: "",
       },
-    })
-    expect(error).toBeInstanceOf(Error)
-    expect(console.log).toHaveBeenLastCalledWith('error')
-  })
-})
+    });
+    expect(error).toBeInstanceOf(Error);
+    expect(console.log).toHaveBeenLastCalledWith("error");
+  });
+});

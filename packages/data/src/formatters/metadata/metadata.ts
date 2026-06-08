@@ -1,26 +1,23 @@
-import type {
-  ConcertPageSeoFragment,
-  PageDetailSeoFragment,
-} from '../../generated/graphql.js'
-import type { Metadata } from '@mono/next-js'
-import type { SiteMetadata } from '../siteMetadata/metadata.type.js'
-import { metaTitleFormatter } from '../metaTitleFormatter.js'
-import { metadataSchema } from './schema.js'
+import type { ConcertPageSeoFragment, PageDetailSeoFragment } from "../../generated/graphql.js";
+import type { Metadata } from "@mono/next-js";
+import type { SiteMetadata } from "../siteMetadata/metadata.type.js";
+import { metaTitleFormatter } from "../metaTitleFormatter.js";
+import { metadataSchema } from "./schema.js";
 
 export const metadataFormatter = (
   data: PageDetailSeoFragment | ConcertPageSeoFragment | undefined | null,
   siteMetadata: SiteMetadata,
-  slug: string
+  slug: string,
 ): Metadata => {
-  const title = metaTitleFormatter(data, siteMetadata)
-  const base = siteMetadata?.base_url || 'https://example.com'
+  const title = metaTitleFormatter(data, siteMetadata);
+  const base = siteMetadata?.base_url || "https://example.com";
 
-  const defaultDescription = siteMetadata?.description || ''
-  const defaultLocale = 'nl-NL'
+  const defaultDescription = siteMetadata?.description || "";
+  const defaultLocale = "nl-NL";
 
-  const url = new URL(slug, base)
-  const currentUrl = slug === 'homepage' ? base : url.href
-  const canonical = data ? currentUrl : undefined
+  const url = new URL(slug, base);
+  const currentUrl = slug === "homepage" ? base : url.href;
+  const canonical = data ? currentUrl : undefined;
 
   return metadataSchema.parse({
     title,
@@ -36,48 +33,41 @@ export const metadataFormatter = (
     // manifest: `${base}/manifest.json`, // TODO
     openGraph: {
       title:
-        data?._seoMetaTags.find(
-          (tags) => tags?.attributes?.property === 'og:title'
-        )?.content ?? title,
+        data?._seoMetaTags.find((tags) => tags?.attributes?.property === "og:title")?.content ??
+        title,
       description:
-        data?._seoMetaTags.find(
-          (tags) => tags?.attributes?.property === 'og:description'
-        )?.content ?? defaultDescription,
-      url: slug === 'homepage' ? base : `${base}/${slug}`,
+        data?._seoMetaTags.find((tags) => tags?.attributes?.property === "og:description")
+          ?.content ?? defaultDescription,
+      url: slug === "homepage" ? base : `${base}/${slug}`,
       siteName: title,
-      type: 'article', // TODO: we only support this type at the moment
+      type: "article", // TODO: we only support this type at the moment
       images: [
         {
           url:
-            data?._seoMetaTags.find(
-              (tags) => tags?.attributes?.property === 'og:image'
-            )?.content ?? '',
+            data?._seoMetaTags.find((tags) => tags?.attributes?.property === "og:image")?.content ??
+            "",
           width: 1200,
           height: 900,
         },
       ],
       locale:
-        data?._seoMetaTags.find(
-          (tags) => tags?.attributes?.property === 'og:locale'
-        )?.content ?? defaultLocale,
+        data?._seoMetaTags.find((tags) => tags?.attributes?.property === "og:locale")?.content ??
+        defaultLocale,
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title:
-        data?._seoMetaTags.find(
-          (tags) => tags?.attributes?.name === 'twitter:title'
-        )?.content ?? title,
+        data?._seoMetaTags.find((tags) => tags?.attributes?.name === "twitter:title")?.content ??
+        title,
       description:
-        data?._seoMetaTags.find(
-          (tags) => tags?.attributes?.name === 'twitter:description'
-        )?.content ?? '',
+        data?._seoMetaTags.find((tags) => tags?.attributes?.name === "twitter:description")
+          ?.content ?? "",
       // siteId: '24982498249824892498', // TODO: we need a twitter account for this
       // creator: '@creaOrkest', // TODO: we need a twitter account for this
       // creatorId: '24982498249824892498', // TODO: we need a twitter account for this
       images: [
-        data?._seoMetaTags.find(
-          (tags) => tags?.attributes?.name === 'twitter:image'
-        )?.content ?? '',
+        data?._seoMetaTags.find((tags) => tags?.attributes?.name === "twitter:image")?.content ??
+          "",
       ],
     },
     // icons: {
@@ -94,5 +84,5 @@ export const metadataFormatter = (
     //     },
     //   ],
     // },
-  })
-}
+  });
+};

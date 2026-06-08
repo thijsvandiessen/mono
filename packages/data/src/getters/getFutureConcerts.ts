@@ -3,15 +3,15 @@ import {
   GetFutureConcertsDocument,
   type GetFutureConcertsQuery,
   type GetFutureConcertsQueryVariables,
-} from '../generated/graphql.js'
-import type { CombinedError } from '@urql/core'
-import type { Concert } from '../types/concert.js'
-import { client } from '../gqlClient.js'
-import { concertsFormatter } from '../formatters/index.js'
+} from "../generated/graphql.js";
+import type { CombinedError } from "@urql/core";
+import type { Concert } from "../types/concert.js";
+import { client } from "../gqlClient.js";
+import { concertsFormatter } from "../formatters/index.js";
 
 interface Props extends GetFutureConcertsQueryVariables {
-  skip: number
-  first: number
+  skip: number;
+  first: number;
 }
 
 export const getFutureConcerts = async ({
@@ -21,12 +21,12 @@ export const getFutureConcerts = async ({
   filter,
 }: Props): Promise<
   | {
-      data: Concert[]
-      error?: CombinedError
+      data: Concert[];
+      error?: CombinedError;
     }
   | {
-      data: Concert[]
-      error: unknown
+      data: Concert[];
+      error: unknown;
     }
 > => {
   try {
@@ -38,25 +38,23 @@ export const getFutureConcerts = async ({
       first,
       order,
       filter,
-    })
+    });
 
-    const allConcerts = data?.allConcerts
-      ? concertsFormatter(data?.allConcerts)
-      : []
+    const allConcerts = data?.allConcerts ? concertsFormatter(data?.allConcerts) : [];
 
     const concerts = allConcerts.filter((concert) => {
       return concert.locations.some((location) => {
-        if (!location?.startTime) return true
-        return new Date(location.startTime) > new Date()
-      })
-    }, [])
+        if (!location?.startTime) return true;
+        return new Date(location.startTime) > new Date();
+      });
+    }, []);
 
     return {
       data: concerts,
       error,
-    }
+    };
   } catch (error) {
-    if (error instanceof Error) console.log(error.message)
-    return { data: [], error }
+    if (error instanceof Error) console.log(error.message);
+    return { data: [], error };
   }
-}
+};

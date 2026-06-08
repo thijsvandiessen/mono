@@ -1,13 +1,13 @@
-import { LocationView } from './locationView.jsx'
-import { getLocation } from '@mono/data'
+import { LocationView } from "./locationView.jsx";
+import { getLocation } from "@mono/data";
 
 export interface Props {
-  id: string
+  id: string;
 }
 
 export const Location = async ({ id }: Props) => {
-  const { data } = await getLocation({ id })
-  if (!data) return null
+  const { data } = await getLocation({ id });
+  if (!data) return null;
 
-  return <LocationView data={data} />
-}
+  return <LocationView data={data} />;
+};

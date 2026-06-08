@@ -1,20 +1,20 @@
-import { describe, expect, it } from 'vitest'
-import { fileFormatter } from './file.js'
+import { describe, expect, it } from "vitest";
+import { fileFormatter } from "./file.js";
 
-describe('fileFormatter', () => {
-  it('should return an object', () => {
+describe("fileFormatter", () => {
+  it("should return an object", () => {
     expect(
       fileFormatter({
-        id: 'file-id',
-        url: 'url',
-      })
+        id: "file-id",
+        url: "url",
+      }),
     ).toEqual({
-      description: '',
+      description: "",
       height: undefined,
-      id: 'file-id',
-      title: '',
-      url: 'url',
+      id: "file-id",
+      title: "",
+      url: "url",
       width: undefined,
-    })
-  })
-})
+    });
+  });
+});

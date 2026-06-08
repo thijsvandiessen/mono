@@ -13,8 +13,8 @@ body {
   --color-secondary-dark: hsl(30deg, 80%, 20%);
   --color-secondary-light: hsl(30deg, 90%, 80%);
 
-  --typography-sans: 'dm-sans', serif;
-  --typography-serif: 'dm-serif', serif;
+  --typography-sans: "dm-sans", serif;
+  --typography-serif: "dm-serif", serif;
 
   --breakpoint-xs: 31.25rem;
   --breakpoint-sm: 50rem;
@@ -39,48 +39,48 @@ body {
 }
 
 @font-face {
-  font-family: 'dm-sans';
-  src: url('/fonts/dm-sans-regular.woff2') format('woff2');
+  font-family: "dm-sans";
+  src: url("/fonts/dm-sans-regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'dm-sans';
-  src: url('/fonts/dm-sans-regular-italic.woff2') format('woff2');
+  font-family: "dm-sans";
+  src: url("/fonts/dm-sans-regular-italic.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'dm-sans';
-  src: url('/fonts/dm-sans-bold.woff2') format('woff2');
+  font-family: "dm-sans";
+  src: url("/fonts/dm-sans-bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'dm-sans';
-  src: url('/fonts/dm-sans-bold-italic.woff2') format('woff2');
+  font-family: "dm-sans";
+  src: url("/fonts/dm-sans-bold-italic.woff2") format("woff2");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'dm-serif';
-  src: url('/fonts/dm-serif.woff2') format('woff2');
+  font-family: "dm-serif";
+  src: url("/fonts/dm-serif.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'dm-serif';
-  src: url('/fonts/dm-serif-italic.woff2') format('woff2');
+  font-family: "dm-serif";
+  src: url("/fonts/dm-serif-italic.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
   font-display: swap;

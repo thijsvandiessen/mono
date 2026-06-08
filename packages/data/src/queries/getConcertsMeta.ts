@@ -1,8 +1,5 @@
-import type {
-  GetConcertsMetaQuery,
-  GetConcertsMetaQueryVariables,
-} from '../generated/graphql.js'
-import { type TypedDocumentNode, gql } from '@urql/core'
+import type { GetConcertsMetaQuery, GetConcertsMetaQueryVariables } from "../generated/graphql.js";
+import { type TypedDocumentNode, gql } from "@urql/core";
 
 export const GET_CONCERTS_META: TypedDocumentNode<
   GetConcertsMetaQuery,
@@ -13,4 +10,4 @@ export const GET_CONCERTS_META: TypedDocumentNode<
       count
     }
   }
-`
+`;

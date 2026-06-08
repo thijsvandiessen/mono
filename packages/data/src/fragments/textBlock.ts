@@ -4,14 +4,14 @@ import type {
   TextBlockContentFragment,
   TextBlockFragment,
   TwoColumFragment,
-} from '../generated/graphql.js'
-import { type TypedDocumentNode, gql } from '@urql/core'
-import { document, image } from './image.js'
-import { callToAction } from './callToAction.js'
-import { concertLink } from './concertLink.js'
-import { identifiable } from './identifiable.js'
-import { pageLink } from './pageLink.js'
-import { video } from './video.js'
+} from "../generated/graphql.js";
+import { type TypedDocumentNode, gql } from "@urql/core";
+import { document, image } from "./image.js";
+import { callToAction } from "./callToAction.js";
+import { concertLink } from "./concertLink.js";
+import { identifiable } from "./identifiable.js";
+import { pageLink } from "./pageLink.js";
+import { video } from "./video.js";
 
 export const textBlockContent: TypedDocumentNode<TextBlockContentFragment> = gql`
   fragment textBlockContent on TextBlockModelContentField {
@@ -45,7 +45,7 @@ export const textBlockContent: TypedDocumentNode<TextBlockContentFragment> = gql
   ${image}
   ${video}
   ${callToAction}
-`
+`;
 
 export const leftContent: TypedDocumentNode<LeftContentFragment> = gql`
   fragment leftContent on TwoColumnModelLeftContentField {
@@ -79,7 +79,7 @@ export const leftContent: TypedDocumentNode<LeftContentFragment> = gql`
   ${image}
   ${video}
   ${callToAction}
-`
+`;
 
 export const rightContent: TypedDocumentNode<RightContentFragment> = gql`
   fragment rightContent on TwoColumnModelRightContentField {
@@ -113,7 +113,7 @@ export const rightContent: TypedDocumentNode<RightContentFragment> = gql`
   ${image}
   ${video}
   ${callToAction}
-`
+`;
 
 export const textBlock: TypedDocumentNode<TextBlockFragment> = gql`
   fragment textBlock on TextBlockRecord {
@@ -124,7 +124,7 @@ export const textBlock: TypedDocumentNode<TextBlockFragment> = gql`
   }
   ${identifiable}
   ${textBlockContent}
-`
+`;
 
 export const twoColum: TypedDocumentNode<TwoColumFragment> = gql`
   fragment twoColum on TwoColumnRecord {
@@ -139,4 +139,4 @@ export const twoColum: TypedDocumentNode<TwoColumFragment> = gql`
   ${identifiable}
   ${leftContent}
   ${rightContent}
-`
+`;

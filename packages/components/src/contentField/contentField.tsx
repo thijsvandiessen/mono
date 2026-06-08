@@ -1,26 +1,22 @@
-import type {
-  HeaderFragment,
-  TextBlockFragment,
-  TwoColumFragment,
-} from '@mono/data'
-import { StructuredText } from 'react-datocms/structured-text'
-import { isCdaStructuredTextValue } from 'datocms-structured-text-utils'
-import { renderBlock } from './renderBlock.jsx'
-import { renderInlineRecord } from './renderInlineRecord.jsx'
-import { renderLinkToRecord } from './renderLinkToRecord.jsx'
+import type { HeaderFragment, TextBlockFragment, TwoColumFragment } from "@mono/data";
+import { StructuredText } from "react-datocms/structured-text";
+import { isCdaStructuredTextValue } from "datocms-structured-text-utils";
+import { renderBlock } from "./renderBlock.jsx";
+import { renderInlineRecord } from "./renderInlineRecord.jsx";
+import { renderLinkToRecord } from "./renderLinkToRecord.jsx";
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss";
 
 interface Props {
   data:
-    | HeaderFragment['body']
-    | TextBlockFragment['content']
-    | TwoColumFragment['leftContent']
-    | TwoColumFragment['rightContent']
+    | HeaderFragment["body"]
+    | TextBlockFragment["content"]
+    | TwoColumFragment["leftContent"]
+    | TwoColumFragment["rightContent"];
 }
 
 export const ContentField = ({ data }: Props) => {
-  if (!isCdaStructuredTextValue(data)) return
+  if (!isCdaStructuredTextValue(data)) return;
   return (
     <div className={styles.structuredText}>
       <StructuredText
@@ -30,5 +26,5 @@ export const ContentField = ({ data }: Props) => {
         data={data}
       />
     </div>
-  )
-}
+  );
+};

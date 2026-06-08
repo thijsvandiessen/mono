@@ -1,5 +1,5 @@
-import classNames from 'classnames'
-import styles from './styles.module.scss'
+import classNames from "classnames";
+import styles from "./styles.module.scss";
 
 export const Pdf = ({ className }: { className?: string }) => (
   <svg
@@ -15,4 +15,4 @@ export const Pdf = ({ className }: { className?: string }) => (
       <path d="M9.59 6.52c-.1-.1-.23-.16-.39-.2-.12-.03-.35-.04-.7-.04h-.39v2.8h.64c.24 0 .41-.01.52-.04.13-.03.24-.1.33-.18.1-.08.17-.21.23-.4.06-.19.09-.45.09-.78 0-.32-.03-.58-.09-.75-.06-.18-.14-.31-.24-.41zM5.52 6.49c-.09-.1-.2-.16-.34-.19-.1-.02-.31-.03-.61-.03h-.41v1.2h.46c.34 0 .56-.02.67-.07.12-.03.21-.1.27-.19.07-.1.1-.21.1-.33 0-.16-.04-.28-.14-.39z" />
     </g>
   </svg>
-)
+);

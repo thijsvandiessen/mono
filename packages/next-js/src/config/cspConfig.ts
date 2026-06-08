@@ -1,6 +1,6 @@
 type Props = {
-  domain: string
-}
+  domain: string;
+};
 
 export const csp = ({ domain }: Props) => [
   `default-src 'self' 'unsafe-inline'`,
@@ -12,4 +12,4 @@ export const csp = ({ domain }: Props) => [
   `style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com`,
   `font-src 'self' https://fonts.gstatic.com`,
   `frame-src 'self' https://www.youtube.com https://player.vimeo.com`,
-]
+];

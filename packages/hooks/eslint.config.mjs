@@ -4,11 +4,11 @@ import {
   globalIgnores,
   recommended,
   tsLintConfig,
-} from '@mono/eslint-config'
+} from "@mono/eslint-config";
 
 export default defineConfig([
-  globalIgnores(['dist/*', 'coverage', 'node_modules/*']),
+  globalIgnores(["dist/*", "coverage", "node_modules/*"]),
   eslintConfig,
   ...recommended,
   tsLintConfig,
-])
+]);

@@ -32,5 +32,5 @@ export const SearchApp = () => {
     //     showMore={true}
     //   />
     // </InstantSearch>
-  )
-}
+  );
+};

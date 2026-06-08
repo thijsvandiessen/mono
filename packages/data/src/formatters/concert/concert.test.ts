@@ -1,95 +1,95 @@
-import { describe, expect, it } from 'vitest'
-import { concertFormatter } from './concert.js'
+import { describe, expect, it } from "vitest";
+import { concertFormatter } from "./concert.js";
 
-describe('concertFormatter', () => {
-  it('should return a location object', () => {
+describe("concertFormatter", () => {
+  it("should return a location object", () => {
     expect(
       concertFormatter({
-        __typename: 'ConcertRecord',
-        _createdAt: 'some date time string',
-        _updatedAt: 'some date time string',
-        _firstPublishedAt: 'some date time string',
-        _publishedAt: 'some date time string',
-        id: 'some-id',
-        title: 'required title',
+        __typename: "ConcertRecord",
+        _createdAt: "some date time string",
+        _updatedAt: "some date time string",
+        _firstPublishedAt: "some date time string",
+        _publishedAt: "some date time string",
+        id: "some-id",
+        title: "required title",
         locations: [
           {
-            id: 'ignore-this-id',
+            id: "ignore-this-id",
             location: {
-              id: 'location-id',
-              title: 'Location Title',
+              id: "location-id",
+              title: "Location Title",
             },
           },
         ],
         content: [],
-        slug: 'some-slug',
-      })
+        slug: "some-slug",
+      }),
     ).toEqual({
-      id: 'some-id',
+      id: "some-id",
       image: undefined,
       locations: [
         {
           address: null,
-          id: 'location-id',
+          id: "location-id",
           lat: null,
           lng: null,
           startTime: null,
           ticketLink: null,
-          title: 'Location Title',
+          title: "Location Title",
         },
       ],
-      title: 'required title',
-      url: '/concerten/some-slug',
+      title: "required title",
+      url: "/concerten/some-slug",
       content: [],
-    })
-  })
+    });
+  });
 
-  it('should dedupe locations', () => {
+  it("should dedupe locations", () => {
     expect(
       concertFormatter({
-        __typename: 'ConcertRecord',
-        _createdAt: 'some date time string',
-        _updatedAt: 'some date time string',
-        _firstPublishedAt: 'some date time string',
-        _publishedAt: 'some date time string',
-        id: 'some-id',
-        title: 'required title',
+        __typename: "ConcertRecord",
+        _createdAt: "some date time string",
+        _updatedAt: "some date time string",
+        _firstPublishedAt: "some date time string",
+        _publishedAt: "some date time string",
+        id: "some-id",
+        title: "required title",
         locations: [
           {
-            id: 'ignore-this-id',
+            id: "ignore-this-id",
             location: {
-              title: 'Location Title',
-              id: 'location-id',
+              title: "Location Title",
+              id: "location-id",
             },
           },
           {
-            id: 'ignore-this-id',
+            id: "ignore-this-id",
             location: {
-              title: 'Location Title',
-              id: 'location-id',
+              title: "Location Title",
+              id: "location-id",
             },
           },
         ],
         content: [],
-        slug: 'some-slug',
-      })
+        slug: "some-slug",
+      }),
     ).toEqual({
-      id: 'some-id',
+      id: "some-id",
       image: undefined,
       locations: [
         {
           address: null,
-          id: 'location-id',
+          id: "location-id",
           lat: null,
           lng: null,
           startTime: null,
           ticketLink: null,
-          title: 'Location Title',
+          title: "Location Title",
         },
       ],
-      title: 'required title',
-      url: '/concerten/some-slug',
+      title: "required title",
+      url: "/concerten/some-slug",
       content: [],
-    })
-  })
-})
+    });
+  });
+});

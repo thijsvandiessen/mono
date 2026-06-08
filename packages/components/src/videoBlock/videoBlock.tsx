@@ -1,59 +1,53 @@
-'use client'
+"use client";
 
-import {
-  type VideoFragment,
-  formatCloudinaryImage,
-  isOfTypeCloudinaryAsset,
-} from '@mono/data'
-import { useCallback, useState } from 'react'
-import { Image } from '@mono/next-js'
-import { VideoPlaceholder } from '../videoPlaceholder/index.js'
-import styles from './styles.module.scss'
+import { type VideoFragment, formatCloudinaryImage, isOfTypeCloudinaryAsset } from "@mono/data";
+import { useCallback, useState } from "react";
+import { Image } from "@mono/next-js";
+import { VideoPlaceholder } from "../videoPlaceholder/index.js";
+import styles from "./styles.module.scss";
 
 type Props = {
-  record: VideoFragment
-  autoplay?: boolean
-  aspectRatio?: string
-}
+  record: VideoFragment;
+  autoplay?: boolean;
+  aspectRatio?: string;
+};
 
 export const VideoBlock = ({ record, autoplay, aspectRatio }: Props) => {
-  const [hasPlayed, setHasPlayed] = useState(autoplay)
-  const binaryAutoplay = autoplay ? 1 : 0
-  const { media: video, thumbnail } = record
+  const [hasPlayed, setHasPlayed] = useState(autoplay);
+  const binaryAutoplay = autoplay ? 1 : 0;
+  const { media: video, thumbnail } = record;
 
   const toggleVideoPlay = useCallback(() => {
     if (!hasPlayed) {
-      setHasPlayed(true)
+      setHasPlayed(true);
     }
-  }, [hasPlayed])
+  }, [hasPlayed]);
 
   const handlePlayButtonClick = useCallback(() => {
-    toggleVideoPlay()
-  }, [toggleVideoPlay])
+    toggleVideoPlay();
+  }, [toggleVideoPlay]);
 
   if (!video) {
-    return null
+    return null;
   }
 
-  const asset = formatCloudinaryImage(
-    isOfTypeCloudinaryAsset(thumbnail) ? thumbnail : undefined
-  )
+  const asset = formatCloudinaryImage(isOfTypeCloudinaryAsset(thumbnail) ? thumbnail : undefined);
 
   const videoUrl = () => {
     switch (video.provider) {
-      case 'vimeo':
-        return `https://player.vimeo.com/video/${video.providerUid}?autoplay=1&muted=${binaryAutoplay}&loop=${binaryAutoplay}`
-      case 'youtube':
+      case "vimeo":
+        return `https://player.vimeo.com/video/${video.providerUid}?autoplay=1&muted=${binaryAutoplay}&loop=${binaryAutoplay}`;
+      case "youtube":
         return `https://www.youtube.com/embed/${
           video.providerUid
         }?autoplay=1&mute=${binaryAutoplay}&loop=${binaryAutoplay}&controls=${
           autoplay ? 0 : 1
-        }&playlist=${video.providerUid}`
+        }&playlist=${video.providerUid}`;
       default:
-        console.error(`unsupported video provider: ${video.provider}`)
-        return ''
+        console.error(`unsupported video provider: ${video.provider}`);
+        return "";
     }
-  }
+  };
 
   return (
     <VideoPlaceholder
@@ -73,16 +67,13 @@ export const VideoBlock = ({ record, autoplay, aspectRatio }: Props) => {
           />
         )}
 
-        {!hasPlayed && !thumbnail && video.thumbnailUrl && (
-          // Domain of the video thumbnailUrl is unknown so we use an
-          // img tag if the thumbnail is not defined
-          <Image
-            src={video.thumbnailUrl}
-            className={styles.thumbnail}
-            alt=""
-            loading="lazy"
-          />
-        )}
+        {!hasPlayed &&
+          !thumbnail &&
+          video.thumbnailUrl && (
+            // Domain of the video thumbnailUrl is unknown so we use an
+            // img tag if the thumbnail is not defined
+            <Image src={video.thumbnailUrl} className={styles.thumbnail} alt="" loading="lazy" />
+          )}
 
         {hasPlayed && (
           <iframe
@@ -96,5 +87,5 @@ export const VideoBlock = ({ record, autoplay, aspectRatio }: Props) => {
         <figcaption className="sr-only">{video.title}</figcaption>
       </figure>
     </VideoPlaceholder>
-  )
-}
+  );
+};

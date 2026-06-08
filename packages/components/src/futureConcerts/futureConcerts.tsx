@@ -1,12 +1,12 @@
-import { ConcertListItem } from '../concertListItem/index.js'
-import { getFutureConcerts } from '@mono/data'
+import { ConcertListItem } from "../concertListItem/index.js";
+import { getFutureConcerts } from "@mono/data";
 export interface Props {
-  skip: number
-  first: number
+  skip: number;
+  first: number;
 }
 
 export const FutureConcerts = async ({ skip, first }: Props) => {
-  const { data } = await getFutureConcerts({ skip, first })
+  const { data } = await getFutureConcerts({ skip, first });
 
   return (
     <div>
@@ -19,5 +19,5 @@ export const FutureConcerts = async ({ skip, first }: Props) => {
         />
       ))}
     </div>
-  )
-}
+  );
+};

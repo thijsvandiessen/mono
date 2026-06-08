@@ -1,5 +1,5 @@
 export interface Music {
-  id: string
-  title: string
-  composer: string
+  id: string;
+  title: string;
+  composer: string;
 }

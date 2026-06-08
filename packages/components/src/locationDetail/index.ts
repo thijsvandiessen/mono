@@ -1,1 +1,1 @@
-export { LocationDetail } from './locationDetail.jsx'
+export { LocationDetail } from "./locationDetail.jsx";

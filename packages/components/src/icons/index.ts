@@ -1,7 +1,7 @@
-export { ArrowDown } from './arrow-down.jsx'
-export { ArrowRight } from './arrow-right.jsx'
-export { Hamburger } from './hamburger.jsx'
-export { Logo } from './logo.jsx'
-export { Cross } from './cross.jsx'
-export { Pdf } from './pdf.jsx'
-export { Play } from './play.jsx'
+export { ArrowDown } from "./arrow-down.jsx";
+export { ArrowRight } from "./arrow-right.jsx";
+export { Hamburger } from "./hamburger.jsx";
+export { Logo } from "./logo.jsx";
+export { Cross } from "./cross.jsx";
+export { Pdf } from "./pdf.jsx";
+export { Play } from "./play.jsx";

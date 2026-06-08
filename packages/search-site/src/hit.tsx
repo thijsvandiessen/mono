@@ -1,13 +1,13 @@
 type Hit = {
-  image: string
-  title: string
-  categories: string[]
-  price: number
-}
+  image: string;
+  title: string;
+  categories: string[];
+  price: number;
+};
 
 type Props = {
-  hit: Hit
-}
+  hit: Hit;
+};
 
 export const Hit = ({ hit }: Props) => {
   return (
@@ -15,5 +15,5 @@ export const Hit = ({ hit }: Props) => {
       <h1>{hit.title}</h1>
       <p>${hit.price}</p>
     </article>
-  )
-}
+  );
+};

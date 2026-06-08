@@ -1,19 +1,19 @@
-import { Image, notFound } from '@mono/next-js'
-import { ConcertListItem } from '../concertListItem/index.js'
-import { LocationDetail } from '../locationDetail/index.js'
-import { PageContent } from '../pageContent/index.js'
-import classNames from 'classnames'
-import { getConcertPage } from '@mono/data'
+import { Image, notFound } from "@mono/next-js";
+import { ConcertListItem } from "../concertListItem/index.js";
+import { LocationDetail } from "../locationDetail/index.js";
+import { PageContent } from "../pageContent/index.js";
+import classNames from "classnames";
+import { getConcertPage } from "@mono/data";
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss";
 
 export interface Props {
-  slug: string
+  slug: string;
 }
 
 export const ConcertPage = async ({ slug }: Props) => {
-  const { data } = await getConcertPage({ slug })
-  if (!data) return notFound()
+  const { data } = await getConcertPage({ slug });
+  if (!data) return notFound();
 
   return (
     <article className={styles.root}>
@@ -48,9 +48,7 @@ export const ConcertPage = async ({ slug }: Props) => {
                 data={data}
                 size="large"
                 isLast={true}
-                title={
-                  data.locations.some((item) => item.id) ? 'Agenda' : undefined
-                }
+                title={data.locations.some((item) => item.id) ? "Agenda" : undefined}
                 showLink={false}
                 showImage={false}
                 showProgram={false}
@@ -63,16 +61,12 @@ export const ConcertPage = async ({ slug }: Props) => {
       </div>
       <div className={styles.locations}>
         {data.locations.map((location) => {
-          if (!location?.id || !location.startTime) return null
+          if (!location?.id || !location.startTime) return null;
           return (
-            <LocationDetail
-              key={location.id}
-              id={location.id}
-              startTime={location.startTime}
-            />
-          )
+            <LocationDetail key={location.id} id={location.id} startTime={location.startTime} />
+          );
         })}
       </div>
     </article>
-  )
-}
+  );
+};

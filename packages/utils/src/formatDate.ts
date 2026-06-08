@@ -1,28 +1,28 @@
 export const dateIsInThePast = (date: string): boolean => {
-  const dateObj = new Date(date)
-  const now = new Date()
-  return dateObj < now
-}
+  const dateObj = new Date(date);
+  const now = new Date();
+  return dateObj < now;
+};
 
 export const formatDate = (date: string) => {
-  const dateObj = new Date(date)
+  const dateObj = new Date(date);
   const defaultOptions = {
-    timeZone: 'Europe/Amsterdam',
-  }
-  const dateString = new Intl.DateTimeFormat('nl-NL', {
+    timeZone: "Europe/Amsterdam",
+  };
+  const dateString = new Intl.DateTimeFormat("nl-NL", {
     ...defaultOptions,
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long',
-  }).format(dateObj)
-  const timeString = new Intl.DateTimeFormat('nl-NL', {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+  }).format(dateObj);
+  const timeString = new Intl.DateTimeFormat("nl-NL", {
     ...defaultOptions,
-    hour: 'numeric',
-    minute: 'numeric',
-  }).format(dateObj)
-  return `${capitalizeFirstLetter(dateString)} — ${timeString}`
-}
+    hour: "numeric",
+    minute: "numeric",
+  }).format(dateObj);
+  return `${capitalizeFirstLetter(dateString)} — ${timeString}`;
+};
 
 const capitalizeFirstLetter = (string: string) => {
-  return string.charAt(0).toUpperCase() + string.slice(1)
-}
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};

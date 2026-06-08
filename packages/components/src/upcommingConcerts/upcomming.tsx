@@ -1,27 +1,27 @@
-import type { Concert } from '@mono/data'
-import { Concert as ConcertComponent } from '../concert/index.js'
-import styles from './styles.module.scss'
-import { upcomingConcerts } from './upcommingConcerts.js'
+import type { Concert } from "@mono/data";
+import { Concert as ConcertComponent } from "../concert/index.js";
+import styles from "./styles.module.scss";
+import { upcomingConcerts } from "./upcommingConcerts.js";
 
 interface UpcommingConcertsProps {
-  concertData: Concert[]
+  concertData: Concert[];
 }
 
 export const UpcommingConcerts = ({ concertData }: UpcommingConcertsProps) => {
-  const upcomming = upcomingConcerts({ concerts: concertData })
+  const upcomming = upcomingConcerts({ concerts: concertData });
 
-  if (upcomming.length === 0) return null
+  if (upcomming.length === 0) return null;
 
   return (
     <div>
       <h2 className={styles.header}>Aankomende concerten</h2>
       {upcomming.map((concert) => {
-        return <ConcertComponent key={concert.id} id={concert.id} />
+        return <ConcertComponent key={concert.id} id={concert.id} />;
       })}
 
       {concertData.length > upcomming.length && (
         <h2 className={styles.header}>Overige concerten</h2>
       )}
     </div>
-  )
-}
+  );
+};

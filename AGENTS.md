@@ -11,7 +11,7 @@ This Turborepo keeps deployable sites in `apps/` (`lundi-bleu` is production, `e
 - `pnpm codegen` – refreshes GraphQL schemas and generated types; run after backend schema updates.
 
 ## Coding Style & Naming Conventions
-Write modern TypeScript/React with 2-space indentation, single quotes, and module-relative imports resolved via the shared `tsconfig`. Workspace packages should remain scoped as `@mono/<name>` and Next.js pages under `apps/<site>/src/app/<route>`. Enforce formatting through Prettier (3.x) and lint through the custom `@mono/eslint-config`; avoid manual overrides unless absolutely necessary.
+Write modern TypeScript/React with 2-space indentation, single quotes, and module-relative imports resolved via the shared `tsconfig`. Workspace packages should remain scoped as `@mono/<name>` and Next.js pages under `apps/<site>/src/app/<route>`. Enforce formatting through oxfmt and lint through the custom `@mono/eslint-config`; avoid manual overrides unless absolutely necessary.
 
 ## Testing Guidelines
 Prefer colocated Vitest specs using the `*.test.ts(x)` suffix and RTL for component coverage; snapshot files stay beside their tests under `__snapshots__/`. Keep unit tests deterministic by mocking GraphQL fetchers from `@mono/data`. For integration coverage, add Playwright specs in `e2e/tests/` with descriptive file names (e.g., `navigation.spec.ts`), and execute `pnpm e2e -- --project=chromium` before shipping UI changes.

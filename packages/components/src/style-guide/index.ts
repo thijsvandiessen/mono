@@ -1,1 +1,1 @@
-export { StyleGuide } from './style-guide.jsx'
+export { StyleGuide } from "./style-guide.jsx";

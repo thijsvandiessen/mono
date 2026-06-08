@@ -1,5 +1,5 @@
-import { Button, Header } from '@mono/components'
-import { Image } from '@mono/next-js'
+import { Button, Header } from "@mono/components";
+import { Image } from "@mono/next-js";
 
 export default function Home() {
   return (
@@ -9,20 +9,14 @@ export default function Home() {
         body={
           <div className="grid gap-8 text-center">
             <div className="flex justify-center">
-              <Image
-                loading="eager"
-                alt="logo"
-                src={'/logo.png'}
-                width={200}
-                height={200}
-              />
+              <Image loading="eager" alt="logo" src={"/logo.png"} width={200} height={200} />
             </div>
             <h1 className="font-bold text-8xl">
               I&apos;m Thijs van Diessen, a creative software engineer
             </h1>
             <p>
-              I like to design and develop awesome user experiences and am
-              specialized in creating scalable solutions!
+              I like to design and develop awesome user experiences and am specialized in creating
+              scalable solutions!
             </p>
             <div>
               <Button
@@ -38,5 +32,5 @@ export default function Home() {
         }
       />
     </main>
-  )
+  );
 }

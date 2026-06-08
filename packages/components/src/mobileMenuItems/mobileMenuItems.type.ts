@@ -1,5 +1,5 @@
-import { type NavigationData } from '@mono/data'
+import { type NavigationData } from "@mono/data";
 
 export interface MobileMenuItemsProps {
-  general: NavigationData
+  general: NavigationData;
 }

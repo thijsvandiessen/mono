@@ -1,8 +1,8 @@
-import { describe, expect, it, vi } from 'vitest'
-import { NotFound } from './notFound.jsx'
-import { render } from '@testing-library/react'
+import { describe, expect, it, vi } from "vitest";
+import { NotFound } from "./notFound.jsx";
+import { render } from "@testing-library/react";
 
-vi.mock('@mono/next-js', () => {
+vi.mock("@mono/next-js", () => {
   return {
     _esModule: true,
     Link: vi.fn(({ href, onClick, className, children }) => (
@@ -10,12 +10,12 @@ vi.mock('@mono/next-js', () => {
         {children}
       </a>
     )),
-  }
-})
+  };
+});
 
-describe('NotFound component', () => {
-  it('shows all the data', () => {
-    const { container } = render(<NotFound />)
-    expect(container).toMatchSnapshot()
-  })
-})
+describe("NotFound component", () => {
+  it("shows all the data", () => {
+    const { container } = render(<NotFound />);
+    expect(container).toMatchSnapshot();
+  });
+});

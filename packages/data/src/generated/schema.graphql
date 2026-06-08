@@ -22,10 +22,7 @@ type CallToActionRecord implements RecordInterface {
   _publicationScheduledAt: DateTime
   _publishedAt: DateTime!
   "Generates SEO and Social card meta tags to be used in your frontend"
-  _seoMetaTags(
-    "The locale to use to fetch the field's content"
-    locale: SiteLocale
-  ): [Tag!]!
+  _seoMetaTags("The locale to use to fetch the field's content" locale: SiteLocale): [Tag!]!
   _status: ItemStatus!
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
@@ -57,10 +54,7 @@ type ConcertListRecord implements RecordInterface {
   _publicationScheduledAt: DateTime
   _publishedAt: DateTime!
   "Generates SEO and Social card meta tags to be used in your frontend"
-  _seoMetaTags(
-    "The locale to use to fetch the field's content"
-    locale: SiteLocale
-  ): [Tag!]!
+  _seoMetaTags("The locale to use to fetch the field's content" locale: SiteLocale): [Tag!]!
   _status: ItemStatus!
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
@@ -79,10 +73,7 @@ type ConcertRecord implements RecordInterface {
   _publicationScheduledAt: DateTime
   _publishedAt: DateTime!
   "Generates SEO and Social card meta tags to be used in your frontend"
-  _seoMetaTags(
-    "The locale to use to fetch the field's content"
-    locale: SiteLocale
-  ): [Tag!]!
+  _seoMetaTags("The locale to use to fetch the field's content" locale: SiteLocale): [Tag!]!
   _status: ItemStatus!
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
@@ -106,10 +97,7 @@ type DocumentRecord implements RecordInterface {
   _publicationScheduledAt: DateTime
   _publishedAt: DateTime!
   "Generates SEO and Social card meta tags to be used in your frontend"
-  _seoMetaTags(
-    "The locale to use to fetch the field's content"
-    locale: SiteLocale
-  ): [Tag!]!
+  _seoMetaTags("The locale to use to fetch the field's content" locale: SiteLocale): [Tag!]!
   _status: ItemStatus!
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
@@ -185,10 +173,7 @@ type FileField implements FileFieldInterface {
     "If you want to fallback to a default translation when a translation has not been found"
     fallbackLocales: [SiteLocale!]
   ): String
-  url(
-    "Imgix transformations to apply to the image"
-    imgixParams: ImgixParams
-  ): String!
+  url("Imgix transformations to apply to the image" imgixParams: ImgixParams): String!
   video: UploadVideoField
   width: IntType
 }
@@ -203,10 +188,7 @@ type GeneralRecord implements RecordInterface {
   _publicationScheduledAt: DateTime
   _publishedAt: DateTime!
   "Generates SEO and Social card meta tags to be used in your frontend"
-  _seoMetaTags(
-    "The locale to use to fetch the field's content"
-    locale: SiteLocale
-  ): [Tag!]!
+  _seoMetaTags("The locale to use to fetch the field's content" locale: SiteLocale): [Tag!]!
   _status: ItemStatus!
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
@@ -239,10 +221,7 @@ type HeaderRecord implements RecordInterface {
   _publicationScheduledAt: DateTime
   _publishedAt: DateTime!
   "Generates SEO and Social card meta tags to be used in your frontend"
-  _seoMetaTags(
-    "The locale to use to fetch the field's content"
-    locale: SiteLocale
-  ): [Tag!]!
+  _seoMetaTags("The locale to use to fetch the field's content" locale: SiteLocale): [Tag!]!
   _status: ItemStatus!
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
@@ -261,10 +240,7 @@ type ImageRecord implements RecordInterface {
   _publicationScheduledAt: DateTime
   _publishedAt: DateTime!
   "Generates SEO and Social card meta tags to be used in your frontend"
-  _seoMetaTags(
-    "The locale to use to fetch the field's content"
-    locale: SiteLocale
-  ): [Tag!]!
+  _seoMetaTags("The locale to use to fetch the field's content" locale: SiteLocale): [Tag!]!
   _status: ItemStatus!
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
@@ -286,10 +262,7 @@ type LocationItemRecord implements RecordInterface {
   _publicationScheduledAt: DateTime
   _publishedAt: DateTime!
   "Generates SEO and Social card meta tags to be used in your frontend"
-  _seoMetaTags(
-    "The locale to use to fetch the field's content"
-    locale: SiteLocale
-  ): [Tag!]!
+  _seoMetaTags("The locale to use to fetch the field's content" locale: SiteLocale): [Tag!]!
   _status: ItemStatus!
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
@@ -309,10 +282,7 @@ type LocationRecord implements RecordInterface {
   _publicationScheduledAt: DateTime
   _publishedAt: DateTime!
   "Generates SEO and Social card meta tags to be used in your frontend"
-  _seoMetaTags(
-    "The locale to use to fetch the field's content"
-    locale: SiteLocale
-  ): [Tag!]!
+  _seoMetaTags("The locale to use to fetch the field's content" locale: SiteLocale): [Tag!]!
   _status: ItemStatus!
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
@@ -332,10 +302,7 @@ type MenuItemRecord implements RecordInterface {
   _publicationScheduledAt: DateTime
   _publishedAt: DateTime!
   "Generates SEO and Social card meta tags to be used in your frontend"
-  _seoMetaTags(
-    "The locale to use to fetch the field's content"
-    locale: SiteLocale
-  ): [Tag!]!
+  _seoMetaTags("The locale to use to fetch the field's content" locale: SiteLocale): [Tag!]!
   _status: ItemStatus!
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
@@ -354,10 +321,7 @@ type PageRecord implements RecordInterface {
   _publicationScheduledAt: DateTime
   _publishedAt: DateTime!
   "Generates SEO and Social card meta tags to be used in your frontend"
-  _seoMetaTags(
-    "The locale to use to fetch the field's content"
-    locale: SiteLocale
-  ): [Tag!]!
+  _seoMetaTags("The locale to use to fetch the field's content" locale: SiteLocale): [Tag!]!
   _status: ItemStatus!
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
@@ -518,10 +482,7 @@ type SeoField {
 }
 type Site {
   favicon: FileField
-  faviconMetaTags(
-    "The variants to build"
-    variants: [FaviconType] = [icon]
-  ): [Tag!]!
+  faviconMetaTags("The variants to build" variants: [FaviconType] = [icon]): [Tag!]!
   globalSeo(
     "The locale to use to fetch the field's content"
     locale: SiteLocale
@@ -542,10 +503,7 @@ type SubmenuItemRecord implements RecordInterface {
   _publicationScheduledAt: DateTime
   _publishedAt: DateTime!
   "Generates SEO and Social card meta tags to be used in your frontend"
-  _seoMetaTags(
-    "The locale to use to fetch the field's content"
-    locale: SiteLocale
-  ): [Tag!]!
+  _seoMetaTags("The locale to use to fetch the field's content" locale: SiteLocale): [Tag!]!
   _status: ItemStatus!
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
@@ -575,10 +533,7 @@ type TextBlockRecord implements RecordInterface {
   _publicationScheduledAt: DateTime
   _publishedAt: DateTime!
   "Generates SEO and Social card meta tags to be used in your frontend"
-  _seoMetaTags(
-    "The locale to use to fetch the field's content"
-    locale: SiteLocale
-  ): [Tag!]!
+  _seoMetaTags("The locale to use to fetch the field's content" locale: SiteLocale): [Tag!]!
   _status: ItemStatus!
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
@@ -608,10 +563,7 @@ type TwoColumnRecord implements RecordInterface {
   _publicationScheduledAt: DateTime
   _publishedAt: DateTime!
   "Generates SEO and Social card meta tags to be used in your frontend"
-  _seoMetaTags(
-    "The locale to use to fetch the field's content"
-    locale: SiteLocale
-  ): [Tag!]!
+  _seoMetaTags("The locale to use to fetch the field's content" locale: SiteLocale): [Tag!]!
   _status: ItemStatus!
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
@@ -684,10 +636,7 @@ type VideoRecord implements RecordInterface {
   _publicationScheduledAt: DateTime
   _publishedAt: DateTime!
   "Generates SEO and Social card meta tags to be used in your frontend"
-  _seoMetaTags(
-    "The locale to use to fetch the field's content"
-    locale: SiteLocale
-  ): [Tag!]!
+  _seoMetaTags("The locale to use to fetch the field's content" locale: SiteLocale): [Tag!]!
   _status: ItemStatus!
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
@@ -768,10 +717,7 @@ interface FileFieldInterface {
     "If you want to fallback to a default translation when a translation has not been found"
     fallbackLocales: [SiteLocale!]
   ): String
-  url(
-    "Imgix transformations to apply to the image"
-    imgixParams: ImgixParams
-  ): String!
+  url("Imgix transformations to apply to the image" imgixParams: ImgixParams): String!
   video: UploadVideoField
   width: IntType
 }
@@ -785,20 +731,14 @@ interface RecordInterface {
   _publicationScheduledAt: DateTime
   _publishedAt: DateTime!
   "Generates SEO and Social card meta tags to be used in your frontend"
-  _seoMetaTags(
-    "The locale to use to fetch the field's content"
-    locale: SiteLocale
-  ): [Tag!]!
+  _seoMetaTags("The locale to use to fetch the field's content" locale: SiteLocale): [Tag!]!
   _status: ItemStatus!
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
   id: ItemId!
 }
 union CallToActionModelPageLinkField = ConcertRecord | PageRecord
-union ConcertModelContentField =
-  | HeaderRecord
-  | TextBlockRecord
-  | TwoColumnRecord
+union ConcertModelContentField = HeaderRecord | TextBlockRecord | TwoColumnRecord
 union GeneralModelMenuField = MenuItemRecord | SubmenuItemRecord
 union HeaderModelBodyLinksField = ConcertRecord | PageRecord
 union MenuItemModelLinkField = ConcertRecord | PageRecord
