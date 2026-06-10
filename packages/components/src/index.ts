@@ -9,6 +9,6 @@ export { Header } from "./header/index.js";
 export { Footer } from "./footer/index.js";
 export { Concert } from "./concert/index.js";
 export { ConcertListItem } from "./concertListItem/index.js";
-export { Location } from "./location/index.js";
+export { Location, LocationView } from "./location/index.js";
 export { ConcertsPage } from "./concertsPage/index.js";
 export { ConcertPage } from "./concertPage/index.js";
