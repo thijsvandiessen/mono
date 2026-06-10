@@ -2,7 +2,6 @@
   "extends": "@mono/typescript-config",
   "compilerOptions": {
     "outDir": "dist",
-    "baseUrl": ".",
     "jsx": "react-jsx",
     "module": "ESNext",
     "moduleResolution": "bundler",
