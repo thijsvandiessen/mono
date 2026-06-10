@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.2.0](https://github.com/thijsvandiessen/mono/compare/v1.1.1...v1.2.0) (2026-06-10)
+
+
+### Features
+
+* add Footer component story and conditional rendering ([#1162](https://github.com/thijsvandiessen/mono/issues/1162)) ([8bfc465](https://github.com/thijsvandiessen/mono/commit/8bfc4653205c846bbcb0375ed1099e8c2bca48ee))
+* **storybook:** add stories for 13 more components ([#1167](https://github.com/thijsvandiessen/mono/issues/1167)) ([93f31ee](https://github.com/thijsvandiessen/mono/commit/93f31ee0a1018ff973bce900631c701e74f36986))
+
+
+### Bug Fixes
+
+* header update ([#1149](https://github.com/thijsvandiessen/mono/issues/1149)) ([94ee855](https://github.com/thijsvandiessen/mono/commit/94ee85535bb0e4f9ffc66fa89332266f7f7d2c16))
+* oxformat ([#1161](https://github.com/thijsvandiessen/mono/issues/1161)) ([27cf6b3](https://github.com/thijsvandiessen/mono/commit/27cf6b37970e053be6562c7cdc79cdabe4bdb7ac))
+
 ## [1.1.1](https://github.com/thijsvandiessen/mono/compare/v1.1.0...v1.1.1) (2026-05-31)
 
 
