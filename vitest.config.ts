@@ -5,5 +5,10 @@ export default defineConfig({
     projects: ['packages/*/vitest.config.ts'],
     pool: 'threads',
     isolate: true,
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'html', 'lcov'],
+      reportsDirectory: './coverage',
+    },
   },
 })
