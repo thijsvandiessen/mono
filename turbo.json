@@ -12,7 +12,13 @@
     "lint": {
       "dependsOn": []
     },
+    "format": {
+      "dependsOn": []
+    },
     "test": {
+      "dependsOn": ["^build"]
+    },
+    "test:coverage": {
       "dependsOn": ["^build"]
     },
     "e2e": {

@@ -36,23 +36,25 @@ export const Footer = ({ data, metadata }: Props) => (
         </ul>
       </div>
 
-      {metadata.socials.length > 0 && <div>
-        <h3 className={classNames(styles.title)}>Volg ons</h3>
-        <ul className={classNames(styles.list)}>
-          {metadata.socials.map((social) => (
-            <li key={social.name}>
-              <Link
-                className={classNames(styles.link)}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {social.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>}
+      {metadata.socials.length > 0 && (
+        <div>
+          <h3 className={classNames(styles.title)}>Volg ons</h3>
+          <ul className={classNames(styles.list)}>
+            {metadata.socials.map((social) => (
+              <li key={social.name}>
+                <Link
+                  className={classNames(styles.link)}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {social.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   </footer>
 );

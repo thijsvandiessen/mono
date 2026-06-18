@@ -4,19 +4,19 @@ packages:
   - e2e
 
 allowBuilds:
-  '@apollo/rover': true
-  '@parcel/watcher': true
-  '@swc/core': true
+  "@apollo/rover": true
+  "@parcel/watcher": true
+  "@swc/core": true
   esbuild: true
   sharp: true
   unrs-resolver: true
 
 ignoredBuiltDependencies:
-  - '@apollo/rover'
-  - '@swc/core'
+  - "@apollo/rover"
+  - "@swc/core"
 
 onlyBuiltDependencies:
-  - '@parcel/watcher'
+  - "@parcel/watcher"
   - esbuild
   - sharp
   - unrs-resolver

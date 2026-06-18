@@ -3,9 +3,14 @@ import { renderHook, waitFor } from "@testing-library/react";
 import { getLocation } from "@mono/data";
 import { useLocation } from "./useLocation.js";
 
-vi.mock("@mono/data", () => ({
-  getLocation: vi.fn(),
-}));
+vi.mock("@mono/data", () => {
+  const originalModule = vi.importActual<typeof import("@mono/data")>("@mono/data");
+  return {
+    __esModule: true,
+    ...originalModule,
+    getLocation: vi.fn(),
+  };
+});
 
 const getLocationMock = vi.mocked(getLocation);
 describe("useLocation", () => {
