@@ -1,14 +1,14 @@
-import { defineConfig } from 'vitest/config'
+import { defineConfig } from "vitest/config";
 
 export default defineConfig({
   test: {
-    projects: ['packages/*/vitest.config.ts'],
-    pool: 'threads',
+    projects: ["packages/*/vitest.config.ts"],
+    pool: "threads",
     isolate: true,
     coverage: {
-      provider: 'v8',
-      reporter: ['text', 'html', 'lcov'],
-      reportsDirectory: './coverage',
+      provider: "v8",
+      reporter: ["text", "html", "lcov"],
+      reportsDirectory: "./coverage",
     },
   },
-})
+});

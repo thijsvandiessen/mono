@@ -26,13 +26,16 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+          cache: "pnpm"
 
       - name: Validate fast with oxlint
         run: npx oxlint@1.24.0
+
+      - name: Validate fast with oxformat
+        run: npx oxfmt@0.55.0 --check
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
       - name: Build project
         run: pnpm exec turbo build
@@ -41,7 +44,7 @@ jobs:
         run: pnpm exec turbo lint
 
       - name: Test project with coverage
-        run: pnpm run test:coverage
+        run: pnpm exec turbo test:coverage
 
       - name: Upload coverage report
         uses: actions/upload-artifact@v4

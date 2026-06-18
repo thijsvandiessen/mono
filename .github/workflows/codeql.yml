@@ -9,7 +9,7 @@ on:
     types: [checks_requested]
     branches: [main]
   schedule:
-    - cron: '45 0 * * 2'
+    - cron: "45 0 * * 2"
 
 jobs:
   analyze:
@@ -35,4 +35,4 @@ jobs:
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v4
         with:
-          category: '/language:javascript'
+          category: "/language:javascript"

@@ -6,16 +6,22 @@ import { getFutureConcerts } from "@mono/data";
 import { mockConcert } from "./mocks/mockConcerts.js";
 import { resolvedComponent } from "@mono/utils";
 
-vi.mock("@mono/data", () => {
+vi.mock("@mono/data", async () => {
+  const originalModule = await vi.importActual<typeof import("@mono/data")>("@mono/data");
   return {
     __esModule: true,
+    ...originalModule,
     getFutureConcerts: vi.fn(),
   };
 });
 
 vi.mock("../concertListItem/index.js", () => {
+  const originalModule = vi.importActual<typeof import("../concertListItem/index.js")>(
+    "../concertListItem/index.js",
+  );
   return {
     __esModule: true,
+    ...originalModule,
     ConcertListItem: ({ data }: ConcertListItemProps) => (
       <div>
         <span>{data.id}</span>

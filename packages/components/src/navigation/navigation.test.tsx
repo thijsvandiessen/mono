@@ -18,19 +18,23 @@ vi.mock("../navigationSubMenu/index.js", () => ({
   NavigationSubMenu: () => <li>[NavigationSubMenu]</li>,
 }));
 
-vi.mock("@mono/data", () => ({
-  __esModule: true,
-  client: vi.fn(),
-  getGeneralInfo: vi.fn(),
-  getSiteMetadata: vi.fn(() => ({
-    metadata: {
-      title: "",
-      description: "Default description",
-      base_url: "https://example.com",
-    },
-    error: undefined,
-  })),
-}));
+vi.mock("@mono/data", async () => {
+  const originalModule = await vi.importActual<typeof import("@mono/data")>("@mono/data");
+  return {
+    __esModule: true,
+    ...originalModule,
+    client: vi.fn(),
+    getGeneralInfo: vi.fn(),
+    getSiteMetadata: vi.fn(() => ({
+      metadata: {
+        title: "",
+        description: "Default description",
+        base_url: "https://example.com",
+      },
+      error: undefined,
+    })),
+  };
+});
 
 describe("Concert component", () => {
   it("shows all the data", () => {
