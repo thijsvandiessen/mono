@@ -60,8 +60,10 @@ export const ConcertPage = async ({ slug }: Props) => {
         </div>
       </div>
       <div className={styles.locations}>
-        {data.locations.map((location) => {
+        {/* The agenda above lists every date, so show each venue only once here. */}
+        {data.locations.map((location, index) => {
           if (!location?.id || !location.startTime) return null;
+          if (data.locations.findIndex((item) => item.id === location.id) !== index) return null;
           return (
             <LocationDetail key={location.id} id={location.id} startTime={location.startTime} />
           );
