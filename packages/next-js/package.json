@@ -18,7 +18,7 @@
     "lint:styles": "oxfmt . --write"
   },
   "dependencies": {
-    "next": "16.2.6",
+    "next": "16.2.11",
     "react": "19.2.7",
     "react-dom": "19.2.7",
     "zod": "4.4.3"
