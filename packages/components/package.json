@@ -30,7 +30,7 @@
     "@mono/utils": "workspace:*",
     "@react-google-maps/api": "2.20.8",
     "classnames": "2.5.1",
-    "datocms-structured-text-utils": "5.1.7",
+    "datocms-structured-text-utils": "6.0.0",
     "react": "19.2.7",
     "react-datocms": "8.0.3",
     "react-dom": "19.2.7",
