@@ -19,6 +19,8 @@ export const concertFormatter = (concert?: ConcertDetailFragment): Concert | und
     locations: concert.locations.reduce((prevLocations: Location[], currentLocation) => {
       const location = locationItemFormatter(currentLocation);
 
+      if (!location) return prevLocations;
+
       /*
        * A concert can be played on several dates at the same venue, so both the
        * venue and the date are needed to tell two location items apart.
@@ -27,7 +29,7 @@ export const concertFormatter = (concert?: ConcertDetailFragment): Concert | und
         (loc) => loc.id === location.id && loc.startTime === location.startTime,
       );
 
-      if (location && !isDuplicate) {
+      if (!isDuplicate) {
         prevLocations.push(location);
       }
 
