@@ -17,7 +17,7 @@ jobs:
       TURBO_TEAM: ${{ secrets.VERCEL_TEAM }}
     strategy:
       matrix:
-        node-version: [22.x, 24.x]
+        node-version: [24.x, 26.x]
     steps:
       - uses: actions/checkout@v6.0.2
       - name: Install pnpm
@@ -29,10 +29,10 @@ jobs:
           cache: "pnpm"
 
       - name: Validate fast with oxlint
-        run: npx oxlint@1.24.0
+        run: npx oxlint@1.81.0
 
       - name: Validate fast with oxformat
-        run: npx oxfmt@0.55.0 --check
+        run: npx oxfmt@0.66.0 --check
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
