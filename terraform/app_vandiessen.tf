@@ -9,18 +9,12 @@ module "vandiessen" {
   framework              = "nextjs"
   output_directory       = null
 
-  environment_variables = [
-    {
-      key       = "NEXT_PUBLIC_GOOGLE_MAPS_API_KEY"
-      value     = var.GOOGLE_MAPS_API_KEY
-      target    = local.env_targets
-      sensitive = false
-    },
+  environment_variables = concat(local.shared_environment_variables, [
     {
       key       = "NEXT_PUBLIC_SITE_NAME"
       value     = "vandiessen"
       target    = local.env_targets
       sensitive = false
     },
-  ]
+  ])
 }
