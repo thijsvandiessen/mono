@@ -408,8 +408,8 @@ importers:
         specifier: 19.2.7
         version: 19.2.7
       zod:
-        specifier: 4.4.3
-        version: 4.4.3
+        specifier: 4.5.4
+        version: 4.5.4
     devDependencies:
       '@apollo/rover':
         specifier: 0.40.0
@@ -490,8 +490,8 @@ importers:
         specifier: 4.56.11
         version: 4.56.11(tslib@2.8.1)
       zod:
-        specifier: 4.4.3
-        version: 4.4.3
+        specifier: 4.5.4
+        version: 4.5.4
     devDependencies:
       '@mono/eslint-config':
         specifier: workspace:*
@@ -600,8 +600,8 @@ importers:
         specifier: 19.2.7
         version: 19.2.7(react@19.2.7)
       zod:
-        specifier: 4.4.3
-        version: 4.4.3
+        specifier: 4.5.4
+        version: 4.5.4
     devDependencies:
       '@mono/eslint-config':
         specifier: workspace:*
@@ -4118,6 +4118,7 @@ packages:
   eslint@9.39.2:
     resolution: {integrity: sha512-LEyamqS7W5HB3ujJyvi0HQK/dtVINZvd5mAAp9eT5S/ujByGjiZLCzPcHVzuXbpJDJF/cxwHlfceVUDZ2lnSTw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
     peerDependencies:
       jiti: '*'
@@ -6238,8 +6239,8 @@ packages:
     peerDependencies:
       zod: ^3.25.0 || ^4.0.0
 
-  zod@4.4.3:
-    resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
+  zod@4.5.4:
+    resolution: {integrity: sha512-sC95tT5iHHH9gtpj6A81kh+NEaRAUFN+qlUPDUbRfOMvNf5QCBqsb3WgvnpVtK5Y+4UfA6KqufotuTvMGiTlsA==}
 
 snapshots:
 
@@ -9612,8 +9613,8 @@ snapshots:
       '@babel/parser': 7.29.3
       eslint: 9.39.2(jiti@2.7.0)
       hermes-parser: 0.25.1
-      zod: 4.4.3
-      zod-validation-error: 4.0.2(zod@4.4.3)
+      zod: 4.5.4
+      zod-validation-error: 4.0.2(zod@4.5.4)
     transitivePeerDependencies:
       - supports-color
 
@@ -10022,8 +10023,8 @@ snapshots:
     dependencies:
       '@swc/helpers': 0.5.18
       markdown-to-jsx: 7.7.17(react@19.2.6)
-      zod: 4.4.3
-      zod-to-json-schema: 3.24.6(zod@4.4.3)
+      zod: 4.5.4
+      zod-to-json-schema: 3.24.6(zod@4.5.4)
     transitivePeerDependencies:
       - react
 
@@ -10031,8 +10032,8 @@ snapshots:
     dependencies:
       '@swc/helpers': 0.5.18
       markdown-to-jsx: 7.7.17(react@19.2.7)
-      zod: 4.4.3
-      zod-to-json-schema: 3.24.6(zod@4.4.3)
+      zod: 4.5.4
+      zod-to-json-schema: 3.24.6(zod@4.5.4)
     transitivePeerDependencies:
       - react
 
@@ -10040,8 +10041,8 @@ snapshots:
     dependencies:
       '@swc/helpers': 0.5.18
       markdown-to-jsx: 7.7.17(react@19.2.6)
-      zod: 4.4.3
-      zod-to-json-schema: 3.24.6(zod@4.4.3)
+      zod: 4.5.4
+      zod-to-json-schema: 3.24.6(zod@4.5.4)
     transitivePeerDependencies:
       - react
 
@@ -10062,8 +10063,8 @@ snapshots:
       qs: 6.15.2
       react: 19.2.6
       search-insights: 2.17.3
-      zod: 4.4.3
-      zod-to-json-schema: 3.24.6(zod@4.4.3)
+      zod: 4.5.4
+      zod-to-json-schema: 3.24.6(zod@4.5.4)
 
   instantsearch.js@4.97.0(algoliasearch@5.50.2):
     dependencies:
@@ -10082,8 +10083,8 @@ snapshots:
       qs: 6.15.2
       react: 19.2.6
       search-insights: 2.17.3
-      zod: 4.4.3
-      zod-to-json-schema: 3.24.6(zod@4.4.3)
+      zod: 4.5.4
+      zod-to-json-schema: 3.24.6(zod@4.5.4)
 
   internal-slot@1.1.0:
     dependencies:
@@ -11012,8 +11013,8 @@ snapshots:
       instantsearch.js: 4.92.0(algoliasearch@5.50.2)
       react: 19.2.7
       use-sync-external-store: 1.6.0(react@19.2.7)
-      zod: 4.4.3
-      zod-to-json-schema: 3.24.6(zod@4.4.3)
+      zod: 4.5.4
+      zod-to-json-schema: 3.24.6(zod@4.5.4)
 
   react-instantsearch@7.28.0(algoliasearch@5.50.2)(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
     dependencies:
@@ -11933,12 +11934,12 @@ snapshots:
 
   yoctocolors-cjs@2.1.3: {}
 
-  zod-to-json-schema@3.24.6(zod@4.4.3):
+  zod-to-json-schema@3.24.6(zod@4.5.4):
     dependencies:
-      zod: 4.4.3
+      zod: 4.5.4
 
-  zod-validation-error@4.0.2(zod@4.4.3):
+  zod-validation-error@4.0.2(zod@4.5.4):
     dependencies:
-      zod: 4.4.3
+      zod: 4.5.4
 
-  zod@4.4.3: {}
+  zod@4.5.4: {}
