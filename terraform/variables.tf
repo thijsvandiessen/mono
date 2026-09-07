@@ -64,6 +64,23 @@ variable "TFC_CONFIGURATION_VERSION_GIT_BRANCH" {
 locals {
   env_targets = ["preview", "production"]
   repo_root   = abspath("..")
+
+  # Shared by every app so no project is created with an empty variable set,
+  # which the Vercel API rejects.
+  shared_environment_variables = [
+    {
+      key       = "NEXT_PUBLIC_GOOGLE_MAPS_API_KEY"
+      value     = var.GOOGLE_MAPS_API_KEY
+      target    = local.env_targets
+      sensitive = false
+    },
+    {
+      key       = "NEXT_PUBLIC_DATOCMS_READONLY_TOKEN"
+      value     = var.DATOCMS_READONLY_TOKEN
+      target    = local.env_targets
+      sensitive = false
+    },
+  ]
 }
 
 moved {

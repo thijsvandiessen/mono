@@ -53,7 +53,7 @@ variable "expiration_preview" {
 
 variable "expiration_production" {
   type    = string
-  default = "1y"
+  default = "1m"
 }
 
 variable "expiration_canceled" {

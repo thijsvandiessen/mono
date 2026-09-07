@@ -9,24 +9,12 @@ module "lundi" {
   framework              = "nextjs"
   output_directory       = null
 
-  environment_variables = [
-    {
-      key       = "NEXT_PUBLIC_GOOGLE_MAPS_API_KEY"
-      value     = var.GOOGLE_MAPS_API_KEY
-      target    = local.env_targets
-      sensitive = false
-    },
+  environment_variables = concat(local.shared_environment_variables, [
     {
       key       = "NEXT_PUBLIC_SITE_NAME"
       value     = "lundi-bleu"
       target    = local.env_targets
       sensitive = false
     },
-    {
-      key       = "NEXT_PUBLIC_DATOCMS_READONLY_TOKEN"
-      value     = var.DATOCMS_READONLY_TOKEN
-      target    = local.env_targets
-      sensitive = false
-    },
-  ]
+  ])
 }
