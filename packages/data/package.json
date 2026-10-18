@@ -31,7 +31,7 @@
     "@urql/exchange-retry": "2.0.0",
     "graphql": "16.14.1",
     "react": "19.2.7",
-    "zod": "4.4.3"
+    "zod": "4.5.4"
   },
   "devDependencies": {
     "@apollo/rover": "0.40.0",
