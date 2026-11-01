@@ -18,7 +18,7 @@
     "lint:styles": "oxfmt . --write"
   },
   "dependencies": {
-    "next": "16.2.11",
+    "next": "16.4.1",
     "react": "19.2.7",
     "react-dom": "19.2.7",
     "zod": "4.5.4"
@@ -32,6 +32,6 @@
     "eslint-config-next": "16.2.6",
     "eslint-plugin-testing-library": "7.16.2",
     "typescript": "5.9.3",
-    "vitest": "4.1.8"
+    "vitest": "4.1.11"
   }
 }
