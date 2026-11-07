@@ -127,7 +127,10 @@ const server = createServer(async (request, response) => {
     });
 
     if (result.errors) {
-      console.error(`[mock-graphql] ${operationName ?? "query"}:`, result.errors);
+      // The operation name comes from the request: keep the format string constant
+      // and strip everything but name characters so it cannot forge log lines.
+      const name = (operationName ?? "query").replace(/[^\w]/g, "");
+      console.error("[mock-graphql] %s failed:", name, result.errors);
     }
 
     send(response, 200, result);
