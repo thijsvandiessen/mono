@@ -6,12 +6,15 @@
   "scripts": {
     "build": "tsc --build",
     "install:browsers": "playwright install --with-deps chromium",
-    "e2e": "playwright test"
+    "e2e": "playwright test",
+    "e2e:mock": "playwright test -c playwright.mock.config.ts",
+    "mock-server": "node mock-server/server.ts"
   },
   "devDependencies": {
     "@mono/typescript-config": "workspace:*",
     "@playwright/test": "1.60.0",
     "@types/node": "25.6.0",
+    "graphql": "16.14.1",
     "typescript": "5.9.3"
   }
 }

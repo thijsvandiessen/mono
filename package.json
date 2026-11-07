@@ -14,6 +14,7 @@
     "codegen": "pnpm --filter @mono/data... download-schema && pnpm --filter @mono/data... codegen",
     "dev": "pnpm -r --parallel --stream dev",
     "e2e": "pnpm --filter @mono/e2e... e2e",
+    "e2e:mock": "pnpm --filter @mono/e2e... e2e:mock",
     "e2e:install": "pnpm --filter @mono/e2e... install:browsers",
     "lint": "pnpm run -r lint",
     "format": "oxfmt --write",
