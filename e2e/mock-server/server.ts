@@ -127,10 +127,9 @@ const server = createServer(async (request, response) => {
     });
 
     if (result.errors) {
-      // The operation name comes from the request: keep the format string constant
-      // and strip everything but name characters so it cannot forge log lines.
-      const name = (operationName ?? "query").replace(/[^\w]/g, "");
-      console.error("[mock-graphql] %s failed:", name, result.errors);
+      // Only log the count: the errors can echo the request, and they are already
+      // returned in the response (the app logs them through urql's onError).
+      console.error("[mock-graphql] query failed with %d error(s)", result.errors.length);
     }
 
     send(response, 200, result);
