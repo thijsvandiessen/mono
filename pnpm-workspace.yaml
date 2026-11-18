@@ -18,3 +18,8 @@ onlyBuiltDependencies:
   - esbuild
   - sharp
   - unrs-resolver
+
+# GHSA-3g3m-2fjr-6pw4: no patched glob 13.x; 14 is API compatible for cpx2 and
+# the Storybook docgen plugin. Remove once both depend on glob >= 14.0.2.
+overrides:
+  "glob@13": 14.0.6
