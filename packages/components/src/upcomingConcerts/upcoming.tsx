@@ -19,9 +19,7 @@ export const UpcomingConcerts = ({ concertData }: UpcomingConcertsProps) => {
         return <ConcertComponent key={concert.id} id={concert.id} />;
       })}
 
-      {concertData.length > upcoming.length && (
-        <h2 className={styles.header}>Overige concerten</h2>
-      )}
+      {concertData.length > upcoming.length && <h2 className={styles.header}>Overige concerten</h2>}
     </div>
   );
 };
