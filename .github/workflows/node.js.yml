@@ -32,7 +32,7 @@ jobs:
         run: npx oxlint@1.94.0
 
       - name: Validate fast with oxformat
-        run: npx oxfmt@0.66.0 --check
+        run: npx oxfmt@0.79.0 --check
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile

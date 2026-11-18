@@ -67,13 +67,11 @@ export const VideoBlock = ({ record, autoplay, aspectRatio }: Props) => {
           />
         )}
 
-        {!hasPlayed &&
-          !thumbnail &&
-          video.thumbnailUrl && (
-            // Domain of the video thumbnailUrl is unknown so we use an
-            // img tag if the thumbnail is not defined
-            <Image src={video.thumbnailUrl} className={styles.thumbnail} alt="" loading="lazy" />
-          )}
+        {!hasPlayed && !thumbnail && video.thumbnailUrl && (
+          // Domain of the video thumbnailUrl is unknown so we use an
+          // img tag if the thumbnail is not defined
+          <Image src={video.thumbnailUrl} className={styles.thumbnail} alt="" loading="lazy" />
+        )}
 
         {hasPlayed && (
           <iframe
