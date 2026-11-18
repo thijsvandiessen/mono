@@ -3,7 +3,14 @@
   "extends": "@mono/typescript-config",
   "compilerOptions": {
     "types": ["@playwright/test", "node"],
-    "noEmit": true
+    "noEmit": true,
+    "allowImportingTsExtensions": true
   },
-  "include": ["./tests/**/*.ts", "./playwright.config.ts"]
+  "include": [
+    "./tests/**/*.ts",
+    "./mock-tests/**/*.ts",
+    "./mock-server/**/*.ts",
+    "./playwright.config.ts",
+    "./playwright.mock.config.ts"
+  ]
 }

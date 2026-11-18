@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: mcr.microsoft.com/playwright:v1.60.0-noble
+      image: mcr.microsoft.com/playwright:v1.65.0-noble
       options: --ipc=host
 
     env:
@@ -53,4 +53,47 @@ jobs:
         with:
           name: playwright-report
           path: playwright-report/
+          retention-days: 30
+
+  mock-e2e:
+    name: Mock e2e tests
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+
+    container:
+      image: mcr.microsoft.com/playwright:v1.65.0-noble
+      options: --ipc=host
+
+    # No DatoCMS token on purpose: every page is served from the local mock
+    # backend in e2e/mock-server, so the tests never depend on outside content.
+    env:
+      TURBO_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      TURBO_TEAM: ${{ secrets.VERCEL_TEAM }}
+
+    steps:
+      - uses: actions/checkout@v6.0.2
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Use Node.js 24.x
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24.x
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build the packages used by the app
+        run: pnpm --filter "@mono/lundi-bleu^..." build
+
+      - name: Run mock e2e tests
+        run: pnpm e2e:mock
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: mock-playwright-report
+          path: e2e/playwright-report/
           retention-days: 30
