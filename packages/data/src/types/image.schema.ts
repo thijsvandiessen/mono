@@ -16,7 +16,7 @@ export const CloudinaryAssetSchema = z.object({
   created_at: z.union([z.date(), z.string()]).optional(),
   tags: z.array(z.string()),
   created_by: CloudinaryUserSchema,
-  duration: z.number().nullable(),
+  duration: z.number().nullish(),
   format: z.string(),
   metadata: z.union([z.array(z.string()), z.object().optional()]).optional(),
   type: z.string(),
