@@ -6,6 +6,8 @@ type Props = {
 };
 
 export const customNextConfig = ({ domain }: Props): NextConfig => ({
+  // Stop `next dev` from writing AGENTS.md files; the root AGENTS.md covers the repo.
+  agentRules: false,
   poweredByHeader: false,
   reactStrictMode: true,
   reactCompiler: true,
