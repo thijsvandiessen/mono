@@ -23,8 +23,8 @@
     "test:coverage": "vitest run -c ./vitest.config.ts --coverage"
   },
   "devDependencies": {
-    "@commitlint/cli": "21.0.2",
-    "@commitlint/config-conventional": "21.0.2",
+    "@commitlint/cli": "21.2.4",
+    "@commitlint/config-conventional": "21.2.4",
     "@types/node": "26.6.6",
     "@vitest/coverage-v8": "5.1.1",
     "dotenv": "18.0.10",
