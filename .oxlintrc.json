@@ -43,7 +43,6 @@
     "**/coverage/**",
     "**/storybook-static/**",
     "**/next-env.d.ts",
-    "packages/data/src/generated/**",
-    "apps/history-knowledge/**"
+    "packages/data/src/generated/**"
   ]
 }

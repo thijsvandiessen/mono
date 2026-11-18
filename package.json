@@ -16,7 +16,7 @@
     "e2e": "pnpm --filter @mono/e2e... e2e",
     "e2e:mock": "pnpm --filter @mono/e2e... e2e:mock",
     "e2e:install": "pnpm --filter @mono/e2e... install:browsers",
-    "lint": "oxlint && pnpm run -r lint",
+    "lint": "pnpm run -r lint",
     "format": "oxfmt --write",
     "test": "vitest run -c ./vitest.config.ts",
     "test:coverage": "vitest run -c ./vitest.config.ts --coverage"

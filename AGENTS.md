@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This Turborepo keeps deployable sites in `apps/` (`lundi-bleu` and `vandiessen` are production sites, `example` is a demo site, `storybook` hosts the component style guide) and shared code in `packages/` (`components`, `content`, `data`, `hooks`, `next-js`, `search-site`, `utils`, and internal configs such as `typescript-config` and `datocms-config`). End-to-end Playwright specs live in `e2e/`, while Terraform and other ops assets sit in `terraform/`. Co-locate feature code with its tests and SCSS under each package’s `src/` folder so tree-shaking and story imports stay predictable.
+This Turborepo keeps deployable sites in `apps/` (`lundi-bleu` and `vandiessen` are production sites, `example` is a demo site, `storybook` hosts the component style guide) and shared code in `packages/` (`components`, `data`, `hooks`, `next-js`, `search-site`, `utils`, and internal configs such as `typescript-config` and `datocms-config`). End-to-end Playwright specs live in `e2e/`, while Terraform and other ops assets sit in `terraform/`. Co-locate feature code with its tests and SCSS under each package’s `src/` folder so tree-shaking and story imports stay predictable.
 
 ## Build, Test, and Development Commands
 

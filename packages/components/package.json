@@ -17,7 +17,8 @@
     "build": "pnpm run build:scss && tsc",
     "build:scss": "cpx \"src/**/*.scss\" dist",
     "dev": "cpx \"src/**/*.scss\" dist --watch && tsc --watch",
-    "lint": "pnpm run lint:styles",
+    "lint": "pnpm run lint:js && pnpm run lint:styles",
+    "lint:js": "oxlint",
     "lint:styles": "oxfmt . --write",
     "test": "vitest run -c ./vitest.config.ts"
   },
