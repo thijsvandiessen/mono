@@ -9,12 +9,6 @@
       "outputs": ["src/generated/**"],
       "dependsOn": ["^build"]
     },
-    "lint": {
-      "dependsOn": []
-    },
-    "format": {
-      "dependsOn": []
-    },
     "test": {
       "dependsOn": ["^build"]
     },

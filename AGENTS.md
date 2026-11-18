@@ -8,7 +8,7 @@ This Turborepo keeps deployable sites in `apps/` (`lundi-bleu` and `vandiessen` 
 
 - `pnpm dev` – runs TypeScript in watch mode and starts both Next.js apps via workspace filters.
 - `pnpm build` – compiles every workspace (TypeScript build plus package-level builds); required before release.
-- `pnpm lint` / `pnpm test` – runs oxlint (root `.oxlintrc.json`) plus oxfmt per package, and Vitest; gate PRs on both.
+- `pnpm lint` / `pnpm test` – runs oxlint (root `.oxlintrc.json`) and `oxfmt --check` over the whole repo, and Vitest; gate PRs on both. `pnpm format` applies formatting fixes.
 - `pnpm e2e` – triggers Playwright suites inside `e2e/`.
 - `pnpm codegen` – refreshes GraphQL schemas and generated types; run after backend schema updates.
 

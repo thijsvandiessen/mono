@@ -20,9 +20,6 @@
     "dev": "pnpm run \"/^dev:/\"",
     "dev:scss": "cpx \"src/**/*.scss\" dist --watch",
     "dev:ts": "tsc --watch --preserveWatchOutput",
-    "lint": "pnpm run lint:js && pnpm run lint:styles",
-    "lint:js": "oxlint",
-    "lint:styles": "oxfmt . --write",
     "test": "vitest run -c ./vitest.config.ts"
   },
   "dependencies": {

@@ -12,10 +12,7 @@
     }
   },
   "scripts": {
-    "build": "tsc",
-    "lint": "pnpm run lint:js && pnpm run lint:styles",
-    "lint:js": "oxlint",
-    "lint:styles": "oxfmt . --write"
+    "build": "tsc"
   },
   "dependencies": {
     "@datocms/cma-client-node": "5.4.21",

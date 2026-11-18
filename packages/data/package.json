@@ -16,10 +16,7 @@
     "codegen": "graphql-codegen-esm --config ./codegen.ts",
     "codegen:watch": "graphql-codegen-esm --require dotenv/config --config ./codegen.ts --watch",
     "dev": "tsc --watch",
-    "download-schema": "node ./src/download-schema.ts && pnpm run lint:styles",
-    "lint": "pnpm run lint:js && pnpm run lint:styles",
-    "lint:js": "oxlint",
-    "lint:styles": "oxfmt . --write",
+    "download-schema": "node ./src/download-schema.ts && oxfmt --write src/generated",
     "test": "vitest run -c ./vitest.config.ts"
   },
   "dependencies": {
