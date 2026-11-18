@@ -28,6 +28,6 @@
     "@types/react": "19.2.17",
     "@types/react-dom": "19.2.3",
     "typescript": "5.9.3",
-    "vitest": "4.1.11"
+    "vitest": "5.1.1"
   }
 }
