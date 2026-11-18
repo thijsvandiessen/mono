@@ -28,20 +28,17 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
 
-      - name: Validate fast with oxlint
-        run: npx oxlint@1.94.0
-
-      - name: Validate fast with oxformat
-        run: npx oxfmt@0.66.0 --check
-
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build project
-        run: pnpm exec turbo build
+      - name: Lint with oxlint
+        run: pnpm exec oxlint
 
       - name: Check formatting
-        run: pnpm exec turbo lint
+        run: pnpm run format:check
+
+      - name: Build project
+        run: pnpm exec turbo build
 
       - name: Test project with coverage
         run: pnpm exec turbo test:coverage
