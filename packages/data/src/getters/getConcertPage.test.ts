@@ -59,7 +59,14 @@ describe("getConcertPage", () => {
     expect(data).toEqual({
       content: undefined,
       id: "201835035",
-      image: undefined,
+      image: {
+        id: "72577339",
+        title: "",
+        description: "",
+        width: 342,
+        height: 384,
+        url: "https://www.datocms-assets.com/screenshot.png",
+      },
       locations: [],
       title: "another concert",
       url: "/concerten/another-concert",
