@@ -35,7 +35,7 @@ jobs:
       minor-tag: ${{ steps.release.outputs.minor }}
       patch-tag: ${{ steps.release.outputs.patch }}
     steps:
-      - uses: googleapis/release-please-action@v4
+      - uses: googleapis/release-please-action@v5
         id: Release
         with:
           token: ${{ env.GITHUB_TOKEN }}
