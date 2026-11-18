@@ -17,8 +17,7 @@
     "codegen:watch": "graphql-codegen-esm --require dotenv/config --config ./codegen.ts --watch",
     "dev": "tsc --watch",
     "download-schema": "node ./src/download-schema.ts && pnpm run lint:styles",
-    "lint": "pnpm run lint:js && pnpm run lint:styles",
-    "lint:js": "eslint",
+    "lint": "pnpm run lint:styles",
     "lint:styles": "oxfmt . --write",
     "test": "vitest run -c ./vitest.config.ts"
   },
@@ -42,7 +41,6 @@
     "@graphql-codegen/typescript": "5.0.9",
     "@graphql-codegen/typescript-document-nodes": "5.0.10",
     "@graphql-codegen/typescript-operations": "5.1.0",
-    "@mono/eslint-config": "workspace:*",
     "@mono/typescript-config": "workspace:*",
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.2",
@@ -51,8 +49,6 @@
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "6.0.2",
     "dotenv": "17.4.2",
-    "eslint": "9.39.2",
-    "eslint-plugin-testing-library": "7.16.2",
     "turbo": "2.9.16",
     "typescript": "5.9.3",
     "vitest": "4.1.8"

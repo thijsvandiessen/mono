@@ -2,19 +2,19 @@
 
 ## Project Structure & Module Organization
 
-This Turborepo keeps deployable sites in `apps/` (`lundi-bleu` is production, `example` hosts the style guide) and shared code in `packages/` (`components`, `data`, `hooks`, `utils`, and internal configs such as `eslint-config`). End-to-end Playwright specs live in `e2e/`, while Terraform and other ops assets sit in `terraform/`. Co-locate feature code with its tests and SCSS under each package’s `src/` folder so tree-shaking and story imports stay predictable.
+This Turborepo keeps deployable sites in `apps/` (`lundi-bleu` and `vandiessen` are production sites, `example` is a demo site, `storybook` hosts the component style guide) and shared code in `packages/` (`components`, `content`, `data`, `hooks`, `next-js`, `search-site`, `utils`, and internal configs such as `typescript-config` and `datocms-config`). End-to-end Playwright specs live in `e2e/`, while Terraform and other ops assets sit in `terraform/`. Co-locate feature code with its tests and SCSS under each package’s `src/` folder so tree-shaking and story imports stay predictable.
 
 ## Build, Test, and Development Commands
 
 - `pnpm dev` – runs TypeScript in watch mode and starts both Next.js apps via workspace filters.
 - `pnpm build` – compiles every workspace (TypeScript build plus package-level builds); required before release.
-- `pnpm lint` / `pnpm test` – executes ESLint and Vitest across all packages; gate PRs on both.
+- `pnpm lint` / `pnpm test` – runs oxlint (root `.oxlintrc.json`) plus oxfmt per package, and Vitest; gate PRs on both.
 - `pnpm e2e` – triggers Playwright suites inside `e2e/`.
 - `pnpm codegen` – refreshes GraphQL schemas and generated types; run after backend schema updates.
 
 ## Coding Style & Naming Conventions
 
-Write modern TypeScript/React with 2-space indentation, single quotes, and module-relative imports resolved via the shared `tsconfig`. Workspace packages should remain scoped as `@mono/<name>` and Next.js pages under `apps/<site>/src/app/<route>`. Enforce formatting through oxfmt and lint through the custom `@mono/eslint-config`; avoid manual overrides unless absolutely necessary.
+Write modern TypeScript/React with 2-space indentation, single quotes, and module-relative imports resolved via the shared `tsconfig`. Workspace packages should remain scoped as `@mono/<name>` and Next.js pages under `apps/<site>/src/app/<route>`. Enforce formatting through oxfmt and lint through oxlint using the single root `.oxlintrc.json`; avoid manual overrides unless absolutely necessary.
 
 ## Testing Guidelines
 

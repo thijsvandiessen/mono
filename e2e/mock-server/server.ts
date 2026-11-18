@@ -6,10 +6,10 @@
  * fixtures in ./fixtures.ts. Point the apps at it with
  * NEXT_PUBLIC_DATOCMS_GRAPHQL_URL=http://127.0.0.1:4010/
  */
-import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
+import { type IncomingMessage, type ServerResponse, createServer } from "node:http";
 import { buildSchema, graphql } from "graphql";
-import { readFileSync } from "node:fs";
 import { concerts, general, locations, pages, site } from "./fixtures.ts";
+import { readFileSync } from "node:fs";
 
 const port = Number(process.env.MOCK_GRAPHQL_PORT ?? 4010);
 

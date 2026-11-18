@@ -17,8 +17,7 @@
     "build": "pnpm run build:scss && tsc",
     "build:scss": "cpx \"src/**/*.scss\" dist",
     "dev": "cpx \"src/**/*.scss\" dist --watch && tsc --watch",
-    "lint": "pnpm run lint:js && pnpm run lint:styles",
-    "lint:js": "eslint",
+    "lint": "pnpm run lint:styles",
     "lint:styles": "oxfmt . --write",
     "test": "vitest run -c ./vitest.config.ts"
   },
@@ -37,7 +36,6 @@
     "urql": "5.0.2"
   },
   "devDependencies": {
-    "@mono/eslint-config": "workspace:*",
     "@mono/typescript-config": "workspace:*",
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.2",
@@ -47,8 +45,6 @@
     "@vitejs/plugin-react": "6.0.2",
     "cpx2": "9.0.0",
     "dotenv": "17.4.2",
-    "eslint": "9.39.2",
-    "eslint-plugin-testing-library": "7.16.2",
     "jsdom": "29.1.1",
     "sass": "1.99.0",
     "turbo": "2.9.16",

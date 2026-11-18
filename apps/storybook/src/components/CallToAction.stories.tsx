@@ -1,6 +1,6 @@
-import type { ComponentProps } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { CallToAction } from "@mono/components";
+import type { ComponentProps } from "react";
 
 type CallToActionRecord = ComponentProps<typeof CallToAction>["record"];
 

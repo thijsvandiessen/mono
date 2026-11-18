@@ -1,5 +1,5 @@
-import type { ComponentProps } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { ComponentProps } from "react";
 import { LocationView } from "@mono/components";
 
 type LocationData = ComponentProps<typeof LocationView>["data"];

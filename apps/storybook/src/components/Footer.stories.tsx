@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Footer } from "@mono/components";
 import type { NavigationData, SiteMetadata } from "@mono/data";
+import { Footer } from "@mono/components";
 
 const mockNavigationData: NavigationData = {
   menu: [

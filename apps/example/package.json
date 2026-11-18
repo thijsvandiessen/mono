@@ -14,7 +14,6 @@
   "dependencies": {
     "@mono/components": "workspace:*",
     "@mono/data": "workspace:*",
-    "@mono/eslint-config": "workspace:*",
     "@mono/next-js": "workspace:*",
     "@mono/utils": "workspace:*",
     "classnames": "2.5.1",
@@ -29,9 +28,6 @@
     "@types/react-dom": "19.2.3",
     "babel-plugin-react-compiler": "1.0.0",
     "dotenv": "17.4.2",
-    "eslint": "9.39.2",
-    "eslint-config-next": "16.2.6",
-    "eslint-plugin-testing-library": "7.16.2",
     "sass": "1.99.0",
     "turbo": "2.9.16",
     "typescript": "5.9.3"
