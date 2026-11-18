@@ -29,7 +29,7 @@
     "@vitest/coverage-v8": "4.1.8",
     "concurrently": "10.0.3",
     "dotenv": "17.4.2",
-    "oxfmt": "0.53.0",
+    "oxfmt": "0.66.0",
     "oxlint": "1.94.0",
     "ts-node": "10.9.2",
     "turbo": "2.9.16",

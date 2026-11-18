@@ -29,7 +29,12 @@
   },
   "overrides": [
     {
-      "files": ["apps/example/**", "apps/lundi-bleu/**", "apps/vandiessen/**", "packages/next-js/**"],
+      "files": [
+        "apps/example/**",
+        "apps/lundi-bleu/**",
+        "apps/vandiessen/**",
+        "packages/next-js/**"
+      ],
       "plugins": ["nextjs", "jsx-a11y"]
     }
   ],
