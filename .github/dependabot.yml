@@ -41,3 +41,15 @@ updates:
       commitlint:
         patterns: ["@commitlint/*"]
         update-types: ["minor", "patch"]
+
+  # Workflow actions (uses: ...). Container images in workflows, such as the
+  # Playwright image, are not covered and must be bumped together with
+  # @playwright/test by hand.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      actions:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
