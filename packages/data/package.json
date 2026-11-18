@@ -49,6 +49,6 @@
     "dotenv": "17.4.2",
     "turbo": "2.11.11",
     "typescript": "5.9.3",
-    "vitest": "4.1.8"
+    "vitest": "4.1.11"
   }
 }
