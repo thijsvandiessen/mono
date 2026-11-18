@@ -30,7 +30,7 @@
     "@urql/exchange-graphcache": "9.0.0",
     "@urql/exchange-retry": "2.0.0",
     "graphql": "16.14.1",
-    "react": "19.2.7",
+    "react": "19.3.1",
     "zod": "4.5.4"
   },
   "devDependencies": {

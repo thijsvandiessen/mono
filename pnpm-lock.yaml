@@ -58,13 +58,13 @@ importers:
         version: 2.5.1
       next:
         specifier: 16.4.6
-        version: 16.4.6(@playwright/test@1.65.0)(@types/node@25.6.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(sass@1.99.0)
+        version: 16.4.6(@playwright/test@1.65.0)(@types/node@25.6.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sass@1.99.0)
       react:
-        specifier: 19.2.7
-        version: 19.2.7
+        specifier: 19.3.1
+        version: 19.3.1
       react-dom:
-        specifier: 19.2.7
-        version: 19.2.7(react@19.2.7)
+        specifier: 19.3.1
+        version: 19.3.1(react@19.3.1)
     devDependencies:
       '@mono/typescript-config':
         specifier: workspace:*
@@ -113,13 +113,13 @@ importers:
         version: 2.5.1
       next:
         specifier: 16.4.6
-        version: 16.4.6(@playwright/test@1.65.0)(@types/node@25.6.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(sass@1.99.0)
+        version: 16.4.6(@playwright/test@1.65.0)(@types/node@25.6.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sass@1.99.0)
       react:
-        specifier: 19.2.7
-        version: 19.2.7
+        specifier: 19.3.1
+        version: 19.3.1
       react-dom:
-        specifier: 19.2.7
-        version: 19.2.7(react@19.2.7)
+        specifier: 19.3.1
+        version: 19.3.1(react@19.3.1)
     devDependencies:
       '@mono/typescript-config':
         specifier: workspace:*
@@ -155,21 +155,21 @@ importers:
         specifier: workspace:*
         version: link:../../packages/components
       react:
-        specifier: 19.2.7
-        version: 19.2.7
+        specifier: 19.3.1
+        version: 19.3.1
       react-dom:
-        specifier: 19.2.7
-        version: 19.2.7(react@19.2.7)
+        specifier: 19.3.1
+        version: 19.3.1(react@19.3.1)
     devDependencies:
       '@mono/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
       '@storybook/addon-docs':
         specifier: 10.4.2
-        version: 10.4.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.1)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(vite@8.1.6(@types/node@25.6.0)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.99.0)(yaml@2.9.0))
+        version: 10.4.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.1)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(vite@8.1.6(@types/node@25.6.0)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.99.0)(yaml@2.9.0))
       '@storybook/react-vite':
         specifier: 10.4.2
-        version: 10.4.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@5.9.3)(vite@8.1.6(@types/node@25.6.0)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.99.0)(yaml@2.9.0))
+        version: 10.4.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(typescript@5.9.3)(vite@8.1.6(@types/node@25.6.0)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.99.0)(yaml@2.9.0))
       '@types/react':
         specifier: 19.2.17
         version: 19.2.17
@@ -181,7 +181,7 @@ importers:
         version: 6.0.2(babel-plugin-react-compiler@1.0.0)(vite@8.1.6(@types/node@25.6.0)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.99.0)(yaml@2.9.0))
       storybook:
         specifier: 10.6.2
-        version: 10.6.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        version: 10.6.2(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -193,13 +193,13 @@ importers:
     dependencies:
       next:
         specifier: 16.4.6
-        version: 16.4.6(@playwright/test@1.65.0)(@types/node@25.6.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(sass@1.99.0)
+        version: 16.4.6(@playwright/test@1.65.0)(@types/node@25.6.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sass@1.99.0)
       react:
-        specifier: 19.2.7
-        version: 19.2.7
+        specifier: 19.3.1
+        version: 19.3.1
       react-dom:
-        specifier: 19.2.7
-        version: 19.2.7(react@19.2.7)
+        specifier: 19.3.1
+        version: 19.3.1(react@19.3.1)
     devDependencies:
       '@mono/components':
         specifier: workspace:*
@@ -266,7 +266,7 @@ importers:
         version: link:../utils
       '@react-google-maps/api':
         specifier: 2.20.8
-        version: 2.20.8(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        version: 2.20.8(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       classnames:
         specifier: 2.5.1
         version: 2.5.1
@@ -274,17 +274,17 @@ importers:
         specifier: 6.0.0
         version: 6.0.0
       react:
-        specifier: 19.2.7
-        version: 19.2.7
+        specifier: 19.3.1
+        version: 19.3.1
       react-datocms:
         specifier: 8.0.3
-        version: 8.0.3(graphql@16.14.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        version: 8.0.3(graphql@16.14.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       react-dom:
-        specifier: 19.2.7
-        version: 19.2.7(react@19.2.7)
+        specifier: 19.3.1
+        version: 19.3.1(react@19.3.1)
       urql:
         specifier: 5.0.2
-        version: 5.0.2(@urql/core@6.0.1(graphql@16.14.1))(react@19.2.7)
+        version: 5.0.2(@urql/core@6.0.1(graphql@16.14.1))(react@19.3.1)
     devDependencies:
       '@mono/typescript-config':
         specifier: workspace:*
@@ -294,7 +294,7 @@ importers:
         version: 6.9.1
       '@testing-library/react':
         specifier: 16.3.2
-        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@types/node':
         specifier: 25.6.0
         version: 25.6.0
@@ -353,8 +353,8 @@ importers:
         specifier: 16.14.1
         version: 16.14.1
       react:
-        specifier: 19.2.7
-        version: 19.2.7
+        specifier: 19.3.1
+        version: 19.3.1
       zod:
         specifier: 4.5.4
         version: 4.5.4
@@ -382,7 +382,7 @@ importers:
         version: 6.9.1
       '@testing-library/react':
         specifier: 16.3.2
-        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@types/node':
         specifier: 25.6.0
         version: 25.6.0
@@ -439,8 +439,8 @@ importers:
         specifier: workspace:*
         version: link:../data
       react:
-        specifier: 19.2.7
-        version: 19.2.7
+        specifier: 19.3.1
+        version: 19.3.1
     devDependencies:
       '@mono/typescript-config':
         specifier: workspace:*
@@ -450,7 +450,7 @@ importers:
         version: 6.9.1
       '@testing-library/react':
         specifier: 16.3.2
-        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@types/node':
         specifier: 25.6.0
         version: 25.6.0
@@ -483,13 +483,13 @@ importers:
     dependencies:
       next:
         specifier: 16.4.6
-        version: 16.4.6(@playwright/test@1.65.0)(@types/node@25.6.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(sass@1.99.0)
+        version: 16.4.6(@playwright/test@1.65.0)(@types/node@25.6.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sass@1.99.0)
       react:
-        specifier: 19.2.7
-        version: 19.2.7
+        specifier: 19.3.1
+        version: 19.3.1
       react-dom:
-        specifier: 19.2.7
-        version: 19.2.7(react@19.2.7)
+        specifier: 19.3.1
+        version: 19.3.1(react@19.3.1)
       zod:
         specifier: 4.5.4
         version: 4.5.4
@@ -522,14 +522,14 @@ importers:
         specifier: 4.97.0
         version: 4.97.0(algoliasearch@5.57.0)
       react:
-        specifier: 19.2.7
-        version: 19.2.7
+        specifier: 19.3.1
+        version: 19.3.1
       react-dom:
-        specifier: 19.2.7
-        version: 19.2.7(react@19.2.7)
+        specifier: 19.3.1
+        version: 19.3.1(react@19.3.1)
       react-instantsearch:
         specifier: 7.28.0
-        version: 7.28.0(algoliasearch@5.57.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        version: 7.28.0(algoliasearch@5.57.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
     devDependencies:
       '@mono/typescript-config':
         specifier: workspace:*
@@ -539,7 +539,7 @@ importers:
         version: 6.9.1
       '@testing-library/react':
         specifier: 16.3.2
-        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@types/node':
         specifier: 25.6.0
         version: 25.6.0
@@ -571,11 +571,11 @@ importers:
   packages/utils:
     dependencies:
       react:
-        specifier: 19.2.7
-        version: 19.2.7
+        specifier: 19.3.1
+        version: 19.3.1
       react-dom:
-        specifier: 19.2.7
-        version: 19.2.7(react@19.2.7)
+        specifier: 19.3.1
+        version: 19.3.1(react@19.3.1)
     devDependencies:
       '@mono/typescript-config':
         specifier: workspace:*
@@ -585,7 +585,7 @@ importers:
         version: 6.9.1
       '@testing-library/react':
         specifier: 16.3.2
-        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@types/node':
         specifier: 25.6.0
         version: 25.6.0
@@ -4462,10 +4462,10 @@ packages:
     resolution: {integrity: sha512-aEZ9qP+/M+58x2qgfSFEWH1BxLyHe5+qkLNJOZQb5iGS017jpbRnoKhNRrXPeA6RfBrZO5wZrT9DMC1UqE1f1w==}
     engines: {node: ^20.9.0 || >=22}
 
-  react-dom@19.2.7:
-    resolution: {integrity: sha512-t0BRVXvbiE/o20Hfw669rLbMCDWtYZLvmJigy2f0MxsXF+71pxhR3xOkspmsO8h3ZlNzyibAmtCa3l4lYKk6gQ==}
+  react-dom@19.3.1:
+    resolution: {integrity: sha512-Y0bARz53lhEC1NMCASs0/j+faB/zqt3R8hpvg1e8+61ZVJ4UL0UdC4cBbXfZMcIuhrfgeILTLe+ZeBCavQPtKQ==}
     peerDependencies:
-      react: ^19.2.7
+      react: ^19.3.1
 
   react-instantsearch-core@7.28.0:
     resolution: {integrity: sha512-oOCh8ARtqRBcjFVes6UunDVu1FZVde67q5fklewxDP1pQ1w2l+YneeomoSNUw7Ua/uEqETUQGi5Oiipk2CE1hA==}
@@ -4496,12 +4496,8 @@ packages:
     resolution: {integrity: sha512-26TUbLzLfHQ5jO5N7y3Mx88eeKo0Ml0UjCQuX4BMfOd/JX+enQqlKpL1CZnmjeBRvQE8TR+ds9j1rqx9CxhKHQ==}
     engines: {node: '>=0.12.0'}
 
-  react@19.2.6:
-    resolution: {integrity: sha512-sfWGGfavi0xr8Pg0sVsyHMAOziVYKgPLNrS7ig+ivMNb3wbCBw3KxtflsGBAwD3gYQlE/AEZsTLgToRrSCjb0Q==}
-    engines: {node: '>=0.10.0'}
-
-  react@19.2.7:
-    resolution: {integrity: sha512-HNe9WslTbXmFK8o8cmwgAeJFSBvt1bPdHCVKtaaV+WlAN36mpT4hcRpwbf3fY56ar2oIXzsBpOAiIRHAdY0OlQ==}
+  react@19.3.1:
+    resolution: {integrity: sha512-QNhWdt7nrgVWWQG58QuGsAR3jv3Hbe4mb4vz7w2csnHavciZJgda1CPNaldF6eVxv90ud3jUXpKlHL69gO38yw==}
     engines: {node: '>=0.10.0'}
 
   readdirp@4.1.2:
@@ -4570,8 +4566,8 @@ packages:
     resolution: {integrity: sha512-xAg7SOnEhrm5zI3puOOKyy1OMcMlIJZYNJY7xLBwSze0UjhPLnWfj2GF2EpT0jmzaJKIWKHLsaSSajf35bcYnA==}
     engines: {node: '>=v12.22.7'}
 
-  scheduler@0.27.0:
-    resolution: {integrity: sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q==}
+  scheduler@0.28.0:
+    resolution: {integrity: sha512-juorfCmIkIw8tT+p5BXSm6PJjQF/ycEYmKyzURCIt/RaZIhL+PulbQ9Yu2z1HdOJDdqDTlxA1+xKBmHXJsczAw==}
 
   search-insights@2.17.3:
     resolution: {integrity: sha512-RQPdCYTa8A68uM2jwxoY842xDhvx3E5LFL1LxvxCNMev4o5mLuokczhzjAgGwUZBAmOKZknArSxLKmXtIi2AxQ==}
@@ -6592,11 +6588,11 @@ snapshots:
       '@jsonjoy.com/codegen': 17.67.0(tslib@2.9.1)
       tslib: 2.9.1
 
-  '@mdx-js/react@3.1.1(@types/react@19.2.17)(react@19.2.6)':
+  '@mdx-js/react@3.1.1(@types/react@19.2.17)(react@19.3.1)':
     dependencies:
       '@types/mdx': 2.0.13
       '@types/react': 19.2.17
-      react: 19.2.6
+      react: 19.3.1
 
   '@napi-rs/wasm-runtime@1.1.5(@emnapi/core@1.11.0)(@emnapi/runtime@1.11.0)':
     dependencies:
@@ -6953,7 +6949,7 @@ snapshots:
     dependencies:
       playwright: 1.65.0
 
-  '@react-google-maps/api@2.20.8(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@react-google-maps/api@2.20.8(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
       '@googlemaps/js-api-loader': 1.16.8
       '@googlemaps/markerclusterer': 2.5.3
@@ -6961,8 +6957,8 @@ snapshots:
       '@react-google-maps/marker-clusterer': 2.20.0
       '@types/google.maps': 3.58.1
       invariant: 2.2.4
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
+      react: 19.3.1
+      react-dom: 19.3.1(react@19.3.1)
 
   '@react-google-maps/infobox@2.20.0': {}
 
@@ -7035,15 +7031,15 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@storybook/addon-docs@10.4.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.1)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(vite@8.1.6(@types/node@25.6.0)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.99.0)(yaml@2.9.0))':
+  '@storybook/addon-docs@10.4.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.1)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(vite@8.1.6(@types/node@25.6.0)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.99.0)(yaml@2.9.0))':
     dependencies:
-      '@mdx-js/react': 3.1.1(@types/react@19.2.17)(react@19.2.6)
-      '@storybook/csf-plugin': 10.4.2(esbuild@0.28.1)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(vite@8.1.6(@types/node@25.6.0)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.99.0)(yaml@2.9.0))
-      '@storybook/icons': 2.0.2(react-dom@19.2.7(react@19.2.7))(react@19.2.6)
-      '@storybook/react-dom-shim': 10.4.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.6)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))
-      react: 19.2.6
-      react-dom: 19.2.7(react@19.2.6)
-      storybook: 10.6.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@mdx-js/react': 3.1.1(@types/react@19.2.17)(react@19.3.1)
+      '@storybook/csf-plugin': 10.4.2(esbuild@0.28.1)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(vite@8.1.6(@types/node@25.6.0)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.99.0)(yaml@2.9.0))
+      '@storybook/icons': 2.0.2(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      '@storybook/react-dom-shim': 10.4.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
+      react: 19.3.1
+      react-dom: 19.3.1(react@19.3.1)
+      storybook: 10.6.2(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       ts-dedent: 2.2.0
     optionalDependencies:
       '@types/react': 19.2.17
@@ -7054,10 +7050,10 @@ snapshots:
       - vite
       - webpack
 
-  '@storybook/builder-vite@10.4.2(esbuild@0.28.1)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(vite@8.1.6(@types/node@25.6.0)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.99.0)(yaml@2.9.0))':
+  '@storybook/builder-vite@10.4.2(esbuild@0.28.1)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(vite@8.1.6(@types/node@25.6.0)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.99.0)(yaml@2.9.0))':
     dependencies:
-      '@storybook/csf-plugin': 10.4.2(esbuild@0.28.1)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(vite@8.1.6(@types/node@25.6.0)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.99.0)(yaml@2.9.0))
-      storybook: 10.6.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@storybook/csf-plugin': 10.4.2(esbuild@0.28.1)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(vite@8.1.6(@types/node@25.6.0)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.99.0)(yaml@2.9.0))
+      storybook: 10.6.2(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       ts-dedent: 2.2.0
       vite: 8.1.6(@types/node@25.6.0)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.99.0)(yaml@2.9.0)
     transitivePeerDependencies:
@@ -7065,9 +7061,9 @@ snapshots:
       - rollup
       - webpack
 
-  '@storybook/csf-plugin@10.4.2(esbuild@0.28.1)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(vite@8.1.6(@types/node@25.6.0)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.99.0)(yaml@2.9.0))':
+  '@storybook/csf-plugin@10.4.2(esbuild@0.28.1)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(vite@8.1.6(@types/node@25.6.0)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.99.0)(yaml@2.9.0))':
     dependencies:
-      storybook: 10.6.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      storybook: 10.6.2(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       unplugin: 2.3.11
     optionalDependencies:
       esbuild: 0.28.1
@@ -7075,47 +7071,33 @@ snapshots:
 
   '@storybook/global@5.0.0': {}
 
-  '@storybook/icons@2.0.2(react-dom@19.2.7(react@19.2.7))(react@19.2.6)':
+  '@storybook/icons@2.0.2(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
-      react: 19.2.6
-      react-dom: 19.2.7(react@19.2.7)
+      react: 19.3.1
+      react-dom: 19.3.1(react@19.3.1)
 
-  '@storybook/icons@2.0.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@storybook/react-dom-shim@10.4.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))':
     dependencies:
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
-
-  '@storybook/react-dom-shim@10.4.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.6)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))':
-    dependencies:
-      react: 19.2.6
-      react-dom: 19.2.7(react@19.2.7)
-      storybook: 10.6.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      react: 19.3.1
+      react-dom: 19.3.1(react@19.3.1)
+      storybook: 10.6.2(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
     optionalDependencies:
       '@types/react': 19.2.17
       '@types/react-dom': 19.2.3(@types/react@19.2.17)
 
-  '@storybook/react-dom-shim@10.4.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))':
-    dependencies:
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
-      storybook: 10.6.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-    optionalDependencies:
-      '@types/react': 19.2.17
-      '@types/react-dom': 19.2.3(@types/react@19.2.17)
-
-  '@storybook/react-vite@10.4.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@5.9.3)(vite@8.1.6(@types/node@25.6.0)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.99.0)(yaml@2.9.0))':
+  '@storybook/react-vite@10.4.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(typescript@5.9.3)(vite@8.1.6(@types/node@25.6.0)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.99.0)(yaml@2.9.0))':
     dependencies:
       '@joshwooding/vite-plugin-react-docgen-typescript': 0.7.0(typescript@5.9.3)(vite@8.1.6(@types/node@25.6.0)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.99.0)(yaml@2.9.0))
       '@rollup/pluginutils': 5.3.0
-      '@storybook/builder-vite': 10.4.2(esbuild@0.28.1)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(vite@8.1.6(@types/node@25.6.0)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.99.0)(yaml@2.9.0))
-      '@storybook/react': 10.4.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@5.9.3)
+      '@storybook/builder-vite': 10.4.2(esbuild@0.28.1)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(vite@8.1.6(@types/node@25.6.0)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.99.0)(yaml@2.9.0))
+      '@storybook/react': 10.4.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(typescript@5.9.3)
       empathic: 2.0.1
       magic-string: 0.30.21
-      react: 19.2.7
+      react: 19.3.1
       react-docgen: 8.0.3
-      react-dom: 19.2.7(react@19.2.7)
+      react-dom: 19.3.1(react@19.3.1)
       resolve: 1.22.12
-      storybook: 10.6.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      storybook: 10.6.2(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       tsconfig-paths: 4.2.0
       vite: 8.1.6(@types/node@25.6.0)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.99.0)(yaml@2.9.0)
     transitivePeerDependencies:
@@ -7127,15 +7109,15 @@ snapshots:
       - typescript
       - webpack
 
-  '@storybook/react@10.4.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@5.9.3)':
+  '@storybook/react@10.4.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(typescript@5.9.3)':
     dependencies:
       '@storybook/global': 5.0.0
-      '@storybook/react-dom-shim': 10.4.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))
-      react: 19.2.7
+      '@storybook/react-dom-shim': 10.4.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(storybook@10.6.2(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
+      react: 19.3.1
       react-docgen: 8.0.3
       react-docgen-typescript: 2.4.0(typescript@5.9.3)
-      react-dom: 19.2.7(react@19.2.7)
-      storybook: 10.6.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      react-dom: 19.3.1(react@19.3.1)
+      storybook: 10.6.2(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
     optionalDependencies:
       '@types/react': 19.2.17
       '@types/react-dom': 19.2.3(@types/react@19.2.17)
@@ -7240,12 +7222,12 @@ snapshots:
       picocolors: 1.1.1
       redent: 3.0.0
 
-  '@testing-library/react@16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@testing-library/react@16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
       '@babel/runtime': 7.29.7
       '@testing-library/dom': 10.4.1
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
+      react: 19.3.1
+      react-dom: 19.3.1(react@19.3.1)
     optionalDependencies:
       '@types/react': 19.2.17
       '@types/react-dom': 19.2.3(@types/react@19.2.17)
@@ -8116,28 +8098,19 @@ snapshots:
 
   ini@6.0.0: {}
 
-  instantsearch-ui-components@0.22.0(react@19.2.6):
+  instantsearch-ui-components@0.22.0(react@19.3.1):
     dependencies:
       '@swc/helpers': 0.5.18
-      markdown-to-jsx: 7.7.17(react@19.2.6)
+      markdown-to-jsx: 7.7.17(react@19.3.1)
       zod: 4.5.4
       zod-to-json-schema: 3.24.6(zod@4.5.4)
     transitivePeerDependencies:
       - react
 
-  instantsearch-ui-components@0.22.0(react@19.2.7):
+  instantsearch-ui-components@0.26.1(react@19.3.1):
     dependencies:
       '@swc/helpers': 0.5.18
-      markdown-to-jsx: 7.7.17(react@19.2.7)
-      zod: 4.5.4
-      zod-to-json-schema: 3.24.6(zod@4.5.4)
-    transitivePeerDependencies:
-      - react
-
-  instantsearch-ui-components@0.26.1(react@19.2.6):
-    dependencies:
-      '@swc/helpers': 0.5.18
-      markdown-to-jsx: 7.7.17(react@19.2.6)
+      markdown-to-jsx: 7.7.17(react@19.3.1)
       zod: 4.5.4
       zod-to-json-schema: 3.24.6(zod@4.5.4)
     transitivePeerDependencies:
@@ -8155,10 +8128,10 @@ snapshots:
       algoliasearch-helper: 3.28.0(algoliasearch@5.57.0)
       hogan.js: 3.0.2
       htm: 3.1.1
-      instantsearch-ui-components: 0.22.0(react@19.2.6)
+      instantsearch-ui-components: 0.22.0(react@19.3.1)
       preact: 10.29.2
       qs: 6.15.2
-      react: 19.2.6
+      react: 19.3.1
       search-insights: 2.17.3
       zod: 4.5.4
       zod-to-json-schema: 3.24.6(zod@4.5.4)
@@ -8175,10 +8148,10 @@ snapshots:
       algoliasearch-helper: 3.29.1(algoliasearch@5.57.0)
       hogan.js: 3.0.2
       htm: 3.1.1
-      instantsearch-ui-components: 0.26.1(react@19.2.6)
+      instantsearch-ui-components: 0.26.1(react@19.3.1)
       preact: 10.29.2
       qs: 6.15.2
-      react: 19.2.6
+      react: 19.3.1
       search-insights: 2.17.3
       zod: 4.5.4
       zod-to-json-schema: 3.24.6(zod@4.5.4)
@@ -8467,13 +8440,9 @@ snapshots:
 
   map-cache@0.2.2: {}
 
-  markdown-to-jsx@7.7.17(react@19.2.6):
+  markdown-to-jsx@7.7.17(react@19.3.1):
     optionalDependencies:
-      react: 19.2.6
-
-  markdown-to-jsx@7.7.17(react@19.2.7):
-    optionalDependencies:
-      react: 19.2.7
+      react: 19.3.1
 
   math-intrinsics@1.1.0: {}
 
@@ -8535,16 +8504,16 @@ snapshots:
 
   nanoid@3.3.20: {}
 
-  next@16.4.6(@playwright/test@1.65.0)(@types/node@25.6.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(sass@1.99.0):
+  next@16.4.6(@playwright/test@1.65.0)(@types/node@25.6.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sass@1.99.0):
     dependencies:
       '@next/env': 16.4.6
       '@swc/helpers': 0.5.23
       baseline-browser-mapping: 2.11.5
       caniuse-lite: 1.0.30001806
       postcss: 8.5.23
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
-      styled-jsx: 5.1.6(react@19.2.7)
+      react: 19.3.1
+      react-dom: 19.3.1(react@19.3.1)
+      styled-jsx: 5.1.6(react@19.3.1)
     optionalDependencies:
       '@next/swc-darwin-arm64': 16.4.6
       '@next/swc-darwin-x64': 16.4.6
@@ -8782,16 +8751,16 @@ snapshots:
     dependencies:
       side-channel: 1.1.0
 
-  react-datocms@8.0.3(graphql@16.14.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
+  react-datocms@8.0.3(graphql@16.14.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1):
     dependencies:
       '@datocms/content-link': 0.3.21
       datocms-listen: 1.0.2(graphql@16.14.1)
       datocms-structured-text-generic-html-renderer: 5.1.16
       datocms-structured-text-utils: 5.1.16
-      react: 19.2.7
-      react-intersection-observer: 9.16.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      react: 19.3.1
+      react-intersection-observer: 9.16.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       react-string-replace: 1.1.1
-      use-deep-compare-effect: 1.8.1(react@19.2.7)
+      use-deep-compare-effect: 1.8.1(react@19.3.1)
     transitivePeerDependencies:
       - graphql
       - react-dom
@@ -8815,50 +8784,43 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  react-dom@19.2.7(react@19.2.6):
+  react-dom@19.3.1(react@19.3.1):
     dependencies:
-      react: 19.2.6
-      scheduler: 0.27.0
+      react: 19.3.1
+      scheduler: 0.28.0
 
-  react-dom@19.2.7(react@19.2.7):
-    dependencies:
-      react: 19.2.7
-      scheduler: 0.27.0
-
-  react-instantsearch-core@7.28.0(algoliasearch@5.57.0)(react@19.2.7):
+  react-instantsearch-core@7.28.0(algoliasearch@5.57.0)(react@19.3.1):
     dependencies:
       '@swc/helpers': 0.5.18
       algoliasearch: 5.57.0
       algoliasearch-helper: 3.28.0(algoliasearch@5.57.0)
       instantsearch.js: 4.92.0(algoliasearch@5.57.0)
-      react: 19.2.7
-      use-sync-external-store: 1.6.0(react@19.2.7)
+      react: 19.3.1
+      use-sync-external-store: 1.6.0(react@19.3.1)
       zod: 4.5.4
       zod-to-json-schema: 3.24.6(zod@4.5.4)
 
-  react-instantsearch@7.28.0(algoliasearch@5.57.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
+  react-instantsearch@7.28.0(algoliasearch@5.57.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1):
     dependencies:
       '@swc/helpers': 0.5.18
       algoliasearch: 5.57.0
-      instantsearch-ui-components: 0.22.0(react@19.2.7)
+      instantsearch-ui-components: 0.22.0(react@19.3.1)
       instantsearch.js: 4.92.0(algoliasearch@5.57.0)
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
-      react-instantsearch-core: 7.28.0(algoliasearch@5.57.0)(react@19.2.7)
+      react: 19.3.1
+      react-dom: 19.3.1(react@19.3.1)
+      react-instantsearch-core: 7.28.0(algoliasearch@5.57.0)(react@19.3.1)
 
-  react-intersection-observer@9.16.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
+  react-intersection-observer@9.16.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1):
     dependencies:
-      react: 19.2.7
+      react: 19.3.1
     optionalDependencies:
-      react-dom: 19.2.7(react@19.2.7)
+      react-dom: 19.3.1(react@19.3.1)
 
   react-is@17.0.2: {}
 
   react-string-replace@1.1.1: {}
 
-  react@19.2.6: {}
-
-  react@19.2.7: {}
+  react@19.3.1: {}
 
   readdirp@4.1.2: {}
 
@@ -8938,7 +8900,7 @@ snapshots:
     dependencies:
       xmlchars: 2.2.0
 
-  scheduler@0.27.0: {}
+  scheduler@0.28.0: {}
 
   search-insights@2.17.3: {}
 
@@ -9036,10 +8998,10 @@ snapshots:
 
   std-env@4.1.0: {}
 
-  storybook@10.6.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
+  storybook@10.6.2(@types/react@19.2.17)(react-dom@19.3.1(react@19.3.1))(react@19.3.1):
     dependencies:
       '@storybook/global': 5.0.0
-      '@storybook/icons': 2.0.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@storybook/icons': 2.0.2(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@testing-library/dom': 10.4.1
       '@testing-library/jest-dom': 6.9.1
       '@testing-library/user-event': 14.6.8(@testing-library/dom@10.4.1)
@@ -9053,7 +9015,7 @@ snapshots:
       oxc-resolver: 11.21.2
       recast: 0.23.11
       semver: 7.8.5
-      use-sync-external-store: 1.6.0(react@19.2.7)
+      use-sync-external-store: 1.6.0(react@19.3.1)
       ws: 8.22.2
     optionalDependencies:
       '@types/react': 19.2.17
@@ -9088,10 +9050,10 @@ snapshots:
 
   strip-indent@4.1.1: {}
 
-  styled-jsx@5.1.6(react@19.2.7):
+  styled-jsx@5.1.6(react@19.3.1):
     dependencies:
       client-only: 0.0.1
-      react: 19.2.7
+      react: 19.3.1
 
   subarg@1.0.0:
     dependencies:
@@ -9232,21 +9194,21 @@ snapshots:
 
   urlpattern-polyfill@10.1.0: {}
 
-  urql@5.0.2(@urql/core@6.0.1(graphql@16.14.1))(react@19.2.7):
+  urql@5.0.2(@urql/core@6.0.1(graphql@16.14.1))(react@19.3.1):
     dependencies:
       '@urql/core': 6.0.1(graphql@16.14.1)
-      react: 19.2.7
+      react: 19.3.1
       wonka: 6.3.6
 
-  use-deep-compare-effect@1.8.1(react@19.2.7):
+  use-deep-compare-effect@1.8.1(react@19.3.1):
     dependencies:
       '@babel/runtime': 7.29.7
       dequal: 2.0.3
-      react: 19.2.7
+      react: 19.3.1
 
-  use-sync-external-store@1.6.0(react@19.2.7):
+  use-sync-external-store@1.6.0(react@19.3.1):
     dependencies:
-      react: 19.2.7
+      react: 19.3.1
 
   uuid@9.0.1: {}
 
