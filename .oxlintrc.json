@@ -1,0 +1,53 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "unicorn", "oxc", "react", "import", "vitest"],
+  "categories": {
+    "correctness": "error"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2024": true
+  },
+  "rules": {
+    "require-await": "warn",
+    "no-unused-vars": "warn",
+    "react/rules-of-hooks": "error",
+    "react/exhaustive-deps": "warn",
+    "react/react-in-jsx-scope": "off",
+    "vitest/require-mock-type-parameters": "off",
+    "sort-imports": [
+      "warn",
+      {
+        "ignoreCase": false,
+        "ignoreDeclarationSort": false,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
+        "allowSeparatedGroups": false
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "apps/example/**",
+        "apps/lundi-bleu/**",
+        "apps/vandiessen/**",
+        "packages/next-js/**"
+      ],
+      "plugins": ["nextjs", "jsx-a11y"]
+    }
+  ],
+  "ignorePatterns": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/.next/**",
+    "**/.turbo/**",
+    "**/out/**",
+    "**/build/**",
+    "**/coverage/**",
+    "**/storybook-static/**",
+    "**/next-env.d.ts",
+    "packages/data/src/generated/**"
+  ]
+}

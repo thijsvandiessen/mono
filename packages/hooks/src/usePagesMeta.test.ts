@@ -17,7 +17,6 @@ describe("usePagesMeta", () => {
   it("should return the number of pages", async () => {
     getPagesMetaMock.mockResolvedValue({
       data: {
-        __typename: "CollectionMetadata",
         count: 1,
       },
       error: undefined,

@@ -11,6 +11,8 @@ describe("locationItemFormatter", () => {
         location: {
           id: "location-id",
           title: "Location Title",
+          addressTitle: null,
+          address: null,
         },
       }),
     ).toEqual({

@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
 import { ArrowDown, ArrowRight, Cross, Hamburger, Logo, Pdf, Play } from "@mono/components";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 const icons = {
   ArrowDown,

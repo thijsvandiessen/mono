@@ -6,6 +6,8 @@ type Props = {
 };
 
 export const customNextConfig = ({ domain }: Props): NextConfig => ({
+  // Let `next dev` keep each app's AGENTS.md in sync with the installed Next.js docs.
+  agentRules: true,
   poweredByHeader: false,
   reactStrictMode: true,
   reactCompiler: true,

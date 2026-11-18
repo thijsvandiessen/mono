@@ -7,7 +7,11 @@ describe("locationsFormatter", () => {
   });
 
   it("should return a locations array", () => {
-    expect(locationsFormatter([{ id: "location-id", title: "Location Title" }])).toEqual([
+    expect(
+      locationsFormatter([
+        { id: "location-id", title: "Location Title", addressTitle: null, address: null },
+      ]),
+    ).toEqual([
       {
         id: "location-id",
         address: null,

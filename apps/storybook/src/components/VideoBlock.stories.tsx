@@ -1,5 +1,5 @@
-import type { ComponentProps } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { ComponentProps } from "react";
 import { VideoBlock } from "@mono/components";
 
 type VideoRecord = ComponentProps<typeof VideoBlock>["record"];

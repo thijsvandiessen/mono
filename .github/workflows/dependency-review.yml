@@ -6,8 +6,6 @@
 # Public documentation: https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-dependency-review#dependency-review-enforcement
 name: "Dependency Review"
 on:
-  push:
-    branches: [main]
   pull_request:
     branches: [main]
   merge_group:
@@ -24,7 +22,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.REPO_SCOPED_TOKEN }}
     steps:
       - name: "Checkout Repository"
-      - uses: actions/checkout@v6.0.2
+        uses: actions/checkout@v6.0.2
       - name: "Dependency Review"
         uses: actions/dependency-review-action@v4
         with:

@@ -4,7 +4,14 @@ import { locationFormatter } from "../location/location.js";
 
 describe("locationFormatter", () => {
   it("should return a location object", () => {
-    expect(locationFormatter({ id: "some-id", title: "Location Title" })).toEqual({
+    expect(
+      locationFormatter({
+        id: "some-id",
+        title: "Location Title",
+        addressTitle: null,
+        address: null,
+      }),
+    ).toEqual({
       address: null,
       id: "some-id",
       lat: null,

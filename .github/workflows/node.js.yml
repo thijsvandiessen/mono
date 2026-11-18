@@ -29,7 +29,7 @@ jobs:
           cache: "pnpm"
 
       - name: Validate fast with oxlint
-        run: npx oxlint@1.81.0
+        run: npx oxlint@1.94.0
 
       - name: Validate fast with oxformat
         run: npx oxfmt@0.66.0 --check

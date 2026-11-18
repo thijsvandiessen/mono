@@ -14,23 +14,19 @@
   "scripts": {
     "build": "tsc",
     "lint": "pnpm run lint:js && pnpm run lint:styles",
-    "lint:js": "eslint",
+    "lint:js": "oxlint",
     "lint:styles": "oxfmt . --write"
   },
   "dependencies": {
-    "next": "16.4.1",
+    "next": "16.4.6",
     "react": "19.2.7",
     "react-dom": "19.2.7",
     "zod": "4.5.4"
   },
   "devDependencies": {
-    "@mono/eslint-config": "workspace:*",
     "@mono/typescript-config": "workspace:*",
     "@types/react": "19.2.17",
     "@types/react-dom": "19.2.3",
-    "eslint": "9.39.2",
-    "eslint-config-next": "16.2.6",
-    "eslint-plugin-testing-library": "7.16.2",
     "typescript": "5.9.3",
     "vitest": "4.1.11"
   }

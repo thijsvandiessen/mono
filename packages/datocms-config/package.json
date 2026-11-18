@@ -13,7 +13,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "lint": "pnpm run lint:styles",
+    "lint": "pnpm run lint:js && pnpm run lint:styles",
+    "lint:js": "oxlint",
     "lint:styles": "oxfmt . --write"
   },
   "dependencies": {
@@ -23,9 +24,7 @@
     "zod": "4.5.4"
   },
   "devDependencies": {
-    "@mono/eslint-config": "workspace:*",
     "@mono/typescript-config": "workspace:*",
-    "eslint": "9.39.2",
     "typescript": "5.9.3",
     "vitest": "4.1.8"
   }

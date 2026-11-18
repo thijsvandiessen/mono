@@ -18,7 +18,7 @@
     "dev": "tsc --watch",
     "download-schema": "node ./src/download-schema.ts && pnpm run lint:styles",
     "lint": "pnpm run lint:js && pnpm run lint:styles",
-    "lint:js": "eslint",
+    "lint:js": "oxlint",
     "lint:styles": "oxfmt . --write",
     "test": "vitest run -c ./vitest.config.ts"
   },
@@ -34,15 +34,11 @@
     "zod": "4.5.4"
   },
   "devDependencies": {
-    "@apollo/rover": "0.40.0",
+    "@apollo/rover": "1.0.1",
     "@commitlint/config-conventional": "21.0.2",
-    "@graphql-codegen/cli": "6.2.1",
-    "@graphql-codegen/client-preset": "5.3.0",
-    "@graphql-codegen/introspection": "6.0.1",
-    "@graphql-codegen/typescript": "5.0.9",
-    "@graphql-codegen/typescript-document-nodes": "5.0.10",
-    "@graphql-codegen/typescript-operations": "5.1.0",
-    "@mono/eslint-config": "workspace:*",
+    "@graphql-codegen/cli": "8.0.0",
+    "@graphql-codegen/client-preset": "7.0.0",
+    "@graphql-codegen/introspection": "7.0.0",
     "@mono/typescript-config": "workspace:*",
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.2",
@@ -51,8 +47,6 @@
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "6.0.2",
     "dotenv": "17.4.2",
-    "eslint": "9.39.2",
-    "eslint-plugin-testing-library": "7.16.2",
     "turbo": "2.9.16",
     "typescript": "5.9.3",
     "vitest": "4.1.8"
