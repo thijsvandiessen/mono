@@ -31,7 +31,7 @@
     "@urql/exchange-retry": "2.0.0",
     "graphql": "16.14.1",
     "react": "19.2.7",
-    "zod": "4.5.4"
+    "zod": "4.6.6"
   },
   "devDependencies": {
     "@apollo/rover": "1.0.1",
@@ -49,6 +49,6 @@
     "dotenv": "17.4.2",
     "turbo": "2.9.16",
     "typescript": "5.9.3",
-    "vitest": "4.1.8"
+    "vitest": "4.1.11"
   }
 }
