@@ -6,14 +6,12 @@ packages:
 allowBuilds:
   "@apollo/rover": true
   "@parcel/watcher": true
-  "@swc/core": true
   esbuild: true
   sharp: true
   unrs-resolver: true
 
 ignoredBuiltDependencies:
   - "@apollo/rover"
-  - "@swc/core"
 
 onlyBuiltDependencies:
   - "@parcel/watcher"
