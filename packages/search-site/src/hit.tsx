@@ -1,3 +1,5 @@
+import type { JSX } from "react";
+
 type Hit = {
   image: string;
   title: string;
@@ -9,7 +11,7 @@ type Props = {
   hit: Hit;
 };
 
-export const Hit = ({ hit }: Props) => {
+export const Hit = ({ hit }: Props): JSX.Element => {
   return (
     <article>
       <h1>{hit.title}</h1>

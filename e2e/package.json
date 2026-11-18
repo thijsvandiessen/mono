@@ -16,6 +16,6 @@
     "@playwright/test": "1.65.1",
     "@types/node": "26.6.6",
     "graphql": "17.1.0",
-    "typescript": "5.9.3"
+    "typescript": "7.0.2"
   }
 }
