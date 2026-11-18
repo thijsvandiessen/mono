@@ -19,6 +19,7 @@ describe("useIntersectionObserver", () => {
     class IntersectionObserverMock implements IntersectionObserver {
       readonly root = null;
       readonly rootMargin = "";
+      readonly scrollMargin = "";
       readonly thresholds = [];
       constructor(callback: IntersectionObserverCallback) {
         cb = callback;

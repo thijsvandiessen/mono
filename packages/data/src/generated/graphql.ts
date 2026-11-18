@@ -10104,7 +10104,7 @@ export const SiteMetadataFragmentDoc = {
   ],
 } as unknown as DocumentNode<SiteMetadataFragment, unknown>;
 export const GetConcertDocument = {
-  __meta__: { hash: "sha256:7874f23b6b441351b949c354e146b233fda6a0aac3a814b9b2f6418a9b9c3353" },
+  __meta__: { hash: "sha256:b578aa28d763943a553898ee1b363b4f327c014e5fb17933d36460228dbce84a" },
   kind: "Document",
   definitions: [
     {
@@ -10901,7 +10901,7 @@ export const GetConcertDocument = {
   ],
 } as unknown as DocumentNode<GetConcertQuery, GetConcertQueryVariables>;
 export const GetConcertPageDocument = {
-  __meta__: { hash: "sha256:876670f4a65b58218c5312b22c9c9d2bbdae012964e87aa93c3f3da60c1ff614" },
+  __meta__: { hash: "sha256:69f8a5273ddd39803ef0a421bb556e987d5b577f408b42d1fd49149b135c5372" },
   kind: "Document",
   definitions: [
     {
@@ -11698,7 +11698,7 @@ export const GetConcertPageDocument = {
   ],
 } as unknown as DocumentNode<GetConcertPageQuery, GetConcertPageQueryVariables>;
 export const GetConcertSeoDocument = {
-  __meta__: { hash: "sha256:428d22d726a6846943cccb99538d5b670cb63107e54b36d08a95fec7122cc686" },
+  __meta__: { hash: "sha256:08e1ecd9fed15a6bf6d76550d95a0b8d075f2e8c84d123e1fa7245be0ca6fdea" },
   kind: "Document",
   definitions: [
     {
@@ -13750,7 +13750,7 @@ export const GetGeneralInfoDocument = {
   ],
 } as unknown as DocumentNode<GetGeneralInfoQuery, GetGeneralInfoQueryVariables>;
 export const GetLocationDocument = {
-  __meta__: { hash: "sha256:98b482ae8e0faa66ed223b787f88f0e493630724f484aaaa261105a02f33e44a" },
+  __meta__: { hash: "sha256:2a17cf51e013020075398e28477d5d82e2c4409d3e4978469e58050ac39f2537" },
   kind: "Document",
   definitions: [
     {
@@ -13937,7 +13937,7 @@ export const GetLocationsDocument = {
   ],
 } as unknown as DocumentNode<GetLocationsQuery, GetLocationsQueryVariables>;
 export const GetPageDocument = {
-  __meta__: { hash: "sha256:0fb768dd36a0ed04dedc64dbf11d0d8443fe101da90f62d725eba7b492b52b13" },
+  __meta__: { hash: "sha256:3c359c7a2bf891e9d1765e848ec1da7b39a42cec3b6648d7a3373e9a8ea7cb62" },
   kind: "Document",
   definitions: [
     {
@@ -14665,7 +14665,7 @@ export const GetPageDocument = {
   ],
 } as unknown as DocumentNode<GetPageQuery, GetPageQueryVariables>;
 export const GetPageSeoDocument = {
-  __meta__: { hash: "sha256:9e146eb56f31f116b4a036dd9f351fdf31aee50f52d150445058dcf2a9a2664e" },
+  __meta__: { hash: "sha256:7df5f392515f3ae437532b5639af8d6fcf21c415d34f4190919fc8e6733ca3b0" },
   kind: "Document",
   definitions: [
     {
