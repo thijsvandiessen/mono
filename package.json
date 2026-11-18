@@ -25,9 +25,9 @@
   "devDependencies": {
     "@commitlint/cli": "21.0.2",
     "@commitlint/config-conventional": "21.0.2",
-    "@types/node": "25.6.0",
+    "@types/node": "26.6.6",
     "@vitest/coverage-v8": "5.1.1",
-    "dotenv": "17.4.2",
+    "dotenv": "18.0.10",
     "oxfmt": "0.79.0",
     "oxlint": "1.94.0",
     "turbo": "2.11.11",

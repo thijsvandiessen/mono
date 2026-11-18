@@ -18,8 +18,8 @@
     "lint:styles": "oxfmt . --write"
   },
   "dependencies": {
-    "@datocms/cma-client-node": "5.4.21",
-    "dotenv": "17.4.2",
+    "@datocms/cma-client-node": "6.1.3",
+    "dotenv": "18.0.10",
     "memfs": "4.56.11",
     "zod": "4.6.7"
   },
