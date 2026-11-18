@@ -35,6 +35,12 @@ variable "google_project_region" {
   default   = "europe-west1-c"
 }
 
+variable "GOOGLE_MAPS_MAP_ID" {
+  sensitive = false
+  type      = string
+  default   = ""
+}
+
 variable "DATOCMS_READONLY_TOKEN" {
   sensitive = false
   type      = string
@@ -65,6 +71,12 @@ locals {
     {
       key       = "NEXT_PUBLIC_GOOGLE_MAPS_API_KEY"
       value     = google_apikeys_key.maps.key_string
+      target    = local.env_targets
+      sensitive = false
+    },
+    {
+      key       = "NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID"
+      value     = var.GOOGLE_MAPS_MAP_ID
       target    = local.env_targets
       sensitive = false
     },
