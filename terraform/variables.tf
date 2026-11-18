@@ -41,6 +41,12 @@ variable "GOOGLE_MAPS_API_KEY" {
   default   = ""
 }
 
+variable "GOOGLE_MAPS_MAP_ID" {
+  sensitive = false
+  type      = string
+  default   = ""
+}
+
 variable "DATOCMS_READONLY_TOKEN" {
   sensitive = false
   type      = string
@@ -71,6 +77,12 @@ locals {
     {
       key       = "NEXT_PUBLIC_GOOGLE_MAPS_API_KEY"
       value     = var.GOOGLE_MAPS_API_KEY
+      target    = local.env_targets
+      sensitive = false
+    },
+    {
+      key       = "NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID"
+      value     = var.GOOGLE_MAPS_MAP_ID
       target    = local.env_targets
       sensitive = false
     },

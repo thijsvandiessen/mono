@@ -7,9 +7,10 @@ import styles from "./styles.module.scss";
 export interface Props {
   data: Location;
   googleMapsApiKey: string;
+  mapId?: string;
 }
 
-export const LocationDetailView = ({ data, googleMapsApiKey }: Props) => {
+export const LocationDetailView = ({ data, googleMapsApiKey, mapId }: Props) => {
   const { title, address, lat, lng } = data;
 
   return (
@@ -28,6 +29,7 @@ export const LocationDetailView = ({ data, googleMapsApiKey }: Props) => {
             lng,
           }}
           googleMapsApiKey={googleMapsApiKey}
+          mapId={mapId}
           dimensions={{
             width: "100%",
             height: "400px",
