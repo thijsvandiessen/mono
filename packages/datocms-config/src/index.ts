@@ -9,6 +9,8 @@ export async function run() {
   const client = buildClient({
     apiToken: process.env.FULL_ACCESS_API_TOKEN,
     logLevel: LogLevel.BASIC,
+    // Optional: target a sandbox environment instead of the primary one.
+    ...(process.env.DATOCMS_ENVIRONMENT ? { environment: process.env.DATOCMS_ENVIRONMENT } : {}),
   });
 
   await downloadModels(client);
