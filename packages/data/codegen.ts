@@ -2,7 +2,7 @@ import type { CodegenConfig } from "@graphql-codegen/cli";
 
 const config: CodegenConfig = {
   schema: "./src/generated/schema.graphql",
-  documents: ["./**/*.ts"],
+  documents: ["./src/**/*.ts", "!./src/generated/**"],
   emitLegacyCommonJSImports: false,
   generates: {
     "./src/generated/": {
@@ -21,6 +21,8 @@ const config: CodegenConfig = {
           MetaTagAttributes: "Record<string, string>",
           UploadId: "string",
         },
+        enumType: "native",
+        importExtension: ".js",
         useTypeImports: true,
         verbatimModuleSyntax: true,
       },

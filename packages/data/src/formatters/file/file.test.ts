@@ -7,6 +7,11 @@ describe("fileFormatter", () => {
       fileFormatter({
         id: "file-id",
         url: "url",
+        alt: null,
+        width: null,
+        height: null,
+        title: null,
+        video: null,
       }),
     ).toEqual({
       description: "",

@@ -11,6 +11,7 @@ describe("concertsFormatter", () => {
       concertsFormatter([
         {
           __typename: "ConcertRecord",
+          poster: null,
           id: "some-id",
           title: "required title",
           slug: "required-slug",
@@ -21,9 +22,13 @@ describe("concertsFormatter", () => {
           locations: [
             {
               id: "locations-id",
+              dateTime: null,
+              ticketLink: null,
               location: {
                 id: "location-id",
                 title: "Location Title",
+                addressTitle: null,
+                address: null,
               },
             },
           ],
@@ -57,6 +62,7 @@ describe("concertsFormatter", () => {
       concertsFormatter([
         {
           __typename: "ConcertRecord",
+          poster: null,
           id: "broken-id",
           title: "required title",
           slug: "required-slug",
@@ -70,6 +76,7 @@ describe("concertsFormatter", () => {
         },
         {
           __typename: "ConcertRecord",
+          poster: null,
           id: "some-id",
           title: "required title",
           slug: "required-slug",
@@ -89,6 +96,7 @@ describe("concertsFormatter", () => {
       concertsFormatter([
         {
           __typename: "ConcertRecord",
+          poster: null,
           id: "some-id",
           title: "required title",
           slug: "required-slug",
@@ -100,6 +108,7 @@ describe("concertsFormatter", () => {
             {
               id: "location-item-id",
               dateTime: "2027-01-25T20:00:00+01:00",
+              ticketLink: null,
               location: null,
             },
           ],

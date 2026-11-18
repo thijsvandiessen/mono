@@ -1,181 +1,55 @@
 /* eslint-disable */
-import type { TypedDocumentNode as DocumentNode } from "@graphql-typed-document-node/core";
-export type Maybe<T> = T | null;
-export type InputMaybe<T> = T | null | undefined;
-export type Exact<T extends { [key: string]: unknown }> = {
-  [K in keyof T]: T[K];
-};
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> & {
-  [SubKey in K]?: Maybe<T[SubKey]>;
-};
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & {
-  [SubKey in K]: Maybe<T[SubKey]>;
-};
-export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> = {
-  [_ in K]?: never;
-};
+/** Internal type. DO NOT USE DIRECTLY. */
+type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+/** Internal type. DO NOT USE DIRECTLY. */
 export type Incremental<T> =
   | T
-  | {
-      [P in keyof T]?: P extends " $fragmentName" | "__typename" ? T[P] : never;
-    };
-/** All built-in and custom scalars, mapped to their actual values */
-export type Scalars = {
-  ID: { input: string; output: string };
-  String: { input: string; output: string };
-  Boolean: { input: boolean; output: boolean };
-  Int: { input: number; output: number };
-  Float: { input: number; output: number };
-  /** Represents `true` or `false` values. */
-  BooleanType: { input: boolean; output: boolean };
-  CustomData: { input: Record<string, string>; output: Record<string, string> };
-  /** A ISO 8601 compliant datetime value */
-  DateTime: { input: string; output: string };
-  /** Represents signed double-precision fractional values as specified by [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point). */
-  FloatType: { input: number; output: number };
-  /** Represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1. */
-  IntType: { input: number; output: number };
-  ItemId: { input: string; output: string };
-  JsonField: { input: unknown; output: unknown };
-  MetaTagAttributes: {
-    input: Record<string, string>;
-    output: Record<string, string>;
-  };
-  UploadId: { input: string; output: string };
-};
-
+  | { [P in keyof T]?: P extends " $fragmentName" | "__typename" ? T[P] : never };
+import type { TypedDocumentNode as DocumentNode } from "@graphql-typed-document-node/core";
 /** Specifies how to filter Boolean fields */
 export type BooleanFilter = {
   /** Search for records with an exact match */
-  eq?: InputMaybe<Scalars["BooleanType"]["input"]>;
+  eq?: boolean | null | undefined;
 };
-
-export type CallToActionModelPageLinkField = ConcertRecord | PageRecord;
-
-/** Block of type Call to action (call_to_action) */
-export type CallToActionRecord = RecordInterface & {
-  __typename?: "CallToActionRecord";
-  _createdAt: Scalars["DateTime"]["output"];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars["String"]["output"]>;
-  _firstPublishedAt: Scalars["DateTime"]["output"];
-  _isValid: Scalars["BooleanType"]["output"];
-  _modelApiKey: Scalars["String"]["output"];
-  _publicationScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _publishedAt: Scalars["DateTime"]["output"];
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _updatedAt: Scalars["DateTime"]["output"];
-  externalUrl?: Maybe<Scalars["String"]["output"]>;
-  id: Scalars["ItemId"]["output"];
-  label?: Maybe<Scalars["String"]["output"]>;
-  pageLink?: Maybe<CallToActionModelPageLinkField>;
-  variant?: Maybe<Scalars["String"]["output"]>;
-};
-
-/** Block of type Call to action (call_to_action) */
-export type CallToActionRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-export type CollectionMetadata = {
-  __typename?: "CollectionMetadata";
-  count: Scalars["IntType"]["output"];
-};
-
-export enum ColorBucketType {
-  Black = "black",
-  Blue = "blue",
-  Brown = "brown",
-  Cyan = "cyan",
-  Green = "green",
-  Grey = "grey",
-  Orange = "orange",
-  Pink = "pink",
-  Purple = "purple",
-  Red = "red",
-  White = "white",
-  Yellow = "yellow",
-}
-
-export type ColorField = {
-  __typename?: "ColorField";
-  alpha: Scalars["IntType"]["output"];
-  blue: Scalars["IntType"]["output"];
-  cssRgb: Scalars["String"]["output"];
-  green: Scalars["IntType"]["output"];
-  hex: Scalars["String"]["output"];
-  red: Scalars["IntType"]["output"];
-};
-
-/** Block of type Concert list (concert_list) */
-export type ConcertListRecord = RecordInterface & {
-  __typename?: "ConcertListRecord";
-  _createdAt: Scalars["DateTime"]["output"];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars["String"]["output"]>;
-  _firstPublishedAt: Scalars["DateTime"]["output"];
-  _isValid: Scalars["BooleanType"]["output"];
-  _modelApiKey: Scalars["String"]["output"];
-  _publicationScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _publishedAt: Scalars["DateTime"]["output"];
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _updatedAt: Scalars["DateTime"]["output"];
-  futureConcerts: Scalars["BooleanType"]["output"];
-  id: Scalars["ItemId"]["output"];
-  pinnedConcerts: Array<ConcertRecord>;
-};
-
-/** Block of type Concert list (concert_list) */
-export type ConcertListRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-export type ConcertModelContentField = HeaderRecord | TextBlockRecord | TwoColumnRecord;
 
 export type ConcertModelFilter = {
-  AND?: InputMaybe<Array<InputMaybe<ConcertModelFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<ConcertModelFilter>>>;
-  _createdAt?: InputMaybe<CreatedAtFilter>;
-  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
-  _isValid?: InputMaybe<BooleanFilter>;
-  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
-  _publishedAt?: InputMaybe<PublishedAtFilter>;
-  _status?: InputMaybe<StatusFilter>;
-  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
-  _updatedAt?: InputMaybe<UpdatedAtFilter>;
-  id?: InputMaybe<ItemIdFilter>;
-  locations?: InputMaybe<ConcertModelLocationsFieldFilter>;
-  position?: InputMaybe<PositionFilter>;
-  poster?: InputMaybe<JsonFilter>;
-  seo?: InputMaybe<SeoFilter>;
-  slug?: InputMaybe<SlugFilter>;
-  title?: InputMaybe<StringFilter>;
+  AND?: Array<ConcertModelFilter | null | undefined> | null | undefined;
+  OR?: Array<ConcertModelFilter | null | undefined> | null | undefined;
+  _createdAt?: CreatedAtFilter | null | undefined;
+  _firstPublishedAt?: PublishedAtFilter | null | undefined;
+  _isValid?: BooleanFilter | null | undefined;
+  _publicationScheduledAt?: PublishedAtFilter | null | undefined;
+  _publishedAt?: PublishedAtFilter | null | undefined;
+  _status?: StatusFilter | null | undefined;
+  _unpublishingScheduledAt?: PublishedAtFilter | null | undefined;
+  _updatedAt?: UpdatedAtFilter | null | undefined;
+  id?: ItemIdFilter | null | undefined;
+  locations?: ConcertModelLocationsFieldFilter | null | undefined;
+  position?: PositionFilter | null | undefined;
+  poster?: JsonFilter | null | undefined;
+  seo?: SeoFilter | null | undefined;
+  slug?: SlugFilter | null | undefined;
+  title?: StringFilter | null | undefined;
 };
 
 /** Specify nested blocks fields conditions */
 export type ConcertModelLocationsFieldBlocksConditions = {
-  locationItem?: InputMaybe<LocationItemModelFilter>;
+  locationItem?: LocationItemModelFilter | null | undefined;
 };
 
 /** Specify nested blocks types presence */
 export type ConcertModelLocationsFieldBlocksPresence = {
-  locationItem?: InputMaybe<Scalars["BooleanType"]["input"]>;
+  locationItem?: boolean | null | undefined;
 };
 
 /** Specify how to filter this specific Modular Content field instance */
 export type ConcertModelLocationsFieldFilter = {
   /** Filter records containing at least one block matching the specified conditions */
-  any?: InputMaybe<ConcertModelLocationsFieldBlocksConditions>;
+  any?: ConcertModelLocationsFieldBlocksConditions | null | undefined;
   /** Filter records containing at least one block of specified type or not */
-  containsAny?: InputMaybe<ConcertModelLocationsFieldBlocksPresence>;
+  containsAny?: ConcertModelLocationsFieldBlocksPresence | null | undefined;
   /** Filter records containing at least one block of any kind or not */
-  exists?: InputMaybe<Scalars["BooleanType"]["input"]>;
+  exists?: boolean | null | undefined;
 };
 
 export enum ConcertModelOrderBy {
@@ -203,2157 +77,52 @@ export enum ConcertModelOrderBy {
   TitleDesc = "title_DESC",
 }
 
-/** Record of type Concert (concert) */
-export type ConcertRecord = RecordInterface & {
-  __typename?: "ConcertRecord";
-  _createdAt: Scalars["DateTime"]["output"];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars["String"]["output"]>;
-  _firstPublishedAt: Scalars["DateTime"]["output"];
-  _isValid: Scalars["BooleanType"]["output"];
-  _modelApiKey: Scalars["String"]["output"];
-  _publicationScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _publishedAt: Scalars["DateTime"]["output"];
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _updatedAt: Scalars["DateTime"]["output"];
-  content: Array<ConcertModelContentField>;
-  id: Scalars["ItemId"]["output"];
-  locations: Array<LocationItemRecord>;
-  position?: Maybe<Scalars["IntType"]["output"]>;
-  poster?: Maybe<Scalars["JsonField"]["output"]>;
-  seo?: Maybe<SeoField>;
-  slug: Scalars["String"]["output"];
-  title: Scalars["String"]["output"];
-};
-
-/** Record of type Concert (concert) */
-export type ConcertRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
 /** Specifies how to filter by creation datetime */
 export type CreatedAtFilter = {
   /** Filter records with a value that's within the specified minute range. Seconds and milliseconds are truncated from the argument. */
-  eq?: InputMaybe<Scalars["DateTime"]["input"]>;
+  eq?: string | null | undefined;
   /** Filter records with the specified field defined (i.e. with any value) or not */
-  exists?: InputMaybe<Scalars["BooleanType"]["input"]>;
+  exists?: boolean | null | undefined;
   /** Filter records with a value that's strictly greater than the one specified. Seconds and milliseconds are truncated from the argument. */
-  gt?: InputMaybe<Scalars["DateTime"]["input"]>;
+  gt?: string | null | undefined;
   /** Filter records with a value that's greater than or equal to than the one specified. Seconds and milliseconds are truncated from the argument. */
-  gte?: InputMaybe<Scalars["DateTime"]["input"]>;
+  gte?: string | null | undefined;
   /** Filter records with a value that's less than the one specified. Seconds and milliseconds are truncated from the argument. */
-  lt?: InputMaybe<Scalars["DateTime"]["input"]>;
+  lt?: string | null | undefined;
   /** Filter records with a value that's less or equal than the one specified. Seconds and milliseconds are truncated from the argument. */
-  lte?: InputMaybe<Scalars["DateTime"]["input"]>;
+  lte?: string | null | undefined;
   /** Filter records with a value that's outside the specified minute range. Seconds and milliseconds are truncated from the argument. */
-  neq?: InputMaybe<Scalars["DateTime"]["input"]>;
+  neq?: string | null | undefined;
 };
 
 /** Specifies how to filter DateTime fields */
 export type DateTimeFilter = {
   /** Filter records with a value that's within the specified minute range. Seconds and milliseconds are truncated from the argument. */
-  eq?: InputMaybe<Scalars["DateTime"]["input"]>;
+  eq?: string | null | undefined;
   /** Filter records with the specified field defined (i.e. with any value) or not */
-  exists?: InputMaybe<Scalars["BooleanType"]["input"]>;
+  exists?: boolean | null | undefined;
   /** Filter records with a value that's strictly greater than the one specified. Seconds and milliseconds are truncated from the argument. */
-  gt?: InputMaybe<Scalars["DateTime"]["input"]>;
+  gt?: string | null | undefined;
   /** Filter records with a value that's greater than or equal to than the one specified. Seconds and milliseconds are truncated from the argument. */
-  gte?: InputMaybe<Scalars["DateTime"]["input"]>;
+  gte?: string | null | undefined;
   /** Filter records with a value that's less than the one specified. Seconds and milliseconds are truncated from the argument. */
-  lt?: InputMaybe<Scalars["DateTime"]["input"]>;
+  lt?: string | null | undefined;
   /** Filter records with a value that's less or equal than the one specified. Seconds and milliseconds are truncated from the argument. */
-  lte?: InputMaybe<Scalars["DateTime"]["input"]>;
+  lte?: string | null | undefined;
   /** Filter records with a value that's outside the specified minute range. Seconds and milliseconds are truncated from the argument. */
-  neq?: InputMaybe<Scalars["DateTime"]["input"]>;
-};
-
-/** Block of type Document (document) */
-export type DocumentRecord = RecordInterface & {
-  __typename?: "DocumentRecord";
-  _createdAt: Scalars["DateTime"]["output"];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars["String"]["output"]>;
-  _firstPublishedAt: Scalars["DateTime"]["output"];
-  _isValid: Scalars["BooleanType"]["output"];
-  _modelApiKey: Scalars["String"]["output"];
-  _publicationScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _publishedAt: Scalars["DateTime"]["output"];
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _updatedAt: Scalars["DateTime"]["output"];
-  document?: Maybe<Scalars["JsonField"]["output"]>;
-  id: Scalars["ItemId"]["output"];
-  title: Scalars["String"]["output"];
-};
-
-/** Block of type Document (document) */
-export type DocumentRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-export enum FaviconType {
-  AppleTouchIcon = "appleTouchIcon",
-  Icon = "icon",
-  MsApplication = "msApplication",
-}
-
-export type FileField = FileFieldInterface & {
-  __typename?: "FileField";
-  _createdAt: Scalars["DateTime"]["output"];
-  /** The DatoCMS URL where you can edit this entity. To use this field, you need to set a X-Base-Editing-Url header in the request */
-  _editingUrl?: Maybe<Scalars["String"]["output"]>;
-  _updatedAt: Scalars["DateTime"]["output"];
-  alt?: Maybe<Scalars["String"]["output"]>;
-  author?: Maybe<Scalars["String"]["output"]>;
-  basename: Scalars["String"]["output"];
-  blurUpThumb?: Maybe<Scalars["String"]["output"]>;
-  blurhash?: Maybe<Scalars["String"]["output"]>;
-  colors: Array<ColorField>;
-  copyright?: Maybe<Scalars["String"]["output"]>;
-  customData: Scalars["CustomData"]["output"];
-  exifInfo: Scalars["CustomData"]["output"];
-  filename: Scalars["String"]["output"];
-  focalPoint?: Maybe<FocalPoint>;
-  format: Scalars["String"]["output"];
-  height?: Maybe<Scalars["IntType"]["output"]>;
-  id: Scalars["UploadId"]["output"];
-  md5: Scalars["String"]["output"];
-  mimeType: Scalars["String"]["output"];
-  notes?: Maybe<Scalars["String"]["output"]>;
-  responsiveImage?: Maybe<ResponsiveImage>;
-  size: Scalars["IntType"]["output"];
-  smartTags: Array<Scalars["String"]["output"]>;
-  tags: Array<Scalars["String"]["output"]>;
-  thumbhash?: Maybe<Scalars["String"]["output"]>;
-  title?: Maybe<Scalars["String"]["output"]>;
-  url: Scalars["String"]["output"];
-  video?: Maybe<UploadVideoField>;
-  width?: Maybe<Scalars["IntType"]["output"]>;
-};
-
-export type FileFieldAltArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-export type FileFieldBlurUpThumbArgs = {
-  imgixParams?: InputMaybe<ImgixParams>;
-  punch?: Scalars["Float"]["input"];
-  quality?: Scalars["Int"]["input"];
-  size?: Scalars["Int"]["input"];
-};
-
-export type FileFieldCustomDataArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-export type FileFieldFocalPointArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-export type FileFieldResponsiveImageArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  imgixParams?: InputMaybe<ImgixParams>;
-  locale?: InputMaybe<SiteLocale>;
-  sizes?: InputMaybe<Scalars["String"]["input"]>;
-};
-
-export type FileFieldTitleArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-export type FileFieldUrlArgs = {
-  imgixParams?: InputMaybe<ImgixParams>;
-};
-
-export type FileFieldInterface = {
-  _createdAt: Scalars["DateTime"]["output"];
-  /** The DatoCMS URL where you can edit this entity. To use this field, you need to set a X-Base-Editing-Url header in the request */
-  _editingUrl?: Maybe<Scalars["String"]["output"]>;
-  _updatedAt: Scalars["DateTime"]["output"];
-  alt?: Maybe<Scalars["String"]["output"]>;
-  author?: Maybe<Scalars["String"]["output"]>;
-  basename: Scalars["String"]["output"];
-  blurUpThumb?: Maybe<Scalars["String"]["output"]>;
-  blurhash?: Maybe<Scalars["String"]["output"]>;
-  colors: Array<ColorField>;
-  copyright?: Maybe<Scalars["String"]["output"]>;
-  customData: Scalars["CustomData"]["output"];
-  exifInfo: Scalars["CustomData"]["output"];
-  filename: Scalars["String"]["output"];
-  focalPoint?: Maybe<FocalPoint>;
-  format: Scalars["String"]["output"];
-  height?: Maybe<Scalars["IntType"]["output"]>;
-  id: Scalars["UploadId"]["output"];
-  md5: Scalars["String"]["output"];
-  mimeType: Scalars["String"]["output"];
-  notes?: Maybe<Scalars["String"]["output"]>;
-  responsiveImage?: Maybe<ResponsiveImage>;
-  size: Scalars["IntType"]["output"];
-  smartTags: Array<Scalars["String"]["output"]>;
-  tags: Array<Scalars["String"]["output"]>;
-  thumbhash?: Maybe<Scalars["String"]["output"]>;
-  title?: Maybe<Scalars["String"]["output"]>;
-  url: Scalars["String"]["output"];
-  video?: Maybe<UploadVideoField>;
-  width?: Maybe<Scalars["IntType"]["output"]>;
-};
-
-export type FileFieldInterfaceAltArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-export type FileFieldInterfaceBlurUpThumbArgs = {
-  imgixParams?: InputMaybe<ImgixParams>;
-  punch?: Scalars["Float"]["input"];
-  quality?: Scalars["Int"]["input"];
-  size?: Scalars["Int"]["input"];
-};
-
-export type FileFieldInterfaceCustomDataArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-export type FileFieldInterfaceFocalPointArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-export type FileFieldInterfaceResponsiveImageArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  imgixParams?: InputMaybe<ImgixParams>;
-  locale?: InputMaybe<SiteLocale>;
-  sizes?: InputMaybe<Scalars["String"]["input"]>;
-};
-
-export type FileFieldInterfaceTitleArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-export type FileFieldInterfaceUrlArgs = {
-  imgixParams?: InputMaybe<ImgixParams>;
-};
-
-export type GeneralModelMenuField = MenuItemRecord | SubmenuItemRecord;
-
-/** Record of type general (general) */
-export type GeneralRecord = RecordInterface & {
-  __typename?: "GeneralRecord";
-  _createdAt: Scalars["DateTime"]["output"];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars["String"]["output"]>;
-  _firstPublishedAt: Scalars["DateTime"]["output"];
-  _isValid: Scalars["BooleanType"]["output"];
-  _modelApiKey: Scalars["String"]["output"];
-  _publicationScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _publishedAt: Scalars["DateTime"]["output"];
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _updatedAt: Scalars["DateTime"]["output"];
-  id: Scalars["ItemId"]["output"];
-  menu: Array<GeneralModelMenuField>;
-  siteMetadata?: Maybe<Scalars["JsonField"]["output"]>;
-  title?: Maybe<Scalars["String"]["output"]>;
-};
-
-/** Record of type general (general) */
-export type GeneralRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-export type GlobalSeoField = {
-  __typename?: "GlobalSeoField";
-  facebookPageUrl?: Maybe<Scalars["String"]["output"]>;
-  fallbackSeo?: Maybe<SeoField>;
-  siteName?: Maybe<Scalars["String"]["output"]>;
-  titleSuffix?: Maybe<Scalars["String"]["output"]>;
-  twitterAccount?: Maybe<Scalars["String"]["output"]>;
-};
-
-export type HeaderModelBodyField = {
-  __typename?: "HeaderModelBodyField";
-  blocks: Array<CallToActionRecord>;
-  inlineBlocks: Array<Scalars["String"]["output"]>;
-  links: Array<HeaderModelBodyLinksField>;
-  value: Scalars["JsonField"]["output"];
-};
-
-export type HeaderModelBodyLinksField = ConcertRecord | PageRecord;
-
-/** Block of type Header (header) */
-export type HeaderRecord = RecordInterface & {
-  __typename?: "HeaderRecord";
-  _createdAt: Scalars["DateTime"]["output"];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars["String"]["output"]>;
-  _firstPublishedAt: Scalars["DateTime"]["output"];
-  _isValid: Scalars["BooleanType"]["output"];
-  _modelApiKey: Scalars["String"]["output"];
-  _publicationScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _publishedAt: Scalars["DateTime"]["output"];
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _updatedAt: Scalars["DateTime"]["output"];
-  body?: Maybe<HeaderModelBodyField>;
-  cover?: Maybe<Scalars["JsonField"]["output"]>;
-  id: Scalars["ItemId"]["output"];
-};
-
-/** Block of type Header (header) */
-export type HeaderRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-/** Block of type Afbeelding (image) */
-export type ImageRecord = RecordInterface & {
-  __typename?: "ImageRecord";
-  _createdAt: Scalars["DateTime"]["output"];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars["String"]["output"]>;
-  _firstPublishedAt: Scalars["DateTime"]["output"];
-  _isValid: Scalars["BooleanType"]["output"];
-  _modelApiKey: Scalars["String"]["output"];
-  _publicationScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _publishedAt: Scalars["DateTime"]["output"];
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _updatedAt: Scalars["DateTime"]["output"];
-  id: Scalars["ItemId"]["output"];
-  image?: Maybe<Scalars["JsonField"]["output"]>;
-};
-
-/** Block of type Afbeelding (image) */
-export type ImageRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-export type ImgixParams = {
-  /**
-   * Aspect Ratio
-   *
-   * Specifies an aspect ratio to maintain when resizing and cropping the image
-   *
-   * Depends on: `fit=crop`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/size/aspect-ratio)
-   */
-  ar?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Automatic
-   *
-   * Applies automatic enhancements to images.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/automatic)
-   */
-  auto?: InputMaybe<Array<ImgixParamsAuto>>;
-  /**
-   * Background Color
-   *
-   * Colors the background of padded and partially-transparent images.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/background-color)
-   */
-  bg?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Background Removal
-   *
-   * Removes background from image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/background-removal)
-   */
-  bgRemove?: InputMaybe<Scalars["BooleanType"]["input"]>;
-  /**
-   * Background Removal Fallback
-   *
-   * Overrides default fallback behavior for bg-remove failures.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/background-removal-fallback)
-   */
-  bgRemoveFallback?: InputMaybe<Scalars["BooleanType"]["input"]>;
-  /**
-   * Background Removal Foreground Type
-   *
-   * Specifies the image foreground type for background removal.
-   *
-   * Depends on: `bg-remove=true`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/background-removal-foreground-type)
-   */
-  bgRemoveFgType?: InputMaybe<Array<ImgixParamsBgRemoveFgType>>;
-  /**
-   * Background Removal Semi Transparency
-   *
-   * Enables background removal while retaining semi-transparent areas.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/background-removal-semi-transparency)
-   */
-  bgRemoveSemiTransparency?: InputMaybe<Scalars["BooleanType"]["input"]>;
-  /**
-   * Background Replacement
-   *
-   * Replaces background from image using a string based prompt.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/background-replacement)
-   */
-  bgReplace?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Background Replace Fallback
-   *
-   * Overrides default fallback behavior for bg-replace failures.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/background-replace-fallback)
-   */
-  bgReplaceFallback?: InputMaybe<Scalars["BooleanType"]["input"]>;
-  /**
-   * Background Replacement Negative Prompt
-   *
-   * Provides a negative text suggestion for background replacement.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/background-replacement-negative-prompt)
-   */
-  bgReplaceNegPrompt?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Blend
-   *
-   * Specifies the location of the blend image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend)
-   */
-  blend?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Blend Align
-   *
-   * Changes the blend alignment relative to the parent image.
-   *
-   * Depends on: `blend`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend-align)
-   */
-  blendAlign?: InputMaybe<Array<ImgixParamsBlendAlign>>;
-  /**
-   * Blend Alpha
-   *
-   * Changes the alpha of the blend image.
-   *
-   * Depends on: `blend`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend-alpha)
-   */
-  blendAlpha?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Blend Color
-   *
-   * Specifies a color to use when applying the blend.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend-color)
-   */
-  blendColor?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Blend Crop
-   *
-   * Specifies the type of crop for blend images.
-   *
-   * Depends on: `blend`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend-crop)
-   */
-  blendCrop?: InputMaybe<Array<ImgixParamsBlendCrop>>;
-  /**
-   * Blend Fit
-   *
-   * Specifies the fit mode for blend images.
-   *
-   * Depends on: `blend`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend-fit)
-   */
-  blendFit?: InputMaybe<ImgixParamsBlendFit>;
-  /**
-   * Blend Height
-   *
-   * Adjusts the height of the blend image.
-   *
-   * Depends on: `blend`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend-height)
-   */
-  blendH?: InputMaybe<Scalars["FloatType"]["input"]>;
-  /**
-   * Blend Mode
-   *
-   * Sets the blend mode for a blend image.
-   *
-   * Depends on: `blend`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend-mode)
-   */
-  blendMode?: InputMaybe<ImgixParamsBlendMode>;
-  /**
-   * Blend Padding
-   *
-   * Applies padding to the blend image.
-   *
-   * Depends on: `blend`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend-padding)
-   */
-  blendPad?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Blend Size
-   *
-   * Adjusts the size of the blend image.
-   *
-   * Depends on: `blend`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend-size)
-   */
-  blendSize?: InputMaybe<ImgixParamsBlendSize>;
-  /**
-   * Blend Width
-   *
-   * Adjusts the width of the blend image.
-   *
-   * Depends on: `blend`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend-width)
-   */
-  blendW?: InputMaybe<Scalars["FloatType"]["input"]>;
-  /**
-   * Blend X Position
-   *
-   * Adjusts the x-offset of the blend image relative to its parent.
-   *
-   * Depends on: `blend`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend-x-position)
-   */
-  blendX?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Blend Y Position
-   *
-   * Adjusts the y-offset of the blend image relative to its parent.
-   *
-   * Depends on: `blend`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend-y-position)
-   */
-  blendY?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Gaussian Blur
-   *
-   * Applies a gaussian blur to an image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/stylize/gaussian-blur)
-   */
-  blur?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Border Size & Color
-   *
-   * Applies a border to an image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/size)
-   */
-  border?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Border Bottom
-   *
-   * Sets bottom border of an image.
-   *
-   * Depends on: `border`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/border-and-padding/border-bottom)
-   */
-  borderBottom?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Border Left
-   *
-   * Sets left border of an image.
-   *
-   * Depends on: `border`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/border-and-padding/border-left)
-   */
-  borderLeft?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Outer Border Radius
-   *
-   * Sets the outer radius of the image's border in pixels.
-   *
-   * Depends on: `border`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/border-and-padding/outer-border-radius)
-   */
-  borderRadius?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Inner Border Radius
-   *
-   * Sets the inner radius of the image's border in pixels.
-   *
-   * Depends on: `border`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/border-and-padding/inner-border-radius)
-   */
-  borderRadiusInner?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Border Right
-   *
-   * Sets right border of an image.
-   *
-   * Depends on: `border`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/border-and-padding/border-right)
-   */
-  borderRight?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Border Top
-   *
-   * Sets top border of an image.
-   *
-   * Depends on: `border`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/border-and-padding/border-top)
-   */
-  borderTop?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Brightness
-   *
-   * Adjusts the brightness of the source image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/brightness)
-   */
-  bri?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Client Hints
-   *
-   * Sets one or more Client-Hints headers
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/format/client-hints)
-   */
-  ch?: InputMaybe<Array<ImgixParamsCh>>;
-  /**
-   * Chroma Subsampling
-   *
-   * Specifies the output chroma subsampling rate.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/format/chroma-subsampling)
-   */
-  chromasub?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Color Quantization
-   *
-   * Limits the number of unique colors in an image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/format/color-quantization)
-   */
-  colorquant?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Palette Color Count
-   *
-   * Specifies how many colors to include in a palette-extraction response.
-   *
-   * Depends on: `palette`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/color-palette/palette-color-count)
-   */
-  colors?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Contrast
-   *
-   * Adjusts the contrast of the source image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/contrast)
-   */
-  con?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Mask Corner Radius
-   *
-   * Specifies the radius value for a rounded corner mask.
-   *
-   * Depends on: `mask=corners`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/mask-image/mask-corner-radius)
-   */
-  cornerRadius?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Crop Mode
-   *
-   * Specifies how to crop an image.
-   *
-   * Depends on: `fit=crop`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/size/crop-mode)
-   */
-  crop?: InputMaybe<Array<ImgixParamsCrop>>;
-  /**
-   * Color Space
-   *
-   * Specifies the color space of the output image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/format/color-space)
-   */
-  cs?: InputMaybe<ImgixParamsCs>;
-  /**
-   * Download
-   *
-   * Forces a URL to use send-file in its response.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/format/download)
-   */
-  dl?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Dots Per Inch
-   *
-   * Sets the DPI value in the EXIF header.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/format/dots-per-inch)
-   */
-  dpi?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Device Pixel Ratio
-   *
-   * Adjusts the device-pixel ratio of the output image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/device-pixel-ratio)
-   */
-  dpr?: InputMaybe<Scalars["FloatType"]["input"]>;
-  /**
-   * Duotone
-   *
-   * Applies a duotone effect to the source image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/stylize/duotone)
-   */
-  duotone?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Duotone Alpha
-   *
-   * Changes the alpha of the duotone effect atop the source image.
-   *
-   * Depends on: `duotone`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/stylize/duotone-alpha)
-   */
-  duotoneAlpha?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Exposure
-   *
-   * Adjusts the exposure of the output image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/exposure)
-   */
-  exp?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Url Expiration Timestamp
-   *
-   * A Unix timestamp specifying a UTC time. Requests made to this URL after that time will output a 404 status code.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/expiration)
-   */
-  expires?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Face Blur
-   *
-   * Specifies the amount of blur to apply to detected faces. Defaults to 0.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/face-detection/face-blur)
-   */
-  faceBlur?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Face Pixelation
-   *
-   * Specifies the pixelation amount of the face.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/face-detection/face-pixelation)
-   */
-  facePixel?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Face Index
-   *
-   * Selects a face to crop to.
-   *
-   * Depends on: `fit=facearea`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/face-detection/face-index)
-   */
-  faceindex?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Face Padding
-   *
-   * Adjusts padding around a selected face.
-   *
-   * Depends on: `fit=facearea`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/face-detection/face-padding)
-   */
-  facepad?: InputMaybe<Scalars["FloatType"]["input"]>;
-  /**
-   * Json Face Data
-   *
-   * Specifies that face data should be included in output when combined with `fm=json`.
-   *
-   * Depends on: `fm=json`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/face-detection/json-face-data)
-   */
-  faces?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Fill Mode
-   *
-   * Determines how to fill in additional space created by the fit setting
-   *
-   * Depends on: `fit`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-mode)
-   */
-  fill?: InputMaybe<ImgixParamsFill>;
-  /**
-   * Fill Color
-   *
-   * Sets the fill color for images with additional space created by the fit setting
-   *
-   * Depends on: `fill=solid`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-color)
-   */
-  fillColor?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Fill Generative Fallback
-   *
-   * Sets the fallback behavior for generative fill.
-   *
-   * Depends on: `fit=fill`, `fill=gen`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-generative-fallback)
-   */
-  fillGenFallback?: InputMaybe<Scalars["BooleanType"]["input"]>;
-  /**
-   * Fill Generative Negative Prompt
-   *
-   * Provides a negative text suggestion to the generative fill parameter. Used to reduce the probability of a subject, detail, or object appearing in generative output.
-   *
-   * Depends on: `fit=fill`, `fill=gen`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-generative-negative-prompt)
-   */
-  fillGenNegPrompt?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Fill Generative Position
-   *
-   * Sets the position of the Origin Image in relation to the generative fill.
-   *
-   * Depends on: `fit=fill`, `fill=gen`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-generative-position)
-   */
-  fillGenPos?: InputMaybe<Array<ImgixParamsFillGenPos>>;
-  /**
-   * Fill Generative Prompt
-   *
-   * Provides a text suggestion to the generative fill parameter.
-   *
-   * Depends on: `fit=fill`, `fill=gen`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-generative-prompt)
-   */
-  fillGenPrompt?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Fill Generative Seed
-   *
-   * Sets the generative seed value. Used to generate similar outputs from different prompts.
-   *
-   * Depends on: `fit=fill`, `fill=gen`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-generative-seed)
-   */
-  fillGenSeed?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Fill Gradient Color Space
-   *
-   * Defines the color space as linear, sRGB, Oklab, HSL, or LCH for gradient color interpolation
-   *
-   * Depends on: `fit=fill`, `fill=gradient`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-gradient-color-space)
-   */
-  fillGradientCs?: InputMaybe<ImgixParamsFillGradientCs>;
-  /**
-   * Fill Gradient Linear
-   *
-   * Blends a gradient between two colors, {color1} and {color2}, along a straight path
-   *
-   * Depends on: `fit=fill`, `fill=gradient`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-gradient-linear)
-   */
-  fillGradientLinear?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Fill Gradient Linear Direction
-   *
-   * The fill-gradient-linear-direction specifies the gradient's direction, flowing towards the bottom, top, right, or left
-   *
-   * Depends on: `fit=fill`, `fill=gen`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-gradient-linear-direction)
-   */
-  fillGradientLinearDirection?: InputMaybe<Array<ImgixParamsFillGradientLinearDirection>>;
-  /**
-   * Fill Gradient Radial
-   *
-   * The fill-gradient-radial parameter creates a circular gradient transitioning from a central color (Color1) to an outer color (Color2)
-   *
-   * Depends on: `fit=fill`, `fill=gradient`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-gradient-radial)
-   */
-  fillGradientRadial?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Fill Gradient Radial Radius
-   *
-   * Parameter defines the radial gradient's radius as pixels or a percentage (0.0-1.0) of the image's smallest dimension
-   *
-   * Depends on: `fit=fill`, `fill=gradient`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-gradient-radial-radius)
-   */
-  fillGradientRadialRadius?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Fill Gradient Radial X
-   *
-   * Specifies the location of the radial gradient's center along the x-axis, using either a pixel value or a floating point percentage (ranging from 0.0 to 1.0) of the image's width
-   *
-   * Depends on: `fit=fill`, `fill=gradient`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-gradient-radial-x)
-   */
-  fillGradientRadialX?: InputMaybe<Scalars["FloatType"]["input"]>;
-  /**
-   * Fill Gradient Radial Y
-   *
-   * Parameter sets the radial gradient's center on the y-axis, using pixels or a 0.0 to 1.0 percentage of the image's height
-   *
-   * Depends on: `fit=fill`, `fill=gradient`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-gradient-radial-y)
-   */
-  fillGradientRadialY?: InputMaybe<Scalars["FloatType"]["input"]>;
-  /**
-   * Fill Gradient Type
-   *
-   * Specifies if a gradient is radial (circular) or linear (straight)
-   *
-   * Depends on: `fit=fill`, `fill=gradient`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-gradient-type)
-   */
-  fillGradientType?: InputMaybe<ImgixParamsFillGradientType>;
-  /**
-   * Resize Fit Mode
-   *
-   * Specifies how to map the source image to the output image dimensions.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/size/resize-fit-mode)
-   */
-  fit?: InputMaybe<ImgixParamsFit>;
-  /**
-   * Flip Axis
-   *
-   * Flips an image on a specified axis.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/rotation/flip-axis)
-   */
-  flip?: InputMaybe<ImgixParamsFlip>;
-  /**
-   * Output Format
-   *
-   * Changes the format of the output image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/format/output-format)
-   */
-  fm?: InputMaybe<ImgixParamsFm>;
-  /**
-   * Focal Point Debug
-   *
-   * Displays crosshairs identifying the location of the set focal point
-   *
-   * Depends on: `fit=crop`, `crop=focalpoint`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/focal-point-crop/focal-point-debug)
-   */
-  fpDebug?: InputMaybe<Scalars["BooleanType"]["input"]>;
-  /**
-   * Focal Point X Position
-   *
-   * Sets the relative horizontal value for the focal point of an image
-   *
-   * Depends on: `fit=crop`, `crop=focalpoint`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/focal-point-crop/focal-point-x-position)
-   */
-  fpX?: InputMaybe<Scalars["FloatType"]["input"]>;
-  /**
-   * Focal Point Y Position
-   *
-   * Sets the relative vertical value for the focal point of an image
-   *
-   * Depends on: `fit=crop`, `crop=focalpoint`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/focal-point-crop/focal-point-y-position)
-   */
-  fpY?: InputMaybe<Scalars["FloatType"]["input"]>;
-  /**
-   * Focal Point Zoom
-   *
-   * Sets the relative zoom value for the focal point of an image
-   *
-   * Depends on: `fit=crop`, `crop=focalpoint`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/focal-point-crop/focal-point-zoom)
-   */
-  fpZ?: InputMaybe<Scalars["FloatType"]["input"]>;
-  /**
-   * Frames Per Second
-   *
-   * Specifies the framerate of the generated image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/animation/frames-per-second)
-   */
-  fps?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Frame Selection
-   *
-   * Specifies the frame of an animated image to use.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/animation/frame-selection)
-   */
-  frame?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Gamma
-   *
-   * Adjusts the gamma of the source image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/gamma)
-   */
-  gam?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Animated Gif Quality
-   *
-   * Specifies the quality of the animated gif. The higher the value, the better more compression is applied.
-   *
-   * Depends on: `fm=gif`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/animation/animated-gif-quality)
-   */
-  gifQ?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Grid Colors
-   *
-   * Sets grid colors for the transparency checkerboard grid.
-   *
-   * Depends on: `transparency`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/grid-colors)
-   */
-  gridColors?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Grid Size
-   *
-   * Sets grid size for the transparency checkerboard grid.
-   *
-   * Depends on: `transparency`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/grid-size)
-   */
-  gridSize?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Image Height
-   *
-   * Adjusts the height of the output image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/size/image-height)
-   */
-  h?: InputMaybe<Scalars["FloatType"]["input"]>;
-  /**
-   * Highlight
-   *
-   * Adjusts the highlights of the source image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/highlight)
-   */
-  high?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Halftone
-   *
-   * Applies a half-tone effect to the source image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/stylize/halftone)
-   */
-  htn?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Hue Shift
-   *
-   * Adjusts the hue of the source image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/hue-shift)
-   */
-  hue?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Frame Interval
-   *
-   * Displays every Nth frame starting with the first frame.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/animation/frame-interval)
-   */
-  interval?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Invert
-   *
-   * Inverts the colors on the source image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/invert)
-   */
-  invert?: InputMaybe<Scalars["BooleanType"]["input"]>;
-  /**
-   * Iptc Passthrough
-   *
-   * Determine if IPTC data should be passed for JPEG images.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/format/iptc-passthrough)
-   */
-  iptc?: InputMaybe<ImgixParamsIptc>;
-  /**
-   * Jpg Progressive
-   *
-   * Specifies whether or not a jpg/jpeg uses progressive (true) or baseline (false)
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/format/jpg-progressive)
-   */
-  jpgProgressive?: InputMaybe<Scalars["BooleanType"]["input"]>;
-  /**
-   * Animation Loop Count
-   *
-   * Specifies the number of times an animated image should repeat. A value of 0 means infinite looping.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/animation)
-   */
-  loop?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Lossless Compression
-   *
-   * Specifies that the output image should be a lossless variant.
-   *
-   * Depends on: `fm=webp`, `fm=jxr`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/format/lossless-compression)
-   */
-  lossless?: InputMaybe<Scalars["BooleanType"]["input"]>;
-  /**
-   * License Plate Blur
-   *
-   * Specifies the amount of blur to apply to detected license plates. Defaults to 0.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/license-plate-detection/license-plate-blur)
-   */
-  lpBlur?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Watermark Image Url
-   *
-   * Specifies the location of the watermark image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-image-url)
-   */
-  mark?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Watermark Alignment Mode
-   *
-   * Changes the watermark alignment relative to the parent image.
-   *
-   * Depends on: `mark`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-alignment-mode)
-   */
-  markAlign?: InputMaybe<Array<ImgixParamsMarkAlign>>;
-  /**
-   * Watermark Alpha
-   *
-   * Changes the alpha of the watermark image.
-   *
-   * Depends on: `mark`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-alpha)
-   */
-  markAlpha?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Watermark Base Url
-   *
-   * Changes base URL of the watermark image.
-   *
-   * Depends on: `mark`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-base-url)
-   */
-  markBase?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Watermark Fit Mode
-   *
-   * Specifies the fit mode for watermark images.
-   *
-   * Depends on: `mark`, `markw`, `markh`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-fit-mode)
-   */
-  markFit?: InputMaybe<ImgixParamsMarkFit>;
-  /**
-   * Watermark Height
-   *
-   * Adjusts the height of the watermark image.
-   *
-   * Depends on: `mark`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-height)
-   */
-  markH?: InputMaybe<Scalars["FloatType"]["input"]>;
-  /**
-   * Watermark If Minimum Height
-   *
-   * Displays the watermark if rendered base image pixel height is equal to or larger than the supplied value
-   *
-   * Depends on: `mark`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-if-minimum-height)
-   */
-  markIfMinHeight?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Watermark If Minimum Width
-   *
-   * Displays the watermark if rendered base image pixel width is equal to or larger than the supplied value
-   *
-   * Depends on: `mark`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-if-minimum-width)
-   */
-  markIfMinWidth?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Watermark Padding
-   *
-   * Applies padding to the watermark image.
-   *
-   * Depends on: `mark`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-padding)
-   */
-  markPad?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Watermark Rotation
-   *
-   * Rotates a watermark or tiled watermarks by a specified number of degrees.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-rotation)
-   */
-  markRot?: InputMaybe<Scalars["FloatType"]["input"]>;
-  /**
-   * Watermark Scale
-   *
-   * Adjusts the scale of the watermark image.
-   *
-   * Depends on: `mark`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-scale)
-   */
-  markScale?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Watermark Tile
-   *
-   * Adds tiled watermark.
-   *
-   * Depends on: `mark`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-tile)
-   */
-  markTile?: InputMaybe<ImgixParamsMarkTile>;
-  /**
-   * Watermark Width
-   *
-   * Adjusts the width of the watermark image.
-   *
-   * Depends on: `mark`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-width)
-   */
-  markW?: InputMaybe<Scalars["FloatType"]["input"]>;
-  /**
-   * Watermark X Position
-   *
-   * Adjusts the x-offset of the watermark image relative to its parent.
-   *
-   * Depends on: `mark`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-x-position)
-   */
-  markX?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Watermark Y Position
-   *
-   * Adjusts the y-offset of the watermark image relative to its parent.
-   *
-   * Depends on: `mark`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-y-position)
-   */
-  markY?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Mask Type
-   *
-   * Defines the type of mask and specifies the URL if that type is selected.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/mask-image/mask-type)
-   */
-  mask?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Mask Background Color
-   *
-   * Colors the background of the transparent mask area of images
-   *
-   * Depends on: `mask`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/mask-image/mask-background-color)
-   */
-  maskBg?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Maximum Height
-   *
-   * Specifies the maximum height of the output image in pixels.
-   *
-   * Depends on: `fit=crop`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/size/maximum-height)
-   */
-  maxH?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Maximum Width
-   *
-   * Specifies the maximum width of the output image in pixels.
-   *
-   * Depends on: `fit=crop`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/size/maximum-width)
-   */
-  maxW?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Minimum Height
-   *
-   * Specifies the minimum height of the output image in pixels.
-   *
-   * Depends on: `fit=crop`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/size/minimum-height)
-   */
-  minH?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Minimum Width
-   *
-   * Specifies the minimum width of the output image in pixels.
-   *
-   * Depends on: `fit=crop`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/size/minimum-width)
-   */
-  minW?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Monochrome
-   *
-   * Applies a monochrome effect to the source image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/stylize/monochrome)
-   */
-  monochrome?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Noise Reduction Bound
-   *
-   * Reduces the noise in an image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/noise-reduction/noise-reduction-bound)
-   */
-  nr?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Noise Reduction Sharpen
-   *
-   * Provides a threshold by which to sharpen an image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/noise-reduction/noise-reduction-sharpen)
-   */
-  nrs?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Object Removal Negative Prompt
-   *
-   * Provides a negative text suggestion to object-removal-prompt. Used to reduce the probability of a subject, detail, or object appearing in generative output.
-   *
-   * Depends on: `object-removal-rect`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/object-manipulation/object-removal-negative-prompt)
-   */
-  objectRemovalNegativePrompt?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Object Removal Prompt
-   *
-   * Suggest auto generative fill for the object-removal-rect parameter
-   *
-   * Depends on: `object-removal-rect`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/object-manipulation/object-removal-prompt)
-   */
-  objectRemovalPrompt?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Object Removal
-   *
-   * Using a specified rectangle, an object is removed from the image
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/object-manipulation/object-removal)
-   */
-  objectRemovalRect?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Object Removal Seed
-   *
-   * Sets the generative seed value for object-removal. Used to generate new outputs from the same prompt
-   *
-   * Depends on: `object-removal-rect`, `object-removal-prompt`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/object-manipulation/object-removal-seed)
-   */
-  objectRemovalSeed?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Orientation
-   *
-   * Changes the image orientation.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/rotation/orientation)
-   */
-  orient?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Padding
-   *
-   * Pads an image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/border-and-padding/padding)
-   */
-  pad?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Padding Bottom
-   *
-   * Sets bottom padding of an image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/border-and-padding/padding-bottom)
-   */
-  padBottom?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Padding Left
-   *
-   * Sets left padding of an image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/border-and-padding/padding-left)
-   */
-  padLeft?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Padding Right
-   *
-   * Sets right padding of an image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/border-and-padding/padding-right)
-   */
-  padRight?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Padding Top
-   *
-   * Sets top padding of an image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/border-and-padding/padding-top)
-   */
-  padTop?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Pdf Page Number
-   *
-   * Selects a page from a PDF for display.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/pdf/pdf-page-number)
-   */
-  page?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Color Palette Extraction
-   *
-   * Specifies an output format for palette-extraction.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/color-palette/color-palette-extraction)
-   */
-  palette?: InputMaybe<ImgixParamsPalette>;
-  /**
-   * Pdf Annotation
-   *
-   * Enables or disables PDF annotation.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/pdf/pdf-annotation)
-   */
-  pdfAnnotation?: InputMaybe<Scalars["BooleanType"]["input"]>;
-  /**
-   * Css Prefix
-   *
-   * Specifies a CSS prefix for all classes in palette-extraction.
-   *
-   * Depends on: `palette=css`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/color-palette/css-prefix)
-   */
-  prefix?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Pixellate
-   *
-   * Applies a pixelation effect to an image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/stylize/pixellate)
-   */
-  px?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Output Quality
-   *
-   * Adjusts the quality of an output image.
-   *
-   * Depends on: `fm=avif`, `fm=jpg`, `fm=pjpg`, `fm=webp`, `fm=jxr`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/format/output-quality)
-   */
-  q?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Rasterize Bypass
-   *
-   * Bypasses all rendering parameters (including default parameters) and serves the original image. Works for svg+xml,x-eps,pdf, and vnd.adobe.illustrator.
-   */
-  rasterizeBypass?: InputMaybe<Scalars["BooleanType"]["input"]>;
-  /**
-   * Source Rectangle Region
-   *
-   * Crops an image to a specified rectangle.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/size/source-rectangle-region)
-   */
-  rect?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Reverse
-   *
-   * Reverses the frame order on the source animation.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/animation/reverse)
-   */
-  reverse?: InputMaybe<Scalars["BooleanType"]["input"]>;
-  /**
-   * Rotation
-   *
-   * Rotates an image by a specified number of degrees.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/rotation/rotation)
-   */
-  rot?: InputMaybe<Scalars["FloatType"]["input"]>;
-  /**
-   * Rotation Type
-   *
-   * Changes the rotation type.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/rotation/rotation-type)
-   */
-  rotType?: InputMaybe<ImgixParamsRotType>;
-  /**
-   * Saturation
-   *
-   * Adjusts the saturation of an image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/saturation)
-   */
-  sat?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Sepia Tone
-   *
-   * Applies a sepia effect to an image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/stylize/sepia-tone)
-   */
-  sepia?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Shadow
-   *
-   * Adjusts the highlights of the source image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/shadow)
-   */
-  shad?: InputMaybe<Scalars["FloatType"]["input"]>;
-  /**
-   * Sharpen
-   *
-   * Adjusts the sharpness of the source image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/sharpen)
-   */
-  sharp?: InputMaybe<Scalars["FloatType"]["input"]>;
-  /**
-   * Frame Skip
-   *
-   * Skips every Nth frame starting with the first frame.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/animation/frame-skip)
-   */
-  skip?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Bypasses any [DatoCMS Automatic Image Optimization](https://www.datocms.com/docs/cdn-settings/advanced-asset-settings) that might be set up for the project.
-   *
-   * Exercise caution when using this parameter, as it could significantly increase your bandwidth costs.
-   */
-  skipDefaultOptimizations?: InputMaybe<Scalars["BooleanType"]["input"]>;
-  /**
-   * Sanitize Svg
-   *
-   * Specifies whether to sanitize an SVG.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/format/sanitize-svg)
-   */
-  svgSanitize?: InputMaybe<Scalars["BooleanType"]["input"]>;
-  /**
-   * Transparency
-   *
-   * Adds checkerboard behind images which support transparency.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/transparency)
-   */
-  transparency?: InputMaybe<ImgixParamsTransparency>;
-  /**
-   * Trim Image
-   *
-   * Trims the source image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/trim/trim-image)
-   */
-  trim?: InputMaybe<ImgixParamsTrim>;
-  /**
-   * Trim Alpha
-   *
-   * Specifies a trim alpha on a trim operation.
-   *
-   * Depends on: `trim=alpha`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/trim/trim-alpha)
-   */
-  trimAlpha?: InputMaybe<Scalars["FloatType"]["input"]>;
-  /**
-   * Trim Color
-   *
-   * Specifies a trim color on a trim operation.
-   *
-   * Depends on: `trim=color`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/trim/trim-color)
-   */
-  trimColor?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Trim Mean Difference
-   *
-   * Specifies the mean difference on a trim operation.
-   *
-   * Depends on: `trim=auto`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/trim/trim-mean-difference)
-   */
-  trimMd?: InputMaybe<Scalars["FloatType"]["input"]>;
-  /**
-   * Trim Padding
-   *
-   * Pads the area of the source image before trimming.
-   *
-   * Depends on: `trim`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/trim/trim-padding)
-   */
-  trimPad?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Trim Standard Deviation
-   *
-   * Specifies the standard deviation on a trim operation.
-   *
-   * Depends on: `trim=auto`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/trim/trim-standard-deviation)
-   */
-  trimSd?: InputMaybe<Scalars["FloatType"]["input"]>;
-  /**
-   * Trim Tolerance
-   *
-   * Specifies the tolerance on a trim operation.
-   *
-   * Depends on: `trim=color`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/trim/trim-tolerance)
-   */
-  trimTol?: InputMaybe<Scalars["FloatType"]["input"]>;
-  /**
-   * Text String
-   *
-   * Sets the text string to render.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-string)
-   */
-  txt?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Text Align
-   *
-   * Sets the vertical and horizontal alignment of rendered text relative to the base image.
-   *
-   * Depends on: `txt`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-align)
-   */
-  txtAlign?: InputMaybe<Array<ImgixParamsTxtAlign>>;
-  /**
-   * Text Clipping Mode
-   *
-   * Sets the clipping properties of rendered text.
-   *
-   * Depends on: `txt`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-clipping-mode)
-   */
-  txtClip?: InputMaybe<Array<ImgixParamsTxtClip>>;
-  /**
-   * Text Color
-   *
-   * Specifies the color of rendered text.
-   *
-   * Depends on: `txt`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-color)
-   */
-  txtColor?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Text Fit Mode
-   *
-   * Specifies the fit approach for rendered text.
-   *
-   * Depends on: `txt`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-fit-mode)
-   */
-  txtFit?: InputMaybe<ImgixParamsTxtFit>;
-  /**
-   * Text Font
-   *
-   * Selects a font for rendered text.
-   *
-   * Depends on: `txt`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-font)
-   */
-  txtFont?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Text Leading
-   *
-   * Sets the leading (line spacing) for rendered text. Only works on the multi-line text endpoint.
-   *
-   * Depends on: `txt`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/typesetting-endpoint/text-leading)
-   */
-  txtLead?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Text Outline
-   *
-   * Outlines the rendered text with a specified color.
-   *
-   * Depends on: `txt`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-outline)
-   */
-  txtLine?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Text Outline Color
-   *
-   * Specifies a text outline color.
-   *
-   * Depends on: `txt`, `txtline`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-outline-color)
-   */
-  txtLineColor?: InputMaybe<Scalars["String"]["input"]>;
-  /**
-   * Text Padding
-   *
-   * Specifies the padding (in device-independent pixels) between a textbox and the edges of the base image.
-   *
-   * Depends on: `txt`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-padding)
-   */
-  txtPad?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Text Shadow
-   *
-   * Applies a shadow to rendered text.
-   *
-   * Depends on: `txt`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-shadow)
-   */
-  txtShad?: InputMaybe<Scalars["FloatType"]["input"]>;
-  /**
-   * Text Font Size
-   *
-   * Sets the font size of rendered text.
-   *
-   * Depends on: `txt`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-font-size)
-   */
-  txtSize?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Text Tracking
-   *
-   * Sets the tracking (letter spacing) for rendered text. Only works on the multi-line text endpoint.
-   *
-   * Depends on: `txt`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/typesetting-endpoint/text-tracking)
-   */
-  txtTrack?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Text Width
-   *
-   * Sets the width of rendered text.
-   *
-   * Depends on: `txt`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-width)
-   */
-  txtWidth?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Text X Position
-   *
-   * Sets the horizontal (x) position of the text in pixels relative to the left edge of the base image.
-   *
-   * Depends on: `txt`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-x-position)
-   */
-  txtX?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Text Y Position
-   *
-   * Sets the vertical (y) position of the text in pixels relative to the top edge of the base image.
-   *
-   * Depends on: `txt`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-y-position)
-   */
-  txtY?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Super Resolution
-   *
-   * Uses generative AI fill to upscale low resolution images.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/super-resolution)
-   */
-  upscale?: InputMaybe<Scalars["BooleanType"]["input"]>;
-  /**
-   * Super Resolution Fallback
-   *
-   * Overrides default fallback behavior for super resolution failures
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/super-resolution)
-   */
-  upscaleFallback?: InputMaybe<Scalars["BooleanType"]["input"]>;
-  /**
-   * Unsharp Mask
-   *
-   * Sharpens the source image using an unsharp mask.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/unsharp-mask)
-   */
-  usm?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Unsharp Mask Radius
-   *
-   * Specifies the radius for an unsharp mask operation.
-   *
-   * Depends on: `usm`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/unsharp-mask-radius)
-   */
-  usmrad?: InputMaybe<Scalars["FloatType"]["input"]>;
-  /**
-   * Vibrance
-   *
-   * Adjusts the vibrance of an image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/vibrance)
-   */
-  vib?: InputMaybe<Scalars["IntType"]["input"]>;
-  /**
-   * Image Width
-   *
-   * Adjusts the width of the output image.
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/size/image-width)
-   */
-  w?: InputMaybe<Scalars["FloatType"]["input"]>;
-};
-
-export enum ImgixParamsAuto {
-  Compress = "compress",
-  Enhance = "enhance",
-  Format = "format",
-  Redeye = "redeye",
-}
-
-export enum ImgixParamsBgRemoveFgType {
-  Auto = "auto",
-  Car = "car",
-}
-
-export enum ImgixParamsBlendAlign {
-  Bottom = "bottom",
-  Center = "center",
-  Left = "left",
-  Middle = "middle",
-  Right = "right",
-  Top = "top",
-}
-
-export enum ImgixParamsBlendCrop {
-  Bottom = "bottom",
-  Faces = "faces",
-  Left = "left",
-  Right = "right",
-  Top = "top",
-}
-
-export enum ImgixParamsBlendFit {
-  Clamp = "clamp",
-  Clip = "clip",
-  Crop = "crop",
-  Max = "max",
-  Scale = "scale",
-}
-
-export enum ImgixParamsBlendMode {
-  Burn = "burn",
-  Color = "color",
-  Darken = "darken",
-  Difference = "difference",
-  Dodge = "dodge",
-  Exclusion = "exclusion",
-  Hardlight = "hardlight",
-  Hue = "hue",
-  Lighten = "lighten",
-  Luminosity = "luminosity",
-  Multiply = "multiply",
-  Normal = "normal",
-  Overlay = "overlay",
-  Saturation = "saturation",
-  Screen = "screen",
-  Softlight = "softlight",
-}
-
-export enum ImgixParamsBlendSize {
-  Inherit = "inherit",
-}
-
-export enum ImgixParamsCh {
-  Dpr = "dpr",
-  SaveData = "saveData",
-  Width = "width",
-}
-
-export enum ImgixParamsCrop {
-  Bottom = "bottom",
-  Edges = "edges",
-  Entropy = "entropy",
-  Faces = "faces",
-  Focalpoint = "focalpoint",
-  Left = "left",
-  Right = "right",
-  Top = "top",
-}
-
-export enum ImgixParamsCs {
-  Adobergb1998 = "adobergb1998",
-  Origin = "origin",
-  Srgb = "srgb",
-  Strip = "strip",
-  Tinysrgb = "tinysrgb",
-}
-
-export enum ImgixParamsFill {
-  Blur = "blur",
-  Gen = "gen",
-  Generative = "generative",
-  Gradient = "gradient",
-  Solid = "solid",
-}
-
-export enum ImgixParamsFillGenPos {
-  Bottom = "bottom",
-  Center = "center",
-  Left = "left",
-  Middle = "middle",
-  Right = "right",
-  Top = "top",
-}
-
-export enum ImgixParamsFillGradientCs {
-  Hsl = "hsl",
-  Lch = "lch",
-  Linear = "linear",
-  Oklab = "oklab",
-  Srgb = "srgb",
-}
-
-export enum ImgixParamsFillGradientLinearDirection {
-  Bottom = "bottom",
-  Left = "left",
-  Right = "right",
-  Top = "top",
-}
-
-export enum ImgixParamsFillGradientType {
-  Linear = "linear",
-  Radial = "radial",
-}
-
-export enum ImgixParamsFit {
-  Clamp = "clamp",
-  Clip = "clip",
-  Crop = "crop",
-  Facearea = "facearea",
-  Fill = "fill",
-  Fillmax = "fillmax",
-  Max = "max",
-  Min = "min",
-  Scale = "scale",
-}
-
-export enum ImgixParamsFlip {
-  H = "h",
-  Hv = "hv",
-  V = "v",
-}
-
-export enum ImgixParamsFm {
-  Avif = "avif",
-  Blurhash = "blurhash",
-  Gif = "gif",
-  Jp2 = "jp2",
-  Jpg = "jpg",
-  Json = "json",
-  Jxr = "jxr",
-  Mp4 = "mp4",
-  Pjpg = "pjpg",
-  Png = "png",
-  Png8 = "png8",
-  Png32 = "png32",
-  Webm = "webm",
-  Webp = "webp",
-}
-
-export enum ImgixParamsIptc {
-  Allow = "allow",
-  Block = "block",
-}
-
-export enum ImgixParamsMarkAlign {
-  Bottom = "bottom",
-  Center = "center",
-  Left = "left",
-  Middle = "middle",
-  Right = "right",
-  Top = "top",
-}
-
-export enum ImgixParamsMarkFit {
-  Clip = "clip",
-  Crop = "crop",
-  Fill = "fill",
-  Max = "max",
-  Scale = "scale",
-}
-
-export enum ImgixParamsMarkTile {
-  Grid = "grid",
-}
-
-export enum ImgixParamsPalette {
-  Css = "css",
-  Json = "json",
-}
-
-export enum ImgixParamsRotType {
-  Pivot = "pivot",
-  Straighten = "straighten",
-}
-
-export enum ImgixParamsTransparency {
-  Grid = "grid",
-}
-
-export enum ImgixParamsTrim {
-  Alpha = "alpha",
-  Auto = "auto",
-  Color = "color",
-}
-
-export enum ImgixParamsTxtAlign {
-  Bottom = "bottom",
-  Center = "center",
-  Left = "left",
-  Middle = "middle",
-  Right = "right",
-  Top = "top",
-}
-
-export enum ImgixParamsTxtClip {
-  Ellipsis = "ellipsis",
-  End = "end",
-  Middle = "middle",
-  Start = "start",
-}
-
-export enum ImgixParamsTxtFit {
-  Max = "max",
-}
-
-/** Specifies how to filter by usage */
-export type InUseFilter = {
-  /** Search uploads that are currently used by some record or not */
-  eq?: InputMaybe<Scalars["BooleanType"]["input"]>;
+  neq?: string | null | undefined;
 };
 
 /** Specifies how to filter by ID */
 export type ItemIdFilter = {
   /** Search the record with the specified ID */
-  eq?: InputMaybe<Scalars["ItemId"]["input"]>;
+  eq?: string | null | undefined;
   /** Search records with the specified IDs */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ItemId"]["input"]>>>;
+  in?: Array<string | null | undefined> | null | undefined;
   /** Exclude the record with the specified ID */
-  neq?: InputMaybe<Scalars["ItemId"]["input"]>;
+  neq?: string | null | undefined;
   /** Search records that do not have the specified IDs */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ItemId"]["input"]>>>;
+  notIn?: Array<string | null | undefined> | null | undefined;
 };
 
 export enum ItemStatus {
@@ -2365,94 +134,30 @@ export enum ItemStatus {
 /** Specifies how to filter JSON fields */
 export type JsonFilter = {
   /** Filter records with the specified field defined (i.e. with any value) or not */
-  exists?: InputMaybe<Scalars["BooleanType"]["input"]>;
-};
-
-export type LatLonField = {
-  __typename?: "LatLonField";
-  latitude: Scalars["FloatType"]["output"];
-  longitude: Scalars["FloatType"]["output"];
-};
-
-/** Specifies how to filter Geolocation fields */
-export type LatLonFilter = {
-  /** Filter records with the specified field defined (i.e. with any value) or not */
-  exists?: InputMaybe<Scalars["BooleanType"]["input"]>;
-  /** Filter records within the specified radius in meters */
-  near?: InputMaybe<LatLonNearFilter>;
-};
-
-export type LatLonNearFilter = {
-  latitude: Scalars["FloatType"]["input"];
-  longitude: Scalars["FloatType"]["input"];
-  radius: Scalars["FloatType"]["input"];
+  exists?: boolean | null | undefined;
 };
 
 /** Specifies how to filter Single-link fields */
 export type LinkFilter = {
   /** Search for records with an exact match. The specified value must be a Record ID */
-  eq?: InputMaybe<Scalars["ItemId"]["input"]>;
+  eq?: string | null | undefined;
   /** Filter records with the specified field defined (i.e. with any value) or not */
-  exists?: InputMaybe<Scalars["BooleanType"]["input"]>;
+  exists?: boolean | null | undefined;
   /** Filter records linked to one of the specified records */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ItemId"]["input"]>>>;
+  in?: Array<string | null | undefined> | null | undefined;
   /** Exclude records with an exact match. The specified value must be a Record ID */
-  neq?: InputMaybe<Scalars["ItemId"]["input"]>;
+  neq?: string | null | undefined;
   /** Filter records not linked to one of the specified records */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ItemId"]["input"]>>>;
+  notIn?: Array<string | null | undefined> | null | undefined;
 };
 
 export type LocationItemModelFilter = {
-  AND?: InputMaybe<Array<InputMaybe<LocationItemModelFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<LocationItemModelFilter>>>;
-  dateTime?: InputMaybe<DateTimeFilter>;
-  id?: InputMaybe<ItemIdFilter>;
-  location?: InputMaybe<LinkFilter>;
-  ticketLink?: InputMaybe<StringFilter>;
-};
-
-/** Block of type location item (location_item) */
-export type LocationItemRecord = RecordInterface & {
-  __typename?: "LocationItemRecord";
-  _createdAt: Scalars["DateTime"]["output"];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars["String"]["output"]>;
-  _firstPublishedAt: Scalars["DateTime"]["output"];
-  _isValid: Scalars["BooleanType"]["output"];
-  _modelApiKey: Scalars["String"]["output"];
-  _publicationScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _publishedAt: Scalars["DateTime"]["output"];
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _updatedAt: Scalars["DateTime"]["output"];
-  dateTime?: Maybe<Scalars["DateTime"]["output"]>;
-  id: Scalars["ItemId"]["output"];
-  location?: Maybe<LocationRecord>;
-  ticketLink?: Maybe<Scalars["String"]["output"]>;
-};
-
-/** Block of type location item (location_item) */
-export type LocationItemRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-export type LocationModelFilter = {
-  AND?: InputMaybe<Array<InputMaybe<LocationModelFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<LocationModelFilter>>>;
-  _createdAt?: InputMaybe<CreatedAtFilter>;
-  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
-  _isValid?: InputMaybe<BooleanFilter>;
-  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
-  _publishedAt?: InputMaybe<PublishedAtFilter>;
-  _status?: InputMaybe<StatusFilter>;
-  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
-  _updatedAt?: InputMaybe<UpdatedAtFilter>;
-  address?: InputMaybe<LatLonFilter>;
-  addressTitle?: InputMaybe<StringFilter>;
-  id?: InputMaybe<ItemIdFilter>;
-  title?: InputMaybe<StringFilter>;
+  AND?: Array<LocationItemModelFilter | null | undefined> | null | undefined;
+  OR?: Array<LocationItemModelFilter | null | undefined> | null | undefined;
+  dateTime?: DateTimeFilter | null | undefined;
+  id?: ItemIdFilter | null | undefined;
+  location?: LinkFilter | null | undefined;
+  ticketLink?: StringFilter | null | undefined;
 };
 
 export enum LocationModelOrderBy {
@@ -2480,94 +185,6 @@ export enum LocationModelOrderBy {
   TitleDesc = "title_DESC",
 }
 
-/** Record of type Location (location) */
-export type LocationRecord = RecordInterface & {
-  __typename?: "LocationRecord";
-  _createdAt: Scalars["DateTime"]["output"];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars["String"]["output"]>;
-  _firstPublishedAt: Scalars["DateTime"]["output"];
-  _isValid: Scalars["BooleanType"]["output"];
-  _modelApiKey: Scalars["String"]["output"];
-  _publicationScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _publishedAt: Scalars["DateTime"]["output"];
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _updatedAt: Scalars["DateTime"]["output"];
-  address?: Maybe<LatLonField>;
-  addressTitle?: Maybe<Scalars["String"]["output"]>;
-  id: Scalars["ItemId"]["output"];
-  title: Scalars["String"]["output"];
-};
-
-/** Record of type Location (location) */
-export type LocationRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-export type MenuItemModelLinkField = ConcertRecord | PageRecord;
-
-/** Block of type Menu item (menu_item) */
-export type MenuItemRecord = RecordInterface & {
-  __typename?: "MenuItemRecord";
-  _createdAt: Scalars["DateTime"]["output"];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars["String"]["output"]>;
-  _firstPublishedAt: Scalars["DateTime"]["output"];
-  _isValid: Scalars["BooleanType"]["output"];
-  _modelApiKey: Scalars["String"]["output"];
-  _publicationScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _publishedAt: Scalars["DateTime"]["output"];
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _updatedAt: Scalars["DateTime"]["output"];
-  id: Scalars["ItemId"]["output"];
-  label?: Maybe<Scalars["String"]["output"]>;
-  link?: Maybe<MenuItemModelLinkField>;
-};
-
-/** Block of type Menu item (menu_item) */
-export type MenuItemRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-export enum MuxThumbnailFormatType {
-  Gif = "gif",
-  Jpg = "jpg",
-  Png = "png",
-}
-
-/** Specifies how to filter by image orientation */
-export type OrientationFilter = {
-  /** Search uploads with the specified orientation */
-  eq?: InputMaybe<UploadOrientation>;
-  /** Exclude uploads with the specified orientation */
-  neq?: InputMaybe<UploadOrientation>;
-};
-
-export type PageModelContentField = HeaderRecord | TextBlockRecord | TwoColumnRecord;
-
-export type PageModelFilter = {
-  AND?: InputMaybe<Array<InputMaybe<PageModelFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<PageModelFilter>>>;
-  _createdAt?: InputMaybe<CreatedAtFilter>;
-  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
-  _isValid?: InputMaybe<BooleanFilter>;
-  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
-  _publishedAt?: InputMaybe<PublishedAtFilter>;
-  _status?: InputMaybe<StatusFilter>;
-  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
-  _updatedAt?: InputMaybe<UpdatedAtFilter>;
-  id?: InputMaybe<ItemIdFilter>;
-  seo?: InputMaybe<SeoFilter>;
-  slug?: InputMaybe<SlugFilter>;
-  title?: InputMaybe<StringFilter>;
-};
-
 export enum PageModelOrderBy {
   CreatedAtAsc = "_createdAt_ASC",
   CreatedAtDesc = "_createdAt_DESC",
@@ -2591,295 +208,44 @@ export enum PageModelOrderBy {
   TitleDesc = "title_DESC",
 }
 
-/** Record of type Pagina (page) */
-export type PageRecord = RecordInterface & {
-  __typename?: "PageRecord";
-  _createdAt: Scalars["DateTime"]["output"];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars["String"]["output"]>;
-  _firstPublishedAt: Scalars["DateTime"]["output"];
-  _isValid: Scalars["BooleanType"]["output"];
-  _modelApiKey: Scalars["String"]["output"];
-  _publicationScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _publishedAt: Scalars["DateTime"]["output"];
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _updatedAt: Scalars["DateTime"]["output"];
-  content: Array<PageModelContentField>;
-  id: Scalars["ItemId"]["output"];
-  seo?: Maybe<SeoField>;
-  slug: Scalars["String"]["output"];
-  title: Scalars["String"]["output"];
-};
-
-/** Record of type Pagina (page) */
-export type PageRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
 /** Specifies how to filter by position (sorted and tree-like collections) */
 export type PositionFilter = {
   /** Search for records with an exact match */
-  eq?: InputMaybe<Scalars["IntType"]["input"]>;
+  eq?: number | null | undefined;
   /** Filter records with a value that's strictly greater than the one specified */
-  gt?: InputMaybe<Scalars["IntType"]["input"]>;
+  gt?: number | null | undefined;
   /** Filter records with a value that's greater than or equal to the one specified */
-  gte?: InputMaybe<Scalars["IntType"]["input"]>;
+  gte?: number | null | undefined;
   /** Filter records with a value that's less than the one specified */
-  lt?: InputMaybe<Scalars["IntType"]["input"]>;
+  lt?: number | null | undefined;
   /** Filter records with a value that's less or equal than the one specified */
-  lte?: InputMaybe<Scalars["IntType"]["input"]>;
+  lte?: number | null | undefined;
   /** Exclude records with an exact match */
-  neq?: InputMaybe<Scalars["IntType"]["input"]>;
+  neq?: number | null | undefined;
 };
 
 /** Specifies how to filter by publication datetime */
 export type PublishedAtFilter = {
   /** Filter records with a value that's within the specified minute range. Seconds and milliseconds are truncated from the argument. */
-  eq?: InputMaybe<Scalars["DateTime"]["input"]>;
+  eq?: string | null | undefined;
   /** Filter records with the specified field defined (i.e. with any value) or not */
-  exists?: InputMaybe<Scalars["BooleanType"]["input"]>;
+  exists?: boolean | null | undefined;
   /** Filter records with a value that's strictly greater than the one specified. Seconds and milliseconds are truncated from the argument. */
-  gt?: InputMaybe<Scalars["DateTime"]["input"]>;
+  gt?: string | null | undefined;
   /** Filter records with a value that's greater than or equal to than the one specified. Seconds and milliseconds are truncated from the argument. */
-  gte?: InputMaybe<Scalars["DateTime"]["input"]>;
+  gte?: string | null | undefined;
   /** Filter records with a value that's less than the one specified. Seconds and milliseconds are truncated from the argument. */
-  lt?: InputMaybe<Scalars["DateTime"]["input"]>;
+  lt?: string | null | undefined;
   /** Filter records with a value that's less or equal than the one specified. Seconds and milliseconds are truncated from the argument. */
-  lte?: InputMaybe<Scalars["DateTime"]["input"]>;
+  lte?: string | null | undefined;
   /** Filter records with a value that's outside the specified minute range. Seconds and milliseconds are truncated from the argument. */
-  neq?: InputMaybe<Scalars["DateTime"]["input"]>;
-};
-
-/** The query root for this schema */
-export type Query = {
-  __typename?: "Query";
-  /** Returns meta information regarding a record collection */
-  _allConcertsMeta: CollectionMetadata;
-  /** Returns meta information regarding a record collection */
-  _allLocationsMeta: CollectionMetadata;
-  /** Returns meta information regarding a record collection */
-  _allPagesMeta: CollectionMetadata;
-  /** Returns meta information regarding an assets collection */
-  _allUploadsMeta: CollectionMetadata;
-  /** Returns the single instance record */
-  _site: Site;
-  /** Returns a collection of records */
-  allConcerts: Array<ConcertRecord>;
-  /** Returns a collection of records */
-  allLocations: Array<LocationRecord>;
-  /** Returns a collection of records */
-  allPages: Array<PageRecord>;
-  /** Returns a collection of assets */
-  allUploads: Array<FileField>;
-  /** Returns a specific record */
-  concert?: Maybe<ConcertRecord>;
-  /** Returns the single instance record */
-  general?: Maybe<GeneralRecord>;
-  /** Returns a specific record */
-  location?: Maybe<LocationRecord>;
-  /** Returns a specific record */
-  page?: Maybe<PageRecord>;
-  /** Returns a specific asset */
-  upload?: Maybe<FileField>;
-};
-
-/** The query root for this schema */
-export type Query_AllConcertsMetaArgs = {
-  filter?: InputMaybe<ConcertModelFilter>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-/** The query root for this schema */
-export type Query_AllLocationsMetaArgs = {
-  filter?: InputMaybe<LocationModelFilter>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-/** The query root for this schema */
-export type Query_AllPagesMetaArgs = {
-  filter?: InputMaybe<PageModelFilter>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-/** The query root for this schema */
-export type Query_AllUploadsMetaArgs = {
-  filter?: InputMaybe<UploadFilter>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-/** The query root for this schema */
-export type Query_SiteArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-/** The query root for this schema */
-export type QueryAllConcertsArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<ConcertModelFilter>;
-  first?: InputMaybe<Scalars["IntType"]["input"]>;
-  locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<ConcertModelOrderBy>>>;
-  skip?: InputMaybe<Scalars["IntType"]["input"]>;
-};
-
-/** The query root for this schema */
-export type QueryAllLocationsArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<LocationModelFilter>;
-  first?: InputMaybe<Scalars["IntType"]["input"]>;
-  locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<LocationModelOrderBy>>>;
-  skip?: InputMaybe<Scalars["IntType"]["input"]>;
-};
-
-/** The query root for this schema */
-export type QueryAllPagesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<PageModelFilter>;
-  first?: InputMaybe<Scalars["IntType"]["input"]>;
-  locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<PageModelOrderBy>>>;
-  skip?: InputMaybe<Scalars["IntType"]["input"]>;
-};
-
-/** The query root for this schema */
-export type QueryAllUploadsArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<UploadFilter>;
-  first?: InputMaybe<Scalars["IntType"]["input"]>;
-  locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<UploadOrderBy>>>;
-  skip?: InputMaybe<Scalars["IntType"]["input"]>;
-};
-
-/** The query root for this schema */
-export type QueryConcertArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<ConcertModelFilter>;
-  locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<ConcertModelOrderBy>>>;
-};
-
-/** The query root for this schema */
-export type QueryGeneralArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-/** The query root for this schema */
-export type QueryLocationArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<LocationModelFilter>;
-  locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<LocationModelOrderBy>>>;
-};
-
-/** The query root for this schema */
-export type QueryPageArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<PageModelFilter>;
-  locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<PageModelOrderBy>>>;
-};
-
-/** The query root for this schema */
-export type QueryUploadArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<UploadFilter>;
-  locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<UploadOrderBy>>>;
-};
-
-export type RecordInterface = {
-  _createdAt: Scalars["DateTime"]["output"];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars["String"]["output"]>;
-  _firstPublishedAt: Scalars["DateTime"]["output"];
-  _isValid: Scalars["BooleanType"]["output"];
-  _modelApiKey: Scalars["String"]["output"];
-  _publicationScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _publishedAt: Scalars["DateTime"]["output"];
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _updatedAt: Scalars["DateTime"]["output"];
-  id: Scalars["ItemId"]["output"];
-};
-
-export type RecordInterface_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-/** Specifies how to filter by upload type */
-export type ResolutionFilter = {
-  /** Search uploads with the specified resolution */
-  eq?: InputMaybe<ResolutionType>;
-  /** Search uploads with the specified resolutions */
-  in?: InputMaybe<Array<InputMaybe<ResolutionType>>>;
-  /** Exclude uploads with the specified resolution */
-  neq?: InputMaybe<ResolutionType>;
-  /** Search uploads without the specified resolutions */
-  notIn?: InputMaybe<Array<InputMaybe<ResolutionType>>>;
-};
-
-export enum ResolutionType {
-  Icon = "icon",
-  Large = "large",
-  Medium = "medium",
-  Small = "small",
-}
-
-export type ResponsiveImage = {
-  __typename?: "ResponsiveImage";
-  alt?: Maybe<Scalars["String"]["output"]>;
-  aspectRatio: Scalars["FloatType"]["output"];
-  base64?: Maybe<Scalars["String"]["output"]>;
-  bgColor?: Maybe<Scalars["String"]["output"]>;
-  height: Scalars["IntType"]["output"];
-  sizes: Scalars["String"]["output"];
-  src: Scalars["String"]["output"];
-  srcSet: Scalars["String"]["output"];
-  title?: Maybe<Scalars["String"]["output"]>;
-  webpSrcSet: Scalars["String"]["output"];
-  width: Scalars["IntType"]["output"];
-};
-
-export type SeoField = {
-  __typename?: "SeoField";
-  description?: Maybe<Scalars["String"]["output"]>;
-  image?: Maybe<FileField>;
-  noIndex?: Maybe<Scalars["BooleanType"]["output"]>;
-  title?: Maybe<Scalars["String"]["output"]>;
-  twitterCard?: Maybe<Scalars["String"]["output"]>;
+  neq?: string | null | undefined;
 };
 
 /** Specifies how to filter SEO meta tags fields */
 export type SeoFilter = {
   /** Filter records with the specified field defined (i.e. with any value) or not */
-  exists?: InputMaybe<Scalars["BooleanType"]["input"]>;
-};
-
-export type Site = {
-  __typename?: "Site";
-  favicon?: Maybe<FileField>;
-  faviconMetaTags: Array<Tag>;
-  globalSeo?: Maybe<GlobalSeoField>;
-  locales: Array<SiteLocale>;
-  noIndex?: Maybe<Scalars["BooleanType"]["output"]>;
-};
-
-export type SiteFaviconMetaTagsArgs = {
-  variants?: InputMaybe<Array<InputMaybe<FaviconType>>>;
-};
-
-export type SiteGlobalSeoArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
+  exists?: boolean | null | undefined;
 };
 
 export enum SiteLocale {
@@ -2889,643 +255,84 @@ export enum SiteLocale {
 /** Specifies how to filter Slug fields */
 export type SlugFilter = {
   /** Search for records with an exact match */
-  eq?: InputMaybe<Scalars["String"]["input"]>;
+  eq?: string | null | undefined;
   /** Filter records that have one of the specified slugs */
-  in?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
+  in?: Array<string | null | undefined> | null | undefined;
   /** Exclude records with an exact match */
-  neq?: InputMaybe<Scalars["String"]["input"]>;
+  neq?: string | null | undefined;
   /** Filter records that do have one of the specified slugs */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
+  notIn?: Array<string | null | undefined> | null | undefined;
 };
 
 /** Specifies how to filter by status */
 export type StatusFilter = {
   /** Search the record with the specified status */
-  eq?: InputMaybe<ItemStatus>;
+  eq?: ItemStatus | null | undefined;
   /** Search records with the specified statuses */
-  in?: InputMaybe<Array<InputMaybe<ItemStatus>>>;
+  in?: Array<ItemStatus | null | undefined> | null | undefined;
   /** Exclude the record with the specified status */
-  neq?: InputMaybe<ItemStatus>;
+  neq?: ItemStatus | null | undefined;
   /** Search records without the specified statuses */
-  notIn?: InputMaybe<Array<InputMaybe<ItemStatus>>>;
+  notIn?: Array<ItemStatus | null | undefined> | null | undefined;
 };
 
 /** Specifies how to filter Single-line string fields */
 export type StringFilter = {
   /** Search for records with an exact match */
-  eq?: InputMaybe<Scalars["String"]["input"]>;
+  eq?: string | null | undefined;
   /** Filter records with the specified field defined (i.e. with any value) or not [DEPRECATED] */
-  exists?: InputMaybe<Scalars["BooleanType"]["input"]>;
+  exists?: boolean | null | undefined;
   /** Filter records that equal one of the specified values */
-  in?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
+  in?: Array<string | null | undefined> | null | undefined;
   /** Filter records with the specified field set as blank (null or empty string) */
-  isBlank?: InputMaybe<Scalars["BooleanType"]["input"]>;
+  isBlank?: boolean | null | undefined;
   /** Filter records with the specified field present (neither null, nor empty string) */
-  isPresent?: InputMaybe<Scalars["BooleanType"]["input"]>;
+  isPresent?: boolean | null | undefined;
   /** Filter records based on a regular expression */
-  matches?: InputMaybe<StringMatchesFilter>;
+  matches?: StringMatchesFilter | null | undefined;
   /** Exclude records with an exact match */
-  neq?: InputMaybe<Scalars["String"]["input"]>;
+  neq?: string | null | undefined;
   /** Filter records that do not equal one of the specified values */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
+  notIn?: Array<string | null | undefined> | null | undefined;
   /** Exclude records based on a regular expression */
-  notMatches?: InputMaybe<StringMatchesFilter>;
+  notMatches?: StringMatchesFilter | null | undefined;
 };
 
 export type StringMatchesFilter = {
-  caseSensitive?: InputMaybe<Scalars["BooleanType"]["input"]>;
-  pattern: Scalars["String"]["input"];
-  regexp?: InputMaybe<Scalars["BooleanType"]["input"]>;
-};
-
-/** Block of type Submenu item (submenu_item) */
-export type SubmenuItemRecord = RecordInterface & {
-  __typename?: "SubmenuItemRecord";
-  _createdAt: Scalars["DateTime"]["output"];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars["String"]["output"]>;
-  _firstPublishedAt: Scalars["DateTime"]["output"];
-  _isValid: Scalars["BooleanType"]["output"];
-  _modelApiKey: Scalars["String"]["output"];
-  _publicationScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _publishedAt: Scalars["DateTime"]["output"];
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _updatedAt: Scalars["DateTime"]["output"];
-  id: Scalars["ItemId"]["output"];
-  label?: Maybe<Scalars["String"]["output"]>;
-  menu: Array<MenuItemRecord>;
-};
-
-/** Block of type Submenu item (submenu_item) */
-export type SubmenuItemRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-export type Tag = {
-  __typename?: "Tag";
-  attributes?: Maybe<Scalars["MetaTagAttributes"]["output"]>;
-  content?: Maybe<Scalars["String"]["output"]>;
-  tag: Scalars["String"]["output"];
-};
-
-export type TextBlockModelContentBlocksField =
-  | CallToActionRecord
-  | DocumentRecord
-  | ImageRecord
-  | VideoRecord;
-
-export type TextBlockModelContentField = {
-  __typename?: "TextBlockModelContentField";
-  blocks: Array<TextBlockModelContentBlocksField>;
-  inlineBlocks: Array<Scalars["String"]["output"]>;
-  links: Array<TextBlockModelContentLinksField>;
-  value: Scalars["JsonField"]["output"];
-};
-
-export type TextBlockModelContentLinksField = ConcertRecord | PageRecord;
-
-/** Block of type Tekst blok (text_block) */
-export type TextBlockRecord = RecordInterface & {
-  __typename?: "TextBlockRecord";
-  _createdAt: Scalars["DateTime"]["output"];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars["String"]["output"]>;
-  _firstPublishedAt: Scalars["DateTime"]["output"];
-  _isValid: Scalars["BooleanType"]["output"];
-  _modelApiKey: Scalars["String"]["output"];
-  _publicationScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _publishedAt: Scalars["DateTime"]["output"];
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _updatedAt: Scalars["DateTime"]["output"];
-  content?: Maybe<TextBlockModelContentField>;
-  id: Scalars["ItemId"]["output"];
-};
-
-/** Block of type Tekst blok (text_block) */
-export type TextBlockRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-export type TwoColumnModelLeftContentBlocksField =
-  | CallToActionRecord
-  | DocumentRecord
-  | ImageRecord
-  | VideoRecord;
-
-export type TwoColumnModelLeftContentField = {
-  __typename?: "TwoColumnModelLeftContentField";
-  blocks: Array<TwoColumnModelLeftContentBlocksField>;
-  inlineBlocks: Array<Scalars["String"]["output"]>;
-  links: Array<TwoColumnModelLeftContentLinksField>;
-  value: Scalars["JsonField"]["output"];
-};
-
-export type TwoColumnModelLeftContentLinksField = ConcertRecord | PageRecord;
-
-export type TwoColumnModelRightContentBlocksField =
-  | CallToActionRecord
-  | DocumentRecord
-  | ImageRecord
-  | VideoRecord;
-
-export type TwoColumnModelRightContentField = {
-  __typename?: "TwoColumnModelRightContentField";
-  blocks: Array<TwoColumnModelRightContentBlocksField>;
-  inlineBlocks: Array<Scalars["String"]["output"]>;
-  links: Array<TwoColumnModelRightContentLinksField>;
-  value: Scalars["JsonField"]["output"];
-};
-
-export type TwoColumnModelRightContentLinksField = ConcertRecord | PageRecord;
-
-/** Block of type Twee kolommen tekst blok (two_column) */
-export type TwoColumnRecord = RecordInterface & {
-  __typename?: "TwoColumnRecord";
-  _createdAt: Scalars["DateTime"]["output"];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars["String"]["output"]>;
-  _firstPublishedAt: Scalars["DateTime"]["output"];
-  _isValid: Scalars["BooleanType"]["output"];
-  _modelApiKey: Scalars["String"]["output"];
-  _publicationScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _publishedAt: Scalars["DateTime"]["output"];
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _updatedAt: Scalars["DateTime"]["output"];
-  id: Scalars["ItemId"]["output"];
-  leftContent?: Maybe<TwoColumnModelLeftContentField>;
-  rightContent?: Maybe<TwoColumnModelRightContentField>;
-};
-
-/** Block of type Twee kolommen tekst blok (two_column) */
-export type TwoColumnRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-/** Specifies how to filter by upload type */
-export type TypeFilter = {
-  /** Search uploads with the specified type */
-  eq?: InputMaybe<UploadType>;
-  /** Search uploads with the specified types */
-  in?: InputMaybe<Array<InputMaybe<UploadType>>>;
-  /** Exclude uploads with the specified type */
-  neq?: InputMaybe<UploadType>;
-  /** Search uploads without the specified types */
-  notIn?: InputMaybe<Array<InputMaybe<UploadType>>>;
+  caseSensitive?: boolean | null | undefined;
+  pattern: string;
+  regexp?: boolean | null | undefined;
 };
 
 /** Specifies how to filter by update datetime */
 export type UpdatedAtFilter = {
   /** Filter records with a value that's within the specified minute range. Seconds and milliseconds are truncated from the argument. */
-  eq?: InputMaybe<Scalars["DateTime"]["input"]>;
+  eq?: string | null | undefined;
   /** Filter records with the specified field defined (i.e. with any value) or not */
-  exists?: InputMaybe<Scalars["BooleanType"]["input"]>;
+  exists?: boolean | null | undefined;
   /** Filter records with a value that's strictly greater than the one specified. Seconds and milliseconds are truncated from the argument. */
-  gt?: InputMaybe<Scalars["DateTime"]["input"]>;
+  gt?: string | null | undefined;
   /** Filter records with a value that's greater than or equal to than the one specified. Seconds and milliseconds are truncated from the argument. */
-  gte?: InputMaybe<Scalars["DateTime"]["input"]>;
+  gte?: string | null | undefined;
   /** Filter records with a value that's less than the one specified. Seconds and milliseconds are truncated from the argument. */
-  lt?: InputMaybe<Scalars["DateTime"]["input"]>;
+  lt?: string | null | undefined;
   /** Filter records with a value that's less or equal than the one specified. Seconds and milliseconds are truncated from the argument. */
-  lte?: InputMaybe<Scalars["DateTime"]["input"]>;
+  lte?: string | null | undefined;
   /** Filter records with a value that's outside the specified minute range. Seconds and milliseconds are truncated from the argument. */
-  neq?: InputMaybe<Scalars["DateTime"]["input"]>;
-};
-
-/** Specifies how to filter by default alt */
-export type UploadAltFilter = {
-  /** Search the uploads with the specified alt */
-  eq?: InputMaybe<Scalars["String"]["input"]>;
-  /** Filter uploads with the specified field defined (i.e. with any value) or not */
-  exists?: InputMaybe<Scalars["BooleanType"]["input"]>;
-  /** Search uploads with the specified values as default alt */
-  in?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
-  /** Filter uploads based on a regular expression */
-  matches?: InputMaybe<StringMatchesFilter>;
-  /** Exclude the uploads with the specified alt */
-  neq?: InputMaybe<Scalars["String"]["input"]>;
-  /** Search uploads that do not have the specified values as default alt */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
-  /** Exclude uploads based on a regular expression */
-  notMatches?: InputMaybe<StringMatchesFilter>;
-};
-
-/** Specifies how to filter by auhtor */
-export type UploadAuthorFilter = {
-  /** Filter uploads with the specified field defined (i.e. with any value) or not */
-  exists?: InputMaybe<Scalars["BooleanType"]["input"]>;
-  /** Filter uploads based on a regular expression */
-  matches?: InputMaybe<StringMatchesFilter>;
-  /** Exclude uploads based on a regular expression */
-  notMatches?: InputMaybe<StringMatchesFilter>;
-};
-
-/** Specifies how to filter by basename */
-export type UploadBasenameFilter = {
-  /** Filter uploads based on a regular expression */
-  matches?: InputMaybe<StringMatchesFilter>;
-  /** Exclude uploads based on a regular expression */
-  notMatches?: InputMaybe<StringMatchesFilter>;
-};
-
-/** Specifies how to filter by colors */
-export type UploadColorsFilter = {
-  /** Filter uploads that have all of the specified colors */
-  allIn?: InputMaybe<Array<InputMaybe<ColorBucketType>>>;
-  /** Filter uploads that have at least one of the specified colors */
-  anyIn?: InputMaybe<Array<InputMaybe<ColorBucketType>>>;
-  /** Filter uploads that have the specified colors */
-  contains?: InputMaybe<ColorBucketType>;
-  /** Search for uploads with an exact match */
-  eq?: InputMaybe<Array<InputMaybe<ColorBucketType>>>;
-  /** Filter uploads that do not have any of the specified colors */
-  notIn?: InputMaybe<Array<InputMaybe<ColorBucketType>>>;
-};
-
-/** Specifies how to filter by copyright */
-export type UploadCopyrightFilter = {
-  /** Filter records with the specified field defined (i.e. with any value) or not */
-  exists?: InputMaybe<Scalars["BooleanType"]["input"]>;
-  /** Filter uploads based on a regular expression */
-  matches?: InputMaybe<StringMatchesFilter>;
-  /** Exclude uploads based on a regular expression */
-  notMatches?: InputMaybe<StringMatchesFilter>;
-};
-
-/** Specifies how to filter by creation datetime */
-export type UploadCreatedAtFilter = {
-  /** Search for uploads with an exact match */
-  eq?: InputMaybe<Scalars["DateTime"]["input"]>;
-  /** Filter uploads with a value that's strictly greater than the one specified */
-  gt?: InputMaybe<Scalars["DateTime"]["input"]>;
-  /** Filter uploads with a value that's greater than or equal to the one specified */
-  gte?: InputMaybe<Scalars["DateTime"]["input"]>;
-  /** Filter uploads with a value that's less than the one specified */
-  lt?: InputMaybe<Scalars["DateTime"]["input"]>;
-  /** Filter uploads with a value that's less or equal than the one specified */
-  lte?: InputMaybe<Scalars["DateTime"]["input"]>;
-  /** Exclude uploads with an exact match */
-  neq?: InputMaybe<Scalars["DateTime"]["input"]>;
-};
-
-/** Specifies how to filter by filename */
-export type UploadFilenameFilter = {
-  /** Filter uploads based on a regular expression */
-  matches?: InputMaybe<StringMatchesFilter>;
-  /** Exclude uploads based on a regular expression */
-  notMatches?: InputMaybe<StringMatchesFilter>;
-};
-
-export type UploadFilter = {
-  AND?: InputMaybe<Array<InputMaybe<UploadFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<UploadFilter>>>;
-  _createdAt?: InputMaybe<UploadCreatedAtFilter>;
-  _updatedAt?: InputMaybe<UploadUpdatedAtFilter>;
-  alt?: InputMaybe<UploadAltFilter>;
-  author?: InputMaybe<UploadAuthorFilter>;
-  basename?: InputMaybe<UploadBasenameFilter>;
-  colors?: InputMaybe<UploadColorsFilter>;
-  copyright?: InputMaybe<UploadCopyrightFilter>;
-  filename?: InputMaybe<UploadFilenameFilter>;
-  format?: InputMaybe<UploadFormatFilter>;
-  height?: InputMaybe<UploadHeightFilter>;
-  id?: InputMaybe<UploadIdFilter>;
-  inUse?: InputMaybe<InUseFilter>;
-  md5?: InputMaybe<UploadMd5Filter>;
-  mimeType?: InputMaybe<UploadMimeTypeFilter>;
-  notes?: InputMaybe<UploadNotesFilter>;
-  orientation?: InputMaybe<OrientationFilter>;
-  path?: InputMaybe<UploadPathFilter>;
-  resolution?: InputMaybe<ResolutionFilter>;
-  size?: InputMaybe<UploadSizeFilter>;
-  smartTags?: InputMaybe<UploadTagsFilter>;
-  tags?: InputMaybe<UploadTagsFilter>;
-  title?: InputMaybe<UploadTitleFilter>;
-  type?: InputMaybe<TypeFilter>;
-  width?: InputMaybe<UploadWidthFilter>;
-};
-
-/** Specifies how to filter by format */
-export type UploadFormatFilter = {
-  /** Search the asset with the specified format */
-  eq?: InputMaybe<Scalars["String"]["input"]>;
-  /** Search assets with the specified formats */
-  in?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
-  /** Exclude the asset with the specified format */
-  neq?: InputMaybe<Scalars["String"]["input"]>;
-  /** Search assets that do not have the specified formats */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
-};
-
-/** Specifies how to filter by height */
-export type UploadHeightFilter = {
-  /** Search assets with the specified height */
-  eq?: InputMaybe<Scalars["IntType"]["input"]>;
-  /** Search all assets larger than the specified height */
-  gt?: InputMaybe<Scalars["IntType"]["input"]>;
-  /** Search all assets larger or equal to the specified height */
-  gte?: InputMaybe<Scalars["IntType"]["input"]>;
-  /** Search all assets smaller than the specified height */
-  lt?: InputMaybe<Scalars["IntType"]["input"]>;
-  /** Search all assets larger or equal to the specified height */
-  lte?: InputMaybe<Scalars["IntType"]["input"]>;
-  /** Search assets that do not have the specified height */
-  neq?: InputMaybe<Scalars["IntType"]["input"]>;
-};
-
-/** Specifies how to filter by ID */
-export type UploadIdFilter = {
-  /** Search the asset with the specified ID */
-  eq?: InputMaybe<Scalars["UploadId"]["input"]>;
-  /** Search assets with the specified IDs */
-  in?: InputMaybe<Array<InputMaybe<Scalars["UploadId"]["input"]>>>;
-  /** Exclude the asset with the specified ID */
-  neq?: InputMaybe<Scalars["UploadId"]["input"]>;
-  /** Search assets that do not have the specified IDs */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["UploadId"]["input"]>>>;
-};
-
-/** Specifies how to filter by MD5 */
-export type UploadMd5Filter = {
-  /** Search the asset with the specified MD5 */
-  eq?: InputMaybe<Scalars["String"]["input"]>;
-  /** Search assets with the specified MD5s */
-  in?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
-  /** Exclude the asset with the specified MD5 */
-  neq?: InputMaybe<Scalars["String"]["input"]>;
-  /** Search assets that do not have the specified MD5s */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
-};
-
-/** Specifies how to filter by mime type */
-export type UploadMimeTypeFilter = {
-  /** Search the asset with the specified mime type */
-  eq?: InputMaybe<Scalars["String"]["input"]>;
-  /** Search assets with the specified mime types */
-  in?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
-  /** Filter uploads based on a regular expression */
-  matches?: InputMaybe<StringMatchesFilter>;
-  /** Exclude the asset with the specified mime type */
-  neq?: InputMaybe<Scalars["String"]["input"]>;
-  /** Search assets that do not have the specified mime types */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
-  /** Exclude uploads based on a regular expression */
-  notMatches?: InputMaybe<StringMatchesFilter>;
-};
-
-/** Specifies how to filter by notes */
-export type UploadNotesFilter = {
-  /** Filter records with the specified field defined (i.e. with any value) or not */
-  exists?: InputMaybe<Scalars["BooleanType"]["input"]>;
-  /** Filter uploads based on a regular expression */
-  matches?: InputMaybe<StringMatchesFilter>;
-  /** Exclude uploads based on a regular expression */
-  notMatches?: InputMaybe<StringMatchesFilter>;
-};
-
-export enum UploadOrderBy {
-  CreatedAtAsc = "_createdAt_ASC",
-  CreatedAtDesc = "_createdAt_DESC",
-  UpdatedAtAsc = "_updatedAt_ASC",
-  UpdatedAtDesc = "_updatedAt_DESC",
-  BasenameAsc = "basename_ASC",
-  BasenameDesc = "basename_DESC",
-  FilenameAsc = "filename_ASC",
-  FilenameDesc = "filename_DESC",
-  FormatAsc = "format_ASC",
-  FormatDesc = "format_DESC",
-  IdAsc = "id_ASC",
-  IdDesc = "id_DESC",
-  MimeTypeAsc = "mimeType_ASC",
-  MimeTypeDesc = "mimeType_DESC",
-  ResolutionAsc = "resolution_ASC",
-  ResolutionDesc = "resolution_DESC",
-  SizeAsc = "size_ASC",
-  SizeDesc = "size_DESC",
-}
-
-export enum UploadOrientation {
-  Landscape = "landscape",
-  Portrait = "portrait",
-  Square = "square",
-}
-
-/** Specifies how to filter by path */
-export type UploadPathFilter = {
-  /** Search the asset with the specified path */
-  eq?: InputMaybe<Scalars["String"]["input"]>;
-  /** Search assets with the specified paths */
-  in?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
-  /** Exclude the asset with the specified path */
-  neq?: InputMaybe<Scalars["String"]["input"]>;
-  /** Search assets that do not have the specified paths */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
-};
-
-/** Specifies how to filter by size */
-export type UploadSizeFilter = {
-  /** Search assets with the specified size (in bytes) */
-  eq?: InputMaybe<Scalars["IntType"]["input"]>;
-  /** Search all assets larger than the specified size (in bytes) */
-  gt?: InputMaybe<Scalars["IntType"]["input"]>;
-  /** Search all assets larger or equal to the specified size (in bytes) */
-  gte?: InputMaybe<Scalars["IntType"]["input"]>;
-  /** Search all assets smaller than the specified size (in bytes) */
-  lt?: InputMaybe<Scalars["IntType"]["input"]>;
-  /** Search all assets larger or equal to the specified size (in bytes) */
-  lte?: InputMaybe<Scalars["IntType"]["input"]>;
-  /** Search assets that do not have the specified size (in bytes) */
-  neq?: InputMaybe<Scalars["IntType"]["input"]>;
-};
-
-/** Specifies how to filter by tags */
-export type UploadTagsFilter = {
-  /** Filter uploads linked to all of the specified tags */
-  allIn?: InputMaybe<Array<Scalars["String"]["input"]>>;
-  /** Filter uploads linked to at least one of the specified tags */
-  anyIn?: InputMaybe<Array<Scalars["String"]["input"]>>;
-  /** Filter uploads linked to the specified tag */
-  contains?: InputMaybe<Scalars["String"]["input"]>;
-  /** Search for uploads with an exact match */
-  eq?: InputMaybe<Array<Scalars["String"]["input"]>>;
-  /** Filter uploads not linked to any of the specified tags */
-  notIn?: InputMaybe<Array<Scalars["String"]["input"]>>;
-};
-
-/** Specifies how to filter by default title */
-export type UploadTitleFilter = {
-  /** Search the asset with the specified title */
-  eq?: InputMaybe<Scalars["String"]["input"]>;
-  /** Filter assets with the specified field defined (i.e. with any value) or not */
-  exists?: InputMaybe<Scalars["BooleanType"]["input"]>;
-  /** Search assets with the specified as default title */
-  in?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
-  /** Filter uploads based on a regular expression */
-  matches?: InputMaybe<StringMatchesFilter>;
-  /** Exclude the asset with the specified title */
-  neq?: InputMaybe<Scalars["String"]["input"]>;
-  /** Search assets that do not have the specified as default title */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
-  /** Exclude uploads based on a regular expression */
-  notMatches?: InputMaybe<StringMatchesFilter>;
-};
-
-export enum UploadType {
-  Archive = "archive",
-  Audio = "audio",
-  Image = "image",
-  Pdfdocument = "pdfdocument",
-  Presentation = "presentation",
-  Richtext = "richtext",
-  Spreadsheet = "spreadsheet",
-  Video = "video",
-}
-
-/** Specifies how to filter by update datetime */
-export type UploadUpdatedAtFilter = {
-  /** Search for uploads with an exact match */
-  eq?: InputMaybe<Scalars["DateTime"]["input"]>;
-  /** Filter uploads with a value that's strictly greater than the one specified */
-  gt?: InputMaybe<Scalars["DateTime"]["input"]>;
-  /** Filter uploads with a value that's greater than or equal to the one specified */
-  gte?: InputMaybe<Scalars["DateTime"]["input"]>;
-  /** Filter uploads with a value that's less than the one specified */
-  lt?: InputMaybe<Scalars["DateTime"]["input"]>;
-  /** Filter uploads with a value that's less or equal than the one specified */
-  lte?: InputMaybe<Scalars["DateTime"]["input"]>;
-  /** Exclude uploads with an exact match */
-  neq?: InputMaybe<Scalars["DateTime"]["input"]>;
-};
-
-export type UploadVideoField = {
-  __typename?: "UploadVideoField";
-  alt?: Maybe<Scalars["String"]["output"]>;
-  blurUpThumb?: Maybe<Scalars["String"]["output"]>;
-  blurhash?: Maybe<Scalars["String"]["output"]>;
-  duration?: Maybe<Scalars["Int"]["output"]>;
-  framerate?: Maybe<Scalars["Int"]["output"]>;
-  height: Scalars["IntType"]["output"];
-  mp4Url?: Maybe<Scalars["String"]["output"]>;
-  muxAssetId: Scalars["String"]["output"];
-  muxPlaybackId: Scalars["String"]["output"];
-  streamingUrl: Scalars["String"]["output"];
-  thumbhash?: Maybe<Scalars["String"]["output"]>;
-  thumbnailUrl: Scalars["String"]["output"];
-  title?: Maybe<Scalars["String"]["output"]>;
-  width: Scalars["IntType"]["output"];
-};
-
-export type UploadVideoFieldAltArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-export type UploadVideoFieldBlurUpThumbArgs = {
-  imgixParams?: InputMaybe<ImgixParams>;
-  punch?: Scalars["Float"]["input"];
-  quality?: Scalars["Int"]["input"];
-  size?: Scalars["Int"]["input"];
-};
-
-export type UploadVideoFieldMp4UrlArgs = {
-  exactRes?: InputMaybe<VideoMp4Res>;
-  res?: InputMaybe<VideoMp4Res>;
-};
-
-export type UploadVideoFieldThumbnailUrlArgs = {
-  format?: InputMaybe<MuxThumbnailFormatType>;
-};
-
-export type UploadVideoFieldTitleArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-/** Specifies how to filter by width */
-export type UploadWidthFilter = {
-  /** Search assets with the specified width */
-  eq?: InputMaybe<Scalars["IntType"]["input"]>;
-  /** Search all assets larger than the specified width */
-  gt?: InputMaybe<Scalars["IntType"]["input"]>;
-  /** Search all assets larger or equal to the specified width */
-  gte?: InputMaybe<Scalars["IntType"]["input"]>;
-  /** Search all assets smaller than the specified width */
-  lt?: InputMaybe<Scalars["IntType"]["input"]>;
-  /** Search all assets larger or equal to the specified width */
-  lte?: InputMaybe<Scalars["IntType"]["input"]>;
-  /** Search assets that do not have the specified width */
-  neq?: InputMaybe<Scalars["IntType"]["input"]>;
-};
-
-export type VideoField = {
-  __typename?: "VideoField";
-  height: Scalars["IntType"]["output"];
-  provider: Scalars["String"]["output"];
-  providerUid: Scalars["String"]["output"];
-  thumbnailUrl: Scalars["String"]["output"];
-  title: Scalars["String"]["output"];
-  url: Scalars["String"]["output"];
-  width: Scalars["IntType"]["output"];
-};
-
-export enum VideoMp4Res {
-  High = "high",
-  Low = "low",
-  Medium = "medium",
-}
-
-/** Block of type Video (video) */
-export type VideoRecord = RecordInterface & {
-  __typename?: "VideoRecord";
-  _createdAt: Scalars["DateTime"]["output"];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars["String"]["output"]>;
-  _firstPublishedAt: Scalars["DateTime"]["output"];
-  _isValid: Scalars["BooleanType"]["output"];
-  _modelApiKey: Scalars["String"]["output"];
-  _publicationScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _publishedAt: Scalars["DateTime"]["output"];
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars["DateTime"]["output"]>;
-  _updatedAt: Scalars["DateTime"]["output"];
-  id: Scalars["ItemId"]["output"];
-  media?: Maybe<VideoField>;
-  thumbnail?: Maybe<Scalars["JsonField"]["output"]>;
-  title?: Maybe<Scalars["String"]["output"]>;
-};
-
-/** Block of type Video (video) */
-export type VideoRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-export type FocalPoint = {
-  __typename?: "focalPoint";
-  x: Scalars["FloatType"]["output"];
-  y: Scalars["FloatType"]["output"];
+  neq?: string | null | undefined;
 };
 
 export type CallToActionFragment = {
   __typename: "CallToActionRecord";
-  label?: string | null;
-  variant?: string | null;
-  externalUrl?: string | null;
+  label: string | null;
+  variant: string | null;
+  externalUrl: string | null;
   _createdAt: string;
   _firstPublishedAt: string;
   _publishedAt: string;
   _updatedAt: string;
   id: string;
-  pageLink?:
+  pageLink:
     | {
         __typename: "ConcertRecord";
         title: string;
@@ -3550,7 +357,6 @@ export type CallToActionFragment = {
 };
 
 export type ColorsFragment = {
-  __typename?: "ColorField";
   alpha: number;
   blue: number;
   cssRgb: string;
@@ -3563,52 +369,45 @@ export type ConcertDetailFragment = {
   __typename: "ConcertRecord";
   title: string;
   slug: string;
-  poster?: unknown | null;
+  poster: unknown;
   _createdAt: string;
   _firstPublishedAt: string;
   _publishedAt: string;
   _updatedAt: string;
   id: string;
   locations: Array<{
-    __typename?: "LocationItemRecord";
     id: string;
-    dateTime?: string | null;
-    ticketLink?: string | null;
-    location?: {
-      __typename?: "LocationRecord";
+    dateTime: string | null;
+    ticketLink: string | null;
+    location: {
       id: string;
       title: string;
-      addressTitle?: string | null;
-      address?: {
-        __typename?: "LatLonField";
-        latitude: number;
-        longitude: number;
-      } | null;
+      addressTitle: string | null;
+      address: { latitude: number; longitude: number } | null;
     } | null;
   }>;
   content: Array<
     | {
         __typename: "HeaderRecord";
-        cover?: unknown | null;
+        cover: unknown;
         _createdAt: string;
         _firstPublishedAt: string;
         _publishedAt: string;
         _updatedAt: string;
         id: string;
-        body?: {
-          __typename?: "HeaderModelBodyField";
+        body: {
           value: unknown;
           blocks: Array<{
             __typename: "CallToActionRecord";
-            label?: string | null;
-            variant?: string | null;
-            externalUrl?: string | null;
+            label: string | null;
+            variant: string | null;
+            externalUrl: string | null;
             _createdAt: string;
             _firstPublishedAt: string;
             _publishedAt: string;
             _updatedAt: string;
             id: string;
-            pageLink?:
+            pageLink:
               | {
                   __typename: "ConcertRecord";
                   title: string;
@@ -3662,8 +461,7 @@ export type ConcertDetailFragment = {
         _publishedAt: string;
         _updatedAt: string;
         id: string;
-        content?: {
-          __typename?: "TextBlockModelContentField";
+        content: {
           value: unknown;
           links: Array<
             | {
@@ -3690,15 +488,15 @@ export type ConcertDetailFragment = {
           blocks: Array<
             | {
                 __typename: "CallToActionRecord";
-                label?: string | null;
-                variant?: string | null;
-                externalUrl?: string | null;
+                label: string | null;
+                variant: string | null;
+                externalUrl: string | null;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
                 _updatedAt: string;
                 id: string;
-                pageLink?:
+                pageLink:
                   | {
                       __typename: "ConcertRecord";
                       title: string;
@@ -3723,7 +521,7 @@ export type ConcertDetailFragment = {
               }
             | {
                 __typename: "DocumentRecord";
-                document?: unknown | null;
+                document: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
@@ -3732,7 +530,7 @@ export type ConcertDetailFragment = {
               }
             | {
                 __typename: "ImageRecord";
-                image?: unknown | null;
+                image: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
@@ -3741,15 +539,14 @@ export type ConcertDetailFragment = {
               }
             | {
                 __typename: "VideoRecord";
-                title?: string | null;
-                thumbnail?: unknown | null;
+                title: string | null;
+                thumbnail: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
                 _updatedAt: string;
                 id: string;
-                media?: {
-                  __typename?: "VideoField";
+                media: {
                   height: number;
                   provider: string;
                   providerUid: string;
@@ -3769,8 +566,7 @@ export type ConcertDetailFragment = {
         _publishedAt: string;
         _updatedAt: string;
         id: string;
-        leftContent?: {
-          __typename?: "TwoColumnModelLeftContentField";
+        leftContent: {
           value: unknown;
           links: Array<
             | {
@@ -3797,15 +593,15 @@ export type ConcertDetailFragment = {
           blocks: Array<
             | {
                 __typename: "CallToActionRecord";
-                label?: string | null;
-                variant?: string | null;
-                externalUrl?: string | null;
+                label: string | null;
+                variant: string | null;
+                externalUrl: string | null;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
                 _updatedAt: string;
                 id: string;
-                pageLink?:
+                pageLink:
                   | {
                       __typename: "ConcertRecord";
                       title: string;
@@ -3830,7 +626,7 @@ export type ConcertDetailFragment = {
               }
             | {
                 __typename: "DocumentRecord";
-                document?: unknown | null;
+                document: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
@@ -3839,7 +635,7 @@ export type ConcertDetailFragment = {
               }
             | {
                 __typename: "ImageRecord";
-                image?: unknown | null;
+                image: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
@@ -3848,15 +644,14 @@ export type ConcertDetailFragment = {
               }
             | {
                 __typename: "VideoRecord";
-                title?: string | null;
-                thumbnail?: unknown | null;
+                title: string | null;
+                thumbnail: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
                 _updatedAt: string;
                 id: string;
-                media?: {
-                  __typename?: "VideoField";
+                media: {
                   height: number;
                   provider: string;
                   providerUid: string;
@@ -3868,8 +663,7 @@ export type ConcertDetailFragment = {
               }
           >;
         } | null;
-        rightContent?: {
-          __typename?: "TwoColumnModelRightContentField";
+        rightContent: {
           value: unknown;
           links: Array<
             | {
@@ -3896,15 +690,15 @@ export type ConcertDetailFragment = {
           blocks: Array<
             | {
                 __typename: "CallToActionRecord";
-                label?: string | null;
-                variant?: string | null;
-                externalUrl?: string | null;
+                label: string | null;
+                variant: string | null;
+                externalUrl: string | null;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
                 _updatedAt: string;
                 id: string;
-                pageLink?:
+                pageLink:
                   | {
                       __typename: "ConcertRecord";
                       title: string;
@@ -3929,7 +723,7 @@ export type ConcertDetailFragment = {
               }
             | {
                 __typename: "DocumentRecord";
-                document?: unknown | null;
+                document: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
@@ -3938,7 +732,7 @@ export type ConcertDetailFragment = {
               }
             | {
                 __typename: "ImageRecord";
-                image?: unknown | null;
+                image: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
@@ -3947,15 +741,14 @@ export type ConcertDetailFragment = {
               }
             | {
                 __typename: "VideoRecord";
-                title?: string | null;
-                thumbnail?: unknown | null;
+                title: string | null;
+                thumbnail: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
                 _updatedAt: string;
                 id: string;
-                media?: {
-                  __typename?: "VideoField";
+                media: {
                   height: number;
                   provider: string;
                   providerUid: string;
@@ -3991,36 +784,24 @@ export type ConcertPageSeoFragment = {
   _updatedAt: string;
   id: string;
   _seoMetaTags: Array<{
-    __typename?: "Tag";
-    attributes?: Record<string, string> | null;
-    content?: string | null;
+    attributes: Record<string, string> | null;
+    content: string | null;
     tag: string;
   }>;
-  seo?: {
-    __typename?: "SeoField";
-    description?: string | null;
-    title?: string | null;
-    twitterCard?: string | null;
-  } | null;
+  seo: { description: string | null; title: string | null; twitterCard: string | null } | null;
 };
 
-export type CoordinatesFragment = {
-  __typename?: "LatLonField";
-  latitude: number;
-  longitude: number;
-};
+export type CoordinatesFragment = { latitude: number; longitude: number };
 
 export type FileFragment = {
-  __typename?: "FileField";
   id: string;
-  alt?: string | null;
-  width?: number | null;
-  height?: number | null;
-  title?: string | null;
+  alt: string | null;
+  width: number | null;
+  height: number | null;
+  title: string | null;
   url: string;
-  video?: {
-    __typename?: "UploadVideoField";
-    mp4Url?: string | null;
+  video: {
+    mp4Url: string | null;
     muxAssetId: string;
     muxPlaybackId: string;
     streamingUrl: string;
@@ -4028,22 +809,16 @@ export type FileFragment = {
   } | null;
 };
 
-export type FocalPointFragment = {
-  __typename?: "focalPoint";
-  x: number;
-  y: number;
-};
+export type FocalPointFragment = { x: number; y: number };
 
 export type GeneralInfoFragment = {
-  __typename?: "GeneralRecord";
   id: string;
-  title?: string | null;
+  title: string | null;
   menu: Array<
     | {
-        __typename?: "MenuItemRecord";
         id: string;
-        label?: string | null;
-        link?:
+        label: string | null;
+        link:
           | {
               __typename: "ConcertRecord";
               title: string;
@@ -4067,14 +842,12 @@ export type GeneralInfoFragment = {
           | null;
       }
     | {
-        __typename?: "SubmenuItemRecord";
         id: string;
-        label?: string | null;
+        label: string | null;
         menu: Array<{
-          __typename?: "MenuItemRecord";
           id: string;
-          label?: string | null;
-          link?:
+          label: string | null;
+          link:
             | {
                 __typename: "ConcertRecord";
                 title: string;
@@ -4103,26 +876,25 @@ export type GeneralInfoFragment = {
 
 export type HeaderFragment = {
   __typename: "HeaderRecord";
-  cover?: unknown | null;
+  cover: unknown;
   _createdAt: string;
   _firstPublishedAt: string;
   _publishedAt: string;
   _updatedAt: string;
   id: string;
-  body?: {
-    __typename?: "HeaderModelBodyField";
+  body: {
     value: unknown;
     blocks: Array<{
       __typename: "CallToActionRecord";
-      label?: string | null;
-      variant?: string | null;
-      externalUrl?: string | null;
+      label: string | null;
+      variant: string | null;
+      externalUrl: string | null;
       _createdAt: string;
       _firstPublishedAt: string;
       _publishedAt: string;
       _updatedAt: string;
       id: string;
-      pageLink?:
+      pageLink:
         | {
             __typename: "ConcertRecord";
             title: string;
@@ -4171,19 +943,18 @@ export type HeaderFragment = {
 };
 
 export type HeaderBodyFragment = {
-  __typename?: "HeaderModelBodyField";
   value: unknown;
   blocks: Array<{
     __typename: "CallToActionRecord";
-    label?: string | null;
-    variant?: string | null;
-    externalUrl?: string | null;
+    label: string | null;
+    variant: string | null;
+    externalUrl: string | null;
     _createdAt: string;
     _firstPublishedAt: string;
     _publishedAt: string;
     _updatedAt: string;
     id: string;
-    pageLink?:
+    pageLink:
       | {
           __typename: "ConcertRecord";
           title: string;
@@ -4383,12 +1154,11 @@ export type IdentifiableFragment =
   | Identifiable_VideoRecord_Fragment;
 
 export type ResponsiveImageFragment = {
-  __typename?: "ResponsiveImage";
-  title?: string | null;
-  alt?: string | null;
+  title: string | null;
+  alt: string | null;
   sizes: string;
   aspectRatio: number;
-  bgColor?: string | null;
+  bgColor: string | null;
   src: string;
   height: number;
   width: number;
@@ -4396,7 +1166,7 @@ export type ResponsiveImageFragment = {
 
 export type ImageFragment = {
   __typename: "ImageRecord";
-  image?: unknown | null;
+  image: unknown;
   _createdAt: string;
   _firstPublishedAt: string;
   _publishedAt: string;
@@ -4406,7 +1176,7 @@ export type ImageFragment = {
 
 export type DocumentFragment = {
   __typename: "DocumentRecord";
-  document?: unknown | null;
+  document: unknown;
   _createdAt: string;
   _firstPublishedAt: string;
   _publishedAt: string;
@@ -4415,40 +1185,28 @@ export type DocumentFragment = {
 };
 
 export type LocationFragment = {
-  __typename?: "LocationRecord";
   id: string;
   title: string;
-  addressTitle?: string | null;
-  address?: {
-    __typename?: "LatLonField";
-    latitude: number;
-    longitude: number;
-  } | null;
+  addressTitle: string | null;
+  address: { latitude: number; longitude: number } | null;
 };
 
 export type LocationItemFragment = {
-  __typename?: "LocationItemRecord";
   id: string;
-  dateTime?: string | null;
-  ticketLink?: string | null;
-  location?: {
-    __typename?: "LocationRecord";
+  dateTime: string | null;
+  ticketLink: string | null;
+  location: {
     id: string;
     title: string;
-    addressTitle?: string | null;
-    address?: {
-      __typename?: "LatLonField";
-      latitude: number;
-      longitude: number;
-    } | null;
+    addressTitle: string | null;
+    address: { latitude: number; longitude: number } | null;
   } | null;
 };
 
 export type MenuItemFragment = {
-  __typename?: "MenuItemRecord";
   id: string;
-  label?: string | null;
-  link?:
+  label: string | null;
+  link:
     | {
         __typename: "ConcertRecord";
         title: string;
@@ -4484,26 +1242,25 @@ export type PageFragment = {
   content: Array<
     | {
         __typename: "HeaderRecord";
-        cover?: unknown | null;
+        cover: unknown;
         _createdAt: string;
         _firstPublishedAt: string;
         _publishedAt: string;
         _updatedAt: string;
         id: string;
-        body?: {
-          __typename?: "HeaderModelBodyField";
+        body: {
           value: unknown;
           blocks: Array<{
             __typename: "CallToActionRecord";
-            label?: string | null;
-            variant?: string | null;
-            externalUrl?: string | null;
+            label: string | null;
+            variant: string | null;
+            externalUrl: string | null;
             _createdAt: string;
             _firstPublishedAt: string;
             _publishedAt: string;
             _updatedAt: string;
             id: string;
-            pageLink?:
+            pageLink:
               | {
                   __typename: "ConcertRecord";
                   title: string;
@@ -4557,8 +1314,7 @@ export type PageFragment = {
         _publishedAt: string;
         _updatedAt: string;
         id: string;
-        content?: {
-          __typename?: "TextBlockModelContentField";
+        content: {
           value: unknown;
           links: Array<
             | {
@@ -4585,15 +1341,15 @@ export type PageFragment = {
           blocks: Array<
             | {
                 __typename: "CallToActionRecord";
-                label?: string | null;
-                variant?: string | null;
-                externalUrl?: string | null;
+                label: string | null;
+                variant: string | null;
+                externalUrl: string | null;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
                 _updatedAt: string;
                 id: string;
-                pageLink?:
+                pageLink:
                   | {
                       __typename: "ConcertRecord";
                       title: string;
@@ -4618,7 +1374,7 @@ export type PageFragment = {
               }
             | {
                 __typename: "DocumentRecord";
-                document?: unknown | null;
+                document: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
@@ -4627,7 +1383,7 @@ export type PageFragment = {
               }
             | {
                 __typename: "ImageRecord";
-                image?: unknown | null;
+                image: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
@@ -4636,15 +1392,14 @@ export type PageFragment = {
               }
             | {
                 __typename: "VideoRecord";
-                title?: string | null;
-                thumbnail?: unknown | null;
+                title: string | null;
+                thumbnail: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
                 _updatedAt: string;
                 id: string;
-                media?: {
-                  __typename?: "VideoField";
+                media: {
                   height: number;
                   provider: string;
                   providerUid: string;
@@ -4664,8 +1419,7 @@ export type PageFragment = {
         _publishedAt: string;
         _updatedAt: string;
         id: string;
-        leftContent?: {
-          __typename?: "TwoColumnModelLeftContentField";
+        leftContent: {
           value: unknown;
           links: Array<
             | {
@@ -4692,15 +1446,15 @@ export type PageFragment = {
           blocks: Array<
             | {
                 __typename: "CallToActionRecord";
-                label?: string | null;
-                variant?: string | null;
-                externalUrl?: string | null;
+                label: string | null;
+                variant: string | null;
+                externalUrl: string | null;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
                 _updatedAt: string;
                 id: string;
-                pageLink?:
+                pageLink:
                   | {
                       __typename: "ConcertRecord";
                       title: string;
@@ -4725,7 +1479,7 @@ export type PageFragment = {
               }
             | {
                 __typename: "DocumentRecord";
-                document?: unknown | null;
+                document: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
@@ -4734,7 +1488,7 @@ export type PageFragment = {
               }
             | {
                 __typename: "ImageRecord";
-                image?: unknown | null;
+                image: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
@@ -4743,15 +1497,14 @@ export type PageFragment = {
               }
             | {
                 __typename: "VideoRecord";
-                title?: string | null;
-                thumbnail?: unknown | null;
+                title: string | null;
+                thumbnail: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
                 _updatedAt: string;
                 id: string;
-                media?: {
-                  __typename?: "VideoField";
+                media: {
                   height: number;
                   provider: string;
                   providerUid: string;
@@ -4763,8 +1516,7 @@ export type PageFragment = {
               }
           >;
         } | null;
-        rightContent?: {
-          __typename?: "TwoColumnModelRightContentField";
+        rightContent: {
           value: unknown;
           links: Array<
             | {
@@ -4791,15 +1543,15 @@ export type PageFragment = {
           blocks: Array<
             | {
                 __typename: "CallToActionRecord";
-                label?: string | null;
-                variant?: string | null;
-                externalUrl?: string | null;
+                label: string | null;
+                variant: string | null;
+                externalUrl: string | null;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
                 _updatedAt: string;
                 id: string;
-                pageLink?:
+                pageLink:
                   | {
                       __typename: "ConcertRecord";
                       title: string;
@@ -4824,7 +1576,7 @@ export type PageFragment = {
               }
             | {
                 __typename: "DocumentRecord";
-                document?: unknown | null;
+                document: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
@@ -4833,7 +1585,7 @@ export type PageFragment = {
               }
             | {
                 __typename: "ImageRecord";
-                image?: unknown | null;
+                image: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
@@ -4842,15 +1594,14 @@ export type PageFragment = {
               }
             | {
                 __typename: "VideoRecord";
-                title?: string | null;
-                thumbnail?: unknown | null;
+                title: string | null;
+                thumbnail: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
                 _updatedAt: string;
                 id: string;
-                media?: {
-                  __typename?: "VideoField";
+                media: {
                   height: number;
                   provider: string;
                   providerUid: string;
@@ -4878,26 +1629,25 @@ export type PageDetailFragment = {
   content: Array<
     | {
         __typename: "HeaderRecord";
-        cover?: unknown | null;
+        cover: unknown;
         _createdAt: string;
         _firstPublishedAt: string;
         _publishedAt: string;
         _updatedAt: string;
         id: string;
-        body?: {
-          __typename?: "HeaderModelBodyField";
+        body: {
           value: unknown;
           blocks: Array<{
             __typename: "CallToActionRecord";
-            label?: string | null;
-            variant?: string | null;
-            externalUrl?: string | null;
+            label: string | null;
+            variant: string | null;
+            externalUrl: string | null;
             _createdAt: string;
             _firstPublishedAt: string;
             _publishedAt: string;
             _updatedAt: string;
             id: string;
-            pageLink?:
+            pageLink:
               | {
                   __typename: "ConcertRecord";
                   title: string;
@@ -4951,8 +1701,7 @@ export type PageDetailFragment = {
         _publishedAt: string;
         _updatedAt: string;
         id: string;
-        content?: {
-          __typename?: "TextBlockModelContentField";
+        content: {
           value: unknown;
           links: Array<
             | {
@@ -4979,15 +1728,15 @@ export type PageDetailFragment = {
           blocks: Array<
             | {
                 __typename: "CallToActionRecord";
-                label?: string | null;
-                variant?: string | null;
-                externalUrl?: string | null;
+                label: string | null;
+                variant: string | null;
+                externalUrl: string | null;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
                 _updatedAt: string;
                 id: string;
-                pageLink?:
+                pageLink:
                   | {
                       __typename: "ConcertRecord";
                       title: string;
@@ -5012,7 +1761,7 @@ export type PageDetailFragment = {
               }
             | {
                 __typename: "DocumentRecord";
-                document?: unknown | null;
+                document: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
@@ -5021,7 +1770,7 @@ export type PageDetailFragment = {
               }
             | {
                 __typename: "ImageRecord";
-                image?: unknown | null;
+                image: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
@@ -5030,15 +1779,14 @@ export type PageDetailFragment = {
               }
             | {
                 __typename: "VideoRecord";
-                title?: string | null;
-                thumbnail?: unknown | null;
+                title: string | null;
+                thumbnail: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
                 _updatedAt: string;
                 id: string;
-                media?: {
-                  __typename?: "VideoField";
+                media: {
                   height: number;
                   provider: string;
                   providerUid: string;
@@ -5058,8 +1806,7 @@ export type PageDetailFragment = {
         _publishedAt: string;
         _updatedAt: string;
         id: string;
-        leftContent?: {
-          __typename?: "TwoColumnModelLeftContentField";
+        leftContent: {
           value: unknown;
           links: Array<
             | {
@@ -5086,15 +1833,15 @@ export type PageDetailFragment = {
           blocks: Array<
             | {
                 __typename: "CallToActionRecord";
-                label?: string | null;
-                variant?: string | null;
-                externalUrl?: string | null;
+                label: string | null;
+                variant: string | null;
+                externalUrl: string | null;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
                 _updatedAt: string;
                 id: string;
-                pageLink?:
+                pageLink:
                   | {
                       __typename: "ConcertRecord";
                       title: string;
@@ -5119,7 +1866,7 @@ export type PageDetailFragment = {
               }
             | {
                 __typename: "DocumentRecord";
-                document?: unknown | null;
+                document: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
@@ -5128,7 +1875,7 @@ export type PageDetailFragment = {
               }
             | {
                 __typename: "ImageRecord";
-                image?: unknown | null;
+                image: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
@@ -5137,15 +1884,14 @@ export type PageDetailFragment = {
               }
             | {
                 __typename: "VideoRecord";
-                title?: string | null;
-                thumbnail?: unknown | null;
+                title: string | null;
+                thumbnail: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
                 _updatedAt: string;
                 id: string;
-                media?: {
-                  __typename?: "VideoField";
+                media: {
                   height: number;
                   provider: string;
                   providerUid: string;
@@ -5157,8 +1903,7 @@ export type PageDetailFragment = {
               }
           >;
         } | null;
-        rightContent?: {
-          __typename?: "TwoColumnModelRightContentField";
+        rightContent: {
           value: unknown;
           links: Array<
             | {
@@ -5185,15 +1930,15 @@ export type PageDetailFragment = {
           blocks: Array<
             | {
                 __typename: "CallToActionRecord";
-                label?: string | null;
-                variant?: string | null;
-                externalUrl?: string | null;
+                label: string | null;
+                variant: string | null;
+                externalUrl: string | null;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
                 _updatedAt: string;
                 id: string;
-                pageLink?:
+                pageLink:
                   | {
                       __typename: "ConcertRecord";
                       title: string;
@@ -5218,7 +1963,7 @@ export type PageDetailFragment = {
               }
             | {
                 __typename: "DocumentRecord";
-                document?: unknown | null;
+                document: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
@@ -5227,7 +1972,7 @@ export type PageDetailFragment = {
               }
             | {
                 __typename: "ImageRecord";
-                image?: unknown | null;
+                image: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
@@ -5236,15 +1981,14 @@ export type PageDetailFragment = {
               }
             | {
                 __typename: "VideoRecord";
-                title?: string | null;
-                thumbnail?: unknown | null;
+                title: string | null;
+                thumbnail: unknown;
                 _createdAt: string;
                 _firstPublishedAt: string;
                 _publishedAt: string;
                 _updatedAt: string;
                 id: string;
-                media?: {
-                  __typename?: "VideoField";
+                media: {
                   height: number;
                   provider: string;
                   providerUid: string;
@@ -5269,17 +2013,11 @@ export type PageDetailSeoFragment = {
   _updatedAt: string;
   id: string;
   _seoMetaTags: Array<{
-    __typename?: "Tag";
-    attributes?: Record<string, string> | null;
-    content?: string | null;
+    attributes: Record<string, string> | null;
+    content: string | null;
     tag: string;
   }>;
-  seo?: {
-    __typename?: "SeoField";
-    description?: string | null;
-    title?: string | null;
-    twitterCard?: string | null;
-  } | null;
+  seo: { description: string | null; title: string | null; twitterCard: string | null } | null;
 };
 
 export type PageLinkFragment = {
@@ -5294,30 +2032,27 @@ export type PageLinkFragment = {
 };
 
 export type SeoFieldFragment = {
-  __typename?: "SeoField";
-  description?: string | null;
-  title?: string | null;
-  twitterCard?: string | null;
+  description: string | null;
+  title: string | null;
+  twitterCard: string | null;
 };
 
 export type SeoSettingsFragment = {
-  __typename?: "GlobalSeoField";
-  facebookPageUrl?: string | null;
-  siteName?: string | null;
-  titleSuffix?: string | null;
-  twitterAccount?: string | null;
-  fallbackSeo?: {
-    __typename?: "SeoField";
-    description?: string | null;
-    title?: string | null;
-    twitterCard?: string | null;
+  facebookPageUrl: string | null;
+  siteName: string | null;
+  titleSuffix: string | null;
+  twitterAccount: string | null;
+  fallbackSeo: {
+    description: string | null;
+    title: string | null;
+    twitterCard: string | null;
   } | null;
 };
 
 export type SiteMetadataFragment = {
   __typename: "GeneralRecord";
-  title?: string | null;
-  siteMetadata?: unknown | null;
+  title: string | null;
+  siteMetadata: unknown;
   _createdAt: string;
   _firstPublishedAt: string;
   _publishedAt: string;
@@ -5326,14 +2061,12 @@ export type SiteMetadataFragment = {
 };
 
 export type SubmenuItemFragment = {
-  __typename?: "SubmenuItemRecord";
   id: string;
-  label?: string | null;
+  label: string | null;
   menu: Array<{
-    __typename?: "MenuItemRecord";
     id: string;
-    label?: string | null;
-    link?:
+    label: string | null;
+    link:
       | {
           __typename: "ConcertRecord";
           title: string;
@@ -5359,14 +2092,12 @@ export type SubmenuItemFragment = {
 };
 
 export type TagFragment = {
-  __typename?: "Tag";
-  attributes?: Record<string, string> | null;
-  content?: string | null;
+  attributes: Record<string, string> | null;
+  content: string | null;
   tag: string;
 };
 
 export type TextBlockContentFragment = {
-  __typename?: "TextBlockModelContentField";
   value: unknown;
   links: Array<
     | {
@@ -5393,15 +2124,15 @@ export type TextBlockContentFragment = {
   blocks: Array<
     | {
         __typename: "CallToActionRecord";
-        label?: string | null;
-        variant?: string | null;
-        externalUrl?: string | null;
+        label: string | null;
+        variant: string | null;
+        externalUrl: string | null;
         _createdAt: string;
         _firstPublishedAt: string;
         _publishedAt: string;
         _updatedAt: string;
         id: string;
-        pageLink?:
+        pageLink:
           | {
               __typename: "ConcertRecord";
               title: string;
@@ -5426,7 +2157,7 @@ export type TextBlockContentFragment = {
       }
     | {
         __typename: "DocumentRecord";
-        document?: unknown | null;
+        document: unknown;
         _createdAt: string;
         _firstPublishedAt: string;
         _publishedAt: string;
@@ -5435,7 +2166,7 @@ export type TextBlockContentFragment = {
       }
     | {
         __typename: "ImageRecord";
-        image?: unknown | null;
+        image: unknown;
         _createdAt: string;
         _firstPublishedAt: string;
         _publishedAt: string;
@@ -5444,15 +2175,14 @@ export type TextBlockContentFragment = {
       }
     | {
         __typename: "VideoRecord";
-        title?: string | null;
-        thumbnail?: unknown | null;
+        title: string | null;
+        thumbnail: unknown;
         _createdAt: string;
         _firstPublishedAt: string;
         _publishedAt: string;
         _updatedAt: string;
         id: string;
-        media?: {
-          __typename?: "VideoField";
+        media: {
           height: number;
           provider: string;
           providerUid: string;
@@ -5466,7 +2196,6 @@ export type TextBlockContentFragment = {
 };
 
 export type LeftContentFragment = {
-  __typename?: "TwoColumnModelLeftContentField";
   value: unknown;
   links: Array<
     | {
@@ -5493,15 +2222,15 @@ export type LeftContentFragment = {
   blocks: Array<
     | {
         __typename: "CallToActionRecord";
-        label?: string | null;
-        variant?: string | null;
-        externalUrl?: string | null;
+        label: string | null;
+        variant: string | null;
+        externalUrl: string | null;
         _createdAt: string;
         _firstPublishedAt: string;
         _publishedAt: string;
         _updatedAt: string;
         id: string;
-        pageLink?:
+        pageLink:
           | {
               __typename: "ConcertRecord";
               title: string;
@@ -5526,7 +2255,7 @@ export type LeftContentFragment = {
       }
     | {
         __typename: "DocumentRecord";
-        document?: unknown | null;
+        document: unknown;
         _createdAt: string;
         _firstPublishedAt: string;
         _publishedAt: string;
@@ -5535,7 +2264,7 @@ export type LeftContentFragment = {
       }
     | {
         __typename: "ImageRecord";
-        image?: unknown | null;
+        image: unknown;
         _createdAt: string;
         _firstPublishedAt: string;
         _publishedAt: string;
@@ -5544,15 +2273,14 @@ export type LeftContentFragment = {
       }
     | {
         __typename: "VideoRecord";
-        title?: string | null;
-        thumbnail?: unknown | null;
+        title: string | null;
+        thumbnail: unknown;
         _createdAt: string;
         _firstPublishedAt: string;
         _publishedAt: string;
         _updatedAt: string;
         id: string;
-        media?: {
-          __typename?: "VideoField";
+        media: {
           height: number;
           provider: string;
           providerUid: string;
@@ -5566,7 +2294,6 @@ export type LeftContentFragment = {
 };
 
 export type RightContentFragment = {
-  __typename?: "TwoColumnModelRightContentField";
   value: unknown;
   links: Array<
     | {
@@ -5593,15 +2320,15 @@ export type RightContentFragment = {
   blocks: Array<
     | {
         __typename: "CallToActionRecord";
-        label?: string | null;
-        variant?: string | null;
-        externalUrl?: string | null;
+        label: string | null;
+        variant: string | null;
+        externalUrl: string | null;
         _createdAt: string;
         _firstPublishedAt: string;
         _publishedAt: string;
         _updatedAt: string;
         id: string;
-        pageLink?:
+        pageLink:
           | {
               __typename: "ConcertRecord";
               title: string;
@@ -5626,7 +2353,7 @@ export type RightContentFragment = {
       }
     | {
         __typename: "DocumentRecord";
-        document?: unknown | null;
+        document: unknown;
         _createdAt: string;
         _firstPublishedAt: string;
         _publishedAt: string;
@@ -5635,7 +2362,7 @@ export type RightContentFragment = {
       }
     | {
         __typename: "ImageRecord";
-        image?: unknown | null;
+        image: unknown;
         _createdAt: string;
         _firstPublishedAt: string;
         _publishedAt: string;
@@ -5644,15 +2371,14 @@ export type RightContentFragment = {
       }
     | {
         __typename: "VideoRecord";
-        title?: string | null;
-        thumbnail?: unknown | null;
+        title: string | null;
+        thumbnail: unknown;
         _createdAt: string;
         _firstPublishedAt: string;
         _publishedAt: string;
         _updatedAt: string;
         id: string;
-        media?: {
-          __typename?: "VideoField";
+        media: {
           height: number;
           provider: string;
           providerUid: string;
@@ -5672,8 +2398,7 @@ export type TextBlockFragment = {
   _publishedAt: string;
   _updatedAt: string;
   id: string;
-  content?: {
-    __typename?: "TextBlockModelContentField";
+  content: {
     value: unknown;
     links: Array<
       | {
@@ -5700,15 +2425,15 @@ export type TextBlockFragment = {
     blocks: Array<
       | {
           __typename: "CallToActionRecord";
-          label?: string | null;
-          variant?: string | null;
-          externalUrl?: string | null;
+          label: string | null;
+          variant: string | null;
+          externalUrl: string | null;
           _createdAt: string;
           _firstPublishedAt: string;
           _publishedAt: string;
           _updatedAt: string;
           id: string;
-          pageLink?:
+          pageLink:
             | {
                 __typename: "ConcertRecord";
                 title: string;
@@ -5733,7 +2458,7 @@ export type TextBlockFragment = {
         }
       | {
           __typename: "DocumentRecord";
-          document?: unknown | null;
+          document: unknown;
           _createdAt: string;
           _firstPublishedAt: string;
           _publishedAt: string;
@@ -5742,7 +2467,7 @@ export type TextBlockFragment = {
         }
       | {
           __typename: "ImageRecord";
-          image?: unknown | null;
+          image: unknown;
           _createdAt: string;
           _firstPublishedAt: string;
           _publishedAt: string;
@@ -5751,15 +2476,14 @@ export type TextBlockFragment = {
         }
       | {
           __typename: "VideoRecord";
-          title?: string | null;
-          thumbnail?: unknown | null;
+          title: string | null;
+          thumbnail: unknown;
           _createdAt: string;
           _firstPublishedAt: string;
           _publishedAt: string;
           _updatedAt: string;
           id: string;
-          media?: {
-            __typename?: "VideoField";
+          media: {
             height: number;
             provider: string;
             providerUid: string;
@@ -5780,8 +2504,7 @@ export type TwoColumFragment = {
   _publishedAt: string;
   _updatedAt: string;
   id: string;
-  leftContent?: {
-    __typename?: "TwoColumnModelLeftContentField";
+  leftContent: {
     value: unknown;
     links: Array<
       | {
@@ -5808,15 +2531,15 @@ export type TwoColumFragment = {
     blocks: Array<
       | {
           __typename: "CallToActionRecord";
-          label?: string | null;
-          variant?: string | null;
-          externalUrl?: string | null;
+          label: string | null;
+          variant: string | null;
+          externalUrl: string | null;
           _createdAt: string;
           _firstPublishedAt: string;
           _publishedAt: string;
           _updatedAt: string;
           id: string;
-          pageLink?:
+          pageLink:
             | {
                 __typename: "ConcertRecord";
                 title: string;
@@ -5841,7 +2564,7 @@ export type TwoColumFragment = {
         }
       | {
           __typename: "DocumentRecord";
-          document?: unknown | null;
+          document: unknown;
           _createdAt: string;
           _firstPublishedAt: string;
           _publishedAt: string;
@@ -5850,7 +2573,7 @@ export type TwoColumFragment = {
         }
       | {
           __typename: "ImageRecord";
-          image?: unknown | null;
+          image: unknown;
           _createdAt: string;
           _firstPublishedAt: string;
           _publishedAt: string;
@@ -5859,15 +2582,14 @@ export type TwoColumFragment = {
         }
       | {
           __typename: "VideoRecord";
-          title?: string | null;
-          thumbnail?: unknown | null;
+          title: string | null;
+          thumbnail: unknown;
           _createdAt: string;
           _firstPublishedAt: string;
           _publishedAt: string;
           _updatedAt: string;
           id: string;
-          media?: {
-            __typename?: "VideoField";
+          media: {
             height: number;
             provider: string;
             providerUid: string;
@@ -5879,8 +2601,7 @@ export type TwoColumFragment = {
         }
     >;
   } | null;
-  rightContent?: {
-    __typename?: "TwoColumnModelRightContentField";
+  rightContent: {
     value: unknown;
     links: Array<
       | {
@@ -5907,15 +2628,15 @@ export type TwoColumFragment = {
     blocks: Array<
       | {
           __typename: "CallToActionRecord";
-          label?: string | null;
-          variant?: string | null;
-          externalUrl?: string | null;
+          label: string | null;
+          variant: string | null;
+          externalUrl: string | null;
           _createdAt: string;
           _firstPublishedAt: string;
           _publishedAt: string;
           _updatedAt: string;
           id: string;
-          pageLink?:
+          pageLink:
             | {
                 __typename: "ConcertRecord";
                 title: string;
@@ -5940,7 +2661,7 @@ export type TwoColumFragment = {
         }
       | {
           __typename: "DocumentRecord";
-          document?: unknown | null;
+          document: unknown;
           _createdAt: string;
           _firstPublishedAt: string;
           _publishedAt: string;
@@ -5949,7 +2670,7 @@ export type TwoColumFragment = {
         }
       | {
           __typename: "ImageRecord";
-          image?: unknown | null;
+          image: unknown;
           _createdAt: string;
           _firstPublishedAt: string;
           _publishedAt: string;
@@ -5958,15 +2679,14 @@ export type TwoColumFragment = {
         }
       | {
           __typename: "VideoRecord";
-          title?: string | null;
-          thumbnail?: unknown | null;
+          title: string | null;
+          thumbnail: unknown;
           _createdAt: string;
           _firstPublishedAt: string;
           _publishedAt: string;
           _updatedAt: string;
           id: string;
-          media?: {
-            __typename?: "VideoField";
+          media: {
             height: number;
             provider: string;
             providerUid: string;
@@ -5981,8 +2701,7 @@ export type TwoColumFragment = {
 };
 
 export type VideoUploadFragment = {
-  __typename?: "UploadVideoField";
-  mp4Url?: string | null;
+  mp4Url: string | null;
   muxAssetId: string;
   muxPlaybackId: string;
   streamingUrl: string;
@@ -5991,15 +2710,14 @@ export type VideoUploadFragment = {
 
 export type VideoFragment = {
   __typename: "VideoRecord";
-  title?: string | null;
-  thumbnail?: unknown | null;
+  title: string | null;
+  thumbnail: unknown;
   _createdAt: string;
   _firstPublishedAt: string;
   _publishedAt: string;
   _updatedAt: string;
   id: string;
-  media?: {
-    __typename?: "VideoField";
+  media: {
     height: number;
     provider: string;
     providerUid: string;
@@ -6011,7 +2729,6 @@ export type VideoFragment = {
 };
 
 export type VideoFieldFragment = {
-  __typename?: "VideoField";
   height: number;
   provider: string;
   providerUid: string;
@@ -6022,61 +2739,53 @@ export type VideoFieldFragment = {
 };
 
 export type GetConcertQueryVariables = Exact<{
-  id: Scalars["ItemId"]["input"];
+  id: string;
 }>;
 
 export type GetConcertQuery = {
-  __typename?: "Query";
-  concert?: {
+  concert: {
     __typename: "ConcertRecord";
     title: string;
     slug: string;
-    poster?: unknown | null;
+    poster: unknown;
     _createdAt: string;
     _firstPublishedAt: string;
     _publishedAt: string;
     _updatedAt: string;
     id: string;
     locations: Array<{
-      __typename?: "LocationItemRecord";
       id: string;
-      dateTime?: string | null;
-      ticketLink?: string | null;
-      location?: {
-        __typename?: "LocationRecord";
+      dateTime: string | null;
+      ticketLink: string | null;
+      location: {
         id: string;
         title: string;
-        addressTitle?: string | null;
-        address?: {
-          __typename?: "LatLonField";
-          latitude: number;
-          longitude: number;
-        } | null;
+        addressTitle: string | null;
+        address: { latitude: number; longitude: number } | null;
       } | null;
     }>;
     content: Array<
       | {
           __typename: "HeaderRecord";
-          cover?: unknown | null;
+          cover: unknown;
           _createdAt: string;
           _firstPublishedAt: string;
           _publishedAt: string;
           _updatedAt: string;
           id: string;
-          body?: {
-            __typename?: "HeaderModelBodyField";
+          body: {
             value: unknown;
             blocks: Array<{
               __typename: "CallToActionRecord";
-              label?: string | null;
-              variant?: string | null;
-              externalUrl?: string | null;
+              label: string | null;
+              variant: string | null;
+              externalUrl: string | null;
               _createdAt: string;
               _firstPublishedAt: string;
               _publishedAt: string;
               _updatedAt: string;
               id: string;
-              pageLink?:
+              pageLink:
                 | {
                     __typename: "ConcertRecord";
                     title: string;
@@ -6130,8 +2839,7 @@ export type GetConcertQuery = {
           _publishedAt: string;
           _updatedAt: string;
           id: string;
-          content?: {
-            __typename?: "TextBlockModelContentField";
+          content: {
             value: unknown;
             links: Array<
               | {
@@ -6158,15 +2866,15 @@ export type GetConcertQuery = {
             blocks: Array<
               | {
                   __typename: "CallToActionRecord";
-                  label?: string | null;
-                  variant?: string | null;
-                  externalUrl?: string | null;
+                  label: string | null;
+                  variant: string | null;
+                  externalUrl: string | null;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  pageLink?:
+                  pageLink:
                     | {
                         __typename: "ConcertRecord";
                         title: string;
@@ -6191,7 +2899,7 @@ export type GetConcertQuery = {
                 }
               | {
                   __typename: "DocumentRecord";
-                  document?: unknown | null;
+                  document: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -6200,7 +2908,7 @@ export type GetConcertQuery = {
                 }
               | {
                   __typename: "ImageRecord";
-                  image?: unknown | null;
+                  image: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -6209,15 +2917,14 @@ export type GetConcertQuery = {
                 }
               | {
                   __typename: "VideoRecord";
-                  title?: string | null;
-                  thumbnail?: unknown | null;
+                  title: string | null;
+                  thumbnail: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  media?: {
-                    __typename?: "VideoField";
+                  media: {
                     height: number;
                     provider: string;
                     providerUid: string;
@@ -6237,8 +2944,7 @@ export type GetConcertQuery = {
           _publishedAt: string;
           _updatedAt: string;
           id: string;
-          leftContent?: {
-            __typename?: "TwoColumnModelLeftContentField";
+          leftContent: {
             value: unknown;
             links: Array<
               | {
@@ -6265,15 +2971,15 @@ export type GetConcertQuery = {
             blocks: Array<
               | {
                   __typename: "CallToActionRecord";
-                  label?: string | null;
-                  variant?: string | null;
-                  externalUrl?: string | null;
+                  label: string | null;
+                  variant: string | null;
+                  externalUrl: string | null;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  pageLink?:
+                  pageLink:
                     | {
                         __typename: "ConcertRecord";
                         title: string;
@@ -6298,7 +3004,7 @@ export type GetConcertQuery = {
                 }
               | {
                   __typename: "DocumentRecord";
-                  document?: unknown | null;
+                  document: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -6307,7 +3013,7 @@ export type GetConcertQuery = {
                 }
               | {
                   __typename: "ImageRecord";
-                  image?: unknown | null;
+                  image: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -6316,15 +3022,14 @@ export type GetConcertQuery = {
                 }
               | {
                   __typename: "VideoRecord";
-                  title?: string | null;
-                  thumbnail?: unknown | null;
+                  title: string | null;
+                  thumbnail: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  media?: {
-                    __typename?: "VideoField";
+                  media: {
                     height: number;
                     provider: string;
                     providerUid: string;
@@ -6336,8 +3041,7 @@ export type GetConcertQuery = {
                 }
             >;
           } | null;
-          rightContent?: {
-            __typename?: "TwoColumnModelRightContentField";
+          rightContent: {
             value: unknown;
             links: Array<
               | {
@@ -6364,15 +3068,15 @@ export type GetConcertQuery = {
             blocks: Array<
               | {
                   __typename: "CallToActionRecord";
-                  label?: string | null;
-                  variant?: string | null;
-                  externalUrl?: string | null;
+                  label: string | null;
+                  variant: string | null;
+                  externalUrl: string | null;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  pageLink?:
+                  pageLink:
                     | {
                         __typename: "ConcertRecord";
                         title: string;
@@ -6397,7 +3101,7 @@ export type GetConcertQuery = {
                 }
               | {
                   __typename: "DocumentRecord";
-                  document?: unknown | null;
+                  document: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -6406,7 +3110,7 @@ export type GetConcertQuery = {
                 }
               | {
                   __typename: "ImageRecord";
-                  image?: unknown | null;
+                  image: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -6415,15 +3119,14 @@ export type GetConcertQuery = {
                 }
               | {
                   __typename: "VideoRecord";
-                  title?: string | null;
-                  thumbnail?: unknown | null;
+                  title: string | null;
+                  thumbnail: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  media?: {
-                    __typename?: "VideoField";
+                  media: {
                     height: number;
                     provider: string;
                     providerUid: string;
@@ -6441,61 +3144,53 @@ export type GetConcertQuery = {
 };
 
 export type GetConcertPageQueryVariables = Exact<{
-  slug: Scalars["String"]["input"];
+  slug: string;
 }>;
 
 export type GetConcertPageQuery = {
-  __typename?: "Query";
-  concert?: {
+  concert: {
     __typename: "ConcertRecord";
     title: string;
     slug: string;
-    poster?: unknown | null;
+    poster: unknown;
     _createdAt: string;
     _firstPublishedAt: string;
     _publishedAt: string;
     _updatedAt: string;
     id: string;
     locations: Array<{
-      __typename?: "LocationItemRecord";
       id: string;
-      dateTime?: string | null;
-      ticketLink?: string | null;
-      location?: {
-        __typename?: "LocationRecord";
+      dateTime: string | null;
+      ticketLink: string | null;
+      location: {
         id: string;
         title: string;
-        addressTitle?: string | null;
-        address?: {
-          __typename?: "LatLonField";
-          latitude: number;
-          longitude: number;
-        } | null;
+        addressTitle: string | null;
+        address: { latitude: number; longitude: number } | null;
       } | null;
     }>;
     content: Array<
       | {
           __typename: "HeaderRecord";
-          cover?: unknown | null;
+          cover: unknown;
           _createdAt: string;
           _firstPublishedAt: string;
           _publishedAt: string;
           _updatedAt: string;
           id: string;
-          body?: {
-            __typename?: "HeaderModelBodyField";
+          body: {
             value: unknown;
             blocks: Array<{
               __typename: "CallToActionRecord";
-              label?: string | null;
-              variant?: string | null;
-              externalUrl?: string | null;
+              label: string | null;
+              variant: string | null;
+              externalUrl: string | null;
               _createdAt: string;
               _firstPublishedAt: string;
               _publishedAt: string;
               _updatedAt: string;
               id: string;
-              pageLink?:
+              pageLink:
                 | {
                     __typename: "ConcertRecord";
                     title: string;
@@ -6549,8 +3244,7 @@ export type GetConcertPageQuery = {
           _publishedAt: string;
           _updatedAt: string;
           id: string;
-          content?: {
-            __typename?: "TextBlockModelContentField";
+          content: {
             value: unknown;
             links: Array<
               | {
@@ -6577,15 +3271,15 @@ export type GetConcertPageQuery = {
             blocks: Array<
               | {
                   __typename: "CallToActionRecord";
-                  label?: string | null;
-                  variant?: string | null;
-                  externalUrl?: string | null;
+                  label: string | null;
+                  variant: string | null;
+                  externalUrl: string | null;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  pageLink?:
+                  pageLink:
                     | {
                         __typename: "ConcertRecord";
                         title: string;
@@ -6610,7 +3304,7 @@ export type GetConcertPageQuery = {
                 }
               | {
                   __typename: "DocumentRecord";
-                  document?: unknown | null;
+                  document: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -6619,7 +3313,7 @@ export type GetConcertPageQuery = {
                 }
               | {
                   __typename: "ImageRecord";
-                  image?: unknown | null;
+                  image: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -6628,15 +3322,14 @@ export type GetConcertPageQuery = {
                 }
               | {
                   __typename: "VideoRecord";
-                  title?: string | null;
-                  thumbnail?: unknown | null;
+                  title: string | null;
+                  thumbnail: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  media?: {
-                    __typename?: "VideoField";
+                  media: {
                     height: number;
                     provider: string;
                     providerUid: string;
@@ -6656,8 +3349,7 @@ export type GetConcertPageQuery = {
           _publishedAt: string;
           _updatedAt: string;
           id: string;
-          leftContent?: {
-            __typename?: "TwoColumnModelLeftContentField";
+          leftContent: {
             value: unknown;
             links: Array<
               | {
@@ -6684,15 +3376,15 @@ export type GetConcertPageQuery = {
             blocks: Array<
               | {
                   __typename: "CallToActionRecord";
-                  label?: string | null;
-                  variant?: string | null;
-                  externalUrl?: string | null;
+                  label: string | null;
+                  variant: string | null;
+                  externalUrl: string | null;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  pageLink?:
+                  pageLink:
                     | {
                         __typename: "ConcertRecord";
                         title: string;
@@ -6717,7 +3409,7 @@ export type GetConcertPageQuery = {
                 }
               | {
                   __typename: "DocumentRecord";
-                  document?: unknown | null;
+                  document: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -6726,7 +3418,7 @@ export type GetConcertPageQuery = {
                 }
               | {
                   __typename: "ImageRecord";
-                  image?: unknown | null;
+                  image: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -6735,15 +3427,14 @@ export type GetConcertPageQuery = {
                 }
               | {
                   __typename: "VideoRecord";
-                  title?: string | null;
-                  thumbnail?: unknown | null;
+                  title: string | null;
+                  thumbnail: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  media?: {
-                    __typename?: "VideoField";
+                  media: {
                     height: number;
                     provider: string;
                     providerUid: string;
@@ -6755,8 +3446,7 @@ export type GetConcertPageQuery = {
                 }
             >;
           } | null;
-          rightContent?: {
-            __typename?: "TwoColumnModelRightContentField";
+          rightContent: {
             value: unknown;
             links: Array<
               | {
@@ -6783,15 +3473,15 @@ export type GetConcertPageQuery = {
             blocks: Array<
               | {
                   __typename: "CallToActionRecord";
-                  label?: string | null;
-                  variant?: string | null;
-                  externalUrl?: string | null;
+                  label: string | null;
+                  variant: string | null;
+                  externalUrl: string | null;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  pageLink?:
+                  pageLink:
                     | {
                         __typename: "ConcertRecord";
                         title: string;
@@ -6816,7 +3506,7 @@ export type GetConcertPageQuery = {
                 }
               | {
                   __typename: "DocumentRecord";
-                  document?: unknown | null;
+                  document: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -6825,7 +3515,7 @@ export type GetConcertPageQuery = {
                 }
               | {
                   __typename: "ImageRecord";
-                  image?: unknown | null;
+                  image: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -6834,15 +3524,14 @@ export type GetConcertPageQuery = {
                 }
               | {
                   __typename: "VideoRecord";
-                  title?: string | null;
-                  thumbnail?: unknown | null;
+                  title: string | null;
+                  thumbnail: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  media?: {
-                    __typename?: "VideoField";
+                  media: {
                     height: number;
                     provider: string;
                     providerUid: string;
@@ -6860,12 +3549,11 @@ export type GetConcertPageQuery = {
 };
 
 export type GetConcertSeoQueryVariables = Exact<{
-  slug: Scalars["String"]["input"];
+  slug: string;
 }>;
 
 export type GetConcertSeoQuery = {
-  __typename?: "Query";
-  concert?: {
+  concert: {
     __typename: "ConcertRecord";
     title: string;
     _createdAt: string;
@@ -6874,28 +3562,21 @@ export type GetConcertSeoQuery = {
     _updatedAt: string;
     id: string;
     _seoMetaTags: Array<{
-      __typename?: "Tag";
-      attributes?: Record<string, string> | null;
-      content?: string | null;
+      attributes: Record<string, string> | null;
+      content: string | null;
       tag: string;
     }>;
-    seo?: {
-      __typename?: "SeoField";
-      description?: string | null;
-      title?: string | null;
-      twitterCard?: string | null;
-    } | null;
+    seo: { description: string | null; title: string | null; twitterCard: string | null } | null;
   } | null;
 };
 
 export type GetConcertsUrlsQueryVariables = Exact<{
-  skip: Scalars["IntType"]["input"];
-  first: Scalars["IntType"]["input"];
-  order?: InputMaybe<Array<InputMaybe<ConcertModelOrderBy>> | InputMaybe<ConcertModelOrderBy>>;
+  skip: number;
+  first: number;
+  order?: Array<ConcertModelOrderBy | null | undefined> | ConcertModelOrderBy | null | undefined;
 }>;
 
 export type GetConcertsUrlsQuery = {
-  __typename?: "Query";
   allConcerts: Array<{
     __typename: "ConcertRecord";
     title: string;
@@ -6909,63 +3590,55 @@ export type GetConcertsUrlsQuery = {
 };
 
 export type GetConcertsQueryVariables = Exact<{
-  skip: Scalars["IntType"]["input"];
-  first: Scalars["IntType"]["input"];
-  order?: InputMaybe<Array<InputMaybe<ConcertModelOrderBy>> | InputMaybe<ConcertModelOrderBy>>;
+  skip: number;
+  first: number;
+  order?: Array<ConcertModelOrderBy | null | undefined> | ConcertModelOrderBy | null | undefined;
 }>;
 
 export type GetConcertsQuery = {
-  __typename?: "Query";
   allConcerts: Array<{
     __typename: "ConcertRecord";
     title: string;
     slug: string;
-    poster?: unknown | null;
+    poster: unknown;
     _createdAt: string;
     _firstPublishedAt: string;
     _publishedAt: string;
     _updatedAt: string;
     id: string;
     locations: Array<{
-      __typename?: "LocationItemRecord";
       id: string;
-      dateTime?: string | null;
-      ticketLink?: string | null;
-      location?: {
-        __typename?: "LocationRecord";
+      dateTime: string | null;
+      ticketLink: string | null;
+      location: {
         id: string;
         title: string;
-        addressTitle?: string | null;
-        address?: {
-          __typename?: "LatLonField";
-          latitude: number;
-          longitude: number;
-        } | null;
+        addressTitle: string | null;
+        address: { latitude: number; longitude: number } | null;
       } | null;
     }>;
     content: Array<
       | {
           __typename: "HeaderRecord";
-          cover?: unknown | null;
+          cover: unknown;
           _createdAt: string;
           _firstPublishedAt: string;
           _publishedAt: string;
           _updatedAt: string;
           id: string;
-          body?: {
-            __typename?: "HeaderModelBodyField";
+          body: {
             value: unknown;
             blocks: Array<{
               __typename: "CallToActionRecord";
-              label?: string | null;
-              variant?: string | null;
-              externalUrl?: string | null;
+              label: string | null;
+              variant: string | null;
+              externalUrl: string | null;
               _createdAt: string;
               _firstPublishedAt: string;
               _publishedAt: string;
               _updatedAt: string;
               id: string;
-              pageLink?:
+              pageLink:
                 | {
                     __typename: "ConcertRecord";
                     title: string;
@@ -7019,8 +3692,7 @@ export type GetConcertsQuery = {
           _publishedAt: string;
           _updatedAt: string;
           id: string;
-          content?: {
-            __typename?: "TextBlockModelContentField";
+          content: {
             value: unknown;
             links: Array<
               | {
@@ -7047,15 +3719,15 @@ export type GetConcertsQuery = {
             blocks: Array<
               | {
                   __typename: "CallToActionRecord";
-                  label?: string | null;
-                  variant?: string | null;
-                  externalUrl?: string | null;
+                  label: string | null;
+                  variant: string | null;
+                  externalUrl: string | null;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  pageLink?:
+                  pageLink:
                     | {
                         __typename: "ConcertRecord";
                         title: string;
@@ -7080,7 +3752,7 @@ export type GetConcertsQuery = {
                 }
               | {
                   __typename: "DocumentRecord";
-                  document?: unknown | null;
+                  document: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -7089,7 +3761,7 @@ export type GetConcertsQuery = {
                 }
               | {
                   __typename: "ImageRecord";
-                  image?: unknown | null;
+                  image: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -7098,15 +3770,14 @@ export type GetConcertsQuery = {
                 }
               | {
                   __typename: "VideoRecord";
-                  title?: string | null;
-                  thumbnail?: unknown | null;
+                  title: string | null;
+                  thumbnail: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  media?: {
-                    __typename?: "VideoField";
+                  media: {
                     height: number;
                     provider: string;
                     providerUid: string;
@@ -7126,8 +3797,7 @@ export type GetConcertsQuery = {
           _publishedAt: string;
           _updatedAt: string;
           id: string;
-          leftContent?: {
-            __typename?: "TwoColumnModelLeftContentField";
+          leftContent: {
             value: unknown;
             links: Array<
               | {
@@ -7154,15 +3824,15 @@ export type GetConcertsQuery = {
             blocks: Array<
               | {
                   __typename: "CallToActionRecord";
-                  label?: string | null;
-                  variant?: string | null;
-                  externalUrl?: string | null;
+                  label: string | null;
+                  variant: string | null;
+                  externalUrl: string | null;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  pageLink?:
+                  pageLink:
                     | {
                         __typename: "ConcertRecord";
                         title: string;
@@ -7187,7 +3857,7 @@ export type GetConcertsQuery = {
                 }
               | {
                   __typename: "DocumentRecord";
-                  document?: unknown | null;
+                  document: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -7196,7 +3866,7 @@ export type GetConcertsQuery = {
                 }
               | {
                   __typename: "ImageRecord";
-                  image?: unknown | null;
+                  image: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -7205,15 +3875,14 @@ export type GetConcertsQuery = {
                 }
               | {
                   __typename: "VideoRecord";
-                  title?: string | null;
-                  thumbnail?: unknown | null;
+                  title: string | null;
+                  thumbnail: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  media?: {
-                    __typename?: "VideoField";
+                  media: {
                     height: number;
                     provider: string;
                     providerUid: string;
@@ -7225,8 +3894,7 @@ export type GetConcertsQuery = {
                 }
             >;
           } | null;
-          rightContent?: {
-            __typename?: "TwoColumnModelRightContentField";
+          rightContent: {
             value: unknown;
             links: Array<
               | {
@@ -7253,15 +3921,15 @@ export type GetConcertsQuery = {
             blocks: Array<
               | {
                   __typename: "CallToActionRecord";
-                  label?: string | null;
-                  variant?: string | null;
-                  externalUrl?: string | null;
+                  label: string | null;
+                  variant: string | null;
+                  externalUrl: string | null;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  pageLink?:
+                  pageLink:
                     | {
                         __typename: "ConcertRecord";
                         title: string;
@@ -7286,7 +3954,7 @@ export type GetConcertsQuery = {
                 }
               | {
                   __typename: "DocumentRecord";
-                  document?: unknown | null;
+                  document: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -7295,7 +3963,7 @@ export type GetConcertsQuery = {
                 }
               | {
                   __typename: "ImageRecord";
-                  image?: unknown | null;
+                  image: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -7304,15 +3972,14 @@ export type GetConcertsQuery = {
                 }
               | {
                   __typename: "VideoRecord";
-                  title?: string | null;
-                  thumbnail?: unknown | null;
+                  title: string | null;
+                  thumbnail: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  media?: {
-                    __typename?: "VideoField";
+                  media: {
                     height: number;
                     provider: string;
                     providerUid: string;
@@ -7331,70 +3998,59 @@ export type GetConcertsQuery = {
 
 export type GetConcertsMetaQueryVariables = Exact<{ [key: string]: never }>;
 
-export type GetConcertsMetaQuery = {
-  __typename?: "Query";
-  _allConcertsMeta: { __typename?: "CollectionMetadata"; count: number };
-};
+export type GetConcertsMetaQuery = { _allConcertsMeta: { count: number } };
 
 export type GetFutureConcertsQueryVariables = Exact<{
-  skip: Scalars["IntType"]["input"];
-  first: Scalars["IntType"]["input"];
-  order?: InputMaybe<Array<InputMaybe<ConcertModelOrderBy>> | InputMaybe<ConcertModelOrderBy>>;
-  filter?: InputMaybe<ConcertModelFilter>;
+  skip: number;
+  first: number;
+  order?: Array<ConcertModelOrderBy | null | undefined> | ConcertModelOrderBy | null | undefined;
+  filter?: ConcertModelFilter | null | undefined;
 }>;
 
 export type GetFutureConcertsQuery = {
-  __typename?: "Query";
   allConcerts: Array<{
     __typename: "ConcertRecord";
     title: string;
     slug: string;
-    poster?: unknown | null;
+    poster: unknown;
     _createdAt: string;
     _firstPublishedAt: string;
     _publishedAt: string;
     _updatedAt: string;
     id: string;
     locations: Array<{
-      __typename?: "LocationItemRecord";
       id: string;
-      dateTime?: string | null;
-      ticketLink?: string | null;
-      location?: {
-        __typename?: "LocationRecord";
+      dateTime: string | null;
+      ticketLink: string | null;
+      location: {
         id: string;
         title: string;
-        addressTitle?: string | null;
-        address?: {
-          __typename?: "LatLonField";
-          latitude: number;
-          longitude: number;
-        } | null;
+        addressTitle: string | null;
+        address: { latitude: number; longitude: number } | null;
       } | null;
     }>;
     content: Array<
       | {
           __typename: "HeaderRecord";
-          cover?: unknown | null;
+          cover: unknown;
           _createdAt: string;
           _firstPublishedAt: string;
           _publishedAt: string;
           _updatedAt: string;
           id: string;
-          body?: {
-            __typename?: "HeaderModelBodyField";
+          body: {
             value: unknown;
             blocks: Array<{
               __typename: "CallToActionRecord";
-              label?: string | null;
-              variant?: string | null;
-              externalUrl?: string | null;
+              label: string | null;
+              variant: string | null;
+              externalUrl: string | null;
               _createdAt: string;
               _firstPublishedAt: string;
               _publishedAt: string;
               _updatedAt: string;
               id: string;
-              pageLink?:
+              pageLink:
                 | {
                     __typename: "ConcertRecord";
                     title: string;
@@ -7448,8 +4104,7 @@ export type GetFutureConcertsQuery = {
           _publishedAt: string;
           _updatedAt: string;
           id: string;
-          content?: {
-            __typename?: "TextBlockModelContentField";
+          content: {
             value: unknown;
             links: Array<
               | {
@@ -7476,15 +4131,15 @@ export type GetFutureConcertsQuery = {
             blocks: Array<
               | {
                   __typename: "CallToActionRecord";
-                  label?: string | null;
-                  variant?: string | null;
-                  externalUrl?: string | null;
+                  label: string | null;
+                  variant: string | null;
+                  externalUrl: string | null;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  pageLink?:
+                  pageLink:
                     | {
                         __typename: "ConcertRecord";
                         title: string;
@@ -7509,7 +4164,7 @@ export type GetFutureConcertsQuery = {
                 }
               | {
                   __typename: "DocumentRecord";
-                  document?: unknown | null;
+                  document: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -7518,7 +4173,7 @@ export type GetFutureConcertsQuery = {
                 }
               | {
                   __typename: "ImageRecord";
-                  image?: unknown | null;
+                  image: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -7527,15 +4182,14 @@ export type GetFutureConcertsQuery = {
                 }
               | {
                   __typename: "VideoRecord";
-                  title?: string | null;
-                  thumbnail?: unknown | null;
+                  title: string | null;
+                  thumbnail: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  media?: {
-                    __typename?: "VideoField";
+                  media: {
                     height: number;
                     provider: string;
                     providerUid: string;
@@ -7555,8 +4209,7 @@ export type GetFutureConcertsQuery = {
           _publishedAt: string;
           _updatedAt: string;
           id: string;
-          leftContent?: {
-            __typename?: "TwoColumnModelLeftContentField";
+          leftContent: {
             value: unknown;
             links: Array<
               | {
@@ -7583,15 +4236,15 @@ export type GetFutureConcertsQuery = {
             blocks: Array<
               | {
                   __typename: "CallToActionRecord";
-                  label?: string | null;
-                  variant?: string | null;
-                  externalUrl?: string | null;
+                  label: string | null;
+                  variant: string | null;
+                  externalUrl: string | null;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  pageLink?:
+                  pageLink:
                     | {
                         __typename: "ConcertRecord";
                         title: string;
@@ -7616,7 +4269,7 @@ export type GetFutureConcertsQuery = {
                 }
               | {
                   __typename: "DocumentRecord";
-                  document?: unknown | null;
+                  document: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -7625,7 +4278,7 @@ export type GetFutureConcertsQuery = {
                 }
               | {
                   __typename: "ImageRecord";
-                  image?: unknown | null;
+                  image: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -7634,15 +4287,14 @@ export type GetFutureConcertsQuery = {
                 }
               | {
                   __typename: "VideoRecord";
-                  title?: string | null;
-                  thumbnail?: unknown | null;
+                  title: string | null;
+                  thumbnail: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  media?: {
-                    __typename?: "VideoField";
+                  media: {
                     height: number;
                     provider: string;
                     providerUid: string;
@@ -7654,8 +4306,7 @@ export type GetFutureConcertsQuery = {
                 }
             >;
           } | null;
-          rightContent?: {
-            __typename?: "TwoColumnModelRightContentField";
+          rightContent: {
             value: unknown;
             links: Array<
               | {
@@ -7682,15 +4333,15 @@ export type GetFutureConcertsQuery = {
             blocks: Array<
               | {
                   __typename: "CallToActionRecord";
-                  label?: string | null;
-                  variant?: string | null;
-                  externalUrl?: string | null;
+                  label: string | null;
+                  variant: string | null;
+                  externalUrl: string | null;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  pageLink?:
+                  pageLink:
                     | {
                         __typename: "ConcertRecord";
                         title: string;
@@ -7715,7 +4366,7 @@ export type GetFutureConcertsQuery = {
                 }
               | {
                   __typename: "DocumentRecord";
-                  document?: unknown | null;
+                  document: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -7724,7 +4375,7 @@ export type GetFutureConcertsQuery = {
                 }
               | {
                   __typename: "ImageRecord";
-                  image?: unknown | null;
+                  image: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -7733,15 +4384,14 @@ export type GetFutureConcertsQuery = {
                 }
               | {
                   __typename: "VideoRecord";
-                  title?: string | null;
-                  thumbnail?: unknown | null;
+                  title: string | null;
+                  thumbnail: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  media?: {
-                    __typename?: "VideoField";
+                  media: {
                     height: number;
                     provider: string;
                     providerUid: string;
@@ -7761,17 +4411,14 @@ export type GetFutureConcertsQuery = {
 export type GetGeneralInfoQueryVariables = Exact<{ [key: string]: never }>;
 
 export type GetGeneralInfoQuery = {
-  __typename?: "Query";
-  general?: {
-    __typename?: "GeneralRecord";
+  general: {
     id: string;
-    title?: string | null;
+    title: string | null;
     menu: Array<
       | {
-          __typename?: "MenuItemRecord";
           id: string;
-          label?: string | null;
-          link?:
+          label: string | null;
+          link:
             | {
                 __typename: "ConcertRecord";
                 title: string;
@@ -7795,14 +4442,12 @@ export type GetGeneralInfoQuery = {
             | null;
         }
       | {
-          __typename?: "SubmenuItemRecord";
           id: string;
-          label?: string | null;
+          label: string | null;
           menu: Array<{
-            __typename?: "MenuItemRecord";
             id: string;
-            label?: string | null;
-            link?:
+            label: string | null;
+            link:
               | {
                   __typename: "ConcertRecord";
                   title: string;
@@ -7831,52 +4476,39 @@ export type GetGeneralInfoQuery = {
 };
 
 export type GetLocationQueryVariables = Exact<{
-  id?: InputMaybe<Scalars["ItemId"]["input"]>;
+  id?: string | null | undefined;
 }>;
 
 export type GetLocationQuery = {
-  __typename?: "Query";
-  location?: {
-    __typename?: "LocationRecord";
+  location: {
     id: string;
     title: string;
-    addressTitle?: string | null;
-    address?: {
-      __typename?: "LatLonField";
-      latitude: number;
-      longitude: number;
-    } | null;
+    addressTitle: string | null;
+    address: { latitude: number; longitude: number } | null;
   } | null;
 };
 
 export type GetLocationsQueryVariables = Exact<{
-  first?: InputMaybe<Scalars["IntType"]["input"]>;
-  skip?: InputMaybe<Scalars["IntType"]["input"]>;
-  order?: InputMaybe<Array<InputMaybe<LocationModelOrderBy>> | InputMaybe<LocationModelOrderBy>>;
+  first?: number | null | undefined;
+  skip?: number | null | undefined;
+  order?: Array<LocationModelOrderBy | null | undefined> | LocationModelOrderBy | null | undefined;
 }>;
 
 export type GetLocationsQuery = {
-  __typename?: "Query";
   allLocations: Array<{
-    __typename?: "LocationRecord";
     id: string;
     title: string;
-    addressTitle?: string | null;
-    address?: {
-      __typename?: "LatLonField";
-      latitude: number;
-      longitude: number;
-    } | null;
+    addressTitle: string | null;
+    address: { latitude: number; longitude: number } | null;
   }>;
 };
 
 export type GetPageQueryVariables = Exact<{
-  slug: Scalars["String"]["input"];
+  slug: string;
 }>;
 
 export type GetPageQuery = {
-  __typename?: "Query";
-  page?: {
+  page: {
     __typename: "PageRecord";
     title: string;
     slug: string;
@@ -7888,26 +4520,25 @@ export type GetPageQuery = {
     content: Array<
       | {
           __typename: "HeaderRecord";
-          cover?: unknown | null;
+          cover: unknown;
           _createdAt: string;
           _firstPublishedAt: string;
           _publishedAt: string;
           _updatedAt: string;
           id: string;
-          body?: {
-            __typename?: "HeaderModelBodyField";
+          body: {
             value: unknown;
             blocks: Array<{
               __typename: "CallToActionRecord";
-              label?: string | null;
-              variant?: string | null;
-              externalUrl?: string | null;
+              label: string | null;
+              variant: string | null;
+              externalUrl: string | null;
               _createdAt: string;
               _firstPublishedAt: string;
               _publishedAt: string;
               _updatedAt: string;
               id: string;
-              pageLink?:
+              pageLink:
                 | {
                     __typename: "ConcertRecord";
                     title: string;
@@ -7961,8 +4592,7 @@ export type GetPageQuery = {
           _publishedAt: string;
           _updatedAt: string;
           id: string;
-          content?: {
-            __typename?: "TextBlockModelContentField";
+          content: {
             value: unknown;
             links: Array<
               | {
@@ -7989,15 +4619,15 @@ export type GetPageQuery = {
             blocks: Array<
               | {
                   __typename: "CallToActionRecord";
-                  label?: string | null;
-                  variant?: string | null;
-                  externalUrl?: string | null;
+                  label: string | null;
+                  variant: string | null;
+                  externalUrl: string | null;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  pageLink?:
+                  pageLink:
                     | {
                         __typename: "ConcertRecord";
                         title: string;
@@ -8022,7 +4652,7 @@ export type GetPageQuery = {
                 }
               | {
                   __typename: "DocumentRecord";
-                  document?: unknown | null;
+                  document: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -8031,7 +4661,7 @@ export type GetPageQuery = {
                 }
               | {
                   __typename: "ImageRecord";
-                  image?: unknown | null;
+                  image: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -8040,15 +4670,14 @@ export type GetPageQuery = {
                 }
               | {
                   __typename: "VideoRecord";
-                  title?: string | null;
-                  thumbnail?: unknown | null;
+                  title: string | null;
+                  thumbnail: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  media?: {
-                    __typename?: "VideoField";
+                  media: {
                     height: number;
                     provider: string;
                     providerUid: string;
@@ -8068,8 +4697,7 @@ export type GetPageQuery = {
           _publishedAt: string;
           _updatedAt: string;
           id: string;
-          leftContent?: {
-            __typename?: "TwoColumnModelLeftContentField";
+          leftContent: {
             value: unknown;
             links: Array<
               | {
@@ -8096,15 +4724,15 @@ export type GetPageQuery = {
             blocks: Array<
               | {
                   __typename: "CallToActionRecord";
-                  label?: string | null;
-                  variant?: string | null;
-                  externalUrl?: string | null;
+                  label: string | null;
+                  variant: string | null;
+                  externalUrl: string | null;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  pageLink?:
+                  pageLink:
                     | {
                         __typename: "ConcertRecord";
                         title: string;
@@ -8129,7 +4757,7 @@ export type GetPageQuery = {
                 }
               | {
                   __typename: "DocumentRecord";
-                  document?: unknown | null;
+                  document: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -8138,7 +4766,7 @@ export type GetPageQuery = {
                 }
               | {
                   __typename: "ImageRecord";
-                  image?: unknown | null;
+                  image: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -8147,15 +4775,14 @@ export type GetPageQuery = {
                 }
               | {
                   __typename: "VideoRecord";
-                  title?: string | null;
-                  thumbnail?: unknown | null;
+                  title: string | null;
+                  thumbnail: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  media?: {
-                    __typename?: "VideoField";
+                  media: {
                     height: number;
                     provider: string;
                     providerUid: string;
@@ -8167,8 +4794,7 @@ export type GetPageQuery = {
                 }
             >;
           } | null;
-          rightContent?: {
-            __typename?: "TwoColumnModelRightContentField";
+          rightContent: {
             value: unknown;
             links: Array<
               | {
@@ -8195,15 +4821,15 @@ export type GetPageQuery = {
             blocks: Array<
               | {
                   __typename: "CallToActionRecord";
-                  label?: string | null;
-                  variant?: string | null;
-                  externalUrl?: string | null;
+                  label: string | null;
+                  variant: string | null;
+                  externalUrl: string | null;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  pageLink?:
+                  pageLink:
                     | {
                         __typename: "ConcertRecord";
                         title: string;
@@ -8228,7 +4854,7 @@ export type GetPageQuery = {
                 }
               | {
                   __typename: "DocumentRecord";
-                  document?: unknown | null;
+                  document: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -8237,7 +4863,7 @@ export type GetPageQuery = {
                 }
               | {
                   __typename: "ImageRecord";
-                  image?: unknown | null;
+                  image: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
@@ -8246,15 +4872,14 @@ export type GetPageQuery = {
                 }
               | {
                   __typename: "VideoRecord";
-                  title?: string | null;
-                  thumbnail?: unknown | null;
+                  title: string | null;
+                  thumbnail: unknown;
                   _createdAt: string;
                   _firstPublishedAt: string;
                   _publishedAt: string;
                   _updatedAt: string;
                   id: string;
-                  media?: {
-                    __typename?: "VideoField";
+                  media: {
                     height: number;
                     provider: string;
                     providerUid: string;
@@ -8272,12 +4897,11 @@ export type GetPageQuery = {
 };
 
 export type GetPageSeoQueryVariables = Exact<{
-  slug: Scalars["String"]["input"];
+  slug: string;
 }>;
 
 export type GetPageSeoQuery = {
-  __typename?: "Query";
-  page?: {
+  page: {
     __typename: "PageRecord";
     title: string;
     _createdAt: string;
@@ -8286,28 +4910,21 @@ export type GetPageSeoQuery = {
     _updatedAt: string;
     id: string;
     _seoMetaTags: Array<{
-      __typename?: "Tag";
-      attributes?: Record<string, string> | null;
-      content?: string | null;
+      attributes: Record<string, string> | null;
+      content: string | null;
       tag: string;
     }>;
-    seo?: {
-      __typename?: "SeoField";
-      description?: string | null;
-      title?: string | null;
-      twitterCard?: string | null;
-    } | null;
+    seo: { description: string | null; title: string | null; twitterCard: string | null } | null;
   } | null;
 };
 
 export type GetPagesQueryVariables = Exact<{
-  skip?: InputMaybe<Scalars["IntType"]["input"]>;
-  first?: InputMaybe<Scalars["IntType"]["input"]>;
-  order?: InputMaybe<Array<InputMaybe<PageModelOrderBy>> | InputMaybe<PageModelOrderBy>>;
+  skip?: number | null | undefined;
+  first?: number | null | undefined;
+  order?: Array<PageModelOrderBy | null | undefined> | PageModelOrderBy | null | undefined;
 }>;
 
 export type GetPagesQuery = {
-  __typename?: "Query";
   allPages: Array<{
     __typename: "PageRecord";
     title: string;
@@ -8322,29 +4939,22 @@ export type GetPagesQuery = {
 
 export type GetPagesMetaQueryVariables = Exact<{ [key: string]: never }>;
 
-export type GetPagesMetaQuery = {
-  __typename?: "Query";
-  _allPagesMeta: { __typename?: "CollectionMetadata"; count: number };
-};
+export type GetPagesMetaQuery = { _allPagesMeta: { count: number } };
 
 export type GetSiteInfoQueryVariables = Exact<{ [key: string]: never }>;
 
 export type GetSiteInfoQuery = {
-  __typename?: "Query";
   _site: {
-    __typename?: "Site";
     locales: Array<SiteLocale>;
-    globalSeo?: {
-      __typename?: "GlobalSeoField";
-      facebookPageUrl?: string | null;
-      siteName?: string | null;
-      titleSuffix?: string | null;
-      twitterAccount?: string | null;
-      fallbackSeo?: {
-        __typename?: "SeoField";
-        description?: string | null;
-        title?: string | null;
-        twitterCard?: string | null;
+    globalSeo: {
+      facebookPageUrl: string | null;
+      siteName: string | null;
+      titleSuffix: string | null;
+      twitterAccount: string | null;
+      fallbackSeo: {
+        description: string | null;
+        title: string | null;
+        twitterCard: string | null;
       } | null;
     } | null;
   };
@@ -8353,11 +4963,10 @@ export type GetSiteInfoQuery = {
 export type GetSiteMetadataQueryVariables = Exact<{ [key: string]: never }>;
 
 export type GetSiteMetadataQuery = {
-  __typename?: "Query";
-  general?: {
+  general: {
     __typename: "GeneralRecord";
-    title?: string | null;
-    siteMetadata?: unknown | null;
+    title: string | null;
+    siteMetadata: unknown;
     _createdAt: string;
     _firstPublishedAt: string;
     _publishedAt: string;
@@ -8369,20 +4978,15 @@ export type GetSiteMetadataQuery = {
 export type GetSubmenuQueryVariables = Exact<{ [key: string]: never }>;
 
 export type GetSubmenuQuery = {
-  __typename?: "Query";
-  general?: {
-    __typename?: "GeneralRecord";
+  general: {
     menu: Array<
-      | { __typename?: "MenuItemRecord" }
       | {
-          __typename?: "SubmenuItemRecord";
           id: string;
-          label?: string | null;
+          label: string | null;
           menu: Array<{
-            __typename?: "MenuItemRecord";
             id: string;
-            label?: string | null;
-            link?:
+            label: string | null;
+            link:
               | {
                   __typename: "ConcertRecord";
                   title: string;
@@ -8406,6 +5010,7 @@ export type GetSubmenuQuery = {
               | null;
           }>;
         }
+      | Record<PropertyKey, never>
     >;
   } | null;
 };
@@ -8416,10 +5021,7 @@ export const ColorsFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "colors" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ColorField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ColorField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -8440,10 +5042,7 @@ export const IdentifiableFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -8464,10 +5063,7 @@ export const CoordinatesFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "coordinates" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LatLonField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LatLonField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -8484,10 +5080,7 @@ export const LocationFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "location" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LocationRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LocationRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -8500,10 +5093,7 @@ export const LocationFragmentDoc = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "coordinates" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "coordinates" } },
               ],
             },
           },
@@ -8513,10 +5103,7 @@ export const LocationFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "coordinates" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LatLonField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LatLonField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -8533,10 +5120,7 @@ export const LocationItemFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "locationItem" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LocationItemRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LocationItemRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -8547,12 +5131,7 @@ export const LocationItemFragmentDoc = {
             name: { kind: "Name", value: "location" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "location" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "location" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "ticketLink" } },
@@ -8562,10 +5141,7 @@ export const LocationItemFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "coordinates" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LatLonField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LatLonField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -8577,10 +5153,7 @@ export const LocationItemFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "location" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LocationRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LocationRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -8593,10 +5166,7 @@ export const LocationItemFragmentDoc = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "coordinates" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "coordinates" } },
               ],
             },
           },
@@ -8611,17 +5181,11 @@ export const ConcertLinkFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -8630,10 +5194,7 @@ export const ConcertLinkFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -8654,17 +5215,11 @@ export const PageLinkFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -8673,10 +5228,7 @@ export const PageLinkFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -8697,17 +5249,11 @@ export const CallToActionFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "callToAction" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "CallToActionRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "CallToActionRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "label" } },
           { kind: "Field", name: { kind: "Name", value: "variant" } },
           { kind: "Field", name: { kind: "Name", value: "externalUrl" } },
@@ -8726,26 +5272,17 @@ export const CallToActionFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -8758,10 +5295,7 @@ export const CallToActionFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -8777,17 +5311,11 @@ export const CallToActionFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -8796,17 +5324,11 @@ export const CallToActionFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -8820,10 +5342,7 @@ export const HeaderBodyFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "headerBody" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "HeaderModelBodyField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "HeaderModelBodyField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -8842,10 +5361,7 @@ export const HeaderBodyFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -8867,26 +5383,17 @@ export const HeaderBodyFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -8900,10 +5407,7 @@ export const HeaderBodyFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -8919,17 +5423,11 @@ export const HeaderBodyFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -8938,17 +5436,11 @@ export const HeaderBodyFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -8957,17 +5449,11 @@ export const HeaderBodyFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "callToAction" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "CallToActionRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "CallToActionRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "label" } },
           { kind: "Field", name: { kind: "Name", value: "variant" } },
           { kind: "Field", name: { kind: "Name", value: "externalUrl" } },
@@ -8986,26 +5472,17 @@ export const HeaderBodyFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -9023,28 +5500,17 @@ export const HeaderFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "header" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "HeaderRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "HeaderRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "body" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "headerBody" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "headerBody" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "cover" } },
@@ -9054,10 +5520,7 @@ export const HeaderFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -9073,17 +5536,11 @@ export const HeaderFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -9092,17 +5549,11 @@ export const HeaderFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -9111,17 +5562,11 @@ export const HeaderFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "callToAction" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "CallToActionRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "CallToActionRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "label" } },
           { kind: "Field", name: { kind: "Name", value: "variant" } },
           { kind: "Field", name: { kind: "Name", value: "externalUrl" } },
@@ -9140,26 +5585,17 @@ export const HeaderFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -9172,10 +5608,7 @@ export const HeaderFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "headerBody" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "HeaderModelBodyField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "HeaderModelBodyField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -9194,10 +5627,7 @@ export const HeaderFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -9219,26 +5649,17 @@ export const HeaderFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -9257,10 +5678,7 @@ export const VideoFieldFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "videoField" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -9282,29 +5700,18 @@ export const VideoFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "video" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "media" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "videoField" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "videoField" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "thumbnail" } },
@@ -9314,10 +5721,7 @@ export const VideoFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -9333,10 +5737,7 @@ export const VideoFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "videoField" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -9358,17 +5759,11 @@ export const DocumentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "document" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "DocumentRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "DocumentRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "document" } },
         ],
       },
@@ -9376,10 +5771,7 @@ export const DocumentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -9400,17 +5792,11 @@ export const ImageFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "image" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ImageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ImageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "image" } },
         ],
       },
@@ -9418,10 +5804,7 @@ export const ImageFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -9465,26 +5848,17 @@ export const TextBlockContentFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -9506,10 +5880,7 @@ export const TextBlockContentFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -9522,10 +5893,7 @@ export const TextBlockContentFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -9538,10 +5906,7 @@ export const TextBlockContentFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -9554,10 +5919,7 @@ export const TextBlockContentFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -9570,10 +5932,7 @@ export const TextBlockContentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -9589,10 +5948,7 @@ export const TextBlockContentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "videoField" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -9609,17 +5965,11 @@ export const TextBlockContentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -9628,17 +5978,11 @@ export const TextBlockContentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -9647,29 +5991,18 @@ export const TextBlockContentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "video" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "media" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "videoField" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "videoField" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "thumbnail" } },
@@ -9679,17 +6012,11 @@ export const TextBlockContentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "document" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "DocumentRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "DocumentRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "document" } },
         ],
       },
@@ -9697,17 +6024,11 @@ export const TextBlockContentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "image" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ImageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ImageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "image" } },
         ],
       },
@@ -9715,17 +6036,11 @@ export const TextBlockContentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "callToAction" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "CallToActionRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "CallToActionRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "label" } },
           { kind: "Field", name: { kind: "Name", value: "variant" } },
           { kind: "Field", name: { kind: "Name", value: "externalUrl" } },
@@ -9744,26 +6059,17 @@ export const TextBlockContentFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -9781,27 +6087,18 @@ export const TextBlockFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "textBlock" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "TextBlockRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "TextBlockRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "content" },
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "textBlockContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "textBlockContent" } },
               ],
             },
           },
@@ -9811,10 +6108,7 @@ export const TextBlockFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -9830,17 +6124,11 @@ export const TextBlockFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -9849,17 +6137,11 @@ export const TextBlockFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -9868,10 +6150,7 @@ export const TextBlockFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "videoField" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -9888,29 +6167,18 @@ export const TextBlockFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "video" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "media" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "videoField" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "videoField" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "thumbnail" } },
@@ -9920,17 +6188,11 @@ export const TextBlockFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "document" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "DocumentRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "DocumentRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "document" } },
         ],
       },
@@ -9938,17 +6200,11 @@ export const TextBlockFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "image" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ImageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ImageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "image" } },
         ],
       },
@@ -9956,17 +6212,11 @@ export const TextBlockFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "callToAction" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "CallToActionRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "CallToActionRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "label" } },
           { kind: "Field", name: { kind: "Name", value: "variant" } },
           { kind: "Field", name: { kind: "Name", value: "externalUrl" } },
@@ -9985,26 +6235,17 @@ export const TextBlockFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -10040,26 +6281,17 @@ export const TextBlockFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -10081,10 +6313,7 @@ export const TextBlockFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -10097,10 +6326,7 @@ export const TextBlockFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -10113,10 +6339,7 @@ export const TextBlockFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -10129,10 +6352,7 @@ export const TextBlockFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -10173,26 +6393,17 @@ export const LeftContentFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -10214,10 +6425,7 @@ export const LeftContentFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -10230,10 +6438,7 @@ export const LeftContentFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -10246,10 +6451,7 @@ export const LeftContentFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -10262,10 +6464,7 @@ export const LeftContentFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -10278,10 +6477,7 @@ export const LeftContentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -10297,10 +6493,7 @@ export const LeftContentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "videoField" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -10317,17 +6510,11 @@ export const LeftContentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -10336,17 +6523,11 @@ export const LeftContentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -10355,29 +6536,18 @@ export const LeftContentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "video" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "media" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "videoField" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "videoField" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "thumbnail" } },
@@ -10387,17 +6557,11 @@ export const LeftContentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "document" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "DocumentRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "DocumentRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "document" } },
         ],
       },
@@ -10405,17 +6569,11 @@ export const LeftContentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "image" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ImageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ImageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "image" } },
         ],
       },
@@ -10423,17 +6581,11 @@ export const LeftContentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "callToAction" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "CallToActionRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "CallToActionRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "label" } },
           { kind: "Field", name: { kind: "Name", value: "variant" } },
           { kind: "Field", name: { kind: "Name", value: "externalUrl" } },
@@ -10452,26 +6604,17 @@ export const LeftContentFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -10512,26 +6655,17 @@ export const RightContentFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -10553,10 +6687,7 @@ export const RightContentFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -10569,10 +6700,7 @@ export const RightContentFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -10585,10 +6713,7 @@ export const RightContentFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -10601,10 +6726,7 @@ export const RightContentFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -10617,10 +6739,7 @@ export const RightContentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -10636,10 +6755,7 @@ export const RightContentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "videoField" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -10656,17 +6772,11 @@ export const RightContentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -10675,17 +6785,11 @@ export const RightContentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -10694,29 +6798,18 @@ export const RightContentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "video" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "media" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "videoField" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "videoField" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "thumbnail" } },
@@ -10726,17 +6819,11 @@ export const RightContentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "document" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "DocumentRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "DocumentRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "document" } },
         ],
       },
@@ -10744,17 +6831,11 @@ export const RightContentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "image" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ImageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ImageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "image" } },
         ],
       },
@@ -10762,17 +6843,11 @@ export const RightContentFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "callToAction" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "CallToActionRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "CallToActionRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "label" } },
           { kind: "Field", name: { kind: "Name", value: "variant" } },
           { kind: "Field", name: { kind: "Name", value: "externalUrl" } },
@@ -10791,26 +6866,17 @@ export const RightContentFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -10828,27 +6894,18 @@ export const TwoColumFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "twoColum" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "TwoColumnRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "TwoColumnRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "leftContent" },
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "leftContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "leftContent" } },
               ],
             },
           },
@@ -10858,10 +6915,7 @@ export const TwoColumFragmentDoc = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "rightContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "rightContent" } },
               ],
             },
           },
@@ -10871,10 +6925,7 @@ export const TwoColumFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -10890,17 +6941,11 @@ export const TwoColumFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -10909,17 +6954,11 @@ export const TwoColumFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -10928,10 +6967,7 @@ export const TwoColumFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "videoField" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -10948,29 +6984,18 @@ export const TwoColumFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "video" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "media" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "videoField" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "videoField" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "thumbnail" } },
@@ -10980,17 +7005,11 @@ export const TwoColumFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "document" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "DocumentRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "DocumentRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "document" } },
         ],
       },
@@ -10998,17 +7017,11 @@ export const TwoColumFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "image" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ImageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ImageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "image" } },
         ],
       },
@@ -11016,17 +7029,11 @@ export const TwoColumFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "callToAction" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "CallToActionRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "CallToActionRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "label" } },
           { kind: "Field", name: { kind: "Name", value: "variant" } },
           { kind: "Field", name: { kind: "Name", value: "externalUrl" } },
@@ -11045,26 +7052,17 @@ export const TwoColumFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -11100,26 +7098,17 @@ export const TwoColumFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -11141,10 +7130,7 @@ export const TwoColumFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -11157,10 +7143,7 @@ export const TwoColumFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -11173,10 +7156,7 @@ export const TwoColumFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -11189,10 +7169,7 @@ export const TwoColumFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -11228,26 +7205,17 @@ export const TwoColumFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -11269,10 +7237,7 @@ export const TwoColumFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -11285,10 +7250,7 @@ export const TwoColumFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -11301,10 +7263,7 @@ export const TwoColumFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -11317,10 +7276,7 @@ export const TwoColumFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -11338,17 +7294,11 @@ export const ConcertDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertDetail" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
           { kind: "Field", name: { kind: "Name", value: "poster" } },
@@ -11358,10 +7308,7 @@ export const ConcertDetailFragmentDoc = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "locationItem" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "locationItem" } },
               ],
             },
           },
@@ -11380,10 +7327,7 @@ export const ConcertDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "header" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "header" } },
                     ],
                   },
                 },
@@ -11396,10 +7340,7 @@ export const ConcertDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "textBlock" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "textBlock" } },
                     ],
                   },
                 },
@@ -11412,10 +7353,7 @@ export const ConcertDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "twoColum" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "twoColum" } },
                     ],
                   },
                 },
@@ -11428,10 +7366,7 @@ export const ConcertDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "coordinates" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LatLonField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LatLonField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -11443,10 +7378,7 @@ export const ConcertDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "location" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LocationRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LocationRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -11459,10 +7391,7 @@ export const ConcertDetailFragmentDoc = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "coordinates" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "coordinates" } },
               ],
             },
           },
@@ -11472,10 +7401,7 @@ export const ConcertDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -11491,17 +7417,11 @@ export const ConcertDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -11510,17 +7430,11 @@ export const ConcertDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -11529,17 +7443,11 @@ export const ConcertDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "callToAction" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "CallToActionRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "CallToActionRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "label" } },
           { kind: "Field", name: { kind: "Name", value: "variant" } },
           { kind: "Field", name: { kind: "Name", value: "externalUrl" } },
@@ -11558,26 +7466,17 @@ export const ConcertDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -11590,10 +7489,7 @@ export const ConcertDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "headerBody" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "HeaderModelBodyField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "HeaderModelBodyField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -11612,10 +7508,7 @@ export const ConcertDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -11637,26 +7530,17 @@ export const ConcertDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -11670,10 +7554,7 @@ export const ConcertDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "videoField" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -11690,29 +7571,18 @@ export const ConcertDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "video" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "media" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "videoField" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "videoField" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "thumbnail" } },
@@ -11722,17 +7592,11 @@ export const ConcertDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "document" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "DocumentRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "DocumentRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "document" } },
         ],
       },
@@ -11740,17 +7604,11 @@ export const ConcertDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "image" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ImageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ImageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "image" } },
         ],
       },
@@ -11781,26 +7639,17 @@ export const ConcertDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -11822,10 +7671,7 @@ export const ConcertDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -11838,10 +7684,7 @@ export const ConcertDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -11854,10 +7697,7 @@ export const ConcertDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -11870,10 +7710,7 @@ export const ConcertDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -11909,26 +7746,17 @@ export const ConcertDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -11950,10 +7778,7 @@ export const ConcertDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -11966,10 +7791,7 @@ export const ConcertDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -11982,10 +7804,7 @@ export const ConcertDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -11998,10 +7817,7 @@ export const ConcertDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -12037,26 +7853,17 @@ export const ConcertDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -12078,10 +7885,7 @@ export const ConcertDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -12094,10 +7898,7 @@ export const ConcertDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -12110,10 +7911,7 @@ export const ConcertDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -12126,10 +7924,7 @@ export const ConcertDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -12142,10 +7937,7 @@ export const ConcertDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "locationItem" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LocationItemRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LocationItemRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -12156,12 +7948,7 @@ export const ConcertDetailFragmentDoc = {
             name: { kind: "Name", value: "location" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "location" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "location" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "ticketLink" } },
@@ -12171,28 +7958,17 @@ export const ConcertDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "header" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "HeaderRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "HeaderRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "body" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "headerBody" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "headerBody" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "cover" } },
@@ -12202,27 +7978,18 @@ export const ConcertDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "textBlock" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "TextBlockRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "TextBlockRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "content" },
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "textBlockContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "textBlockContent" } },
               ],
             },
           },
@@ -12232,27 +7999,18 @@ export const ConcertDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "twoColum" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "TwoColumnRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "TwoColumnRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "leftContent" },
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "leftContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "leftContent" } },
               ],
             },
           },
@@ -12262,10 +8020,7 @@ export const ConcertDetailFragmentDoc = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "rightContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "rightContent" } },
               ],
             },
           },
@@ -12280,10 +8035,7 @@ export const TagFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "tag" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "Tag" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "Tag" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -12301,10 +8053,7 @@ export const SeoFieldFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "seoField" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "SeoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "SeoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -12322,29 +8071,18 @@ export const ConcertPageSeoFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertPageSeo" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "_seoMetaTags" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "tag" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "tag" } }],
             },
           },
           {
@@ -12352,12 +8090,7 @@ export const ConcertPageSeoFragmentDoc = {
             name: { kind: "Name", value: "seo" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "seoField" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "seoField" } }],
             },
           },
         ],
@@ -12366,10 +8099,7 @@ export const ConcertPageSeoFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -12385,10 +8115,7 @@ export const ConcertPageSeoFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "tag" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "Tag" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "Tag" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -12401,10 +8128,7 @@ export const ConcertPageSeoFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "seoField" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "SeoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "SeoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -12422,10 +8146,7 @@ export const VideoUploadFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "videoUpload" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "UploadVideoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "UploadVideoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -12445,10 +8166,7 @@ export const FileFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "file" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "FileField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "FileField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -12464,10 +8182,7 @@ export const FileFragmentDoc = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "videoUpload" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "videoUpload" } },
               ],
             },
           },
@@ -12477,10 +8192,7 @@ export const FileFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "videoUpload" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "UploadVideoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "UploadVideoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -12500,10 +8212,7 @@ export const FocalPointFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "focalPoint" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "focalPoint" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "focalPoint" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -12520,10 +8229,7 @@ export const MenuItemFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "menuItem" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "MenuItemRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "MenuItemRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -12544,26 +8250,17 @@ export const MenuItemFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -12576,10 +8273,7 @@ export const MenuItemFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -12595,17 +8289,11 @@ export const MenuItemFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -12614,17 +8302,11 @@ export const MenuItemFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -12638,10 +8320,7 @@ export const SubmenuItemFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "submenuItem" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "SubmenuItemRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "SubmenuItemRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -12652,12 +8331,7 @@ export const SubmenuItemFragmentDoc = {
             name: { kind: "Name", value: "menu" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "menuItem" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "menuItem" } }],
             },
           },
         ],
@@ -12666,10 +8340,7 @@ export const SubmenuItemFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -12685,17 +8356,11 @@ export const SubmenuItemFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -12704,17 +8369,11 @@ export const SubmenuItemFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -12723,10 +8382,7 @@ export const SubmenuItemFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "menuItem" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "MenuItemRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "MenuItemRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -12747,26 +8403,17 @@ export const SubmenuItemFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -12784,10 +8431,7 @@ export const GeneralInfoFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "generalInfo" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "GeneralRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "GeneralRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -12808,10 +8452,7 @@ export const GeneralInfoFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "menuItem" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "menuItem" } },
                     ],
                   },
                 },
@@ -12824,10 +8465,7 @@ export const GeneralInfoFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "submenuItem" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "submenuItem" } },
                     ],
                   },
                 },
@@ -12840,10 +8478,7 @@ export const GeneralInfoFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -12859,17 +8494,11 @@ export const GeneralInfoFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -12878,17 +8507,11 @@ export const GeneralInfoFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -12897,10 +8520,7 @@ export const GeneralInfoFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "menuItem" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "MenuItemRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "MenuItemRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -12921,26 +8541,17 @@ export const GeneralInfoFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -12953,10 +8564,7 @@ export const GeneralInfoFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "submenuItem" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "SubmenuItemRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "SubmenuItemRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -12967,12 +8575,7 @@ export const GeneralInfoFragmentDoc = {
             name: { kind: "Name", value: "menu" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "menuItem" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "menuItem" } }],
             },
           },
         ],
@@ -12986,10 +8589,7 @@ export const ResponsiveImageFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "responsiveImage" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ResponsiveImage" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ResponsiveImage" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -13012,17 +8612,11 @@ export const PageFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "page" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
           {
@@ -13040,10 +8634,7 @@ export const PageFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "header" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "header" } },
                     ],
                   },
                 },
@@ -13056,10 +8647,7 @@ export const PageFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "textBlock" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "textBlock" } },
                     ],
                   },
                 },
@@ -13072,10 +8660,7 @@ export const PageFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "twoColum" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "twoColum" } },
                     ],
                   },
                 },
@@ -13088,10 +8673,7 @@ export const PageFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -13107,17 +8689,11 @@ export const PageFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -13126,17 +8702,11 @@ export const PageFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -13145,17 +8715,11 @@ export const PageFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "callToAction" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "CallToActionRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "CallToActionRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "label" } },
           { kind: "Field", name: { kind: "Name", value: "variant" } },
           { kind: "Field", name: { kind: "Name", value: "externalUrl" } },
@@ -13174,26 +8738,17 @@ export const PageFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -13206,10 +8761,7 @@ export const PageFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "headerBody" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "HeaderModelBodyField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "HeaderModelBodyField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -13228,10 +8780,7 @@ export const PageFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -13253,26 +8802,17 @@ export const PageFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -13286,10 +8826,7 @@ export const PageFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "videoField" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -13306,29 +8843,18 @@ export const PageFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "video" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "media" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "videoField" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "videoField" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "thumbnail" } },
@@ -13338,17 +8864,11 @@ export const PageFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "document" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "DocumentRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "DocumentRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "document" } },
         ],
       },
@@ -13356,17 +8876,11 @@ export const PageFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "image" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ImageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ImageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "image" } },
         ],
       },
@@ -13397,26 +8911,17 @@ export const PageFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -13438,10 +8943,7 @@ export const PageFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -13454,10 +8956,7 @@ export const PageFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -13470,10 +8969,7 @@ export const PageFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -13486,10 +8982,7 @@ export const PageFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -13525,26 +9018,17 @@ export const PageFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -13566,10 +9050,7 @@ export const PageFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -13582,10 +9063,7 @@ export const PageFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -13598,10 +9076,7 @@ export const PageFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -13614,10 +9089,7 @@ export const PageFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -13653,26 +9125,17 @@ export const PageFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -13694,10 +9157,7 @@ export const PageFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -13710,10 +9170,7 @@ export const PageFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -13726,10 +9183,7 @@ export const PageFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -13742,10 +9196,7 @@ export const PageFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -13758,28 +9209,17 @@ export const PageFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "header" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "HeaderRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "HeaderRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "body" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "headerBody" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "headerBody" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "cover" } },
@@ -13789,27 +9229,18 @@ export const PageFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "textBlock" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "TextBlockRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "TextBlockRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "content" },
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "textBlockContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "textBlockContent" } },
               ],
             },
           },
@@ -13819,27 +9250,18 @@ export const PageFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "twoColum" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "TwoColumnRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "TwoColumnRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "leftContent" },
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "leftContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "leftContent" } },
               ],
             },
           },
@@ -13849,10 +9271,7 @@ export const PageFragmentDoc = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "rightContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "rightContent" } },
               ],
             },
           },
@@ -13867,17 +9286,11 @@ export const PageDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageDetail" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
           {
@@ -13895,10 +9308,7 @@ export const PageDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "header" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "header" } },
                     ],
                   },
                 },
@@ -13911,10 +9321,7 @@ export const PageDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "textBlock" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "textBlock" } },
                     ],
                   },
                 },
@@ -13927,10 +9334,7 @@ export const PageDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "twoColum" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "twoColum" } },
                     ],
                   },
                 },
@@ -13943,10 +9347,7 @@ export const PageDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -13962,17 +9363,11 @@ export const PageDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -13981,17 +9376,11 @@ export const PageDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -14000,17 +9389,11 @@ export const PageDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "callToAction" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "CallToActionRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "CallToActionRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "label" } },
           { kind: "Field", name: { kind: "Name", value: "variant" } },
           { kind: "Field", name: { kind: "Name", value: "externalUrl" } },
@@ -14029,26 +9412,17 @@ export const PageDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -14061,10 +9435,7 @@ export const PageDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "headerBody" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "HeaderModelBodyField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "HeaderModelBodyField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -14083,10 +9454,7 @@ export const PageDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -14108,26 +9476,17 @@ export const PageDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -14141,10 +9500,7 @@ export const PageDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "videoField" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -14161,29 +9517,18 @@ export const PageDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "video" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "media" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "videoField" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "videoField" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "thumbnail" } },
@@ -14193,17 +9538,11 @@ export const PageDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "document" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "DocumentRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "DocumentRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "document" } },
         ],
       },
@@ -14211,17 +9550,11 @@ export const PageDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "image" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ImageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ImageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "image" } },
         ],
       },
@@ -14252,26 +9585,17 @@ export const PageDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -14293,10 +9617,7 @@ export const PageDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -14309,10 +9630,7 @@ export const PageDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -14325,10 +9643,7 @@ export const PageDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -14341,10 +9656,7 @@ export const PageDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -14380,26 +9692,17 @@ export const PageDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -14421,10 +9724,7 @@ export const PageDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -14437,10 +9737,7 @@ export const PageDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -14453,10 +9750,7 @@ export const PageDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -14469,10 +9763,7 @@ export const PageDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -14508,26 +9799,17 @@ export const PageDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -14549,10 +9831,7 @@ export const PageDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -14565,10 +9844,7 @@ export const PageDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -14581,10 +9857,7 @@ export const PageDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -14597,10 +9870,7 @@ export const PageDetailFragmentDoc = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -14613,28 +9883,17 @@ export const PageDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "header" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "HeaderRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "HeaderRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "body" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "headerBody" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "headerBody" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "cover" } },
@@ -14644,27 +9903,18 @@ export const PageDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "textBlock" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "TextBlockRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "TextBlockRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "content" },
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "textBlockContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "textBlockContent" } },
               ],
             },
           },
@@ -14674,27 +9924,18 @@ export const PageDetailFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "twoColum" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "TwoColumnRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "TwoColumnRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "leftContent" },
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "leftContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "leftContent" } },
               ],
             },
           },
@@ -14704,10 +9945,7 @@ export const PageDetailFragmentDoc = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "rightContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "rightContent" } },
               ],
             },
           },
@@ -14722,29 +9960,18 @@ export const PageDetailSeoFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageDetailSeo" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "_seoMetaTags" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "tag" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "tag" } }],
             },
           },
           {
@@ -14752,12 +9979,7 @@ export const PageDetailSeoFragmentDoc = {
             name: { kind: "Name", value: "seo" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "seoField" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "seoField" } }],
             },
           },
         ],
@@ -14766,10 +9988,7 @@ export const PageDetailSeoFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -14785,10 +10004,7 @@ export const PageDetailSeoFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "tag" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "Tag" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "Tag" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -14801,10 +10017,7 @@ export const PageDetailSeoFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "seoField" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "SeoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "SeoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -14822,10 +10035,7 @@ export const SeoSettingsFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "seoSettings" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "GlobalSeoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "GlobalSeoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -14838,12 +10048,7 @@ export const SeoSettingsFragmentDoc = {
             name: { kind: "Name", value: "fallbackSeo" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "seoField" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "seoField" } }],
             },
           },
         ],
@@ -14852,10 +10057,7 @@ export const SeoSettingsFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "seoField" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "SeoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "SeoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -14873,17 +10075,11 @@ export const SiteMetadataFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "siteMetadata" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "GeneralRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "GeneralRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "siteMetadata" } },
         ],
@@ -14892,10 +10088,7 @@ export const SiteMetadataFragmentDoc = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -14911,7 +10104,7 @@ export const SiteMetadataFragmentDoc = {
   ],
 } as unknown as DocumentNode<SiteMetadataFragment, unknown>;
 export const GetConcertDocument = {
-  __meta__: { hash: "53cecd3bea2e69d7ce13c7984fba78a524905d70" },
+  __meta__: { hash: "sha256:7874f23b6b441351b949c354e146b233fda6a0aac3a814b9b2f6418a9b9c3353" },
   kind: "Document",
   definitions: [
     {
@@ -14924,10 +10117,7 @@ export const GetConcertDocument = {
           variable: { kind: "Variable", name: { kind: "Name", value: "id" } },
           type: {
             kind: "NonNullType",
-            type: {
-              kind: "NamedType",
-              name: { kind: "Name", value: "ItemId" },
-            },
+            type: { kind: "NamedType", name: { kind: "Name", value: "ItemId" } },
           },
         },
       ],
@@ -14953,10 +10143,7 @@ export const GetConcertDocument = {
                           {
                             kind: "ObjectField",
                             name: { kind: "Name", value: "eq" },
-                            value: {
-                              kind: "Variable",
-                              name: { kind: "Name", value: "id" },
-                            },
+                            value: { kind: "Variable", name: { kind: "Name", value: "id" } },
                           },
                         ],
                       },
@@ -14968,10 +10155,7 @@ export const GetConcertDocument = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "concertDetail" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "concertDetail" } },
               ],
             },
           },
@@ -14981,10 +10165,7 @@ export const GetConcertDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -15000,10 +10181,7 @@ export const GetConcertDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "coordinates" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LatLonField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LatLonField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -15015,10 +10193,7 @@ export const GetConcertDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "location" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LocationRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LocationRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -15031,10 +10206,7 @@ export const GetConcertDocument = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "coordinates" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "coordinates" } },
               ],
             },
           },
@@ -15044,10 +10216,7 @@ export const GetConcertDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "locationItem" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LocationItemRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LocationItemRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -15058,12 +10227,7 @@ export const GetConcertDocument = {
             name: { kind: "Name", value: "location" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "location" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "location" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "ticketLink" } },
@@ -15073,17 +10237,11 @@ export const GetConcertDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -15092,17 +10250,11 @@ export const GetConcertDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -15111,17 +10263,11 @@ export const GetConcertDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "callToAction" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "CallToActionRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "CallToActionRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "label" } },
           { kind: "Field", name: { kind: "Name", value: "variant" } },
           { kind: "Field", name: { kind: "Name", value: "externalUrl" } },
@@ -15140,26 +10286,17 @@ export const GetConcertDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -15172,10 +10309,7 @@ export const GetConcertDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "headerBody" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "HeaderModelBodyField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "HeaderModelBodyField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -15194,10 +10328,7 @@ export const GetConcertDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -15219,26 +10350,17 @@ export const GetConcertDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -15252,28 +10374,17 @@ export const GetConcertDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "header" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "HeaderRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "HeaderRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "body" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "headerBody" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "headerBody" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "cover" } },
@@ -15283,10 +10394,7 @@ export const GetConcertDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "videoField" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -15303,29 +10411,18 @@ export const GetConcertDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "video" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "media" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "videoField" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "videoField" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "thumbnail" } },
@@ -15335,17 +10432,11 @@ export const GetConcertDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "document" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "DocumentRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "DocumentRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "document" } },
         ],
       },
@@ -15353,17 +10444,11 @@ export const GetConcertDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "image" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ImageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ImageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "image" } },
         ],
       },
@@ -15394,26 +10479,17 @@ export const GetConcertDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -15435,10 +10511,7 @@ export const GetConcertDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -15451,10 +10524,7 @@ export const GetConcertDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -15467,10 +10537,7 @@ export const GetConcertDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -15483,10 +10550,7 @@ export const GetConcertDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -15499,27 +10563,18 @@ export const GetConcertDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "textBlock" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "TextBlockRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "TextBlockRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "content" },
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "textBlockContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "textBlockContent" } },
               ],
             },
           },
@@ -15552,26 +10607,17 @@ export const GetConcertDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -15593,10 +10639,7 @@ export const GetConcertDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -15609,10 +10652,7 @@ export const GetConcertDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -15625,10 +10665,7 @@ export const GetConcertDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -15641,10 +10678,7 @@ export const GetConcertDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -15680,26 +10714,17 @@ export const GetConcertDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -15721,10 +10746,7 @@ export const GetConcertDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -15737,10 +10759,7 @@ export const GetConcertDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -15753,10 +10772,7 @@ export const GetConcertDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -15769,10 +10785,7 @@ export const GetConcertDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -15785,27 +10798,18 @@ export const GetConcertDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "twoColum" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "TwoColumnRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "TwoColumnRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "leftContent" },
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "leftContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "leftContent" } },
               ],
             },
           },
@@ -15815,10 +10819,7 @@ export const GetConcertDocument = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "rightContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "rightContent" } },
               ],
             },
           },
@@ -15828,17 +10829,11 @@ export const GetConcertDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertDetail" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
           { kind: "Field", name: { kind: "Name", value: "poster" } },
@@ -15848,10 +10843,7 @@ export const GetConcertDocument = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "locationItem" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "locationItem" } },
               ],
             },
           },
@@ -15870,10 +10862,7 @@ export const GetConcertDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "header" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "header" } },
                     ],
                   },
                 },
@@ -15886,10 +10875,7 @@ export const GetConcertDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "textBlock" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "textBlock" } },
                     ],
                   },
                 },
@@ -15902,10 +10888,7 @@ export const GetConcertDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "twoColum" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "twoColum" } },
                     ],
                   },
                 },
@@ -15918,7 +10901,7 @@ export const GetConcertDocument = {
   ],
 } as unknown as DocumentNode<GetConcertQuery, GetConcertQueryVariables>;
 export const GetConcertPageDocument = {
-  __meta__: { hash: "bb224e8b95a7cc1496c225912ffbefcee8bd3d5d" },
+  __meta__: { hash: "sha256:876670f4a65b58218c5312b22c9c9d2bbdae012964e87aa93c3f3da60c1ff614" },
   kind: "Document",
   definitions: [
     {
@@ -15931,10 +10914,7 @@ export const GetConcertPageDocument = {
           variable: { kind: "Variable", name: { kind: "Name", value: "slug" } },
           type: {
             kind: "NonNullType",
-            type: {
-              kind: "NamedType",
-              name: { kind: "Name", value: "String" },
-            },
+            type: { kind: "NamedType", name: { kind: "Name", value: "String" } },
           },
         },
       ],
@@ -15960,10 +10940,7 @@ export const GetConcertPageDocument = {
                           {
                             kind: "ObjectField",
                             name: { kind: "Name", value: "eq" },
-                            value: {
-                              kind: "Variable",
-                              name: { kind: "Name", value: "slug" },
-                            },
+                            value: { kind: "Variable", name: { kind: "Name", value: "slug" } },
                           },
                         ],
                       },
@@ -15975,10 +10952,7 @@ export const GetConcertPageDocument = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "concertDetail" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "concertDetail" } },
               ],
             },
           },
@@ -15988,10 +10962,7 @@ export const GetConcertPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -16007,10 +10978,7 @@ export const GetConcertPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "coordinates" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LatLonField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LatLonField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -16022,10 +10990,7 @@ export const GetConcertPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "location" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LocationRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LocationRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -16038,10 +11003,7 @@ export const GetConcertPageDocument = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "coordinates" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "coordinates" } },
               ],
             },
           },
@@ -16051,10 +11013,7 @@ export const GetConcertPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "locationItem" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LocationItemRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LocationItemRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -16065,12 +11024,7 @@ export const GetConcertPageDocument = {
             name: { kind: "Name", value: "location" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "location" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "location" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "ticketLink" } },
@@ -16080,17 +11034,11 @@ export const GetConcertPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -16099,17 +11047,11 @@ export const GetConcertPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -16118,17 +11060,11 @@ export const GetConcertPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "callToAction" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "CallToActionRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "CallToActionRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "label" } },
           { kind: "Field", name: { kind: "Name", value: "variant" } },
           { kind: "Field", name: { kind: "Name", value: "externalUrl" } },
@@ -16147,26 +11083,17 @@ export const GetConcertPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -16179,10 +11106,7 @@ export const GetConcertPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "headerBody" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "HeaderModelBodyField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "HeaderModelBodyField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -16201,10 +11125,7 @@ export const GetConcertPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -16226,26 +11147,17 @@ export const GetConcertPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -16259,28 +11171,17 @@ export const GetConcertPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "header" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "HeaderRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "HeaderRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "body" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "headerBody" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "headerBody" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "cover" } },
@@ -16290,10 +11191,7 @@ export const GetConcertPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "videoField" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -16310,29 +11208,18 @@ export const GetConcertPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "video" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "media" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "videoField" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "videoField" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "thumbnail" } },
@@ -16342,17 +11229,11 @@ export const GetConcertPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "document" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "DocumentRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "DocumentRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "document" } },
         ],
       },
@@ -16360,17 +11241,11 @@ export const GetConcertPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "image" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ImageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ImageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "image" } },
         ],
       },
@@ -16401,26 +11276,17 @@ export const GetConcertPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -16442,10 +11308,7 @@ export const GetConcertPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -16458,10 +11321,7 @@ export const GetConcertPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -16474,10 +11334,7 @@ export const GetConcertPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -16490,10 +11347,7 @@ export const GetConcertPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -16506,27 +11360,18 @@ export const GetConcertPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "textBlock" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "TextBlockRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "TextBlockRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "content" },
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "textBlockContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "textBlockContent" } },
               ],
             },
           },
@@ -16559,26 +11404,17 @@ export const GetConcertPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -16600,10 +11436,7 @@ export const GetConcertPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -16616,10 +11449,7 @@ export const GetConcertPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -16632,10 +11462,7 @@ export const GetConcertPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -16648,10 +11475,7 @@ export const GetConcertPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -16687,26 +11511,17 @@ export const GetConcertPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -16728,10 +11543,7 @@ export const GetConcertPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -16744,10 +11556,7 @@ export const GetConcertPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -16760,10 +11569,7 @@ export const GetConcertPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -16776,10 +11582,7 @@ export const GetConcertPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -16792,27 +11595,18 @@ export const GetConcertPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "twoColum" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "TwoColumnRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "TwoColumnRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "leftContent" },
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "leftContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "leftContent" } },
               ],
             },
           },
@@ -16822,10 +11616,7 @@ export const GetConcertPageDocument = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "rightContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "rightContent" } },
               ],
             },
           },
@@ -16835,17 +11626,11 @@ export const GetConcertPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertDetail" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
           { kind: "Field", name: { kind: "Name", value: "poster" } },
@@ -16855,10 +11640,7 @@ export const GetConcertPageDocument = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "locationItem" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "locationItem" } },
               ],
             },
           },
@@ -16877,10 +11659,7 @@ export const GetConcertPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "header" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "header" } },
                     ],
                   },
                 },
@@ -16893,10 +11672,7 @@ export const GetConcertPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "textBlock" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "textBlock" } },
                     ],
                   },
                 },
@@ -16909,10 +11685,7 @@ export const GetConcertPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "twoColum" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "twoColum" } },
                     ],
                   },
                 },
@@ -16925,7 +11698,7 @@ export const GetConcertPageDocument = {
   ],
 } as unknown as DocumentNode<GetConcertPageQuery, GetConcertPageQueryVariables>;
 export const GetConcertSeoDocument = {
-  __meta__: { hash: "f3625c85d7ad9ec6d62b765a1b293cf515f57ead" },
+  __meta__: { hash: "sha256:428d22d726a6846943cccb99538d5b670cb63107e54b36d08a95fec7122cc686" },
   kind: "Document",
   definitions: [
     {
@@ -16938,10 +11711,7 @@ export const GetConcertSeoDocument = {
           variable: { kind: "Variable", name: { kind: "Name", value: "slug" } },
           type: {
             kind: "NonNullType",
-            type: {
-              kind: "NamedType",
-              name: { kind: "Name", value: "String" },
-            },
+            type: { kind: "NamedType", name: { kind: "Name", value: "String" } },
           },
         },
       ],
@@ -16967,10 +11737,7 @@ export const GetConcertSeoDocument = {
                           {
                             kind: "ObjectField",
                             name: { kind: "Name", value: "eq" },
-                            value: {
-                              kind: "Variable",
-                              name: { kind: "Name", value: "slug" },
-                            },
+                            value: { kind: "Variable", name: { kind: "Name", value: "slug" } },
                           },
                         ],
                       },
@@ -16982,10 +11749,7 @@ export const GetConcertSeoDocument = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "concertPageSeo" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "concertPageSeo" } },
               ],
             },
           },
@@ -16995,10 +11759,7 @@ export const GetConcertSeoDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -17014,10 +11775,7 @@ export const GetConcertSeoDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "tag" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "Tag" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "Tag" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -17030,10 +11788,7 @@ export const GetConcertSeoDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "seoField" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "SeoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "SeoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -17046,29 +11801,18 @@ export const GetConcertSeoDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertPageSeo" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "_seoMetaTags" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "tag" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "tag" } }],
             },
           },
           {
@@ -17076,12 +11820,7 @@ export const GetConcertSeoDocument = {
             name: { kind: "Name", value: "seo" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "seoField" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "seoField" } }],
             },
           },
         ],
@@ -17090,7 +11829,7 @@ export const GetConcertSeoDocument = {
   ],
 } as unknown as DocumentNode<GetConcertSeoQuery, GetConcertSeoQueryVariables>;
 export const GetConcertsUrlsDocument = {
-  __meta__: { hash: "3056e5b524da89bb4d70aafa0a9b88192fd758cc" },
+  __meta__: { hash: "sha256:728ebe119248500ecb378f795c2b6410a635f5342fbccecdb32cd6b405130a3b" },
   kind: "Document",
   definitions: [
     {
@@ -17103,38 +11842,23 @@ export const GetConcertsUrlsDocument = {
           variable: { kind: "Variable", name: { kind: "Name", value: "skip" } },
           type: {
             kind: "NonNullType",
-            type: {
-              kind: "NamedType",
-              name: { kind: "Name", value: "IntType" },
-            },
+            type: { kind: "NamedType", name: { kind: "Name", value: "IntType" } },
           },
         },
         {
           kind: "VariableDefinition",
-          variable: {
-            kind: "Variable",
-            name: { kind: "Name", value: "first" },
-          },
+          variable: { kind: "Variable", name: { kind: "Name", value: "first" } },
           type: {
             kind: "NonNullType",
-            type: {
-              kind: "NamedType",
-              name: { kind: "Name", value: "IntType" },
-            },
+            type: { kind: "NamedType", name: { kind: "Name", value: "IntType" } },
           },
         },
         {
           kind: "VariableDefinition",
-          variable: {
-            kind: "Variable",
-            name: { kind: "Name", value: "order" },
-          },
+          variable: { kind: "Variable", name: { kind: "Name", value: "order" } },
           type: {
             kind: "ListType",
-            type: {
-              kind: "NamedType",
-              name: { kind: "Name", value: "ConcertModelOrderBy" },
-            },
+            type: { kind: "NamedType", name: { kind: "Name", value: "ConcertModelOrderBy" } },
           },
         },
       ],
@@ -17148,35 +11872,23 @@ export const GetConcertsUrlsDocument = {
               {
                 kind: "Argument",
                 name: { kind: "Name", value: "first" },
-                value: {
-                  kind: "Variable",
-                  name: { kind: "Name", value: "first" },
-                },
+                value: { kind: "Variable", name: { kind: "Name", value: "first" } },
               },
               {
                 kind: "Argument",
                 name: { kind: "Name", value: "skip" },
-                value: {
-                  kind: "Variable",
-                  name: { kind: "Name", value: "skip" },
-                },
+                value: { kind: "Variable", name: { kind: "Name", value: "skip" } },
               },
               {
                 kind: "Argument",
                 name: { kind: "Name", value: "orderBy" },
-                value: {
-                  kind: "Variable",
-                  name: { kind: "Name", value: "order" },
-                },
+                value: { kind: "Variable", name: { kind: "Name", value: "order" } },
               },
             ],
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "concertLink" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
               ],
             },
           },
@@ -17186,10 +11898,7 @@ export const GetConcertsUrlsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -17205,17 +11914,11 @@ export const GetConcertsUrlsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -17224,7 +11927,7 @@ export const GetConcertsUrlsDocument = {
   ],
 } as unknown as DocumentNode<GetConcertsUrlsQuery, GetConcertsUrlsQueryVariables>;
 export const GetConcertsDocument = {
-  __meta__: { hash: "e4d6cc00a00fdd0359dc0c3bb4c56bf6f38a5b83" },
+  __meta__: { hash: "sha256:26fc56d985de4ce18f9e461f5308dbc22ede34312a1cf02392aa4e20fb20b712" },
   kind: "Document",
   definitions: [
     {
@@ -17237,38 +11940,23 @@ export const GetConcertsDocument = {
           variable: { kind: "Variable", name: { kind: "Name", value: "skip" } },
           type: {
             kind: "NonNullType",
-            type: {
-              kind: "NamedType",
-              name: { kind: "Name", value: "IntType" },
-            },
+            type: { kind: "NamedType", name: { kind: "Name", value: "IntType" } },
           },
         },
         {
           kind: "VariableDefinition",
-          variable: {
-            kind: "Variable",
-            name: { kind: "Name", value: "first" },
-          },
+          variable: { kind: "Variable", name: { kind: "Name", value: "first" } },
           type: {
             kind: "NonNullType",
-            type: {
-              kind: "NamedType",
-              name: { kind: "Name", value: "IntType" },
-            },
+            type: { kind: "NamedType", name: { kind: "Name", value: "IntType" } },
           },
         },
         {
           kind: "VariableDefinition",
-          variable: {
-            kind: "Variable",
-            name: { kind: "Name", value: "order" },
-          },
+          variable: { kind: "Variable", name: { kind: "Name", value: "order" } },
           type: {
             kind: "ListType",
-            type: {
-              kind: "NamedType",
-              name: { kind: "Name", value: "ConcertModelOrderBy" },
-            },
+            type: { kind: "NamedType", name: { kind: "Name", value: "ConcertModelOrderBy" } },
           },
         },
       ],
@@ -17282,35 +11970,23 @@ export const GetConcertsDocument = {
               {
                 kind: "Argument",
                 name: { kind: "Name", value: "first" },
-                value: {
-                  kind: "Variable",
-                  name: { kind: "Name", value: "first" },
-                },
+                value: { kind: "Variable", name: { kind: "Name", value: "first" } },
               },
               {
                 kind: "Argument",
                 name: { kind: "Name", value: "skip" },
-                value: {
-                  kind: "Variable",
-                  name: { kind: "Name", value: "skip" },
-                },
+                value: { kind: "Variable", name: { kind: "Name", value: "skip" } },
               },
               {
                 kind: "Argument",
                 name: { kind: "Name", value: "orderBy" },
-                value: {
-                  kind: "Variable",
-                  name: { kind: "Name", value: "order" },
-                },
+                value: { kind: "Variable", name: { kind: "Name", value: "order" } },
               },
             ],
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "concertDetail" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "concertDetail" } },
               ],
             },
           },
@@ -17320,10 +11996,7 @@ export const GetConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -17339,10 +12012,7 @@ export const GetConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "coordinates" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LatLonField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LatLonField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -17354,10 +12024,7 @@ export const GetConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "location" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LocationRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LocationRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -17370,10 +12037,7 @@ export const GetConcertsDocument = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "coordinates" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "coordinates" } },
               ],
             },
           },
@@ -17383,10 +12047,7 @@ export const GetConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "locationItem" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LocationItemRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LocationItemRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -17397,12 +12058,7 @@ export const GetConcertsDocument = {
             name: { kind: "Name", value: "location" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "location" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "location" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "ticketLink" } },
@@ -17412,17 +12068,11 @@ export const GetConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -17431,17 +12081,11 @@ export const GetConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -17450,17 +12094,11 @@ export const GetConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "callToAction" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "CallToActionRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "CallToActionRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "label" } },
           { kind: "Field", name: { kind: "Name", value: "variant" } },
           { kind: "Field", name: { kind: "Name", value: "externalUrl" } },
@@ -17479,26 +12117,17 @@ export const GetConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -17511,10 +12140,7 @@ export const GetConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "headerBody" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "HeaderModelBodyField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "HeaderModelBodyField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -17533,10 +12159,7 @@ export const GetConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -17558,26 +12181,17 @@ export const GetConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -17591,28 +12205,17 @@ export const GetConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "header" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "HeaderRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "HeaderRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "body" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "headerBody" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "headerBody" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "cover" } },
@@ -17622,10 +12225,7 @@ export const GetConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "videoField" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -17642,29 +12242,18 @@ export const GetConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "video" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "media" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "videoField" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "videoField" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "thumbnail" } },
@@ -17674,17 +12263,11 @@ export const GetConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "document" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "DocumentRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "DocumentRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "document" } },
         ],
       },
@@ -17692,17 +12275,11 @@ export const GetConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "image" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ImageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ImageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "image" } },
         ],
       },
@@ -17733,26 +12310,17 @@ export const GetConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -17774,10 +12342,7 @@ export const GetConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -17790,10 +12355,7 @@ export const GetConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -17806,10 +12368,7 @@ export const GetConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -17822,10 +12381,7 @@ export const GetConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -17838,27 +12394,18 @@ export const GetConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "textBlock" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "TextBlockRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "TextBlockRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "content" },
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "textBlockContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "textBlockContent" } },
               ],
             },
           },
@@ -17891,26 +12438,17 @@ export const GetConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -17932,10 +12470,7 @@ export const GetConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -17948,10 +12483,7 @@ export const GetConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -17964,10 +12496,7 @@ export const GetConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -17980,10 +12509,7 @@ export const GetConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -18019,26 +12545,17 @@ export const GetConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -18060,10 +12577,7 @@ export const GetConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -18076,10 +12590,7 @@ export const GetConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -18092,10 +12603,7 @@ export const GetConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -18108,10 +12616,7 @@ export const GetConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -18124,27 +12629,18 @@ export const GetConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "twoColum" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "TwoColumnRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "TwoColumnRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "leftContent" },
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "leftContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "leftContent" } },
               ],
             },
           },
@@ -18154,10 +12650,7 @@ export const GetConcertsDocument = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "rightContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "rightContent" } },
               ],
             },
           },
@@ -18167,17 +12660,11 @@ export const GetConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertDetail" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
           { kind: "Field", name: { kind: "Name", value: "poster" } },
@@ -18187,10 +12674,7 @@ export const GetConcertsDocument = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "locationItem" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "locationItem" } },
               ],
             },
           },
@@ -18209,10 +12693,7 @@ export const GetConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "header" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "header" } },
                     ],
                   },
                 },
@@ -18225,10 +12706,7 @@ export const GetConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "textBlock" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "textBlock" } },
                     ],
                   },
                 },
@@ -18241,10 +12719,7 @@ export const GetConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "twoColum" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "twoColum" } },
                     ],
                   },
                 },
@@ -18257,7 +12732,7 @@ export const GetConcertsDocument = {
   ],
 } as unknown as DocumentNode<GetConcertsQuery, GetConcertsQueryVariables>;
 export const GetConcertsMetaDocument = {
-  __meta__: { hash: "2392096a179965cb6b6b7c530b97bada3e30d8d7" },
+  __meta__: { hash: "sha256:595ad51c3812ed80c95a2b5ff544dcc830d3eaea7cc6893c34e9401c1a263f88" },
   kind: "Document",
   definitions: [
     {
@@ -18281,7 +12756,7 @@ export const GetConcertsMetaDocument = {
   ],
 } as unknown as DocumentNode<GetConcertsMetaQuery, GetConcertsMetaQueryVariables>;
 export const GetFutureConcertsDocument = {
-  __meta__: { hash: "3738b0e0dc73f393a9dc0e6cf9d54161a3c3277e" },
+  __meta__: { hash: "sha256:8bed87c768124c2d8397c2cfff6a88b876c87c6142e13de1fb0e212459128d76" },
   kind: "Document",
   definitions: [
     {
@@ -18294,50 +12769,29 @@ export const GetFutureConcertsDocument = {
           variable: { kind: "Variable", name: { kind: "Name", value: "skip" } },
           type: {
             kind: "NonNullType",
-            type: {
-              kind: "NamedType",
-              name: { kind: "Name", value: "IntType" },
-            },
+            type: { kind: "NamedType", name: { kind: "Name", value: "IntType" } },
           },
         },
         {
           kind: "VariableDefinition",
-          variable: {
-            kind: "Variable",
-            name: { kind: "Name", value: "first" },
-          },
+          variable: { kind: "Variable", name: { kind: "Name", value: "first" } },
           type: {
             kind: "NonNullType",
-            type: {
-              kind: "NamedType",
-              name: { kind: "Name", value: "IntType" },
-            },
+            type: { kind: "NamedType", name: { kind: "Name", value: "IntType" } },
           },
         },
         {
           kind: "VariableDefinition",
-          variable: {
-            kind: "Variable",
-            name: { kind: "Name", value: "order" },
-          },
+          variable: { kind: "Variable", name: { kind: "Name", value: "order" } },
           type: {
             kind: "ListType",
-            type: {
-              kind: "NamedType",
-              name: { kind: "Name", value: "ConcertModelOrderBy" },
-            },
+            type: { kind: "NamedType", name: { kind: "Name", value: "ConcertModelOrderBy" } },
           },
         },
         {
           kind: "VariableDefinition",
-          variable: {
-            kind: "Variable",
-            name: { kind: "Name", value: "filter" },
-          },
-          type: {
-            kind: "NamedType",
-            name: { kind: "Name", value: "ConcertModelFilter" },
-          },
+          variable: { kind: "Variable", name: { kind: "Name", value: "filter" } },
+          type: { kind: "NamedType", name: { kind: "Name", value: "ConcertModelFilter" } },
         },
       ],
       selectionSet: {
@@ -18350,43 +12804,28 @@ export const GetFutureConcertsDocument = {
               {
                 kind: "Argument",
                 name: { kind: "Name", value: "first" },
-                value: {
-                  kind: "Variable",
-                  name: { kind: "Name", value: "first" },
-                },
+                value: { kind: "Variable", name: { kind: "Name", value: "first" } },
               },
               {
                 kind: "Argument",
                 name: { kind: "Name", value: "skip" },
-                value: {
-                  kind: "Variable",
-                  name: { kind: "Name", value: "skip" },
-                },
+                value: { kind: "Variable", name: { kind: "Name", value: "skip" } },
               },
               {
                 kind: "Argument",
                 name: { kind: "Name", value: "orderBy" },
-                value: {
-                  kind: "Variable",
-                  name: { kind: "Name", value: "order" },
-                },
+                value: { kind: "Variable", name: { kind: "Name", value: "order" } },
               },
               {
                 kind: "Argument",
                 name: { kind: "Name", value: "filter" },
-                value: {
-                  kind: "Variable",
-                  name: { kind: "Name", value: "filter" },
-                },
+                value: { kind: "Variable", name: { kind: "Name", value: "filter" } },
               },
             ],
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "concertDetail" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "concertDetail" } },
               ],
             },
           },
@@ -18396,10 +12835,7 @@ export const GetFutureConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -18415,10 +12851,7 @@ export const GetFutureConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "coordinates" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LatLonField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LatLonField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -18430,10 +12863,7 @@ export const GetFutureConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "location" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LocationRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LocationRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -18446,10 +12876,7 @@ export const GetFutureConcertsDocument = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "coordinates" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "coordinates" } },
               ],
             },
           },
@@ -18459,10 +12886,7 @@ export const GetFutureConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "locationItem" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LocationItemRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LocationItemRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -18473,12 +12897,7 @@ export const GetFutureConcertsDocument = {
             name: { kind: "Name", value: "location" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "location" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "location" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "ticketLink" } },
@@ -18488,17 +12907,11 @@ export const GetFutureConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -18507,17 +12920,11 @@ export const GetFutureConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -18526,17 +12933,11 @@ export const GetFutureConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "callToAction" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "CallToActionRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "CallToActionRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "label" } },
           { kind: "Field", name: { kind: "Name", value: "variant" } },
           { kind: "Field", name: { kind: "Name", value: "externalUrl" } },
@@ -18555,26 +12956,17 @@ export const GetFutureConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -18587,10 +12979,7 @@ export const GetFutureConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "headerBody" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "HeaderModelBodyField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "HeaderModelBodyField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -18609,10 +12998,7 @@ export const GetFutureConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -18634,26 +13020,17 @@ export const GetFutureConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -18667,28 +13044,17 @@ export const GetFutureConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "header" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "HeaderRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "HeaderRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "body" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "headerBody" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "headerBody" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "cover" } },
@@ -18698,10 +13064,7 @@ export const GetFutureConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "videoField" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -18718,29 +13081,18 @@ export const GetFutureConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "video" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "media" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "videoField" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "videoField" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "thumbnail" } },
@@ -18750,17 +13102,11 @@ export const GetFutureConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "document" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "DocumentRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "DocumentRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "document" } },
         ],
       },
@@ -18768,17 +13114,11 @@ export const GetFutureConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "image" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ImageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ImageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "image" } },
         ],
       },
@@ -18809,26 +13149,17 @@ export const GetFutureConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -18850,10 +13181,7 @@ export const GetFutureConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -18866,10 +13194,7 @@ export const GetFutureConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -18882,10 +13207,7 @@ export const GetFutureConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -18898,10 +13220,7 @@ export const GetFutureConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -18914,27 +13233,18 @@ export const GetFutureConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "textBlock" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "TextBlockRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "TextBlockRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "content" },
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "textBlockContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "textBlockContent" } },
               ],
             },
           },
@@ -18967,26 +13277,17 @@ export const GetFutureConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -19008,10 +13309,7 @@ export const GetFutureConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -19024,10 +13322,7 @@ export const GetFutureConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -19040,10 +13335,7 @@ export const GetFutureConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -19056,10 +13348,7 @@ export const GetFutureConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -19095,26 +13384,17 @@ export const GetFutureConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -19136,10 +13416,7 @@ export const GetFutureConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -19152,10 +13429,7 @@ export const GetFutureConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -19168,10 +13442,7 @@ export const GetFutureConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -19184,10 +13455,7 @@ export const GetFutureConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -19200,27 +13468,18 @@ export const GetFutureConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "twoColum" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "TwoColumnRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "TwoColumnRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "leftContent" },
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "leftContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "leftContent" } },
               ],
             },
           },
@@ -19230,10 +13489,7 @@ export const GetFutureConcertsDocument = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "rightContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "rightContent" } },
               ],
             },
           },
@@ -19243,17 +13499,11 @@ export const GetFutureConcertsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertDetail" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
           { kind: "Field", name: { kind: "Name", value: "poster" } },
@@ -19263,10 +13513,7 @@ export const GetFutureConcertsDocument = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "locationItem" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "locationItem" } },
               ],
             },
           },
@@ -19285,10 +13532,7 @@ export const GetFutureConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "header" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "header" } },
                     ],
                   },
                 },
@@ -19301,10 +13545,7 @@ export const GetFutureConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "textBlock" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "textBlock" } },
                     ],
                   },
                 },
@@ -19317,10 +13558,7 @@ export const GetFutureConcertsDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "twoColum" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "twoColum" } },
                     ],
                   },
                 },
@@ -19333,7 +13571,7 @@ export const GetFutureConcertsDocument = {
   ],
 } as unknown as DocumentNode<GetFutureConcertsQuery, GetFutureConcertsQueryVariables>;
 export const GetGeneralInfoDocument = {
-  __meta__: { hash: "e9ca276953ca87df468b2c6b2899cfc8e52b5cae" },
+  __meta__: { hash: "sha256:1cf7a0d94af4ee36b92b0ed39ced50b2b3a24d4d84f44536214811255d953508" },
   kind: "Document",
   definitions: [
     {
@@ -19349,10 +13587,7 @@ export const GetGeneralInfoDocument = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "generalInfo" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "generalInfo" } },
               ],
             },
           },
@@ -19362,10 +13597,7 @@ export const GetGeneralInfoDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -19381,17 +13613,11 @@ export const GetGeneralInfoDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -19400,17 +13626,11 @@ export const GetGeneralInfoDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -19419,10 +13639,7 @@ export const GetGeneralInfoDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "menuItem" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "MenuItemRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "MenuItemRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -19443,26 +13660,17 @@ export const GetGeneralInfoDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -19475,10 +13683,7 @@ export const GetGeneralInfoDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "submenuItem" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "SubmenuItemRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "SubmenuItemRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -19489,12 +13694,7 @@ export const GetGeneralInfoDocument = {
             name: { kind: "Name", value: "menu" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "menuItem" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "menuItem" } }],
             },
           },
         ],
@@ -19503,10 +13703,7 @@ export const GetGeneralInfoDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "generalInfo" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "GeneralRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "GeneralRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -19527,10 +13724,7 @@ export const GetGeneralInfoDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "menuItem" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "menuItem" } },
                     ],
                   },
                 },
@@ -19543,10 +13737,7 @@ export const GetGeneralInfoDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "submenuItem" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "submenuItem" } },
                     ],
                   },
                 },
@@ -19559,7 +13750,7 @@ export const GetGeneralInfoDocument = {
   ],
 } as unknown as DocumentNode<GetGeneralInfoQuery, GetGeneralInfoQueryVariables>;
 export const GetLocationDocument = {
-  __meta__: { hash: "2988170369bdd85ab11bab2716b98046fd98ab77" },
+  __meta__: { hash: "sha256:98b482ae8e0faa66ed223b787f88f0e493630724f484aaaa261105a02f33e44a" },
   kind: "Document",
   definitions: [
     {
@@ -19595,10 +13786,7 @@ export const GetLocationDocument = {
                           {
                             kind: "ObjectField",
                             name: { kind: "Name", value: "eq" },
-                            value: {
-                              kind: "Variable",
-                              name: { kind: "Name", value: "id" },
-                            },
+                            value: { kind: "Variable", name: { kind: "Name", value: "id" } },
                           },
                         ],
                       },
@@ -19609,12 +13797,7 @@ export const GetLocationDocument = {
             ],
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "location" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "location" } }],
             },
           },
         ],
@@ -19623,10 +13806,7 @@ export const GetLocationDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "coordinates" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LatLonField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LatLonField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -19638,10 +13818,7 @@ export const GetLocationDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "location" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LocationRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LocationRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -19654,10 +13831,7 @@ export const GetLocationDocument = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "coordinates" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "coordinates" } },
               ],
             },
           },
@@ -19667,7 +13841,7 @@ export const GetLocationDocument = {
   ],
 } as unknown as DocumentNode<GetLocationQuery, GetLocationQueryVariables>;
 export const GetLocationsDocument = {
-  __meta__: { hash: "a59c400e602ddb912052c3ea8dea546d27cc8bca" },
+  __meta__: { hash: "sha256:d84ed9f2ec90e548147d36838e3962b846e9a0e05514aa6b049fcf19f3de7387" },
   kind: "Document",
   definitions: [
     {
@@ -19677,10 +13851,7 @@ export const GetLocationsDocument = {
       variableDefinitions: [
         {
           kind: "VariableDefinition",
-          variable: {
-            kind: "Variable",
-            name: { kind: "Name", value: "first" },
-          },
+          variable: { kind: "Variable", name: { kind: "Name", value: "first" } },
           type: { kind: "NamedType", name: { kind: "Name", value: "IntType" } },
         },
         {
@@ -19690,16 +13861,10 @@ export const GetLocationsDocument = {
         },
         {
           kind: "VariableDefinition",
-          variable: {
-            kind: "Variable",
-            name: { kind: "Name", value: "order" },
-          },
+          variable: { kind: "Variable", name: { kind: "Name", value: "order" } },
           type: {
             kind: "ListType",
-            type: {
-              kind: "NamedType",
-              name: { kind: "Name", value: "LocationModelOrderBy" },
-            },
+            type: { kind: "NamedType", name: { kind: "Name", value: "LocationModelOrderBy" } },
           },
         },
       ],
@@ -19713,36 +13878,22 @@ export const GetLocationsDocument = {
               {
                 kind: "Argument",
                 name: { kind: "Name", value: "first" },
-                value: {
-                  kind: "Variable",
-                  name: { kind: "Name", value: "first" },
-                },
+                value: { kind: "Variable", name: { kind: "Name", value: "first" } },
               },
               {
                 kind: "Argument",
                 name: { kind: "Name", value: "skip" },
-                value: {
-                  kind: "Variable",
-                  name: { kind: "Name", value: "skip" },
-                },
+                value: { kind: "Variable", name: { kind: "Name", value: "skip" } },
               },
               {
                 kind: "Argument",
                 name: { kind: "Name", value: "orderBy" },
-                value: {
-                  kind: "Variable",
-                  name: { kind: "Name", value: "order" },
-                },
+                value: { kind: "Variable", name: { kind: "Name", value: "order" } },
               },
             ],
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "location" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "location" } }],
             },
           },
         ],
@@ -19751,10 +13902,7 @@ export const GetLocationsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "coordinates" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LatLonField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LatLonField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -19766,10 +13914,7 @@ export const GetLocationsDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "location" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "LocationRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "LocationRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -19782,10 +13927,7 @@ export const GetLocationsDocument = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "coordinates" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "coordinates" } },
               ],
             },
           },
@@ -19795,7 +13937,7 @@ export const GetLocationsDocument = {
   ],
 } as unknown as DocumentNode<GetLocationsQuery, GetLocationsQueryVariables>;
 export const GetPageDocument = {
-  __meta__: { hash: "42d7884b8d7b0bafb4d74d1ee95ea96b6b0e5feb" },
+  __meta__: { hash: "sha256:0fb768dd36a0ed04dedc64dbf11d0d8443fe101da90f62d725eba7b492b52b13" },
   kind: "Document",
   definitions: [
     {
@@ -19808,10 +13950,7 @@ export const GetPageDocument = {
           variable: { kind: "Variable", name: { kind: "Name", value: "slug" } },
           type: {
             kind: "NonNullType",
-            type: {
-              kind: "NamedType",
-              name: { kind: "Name", value: "String" },
-            },
+            type: { kind: "NamedType", name: { kind: "Name", value: "String" } },
           },
         },
       ],
@@ -19837,10 +13976,7 @@ export const GetPageDocument = {
                           {
                             kind: "ObjectField",
                             name: { kind: "Name", value: "eq" },
-                            value: {
-                              kind: "Variable",
-                              name: { kind: "Name", value: "slug" },
-                            },
+                            value: { kind: "Variable", name: { kind: "Name", value: "slug" } },
                           },
                         ],
                       },
@@ -19851,12 +13987,7 @@ export const GetPageDocument = {
             ],
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "pageDetail" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "pageDetail" } }],
             },
           },
         ],
@@ -19865,10 +13996,7 @@ export const GetPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -19884,17 +14012,11 @@ export const GetPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -19903,17 +14025,11 @@ export const GetPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -19922,17 +14038,11 @@ export const GetPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "callToAction" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "CallToActionRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "CallToActionRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "label" } },
           { kind: "Field", name: { kind: "Name", value: "variant" } },
           { kind: "Field", name: { kind: "Name", value: "externalUrl" } },
@@ -19951,26 +14061,17 @@ export const GetPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -19983,10 +14084,7 @@ export const GetPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "headerBody" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "HeaderModelBodyField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "HeaderModelBodyField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -20005,10 +14103,7 @@ export const GetPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -20030,26 +14125,17 @@ export const GetPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -20063,28 +14149,17 @@ export const GetPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "header" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "HeaderRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "HeaderRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "body" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "headerBody" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "headerBody" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "cover" } },
@@ -20094,10 +14169,7 @@ export const GetPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "videoField" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -20114,29 +14186,18 @@ export const GetPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "video" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "VideoRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "VideoRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "media" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "videoField" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "videoField" } }],
             },
           },
           { kind: "Field", name: { kind: "Name", value: "thumbnail" } },
@@ -20146,17 +14207,11 @@ export const GetPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "document" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "DocumentRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "DocumentRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "document" } },
         ],
       },
@@ -20164,17 +14219,11 @@ export const GetPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "image" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ImageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ImageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "image" } },
         ],
       },
@@ -20205,26 +14254,17 @@ export const GetPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -20246,10 +14286,7 @@ export const GetPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -20262,10 +14299,7 @@ export const GetPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -20278,10 +14312,7 @@ export const GetPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -20294,10 +14325,7 @@ export const GetPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -20310,27 +14338,18 @@ export const GetPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "textBlock" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "TextBlockRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "TextBlockRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "content" },
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "textBlockContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "textBlockContent" } },
               ],
             },
           },
@@ -20363,26 +14382,17 @@ export const GetPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -20404,10 +14414,7 @@ export const GetPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -20420,10 +14427,7 @@ export const GetPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -20436,10 +14440,7 @@ export const GetPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -20452,10 +14453,7 @@ export const GetPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -20491,26 +14489,17 @@ export const GetPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -20532,10 +14521,7 @@ export const GetPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "video" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "video" } },
                     ],
                   },
                 },
@@ -20548,10 +14534,7 @@ export const GetPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "document" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "document" } },
                     ],
                   },
                 },
@@ -20564,10 +14547,7 @@ export const GetPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "image" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "image" } },
                     ],
                   },
                 },
@@ -20580,10 +14560,7 @@ export const GetPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "callToAction" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "callToAction" } },
                     ],
                   },
                 },
@@ -20596,27 +14573,18 @@ export const GetPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "twoColum" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "TwoColumnRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "TwoColumnRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "leftContent" },
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "leftContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "leftContent" } },
               ],
             },
           },
@@ -20626,10 +14594,7 @@ export const GetPageDocument = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "rightContent" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "rightContent" } },
               ],
             },
           },
@@ -20639,17 +14604,11 @@ export const GetPageDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageDetail" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
           {
@@ -20667,10 +14626,7 @@ export const GetPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "header" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "header" } },
                     ],
                   },
                 },
@@ -20683,10 +14639,7 @@ export const GetPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "textBlock" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "textBlock" } },
                     ],
                   },
                 },
@@ -20699,10 +14652,7 @@ export const GetPageDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "twoColum" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "twoColum" } },
                     ],
                   },
                 },
@@ -20715,7 +14665,7 @@ export const GetPageDocument = {
   ],
 } as unknown as DocumentNode<GetPageQuery, GetPageQueryVariables>;
 export const GetPageSeoDocument = {
-  __meta__: { hash: "55bf93684267f9682afdb0f44011be54dc504175" },
+  __meta__: { hash: "sha256:9e146eb56f31f116b4a036dd9f351fdf31aee50f52d150445058dcf2a9a2664e" },
   kind: "Document",
   definitions: [
     {
@@ -20728,10 +14678,7 @@ export const GetPageSeoDocument = {
           variable: { kind: "Variable", name: { kind: "Name", value: "slug" } },
           type: {
             kind: "NonNullType",
-            type: {
-              kind: "NamedType",
-              name: { kind: "Name", value: "String" },
-            },
+            type: { kind: "NamedType", name: { kind: "Name", value: "String" } },
           },
         },
       ],
@@ -20757,10 +14704,7 @@ export const GetPageSeoDocument = {
                           {
                             kind: "ObjectField",
                             name: { kind: "Name", value: "eq" },
-                            value: {
-                              kind: "Variable",
-                              name: { kind: "Name", value: "slug" },
-                            },
+                            value: { kind: "Variable", name: { kind: "Name", value: "slug" } },
                           },
                         ],
                       },
@@ -20772,10 +14716,7 @@ export const GetPageSeoDocument = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "pageDetailSeo" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "pageDetailSeo" } },
               ],
             },
           },
@@ -20785,10 +14726,7 @@ export const GetPageSeoDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -20804,10 +14742,7 @@ export const GetPageSeoDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "tag" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "Tag" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "Tag" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -20820,10 +14755,7 @@ export const GetPageSeoDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "seoField" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "SeoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "SeoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -20836,29 +14768,18 @@ export const GetPageSeoDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageDetailSeo" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           {
             kind: "Field",
             name: { kind: "Name", value: "_seoMetaTags" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "tag" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "tag" } }],
             },
           },
           {
@@ -20866,12 +14787,7 @@ export const GetPageSeoDocument = {
             name: { kind: "Name", value: "seo" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "seoField" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "seoField" } }],
             },
           },
         ],
@@ -20880,7 +14796,7 @@ export const GetPageSeoDocument = {
   ],
 } as unknown as DocumentNode<GetPageSeoQuery, GetPageSeoQueryVariables>;
 export const GetPagesDocument = {
-  __meta__: { hash: "ca272263dd3de7afa339e7dec4ec14da84082ba6" },
+  __meta__: { hash: "sha256:52e4efba5c79db24e9f75b4acb7afdfaa9466cf86f0f04e2e5767bbb5336da9a" },
   kind: "Document",
   definitions: [
     {
@@ -20895,24 +14811,15 @@ export const GetPagesDocument = {
         },
         {
           kind: "VariableDefinition",
-          variable: {
-            kind: "Variable",
-            name: { kind: "Name", value: "first" },
-          },
+          variable: { kind: "Variable", name: { kind: "Name", value: "first" } },
           type: { kind: "NamedType", name: { kind: "Name", value: "IntType" } },
         },
         {
           kind: "VariableDefinition",
-          variable: {
-            kind: "Variable",
-            name: { kind: "Name", value: "order" },
-          },
+          variable: { kind: "Variable", name: { kind: "Name", value: "order" } },
           type: {
             kind: "ListType",
-            type: {
-              kind: "NamedType",
-              name: { kind: "Name", value: "PageModelOrderBy" },
-            },
+            type: { kind: "NamedType", name: { kind: "Name", value: "PageModelOrderBy" } },
           },
         },
       ],
@@ -20926,36 +14833,22 @@ export const GetPagesDocument = {
               {
                 kind: "Argument",
                 name: { kind: "Name", value: "first" },
-                value: {
-                  kind: "Variable",
-                  name: { kind: "Name", value: "first" },
-                },
+                value: { kind: "Variable", name: { kind: "Name", value: "first" } },
               },
               {
                 kind: "Argument",
                 name: { kind: "Name", value: "skip" },
-                value: {
-                  kind: "Variable",
-                  name: { kind: "Name", value: "skip" },
-                },
+                value: { kind: "Variable", name: { kind: "Name", value: "skip" } },
               },
               {
                 kind: "Argument",
                 name: { kind: "Name", value: "orderBy" },
-                value: {
-                  kind: "Variable",
-                  name: { kind: "Name", value: "order" },
-                },
+                value: { kind: "Variable", name: { kind: "Name", value: "order" } },
               },
             ],
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "pageLink" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } }],
             },
           },
         ],
@@ -20964,10 +14857,7 @@ export const GetPagesDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -20983,17 +14873,11 @@ export const GetPagesDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -21002,7 +14886,7 @@ export const GetPagesDocument = {
   ],
 } as unknown as DocumentNode<GetPagesQuery, GetPagesQueryVariables>;
 export const GetPagesMetaDocument = {
-  __meta__: { hash: "b1a1faf140eb73b05d10ed07a0f27ba22ce841d1" },
+  __meta__: { hash: "sha256:d8fbbeb128f434287f7d5eb44b051397dc0dc13903311001b1fad4e9ced3d94d" },
   kind: "Document",
   definitions: [
     {
@@ -21026,7 +14910,7 @@ export const GetPagesMetaDocument = {
   ],
 } as unknown as DocumentNode<GetPagesMetaQuery, GetPagesMetaQueryVariables>;
 export const GetSiteInfoDocument = {
-  __meta__: { hash: "03d8c1a8a9221de3c54272e8ff3b1ad7cf68f34b" },
+  __meta__: { hash: "sha256:4466985c829701569bbc55593a8d4c46ef7001f5f306964cfa05aaa8781c14be" },
   kind: "Document",
   definitions: [
     {
@@ -21049,10 +14933,7 @@ export const GetSiteInfoDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "seoSettings" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "seoSettings" } },
                     ],
                   },
                 },
@@ -21065,10 +14946,7 @@ export const GetSiteInfoDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "seoField" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "SeoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "SeoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -21081,10 +14959,7 @@ export const GetSiteInfoDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "seoSettings" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "GlobalSeoField" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "GlobalSeoField" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -21097,12 +14972,7 @@ export const GetSiteInfoDocument = {
             name: { kind: "Name", value: "fallbackSeo" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "seoField" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "seoField" } }],
             },
           },
         ],
@@ -21111,7 +14981,7 @@ export const GetSiteInfoDocument = {
   ],
 } as unknown as DocumentNode<GetSiteInfoQuery, GetSiteInfoQueryVariables>;
 export const GetSiteMetadataDocument = {
-  __meta__: { hash: "ca6cefbe29b30e5831d72ee8151f9d41f7a1631c" },
+  __meta__: { hash: "sha256:9dc72e24ed26fa10ce2068232cfc69930d2e3b34c021bb710fdaffbe3392a33d" },
   kind: "Document",
   definitions: [
     {
@@ -21127,10 +14997,7 @@ export const GetSiteMetadataDocument = {
             selectionSet: {
               kind: "SelectionSet",
               selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "siteMetadata" },
-                },
+                { kind: "FragmentSpread", name: { kind: "Name", value: "siteMetadata" } },
               ],
             },
           },
@@ -21140,10 +15007,7 @@ export const GetSiteMetadataDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -21159,17 +15023,11 @@ export const GetSiteMetadataDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "siteMetadata" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "GeneralRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "GeneralRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "siteMetadata" } },
         ],
@@ -21178,7 +15036,7 @@ export const GetSiteMetadataDocument = {
   ],
 } as unknown as DocumentNode<GetSiteMetadataQuery, GetSiteMetadataQueryVariables>;
 export const GetSubmenuDocument = {
-  __meta__: { hash: "f9e49b3ba91024123f7e0a850939ab3616c58fde" },
+  __meta__: { hash: "sha256:9a6316d41646f9addde6028f9abf5b94900707003d13bed5469907a60419bde3" },
   kind: "Document",
   definitions: [
     {
@@ -21228,10 +15086,7 @@ export const GetSubmenuDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "identifiable" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "RecordInterface" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "RecordInterface" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -21247,17 +15102,11 @@ export const GetSubmenuDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "concertLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "ConcertRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "ConcertRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -21266,17 +15115,11 @@ export const GetSubmenuDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "pageLink" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "PageRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
-          {
-            kind: "FragmentSpread",
-            name: { kind: "Name", value: "identifiable" },
-          },
+          { kind: "FragmentSpread", name: { kind: "Name", value: "identifiable" } },
           { kind: "Field", name: { kind: "Name", value: "title" } },
           { kind: "Field", name: { kind: "Name", value: "slug" } },
         ],
@@ -21285,10 +15128,7 @@ export const GetSubmenuDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "menuItem" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "MenuItemRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "MenuItemRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -21309,26 +15149,17 @@ export const GetSubmenuDocument = {
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "concertLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "concertLink" } },
                     ],
                   },
                 },
                 {
                   kind: "InlineFragment",
-                  typeCondition: {
-                    kind: "NamedType",
-                    name: { kind: "Name", value: "PageRecord" },
-                  },
+                  typeCondition: { kind: "NamedType", name: { kind: "Name", value: "PageRecord" } },
                   selectionSet: {
                     kind: "SelectionSet",
                     selections: [
-                      {
-                        kind: "FragmentSpread",
-                        name: { kind: "Name", value: "pageLink" },
-                      },
+                      { kind: "FragmentSpread", name: { kind: "Name", value: "pageLink" } },
                     ],
                   },
                 },
@@ -21341,10 +15172,7 @@ export const GetSubmenuDocument = {
     {
       kind: "FragmentDefinition",
       name: { kind: "Name", value: "submenuItem" },
-      typeCondition: {
-        kind: "NamedType",
-        name: { kind: "Name", value: "SubmenuItemRecord" },
-      },
+      typeCondition: { kind: "NamedType", name: { kind: "Name", value: "SubmenuItemRecord" } },
       selectionSet: {
         kind: "SelectionSet",
         selections: [
@@ -21355,12 +15183,7 @@ export const GetSubmenuDocument = {
             name: { kind: "Name", value: "menu" },
             selectionSet: {
               kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "FragmentSpread",
-                  name: { kind: "Name", value: "menuItem" },
-                },
-              ],
+              selections: [{ kind: "FragmentSpread", name: { kind: "Name", value: "menuItem" } }],
             },
           },
         ],

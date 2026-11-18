@@ -6,6 +6,7 @@ describe("concertFormatter", () => {
     expect(
       concertFormatter({
         __typename: "ConcertRecord",
+        poster: null,
         _createdAt: "some date time string",
         _updatedAt: "some date time string",
         _firstPublishedAt: "some date time string",
@@ -15,9 +16,13 @@ describe("concertFormatter", () => {
         locations: [
           {
             id: "ignore-this-id",
+            dateTime: null,
+            ticketLink: null,
             location: {
               id: "location-id",
               title: "Location Title",
+              addressTitle: null,
+              address: null,
             },
           },
         ],
@@ -48,6 +53,7 @@ describe("concertFormatter", () => {
     expect(
       concertFormatter({
         __typename: "ConcertRecord",
+        poster: null,
         _createdAt: "some date time string",
         _updatedAt: "some date time string",
         _firstPublishedAt: "some date time string",
@@ -57,16 +63,24 @@ describe("concertFormatter", () => {
         locations: [
           {
             id: "ignore-this-id",
+            dateTime: null,
+            ticketLink: null,
             location: {
               title: "Location Title",
               id: "location-id",
+              addressTitle: null,
+              address: null,
             },
           },
           {
             id: "ignore-this-id",
+            dateTime: null,
+            ticketLink: null,
             location: {
               title: "Location Title",
               id: "location-id",
+              addressTitle: null,
+              address: null,
             },
           },
         ],
@@ -97,6 +111,7 @@ describe("concertFormatter", () => {
     expect(
       concertFormatter({
         __typename: "ConcertRecord",
+        poster: null,
         _createdAt: "some date time string",
         _updatedAt: "some date time string",
         _firstPublishedAt: "some date time string",
@@ -107,17 +122,23 @@ describe("concertFormatter", () => {
           {
             id: "first-location-item-id",
             dateTime: "2024-04-07T15:00:00+02:00",
+            ticketLink: null,
             location: {
               id: "location-id",
               title: "Location Title",
+              addressTitle: null,
+              address: null,
             },
           },
           {
             id: "second-location-item-id",
             dateTime: "2024-04-14T15:00:00+02:00",
+            ticketLink: null,
             location: {
               id: "location-id",
               title: "Location Title",
+              addressTitle: null,
+              address: null,
             },
           },
         ],
