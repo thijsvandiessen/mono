@@ -14,11 +14,6 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
 
-    container:
-      # Must match @playwright/test in e2e/package.json, or the browsers are missing.
-      image: mcr.microsoft.com/playwright:v1.65.1-noble
-      options: --ipc=host
-
     env:
       TURBO_TOKEN: ${{ secrets.VERCEL_TOKEN }}
       TURBO_TEAM: ${{ secrets.VERCEL_TEAM }}
@@ -43,6 +38,28 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      # Browsers follow the @playwright/test version in the lockfile, so there
+      # is no separate image tag to keep in sync.
+      - name: Get Playwright version
+        id: playwright
+        run: echo "version=$(pnpm --filter @mono/e2e exec playwright --version | awk '{print $2}')" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Playwright browsers
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ steps.playwright.outputs.version }}
+
+      - name: Install Playwright browsers
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: pnpm e2e:install
+
+      # System libraries are not part of the cache.
+      - name: Install Playwright system dependencies
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        run: pnpm --filter @mono/e2e exec playwright install-deps chromium
+
       - name: Build application
         run: pnpm build
 
@@ -60,11 +77,6 @@ jobs:
     name: Mock e2e tests
     timeout-minutes: 30
     runs-on: ubuntu-latest
-
-    container:
-      # Must match @playwright/test in e2e/package.json, or the browsers are missing.
-      image: mcr.microsoft.com/playwright:v1.65.1-noble
-      options: --ipc=host
 
     # No DatoCMS token on purpose: every page is served from the local mock
     # backend in e2e/mock-server, so the tests never depend on outside content.
@@ -86,6 +98,28 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      # Browsers follow the @playwright/test version in the lockfile, so there
+      # is no separate image tag to keep in sync.
+      - name: Get Playwright version
+        id: playwright
+        run: echo "version=$(pnpm --filter @mono/e2e exec playwright --version | awk '{print $2}')" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Playwright browsers
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ steps.playwright.outputs.version }}
+
+      - name: Install Playwright browsers
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: pnpm e2e:install
+
+      # System libraries are not part of the cache.
+      - name: Install Playwright system dependencies
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        run: pnpm --filter @mono/e2e exec playwright install-deps chromium
 
       - name: Build the packages used by the app
         run: pnpm --filter "@mono/lundi-bleu^..." build
