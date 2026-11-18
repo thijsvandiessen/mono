@@ -42,6 +42,8 @@ export default defineConfig({
       env: {
         NEXT_PUBLIC_DATOCMS_GRAPHQL_URL: mockGraphqlUrl,
         NEXT_PUBLIC_DATOCMS_READONLY_TOKEN: "mock-token",
+        // A real key in a local .env would load Google Maps from outside the repo.
+        NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: "",
         NEXT_TELEMETRY_DISABLED: "1",
       },
       reuseExistingServer: !process.env.CI,
