@@ -147,3 +147,6 @@ certificates
 
 # Storybook build output
 storybook-static
+
+# Playwright run state
+e2e/test-results/
