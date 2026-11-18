@@ -9,6 +9,9 @@
       "outputs": ["src/generated/**"],
       "dependsOn": ["^build"]
     },
+    "typecheck": {
+      "dependsOn": ["^build"]
+    },
     "test": {
       "dependsOn": ["^build"]
     },

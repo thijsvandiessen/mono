@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.json",
+  // Type-checks the tests that tsconfig.json leaves out of dist. Emits nothing.
+  "compilerOptions": {
+    "composite": false,
+    "incremental": false,
+    "noEmit": true
+  },
+  "include": ["src/**/*", "global.d.ts"],
+  "exclude": ["src/**/*.scss"]
+}

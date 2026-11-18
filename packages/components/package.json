@@ -20,6 +20,7 @@
     "dev": "pnpm run \"/^dev:/\"",
     "dev:scss": "cpx \"src/**/*.scss\" dist --watch",
     "dev:ts": "tsc --watch --preserveWatchOutput",
+    "typecheck": "tsc -p tsconfig.test.json",
     "test": "vitest run -c ./vitest.config.ts"
   },
   "dependencies": {
