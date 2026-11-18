@@ -16,7 +16,7 @@
   "scripts": {
     "build": "pnpm run clean && pnpm run build:scss && tsc",
     "build:scss": "cpx \"src/**/*.scss\" dist",
-    "clean": "node -e \"for (const p of ['dist', 'tsconfig.tsbuildinfo']) fs.rmSync(p, { recursive: true, force: true })\"",
+    "clean": "node -e \"fs.rmSync('dist', { recursive: true, force: true })\"",
     "dev": "pnpm run \"/^dev:/\"",
     "dev:scss": "cpx \"src/**/*.scss\" dist --watch",
     "dev:ts": "tsc --watch --preserveWatchOutput",
