@@ -1,28 +1,31 @@
+import { getCloudinaryUrl, parseCloudinaryAsset } from "./formatCloudinaryImage.js";
 import type { CloudinaryAsset } from "../types/image.schema.js";
 import { z } from "zod";
 
 interface Document {
   id: string;
   url: string;
-  bytes: number;
+  bytes?: number;
 }
 
 const documentSchema = z.object({
   id: z.string(),
   url: z.string(),
-  bytes: z.number(),
+  bytes: z.number().optional(),
 });
 
 export const formatCloudinaryDocument = (
-  document: CloudinaryAsset | undefined,
+  input: CloudinaryAsset | undefined,
 ): Document | undefined => {
+  const document = parseCloudinaryAsset(input);
   if (!document?.id) return;
   if (!document.version) return;
-  if (!document?.secure_url) return;
+  const url = getCloudinaryUrl(document);
+  if (!url) return;
   if (document.format !== "pdf") return;
   return documentSchema.parse({
     id: `v${document.version}/${document.id}`,
-    url: document.secure_url,
+    url,
     bytes: document.bytes,
   });
 };

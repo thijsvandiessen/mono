@@ -59,7 +59,14 @@ describe("getConcert", () => {
     const { data } = await getConcert({ id: "186234305" });
     expect(data).toEqual({
       id: "186234305",
-      image: undefined,
+      image: {
+        id: "72577339",
+        title: "",
+        description: "",
+        width: 342,
+        height: 384,
+        url: "https://www.datocms-assets.com/screenshot.png",
+      },
       locations: [],
       title: "another concert",
       url: "/concerten/another-concert",
