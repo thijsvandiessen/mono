@@ -21,12 +21,12 @@
     "test": "vitest run -c ./vitest.config.ts"
   },
   "dependencies": {
-    "algoliasearch": "5.57.0",
+    "algoliasearch": "5.65.0",
     "dotenv": "17.4.2",
-    "instantsearch.js": "4.97.0",
-    "react": "19.2.7",
-    "react-dom": "19.2.7",
-    "react-instantsearch": "7.28.0"
+    "instantsearch.js": "4.123.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-instantsearch": "7.55.1"
   },
   "devDependencies": {
     "@mono/typescript-config": "workspace:*",
