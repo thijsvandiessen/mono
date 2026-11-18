@@ -149,3 +149,4 @@ certificates
 storybook-static
 # Playwright run state
 e2e/test-results/
+e2e/playwright-report/

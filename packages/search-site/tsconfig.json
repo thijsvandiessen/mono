@@ -6,6 +6,7 @@
     "module": "Preserve",
     "moduleResolution": "bundler",
     "outDir": "dist",
+    "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
     "rootDir": "src"
   },
   "references": [

@@ -4,6 +4,7 @@
   "compilerOptions": {
     "lib": ["DOM", "ESNext"],
     "outDir": "dist",
+    "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
     "rootDir": "src"
   },
   "references": [
@@ -13,5 +14,11 @@
     { "path": "../hooks" }
   ],
   "include": ["src/**/*", "src/*", "global.d.ts"],
-  "exclude": ["src/**/*.scss"]
+  "exclude": [
+    "src/**/*.scss",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx",
+    "src/**/__snapshots__",
+    "src/vitest.setup.ts"
+  ]
 }

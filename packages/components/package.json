@@ -14,12 +14,13 @@
     }
   },
   "scripts": {
-    "build": "pnpm run build:scss && tsc",
+    "build": "pnpm run clean && pnpm run build:scss && tsc",
     "build:scss": "cpx \"src/**/*.scss\" dist",
-    "dev": "cpx \"src/**/*.scss\" dist --watch && tsc --watch",
-    "lint": "pnpm run lint:js && pnpm run lint:styles",
-    "lint:js": "oxlint",
-    "lint:styles": "oxfmt . --write",
+    "clean": "node -e \"fs.rmSync('dist', { recursive: true, force: true })\"",
+    "dev": "pnpm run \"/^dev:/\"",
+    "dev:scss": "cpx \"src/**/*.scss\" dist --watch",
+    "dev:ts": "tsc --watch --preserveWatchOutput",
+    "typecheck": "tsc -p tsconfig.test.json",
     "test": "vitest run -c ./vitest.config.ts"
   },
   "dependencies": {

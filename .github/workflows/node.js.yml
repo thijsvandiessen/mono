@@ -41,6 +41,10 @@ jobs:
       - name: Build project
         run: pnpm exec turbo build
 
+      # Tests are left out of the build, so they are type-checked separately.
+      - name: Type-check tests
+        run: pnpm exec turbo typecheck
+
       - name: Test project with coverage
         run: pnpm exec turbo test:coverage
 
