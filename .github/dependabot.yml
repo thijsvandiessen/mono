@@ -4,3 +4,40 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    # Group related packages so they land in one PR. Groups only cover minor
+    # and patch updates; majors still get their own PR (and are not
+    # auto-merged).
+    groups:
+      react:
+        patterns: ["react", "react-dom", "@types/react", "@types/react-dom"]
+        update-types: ["minor", "patch"]
+      next:
+        patterns: ["next", "@next/*"]
+        update-types: ["minor", "patch"]
+      storybook:
+        patterns: ["storybook", "@storybook/*"]
+        update-types: ["minor", "patch"]
+      codegen:
+        patterns: ["@graphql-codegen/*", "@graphql-tools/*", "graphql"]
+        update-types: ["minor", "patch"]
+      urql:
+        patterns: ["urql", "@urql/*"]
+        update-types: ["minor", "patch"]
+      search:
+        patterns: ["algoliasearch", "instantsearch.js", "react-instantsearch*"]
+        update-types: ["minor", "patch"]
+      datocms:
+        patterns: ["datocms*", "@datocms/*", "react-datocms"]
+        update-types: ["minor", "patch"]
+      tailwind:
+        patterns: ["tailwindcss", "@tailwindcss/*"]
+        update-types: ["minor", "patch"]
+      test:
+        patterns: ["vitest", "@vitest/*", "@testing-library/*", "jsdom", "@playwright/test"]
+        update-types: ["minor", "patch"]
+      oxc:
+        patterns: ["oxlint", "oxfmt"]
+        update-types: ["minor", "patch"]
+      commitlint:
+        patterns: ["@commitlint/*"]
+        update-types: ["minor", "patch"]
