@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.0.2](https://github.com/thijsvandiessen/mono/compare/v2.0.1...v2.0.2) (2026-11-19)
+
+
+### Bug Fixes
+
+* components dev watch, e2e report, stale dist, and config cleanup ([#1210](https://github.com/thijsvandiessen/mono/issues/1210)) ([e2d28a6](https://github.com/thijsvandiessen/mono/commit/e2d28a60b335e27c20f93b399795abfbc7a7457d))
+* **datocms-config:** resolve models dir relative to module ([#1212](https://github.com/thijsvandiessen/mono/issues/1212)) ([18c5a06](https://github.com/thijsvandiessen/mono/commit/18c5a06b3e013f086401e8f06e035c7b9d31562d))
+* rename UpcommingConcerts to UpcomingConcerts ([#1215](https://github.com/thijsvandiessen/mono/issues/1215)) ([ea9641a](https://github.com/thijsvandiessen/mono/commit/ea9641af6831ada86463193b329026f739d1e7ea))
+* show cloudinary images whenever they have a url ([#1200](https://github.com/thijsvandiessen/mono/issues/1200)) ([1b2db5e](https://github.com/thijsvandiessen/mono/commit/1b2db5ed60f086e21bedb4c2cbd3defa5c5d7fb6))
+
 ## [2.0.1](https://github.com/thijsvandiessen/mono/compare/v2.0.0...v2.0.1) (2026-09-07)
 
 
