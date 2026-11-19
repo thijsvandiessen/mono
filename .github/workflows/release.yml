@@ -35,12 +35,12 @@ jobs:
       minor-tag: ${{ steps.release.outputs.minor }}
       patch-tag: ${{ steps.release.outputs.patch }}
     steps:
-      - uses: googleapis/release-please-action@v4
+      - uses: googleapis/release-please-action@v5
         id: Release
         with:
           token: ${{ env.GITHUB_TOKEN }}
           release-type: node
-      - uses: actions/checkout@v6.0.2
+      - uses: actions/checkout@v7.0.1
       - name: tag major and minor versions
         if: ${{ steps.release.outputs.release_created }}
         run: |

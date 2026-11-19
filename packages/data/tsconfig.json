@@ -3,6 +3,7 @@
   "compilerOptions": {
     "lib": ["DOM", "ESNext"],
     "outDir": "dist",
+    "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
     "rootDir": "src"
   },
   "references": [{ "path": "../utils" }, { "path": "../next-js" }],
