@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.3](https://github.com/thijsvandiessen/mono/compare/v2.0.2...v2.0.3) (2026-11-19)
+
+
+### Bug Fixes
+
+* **terraform:** unblock Google Maps API key ([#1231](https://github.com/thijsvandiessen/mono/issues/1231)) ([af15f70](https://github.com/thijsvandiessen/mono/commit/af15f70e372335c6973b071162998852a944675d))
+
 ## [2.0.2](https://github.com/thijsvandiessen/mono/compare/v2.0.1...v2.0.2) (2026-11-19)
 
 
