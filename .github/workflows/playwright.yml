@@ -29,7 +29,7 @@ jobs:
         node-version: [24.x]
 
     steps:
-      - uses: actions/checkout@v6.0.2
+      - uses: actions/checkout@v7.0.1
 
       - name: Install pnpm
         uses: pnpm/action-setup@v6
@@ -73,7 +73,7 @@ jobs:
       TURBO_TEAM: ${{ secrets.VERCEL_TEAM }}
 
     steps:
-      - uses: actions/checkout@v6.0.2
+      - uses: actions/checkout@v7.0.1
 
       - name: Install pnpm
         uses: pnpm/action-setup@v6
