@@ -32,11 +32,12 @@ resource "google_apikeys_key" "maps" {
   restrictions {
     api_targets {
       service = "maps-backend.googleapis.com"
-      methods = ["GET*"]
     }
     browser_key_restrictions {
       allowed_referrers = [
-        "https://www.lundibleu.nl/",
+        "https://www.lundibleu.nl/*",
+        "https://lundibleu.nl/*",
+        "http://localhost:3000/*",
       ]
     }
   }
