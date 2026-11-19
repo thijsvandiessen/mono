@@ -37,6 +37,7 @@ resource "google_apikeys_key" "maps" {
       allowed_referrers = [
         "https://www.lundibleu.nl/*",
         "https://lundibleu.nl/*",
+        "http://localhost:3000/*",
       ]
     }
   }
