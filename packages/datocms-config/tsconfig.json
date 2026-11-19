@@ -4,6 +4,7 @@
   "compilerOptions": {
     "types": ["node"],
     "outDir": "dist",
+    "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
     "rootDir": "src",
     "lib": [
       "ESNext",
