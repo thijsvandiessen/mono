@@ -6,6 +6,7 @@ on:
       - main
   label:
     types: [created, deleted]
+  workflow_dispatch:
   workflow_call:
     outputs:
       release-created:
