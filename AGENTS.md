@@ -16,7 +16,7 @@ This Turborepo keeps deployable sites in `apps/` (`lundi-bleu` and `vandiessen` 
 
 Write modern TypeScript/React with 2-space indentation, single quotes, and module-relative imports resolved via the shared `tsconfig`. Workspace packages should remain scoped as `@mono/<name>` and Next.js pages under `apps/<site>/src/app/<route>`. Enforce formatting through oxfmt and lint through oxlint using the single root `.oxlintrc.json`; avoid manual overrides unless absolutely necessary.
 
-User-facing texts in `@mono/components` never go inline: add them to the next-intl catalogs in `packages/components/src/messages/` (`nl.ts` is the reference, every other locale must have the same keys) and read them with `useTranslations` (or `getTranslations` in async server components). Everything brand-specific about an app (name, URL, locale, time zone and, later, theme) lives in its root `site.config.ts`, built with `defineSiteConfig` from `@mono/site-config`; read values from there instead of hardcoding them.
+User-facing texts in `@mono/components` never go inline: add them to the next-intl catalogs in `packages/components/src/messages/` (`nl.ts` is the reference, every other locale must have the same keys) and read them with `useTranslations` (or `getTranslations` in async server components). Everything brand-specific about an app (name, URL, locale, time zone, logo and theme colors and fonts) lives in its root `site.config.ts`, built with `defineSiteConfig` from `@mono/site-config`; read values from there instead of hardcoding them.
 
 ## Testing Guidelines
 

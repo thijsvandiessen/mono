@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="175" height="40" viewBox="0 0 175 40" role="img" aria-label="Example">
+  <rect x="0" y="4" width="32" height="32" rx="8" fill="#1f2a3d"/>
+  <circle cx="16" cy="20" r="7" fill="#21857a"/>
+  <text x="44" y="28" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="22" font-weight="700" fill="#1f2a3d">Example</text>
+</svg>

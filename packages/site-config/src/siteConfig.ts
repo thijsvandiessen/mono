@@ -1,4 +1,13 @@
 import { type Locale, defaultLanguageTags, locales } from "./locales.js";
+import { type SiteTheme, type SiteThemeInput, resolveTheme } from "./theme.js";
+
+export interface SiteLogo {
+  /** Path (relative to `public/`) or URL of the logo image. */
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
 
 /** What a site writes in its `site.config.ts`. Everything optional has a default. */
 export interface SiteConfigInput {
@@ -18,10 +27,18 @@ export interface SiteConfigInput {
   favicon?: string;
   /** Paths search engines should not index. Defaults to the style guide. */
   disallow?: string[];
+  /** Logo shown in the navigation. No logo is shown when it is left out. */
+  logo?: SiteLogo;
+  /** Colors and fonts. Anything left out uses the neutral default theme. */
+  theme?: SiteThemeInput;
 }
 
-export interface SiteConfig extends Required<Omit<SiteConfigInput, "description">> {
+export interface SiteConfig extends Required<
+  Omit<SiteConfigInput, "description" | "logo" | "theme">
+> {
   description: string;
+  logo?: SiteLogo;
+  theme: SiteTheme;
   /** Host of `url`, for example `www.example.com`. */
   domain: string;
 }
@@ -49,5 +66,7 @@ export const defineSiteConfig = (input: SiteConfigInput): SiteConfig => {
     timeZone: input.timeZone ?? "Europe/Amsterdam",
     favicon: input.favicon ?? "/favicon.ico",
     disallow: input.disallow ?? ["/style-guide"],
+    ...(input.logo ? { logo: input.logo } : {}),
+    theme: resolveTheme(input.theme),
   };
 };

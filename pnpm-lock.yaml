@@ -169,6 +169,9 @@ importers:
       '@mono/components':
         specifier: workspace:*
         version: link:../../packages/components
+      '@mono/site-config':
+        specifier: workspace:*
+        version: link:../../packages/site-config
       next-intl:
         specifier: 4.15.3
         version: 4.15.3(@swc/helpers@0.5.23)(@types/react@19.3.0)(next@16.4.6(@babel/core@7.29.13)(@playwright/test@1.65.1)(@types/node@26.6.6)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sass@1.108.2))(react@19.3.1)

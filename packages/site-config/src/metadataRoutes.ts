@@ -15,5 +15,7 @@ export const createManifest = (config: SiteConfig): MetadataRoute.Manifest => ({
   lang: config.languageTag,
   start_url: "/",
   display: "browser",
+  background_color: config.theme.colors.background,
+  theme_color: config.theme.colors.primary,
   icons: [{ src: config.favicon, sizes: "any" }],
 });

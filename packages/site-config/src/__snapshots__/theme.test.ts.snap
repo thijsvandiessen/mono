@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`themeToCss > renders custom colors and self-hosted fonts 1`] = `
+":root{--color-background:#ffffff;--color-light:#eef1f4;--color-grey:#8a94a0;--color-primary:hsl(220deg 25% 18%);--color-primary-dark:hsl(220deg 30% 10%);--color-primary-light:hsl(220deg 60% 55%);--color-secondary:hsl(170deg 60% 32%);--color-secondary-dark:hsl(170deg 60% 18%);--color-secondary-light:#ffeedd;--typography-sans:"brand-sans", sans-serif;--typography-serif:Georgia, Cambria, "Times New Roman", Times, serif}
+@font-face{font-family:"brand-sans";src:url("/fonts/brand.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"brand-sans";src:url("/fonts/brand-bold.woff") format("woff");font-weight:700;font-style:italic;font-display:swap}"
+`;
+
+exports[`themeToCss > renders the default theme 1`] = `":root{--color-background:#ffffff;--color-light:#eef1f4;--color-grey:#8a94a0;--color-primary:hsl(220deg 25% 18%);--color-primary-dark:hsl(220deg 30% 10%);--color-primary-light:hsl(220deg 60% 55%);--color-secondary:hsl(170deg 60% 32%);--color-secondary-dark:hsl(170deg 60% 18%);--color-secondary-light:hsl(170deg 50% 80%);--typography-sans:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;--typography-serif:Georgia, Cambria, "Times New Roman", Times, serif}"`;

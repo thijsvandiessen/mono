@@ -1,5 +1,6 @@
 import { createManifest, createRobots } from "./metadataRoutes.js";
 import { describe, expect, it } from "vitest";
+import { defaultTheme } from "./theme.js";
 import { defineSiteConfig } from "./siteConfig.js";
 
 describe("defineSiteConfig", () => {
@@ -14,6 +15,7 @@ describe("defineSiteConfig", () => {
       timeZone: "Europe/Amsterdam",
       favicon: "/favicon.ico",
       disallow: ["/style-guide"],
+      theme: defaultTheme,
     });
   });
 

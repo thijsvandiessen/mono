@@ -13,7 +13,12 @@ const RootLayout = async ({ children }: Props) => {
 
   return (
     <html lang={siteConfig.languageTag}>
-      <Body navigationData={data} metadata={metadata}>
+      <Body
+        navigationData={data}
+        metadata={metadata}
+        theme={siteConfig.theme}
+        logo={siteConfig.logo}
+      >
         {children}
       </Body>
     </html>
