@@ -4,6 +4,7 @@ import { type ReactNode, useEffect, useRef, useState } from "react";
 import { Play } from "../icons/index.js";
 import styles from "./styles.module.scss";
 import { useIntersectionObserver } from "@mono/hooks";
+import { useTranslations } from "next-intl";
 
 type Props = {
   children: ReactNode;
@@ -20,6 +21,7 @@ export const VideoPlaceholder = ({
   showPlayIcon,
   onPlayButtonClick,
 }: Props) => {
+  const t = useTranslations("VideoPlaceholder");
   const [hasIntersected, setHasIntersected] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const [entry] = useIntersectionObserver({
@@ -45,7 +47,7 @@ export const VideoPlaceholder = ({
           className={styles.playButton}
           onClick={onPlayButtonClick}
           type="button"
-          aria-label="Start video"
+          aria-label={t("play")}
         >
           {showPlayIcon && (
             <div className={styles.playButtonIconContainer}>

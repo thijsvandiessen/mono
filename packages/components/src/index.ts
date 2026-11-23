@@ -20,3 +20,4 @@ export { ImageBlock } from "./imageBlock/index.js";
 export { DocumentBlock } from "./documentBlock/index.js";
 export { VideoBlock } from "./videoBlock/index.js";
 export { ArrowDown, ArrowRight, Cross, Hamburger, Logo, Pdf, Play } from "./icons/index.js";
+export { type Locale, type Messages, locales, messages } from "./messages/index.js";

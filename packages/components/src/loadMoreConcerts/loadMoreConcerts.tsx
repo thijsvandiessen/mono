@@ -4,6 +4,7 @@ import { ConcertListItem } from "../concertListItem/index.js";
 import React from "react";
 import styles from "./styles.module.scss";
 import { useLoadMoreConcerts } from "@mono/hooks";
+import { useTranslations } from "next-intl";
 
 export interface Props {
   initialSkip: number;
@@ -11,6 +12,7 @@ export interface Props {
 }
 
 export const LoadMoreConcerts = ({ initialSkip, numberOfConcerts }: Props) => {
+  const t = useTranslations("LoadMoreConcerts");
   const { concerts, ref } = useLoadMoreConcerts({
     initialSkip,
     numberOfConcerts,
@@ -28,7 +30,7 @@ export const LoadMoreConcerts = ({ initialSkip, numberOfConcerts }: Props) => {
       {numberOfConcerts ? (
         <div ref={ref} className={styles.numberOfConcerts}>
           <p className="text-small">
-            {concerts.length + initialSkip} van {numberOfConcerts} concerten
+            {t("progress", { shown: concerts.length + initialSkip, total: numberOfConcerts })}
           </p>
         </div>
       ) : (

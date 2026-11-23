@@ -1,7 +1,7 @@
 import { DefaultPage, type Props } from "./defaultPage.js";
 import { describe, expect, it, vi } from "vitest";
 import { getPage } from "@mono/data";
-import { render } from "@testing-library/react";
+import { renderWithIntl } from "../test-utils/renderWithIntl.js";
 import { resolvedComponent } from "@mono/utils";
 
 vi.mock("../navigation/index.js", () => {
@@ -46,7 +46,7 @@ describe("Concert component", () => {
       slug: "contact",
     });
 
-    const { container } = render(<Resolved />);
+    const { container } = renderWithIntl(<Resolved />);
 
     expect(container).toMatchSnapshot();
   });

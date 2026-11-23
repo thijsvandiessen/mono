@@ -7,8 +7,10 @@ import { MobileMenuItems } from "../mobileMenuItems/index.js";
 import type { NavigationData } from "@mono/data";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
+import { useTranslations } from "next-intl";
 
 export const MobileMenu = ({ escapedMenuString }: { escapedMenuString: string }) => {
+  const t = useTranslations("MobileMenu");
   const general = JSON.parse(escapedMenuString) as NavigationData;
   const [open, setOpen] = useState(false);
   useHrefClick(() => setOpen(false));
@@ -32,7 +34,7 @@ export const MobileMenu = ({ escapedMenuString }: { escapedMenuString: string })
         className={classNames(styles.menuButton)}
         type="button"
         onClick={handleClick}
-        aria-label="Menu"
+        aria-label={t("open")}
       >
         <Hamburger className={classNames(styles.menuIcon)} />
       </button>
@@ -43,7 +45,7 @@ export const MobileMenu = ({ escapedMenuString }: { escapedMenuString: string })
               className={classNames(styles.menuButton)}
               type="button"
               onClick={handleClick}
-              aria-label="Sluit menu"
+              aria-label={t("close")}
             >
               <Cross className={classNames(styles.menuIcon)} />
             </button>

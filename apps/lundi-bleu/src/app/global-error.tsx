@@ -1,11 +1,17 @@
 "use client";
-import { ErrorMessage } from "@mono/components";
 
+import { ErrorMessage, messages } from "@mono/components";
+import { locale, timeZone } from "../i18n/config";
+import { NextIntlClientProvider } from "next-intl";
+
+/* Renders outside the root layout, so it brings its own translations. */
 export default function GlobalError({ error, reset }: { error: Error; reset: () => void }) {
   return (
-    <html lang="nl-NL">
+    <html lang={locale}>
       <body>
-        <ErrorMessage reset={reset} error={error} />
+        <NextIntlClientProvider locale={locale} timeZone={timeZone} messages={messages[locale]}>
+          <ErrorMessage reset={reset} error={error} />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
