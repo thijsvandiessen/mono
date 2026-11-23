@@ -53,6 +53,9 @@ importers:
       '@mono/next-js':
         specifier: workspace:*
         version: link:../../packages/next-js
+      '@mono/site-config':
+        specifier: workspace:*
+        version: link:../../packages/site-config
       '@mono/utils':
         specifier: workspace:*
         version: link:../../packages/utils
@@ -111,6 +114,9 @@ importers:
       '@mono/next-js':
         specifier: workspace:*
         version: link:../../packages/next-js
+      '@mono/site-config':
+        specifier: workspace:*
+        version: link:../../packages/site-config
       '@mono/utils':
         specifier: workspace:*
         version: link:../../packages/utils
@@ -273,6 +279,9 @@ importers:
       '@mono/search-site':
         specifier: workspace:*
         version: link:../search-site
+      '@mono/site-config':
+        specifier: workspace:*
+        version: link:../site-config
       '@mono/utils':
         specifier: workspace:*
         version: link:../utils
@@ -570,6 +579,24 @@ importers:
       jsdom:
         specifier: 31.0.1
         version: 31.0.1
+      typescript:
+        specifier: 7.0.2
+        version: 7.0.2
+      vitest:
+        specifier: 5.1.1
+        version: 5.1.1(@types/node@26.6.6)(@vitest/coverage-v8@5.1.1)(jsdom@31.0.1)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.108.2)(yaml@2.9.0))
+
+  packages/site-config:
+    devDependencies:
+      '@mono/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      '@types/node':
+        specifier: 26.6.6
+        version: 26.6.6
+      next:
+        specifier: 16.4.6
+        version: 16.4.6(@babel/core@7.29.13)(@playwright/test@1.65.1)(@types/node@26.6.6)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sass@1.108.2)
       typescript:
         specifier: 7.0.2
         version: 7.0.2
@@ -3161,9 +3188,6 @@ packages:
   '@types/mdx@2.0.14':
     resolution: {integrity: sha512-T48PeuJtvLosNTPVhfnIp3i/n3a4g4Bad7YCq5k64D4u7NwDrAotikQ+5+sjtUvBmxCMlbo3dVL+C2dP0rWHzg==}
 
-  '@types/node@25.6.0':
-    resolution: {integrity: sha512-+qIYRKdNYJwY3vRCZMdJbPLJAtGjQBudzZzdzwQYkEPQd+PJGixUL5QfvCLDaULoLv+RhT3LDkwEfKaAkgSmNQ==}
-
   '@types/node@26.6.6':
     resolution: {integrity: sha512-MzQj+8Kx3XI40OmUAE6Qoh58ZMNstNNMwn2nfd3qWsfe7nDNSqJNzes4njhz6AHwrSHOffSLwXU6yb474Q4aog==}
 
@@ -4933,9 +4957,6 @@ packages:
   unc-path-regex@0.1.2:
     resolution: {integrity: sha512-eXL4nmJT7oCpkZsHZUOJo8hcX3GbsiDOa0Qu9F646fi8dT3XuSVopVqAcEiVzSKKH7UoDti23wNX3qGFxcW5Qg==}
     engines: {node: '>=0.10.0'}
-
-  undici-types@7.19.2:
-    resolution: {integrity: sha512-qYVnV5OEm2AW8cJMCpdV20CDyaN3g0AjDlOGf1OW4iaDEx8MwdtChUp4zu4H0VP3nDRF/8RKWH+IPp9uW0YGZg==}
 
   undici-types@8.9.0:
     resolution: {integrity: sha512-KTDyRTYX8sWmKXAikPHHSyc63CRPETMctyjKFupcC6OBLXT3xsN0e9aF7m+mIXutFWpUXuedtowG7iLOzp0kQg==}
@@ -7462,10 +7483,6 @@ snapshots:
 
   '@types/mdx@2.0.14': {}
 
-  '@types/node@25.6.0':
-    dependencies:
-      undici-types: 7.19.2
-
   '@types/node@26.6.6':
     dependencies:
       undici-types: 8.9.0
@@ -7484,7 +7501,7 @@ snapshots:
 
   '@types/ws@8.18.2':
     dependencies:
-      '@types/node': 25.6.0
+      '@types/node': 26.6.6
 
   '@typescript/typescript-aix-ppc64@7.0.2':
     optional: true
@@ -9222,8 +9239,6 @@ snapshots:
       '@typescript/typescript-win32-x64': 7.0.2
 
   unc-path-regex@0.1.2: {}
-
-  undici-types@7.19.2: {}
 
   undici-types@8.9.0: {}
 

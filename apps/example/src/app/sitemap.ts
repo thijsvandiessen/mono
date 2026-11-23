@@ -1,6 +1,5 @@
 import { type PageLink, getConcertUrls, getConcertsMeta, getPages, getPagesMeta } from "@mono/data";
-
-const URL = "https://example.nl";
+import { siteConfig } from "../../site.config";
 
 export default async function sitemap() {
   const pagesMeta = await getPagesMeta();
@@ -28,7 +27,7 @@ export default async function sitemap() {
   }
 
   const routes = pages.map(({ url, updatedAt }) => ({
-    url: `${URL}${url}` as const,
+    url: `${siteConfig.url}${url}` as const,
     lastModified: updatedAt.toISOString(),
   }));
 

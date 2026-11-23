@@ -13,6 +13,7 @@
     "@mono/components": "workspace:*",
     "@mono/data": "workspace:*",
     "@mono/next-js": "workspace:*",
+    "@mono/site-config": "workspace:*",
     "@mono/utils": "workspace:*",
     "classnames": "2.5.1",
     "next": "16.4.6",

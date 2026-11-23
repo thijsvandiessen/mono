@@ -1,12 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import { DefaultPage } from "@mono/components";
 import { getPageSeo } from "@mono/data";
+import { siteConfig } from "../../site.config";
 import { viewport } from "@mono/utils";
 
 const homepageSlug = "homepage";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { data } = await getPageSeo({ slug: homepageSlug });
+  const { data } = await getPageSeo({ slug: homepageSlug, locale: siteConfig.languageTag });
   return data;
 }
 

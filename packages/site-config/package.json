@@ -1,0 +1,26 @@
+{
+  "name": "@mono/site-config",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Typed per-site configuration for the white-label front end",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest run -c ./vitest.config.ts"
+  },
+  "devDependencies": {
+    "@mono/typescript-config": "workspace:*",
+    "@types/node": "26.6.6",
+    "next": "16.4.6",
+    "typescript": "7.0.2",
+    "vitest": "5.1.1"
+  }
+}
