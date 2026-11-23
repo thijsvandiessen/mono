@@ -8,12 +8,13 @@ export const metadataFormatter = (
   data: PageDetailSeoFragment | ConcertPageSeoFragment | undefined | null,
   siteMetadata: SiteMetadata,
   slug: string,
+  /** Fallback `og:locale` when the CMS provides none. */
+  locale = "nl-NL",
 ): Metadata => {
   const title = metaTitleFormatter(data, siteMetadata);
   const base = siteMetadata?.base_url || "https://example.com";
 
   const defaultDescription = siteMetadata?.description || "";
-  const defaultLocale = "nl-NL";
 
   const url = new URL(slug, base);
   const currentUrl = slug === "homepage" ? base : url.href;
@@ -52,7 +53,7 @@ export const metadataFormatter = (
       ],
       locale:
         data?._seoMetaTags.find((tags) => tags?.attributes?.property === "og:locale")?.content ??
-        defaultLocale,
+        locale,
     },
     twitter: {
       card: "summary_large_image",

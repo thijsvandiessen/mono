@@ -128,4 +128,14 @@ describe("metadataFormatter", () => {
       },
     });
   });
+
+  it("falls back to the given locale when the CMS sets no og:locale", () => {
+    const res = metadataFormatter(
+      undefined,
+      { title: "Site", description: "", base_url: "https://example.com", socials: [] },
+      "some-page",
+      "en-GB",
+    );
+    expect(res.openGraph).toEqual(expect.objectContaining({ locale: "en-GB" }));
+  });
 });

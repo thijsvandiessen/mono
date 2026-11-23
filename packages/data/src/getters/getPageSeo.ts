@@ -7,7 +7,10 @@ import { client } from "../gqlClient.js";
 import { getSiteMetadata } from "./getSiteMetadata.js";
 import { metadataFormatter } from "../formatters/index.js";
 
-export const getPageSeo = async ({ slug }: GetPageSeoQueryVariables) => {
+export const getPageSeo = async ({
+  slug,
+  locale,
+}: GetPageSeoQueryVariables & { locale?: string }) => {
   const { metadata } = await getSiteMetadata();
 
   try {
@@ -17,11 +20,11 @@ export const getPageSeo = async ({ slug }: GetPageSeoQueryVariables) => {
     );
 
     return {
-      data: metadataFormatter(data?.page ?? undefined, metadata, slug),
+      data: metadataFormatter(data?.page ?? undefined, metadata, slug, locale),
       error,
     };
   } catch (error) {
     if (error instanceof Error) console.log(error.message);
-    return { data: metadataFormatter(undefined, metadata, slug), error };
+    return { data: metadataFormatter(undefined, metadata, slug, locale), error };
   }
 };

@@ -9,10 +9,16 @@ const getUrl = () => {
   return process.env.NEXT_PUBLIC_DATOCMS_GRAPHQL_URL || defaultUrl;
 };
 
+/*
+ * Language tag sent with every request. Sites in another language set
+ * NEXT_PUBLIC_CONTENT_LANGUAGE (for example `en-GB`).
+ */
+const getContentLanguage = () => process.env.NEXT_PUBLIC_CONTENT_LANGUAGE || "nl-NL";
+
 export const linkConfig = {
   url: getUrl(),
   headers: {
-    "Content-Language": "nl-NL",
+    "Content-Language": getContentLanguage(),
     "Content-Type": "application/json",
     Accept: "application/json",
     Authorization: `Bearer ${process.env.NEXT_PUBLIC_DATOCMS_READONLY_TOKEN}`,
