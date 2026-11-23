@@ -1,9 +1,10 @@
 import { describe, expect, it, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
 import { LoadMoreConcerts } from "./loadMoreConcerts.jsx";
 import React from "react";
 import { getConcerts } from "@mono/data";
 import { mockConcert } from "./mocks/mockConcerts.js";
+import { renderWithIntl } from "../test-utils/renderWithIntl.js";
+import { screen } from "@testing-library/react";
 
 vi.mock("@mono/data", () => {
   return {
@@ -39,7 +40,9 @@ describe("Concerts component", () => {
 
     screen.debug();
 
-    const { container } = render(<LoadMoreConcerts initialSkip={1} numberOfConcerts={10} />);
+    const { container } = renderWithIntl(
+      <LoadMoreConcerts initialSkip={1} numberOfConcerts={10} />,
+    );
 
     const element = screen.getByText("1 van 10 concerten");
 

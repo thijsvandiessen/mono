@@ -19,6 +19,7 @@
     "src/**/*.test.ts",
     "src/**/*.test.tsx",
     "src/**/__snapshots__",
-    "src/vitest.setup.ts"
+    "src/vitest.setup.ts",
+    "src/test-utils"
   ]
 }

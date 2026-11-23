@@ -9,6 +9,7 @@ import { Header } from "../header/index.js";
 import { TwoColumContentField } from "../twoColumContentField/index.js";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
+import { useTranslations } from "next-intl";
 
 export interface Props {
   pageTitle: string | undefined;
@@ -16,6 +17,7 @@ export interface Props {
 }
 
 export const PageContent = ({ items, pageTitle }: Props) => {
+  const t = useTranslations("PageContent");
   return items?.map((item, index) => {
     if (item.__typename === "TwoColumnRecord") {
       return (
@@ -49,6 +51,6 @@ export const PageContent = ({ items, pageTitle }: Props) => {
       );
     }
 
-    return <p key="never">component does not exist</p>;
+    return <p key="never">{t("unknownComponent")}</p>;
   });
 };

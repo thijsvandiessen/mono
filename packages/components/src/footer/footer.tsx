@@ -3,58 +3,62 @@ import { Link } from "@mono/next-js";
 import classNames from "classnames";
 import { slugFormatter } from "@mono/utils";
 import styles from "./styles.module.scss";
+import { useTranslations } from "next-intl";
 
 interface Props {
   data: NavigationData;
   metadata: SiteMetadata;
 }
 
-export const Footer = ({ data, metadata }: Props) => (
-  <footer className={classNames(styles.root)}>
-    <div className={classNames(styles.content)}>
-      <div>
-        <h2 className={classNames(styles.title)}>{metadata?.title}</h2>
-      </div>
-      <div>
-        <h3 className={classNames(styles.title)}>Navigatie</h3>
-        <ul className={classNames(styles.list)}>
-          {data.menu.map((item) => {
-            if ("slug" in item && item.slug && item.label) {
-              return (
-                <li key={item.id}>
-                  <Link
-                    className={classNames(styles.link)}
-                    href={slugFormatter({ slug: item.slug })}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              );
-            }
-            return null;
-          })}
-        </ul>
-      </div>
-
-      {metadata.socials.length > 0 && (
+export const Footer = ({ data, metadata }: Props) => {
+  const t = useTranslations("Footer");
+  return (
+    <footer className={classNames(styles.root)}>
+      <div className={classNames(styles.content)}>
         <div>
-          <h3 className={classNames(styles.title)}>Volg ons</h3>
+          <h2 className={classNames(styles.title)}>{metadata?.title}</h2>
+        </div>
+        <div>
+          <h3 className={classNames(styles.title)}>{t("navigation")}</h3>
           <ul className={classNames(styles.list)}>
-            {metadata.socials.map((social) => (
-              <li key={social.name}>
-                <Link
-                  className={classNames(styles.link)}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {social.name}
-                </Link>
-              </li>
-            ))}
+            {data.menu.map((item) => {
+              if ("slug" in item && item.slug && item.label) {
+                return (
+                  <li key={item.id}>
+                    <Link
+                      className={classNames(styles.link)}
+                      href={slugFormatter({ slug: item.slug })}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                );
+              }
+              return null;
+            })}
           </ul>
         </div>
-      )}
-    </div>
-  </footer>
-);
+
+        {metadata.socials.length > 0 && (
+          <div>
+            <h3 className={classNames(styles.title)}>{t("followUs")}</h3>
+            <ul className={classNames(styles.list)}>
+              {metadata.socials.map((social) => (
+                <li key={social.name}>
+                  <Link
+                    className={classNames(styles.link)}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {social.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </footer>
+  );
+};

@@ -1,8 +1,9 @@
 import { describe, expect, it, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
 import { ConcertListItem } from "./concertListItem.jsx";
 import { getConcert } from "@mono/data";
 import { mockConcert } from "./mocks/mockConcert.js";
+import { renderWithIntl } from "../test-utils/renderWithIntl.js";
+import { screen } from "@testing-library/react";
 
 vi.mock("@mono/next-js", () => {
   return {
@@ -46,7 +47,7 @@ describe("Concert component", () => {
       error: undefined,
     });
 
-    const { container } = render(<ConcertListItem data={mockConcert} />);
+    const { container } = renderWithIntl(<ConcertListItem data={mockConcert} />);
 
     expect(container).toMatchSnapshot();
 

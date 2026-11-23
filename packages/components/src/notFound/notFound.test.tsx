@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import { NotFound } from "./notFound.jsx";
-import { render } from "@testing-library/react";
+import { renderWithIntl } from "../test-utils/renderWithIntl.js";
 
 vi.mock("@mono/next-js", () => {
   return {
@@ -15,7 +15,7 @@ vi.mock("@mono/next-js", () => {
 
 describe("NotFound component", () => {
   it("shows all the data", () => {
-    const { container } = render(<NotFound />);
+    const { container } = renderWithIntl(<NotFound />);
     expect(container).toMatchSnapshot();
   });
 });

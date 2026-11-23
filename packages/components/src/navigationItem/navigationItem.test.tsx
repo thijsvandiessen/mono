@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
 import { NavigationItem } from "./index.js";
+import { renderWithIntl } from "../test-utils/renderWithIntl.js";
+import { screen } from "@testing-library/react";
 
 vi.mock("@mono/next-js", () => {
   return {
@@ -15,21 +16,27 @@ vi.mock("@mono/next-js", () => {
 
 describe("NavigationItem", () => {
   it("should render a link", () => {
-    const { container } = render(<NavigationItem slug={"url"} label={"homepage"} />);
+    const { container } = renderWithIntl(<NavigationItem slug={"url"} label={"homepage"} />);
 
     expect(screen.getByRole("link", { name: "homepage" })).toBeInTheDocument();
     expect(container).toMatchSnapshot();
   });
 
   it("should render a link warning", () => {
-    render(<NavigationItem />);
+    renderWithIntl(<NavigationItem />);
 
-    expect(screen.getByText("No link specified")).toBeInTheDocument();
+    expect(screen.getByText("Geen link opgegeven")).toBeInTheDocument();
   });
 
   it("should render a label warning", () => {
-    render(<NavigationItem slug="test" />);
+    renderWithIntl(<NavigationItem slug="test" />);
 
-    expect(screen.getByText("No label specified")).toBeInTheDocument();
+    expect(screen.getByText("Geen label opgegeven")).toBeInTheDocument();
+  });
+
+  it("should render the warnings in the configured locale", () => {
+    renderWithIntl(<NavigationItem />, { locale: "en" });
+
+    expect(screen.getByText("No link specified")).toBeInTheDocument();
   });
 });
