@@ -31,7 +31,7 @@
     "zod": "4.6.7"
   },
   "devDependencies": {
-    "@apollo/rover": "1.0.1",
+    "@apollo/rover": "1.1.0",
     "@commitlint/config-conventional": "21.2.4",
     "@graphql-codegen/cli": "8.0.0",
     "@graphql-codegen/client-preset": "7.0.0",
