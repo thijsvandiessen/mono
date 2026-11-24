@@ -1,10 +1,10 @@
 import { Image, Link } from "@mono/next-js";
 import { dateIsInThePast, formatDate } from "@mono/utils";
+import { useLocale, useTimeZone, useTranslations } from "next-intl";
 import { ArrowRight } from "../icons/index.js";
 import type { Concert } from "@mono/data";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
-import { useTranslations } from "next-intl";
 
 export interface Props {
   data: Concert;
@@ -25,6 +25,8 @@ export const ConcertListItem = ({
   title,
 }: Props) => {
   const t = useTranslations("ConcertListItem");
+  const locale = useLocale();
+  const timeZone = useTimeZone();
   return (
     <div
       className={classNames(styles.root, {
@@ -55,7 +57,7 @@ export const ConcertListItem = ({
               if (item.startTime === null) return null;
 
               const concertPast = item.startTime && dateIsInThePast(item.startTime);
-              const startTime = item.startTime && formatDate(item.startTime);
+              const startTime = item.startTime && formatDate(item.startTime, { locale, timeZone });
               const itemTitle = item.title || startTime;
 
               const hash = JSON.stringify(item);

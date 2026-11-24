@@ -1,7 +1,7 @@
 import React, { type ReactNode } from "react";
 import { getGeneralInfo, getSiteMetadata } from "@mono/data";
 import { Body } from "@mono/components";
-import { getLocale } from "next-intl/server";
+import { siteConfig } from "../../site.config";
 
 interface Props {
   children: ReactNode;
@@ -10,11 +10,15 @@ interface Props {
 const RootLayout = async ({ children }: Props) => {
   const { data } = await getGeneralInfo();
   const { metadata } = await getSiteMetadata();
-  const locale = await getLocale();
 
   return (
-    <html lang={locale}>
-      <Body navigationData={data} metadata={metadata}>
+    <html lang={siteConfig.languageTag}>
+      <Body
+        navigationData={data}
+        metadata={metadata}
+        theme={siteConfig.theme}
+        logo={siteConfig.logo}
+      >
         {children}
       </Body>
     </html>

@@ -27,6 +27,9 @@
       "path": "./packages/search-site"
     },
     {
+      "path": "./packages/site-config"
+    },
+    {
       "path": "./packages/utils"
     },
     {

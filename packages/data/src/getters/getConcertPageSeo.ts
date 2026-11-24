@@ -8,7 +8,10 @@ import { getSiteMetadata } from "./getSiteMetadata.js";
 import { metadataFormatter } from "../formatters/index.js";
 import { slugFormatter } from "@mono/utils";
 
-export const getConcertPageSeo = async ({ slug }: GetConcertSeoQueryVariables) => {
+export const getConcertPageSeo = async ({
+  slug,
+  locale,
+}: GetConcertSeoQueryVariables & { locale?: string }) => {
   const { metadata } = await getSiteMetadata();
 
   try {
@@ -22,11 +25,12 @@ export const getConcertPageSeo = async ({ slug }: GetConcertSeoQueryVariables) =
         data?.concert ?? undefined,
         metadata,
         slugFormatter({ slug, prefix: "/concerten" }),
+        locale,
       ),
       error,
     };
   } catch (error) {
     if (error instanceof Error) console.log(error.message);
-    return { data: await metadataFormatter(undefined, metadata, slug), error };
+    return { data: await metadataFormatter(undefined, metadata, slug, locale), error };
   }
 };

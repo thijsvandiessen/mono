@@ -11,7 +11,8 @@
     { "path": "../data" },
     { "path": "../utils" },
     { "path": "../next-js" },
-    { "path": "../hooks" }
+    { "path": "../hooks" },
+    { "path": "../site-config" }
   ],
   "include": ["src/**/*", "src/*", "global.d.ts"],
   "exclude": [

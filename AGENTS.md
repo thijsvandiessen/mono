@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This Turborepo keeps deployable sites in `apps/` (`lundi-bleu` and `vandiessen` are production sites, `example` is a demo site, `storybook` hosts the component style guide) and shared code in `packages/` (`components`, `data`, `hooks`, `next-js`, `search-site`, `utils`, and internal configs such as `typescript-config` and `datocms-config`). End-to-end Playwright specs live in `e2e/`, while Terraform and other ops assets sit in `terraform/`. Co-locate feature code with its tests and SCSS under each package’s `src/` folder so tree-shaking and story imports stay predictable.
+This Turborepo keeps deployable sites in `apps/` (`lundi-bleu` and `vandiessen` are production sites, `example` is a demo site, `storybook` hosts the component style guide) and shared code in `packages/` (`components`, `data`, `hooks`, `next-js`, `search-site`, `site-config`, `utils`, and internal configs such as `typescript-config` and `datocms-config`). End-to-end Playwright specs live in `e2e/`, while Terraform and other ops assets sit in `terraform/`. Co-locate feature code with its tests and SCSS under each package’s `src/` folder so tree-shaking and story imports stay predictable.
 
 ## Build, Test, and Development Commands
 
@@ -16,7 +16,7 @@ This Turborepo keeps deployable sites in `apps/` (`lundi-bleu` and `vandiessen` 
 
 Write modern TypeScript/React with 2-space indentation, single quotes, and module-relative imports resolved via the shared `tsconfig`. Workspace packages should remain scoped as `@mono/<name>` and Next.js pages under `apps/<site>/src/app/<route>`. Enforce formatting through oxfmt and lint through oxlint using the single root `.oxlintrc.json`; avoid manual overrides unless absolutely necessary.
 
-User-facing texts in `@mono/components` never go inline: add them to the next-intl catalogs in `packages/components/src/messages/` (`nl.ts` is the reference, every other locale must have the same keys) and read them with `useTranslations` (or `getTranslations` in async server components). Each app picks its locale in `src/i18n/config.ts`.
+User-facing texts in `@mono/components` never go inline: add them to the next-intl catalogs in `packages/components/src/messages/` (`nl.ts` is the reference, every other locale must have the same keys) and read them with `useTranslations` (or `getTranslations` in async server components). Everything brand-specific about an app (name, URL, locale, time zone, logo and theme colors and fonts) lives in its root `site.config.ts`, built with `defineSiteConfig` from `@mono/site-config`; read values from there instead of hardcoding them.
 
 ## Testing Guidelines
 

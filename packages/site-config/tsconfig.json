@@ -1,0 +1,12 @@
+{
+  "extends": "@mono/typescript-config",
+  "compilerOptions": {
+    "types": ["node"],
+    "outDir": "dist",
+    "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
+    "rootDir": "src"
+  },
+  "references": [],
+  "include": ["src/**/*"],
+  "exclude": ["src/**/*.test.ts"]
+}

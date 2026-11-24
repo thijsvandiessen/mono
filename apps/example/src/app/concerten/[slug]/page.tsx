@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { ConcertPage } from "@mono/components";
 import { getConcertPageSeo } from "@mono/data";
+import { siteConfig } from "../../../../site.config";
 import { viewport } from "@mono/utils";
 
 interface PageProps {
@@ -10,7 +11,7 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const { data } = await getConcertPageSeo({ slug });
+  const { data } = await getConcertPageSeo({ slug, locale: siteConfig.languageTag });
   return data;
 }
 

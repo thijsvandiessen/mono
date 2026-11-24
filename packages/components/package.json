@@ -28,6 +28,7 @@
     "@mono/hooks": "workspace:*",
     "@mono/next-js": "workspace:*",
     "@mono/search-site": "workspace:*",
+    "@mono/site-config": "workspace:*",
     "@mono/utils": "workspace:*",
     "@react-google-maps/api": "2.20.8",
     "classnames": "2.5.1",
