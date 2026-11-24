@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
 import { NavigationSubMenuItem } from "../navigationSubMenuItem/index.js";
+import { renderWithIntl } from "../test-utils/renderWithIntl.js";
+import { screen } from "@testing-library/react";
 
 vi.mock("@mono/next-js", () => {
   return {
@@ -15,7 +16,7 @@ vi.mock("@mono/next-js", () => {
 
 describe("NavigationSubMenuItem", () => {
   it("should render a link", () => {
-    const { container } = render(
+    const { container } = renderWithIntl(
       <NavigationSubMenuItem onClick={() => null} slug="url" label="homepage" />,
     );
 
@@ -24,14 +25,14 @@ describe("NavigationSubMenuItem", () => {
   });
 
   it("should render a link warning", () => {
-    render(<NavigationSubMenuItem onClick={() => null} />);
+    renderWithIntl(<NavigationSubMenuItem onClick={() => null} />);
 
-    expect(screen.getByText("No link specified")).toBeVisible();
+    expect(screen.getByText("Geen link opgegeven")).toBeVisible();
   });
 
   it("should render a label warning", () => {
-    render(<NavigationSubMenuItem onClick={() => null} slug="test" />);
+    renderWithIntl(<NavigationSubMenuItem onClick={() => null} slug="test" />);
 
-    expect(screen.getByText("No label specified")).toBeVisible();
+    expect(screen.getByText("Geen label opgegeven")).toBeVisible();
   });
 });

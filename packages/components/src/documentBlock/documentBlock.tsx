@@ -8,12 +8,14 @@ import { Button } from "../button/index.js";
 import classNames from "classnames";
 import { formatBytes } from "@mono/utils";
 import styles from "./styles.module.scss";
+import { useTranslations } from "next-intl";
 
 interface Props {
   record: DocumentFragment;
 }
 
 export const DocumentBlock = ({ record }: Props) => {
+  const t = useTranslations("DocumentBlock");
   const asset = formatCloudinaryDocument(
     isOfTypeCloudinaryAsset(record.document) ? record.document : undefined,
   );
@@ -22,7 +24,7 @@ export const DocumentBlock = ({ record }: Props) => {
   return (
     <p className={styles.root}>
       <span className={classNames(styles.title, "h4")}>
-        document
+        {t("title")}
         {/* TODO: the name of the document */}
       </span>
       <span className={styles.download}>
@@ -31,7 +33,7 @@ export const DocumentBlock = ({ record }: Props) => {
           leftIcon={<ArrowDown />}
           suffix={asset.bytes ? `(${formatBytes(asset.bytes, 0)})` : ""}
         >
-          Download document
+          {t("download")}
         </Button>
       </span>
     </p>

@@ -8,10 +8,7 @@ exports[`Concerts component > shows all the data 1`] = `
     <p
       class="text-small"
     >
-      1
-       van 
-      10
-       concerten
+      1 van 10 concerten
     </p>
   </div>
 </div>

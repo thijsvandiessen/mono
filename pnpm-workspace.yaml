@@ -1,11 +1,12 @@
 packages:
-  - apps/**/*
-  - packages/**/*
+  - packages/*
+  - apps/*
   - e2e
 
 allowBuilds:
   "@apollo/rover": true
   "@parcel/watcher": true
+  "@swc/core": false
   esbuild: true
   sharp: true
   unrs-resolver: true

@@ -4,7 +4,7 @@ import { LocationDetail } from "../locationDetail/index.js";
 import { PageContent } from "../pageContent/index.js";
 import classNames from "classnames";
 import { getConcertPage } from "@mono/data";
-
+import { getTranslations } from "next-intl/server";
 import styles from "./styles.module.scss";
 
 export interface Props {
@@ -13,6 +13,7 @@ export interface Props {
 
 export const ConcertPage = async ({ slug }: Props) => {
   const { data } = await getConcertPage({ slug });
+  const t = await getTranslations("ConcertPage");
   if (!data) return notFound();
 
   return (
@@ -48,7 +49,7 @@ export const ConcertPage = async ({ slug }: Props) => {
                 data={data}
                 size="large"
                 isLast={true}
-                title={data.locations.some((item) => item.id) ? "Agenda" : undefined}
+                title={data.locations.some((item) => item.id) ? t("agenda") : undefined}
                 showLink={false}
                 showImage={false}
                 showProgram={false}
