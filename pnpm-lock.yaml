@@ -500,8 +500,8 @@ importers:
         specifier: 6.3.0
         version: 6.3.0(babel-plugin-react-compiler@1.0.0)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.108.2)(yaml@2.9.0))
       cpx2:
-        specifier: 9.0.3
-        version: 9.0.3
+        specifier: 9.1.0
+        version: 9.1.0
       dotenv:
         specifier: 18.0.10
         version: 18.0.10
@@ -3814,9 +3814,9 @@ packages:
       typescript:
         optional: true
 
-  cpx2@9.0.3:
-    resolution: {integrity: sha512-SHeJspK34eVoLWuCrBW6YdcflnZwJifgADJNRkitsuZN2bi4+iby4slavs1qANeNiiZnIWRFG4vNcHp8UHrE5g==}
-    engines: {node: ^22.0.0 || >=24.0.0, npm: '>=10'}
+  cpx2@9.1.0:
+    resolution: {integrity: sha512-rNV9nWf0X25ddDkUYdvd7+RGxGb9AOQxvXfmHqreiwke0U/synSnuZssokeWH+XAgS8naDv2tutCRMbpOgablg==}
+    engines: {node: ^22.2.0 || >=24.0.0, npm: '>=10'}
     hasBin: true
 
   cross-inspect@1.0.1:
@@ -3852,6 +3852,10 @@ packages:
   debounce@3.0.0:
     resolution: {integrity: sha512-64byRbF0/AirwbuHqB3/ZpMG9/nckDa6ZA0yd6UnaQNwbbemCOwvz2sL5sjXLHhZHADyiwLm0M5qMhltUUx+TA==}
     engines: {node: '>=20'}
+
+  debounce@4.0.0:
+    resolution: {integrity: sha512-o6nMNFRtqLR6mRlyt0b21cgYPSKAEMZFpROIRS9ZRH6hhSJWvGErqeSCJnWyiwVQYMSw7f/DZLilF5YRDwFz7w==}
+    engines: {node: '>=22.2'}
 
   debug@4.4.3:
     resolution: {integrity: sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==}
@@ -8059,13 +8063,13 @@ snapshots:
     optionalDependencies:
       typescript: 7.0.2
 
-  cpx2@9.0.3:
+  cpx2@9.1.0:
     dependencies:
-      debounce: 3.0.0
+      debounce: 4.0.0
       glob: 14.0.6
       glob2base: 0.0.12
       ignore: 7.0.16
-      minimatch: 10.2.6
+      minimatch: 11.0.9
       p-map: 7.1.1
       shell-quote: 1.12.0
       subarg: 1.0.0
@@ -8105,6 +8109,8 @@ snapshots:
       array-flatten: 3.0.0
 
   debounce@3.0.0: {}
+
+  debounce@4.0.0: {}
 
   debug@4.4.3:
     dependencies:
