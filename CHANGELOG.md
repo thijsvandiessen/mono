@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.1.0](https://github.com/thijsvandiessen/mono/compare/v2.0.2...v2.1.0) (2026-11-28)
+
+
+### Features
+
+* **components:** manage UI texts with next-intl ([#1238](https://github.com/thijsvandiessen/mono/issues/1238)) ([92acb1f](https://github.com/thijsvandiessen/mono/commit/92acb1f6ffb07b7fa9eb0aa3dfe34829ff712e36))
+* configurable google maps map id for location maps ([#1201](https://github.com/thijsvandiessen/mono/issues/1201)) ([71695ab](https://github.com/thijsvandiessen/mono/commit/71695abb74c17d73fe704be3aa9bb3ba0cbab893))
+
+
+### Bug Fixes
+
+* **terraform:** unblock Google Maps API key ([#1231](https://github.com/thijsvandiessen/mono/issues/1231)) ([af15f70](https://github.com/thijsvandiessen/mono/commit/af15f70e372335c6973b071162998852a944675d))
+
 ## [2.0.2](https://github.com/thijsvandiessen/mono/compare/v2.0.1...v2.0.2) (2026-11-19)
 
 
