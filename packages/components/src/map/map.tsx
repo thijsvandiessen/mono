@@ -1,6 +1,6 @@
 "use client";
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
-import React, { useId } from "react";
+import React, { useMemo } from "react";
 import { initMap } from "./initMap.js";
 
 export interface Pin {
@@ -19,15 +19,26 @@ export interface Props {
   id: string;
   pin: Pin;
   googleMapsApiKey: string;
+  // Cloud-console Map ID. Required by AdvancedMarkerElement; falls back to
+  // Google's demo id, which is watermarked and meant for development only.
+  mapId?: string;
   dimensions: Dimensions;
 }
 
-export const Map = ({ id, pin, googleMapsApiKey, dimensions }: Props) => {
-  const mapId = useId();
+export const Map = ({ id, pin, googleMapsApiKey, mapId, dimensions }: Props) => {
   const { isLoaded } = useJsApiLoader({
     id,
     googleMapsApiKey,
   });
+
+  // Passed to the Map constructor, so it has to keep a stable identity.
+  const options = useMemo<google.maps.MapOptions>(
+    () => ({
+      mapId: mapId ?? "DEMO_MAP_ID",
+      mapTypeControl: false,
+    }),
+    [mapId],
+  );
 
   if (!isLoaded)
     return (
@@ -42,12 +53,14 @@ export const Map = ({ id, pin, googleMapsApiKey, dimensions }: Props) => {
 
   return (
     <GoogleMap
-      id={mapId}
+      id={id}
       mapContainerStyle={{
         width: dimensions.width,
         height: dimensions.height,
       }}
-      onLoad={(map) => initMap({ googleMap: map, pin, mapId })}
+      options={options}
+      zoom={14}
+      onLoad={(map) => initMap({ googleMap: map, pin })}
       center={{
         lat: pin.lat,
         lng: pin.lng,
